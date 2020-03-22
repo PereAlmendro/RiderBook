@@ -119,18 +119,18 @@
                                     <constraint firstAttribute="height" constant="50" id="EuQ-GX-pqu"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFW-xN-3do">
-                                <rect key="frame" x="20" y="430.5" width="374" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="jwR-ix-hGh"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ff9-Fv-3Zp">
                                 <rect key="frame" x="20" y="360.5" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lIK-se-oBo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFW-xN-3do" customClass="RBButton" customModule="RiderBook" customModuleProvider="target">
+                                <rect key="frame" x="20" y="430.5" width="374" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jwR-ix-hGh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -156,6 +156,9 @@
                         <viewLayoutGuide key="safeArea" id="Z5X-q0-Ux5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="968-dz-d7C"/>
+                    <connections>
+                        <outlet property="registerButton" destination="OFW-xN-3do" id="f3i-yL-n8p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgI-gj-Qsj" sceneMemberID="firstResponder"/>
             </objects>

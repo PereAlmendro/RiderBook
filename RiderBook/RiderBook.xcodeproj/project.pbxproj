@@ -22,6 +22,8 @@
 		194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */; };
 		1943377B2427B6DD00050CB0 /* RiderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943377A2427B6DD00050CB0 /* RiderBookTests.swift */; };
 		194337862427B6DD00050CB0 /* RiderBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337852427B6DD00050CB0 /* RiderBookUITests.swift */; };
+		198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6272427C8A000E1638F /* UIFont+Extension.swift */; };
+		198CB6322427D8D200E1638F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6312427D8D200E1638F /* NibView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		194337812427B6DD00050CB0 /* RiderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194337852427B6DD00050CB0 /* RiderBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookUITests.swift; sourceTree = "<group>"; };
 		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		198CB6272427C8A000E1638F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		198CB6312427D8D200E1638F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +150,8 @@
 		192EF9DF2427C58500190D7B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				192EF9E02427C62800190D7B /* RBButton.swift */,
-				192EF9E22427C63600190D7B /* RBButton.xib */,
+				198CB6302427D8C300E1638F /* NibView */,
+				198CB62F2427D8BD00E1638F /* RBButton */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -157,6 +161,7 @@
 			children = (
 				192EF9E52427C66C00190D7B /* UIView+Extension.swift */,
 				192EF9E72427C70100190D7B /* UIColor+Extension.swift */,
+				198CB6272427C8A000E1638F /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -211,6 +216,23 @@
 				194337872427B6DD00050CB0 /* Info.plist */,
 			);
 			path = RiderBookUITests;
+			sourceTree = "<group>";
+		};
+		198CB62F2427D8BD00E1638F /* RBButton */ = {
+			isa = PBXGroup;
+			children = (
+				192EF9E02427C62800190D7B /* RBButton.swift */,
+				192EF9E22427C63600190D7B /* RBButton.xib */,
+			);
+			path = RBButton;
+			sourceTree = "<group>";
+		};
+		198CB6302427D8C300E1638F /* NibView */ = {
+			isa = PBXGroup;
+			children = (
+				198CB6312427D8D200E1638F /* NibView.swift */,
+			);
+			path = NibView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,9 +372,11 @@
 				194337632427B6DB00050CB0 /* HomeViewController.swift in Sources */,
 				192EF9DE2427C19900190D7B /* RegisterViewController.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
+				198CB6322427D8D200E1638F /* NibView.swift in Sources */,
 				192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */,
 				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,
 				192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */,
+				198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

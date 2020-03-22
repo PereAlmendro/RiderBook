@@ -10,8 +10,11 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var registerButton: RBButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerButton.setTitle(text: "A rodar.")
     }
     
     

@@ -9,8 +9,5 @@
 import UIKit
 
 extension UIColor {
-//    static let emeraldGreen = UIColor()
-    
-    
-    
+    static let emeraldGreen = UIColor(red: 103/255, green: 208/255, blue: 148/255, alpha: 1)
 }
