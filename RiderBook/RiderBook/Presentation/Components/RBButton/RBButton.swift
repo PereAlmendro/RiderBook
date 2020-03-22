@@ -8,14 +8,32 @@
 
 import UIKit
 
+protocol RBButtonDelegate {
+    func rbButtonAction(_ sender: RBButton)
+}
+
 class RBButton: NibView {
     
+    // MARK: - Outlets
+    
     @IBOutlet private weak var button: UIButton!
+    
+    // MARK: - Delegate
+    
+    var delegate: RBButtonDelegate?
+    
+    // MARK: - Private
     
     override func customSetup() {
         button.roundCorners()
         button.backgroundColor = .emeraldGreen
     }
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        delegate?.rbButtonAction(self)
+    }
+    
+    // MARK: - Public
     
     func setTitle(text: String) {
         button.setTitle(text, for: .normal)

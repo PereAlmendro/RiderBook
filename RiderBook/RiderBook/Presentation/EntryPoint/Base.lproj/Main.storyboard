@@ -80,7 +80,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabController" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -98,7 +98,7 @@
         <!--First-->
         <scene sceneID="lmB-To-N3x">
             <objects>
-                <viewController id="n6t-al-0P2" customClass="RegisterViewController" customModule="RiderBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="n6t-al-0P2" customClass="LoginViewController" customModule="RiderBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6gb-6Q-1zd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,16 +112,16 @@
                                     <constraint firstAttribute="width" secondItem="YHH-SO-xks" secondAttribute="height" multiplier="2:1.5" id="vf5-AZ-mZW"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGY-uq-077">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGY-uq-077" customClass="RBTextField" customModule="RiderBook" customModuleProvider="target">
                                 <rect key="frame" x="20" y="290.5" width="374" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EuQ-GX-pqu"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ff9-Fv-3Zp">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ff9-Fv-3Zp" customClass="RBTextField" customModule="RiderBook" customModuleProvider="target">
                                 <rect key="frame" x="20" y="360.5" width="374" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lIK-se-oBo"/>
                                 </constraints>
@@ -133,6 +133,13 @@
                                     <constraint firstAttribute="height" constant="50" id="jwR-ix-hGh"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFF-KZ-17o" customClass="RBButton" customModule="RiderBook" customModuleProvider="target">
+                                <rect key="frame" x="20" y="500.5" width="374" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xld-Zz-TL7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -140,9 +147,12 @@
                             <constraint firstItem="Z5X-q0-Ux5" firstAttribute="trailing" secondItem="KK8-0e-Z7G" secondAttribute="trailing" id="7vm-nI-Jke"/>
                             <constraint firstItem="Z5X-q0-Ux5" firstAttribute="trailing" secondItem="OFW-xN-3do" secondAttribute="trailing" constant="20" id="8jh-HM-Vjs"/>
                             <constraint firstItem="dGY-uq-077" firstAttribute="leading" secondItem="Z5X-q0-Ux5" secondAttribute="leading" constant="20" id="Ben-98-kR0"/>
+                            <constraint firstItem="wFF-KZ-17o" firstAttribute="top" secondItem="OFW-xN-3do" secondAttribute="bottom" constant="20" id="CPH-K0-4pz"/>
                             <constraint firstItem="OFW-xN-3do" firstAttribute="leading" secondItem="Z5X-q0-Ux5" secondAttribute="leading" constant="20" id="Gks-tM-s5d"/>
                             <constraint firstAttribute="bottom" secondItem="KK8-0e-Z7G" secondAttribute="bottom" id="Itb-z8-C7U"/>
+                            <constraint firstItem="Z5X-q0-Ux5" firstAttribute="trailing" secondItem="wFF-KZ-17o" secondAttribute="trailing" constant="20" id="QF6-sp-y8Z"/>
                             <constraint firstItem="ff9-Fv-3Zp" firstAttribute="top" secondItem="dGY-uq-077" secondAttribute="bottom" constant="20" id="Vys-fP-hdd"/>
+                            <constraint firstItem="wFF-KZ-17o" firstAttribute="leading" secondItem="Z5X-q0-Ux5" secondAttribute="leading" constant="20" id="Xyw-8u-dij"/>
                             <constraint firstItem="OFW-xN-3do" firstAttribute="top" secondItem="ff9-Fv-3Zp" secondAttribute="bottom" constant="20" id="bhN-qb-YGj"/>
                             <constraint firstItem="Z5X-q0-Ux5" firstAttribute="trailing" secondItem="ff9-Fv-3Zp" secondAttribute="trailing" constant="20" id="iQr-qf-Eio"/>
                             <constraint firstItem="dGY-uq-077" firstAttribute="top" secondItem="YHH-SO-xks" secondAttribute="bottom" constant="20" id="iZl-MH-lky"/>
@@ -157,7 +167,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="968-dz-d7C"/>
                     <connections>
-                        <outlet property="registerButton" destination="OFW-xN-3do" id="f3i-yL-n8p"/>
+                        <outlet property="guestButton" destination="wFF-KZ-17o" id="nrT-9e-WyF"/>
+                        <outlet property="loginButton" destination="OFW-xN-3do" id="f3i-yL-n8p"/>
+                        <outlet property="passwordTextField" destination="ff9-Fv-3Zp" id="hBz-8l-uUG"/>
+                        <outlet property="usernameTextField" destination="dGY-uq-077" id="gfP-kX-MRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgI-gj-Qsj" sceneMemberID="firstResponder"/>

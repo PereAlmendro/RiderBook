@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		192EF9DE2427C19900190D7B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9DD2427C19900190D7B /* RegisterViewController.swift */; };
+		192EF9DE2427C19900190D7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9DD2427C19900190D7B /* LoginViewController.swift */; };
 		192EF9E12427C62800190D7B /* RBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9E02427C62800190D7B /* RBButton.swift */; };
 		192EF9E32427C63600190D7B /* RBButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192EF9E22427C63600190D7B /* RBButton.xib */; };
 		192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9E52427C66C00190D7B /* UIView+Extension.swift */; };
@@ -24,6 +24,10 @@
 		194337862427B6DD00050CB0 /* RiderBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337852427B6DD00050CB0 /* RiderBookUITests.swift */; };
 		198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6272427C8A000E1638F /* UIFont+Extension.swift */; };
 		198CB6322427D8D200E1638F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6312427D8D200E1638F /* NibView.swift */; };
+		198CB6352427DDA900E1638F /* RBTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198CB6342427DDA900E1638F /* RBTextField.xib */; };
+		198CB6372427DDBA00E1638F /* RBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6362427DDBA00E1638F /* RBTextField.swift */; };
+		198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6382427E56900E1638F /* LoginPresenter.swift */; };
+		198CB63D2427E61E00E1638F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB63C2427E61E00E1638F /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		192EF9DD2427C19900190D7B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		192EF9DD2427C19900190D7B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		192EF9E02427C62800190D7B /* RBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBButton.swift; sourceTree = "<group>"; };
 		192EF9E22427C63600190D7B /* RBButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBButton.xib; sourceTree = "<group>"; };
 		192EF9E52427C66C00190D7B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -67,6 +71,10 @@
 		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		198CB6272427C8A000E1638F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		198CB6312427D8D200E1638F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		198CB6342427DDA900E1638F /* RBTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBTextField.xib; sourceTree = "<group>"; };
+		198CB6362427DDBA00E1638F /* RBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTextField.swift; sourceTree = "<group>"; };
+		198CB6382427E56900E1638F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		198CB63C2427E61E00E1638F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,7 @@
 		192EF9D82427C0DF00190D7B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				198CB63A2427E5FD00E1638F /* Base */,
 				192EF9E42427C65200190D7B /* Extensions */,
 				192EF9DF2427C58500190D7B /* Components */,
 				192EF9DC2427C13800190D7B /* EntryPoint */,
@@ -120,12 +129,13 @@
 			path = secondVC;
 			sourceTree = "<group>";
 		};
-		192EF9DA2427C0F000190D7B /* RegisterViewController */ = {
+		192EF9DA2427C0F000190D7B /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
-				192EF9DD2427C19900190D7B /* RegisterViewController.swift */,
+				192EF9DD2427C19900190D7B /* LoginViewController.swift */,
+				198CB6382427E56900E1638F /* LoginPresenter.swift */,
 			);
-			path = RegisterViewController;
+			path = LoginViewController;
 			sourceTree = "<group>";
 		};
 		192EF9DB2427C12600190D7B /* TabViewControllers */ = {
@@ -141,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				194337662427B6DB00050CB0 /* Main.storyboard */,
-				192EF9DA2427C0F000190D7B /* RegisterViewController */,
+				192EF9DA2427C0F000190D7B /* LoginViewController */,
 				192EF9DB2427C12600190D7B /* TabViewControllers */,
 			);
 			path = EntryPoint;
@@ -150,7 +160,7 @@
 		192EF9DF2427C58500190D7B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				198CB6302427D8C300E1638F /* NibView */,
+				198CB6332427DD8F00E1638F /* RBTextField */,
 				198CB62F2427D8BD00E1638F /* RBButton */,
 			);
 			path = Components;
@@ -233,6 +243,32 @@
 				198CB6312427D8D200E1638F /* NibView.swift */,
 			);
 			path = NibView;
+			sourceTree = "<group>";
+		};
+		198CB6332427DD8F00E1638F /* RBTextField */ = {
+			isa = PBXGroup;
+			children = (
+				198CB6342427DDA900E1638F /* RBTextField.xib */,
+				198CB6362427DDBA00E1638F /* RBTextField.swift */,
+			);
+			path = RBTextField;
+			sourceTree = "<group>";
+		};
+		198CB63A2427E5FD00E1638F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				198CB63B2427E60400E1638F /* BaseViewController */,
+				198CB6302427D8C300E1638F /* NibView */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		198CB63B2427E60400E1638F /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				198CB63C2427E61E00E1638F /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +378,7 @@
 				194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */,
 				192EF9E32427C63600190D7B /* RBButton.xib in Resources */,
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
+				198CB6352427DDA900E1638F /* RBTextField.xib in Resources */,
 				194337682427B6DB00050CB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,12 +407,15 @@
 				194337652427B6DB00050CB0 /* SecondViewController.swift in Sources */,
 				1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */,
 				194337632427B6DB00050CB0 /* HomeViewController.swift in Sources */,
-				192EF9DE2427C19900190D7B /* RegisterViewController.swift in Sources */,
+				192EF9DE2427C19900190D7B /* LoginViewController.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
+				198CB63D2427E61E00E1638F /* BaseViewController.swift in Sources */,
 				198CB6322427D8D200E1638F /* NibView.swift in Sources */,
 				192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */,
 				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,
+				198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */,
 				192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */,
+				198CB6372427DDBA00E1638F /* RBTextField.swift in Sources */,
 				198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
 			);
