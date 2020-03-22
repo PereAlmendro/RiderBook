@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192EF9DE2427C19900190D7B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9DD2427C19900190D7B /* RegisterViewController.swift */; };
+		192EF9E12427C62800190D7B /* RBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9E02427C62800190D7B /* RBButton.swift */; };
+		192EF9E32427C63600190D7B /* RBButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192EF9E22427C63600190D7B /* RBButton.xib */; };
+		192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9E52427C66C00190D7B /* UIView+Extension.swift */; };
+		192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9E72427C70100190D7B /* UIColor+Extension.swift */; };
 		1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943375E2427B6DB00050CB0 /* AppDelegate.swift */; };
 		194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337602427B6DB00050CB0 /* SceneDelegate.swift */; };
-		194337632427B6DB00050CB0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337622427B6DB00050CB0 /* FirstViewController.swift */; };
+		194337632427B6DB00050CB0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337622427B6DB00050CB0 /* HomeViewController.swift */; };
 		194337652427B6DB00050CB0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337642427B6DB00050CB0 /* SecondViewController.swift */; };
 		194337682427B6DB00050CB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194337662427B6DB00050CB0 /* Main.storyboard */; };
 		1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */; };
@@ -37,10 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		192EF9DD2427C19900190D7B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		192EF9E02427C62800190D7B /* RBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBButton.swift; sourceTree = "<group>"; };
+		192EF9E22427C63600190D7B /* RBButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBButton.xib; sourceTree = "<group>"; };
+		192EF9E52427C66C00190D7B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		192EF9E72427C70100190D7B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1943375B2427B6DB00050CB0 /* RiderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1943375E2427B6DB00050CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		194337602427B6DB00050CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		194337622427B6DB00050CB0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		194337622427B6DB00050CB0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		194337642427B6DB00050CB0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		194337672427B6DB00050CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1943376A2427B6DB00050CB0 /* RiderBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RiderBook.xcdatamodel; sourceTree = "<group>"; };
@@ -80,6 +90,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		192EF9D72427C0D300190D7B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				194337622427B6DB00050CB0 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		192EF9D82427C0DF00190D7B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				192EF9E42427C65200190D7B /* Extensions */,
+				192EF9DF2427C58500190D7B /* Components */,
+				192EF9DC2427C13800190D7B /* EntryPoint */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		192EF9D92427C0E900190D7B /* secondVC */ = {
+			isa = PBXGroup;
+			children = (
+				194337642427B6DB00050CB0 /* SecondViewController.swift */,
+			);
+			path = secondVC;
+			sourceTree = "<group>";
+		};
+		192EF9DA2427C0F000190D7B /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				192EF9DD2427C19900190D7B /* RegisterViewController.swift */,
+			);
+			path = RegisterViewController;
+			sourceTree = "<group>";
+		};
+		192EF9DB2427C12600190D7B /* TabViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				192EF9D92427C0E900190D7B /* secondVC */,
+				192EF9D72427C0D300190D7B /* Home */,
+			);
+			path = TabViewControllers;
+			sourceTree = "<group>";
+		};
+		192EF9DC2427C13800190D7B /* EntryPoint */ = {
+			isa = PBXGroup;
+			children = (
+				194337662427B6DB00050CB0 /* Main.storyboard */,
+				192EF9DA2427C0F000190D7B /* RegisterViewController */,
+				192EF9DB2427C12600190D7B /* TabViewControllers */,
+			);
+			path = EntryPoint;
+			sourceTree = "<group>";
+		};
+		192EF9DF2427C58500190D7B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				192EF9E02427C62800190D7B /* RBButton.swift */,
+				192EF9E22427C63600190D7B /* RBButton.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		192EF9E42427C65200190D7B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				192EF9E52427C66C00190D7B /* UIView+Extension.swift */,
+				192EF9E72427C70100190D7B /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		194337522427B6DB00050CB0 = {
 			isa = PBXGroup;
 			children = (
@@ -103,11 +184,9 @@
 		1943375D2427B6DB00050CB0 /* RiderBook */ = {
 			isa = PBXGroup;
 			children = (
+				192EF9D82427C0DF00190D7B /* Presentation */,
 				1943375E2427B6DB00050CB0 /* AppDelegate.swift */,
 				194337602427B6DB00050CB0 /* SceneDelegate.swift */,
-				194337622427B6DB00050CB0 /* FirstViewController.swift */,
-				194337642427B6DB00050CB0 /* SecondViewController.swift */,
-				194337662427B6DB00050CB0 /* Main.storyboard */,
 				1943376C2427B6DD00050CB0 /* Assets.xcassets */,
 				1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */,
 				194337712427B6DD00050CB0 /* Info.plist */,
@@ -239,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */,
+				192EF9E32427C63600190D7B /* RBButton.xib in Resources */,
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
 				194337682427B6DB00050CB0 /* Main.storyboard in Resources */,
 			);
@@ -267,8 +347,12 @@
 			files = (
 				194337652427B6DB00050CB0 /* SecondViewController.swift in Sources */,
 				1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */,
-				194337632427B6DB00050CB0 /* FirstViewController.swift in Sources */,
+				194337632427B6DB00050CB0 /* HomeViewController.swift in Sources */,
+				192EF9DE2427C19900190D7B /* RegisterViewController.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
+				192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */,
+				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,
+				192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +536,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.palmendrob.RiderBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -470,7 +554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.palmendrob.RiderBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
