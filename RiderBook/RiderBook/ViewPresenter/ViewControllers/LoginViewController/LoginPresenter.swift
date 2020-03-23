@@ -17,5 +17,6 @@ class LoginPresenter: BasePresenter {
     }
     
     func guestButtonAction() {
+        router.openHome()
     }
 }

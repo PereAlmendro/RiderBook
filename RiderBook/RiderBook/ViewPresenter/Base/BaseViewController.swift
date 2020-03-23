@@ -40,26 +40,3 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
         presenter.viewDidDisappear()
     }
 }
-
-class BasePresenter: NSObject {
-    
-    var disposeBag: DisposeBag
-    weak var view: BaseView?
-    
-    override init() {
-        disposeBag = DisposeBag()
-        super.init()
-    }
-    
-    func attachView<T: BaseView>(view: T) {
-        self.view = view
-    }
-    
-    func viewDidLoad() { }
-    func viewWillAppear() { }
-    func viewDidAppear() { }
-    func viewWillDisappear() { }
-    func viewDidDisappear() { }
-}
-
-protocol BaseView: AnyObject { }

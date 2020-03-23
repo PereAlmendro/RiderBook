@@ -11,6 +11,8 @@ import SwinjectStoryboard
 
 public extension SwinjectStoryboard {
     class func setup() {
-        ViewModule.setup(defaultContainer)
+        RouterModule.setup(defaultContainer)
+        PresenterModule.setup(defaultContainer)
+        ViewControllerModule.setup(defaultContainer)
     }
 }
