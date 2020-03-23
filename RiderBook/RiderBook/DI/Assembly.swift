@@ -7,7 +7,10 @@
 //
 
 import Foundation
+//import Swinject
 
-public class ViewModule {
-    
+protocol Assembly {
+//    func assemble(container: Container) {
+//
+//    }
 }

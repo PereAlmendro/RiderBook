@@ -28,8 +28,9 @@
 		198CB6372427DDBA00E1638F /* RBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6362427DDBA00E1638F /* RBTextField.swift */; };
 		198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6382427E56900E1638F /* LoginPresenter.swift */; };
 		198CB63D2427E61E00E1638F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB63C2427E61E00E1638F /* BaseViewController.swift */; };
-		199A074D2428EBCC002E3A15 /* ViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A074A2428EBCC002E3A15 /* ViewModule.swift */; };
+		199A074D2428EBCC002E3A15 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A074A2428EBCC002E3A15 /* Assembly.swift */; };
 		199A07522428F30D002E3A15 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 199A07512428F30D002E3A15 /* LoginViewController.xib */; };
+		199A07562428FD81002E3A15 /* ViewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A07552428FD81002E3A15 /* ViewAssembler.swift */; };
 		3D4375E4847972E64AB5A282 /* Pods_RiderBook_RiderBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C357C6A656C4CF69C35876C /* Pods_RiderBook_RiderBookUITests.framework */; };
 		624845AEC4F9B6D565D5BDC3 /* Pods_RiderBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7E1DA9D7FE3C074E192F83 /* Pods_RiderBookTests.framework */; };
 		B0411AA3AD476E8A27B5A428 /* Pods_RiderBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E1BAB2AB70C897429CB477 /* Pods_RiderBook.framework */; };
@@ -81,8 +82,9 @@
 		198CB6362427DDBA00E1638F /* RBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTextField.swift; sourceTree = "<group>"; };
 		198CB6382427E56900E1638F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		198CB63C2427E61E00E1638F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		199A074A2428EBCC002E3A15 /* ViewModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModule.swift; sourceTree = "<group>"; };
+		199A074A2428EBCC002E3A15 /* Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		199A07512428F30D002E3A15 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		199A07552428FD81002E3A15 /* ViewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAssembler.swift; sourceTree = "<group>"; };
 		4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.debug.xcconfig"; sourceTree = "<group>"; };
 		50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBookTests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBookTests/Pods-RiderBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		580BF0E91CF67A73FE34D248 /* Pods-RiderBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.release.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -298,7 +300,8 @@
 		199A07472428EBCC002E3A15 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				199A074A2428EBCC002E3A15 /* ViewModule.swift */,
+				199A07532428FD5B002E3A15 /* Assembly */,
+				199A074A2428EBCC002E3A15 /* Assembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -308,6 +311,22 @@
 			children = (
 			);
 			path = BaseRouter;
+			sourceTree = "<group>";
+		};
+		199A07532428FD5B002E3A15 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				199A07542428FD6A002E3A15 /* ViewAssembler */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		199A07542428FD6A002E3A15 /* ViewAssembler */ = {
+			isa = PBXGroup;
+			children = (
+				199A07552428FD81002E3A15 /* ViewAssembler.swift */,
+			);
+			path = ViewAssembler;
 			sourceTree = "<group>";
 		};
 		768177653A31C0F480BF87B0 /* Pods */ = {
@@ -577,13 +596,14 @@
 			files = (
 				194337652427B6DB00050CB0 /* SecondViewController.swift in Sources */,
 				1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */,
-				199A074D2428EBCC002E3A15 /* ViewModule.swift in Sources */,
+				199A074D2428EBCC002E3A15 /* Assembly.swift in Sources */,
 				194337632427B6DB00050CB0 /* HomeViewController.swift in Sources */,
 				192EF9DE2427C19900190D7B /* LoginViewController.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
 				198CB63D2427E61E00E1638F /* BaseViewController.swift in Sources */,
 				198CB6322427D8D200E1638F /* NibView.swift in Sources */,
 				192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */,
+				199A07562428FD81002E3A15 /* ViewAssembler.swift in Sources */,
 				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,
 				198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */,
 				192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */,
