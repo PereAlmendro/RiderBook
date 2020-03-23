@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -298,7 +298,6 @@
 				50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */,
 				A08A3933B3975FFF8F29AE0B /* Pods-RiderBookTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -739,6 +738,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
@@ -758,6 +758,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 580BF0E91CF67A73FE34D248 /* Pods-RiderBook.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
@@ -777,7 +778,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
@@ -800,7 +801,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A08A3933B3975FFF8F29AE0B /* Pods-RiderBookTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
@@ -823,7 +824,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 14AC98EB8D07CBFA6C9716DB /* Pods-RiderBook-RiderBookUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
 				INFOPLIST_FILE = RiderBookUITests/Info.plist;
@@ -844,7 +845,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F3A2F9D576F84A4597A0B13 /* Pods-RiderBook-RiderBookUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
 				INFOPLIST_FILE = RiderBookUITests/Info.plist;
