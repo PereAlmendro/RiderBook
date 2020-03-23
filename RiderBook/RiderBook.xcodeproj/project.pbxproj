@@ -28,6 +28,8 @@
 		198CB6372427DDBA00E1638F /* RBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6362427DDBA00E1638F /* RBTextField.swift */; };
 		198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6382427E56900E1638F /* LoginPresenter.swift */; };
 		198CB63D2427E61E00E1638F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB63C2427E61E00E1638F /* BaseViewController.swift */; };
+		199A074D2428EBCC002E3A15 /* ViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A074A2428EBCC002E3A15 /* ViewModule.swift */; };
+		199A07522428F30D002E3A15 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 199A07512428F30D002E3A15 /* LoginViewController.xib */; };
 		3D4375E4847972E64AB5A282 /* Pods_RiderBook_RiderBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C357C6A656C4CF69C35876C /* Pods_RiderBook_RiderBookUITests.framework */; };
 		624845AEC4F9B6D565D5BDC3 /* Pods_RiderBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7E1DA9D7FE3C074E192F83 /* Pods_RiderBookTests.framework */; };
 		B0411AA3AD476E8A27B5A428 /* Pods_RiderBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E1BAB2AB70C897429CB477 /* Pods_RiderBook.framework */; };
@@ -79,6 +81,8 @@
 		198CB6362427DDBA00E1638F /* RBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTextField.swift; sourceTree = "<group>"; };
 		198CB6382427E56900E1638F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		198CB63C2427E61E00E1638F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		199A074A2428EBCC002E3A15 /* ViewModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModule.swift; sourceTree = "<group>"; };
+		199A07512428F30D002E3A15 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.debug.xcconfig"; sourceTree = "<group>"; };
 		50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBookTests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBookTests/Pods-RiderBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		580BF0E91CF67A73FE34D248 /* Pods-RiderBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.release.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +135,7 @@
 				198CB63A2427E5FD00E1638F /* Base */,
 				192EF9E42427C65200190D7B /* Extensions */,
 				192EF9DF2427C58500190D7B /* Components */,
-				192EF9DC2427C13800190D7B /* EntryPoint */,
+				192EF9DC2427C13800190D7B /* Views */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -149,27 +153,28 @@
 			children = (
 				192EF9DD2427C19900190D7B /* LoginViewController.swift */,
 				198CB6382427E56900E1638F /* LoginPresenter.swift */,
+				199A07512428F30D002E3A15 /* LoginViewController.xib */,
 			);
 			path = LoginViewController;
 			sourceTree = "<group>";
 		};
-		192EF9DB2427C12600190D7B /* TabViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				192EF9D92427C0E900190D7B /* secondVC */,
-				192EF9D72427C0D300190D7B /* Home */,
-			);
-			path = TabViewControllers;
-			sourceTree = "<group>";
-		};
-		192EF9DC2427C13800190D7B /* EntryPoint */ = {
+		192EF9DB2427C12600190D7B /* MainTabs */ = {
 			isa = PBXGroup;
 			children = (
 				194337662427B6DB00050CB0 /* Main.storyboard */,
-				192EF9DA2427C0F000190D7B /* LoginViewController */,
-				192EF9DB2427C12600190D7B /* TabViewControllers */,
+				192EF9D92427C0E900190D7B /* secondVC */,
+				192EF9D72427C0D300190D7B /* Home */,
 			);
-			path = EntryPoint;
+			path = MainTabs;
+			sourceTree = "<group>";
+		};
+		192EF9DC2427C13800190D7B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				192EF9DA2427C0F000190D7B /* LoginViewController */,
+				192EF9DB2427C12600190D7B /* MainTabs */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		192EF9DF2427C58500190D7B /* Components */ = {
@@ -216,6 +221,7 @@
 		1943375D2427B6DB00050CB0 /* RiderBook */ = {
 			isa = PBXGroup;
 			children = (
+				199A07472428EBCC002E3A15 /* DI */,
 				192EF9D82427C0DF00190D7B /* Presentation */,
 				1943375E2427B6DB00050CB0 /* AppDelegate.swift */,
 				194337602427B6DB00050CB0 /* SceneDelegate.swift */,
@@ -274,6 +280,7 @@
 		198CB63A2427E5FD00E1638F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				199A074E2428EDF8002E3A15 /* BaseRouter */,
 				198CB63B2427E60400E1638F /* BaseViewController */,
 				198CB6302427D8C300E1638F /* NibView */,
 			);
@@ -286,6 +293,21 @@
 				198CB63C2427E61E00E1638F /* BaseViewController.swift */,
 			);
 			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		199A07472428EBCC002E3A15 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				199A074A2428EBCC002E3A15 /* ViewModule.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		199A074E2428EDF8002E3A15 /* BaseRouter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseRouter;
 			sourceTree = "<group>";
 		};
 		768177653A31C0F480BF87B0 /* Pods */ = {
@@ -422,6 +444,7 @@
 			files = (
 				194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */,
 				192EF9E32427C63600190D7B /* RBButton.xib in Resources */,
+				199A07522428F30D002E3A15 /* LoginViewController.xib in Resources */,
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
 				198CB6352427DDA900E1638F /* RBTextField.xib in Resources */,
 				194337682427B6DB00050CB0 /* Main.storyboard in Resources */,
@@ -554,6 +577,7 @@
 			files = (
 				194337652427B6DB00050CB0 /* SecondViewController.swift in Sources */,
 				1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */,
+				199A074D2428EBCC002E3A15 /* ViewModule.swift in Sources */,
 				194337632427B6DB00050CB0 /* HomeViewController.swift in Sources */,
 				192EF9DE2427C19900190D7B /* LoginViewController.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
