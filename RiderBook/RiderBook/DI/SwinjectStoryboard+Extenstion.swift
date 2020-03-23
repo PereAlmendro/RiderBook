@@ -7,8 +7,10 @@
 //
 
 import Foundation
-import Swinject
+import SwinjectStoryboard
 
-protocol Assembly {
-    func assemble(container: Container)
+public extension SwinjectStoryboard {
+    class func setup() {
+        ViewModule.setup(defaultContainer)
+    }
 }

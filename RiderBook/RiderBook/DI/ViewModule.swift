@@ -9,19 +9,19 @@
 import Foundation
 import Swinject
 
-class ViewAssembler: Assembly {
-    func assemble(container: Container) {
+class ViewModule {
+    static func setup(_ container: Container) {
         resolvePresenters(container)
         resolveViewControllers(container)
     }
     
-    func resolvePresenters(_ container: Container) {
+    static func resolvePresenters(_ container: Container) {
         container.register(LoginPresenter.self) { _ in
             LoginPresenter()
         }
     }
     
-    func resolveViewControllers(_ container: Container) {
+    static func resolveViewControllers(_ container: Container) {
         container.register(LoginViewController.self) { r in
             let view = LoginViewController()
             view.presenter = r.resolve(LoginPresenter.self)!

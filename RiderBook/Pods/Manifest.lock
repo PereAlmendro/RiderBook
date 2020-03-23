@@ -6,11 +6,14 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.0)
   - Swinject (2.6.2)
+  - SwinjectStoryboard (2.2.0):
+    - Swinject (~> 2.6)
 
 DEPENDENCIES:
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
   - Swinject (~> 2.6.2)
+  - SwinjectStoryboard (~> 2.2.0)
 
 SPEC REPOS:
   trunk:
@@ -18,13 +21,15 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - Swinject
+    - SwinjectStoryboard
 
 SPEC CHECKSUMS:
   RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
   RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 7dd9e720108aa7e60abeeac2def8a2630bd71da2
+PODFILE CHECKSUM: 1b0250bc03a14890af46a28459a5d00313b15266
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
