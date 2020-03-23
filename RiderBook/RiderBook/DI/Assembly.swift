@@ -7,10 +7,8 @@
 //
 
 import Foundation
-//import Swinject
+import Swinject
 
 protocol Assembly {
-//    func assemble(container: Container) {
-//
-//    }
+    func assemble(container: Container)
 }

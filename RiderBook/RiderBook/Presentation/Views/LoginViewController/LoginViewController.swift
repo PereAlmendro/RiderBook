@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {// BaseViewController<LoginPresenter> {
+class LoginViewController: BaseViewController<LoginPresenter> {
     
     // MARK: - Outlets
     

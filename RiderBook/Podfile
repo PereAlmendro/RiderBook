@@ -8,7 +8,7 @@ target 'RiderBook' do
   # Pods for RiderBook
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
-  # pod 'Swinject', '~> 1.1.4'
+  pod 'Swinject', '~> 2.6.2'
 	
   target 'RiderBookTests' do
     inherit! :search_paths
