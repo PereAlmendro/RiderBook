@@ -18,4 +18,9 @@ class PresenterModule {
         container.register(LoginPresenter.self) { r in
             LoginPresenter(router: r.resolve(Router.self)!)
         }
+        
+        container.register(HomePresenter.self) { r in
+            let presenter = HomePresenter(router: r.resolve(Router.self)!)
+            return presenter
+        }
     }}

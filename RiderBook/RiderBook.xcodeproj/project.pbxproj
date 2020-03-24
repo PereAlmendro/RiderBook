@@ -35,6 +35,9 @@
 		199A076224295970002E3A15 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A076124295970002E3A15 /* BasePresenter.swift */; };
 		199A076424295988002E3A15 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A076324295988002E3A15 /* Screen.swift */; };
 		199A07662429599B002E3A15 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A07652429599B002E3A15 /* BaseView.swift */; };
+		19C56079242A960D005C80CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C56077242A960D005C80CB /* HomeViewController.swift */; };
+		19C5607A242A960D005C80CB /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C56078242A960D005C80CB /* HomeViewController.xib */; };
+		19C5607C242A96B9005C80CB /* homePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C5607B242A96B9005C80CB /* homePresenter.swift */; };
 		3D4375E4847972E64AB5A282 /* Pods_RiderBook_RiderBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C357C6A656C4CF69C35876C /* Pods_RiderBook_RiderBookUITests.framework */; };
 		624845AEC4F9B6D565D5BDC3 /* Pods_RiderBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7E1DA9D7FE3C074E192F83 /* Pods_RiderBookTests.framework */; };
 		B0411AA3AD476E8A27B5A428 /* Pods_RiderBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E1BAB2AB70C897429CB477 /* Pods_RiderBook.framework */; };
@@ -93,6 +96,9 @@
 		199A076124295970002E3A15 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		199A076324295988002E3A15 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		199A07652429599B002E3A15 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		19C56077242A960D005C80CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		19C56078242A960D005C80CB /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		19C5607B242A96B9005C80CB /* homePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePresenter.swift; sourceTree = "<group>"; };
 		4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.debug.xcconfig"; sourceTree = "<group>"; };
 		50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBookTests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBookTests/Pods-RiderBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		580BF0E91CF67A73FE34D248 /* Pods-RiderBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.release.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -302,6 +308,7 @@
 		199A076A24295A67002E3A15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				19C56076242A95D1005C80CB /* HomeViewController */,
 				192EF9DA2427C0F000190D7B /* LoginViewController */,
 			);
 			path = ViewControllers;
@@ -315,6 +322,16 @@
 				199A075F242958C1002E3A15 /* ViewControllerModule.swift */,
 			);
 			path = DIModules;
+			sourceTree = "<group>";
+		};
+		19C56076242A95D1005C80CB /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				19C56077242A960D005C80CB /* HomeViewController.swift */,
+				19C56078242A960D005C80CB /* HomeViewController.xib */,
+				19C5607B242A96B9005C80CB /* homePresenter.swift */,
+			);
+			path = HomeViewController;
 			sourceTree = "<group>";
 		};
 		768177653A31C0F480BF87B0 /* Pods */ = {
@@ -454,6 +471,7 @@
 				199A07522428F30D002E3A15 /* LoginViewController.xib in Resources */,
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
 				198CB6352427DDA900E1638F /* RBTextField.xib in Resources */,
+				19C5607A242A960D005C80CB /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,10 +602,12 @@
 				1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */,
 				199A074D2428EBCC002E3A15 /* SwinjectStoryboard+Extenstion.swift in Sources */,
 				199A0760242958C1002E3A15 /* ViewControllerModule.swift in Sources */,
+				19C5607C242A96B9005C80CB /* homePresenter.swift in Sources */,
 				192EF9DE2427C19900190D7B /* LoginViewController.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
 				199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */,
 				198CB63D2427E61E00E1638F /* BaseViewController.swift in Sources */,
+				19C56079242A960D005C80CB /* HomeViewController.swift in Sources */,
 				198CB6322427D8D200E1638F /* NibView.swift in Sources */,
 				192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */,
 				199A076224295970002E3A15 /* BasePresenter.swift in Sources */,

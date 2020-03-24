@@ -16,9 +16,20 @@ class ViewControllerModule {
     }
     
     static func resolveViewControllers(_ container: Container) {
+        
+        // MARK: - Login
+        
         container.register(LoginViewController.self) { r in
             let view = LoginViewController()
             view.presenter = r.resolve(LoginPresenter.self)!
+            return view
+        }
+        
+        // MARK: - Home
+        
+        container.register(HomeViewController.self) { r in
+            let view = HomeViewController()
+            view.presenter = r.resolve(HomePresenter.self)!
             return view
         }
     }
