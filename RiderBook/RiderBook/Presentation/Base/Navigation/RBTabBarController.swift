@@ -11,6 +11,7 @@ import SwinjectStoryboard
 
 public enum TabItem: Int {
     case home
+    case profile
 }
 
 public class RBTabBarController: NSObject, UITabBarControllerDelegate {
@@ -26,19 +27,27 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
         super.init()
     }
     
-    func selectTab(tab: TabItem) {
-        tabBarController.selectedIndex = tab.rawValue
-    }
-    
     func configureTabs() {
         // HomeViewController
         let homeVC = SwinjectStoryboard.defaultContainer.resolve(HomeViewController.self)!
         homeVC.modalPresentationStyle = .fullScreen
-        let tabItem = UITabBarItem(title: "HOME", image: nil, selectedImage: nil)
-        homeVC.tabBarItem = tabItem
+        
+        let homeTabItem = UITabBarItem(title: String(),
+                                   image: UIImage(named: "home_off")?.withRenderingMode(.alwaysOriginal),
+                                   selectedImage: UIImage(named: "home_on")?.withRenderingMode(.alwaysOriginal))
+        homeVC.tabBarItem = homeTabItem
+        
+        // ProfileViewController
+        let profileVC = SwinjectStoryboard.defaultContainer.resolve(ProfileViewController.self)!
+        profileVC.modalPresentationStyle = .fullScreen
+        
+        let profileTabItem = UITabBarItem(title: String(),
+                                   image: UIImage(named: "profile_off")?.withRenderingMode(.alwaysOriginal),
+                                   selectedImage: UIImage(named: "profile_on")?.withRenderingMode(.alwaysOriginal))
+        profileVC.tabBarItem = profileTabItem
         
         // Set ViewControllers
-        tabBarController.setViewControllers([homeVC], animated: false)
+        tabBarController.setViewControllers([homeVC, profileVC], animated: false)
         
         // Set defaults
         tabBarController.selectedViewController = homeVC

@@ -26,5 +26,9 @@ class RouterModule{
         container.register(HomeRouter.self) { r in
             HomeRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
         }
+        
+        container.register(ProfileRouter.self) { r in
+            ProfileRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+        }
     }
 }

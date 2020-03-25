@@ -22,4 +22,8 @@ class PresenterModule {
         container.register(HomePresenter.self) { r in
             HomePresenter(homeRouter: r.resolve(HomeRouter.self)!)
         }
+        
+        container.register(ProfilePresenter.self) { r in
+            ProfilePresenter(profileRouter: r.resolve(ProfileRouter.self)!)
+        }
     }}

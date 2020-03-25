@@ -22,6 +22,10 @@
 		195908C7242B54FF0053374B /* RBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908C6242B54FF0053374B /* RBTabBarController.swift */; };
 		195908CE242B56A30053374B /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908CD242B56A30053374B /* LoginRouter.swift */; };
 		195908D1242B585F0053374B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908D0242B585F0053374B /* HomeRouter.swift */; };
+		195908DD242B77F90053374B /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908D6242B77F90053374B /* ProfilePresenter.swift */; };
+		195908DE242B77F90053374B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195908D8242B77F90053374B /* ProfileViewController.xib */; };
+		195908DF242B77F90053374B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908D9242B77F90053374B /* ProfileViewController.swift */; };
+		195908E0242B77F90053374B /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908DC242B77F90053374B /* ProfileRouter.swift */; };
 		198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6272427C8A000E1638F /* UIFont+Extension.swift */; };
 		198CB6322427D8D200E1638F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6312427D8D200E1638F /* NibView.swift */; };
 		198CB6352427DDA900E1638F /* RBTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198CB6342427DDA900E1638F /* RBTextField.xib */; };
@@ -86,6 +90,10 @@
 		195908C6242B54FF0053374B /* RBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTabBarController.swift; sourceTree = "<group>"; };
 		195908CD242B56A30053374B /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		195908D0242B585F0053374B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		195908D6242B77F90053374B /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		195908D8242B77F90053374B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		195908D9242B77F90053374B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		195908DC242B77F90053374B /* ProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		198CB6272427C8A000E1638F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		198CB6312427D8D200E1638F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		198CB6342427DDA900E1638F /* RBTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBTextField.xib; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		192EF9DA2427C0F000190D7B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				195908D3242B5F050053374B /* Interactor */,
 				195908CC242B56970053374B /* Router */,
 				195908CB242B56650053374B /* Presenter */,
 				195908C8242B55FD0053374B /* View */,
@@ -291,6 +300,63 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		195908D2242B5EF80053374B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		195908D3242B5F050053374B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		195908D4242B77F90053374B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				195908D5242B77F90053374B /* Presenter */,
+				195908D7242B77F90053374B /* View */,
+				195908DA242B77F90053374B /* Interactor */,
+				195908DB242B77F90053374B /* Router */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		195908D5242B77F90053374B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				195908D6242B77F90053374B /* ProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		195908D7242B77F90053374B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				195908D8242B77F90053374B /* ProfileViewController.xib */,
+				195908D9242B77F90053374B /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		195908DA242B77F90053374B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		195908DB242B77F90053374B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				195908DC242B77F90053374B /* ProfileRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		198CB62F2427D8BD00E1638F /* RBButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +423,7 @@
 		199A076A24295A67002E3A15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				195908D4242B77F90053374B /* Profile */,
 				19C56076242A95D1005C80CB /* Home */,
 				192EF9DA2427C0F000190D7B /* Login */,
 			);
@@ -376,6 +443,7 @@
 		19C56076242A95D1005C80CB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				195908D2242B5EF80053374B /* Interactor */,
 				195908CF242B58530053374B /* Router */,
 				195908C9242B56450053374B /* View */,
 				195908CA242B56510053374B /* Presenter */,
@@ -515,6 +583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				195908DE242B77F90053374B /* ProfileViewController.xib in Resources */,
 				194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */,
 				192EF9E32427C63600190D7B /* RBButton.xib in Resources */,
 				199A07522428F30D002E3A15 /* LoginViewController.xib in Resources */,
@@ -666,11 +735,14 @@
 				199A07562428FD81002E3A15 /* PresenterModule.swift in Sources */,
 				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,
 				199A075C2429530F002E3A15 /* BaseRouter.swift in Sources */,
+				195908DF242B77F90053374B /* ProfileViewController.swift in Sources */,
 				198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */,
 				195908D1242B585F0053374B /* HomeRouter.swift in Sources */,
 				199A076424295988002E3A15 /* Screen.swift in Sources */,
+				195908E0242B77F90053374B /* ProfileRouter.swift in Sources */,
 				192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */,
 				198CB6372427DDBA00E1638F /* RBTextField.swift in Sources */,
+				195908DD242B77F90053374B /* ProfilePresenter.swift in Sources */,
 				199A07662429599B002E3A15 /* BaseView.swift in Sources */,
 				198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,

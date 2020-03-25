@@ -32,5 +32,13 @@ class ViewControllerModule {
             view.presenter = r.resolve(HomePresenter.self)!
             return view
         }
+        
+        // MARK: - Profile
+        
+        container.register(ProfileViewController.self) { r in
+            let view = ProfileViewController()
+            view.presenter = r.resolve(ProfilePresenter.self)!
+            return view
+        }
     }
 }
