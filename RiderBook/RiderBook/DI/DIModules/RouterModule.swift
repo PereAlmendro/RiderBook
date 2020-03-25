@@ -15,8 +15,16 @@ class RouterModule{
     }
     
     static func resolveRouter(_ container: Container) {
-        container.register(Router.self) { _ in
-            Router()
+        container.register(BaseRouter.self) { _ in
+            BaseRouterImpl()
         }.inObjectScope(.container)
+        
+        container.register(LoginRouter.self) { r in
+            LoginRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+        }
+        
+        container.register(HomeRouter.self) { r in
+            HomeRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+        }
     }
 }

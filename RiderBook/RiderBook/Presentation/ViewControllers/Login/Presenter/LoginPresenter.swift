@@ -10,6 +10,14 @@ import Foundation
 
 class LoginPresenter: BasePresenter {
     
+    private var loginRouter: LoginRouter
+    
+    // MARK: - Lyfecycle
+    
+    init(loginRouter: LoginRouter) {
+        self.loginRouter = loginRouter
+    }
+    
     // MARK: - User Actions
     
     func loginButtonAction() {
@@ -17,6 +25,6 @@ class LoginPresenter: BasePresenter {
     }
     
     func guestButtonAction() {
-        router.openHome()
+        loginRouter.continueAsGuest()
     }
 }

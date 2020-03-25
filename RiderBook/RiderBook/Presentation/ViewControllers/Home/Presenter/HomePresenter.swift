@@ -10,4 +10,10 @@ import Foundation
 
 class HomePresenter: BasePresenter {
     
+    private let homeRouter: HomeRouter
+    
+    init(homeRouter: HomeRouter) {
+        self.homeRouter = homeRouter
+    }
+        
 }

@@ -16,11 +16,10 @@ class PresenterModule {
     
     static func resolvePresenters(_ container: Container) {
         container.register(LoginPresenter.self) { r in
-            LoginPresenter(router: r.resolve(Router.self)!)
+            LoginPresenter(loginRouter: r.resolve(LoginRouter.self)!)
         }
         
         container.register(HomePresenter.self) { r in
-            let presenter = HomePresenter(router: r.resolve(Router.self)!)
-            return presenter
+            HomePresenter(homeRouter: r.resolve(HomeRouter.self)!)
         }
     }}

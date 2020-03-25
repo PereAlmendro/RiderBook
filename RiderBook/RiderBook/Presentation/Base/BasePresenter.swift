@@ -12,11 +12,9 @@ import RxSwift
 class BasePresenter: NSObject {
     
     var disposeBag: DisposeBag
-    var router: Router
     weak var view: BaseView?
     
-    init(router: Router) {
-        self.router = router
+    override init() {
         disposeBag = DisposeBag()
         super.init()
     }
