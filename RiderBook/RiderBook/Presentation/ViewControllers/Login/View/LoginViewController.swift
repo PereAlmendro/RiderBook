@@ -28,19 +28,19 @@ class LoginViewController: BaseViewController<LoginPresenter> {
     // MARK: - Private
     
     private func setupButtons() {
-        loginButton.setTitle(text: "¡Entra!")
+        loginButton.setTitle(text: "Enter!".localized())
         loginButton.delegate = self
         
-        guestButton.setTitle(text: "¡Entra como invitado!")
+        guestButton.setTitle(text: "Join as guest!".localized())
         guestButton.delegate = self
     }
     
     private func setupTextFields() {
         usernameTextField.setKeyboardType(keyboadrdType: .emailAddress)
-        usernameTextField.setplaceholder(placeholder: "Email")
+        usernameTextField.setplaceholder(placeholder: "Email".localized())
         
         passwordTextField.secureType()
-        passwordTextField.setplaceholder(placeholder: "Password")
+        passwordTextField.setplaceholder(placeholder: "Password".localized())
     }
 }
 

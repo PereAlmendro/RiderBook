@@ -28,6 +28,8 @@
 		195908E0242B77F90053374B /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908DC242B77F90053374B /* ProfileRouter.swift */; };
 		195908E5242B81F50053374B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908E3242B81F50053374B /* HomeTableViewCell.swift */; };
 		195908E6242B81F50053374B /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195908E4242B81F50053374B /* HomeTableViewCell.xib */; };
+		1969F9AB242BD58400300C1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1969F9AD242BD58400300C1B /* Localizable.strings */; };
+		1969F9B3242BD6CC00300C1B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969F9B2242BD6CC00300C1B /* String+Extension.swift */; };
 		198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6272427C8A000E1638F /* UIFont+Extension.swift */; };
 		198CB6322427D8D200E1638F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6312427D8D200E1638F /* NibView.swift */; };
 		198CB6352427DDA900E1638F /* RBTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198CB6342427DDA900E1638F /* RBTextField.xib */; };
@@ -100,6 +102,12 @@
 		195908DC242B77F90053374B /* ProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		195908E3242B81F50053374B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		195908E4242B81F50053374B /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		1969F9AC242BD58400300C1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1969F9AE242BD5B200300C1B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1969F9AF242BD5B200300C1B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1969F9B0242BD5BA00300C1B /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1969F9B1242BD5BA00300C1B /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1969F9B2242BD6CC00300C1B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		198CB6272427C8A000E1638F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		198CB6312427D8D200E1638F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		198CB6342427DDA900E1638F /* RBTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBTextField.xib; sourceTree = "<group>"; };
@@ -200,6 +208,7 @@
 				192EF9E72427C70100190D7B /* UIColor+Extension.swift */,
 				198CB6272427C8A000E1638F /* UIFont+Extension.swift */,
 				199A075924294F1D002E3A15 /* UIApplication+extension.swift */,
+				1969F9B2242BD6CC00300C1B /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 				1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */,
 				194337712427B6DD00050CB0 /* Info.plist */,
 				194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */,
+				1969F9AD242BD58400300C1B /* Localizable.strings */,
 			);
 			path = RiderBook;
 			sourceTree = "<group>";
@@ -609,6 +619,8 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				ca,
 			);
 			mainGroup = 194337522427B6DB00050CB0;
 			productRefGroup = 1943375C2427B6DB00050CB0 /* Products */;
@@ -632,6 +644,7 @@
 				195908E6242B81F50053374B /* HomeTableViewCell.xib in Resources */,
 				198DD818242B8F5C00388CF0 /* ProfileDashboardView.xib in Resources */,
 				192EF9E32427C63600190D7B /* RBButton.xib in Resources */,
+				1969F9AB242BD58400300C1B /* Localizable.strings in Resources */,
 				199A07522428F30D002E3A15 /* LoginViewController.xib in Resources */,
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
 				198CB6352427DDA900E1638F /* RBTextField.xib in Resources */,
@@ -779,6 +792,7 @@
 				192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */,
 				199A076224295970002E3A15 /* BasePresenter.swift in Sources */,
 				199A075E24295858002E3A15 /* RouterModule.swift in Sources */,
+				1969F9B3242BD6CC00300C1B /* String+Extension.swift in Sources */,
 				199A07562428FD81002E3A15 /* PresenterModule.swift in Sources */,
 				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,
 				199A075C2429530F002E3A15 /* BaseRouter.swift in Sources */,
@@ -833,8 +847,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				1943376F2427B6DD00050CB0 /* Base */,
+				1969F9AE242BD5B200300C1B /* es */,
+				1969F9B0242BD5BA00300C1B /* ca */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1969F9AD242BD58400300C1B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1969F9AC242BD58400300C1B /* en */,
+				1969F9AF242BD5B200300C1B /* es */,
+				1969F9B1242BD5BA00300C1B /* ca */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -844,6 +870,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -904,6 +931,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

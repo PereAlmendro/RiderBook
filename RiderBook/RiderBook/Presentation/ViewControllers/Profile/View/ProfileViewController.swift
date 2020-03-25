@@ -12,6 +12,6 @@ class ProfileViewController: BaseViewController<ProfilePresenter> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Profile"
+        navigationItem.title = "Profile".localized()
     }
 }

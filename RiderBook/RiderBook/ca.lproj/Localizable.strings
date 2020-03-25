@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  RiderBook
+
+  Created by Pere Almendro on 25/03/2020.
+  Copyright © 2020 Pere Almendro. All rights reserved.
+*/
+
+"Rider book" = "Rider book";
+"Profile" = "Perfil";
+"Enter!" = "Entra!";
+"Join as guest!" = "Entra d\'invitat!";
+"Email" = "Email";
+"Password" = "Contrasenya";
