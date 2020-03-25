@@ -425,10 +425,18 @@
 		198DD814242B8F2100388CF0 /* DashboardViews */ = {
 			isa = PBXGroup;
 			children = (
+				198DD819242B9C1B00388CF0 /* Profile */,
+			);
+			path = DashboardViews;
+			sourceTree = "<group>";
+		};
+		198DD819242B9C1B00388CF0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
 				198DD815242B8F4D00388CF0 /* ProfileDashboardView.swift */,
 				198DD817242B8F5C00388CF0 /* ProfileDashboardView.xib */,
 			);
-			path = DashboardViews;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		199A07472428EBCC002E3A15 /* DI */ = {
