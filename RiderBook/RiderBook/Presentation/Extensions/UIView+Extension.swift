@@ -14,17 +14,30 @@ extension UIView {
         let nibName = type(of: self).description().components(separatedBy: ".").last!
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
-        addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubviewWithFillingConstraints(view)
+    }
+    
+    func addSubviewWithFillingConstraints(_ subView: UIView) {
+        addSubview(subView)
+        subView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: view.topAnchor),
-            leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            topAnchor.constraint(equalTo: subView.topAnchor),
+            leadingAnchor.constraint(equalTo: subView.leadingAnchor),
+            trailingAnchor.constraint(equalTo: subView.trailingAnchor),
+            bottomAnchor.constraint(equalTo: subView.bottomAnchor)
         ])
     }
     
-    func roundCorners() {
-        layer.cornerRadius = 10
+    func roundCorners(radius: CGFloat = 10) {
+        layer.masksToBounds = true
+        layer.cornerRadius = radius
+        layer.borderColor = UIColor.black.cgColor
+    }
+    
+    func addShadow() {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 0, height: 2)
     }
 }

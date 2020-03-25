@@ -7,13 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 class HomePresenter: BasePresenter {
     
     private let homeRouter: HomeRouter
+    var dataSource: [UIView] = []
     
     init(homeRouter: HomeRouter) {
         self.homeRouter = homeRouter
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        // Profile
+        let profileDashboardView = ProfileDashboardView()
+        dataSource.append(profileDashboardView)
+        
+    }
 }

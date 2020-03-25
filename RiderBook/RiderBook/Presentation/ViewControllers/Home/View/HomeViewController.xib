@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="RiderBook" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="2Ll-1X-lay" id="cnl-dw-KRz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,13 +18,30 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r44-ZM-7BP">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r44-ZM-7BP">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ll-1X-lay">
+                            <rect key="frame" x="0.0" y="20" width="414" height="798"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="2Ll-1X-lay" secondAttribute="trailing" id="C1e-mu-NpO"/>
+                        <constraint firstAttribute="bottom" secondItem="2Ll-1X-lay" secondAttribute="bottom" id="SBe-qc-hJC"/>
+                        <constraint firstItem="2Ll-1X-lay" firstAttribute="leading" secondItem="r44-ZM-7BP" secondAttribute="leading" id="wiN-K6-TZc"/>
+                        <constraint firstItem="2Ll-1X-lay" firstAttribute="top" secondItem="r44-ZM-7BP" secondAttribute="top" constant="20" id="wvb-5x-UlE"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="r44-ZM-7BP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7wq-n7-X0z"/>
+                <constraint firstItem="r44-ZM-7BP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NnJ-Xj-HIk"/>
+                <constraint firstItem="r44-ZM-7BP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uFC-J6-dwp"/>
+                <constraint firstItem="r44-ZM-7BP" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="xmp-jU-V9S"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>

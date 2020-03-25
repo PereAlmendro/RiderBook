@@ -30,16 +30,23 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
     func configureTabs() {
         // HomeViewController
         let homeVC = SwinjectStoryboard.defaultContainer.resolve(HomeViewController.self)!
-        homeVC.modalPresentationStyle = .fullScreen
+        let homeNavController = UINavigationController(rootViewController: homeVC)
+        homeNavController.modalPresentationStyle = .fullScreen
+        
         
         let homeTabItem = UITabBarItem(title: String(),
                                    image: UIImage(named: "home_off")?.withRenderingMode(.alwaysOriginal),
                                    selectedImage: UIImage(named: "home_on")?.withRenderingMode(.alwaysOriginal))
-        homeVC.tabBarItem = homeTabItem
+        homeNavController.tabBarItem = homeTabItem
+        
+        // TODO: RidesViewController
+        
+        // TODO: CalendarViewController
         
         // ProfileViewController
         let profileVC = SwinjectStoryboard.defaultContainer.resolve(ProfileViewController.self)!
-        profileVC.modalPresentationStyle = .fullScreen
+        let profileNavController = UINavigationController(rootViewController: profileVC)
+        profileNavController.modalPresentationStyle = .fullScreen
         
         let profileTabItem = UITabBarItem(title: String(),
                                    image: UIImage(named: "profile_off")?.withRenderingMode(.alwaysOriginal),
@@ -47,10 +54,10 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
         profileVC.tabBarItem = profileTabItem
         
         // Set ViewControllers
-        tabBarController.setViewControllers([homeVC, profileVC], animated: false)
+        tabBarController.setViewControllers([homeNavController, profileNavController], animated: false)
         
         // Set defaults
-        tabBarController.selectedViewController = homeVC
+        tabBarController.selectedViewController = homeNavController
         tabBarController.modalPresentationStyle = .fullScreen
     }
 }
