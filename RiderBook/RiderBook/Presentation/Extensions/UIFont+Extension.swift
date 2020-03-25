@@ -9,7 +9,11 @@
 import UIKit
 
 extension UIFont {
-    static func helveticaRegular(size: CGFloat) -> UIFont? {
-        return UIFont(name: "", size: size)
+    static func arialMT(size: CGFloat) -> UIFont? {
+        return UIFont(name: "ArialMT", size: size)
+    }
+    
+    static func arialboldMT(size: CGFloat) -> UIFont? {
+        return UIFont(name: "Arial-BoldMT", size: size)
     }
 }
