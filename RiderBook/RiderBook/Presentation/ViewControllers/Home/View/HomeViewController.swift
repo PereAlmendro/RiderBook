@@ -14,7 +14,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Rider book"
+        navigationItem.title = "Rider book"
         setupTableView()
         tableView.reloadData()
     }

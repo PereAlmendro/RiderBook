@@ -12,6 +12,6 @@ class ProfileViewController: BaseViewController<ProfilePresenter> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Profile"
+        navigationItem.title = "Profile"
     }
 }

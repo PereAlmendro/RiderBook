@@ -35,8 +35,8 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
         
         
         let homeTabItem = UITabBarItem(title: String(),
-                                   image: UIImage(named: "home_off")?.withRenderingMode(.alwaysOriginal),
-                                   selectedImage: UIImage(named: "home_on")?.withRenderingMode(.alwaysOriginal))
+                                       image: UIImage(named: "home_off")?.withRenderingMode(.alwaysOriginal),
+                                       selectedImage: UIImage(named: "home_on")?.withRenderingMode(.alwaysOriginal))
         homeNavController.tabBarItem = homeTabItem
         
         // TODO: RidesViewController
@@ -49,8 +49,8 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
         profileNavController.modalPresentationStyle = .fullScreen
         
         let profileTabItem = UITabBarItem(title: String(),
-                                   image: UIImage(named: "profile_off")?.withRenderingMode(.alwaysOriginal),
-                                   selectedImage: UIImage(named: "profile_on")?.withRenderingMode(.alwaysOriginal))
+                                          image: UIImage(named: "profile_off")?.withRenderingMode(.alwaysOriginal),
+                                          selectedImage: UIImage(named: "profile_on")?.withRenderingMode(.alwaysOriginal))
         profileVC.tabBarItem = profileTabItem
         
         // Set ViewControllers
