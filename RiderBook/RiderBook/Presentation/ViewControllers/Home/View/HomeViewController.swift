@@ -15,8 +15,9 @@ class HomeViewController: BaseViewController<HomePresenter> {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Rider book".localized()
+        
+        addBackgroundImage()
         setupTableView()
-        tableView.reloadData()
     }
     
     // MARK : - Private methods
@@ -28,6 +29,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
         tableView.dataSource = self
         tableView.register(HomeTableViewCell.nib,
                            forCellReuseIdentifier: HomeTableViewCell.identifier)
+        tableView.reloadData()
     }
 }
 

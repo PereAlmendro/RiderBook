@@ -48,6 +48,8 @@
 		199A076224295970002E3A15 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A076124295970002E3A15 /* BasePresenter.swift */; };
 		199A076424295988002E3A15 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A076324295988002E3A15 /* Screen.swift */; };
 		199A07662429599B002E3A15 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A07652429599B002E3A15 /* BaseView.swift */; };
+		19B692AB242CAB0200C9C43B /* CalendarDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B692A9242CAB0200C9C43B /* CalendarDashboardView.swift */; };
+		19B692AC242CAB0200C9C43B /* CalendarDashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B692AA242CAB0200C9C43B /* CalendarDashboardView.xib */; };
 		19C56079242A960D005C80CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C56077242A960D005C80CB /* HomeViewController.swift */; };
 		19C5607A242A960D005C80CB /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C56078242A960D005C80CB /* HomeViewController.xib */; };
 		19C5607C242A96B9005C80CB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C5607B242A96B9005C80CB /* HomePresenter.swift */; };
@@ -126,6 +128,8 @@
 		199A076124295970002E3A15 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		199A076324295988002E3A15 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		199A07652429599B002E3A15 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		19B692A9242CAB0200C9C43B /* CalendarDashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDashboardView.swift; sourceTree = "<group>"; };
+		19B692AA242CAB0200C9C43B /* CalendarDashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarDashboardView.xib; sourceTree = "<group>"; };
 		19C56077242A960D005C80CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		19C56078242A960D005C80CB /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		19C5607B242A96B9005C80CB /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -428,6 +432,7 @@
 		198DD814242B8F2100388CF0 /* DashboardViews */ = {
 			isa = PBXGroup;
 			children = (
+				19B692A8242CAB0200C9C43B /* Calendar */,
 				198DD819242B9C1B00388CF0 /* Profile */,
 			);
 			path = DashboardViews;
@@ -532,6 +537,15 @@
 				194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		19B692A8242CAB0200C9C43B /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				19B692A9242CAB0200C9C43B /* CalendarDashboardView.swift */,
+				19B692AA242CAB0200C9C43B /* CalendarDashboardView.xib */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		19C56076242A95D1005C80CB /* Home */ = {
@@ -689,6 +703,7 @@
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
 				198CB6352427DDA900E1638F /* RBTextField.xib in Resources */,
 				19C5607A242A960D005C80CB /* HomeViewController.xib in Resources */,
+				19B692AC242CAB0200C9C43B /* CalendarDashboardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +856,7 @@
 				195908D1242B585F0053374B /* HomeRouter.swift in Sources */,
 				199A076424295988002E3A15 /* Screen.swift in Sources */,
 				195908E0242B77F90053374B /* ProfileRouter.swift in Sources */,
+				19B692AB242CAB0200C9C43B /* CalendarDashboardView.swift in Sources */,
 				192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */,
 				198CB6372427DDBA00E1638F /* RBTextField.swift in Sources */,
 				198DD816242B8F4D00388CF0 /* ProfileDashboardView.swift in Sources */,

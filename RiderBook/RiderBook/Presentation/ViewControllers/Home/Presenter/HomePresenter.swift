@@ -25,5 +25,9 @@ class HomePresenter: BasePresenter {
         let profileDashboardView = ProfileDashboardView()
         dataSource.append(profileDashboardView)
         
+        // CalendarDashboardView
+        let calendarDashboardView = CalendarDashboardView()
+        dataSource.append(calendarDashboardView)
+        
     }
 }

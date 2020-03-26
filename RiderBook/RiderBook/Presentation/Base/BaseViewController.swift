@@ -39,4 +39,12 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
         super.viewDidDisappear(animated)
         presenter.viewDidDisappear()
     }
+    
+    func addBackgroundImage() {
+        let backgroundImage = UIImage(named: "background")?.withRenderingMode(.alwaysOriginal)
+        let backgroundImageView = UIImageView(image: backgroundImage)
+        backgroundImageView.contentMode = .scaleToFill
+        view.addSubviewWithFillingConstraints(backgroundImageView)
+        view.sendSubviewToBack(backgroundImageView)
+    }
 }
