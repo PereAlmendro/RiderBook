@@ -12,6 +12,7 @@ import SwinjectStoryboard
 
 protocol BaseRouter {
     func openHomeInitializingTabBar()
+    func select(tab: TabItem)
 }
 
 public class BaseRouterImpl: BaseRouter {
@@ -30,6 +31,10 @@ public class BaseRouterImpl: BaseRouter {
             .present(RBTabbar.tabBarController,
                      animated: true,
                      completion: nil)
+    }
+    
+    func select(tab: TabItem) {
+        RBTabbar.selectTab(at: tab.rawValue)
     }
     
 }

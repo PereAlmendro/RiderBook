@@ -8,7 +8,10 @@
 
 import Foundation
 
-protocol HomeRouter { }
+protocol HomeRouter {
+    func showCalendar()
+    func showProfile()
+}
 
 class HomeRouterImpl: HomeRouter {
     
@@ -16,5 +19,13 @@ class HomeRouterImpl: HomeRouter {
     
     init(baseRouter: BaseRouter) {
         self.baseRouter = baseRouter
+    }
+    
+    func showCalendar() {
+        baseRouter.select(tab: .calendar)
+    }
+    
+    func showProfile() {
+        baseRouter.select(tab: .profile)
     }
 }

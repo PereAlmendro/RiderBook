@@ -11,6 +11,7 @@ import SwinjectStoryboard
 
 public enum TabItem: Int {
     case home
+    case calendar
     case profile
 }
 
@@ -25,6 +26,10 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
     init(tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
         super.init()
+    }
+    
+    func selectTab(at index: Int) {
+        tabBarController.selectedIndex = index
     }
     
     func configureTabs() {

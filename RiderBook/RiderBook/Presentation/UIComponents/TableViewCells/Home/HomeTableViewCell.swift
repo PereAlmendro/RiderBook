@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct HomeCellViewModel {
+    let view: UIView
+    let row: HomeRow
+}
+
 class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var shadowView: UIView!
@@ -33,8 +38,8 @@ class HomeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureCell(with view: UIView) {
-        viewHolder.addSubviewWithFillingConstraints(view)
+    func configureCell(with viewModel: HomeCellViewModel) {
+        viewHolder.addSubviewWithFillingConstraints(viewModel.view)
     }
     
 }

@@ -35,7 +35,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        presenter.didSelectRow(at: indexPath)
     }
 }
 
@@ -48,8 +48,8 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier,
                                                  for: indexPath) as? HomeTableViewCell ?? HomeTableViewCell()
         
-        let view = presenter.dataSource[indexPath.row]
-        cell.configureCell(with: view)
+        let cellViewModel = presenter.dataSource[indexPath.row]
+        cell.configureCell(with: cellViewModel)
         
         return cell
     }
