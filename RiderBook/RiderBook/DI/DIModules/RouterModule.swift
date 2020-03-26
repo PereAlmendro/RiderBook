@@ -15,20 +15,35 @@ class RouterModule{
     }
     
     static func resolveRouter(_ container: Container) {
+
+        // MARK: - BaseRouter
+
         container.register(BaseRouter.self) { _ in
             BaseRouterImpl()
         }.inObjectScope(.container)
         
+        // MARK: - Login
+
         container.register(LoginRouter.self) { r in
             LoginRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
         }
         
+        // MARK: - Home
+
         container.register(HomeRouter.self) { r in
             HomeRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
         }
         
+        // MARK: - Profile
+        
         container.register(ProfileRouter.self) { r in
             ProfileRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+        }
+        
+        // MARK: - Calendar
+        
+        container.register(CalendarRouter.self) { r in
+            CalendarRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
         }
     }
 }

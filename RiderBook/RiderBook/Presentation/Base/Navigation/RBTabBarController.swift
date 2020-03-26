@@ -42,6 +42,14 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
         // TODO: RidesViewController
         
         // TODO: CalendarViewController
+        let calendarVC = SwinjectStoryboard.defaultContainer.resolve(CalendarViewController.self)!
+        let calendarNavController = UINavigationController(rootViewController: calendarVC)
+        calendarNavController.modalPresentationStyle = .fullScreen
+        
+        let calendarTabItem = UITabBarItem(title: String(),
+                                          image: UIImage(named: "calendar_off")?.withRenderingMode(.alwaysOriginal),
+                                          selectedImage: UIImage(named: "calendar_on")?.withRenderingMode(.alwaysOriginal))
+        calendarVC.tabBarItem = calendarTabItem
         
         // ProfileViewController
         let profileVC = SwinjectStoryboard.defaultContainer.resolve(ProfileViewController.self)!
@@ -54,7 +62,11 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
         profileVC.tabBarItem = profileTabItem
         
         // Set ViewControllers
-        tabBarController.setViewControllers([homeNavController, profileNavController], animated: false)
+        tabBarController.setViewControllers([
+            homeNavController,
+            calendarNavController,
+            profileNavController
+            ], animated: false)
         
         // Set defaults
         tabBarController.selectedViewController = homeNavController

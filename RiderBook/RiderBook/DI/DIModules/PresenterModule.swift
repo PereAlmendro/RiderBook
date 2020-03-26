@@ -15,15 +15,28 @@ class PresenterModule {
     }
     
     static func resolvePresenters(_ container: Container) {
+        
+        // MARK: - Login
+        
         container.register(LoginPresenter.self) { r in
             LoginPresenter(loginRouter: r.resolve(LoginRouter.self)!)
         }
+        
+        // MARK: - Home
         
         container.register(HomePresenter.self) { r in
             HomePresenter(homeRouter: r.resolve(HomeRouter.self)!)
         }
         
+        // MARK: - Profile
+        
         container.register(ProfilePresenter.self) { r in
             ProfilePresenter(profileRouter: r.resolve(ProfileRouter.self)!)
+        }
+        
+        // MARK: - Calendar
+        
+        container.register(CalendarPresenter.self) { r in
+            CalendarPresenter(calendarRouter: r.resolve(CalendarRouter.self)!)
         }
     }}

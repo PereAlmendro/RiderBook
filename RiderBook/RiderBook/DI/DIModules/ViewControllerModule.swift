@@ -40,5 +40,13 @@ class ViewControllerModule {
             view.presenter = r.resolve(ProfilePresenter.self)!
             return view
         }
+        
+        // MARK: - Calendar
+        
+        container.register(CalendarViewController.self) { r in
+            let view = CalendarViewController()
+            view.presenter = r.resolve(CalendarPresenter.self)!
+            return view
+        }
     }
 }
