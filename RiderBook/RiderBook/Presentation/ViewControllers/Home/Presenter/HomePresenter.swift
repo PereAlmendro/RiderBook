@@ -16,8 +16,12 @@ enum HomeRow {
 
 class HomePresenter: BasePresenter {
     
+    // MARK: Properties
+    
     private let homeRouter: HomeRouter
     var dataSource: [HomeCellViewModel] = []
+    
+    // MARK: - Lifecycle
     
     init(homeRouter: HomeRouter) {
         self.homeRouter = homeRouter

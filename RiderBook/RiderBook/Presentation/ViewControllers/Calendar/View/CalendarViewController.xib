@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="RiderBook" customModuleProvider="target">
             <connections>
+                <outlet property="calendar" destination="r44-ZM-7BP" id="cUG-8V-gRJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,17 +18,33 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r44-ZM-7BP">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r44-ZM-7BP" customClass="FSCalendar">
+                    <rect key="frame" x="0.0" y="44" width="414" height="269"/>
                     <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="42Y-0T-gMd"/>
+                        <outlet property="delegate" destination="-1" id="003-ZW-PoG"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="r44-ZM-7BP" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="1jD-xE-3uB"/>
                 <constraint firstItem="r44-ZM-7BP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7wq-n7-X0z"/>
                 <constraint firstItem="r44-ZM-7BP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NnJ-Xj-HIk"/>
                 <constraint firstItem="r44-ZM-7BP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uFC-J6-dwp"/>
-                <constraint firstItem="r44-ZM-7BP" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="xmp-jU-V9S"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>

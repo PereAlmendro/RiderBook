@@ -10,7 +10,11 @@ import Foundation
 
 class ProfilePresenter: BasePresenter {
     
+    // MARK: - Properties
+    
     private let profileRouter: ProfileRouter
+    
+    // MARK: - Lifecycle
     
     init(profileRouter: ProfileRouter) {
         self.profileRouter = profileRouter

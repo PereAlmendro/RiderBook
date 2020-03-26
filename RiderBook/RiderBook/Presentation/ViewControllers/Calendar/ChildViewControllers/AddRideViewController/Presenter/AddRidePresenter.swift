@@ -11,7 +11,11 @@ import Foundation
 
 class AddRidePresenter: BasePresenter {
     
+    // MARK: - Properties
+    
     private let addRideRouter: AddRideRouter
+    
+    // MARK: - Lifecycle
     
     init(addRideRouter: AddRideRouter) {
         self.addRideRouter = addRideRouter

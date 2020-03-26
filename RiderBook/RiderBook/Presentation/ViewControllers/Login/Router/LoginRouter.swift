@@ -14,11 +14,17 @@ protocol LoginRouter {
 
 class LoginRouterImpl: LoginRouter {
     
+    // MARK: - Properties
+    
     private let baseRouter: BaseRouter
+    
+    // MARK: - Lifecycle
     
     init(baseRouter: BaseRouter) {
         self.baseRouter = baseRouter
     }
+    
+    // MARK: - Navigations
     
     func showHomeAsGuest() {
         baseRouter.openHomeInitializingTabBar()

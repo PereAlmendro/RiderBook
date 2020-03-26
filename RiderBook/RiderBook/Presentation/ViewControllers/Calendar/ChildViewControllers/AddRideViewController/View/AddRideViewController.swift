@@ -10,6 +10,8 @@ import UIKit
 
 class AddRideViewController: BaseViewController<AddRidePresenter> {
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

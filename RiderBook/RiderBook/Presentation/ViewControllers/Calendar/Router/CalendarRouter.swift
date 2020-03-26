@@ -15,11 +15,17 @@ protocol CalendarRouter {
 
 class CalendarRouterImpl: CalendarRouter {
     
+    // MARK: - Properties
+    
     private let baseRouter: BaseRouter
+    
+    // MARK: - Lifecycle
     
     init(baseRouter: BaseRouter) {
         self.baseRouter = baseRouter
     }
+    
+    // MARK: - Navigations
     
     func showAddRide() {
         guard let addRideVC = SwinjectStoryboard.defaultContainer.resolve(AddRideViewController.self) else {

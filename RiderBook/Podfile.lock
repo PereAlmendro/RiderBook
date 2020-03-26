@@ -1,15 +1,17 @@
 PODS:
-  - RxCocoa (5.1.0):
+  - FSCalendar (2.8.1)
+  - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxRelay (5.1.0):
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.1.0)
+  - RxSwift (5.1.1)
   - Swinject (2.6.2)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
 
 DEPENDENCIES:
+  - FSCalendar
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
   - Swinject (~> 2.6.2)
@@ -17,6 +19,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - FSCalendar
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -24,12 +27,13 @@ SPEC REPOS:
     - SwinjectStoryboard
 
 SPEC CHECKSUMS:
-  RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
-  RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
-  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 1b0250bc03a14890af46a28459a5d00313b15266
+PODFILE CHECKSUM: ae9289803b8400a61877d5e131fb83220afcef2b
 
 COCOAPODS: 1.9.1

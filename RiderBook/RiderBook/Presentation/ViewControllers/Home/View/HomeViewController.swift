@@ -10,7 +10,11 @@ import UIKit
 
 class HomeViewController: BaseViewController<HomePresenter> {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet private weak var tableView: UITableView!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +24,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
         setupTableView()
     }
     
-    // MARK : - Private methods
+    // MARK: - Private methods
     
     private func setupTableView() {
         tableView.backgroundColor = .clear
@@ -33,11 +37,15 @@ class HomeViewController: BaseViewController<HomePresenter> {
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didSelectRow(at: indexPath)
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

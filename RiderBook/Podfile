@@ -10,6 +10,7 @@ target 'RiderBook' do
   pod 'RxCocoa', '~> 5'
   pod 'Swinject', '~> 2.6.2'
   pod 'SwinjectStoryboard', '~> 2.2.0'
+  pod 'FSCalendar'
 	
   target 'RiderBookTests' do
     inherit! :search_paths

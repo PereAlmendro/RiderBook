@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: BaseViewController<ProfilePresenter> {
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Profile".localized()

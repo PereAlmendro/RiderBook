@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import FSCalendar
 
 class CalendarViewController: BaseViewController<CalendarPresenter> {
+
+    // MARK: - IBOutlets
     
+    @IBOutlet private weak var calendar: FSCalendar!
     
     // MARK: - Lifecycle
     
@@ -17,11 +21,35 @@ class CalendarViewController: BaseViewController<CalendarPresenter> {
         super.viewDidLoad()
         navigationItem.title = "Calendar".localized()
         addRightButtonItem(systemItem: .add)
+        setupCalendar()
     }
     
     // MARK: - User Actions
     
     override func rightButtonItemAction(_ sender: Any) {
         presenter.addButtonAction()
+    }
+    
+    // MARK: - Private functions
+    
+    private func setupCalendar() {
+        calendar.delegate = self
+        calendar.dataSource = self
+    }
+}
+
+// MARK: - FSCalendarDelegate
+
+extension CalendarViewController: FSCalendarDelegate {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        presenter.didSelectDate(date: date)
+    }
+}
+
+// MARK: - FSCalendarDataSource
+
+extension CalendarViewController: FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        return presenter.numberOfEvents(for: date)
     }
 }

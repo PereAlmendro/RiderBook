@@ -11,8 +11,12 @@ import RxSwift
 
 class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
     
+    // MARK: - properties
+    
     typealias Presenter = P
     var presenter: Presenter!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,8 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
         presenter.viewDidDisappear()
     }
     
+    // MARK: - Public functions
+    
     func enableLargeTitles(_ enable: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = enable
     }
@@ -60,6 +66,8 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
         rightButtonItem.tintColor = .black
         navigationItem.setRightBarButton(rightButtonItem, animated: false)
     }
+    
+    // MARK: - Overrideable functions
     
     @objc func rightButtonItemAction(_ sender: Any) {
         

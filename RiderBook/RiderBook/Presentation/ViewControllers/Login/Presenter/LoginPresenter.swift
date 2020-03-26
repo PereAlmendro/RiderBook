@@ -10,6 +10,8 @@ import Foundation
 
 class LoginPresenter: BasePresenter {
     
+    // MARK: - Properties
+    
     private var loginRouter: LoginRouter
     
     // MARK: - Lyfecycle

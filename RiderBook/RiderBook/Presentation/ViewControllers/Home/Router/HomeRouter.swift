@@ -15,11 +15,17 @@ protocol HomeRouter {
 
 class HomeRouterImpl: HomeRouter {
     
+    // MARK: - Properties
+    
     private let baseRouter: BaseRouter
+    
+    // MARK: - Lifecycle
     
     init(baseRouter: BaseRouter) {
         self.baseRouter = baseRouter
     }
+    
+    // MARK: - Navigations
     
     func showCalendar() {
         baseRouter.select(tab: .calendar)

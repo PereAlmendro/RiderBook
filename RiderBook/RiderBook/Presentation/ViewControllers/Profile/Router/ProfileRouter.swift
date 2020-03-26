@@ -12,7 +12,11 @@ protocol ProfileRouter { }
 
 class ProfileRouterImpl: ProfileRouter {
     
+    // MARK: - Properties
+    
     private let baseRouter: BaseRouter
+    
+    // MARK: - Lifecycle
     
     init(baseRouter: BaseRouter) {
         self.baseRouter = baseRouter
