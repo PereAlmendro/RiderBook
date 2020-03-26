@@ -20,6 +20,10 @@ class CalendarDashboardView: NibView {
     override func customSetup() {
         setupLabels()
         alpha = 0.90
+        
+        // Default
+        configureWith(title: "🏜".localized(),
+                      description: "calendar_no_rides".localized())
     }
     
     // MARK: - Public

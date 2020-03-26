@@ -53,6 +53,8 @@
 		19C56079242A960D005C80CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C56077242A960D005C80CB /* HomeViewController.swift */; };
 		19C5607A242A960D005C80CB /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C56078242A960D005C80CB /* HomeViewController.xib */; };
 		19C5607C242A96B9005C80CB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C5607B242A96B9005C80CB /* HomePresenter.swift */; };
+		19D8B896242D240C00C12FB2 /* RBEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D8B895242D240C00C12FB2 /* RBEmptyView.xib */; };
+		19D8B898242D241F00C12FB2 /* RBEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8B897242D241F00C12FB2 /* RBEmptyView.swift */; };
 		19F57D20242CDDE400A9EA88 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */; };
 		19F57D21242CDDE400A9EA88 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D1B242CDDE400A9EA88 /* CalendarViewController.swift */; };
 		19F57D22242CDDE400A9EA88 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F57D1C242CDDE400A9EA88 /* CalendarViewController.xib */; };
@@ -141,6 +143,8 @@
 		19C56077242A960D005C80CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		19C56078242A960D005C80CB /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		19C5607B242A96B9005C80CB /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		19D8B895242D240C00C12FB2 /* RBEmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBEmptyView.xib; sourceTree = "<group>"; };
+		19D8B897242D241F00C12FB2 /* RBEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBEmptyView.swift; sourceTree = "<group>"; };
 		19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
 		19F57D1B242CDDE400A9EA88 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		19F57D1C242CDDE400A9EA88 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 		192EF9DF2427C58500190D7B /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				19D8B894242D23F600C12FB2 /* RBEmtpyView */,
 				198DD814242B8F2100388CF0 /* DashboardViews */,
 				195908E1242B810F0053374B /* TableViewCells */,
 				198CB6302427D8C300E1638F /* NibView */,
@@ -576,6 +581,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		19D8B894242D23F600C12FB2 /* RBEmtpyView */ = {
+			isa = PBXGroup;
+			children = (
+				19D8B895242D240C00C12FB2 /* RBEmptyView.xib */,
+				19D8B897242D241F00C12FB2 /* RBEmptyView.swift */,
+			);
+			path = RBEmtpyView;
+			sourceTree = "<group>";
+		};
 		19F57D17242CDDE400A9EA88 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -817,6 +831,7 @@
 				19F57D22242CDDE400A9EA88 /* CalendarViewController.xib in Resources */,
 				198CB6352427DDA900E1638F /* RBTextField.xib in Resources */,
 				19C5607A242A960D005C80CB /* HomeViewController.xib in Resources */,
+				19D8B896242D240C00C12FB2 /* RBEmptyView.xib in Resources */,
 				19B692AC242CAB0200C9C43B /* CalendarDashboardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -971,6 +986,7 @@
 				199A075C2429530F002E3A15 /* BaseRouter.swift in Sources */,
 				195908DF242B77F90053374B /* ProfileViewController.swift in Sources */,
 				198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */,
+				19D8B898242D241F00C12FB2 /* RBEmptyView.swift in Sources */,
 				195908D1242B585F0053374B /* HomeRouter.swift in Sources */,
 				199A076424295988002E3A15 /* Screen.swift in Sources */,
 				195908E0242B77F90053374B /* ProfileRouter.swift in Sources */,

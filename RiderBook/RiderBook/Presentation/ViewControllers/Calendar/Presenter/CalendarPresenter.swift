@@ -23,9 +23,16 @@ class CalendarPresenter: BasePresenter {
     
     // MARK: - Public functions
     
+    /// Return the number of events for the given date
     func numberOfEvents(for date: Date) -> Int {
-        // TODO: Return the number of events for each date
+        // TODO
         return .zero
+    }
+    
+    /// Return true if there are events to show
+    func hasEvents() -> Bool {
+        // TODO
+        return false
     }
     
     // MARK: - User Actions

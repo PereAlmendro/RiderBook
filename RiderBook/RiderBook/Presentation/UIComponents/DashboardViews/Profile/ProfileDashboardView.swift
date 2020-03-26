@@ -21,6 +21,11 @@ class ProfileDashboardView: NibView {
     override func customSetup() {
         setupLabels()
         alpha = 0.90
+        
+        // Default
+        configureWith(title: "Guest_Rider".localized(),
+                      image: UIImage(named: "guest_avatar"),
+                      description: "Login_to_use_all_features".localized())
     }
     
     // MARK: - Public

@@ -18,7 +18,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Rider book".localized()
+        navigationItem.title = "Rider_book".localized()
         
         addBackgroundImage()
         setupTableView()

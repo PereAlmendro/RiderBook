@@ -14,6 +14,8 @@ class CalendarViewController: BaseViewController<CalendarPresenter> {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var calendar: FSCalendar!
+    @IBOutlet private weak var emptyView: RBEmptyView!
+
     
     // MARK: - Lifecycle
     
@@ -21,7 +23,7 @@ class CalendarViewController: BaseViewController<CalendarPresenter> {
         super.viewDidLoad()
         navigationItem.title = "Calendar".localized()
         addRightButtonItem(systemItem: .add)
-        setupCalendar()
+        setupView()
     }
     
     // MARK: - User Actions
@@ -32,9 +34,14 @@ class CalendarViewController: BaseViewController<CalendarPresenter> {
     
     // MARK: - Private functions
     
-    private func setupCalendar() {
+    private func setupView() {
         calendar.delegate = self
         calendar.dataSource = self
+        if !presenter.hasEvents() {
+            emptyView.configureWith(title: "calendar_no_rides".localized(),
+                                    description: "calendar_tap_to_add_events".localized(),
+                                    image: UIImage(named: "guest_avatar"))
+        }
     }
 }
 

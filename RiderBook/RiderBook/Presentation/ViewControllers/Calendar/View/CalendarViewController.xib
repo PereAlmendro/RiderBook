@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="RiderBook" customModuleProvider="target">
             <connections>
                 <outlet property="calendar" destination="r44-ZM-7BP" id="cUG-8V-gRJ"/>
+                <outlet property="emptyView" destination="gyG-mV-cSD" id="yMr-vi-FfN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,12 +39,20 @@
                         <outlet property="delegate" destination="-1" id="003-ZW-PoG"/>
                     </connections>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyG-mV-cSD" customClass="RBEmptyView" customModule="RiderBook" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="343" width="414" height="519"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="r44-ZM-7BP" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="1jD-xE-3uB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gyG-mV-cSD" secondAttribute="trailing" id="7BL-Uk-Gqg"/>
                 <constraint firstItem="r44-ZM-7BP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7wq-n7-X0z"/>
                 <constraint firstItem="r44-ZM-7BP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NnJ-Xj-HIk"/>
+                <constraint firstItem="gyG-mV-cSD" firstAttribute="top" secondItem="r44-ZM-7BP" secondAttribute="bottom" constant="30" id="R2i-OU-suH"/>
+                <constraint firstItem="gyG-mV-cSD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="etM-W1-p17"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gyG-mV-cSD" secondAttribute="bottom" id="fRq-o6-ZsE"/>
                 <constraint firstItem="r44-ZM-7BP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uFC-J6-dwp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

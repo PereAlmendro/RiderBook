@@ -31,7 +31,7 @@ class LoginViewController: BaseViewController<LoginPresenter> {
         loginButton.setTitle(text: "Enter!".localized())
         loginButton.delegate = self
         
-        guestButton.setTitle(text: "Join as guest!".localized())
+        guestButton.setTitle(text: "Join_as_guest!".localized())
         guestButton.delegate = self
     }
     
