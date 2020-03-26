@@ -29,7 +29,7 @@
 		195908E5242B81F50053374B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908E3242B81F50053374B /* HomeTableViewCell.swift */; };
 		195908E6242B81F50053374B /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195908E4242B81F50053374B /* HomeTableViewCell.xib */; };
 		1969F9AB242BD58400300C1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1969F9AD242BD58400300C1B /* Localizable.strings */; };
-		1969F9B3242BD6CC00300C1B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969F9B2242BD6CC00300C1B /* String+Extension.swift */; };
+		1969F9B3242BD6CC00300C1B /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969F9B2242BD6CC00300C1B /* String+Localization.swift */; };
 		198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6272427C8A000E1638F /* UIFont+Extension.swift */; };
 		198CB6322427D8D200E1638F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6312427D8D200E1638F /* NibView.swift */; };
 		198CB6352427DDA900E1638F /* RBTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198CB6342427DDA900E1638F /* RBTextField.xib */; };
@@ -107,7 +107,7 @@
 		1969F9AF242BD5B200300C1B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1969F9B0242BD5BA00300C1B /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1969F9B1242BD5BA00300C1B /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1969F9B2242BD6CC00300C1B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		1969F9B2242BD6CC00300C1B /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		198CB6272427C8A000E1638F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		198CB6312427D8D200E1638F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		198CB6342427DDA900E1638F /* RBTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBTextField.xib; sourceTree = "<group>"; };
@@ -208,7 +208,6 @@
 				192EF9E72427C70100190D7B /* UIColor+Extension.swift */,
 				198CB6272427C8A000E1638F /* UIFont+Extension.swift */,
 				199A075924294F1D002E3A15 /* UIApplication+extension.swift */,
-				1969F9B2242BD6CC00300C1B /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -240,14 +239,8 @@
 			children = (
 				199A07472428EBCC002E3A15 /* DI */,
 				192EF9DC2427C13800190D7B /* Presentation */,
-				199A076824295A14002E3A15 /* Entity */,
-				1943375E2427B6DB00050CB0 /* AppDelegate.swift */,
-				194337602427B6DB00050CB0 /* SceneDelegate.swift */,
-				1943376C2427B6DD00050CB0 /* Assets.xcassets */,
-				1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */,
-				194337712427B6DD00050CB0 /* Info.plist */,
-				194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */,
-				1969F9AD242BD58400300C1B /* Localizable.strings */,
+				199A076824295A14002E3A15 /* AppDependencies */,
+				19B692A6242C9BDE00C9C43B /* CoreData */,
 			);
 			path = RiderBook;
 			sourceTree = "<group>";
@@ -467,11 +460,16 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		199A076824295A14002E3A15 /* Entity */ = {
+		199A076824295A14002E3A15 /* AppDependencies */ = {
 			isa = PBXGroup;
 			children = (
+				19B692A5242C9B7300C9C43B /* Delegates */,
+				19B692A4242C9B0900C9C43B /* Localization */,
+				19B692A3242C9AF300C9C43B /* Assets */,
+				19B692A2242C9A7C00C9C43B /* LaunchScreen */,
+				194337712427B6DD00050CB0 /* Info.plist */,
 			);
-			path = Entity;
+			path = AppDependencies;
 			sourceTree = "<group>";
 		};
 		199A076A24295A67002E3A15 /* ViewControllers */ = {
@@ -492,6 +490,48 @@
 				199A075F242958C1002E3A15 /* ViewControllerModule.swift */,
 			);
 			path = DIModules;
+			sourceTree = "<group>";
+		};
+		19B692A2242C9A7C00C9C43B /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		19B692A3242C9AF300C9C43B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1943376C2427B6DD00050CB0 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		19B692A4242C9B0900C9C43B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				1969F9AD242BD58400300C1B /* Localizable.strings */,
+				1969F9B2242BD6CC00300C1B /* String+Localization.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		19B692A5242C9B7300C9C43B /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				194337602427B6DB00050CB0 /* SceneDelegate.swift */,
+				1943375E2427B6DB00050CB0 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		19B692A6242C9BDE00C9C43B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		19C56076242A95D1005C80CB /* Home */ = {
@@ -792,7 +832,7 @@
 				192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */,
 				199A076224295970002E3A15 /* BasePresenter.swift in Sources */,
 				199A075E24295858002E3A15 /* RouterModule.swift in Sources */,
-				1969F9B3242BD6CC00300C1B /* String+Extension.swift in Sources */,
+				1969F9B3242BD6CC00300C1B /* String+Localization.swift in Sources */,
 				199A07562428FD81002E3A15 /* PresenterModule.swift in Sources */,
 				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,
 				199A075C2429530F002E3A15 /* BaseRouter.swift in Sources */,
@@ -990,7 +1030,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
-				INFOPLIST_FILE = RiderBook/Info.plist;
+				INFOPLIST_FILE = RiderBook/AppDependencies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1010,7 +1050,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
-				INFOPLIST_FILE = RiderBook/Info.plist;
+				INFOPLIST_FILE = RiderBook/AppDependencies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
