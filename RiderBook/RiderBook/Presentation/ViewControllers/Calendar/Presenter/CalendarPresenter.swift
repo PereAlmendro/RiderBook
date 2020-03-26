@@ -17,4 +17,9 @@ class CalendarPresenter: BasePresenter {
         self.calendarRouter = calendarRouter
     }
     
+    // MARK: - User Actions
+    
+    func addButtonAction() {
+        calendarRouter.showAddRide()
+    }
 }

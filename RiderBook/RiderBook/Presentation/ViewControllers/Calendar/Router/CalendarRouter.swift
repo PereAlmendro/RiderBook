@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import SwinjectStoryboard
 
-protocol CalendarRouter { }
+protocol CalendarRouter {
+    func showAddRide()
+}
 
 class CalendarRouterImpl: CalendarRouter {
     
@@ -16,5 +19,13 @@ class CalendarRouterImpl: CalendarRouter {
     
     init(baseRouter: BaseRouter) {
         self.baseRouter = baseRouter
+    }
+    
+    func showAddRide() {
+        guard let addRideVC = SwinjectStoryboard.defaultContainer.resolve(AddRideViewController.self) else {
+            assertionFailure("Unable to resolve AddRideViewController")
+            return
+        }
+        baseRouter.present(vc: addRideVC, animated: true, completion: nil)
     }
 }

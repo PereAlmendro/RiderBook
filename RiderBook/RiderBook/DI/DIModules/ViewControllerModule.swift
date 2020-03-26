@@ -48,5 +48,11 @@ class ViewControllerModule {
             view.presenter = r.resolve(CalendarPresenter.self)!
             return view
         }
+        
+        container.register(AddRideViewController.self) { r in
+            let view = AddRideViewController()
+            view.presenter = r.resolve(AddRidePresenter.self)!
+            return view
+        }
     }
 }

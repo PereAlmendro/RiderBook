@@ -39,4 +39,9 @@ class PresenterModule {
         container.register(CalendarPresenter.self) { r in
             CalendarPresenter(calendarRouter: r.resolve(CalendarRouter.self)!)
         }
+        
+        container.register(AddRidePresenter.self) { r in
+            AddRidePresenter(addRideRouter: r.resolve(AddRideRouter.self)!)
+        }
+        
     }}

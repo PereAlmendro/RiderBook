@@ -10,9 +10,18 @@ import UIKit
 
 class CalendarViewController: BaseViewController<CalendarPresenter> {
     
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Calendar".localized()
+        addRightButtonItem(systemItem: .add)
     }
     
+    // MARK: - User Actions
+    
+    override func rightButtonItemAction(_ sender: Any) {
+        presenter.addButtonAction()
+    }
 }

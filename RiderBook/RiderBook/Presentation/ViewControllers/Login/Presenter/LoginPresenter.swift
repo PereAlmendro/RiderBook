@@ -25,6 +25,6 @@ class LoginPresenter: BasePresenter {
     }
     
     func guestButtonAction() {
-        loginRouter.continueAsGuest()
+        loginRouter.showHomeAsGuest()
     }
 }

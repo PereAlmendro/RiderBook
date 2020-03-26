@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LoginRouter {
-    func continueAsGuest()
+    func showHomeAsGuest()
 }
 
 class LoginRouterImpl: LoginRouter {
@@ -20,7 +20,7 @@ class LoginRouterImpl: LoginRouter {
         self.baseRouter = baseRouter
     }
     
-    func continueAsGuest() {
+    func showHomeAsGuest() {
         baseRouter.openHomeInitializingTabBar()
     }
 }

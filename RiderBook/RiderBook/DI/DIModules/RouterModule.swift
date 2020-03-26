@@ -45,5 +45,9 @@ class RouterModule{
         container.register(CalendarRouter.self) { r in
             CalendarRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
         }
+        
+        container.register(AddRideRouter.self) { r in
+            AddRideRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+        }
     }
 }

@@ -16,6 +16,7 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        enableLargeTitles(true)
         presenter.attachView(view: self)
         presenter.viewDidLoad()
     }
@@ -40,11 +41,27 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
         presenter.viewDidDisappear()
     }
     
+    func enableLargeTitles(_ enable: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = enable
+    }
+    
     func addBackgroundImage() {
         let backgroundImage = UIImage(named: "background")?.withRenderingMode(.alwaysOriginal)
         let backgroundImageView = UIImageView(image: backgroundImage)
         backgroundImageView.contentMode = .scaleToFill
         view.addSubviewWithFillingConstraints(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
+    }
+    
+    func addRightButtonItem(systemItem: UIBarButtonItem.SystemItem) {
+        let rightButtonItem = UIBarButtonItem(barButtonSystemItem: systemItem,
+                                              target: self,
+                                              action: #selector(rightButtonItemAction(_:)))
+        rightButtonItem.tintColor = .black
+        navigationItem.setRightBarButton(rightButtonItem, animated: false)
+    }
+    
+    @objc func rightButtonItemAction(_ sender: Any) {
+        
     }
 }

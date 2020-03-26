@@ -13,11 +13,15 @@ import SwinjectStoryboard
 protocol BaseRouter {
     func openHomeInitializingTabBar()
     func select(tab: TabItem)
+    func present(vc: UIViewController, animated: Bool, completion: (() -> Void)?)
 }
 
 public class BaseRouterImpl: BaseRouter {
     
     private let RBTabbar: RBTabBarController
+    var topViewController: UIViewController? {
+        return UIApplication.topViewController()
+    }
     
     init() {
         let tabController = UITabBarController()
@@ -26,15 +30,15 @@ public class BaseRouterImpl: BaseRouter {
     
     func openHomeInitializingTabBar() {
         RBTabbar.configureTabs()
-        UIApplication
-            .topViewController()?
-            .present(RBTabbar.tabBarController,
-                     animated: true,
-                     completion: nil)
+        present(vc: RBTabbar.tabBarController, animated: true)
     }
     
     func select(tab: TabItem) {
         RBTabbar.selectTab(at: tab.rawValue)
+    }
+    
+    func present(vc: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
+        topViewController?.present(vc, animated: animated, completion: completion)
     }
     
 }

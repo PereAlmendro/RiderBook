@@ -57,6 +57,10 @@
 		19F57D21242CDDE400A9EA88 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D1B242CDDE400A9EA88 /* CalendarViewController.swift */; };
 		19F57D22242CDDE400A9EA88 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F57D1C242CDDE400A9EA88 /* CalendarViewController.xib */; };
 		19F57D23242CDDE400A9EA88 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D1F242CDDE400A9EA88 /* CalendarRouter.swift */; };
+		19F57D2B242CFD4E00A9EA88 /* AddRideRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D2A242CFD4E00A9EA88 /* AddRideRouter.swift */; };
+		19F57D2D242CFDA400A9EA88 /* AddRidePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D2C242CFDA400A9EA88 /* AddRidePresenter.swift */; };
+		19F57D30242CFDFC00A9EA88 /* AddRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D2E242CFDFC00A9EA88 /* AddRideViewController.swift */; };
+		19F57D31242CFDFC00A9EA88 /* AddRideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F57D2F242CFDFC00A9EA88 /* AddRideViewController.xib */; };
 		3D4375E4847972E64AB5A282 /* Pods_RiderBook_RiderBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C357C6A656C4CF69C35876C /* Pods_RiderBook_RiderBookUITests.framework */; };
 		624845AEC4F9B6D565D5BDC3 /* Pods_RiderBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7E1DA9D7FE3C074E192F83 /* Pods_RiderBookTests.framework */; };
 		B0411AA3AD476E8A27B5A428 /* Pods_RiderBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E1BAB2AB70C897429CB477 /* Pods_RiderBook.framework */; };
@@ -141,6 +145,10 @@
 		19F57D1B242CDDE400A9EA88 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		19F57D1C242CDDE400A9EA88 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		19F57D1F242CDDE400A9EA88 /* CalendarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
+		19F57D2A242CFD4E00A9EA88 /* AddRideRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideRouter.swift; sourceTree = "<group>"; };
+		19F57D2C242CFDA400A9EA88 /* AddRidePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRidePresenter.swift; sourceTree = "<group>"; };
+		19F57D2E242CFDFC00A9EA88 /* AddRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideViewController.swift; sourceTree = "<group>"; };
+		19F57D2F242CFDFC00A9EA88 /* AddRideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRideViewController.xib; sourceTree = "<group>"; };
 		4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.debug.xcconfig"; sourceTree = "<group>"; };
 		50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBookTests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBookTests/Pods-RiderBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		580BF0E91CF67A73FE34D248 /* Pods-RiderBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.release.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -571,6 +579,7 @@
 		19F57D17242CDDE400A9EA88 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				19F57D24242CFCFA00A9EA88 /* ChildViewControllers */,
 				19F57D18242CDDE400A9EA88 /* Presenter */,
 				19F57D1A242CDDE400A9EA88 /* View */,
 				19F57D1D242CDDE400A9EA88 /* Interactor */,
@@ -607,6 +616,57 @@
 			isa = PBXGroup;
 			children = (
 				19F57D1F242CDDE400A9EA88 /* CalendarRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		19F57D24242CFCFA00A9EA88 /* ChildViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				19F57D25242CFD0A00A9EA88 /* AddRideViewController */,
+			);
+			path = ChildViewControllers;
+			sourceTree = "<group>";
+		};
+		19F57D25242CFD0A00A9EA88 /* AddRideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				19F57D27242CFD3300A9EA88 /* Presenter */,
+				19F57D26242CFD2B00A9EA88 /* View */,
+				19F57D28242CFD3700A9EA88 /* Interactor */,
+				19F57D29242CFD3D00A9EA88 /* Router */,
+			);
+			path = AddRideViewController;
+			sourceTree = "<group>";
+		};
+		19F57D26242CFD2B00A9EA88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19F57D2E242CFDFC00A9EA88 /* AddRideViewController.swift */,
+				19F57D2F242CFDFC00A9EA88 /* AddRideViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		19F57D27242CFD3300A9EA88 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				19F57D2C242CFDA400A9EA88 /* AddRidePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		19F57D28242CFD3700A9EA88 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		19F57D29242CFD3D00A9EA88 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				19F57D2A242CFD4E00A9EA88 /* AddRideRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -752,6 +812,7 @@
 				192EF9E32427C63600190D7B /* RBButton.xib in Resources */,
 				1969F9AB242BD58400300C1B /* Localizable.strings in Resources */,
 				199A07522428F30D002E3A15 /* LoginViewController.xib in Resources */,
+				19F57D31242CFDFC00A9EA88 /* AddRideViewController.xib in Resources */,
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
 				19F57D22242CDDE400A9EA88 /* CalendarViewController.xib in Resources */,
 				198CB6352427DDA900E1638F /* RBTextField.xib in Resources */,
@@ -885,6 +946,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */,
+				19F57D2B242CFD4E00A9EA88 /* AddRideRouter.swift in Sources */,
+				19F57D2D242CFDA400A9EA88 /* AddRidePresenter.swift in Sources */,
 				199A074D2428EBCC002E3A15 /* SwinjectStoryboard+Extenstion.swift in Sources */,
 				199A0760242958C1002E3A15 /* ViewControllerModule.swift in Sources */,
 				195908CE242B56A30053374B /* LoginRouter.swift in Sources */,
@@ -914,6 +977,7 @@
 				19B692AB242CAB0200C9C43B /* CalendarDashboardView.swift in Sources */,
 				192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */,
 				198CB6372427DDBA00E1638F /* RBTextField.swift in Sources */,
+				19F57D30242CFDFC00A9EA88 /* AddRideViewController.swift in Sources */,
 				19F57D23242CDDE400A9EA88 /* CalendarRouter.swift in Sources */,
 				198DD816242B8F4D00388CF0 /* ProfileDashboardView.swift in Sources */,
 				195908DD242B77F90053374B /* ProfilePresenter.swift in Sources */,
