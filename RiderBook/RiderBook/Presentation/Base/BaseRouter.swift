@@ -12,8 +12,9 @@ import SwinjectStoryboard
 
 protocol BaseRouter {
     func openHomeInitializingTabBar()
-    func select(tab: TabItem)
-    func present(vc: UIViewController, animated: Bool, completion: (() -> Void)?)
+    func select(tab: TabBarItem)
+    func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)?)
+    func push(viewController: UIViewController, animated: Bool)
 }
 
 public class BaseRouterImpl: BaseRouter {
@@ -30,15 +31,30 @@ public class BaseRouterImpl: BaseRouter {
     
     func openHomeInitializingTabBar() {
         RBTabbar.configureTabs()
-        present(vc: RBTabbar.tabBarController, animated: true)
+        present(viewController: RBTabbar.tabBarController, animated: true)
     }
     
-    func select(tab: TabItem) {
+    func select(tab: TabBarItem) {
         RBTabbar.selectTab(at: tab.rawValue)
     }
     
-    func present(vc: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
-        topViewController?.present(vc, animated: animated, completion: completion)
+    func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
+        topViewController?.present(viewController, animated: animated, completion: completion)
+    }
+    
+    func push(viewController: UIViewController, animated: Bool) {
+        var viewController = viewController
+        
+        if let navigationController = UIApplication.topViewController()?.parent as? UINavigationController {
+            if let viewControllerNVC = viewController as? UINavigationController,
+                let lastViewController = viewControllerNVC.viewControllers.last {
+                viewController = lastViewController
+            }
+            navigationController.pushViewController(viewController, animated: animated)
+        } else {
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController: viewController, animated: animated)
+        }
     }
     
 }

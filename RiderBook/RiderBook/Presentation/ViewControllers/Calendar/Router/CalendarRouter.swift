@@ -32,6 +32,8 @@ class CalendarRouterImpl: CalendarRouter {
             assertionFailure("Unable to resolve AddRideViewController")
             return
         }
-        baseRouter.present(vc: addRideVC, animated: true, completion: nil)
+        baseRouter.present(viewController: addRideVC,
+                           animated: true,
+                           completion: nil)
     }
 }

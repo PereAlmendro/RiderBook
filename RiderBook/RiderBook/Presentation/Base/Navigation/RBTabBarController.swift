@@ -9,7 +9,7 @@
 import UIKit
 import SwinjectStoryboard
 
-public enum TabItem: Int {
+public enum TabBarItem: Int {
     case home
     case calendar
     case profile

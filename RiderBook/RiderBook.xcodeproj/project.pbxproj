@@ -46,7 +46,6 @@
 		199A075E24295858002E3A15 /* RouterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A075D24295858002E3A15 /* RouterModule.swift */; };
 		199A0760242958C1002E3A15 /* ViewControllerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A075F242958C1002E3A15 /* ViewControllerModule.swift */; };
 		199A076224295970002E3A15 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A076124295970002E3A15 /* BasePresenter.swift */; };
-		199A076424295988002E3A15 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A076324295988002E3A15 /* Screen.swift */; };
 		199A07662429599B002E3A15 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A07652429599B002E3A15 /* BaseView.swift */; };
 		19B692AB242CAB0200C9C43B /* CalendarDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B692A9242CAB0200C9C43B /* CalendarDashboardView.swift */; };
 		19B692AC242CAB0200C9C43B /* CalendarDashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B692AA242CAB0200C9C43B /* CalendarDashboardView.xib */; };
@@ -136,7 +135,6 @@
 		199A075D24295858002E3A15 /* RouterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterModule.swift; sourceTree = "<group>"; };
 		199A075F242958C1002E3A15 /* ViewControllerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModule.swift; sourceTree = "<group>"; };
 		199A076124295970002E3A15 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
-		199A076324295988002E3A15 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		199A07652429599B002E3A15 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		19B692A9242CAB0200C9C43B /* CalendarDashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDashboardView.swift; sourceTree = "<group>"; };
 		19B692AA242CAB0200C9C43B /* CalendarDashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarDashboardView.xib; sourceTree = "<group>"; };
@@ -480,7 +478,6 @@
 		199A0767242959CE002E3A15 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				199A076324295988002E3A15 /* Screen.swift */,
 				195908C6242B54FF0053374B /* RBTabBarController.swift */,
 			);
 			path = Navigation;
@@ -988,7 +985,6 @@
 				198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */,
 				19D8B898242D241F00C12FB2 /* RBEmptyView.swift in Sources */,
 				195908D1242B585F0053374B /* HomeRouter.swift in Sources */,
-				199A076424295988002E3A15 /* Screen.swift in Sources */,
 				195908E0242B77F90053374B /* ProfileRouter.swift in Sources */,
 				19B692AB242CAB0200C9C43B /* CalendarDashboardView.swift in Sources */,
 				192EF9E62427C66C00190D7B /* UIView+Extension.swift in Sources */,
