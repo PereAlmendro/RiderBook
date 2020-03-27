@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol AddRideRouter { }
+protocol AddRideRouter {
+    func dismiss()
+}
 
 class AddRideRouterImpl: AddRideRouter {
     
@@ -20,6 +22,10 @@ class AddRideRouterImpl: AddRideRouter {
     
     init(baseRouter: BaseRouter) {
         self.baseRouter = baseRouter
+    }
+    
+    func dismiss() {
+        baseRouter.dismiss(animated: true, completion: nil)
     }
 }
 

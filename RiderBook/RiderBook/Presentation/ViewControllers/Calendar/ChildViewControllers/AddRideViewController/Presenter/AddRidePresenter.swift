@@ -14,11 +14,24 @@ class AddRidePresenter: BasePresenter {
     // MARK: - Properties
     
     private let addRideRouter: AddRideRouter
+    private let circuitNames: [String] = ["Alcarras", "Castelloli", "Montmelo", "Calafat"]
     
     // MARK: - Lifecycle
     
     init(addRideRouter: AddRideRouter) {
         self.addRideRouter = addRideRouter
+    }
+    
+    // MARK: - Public functions
+    
+    func getCircuitNames() -> [String] {
+        return circuitNames
+    }
+    
+    // MARK: - User Actions
+    
+    func saveAction() {
+        addRideRouter.dismiss()
     }
     
 }

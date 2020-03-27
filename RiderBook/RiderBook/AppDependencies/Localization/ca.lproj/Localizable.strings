@@ -17,3 +17,6 @@
 "Calendar" = "Calendari";
 "calendar_no_rides" = "No tens rodadas al calendari";
 "calendar_tap_to_add_events" = "Prem el botó + per afegir una";
+"select_date" = "Selecciona una data";
+"select_circuit" = "Selecciona un circuit";
+"save" = "Guardar";

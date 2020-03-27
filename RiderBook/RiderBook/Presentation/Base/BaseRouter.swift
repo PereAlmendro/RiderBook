@@ -15,6 +15,7 @@ protocol BaseRouter {
     func select(tab: TabBarItem)
     func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)?)
     func push(viewController: UIViewController, animated: Bool)
+    func dismiss(animated: Bool, completion: (() -> Void)?)
 }
 
 public class BaseRouterImpl: BaseRouter {
@@ -55,6 +56,10 @@ public class BaseRouterImpl: BaseRouter {
             viewController.modalPresentationStyle = .fullScreen
             present(viewController: viewController, animated: animated)
         }
+    }
+    
+    func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
+        topViewController?.dismiss(animated: true, completion: nil)
     }
     
 }
