@@ -19,12 +19,14 @@ class HomePresenter: BasePresenter {
     // MARK: Properties
     
     private let homeRouter: HomeRouter
+    private let homeInteractor: HomeInteractor
     var dataSource: [HomeCellViewModel] = []
     
     // MARK: - Lifecycle
     
-    init(homeRouter: HomeRouter) {
+    init(homeRouter: HomeRouter, homeInteractor: HomeInteractor) {
         self.homeRouter = homeRouter
+        self.homeInteractor = homeInteractor
     }
     
     override func viewDidLoad() {

@@ -13,11 +13,13 @@ class ProfilePresenter: BasePresenter {
     // MARK: - Properties
     
     private let profileRouter: ProfileRouter
+    private let profileInteractor: ProfileInteractor
     
     // MARK: - Lifecycle
     
-    init(profileRouter: ProfileRouter) {
+    init(profileRouter: ProfileRouter, profileInteractor: ProfileInteractor) {
         self.profileRouter = profileRouter
+        self.profileInteractor = profileInteractor
     }
         
 }

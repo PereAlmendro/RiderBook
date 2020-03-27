@@ -15,6 +15,8 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
     
     typealias Presenter = P
     var presenter: Presenter!
+    let disposeBag = DisposeBag()
+
     
     // MARK: - Lifecycle
     

@@ -28,7 +28,7 @@ class LoginViewController: BaseViewController<LoginPresenter> {
     // MARK: - Private
     
     private func setupButtons() {
-        loginButton.setTitle(text: "Enter!".localized())
+        loginButton.setTitle(text: "log_in".localized())
         loginButton.delegate = self
         
         guestButton.setTitle(text: "Join_as_guest!".localized())

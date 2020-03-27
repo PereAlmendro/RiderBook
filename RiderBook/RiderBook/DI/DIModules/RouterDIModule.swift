@@ -1,5 +1,5 @@
 //
-//  RouterModule.swift
+//  RouterDIModule.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 23/03/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import Swinject
 
-class RouterModule{
+class RouterDIModule{
     static func setup(_ container: Container) {
         resolveRouter(container)
     }

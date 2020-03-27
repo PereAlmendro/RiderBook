@@ -1,5 +1,5 @@
 //
-//  ViewModule.swift
+//  SwinjectStoryboard+Extenstion.swift
 //  NewBershka
 //
 //  Created by Pere Almendro on 22/03/2020.
@@ -11,8 +11,9 @@ import SwinjectStoryboard
 
 public extension SwinjectStoryboard {
     class func setup() {
-        RouterModule.setup(defaultContainer)
-        PresenterModule.setup(defaultContainer)
-        ViewControllerModule.setup(defaultContainer)
+        RouterDIModule.setup(defaultContainer)
+        InteractorDIModule.setup(defaultContainer)
+        PresenterDIModule.setup(defaultContainer)
+        ViewControllerDIModule.setup(defaultContainer)
     }
 }

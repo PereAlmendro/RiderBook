@@ -1,5 +1,5 @@
 //
-//  ViewControllerModule.swift
+//  ViewControllerDIModule.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 23/03/2020.
@@ -10,7 +10,7 @@ import Foundation
 import Swinject
 
 
-class ViewControllerModule {
+class ViewControllerDIModule {
     static func setup(_ container: Container) {
         resolveViewControllers(container)
     }

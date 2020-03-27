@@ -14,11 +14,13 @@ class CalendarPresenter: BasePresenter {
     // MARK: - Properties
     
     private let calendarRouter: CalendarRouter
+    private let calendarInteractor: CalendarInteractor
     
     // MARK: - Lifecycle
     
-    init(calendarRouter: CalendarRouter) {
+    init(calendarRouter: CalendarRouter, calendarInteractor: CalendarInteractor) {
         self.calendarRouter = calendarRouter
+        self.calendarInteractor = calendarInteractor
     }
     
     // MARK: - Public functions

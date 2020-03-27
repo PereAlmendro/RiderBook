@@ -1,5 +1,5 @@
 //
-//  PresenterModule.swift
+//  PresenterDIModule.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 23/03/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import Swinject
 
-class PresenterModule {
+class PresenterDIModule {
     static func setup(_ container: Container) {
         resolvePresenters(container)
     }
@@ -19,29 +19,34 @@ class PresenterModule {
         // MARK: - Login
         
         container.register(LoginPresenter.self) { r in
-            LoginPresenter(loginRouter: r.resolve(LoginRouter.self)!)
+            LoginPresenter(loginRouter: r.resolve(LoginRouter.self)!,
+                           loginInteractor: r.resolve(LoginInteractor.self)!)
         }
         
         // MARK: - Home
         
         container.register(HomePresenter.self) { r in
-            HomePresenter(homeRouter: r.resolve(HomeRouter.self)!)
+            HomePresenter(homeRouter: r.resolve(HomeRouter.self)!,
+                          homeInteractor: r.resolve(HomeInteractor.self)!)
         }
         
         // MARK: - Profile
         
         container.register(ProfilePresenter.self) { r in
-            ProfilePresenter(profileRouter: r.resolve(ProfileRouter.self)!)
+            ProfilePresenter(profileRouter: r.resolve(ProfileRouter.self)!,
+                             profileInteractor: r.resolve(ProfileInteractor.self)!)
         }
         
         // MARK: - Calendar
         
         container.register(CalendarPresenter.self) { r in
-            CalendarPresenter(calendarRouter: r.resolve(CalendarRouter.self)!)
+            CalendarPresenter(calendarRouter: r.resolve(CalendarRouter.self)!,
+                              calendarInteractor: r.resolve(CalendarInteractor.self)!)
         }
         
         container.register(AddRidePresenter.self) { r in
-            AddRidePresenter(addRideRouter: r.resolve(AddRideRouter.self)!)
+            AddRidePresenter(addRideRouter: r.resolve(AddRideRouter.self)!,
+                             addRideInteractor: r.resolve(AddRideInteractor.self)!)
         }
         
     }}

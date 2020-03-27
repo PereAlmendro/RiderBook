@@ -20,11 +20,26 @@ class AddRideViewController: BaseViewController<AddRidePresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        bindToRxProperties()
+    }
+    
+    // MARK: - Private functions
+    
+    private func setupView() {
         datePicker.configureWith(title: "select_date".localized())
-        circuitPicker.configureWith(title: "select_circuit".localized(),
-                                    circuits: presenter.getCircuitNames())
         saveButton.setTitle(text: "save".localized())
         saveButton.delegate = self
+    }
+    
+    private func bindToRxProperties() {
+        presenter
+            .circuitNames
+            .subscribe { [weak self] event in
+            guard let circuitNames = event.element else { return }
+            self?.circuitPicker.configureWith(title: "select_circuit".localized(),
+                                              circuits: circuitNames)
+        }.disposed(by: disposeBag)
     }
 }
 

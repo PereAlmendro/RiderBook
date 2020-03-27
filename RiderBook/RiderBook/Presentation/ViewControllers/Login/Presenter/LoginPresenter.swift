@@ -12,12 +12,14 @@ class LoginPresenter: BasePresenter {
     
     // MARK: - Properties
     
-    private var loginRouter: LoginRouter
+    private let loginRouter: LoginRouter
+    private let loginInteractor: LoginInteractor
     
     // MARK: - Lyfecycle
     
-    init(loginRouter: LoginRouter) {
+    init(loginRouter: LoginRouter, loginInteractor: LoginInteractor) {
         self.loginRouter = loginRouter
+        self.loginInteractor = loginInteractor
     }
     
     // MARK: - User Actions
