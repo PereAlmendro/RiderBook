@@ -1,5 +1,5 @@
 //
-//  CalendarEvent.swift
+//  Ride.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 27/03/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CalendarEvent {
+class Ride {
     let date: Date
     let circuit: String
 

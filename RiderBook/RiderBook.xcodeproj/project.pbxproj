@@ -18,7 +18,7 @@
 		19312B68242E577700269ED3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B67242E577700269ED3 /* ProfileInteractor.swift */; };
 		19312B6A242E579200269ED3 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B69242E579200269ED3 /* HomeInteractor.swift */; };
 		19312B6C242E57AB00269ED3 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B6B242E57AB00269ED3 /* LoginInteractor.swift */; };
-		19312B77242E6DFA00269ED3 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B76242E6DFA00269ED3 /* CalendarEvent.swift */; };
+		19312B77242E6DFA00269ED3 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B76242E6DFA00269ED3 /* Ride.swift */; };
 		19312B79242E731600269ED3 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B78242E731600269ED3 /* Date+Extension.swift */; };
 		1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943375E2427B6DB00050CB0 /* AppDelegate.swift */; };
 		194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337602427B6DB00050CB0 /* SceneDelegate.swift */; };
@@ -109,7 +109,7 @@
 		19312B67242E577700269ED3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		19312B69242E579200269ED3 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		19312B6B242E57AB00269ED3 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		19312B76242E6DFA00269ED3 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		19312B76242E6DFA00269ED3 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		19312B78242E731600269ED3 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		1943375B2427B6DB00050CB0 /* RiderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1943375E2427B6DB00050CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 		19312B75242E6DD800269ED3 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				19312B76242E6DFA00269ED3 /* CalendarEvent.swift */,
+				19312B76242E6DFA00269ED3 /* Ride.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1060,7 +1060,7 @@
 				198CB6372427DDBA00E1638F /* RBTextField.swift in Sources */,
 				19F57D30242CFDFC00A9EA88 /* AddRideViewController.swift in Sources */,
 				19F57D23242CDDE400A9EA88 /* CalendarRouter.swift in Sources */,
-				19312B77242E6DFA00269ED3 /* CalendarEvent.swift in Sources */,
+				19312B77242E6DFA00269ED3 /* Ride.swift in Sources */,
 				198DD816242B8F4D00388CF0 /* ProfileDashboardView.swift in Sources */,
 				195908DD242B77F90053374B /* ProfilePresenter.swift in Sources */,
 				199A07662429599B002E3A15 /* BaseView.swift in Sources */,

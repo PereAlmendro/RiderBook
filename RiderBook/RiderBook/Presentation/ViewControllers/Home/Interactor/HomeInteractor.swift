@@ -10,14 +10,14 @@ import Foundation
 import RxSwift
 
 protocol HomeInteractor {
-    func fetchLastEvent() -> Single<CalendarEvent?>
+    func fetchLastRide() -> Single<Ride?>
 }
 
 class HomeInteractorImpl: HomeInteractor {
-    func fetchLastEvent() -> Single<CalendarEvent?> {
+    func fetchLastRide() -> Single<Ride?> {
         // TODO: Fetch the events for the current user
         let date: Date = Date(timeIntervalSinceNow: 60*60*24*6)
         let circuit: String = "Alcarrás"
-        return Single.just(CalendarEvent(date: date, circuit: circuit))
+        return Single.just(Ride(date: date, circuit: circuit))
     }
 }
