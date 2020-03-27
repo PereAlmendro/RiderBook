@@ -19,7 +19,7 @@ class RBDatePicker: NibView {
     // MARK: - Lifecycle
     
     override func customSetup() {
-        titleLabel.font = .arialboldMT(size: 25)
+        titleLabel.font = .arialboldMT(size: 23)
         datePicker.minimumDate = Date()
         datePicker.datePickerMode = .date
     }

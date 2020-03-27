@@ -27,7 +27,7 @@ class RBCircuitPicker: NibView {
     // MARK: - Lifecycle
 
     override func customSetup() {
-        titleLabel.font = .arialboldMT(size: 25)
+        titleLabel.font = .arialboldMT(size: 23)
         circuitPicker.dataSource = self
         circuitPicker.delegate = self
     }
