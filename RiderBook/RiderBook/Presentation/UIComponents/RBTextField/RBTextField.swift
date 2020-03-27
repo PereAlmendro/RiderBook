@@ -22,6 +22,10 @@ class RBTextField: NibView {
     
     // MARK: - Public
     
+    func getText() -> String? {
+        return textField.text
+    }
+    
     func setplaceholder(placeholder: String) {
         textField.placeholder = placeholder
     }

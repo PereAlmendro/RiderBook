@@ -1,5 +1,5 @@
 //
-//  homePresenter.swift
+//  HomePresenter.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 24/03/2020.
@@ -8,19 +8,18 @@
 
 import Foundation
 import UIKit
-
-enum HomeRow {
-    case profile
-    case calendar
-}
+import RxSwift
 
 class HomePresenter: BasePresenter {
     
-    // MARK: Properties
+    // MARK: - Properties
     
     private let homeRouter: HomeRouter
     private let homeInteractor: HomeInteractor
-    var dataSource: [HomeCellViewModel] = []
+    
+    // MARK: - Rx Properties
+    
+    var lasCalendarEvent: BehaviorSubject<CalendarEvent?> = BehaviorSubject<CalendarEvent?>(value: nil)
     
     // MARK: - Lifecycle
     
@@ -31,30 +30,30 @@ class HomePresenter: BasePresenter {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureHomeDashboardViews()
+        loadView()
     }
     
     // MARK: - User Actions
     
-    func didSelectRow(at indexPath: IndexPath) {
-        let row = dataSource[indexPath.row].row
-        switch row {
-        case .profile:
-            homeRouter.showProfile()
-        case .calendar:
-            homeRouter.showCalendar()
-        }
+    func tapOnProfile() {
+        homeRouter.showProfile()
+    }
+    
+    func tapOnCalendar() {
+        homeRouter.showCalendar()
     }
     
     // MARK: - Private
     
-    func configureHomeDashboardViews() {
-        // Profile
-        let profileRow = HomeCellViewModel(view: ProfileDashboardView(), row: .profile)
-        dataSource.append(profileRow)
-        
-        // CalendarDashboardView
-        let calendarRow = HomeCellViewModel(view: CalendarDashboardView(), row: .calendar)
-        dataSource.append(calendarRow)
+    func loadView() {
+        homeInteractor
+            .fetchLastEvent()
+            .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] calendarEvent in
+                self?.lasCalendarEvent.onNext(calendarEvent)
+            }) { error in
+                // TODO: - Handle error
+        }.disposed(by: disposeBag)
     }
 }
