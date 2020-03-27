@@ -14,7 +14,36 @@ class AddRidePresenter: BasePresenter {
     // MARK: - Properties
     
     private let addRideRouter: AddRideRouter
-    private let circuitNames: [String] = ["Alcarras", "Castelloli", "Montmelo", "Calafat"]
+    private let circuitNames: [String] = [
+        "Andalucía Circuit",
+        "Ascari Race Resort",
+        "Albacete",
+        "Alcarrás",
+        "Calafat",
+        "Circuito Mike G.",
+        "Can Padró",
+        "Cartagena",
+        "ParcMotor Castellolí",
+        "Ricardo Tormo Cheste",
+        "Fuente Álamo",
+        "Jarama",
+        "Jerez",
+        "Jumilla",
+        "Kotarr",
+        "La Selva",
+        "Llucmajor" ,
+        "Máspalomas",
+        "Miranda de Ebro",
+        "Monteblanco",
+        "Montmeló",
+        "Móra d’ Ebre",
+        "Motorland Aragón",
+        "Navarra",
+        "San Juan",
+        "Tabernas",
+        "Torremocha",
+        "Villaverde de Medina, Circuito internacional"
+    ]
     
     // MARK: - Lifecycle
     
