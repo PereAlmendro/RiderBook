@@ -10,6 +10,7 @@ import Foundation
 
 protocol LoginRouter {
     func showHomeAsGuest()
+    func showHome()
 }
 
 class LoginRouterImpl: LoginRouter {
@@ -25,6 +26,10 @@ class LoginRouterImpl: LoginRouter {
     }
     
     // MARK: - Navigations
+    
+    func showHome() {
+        baseRouter.openHomeInitializingTabBar()
+    }
     
     func showHomeAsGuest() {
         baseRouter.openHomeInitializingTabBar()

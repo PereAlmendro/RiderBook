@@ -49,7 +49,8 @@ class LoginViewController: BaseViewController<LoginPresenter> {
 extension LoginViewController: RBButtonDelegate {
     func rbButtonAction(_ sender: RBButton) {
         if sender == loginButton {
-            presenter.loginButtonAction()
+            presenter.login(username: usernameTextField.getText(),
+                            password: passwordTextField.getText())
         } else if sender == guestButton {
             presenter.guestButtonAction()
         }

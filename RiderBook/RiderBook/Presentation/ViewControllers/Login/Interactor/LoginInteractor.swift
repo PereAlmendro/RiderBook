@@ -7,9 +7,15 @@
 //
 
 import Foundation
+import RxSwift
 
-protocol LoginInteractor { }
+protocol LoginInteractor {
+    func attemptLogin(username: String?, password: String?) -> Single<Bool>
+}
 
 class LoginInteractorImpl: LoginInteractor {
-    
+    func attemptLogin(username: String?, password: String?) -> Single<Bool> {
+        // TODO: Validate credentials and perform login
+        return Single.just(true)
+    }
 }

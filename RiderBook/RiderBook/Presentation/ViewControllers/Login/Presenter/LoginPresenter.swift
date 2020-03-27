@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class LoginPresenter: BasePresenter {
     
@@ -24,8 +25,20 @@ class LoginPresenter: BasePresenter {
     
     // MARK: - User Actions
     
-    func loginButtonAction() {
-        // TODO : Login ¿firebase/local?
+    func login(username: String?, password: String?) {
+        loginInteractor
+            .attemptLogin(username: username, password: password)
+            .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] success in
+                if success {
+                    self?.loginRouter.showHome()
+                } else {
+                    // TODO: Handle error
+                }
+            }) { error in
+                // TODO: Handle error
+        }.disposed(by: disposeBag)
     }
     
     func guestButtonAction() {
