@@ -41,14 +41,17 @@ class AddRidePresenter: BasePresenter {
     // MARK: - Private functions
     
     private func loadView() {
+        view?.showLoader()
         addRideInteractor
             .fetchCircuits()
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (circuits) in
                 self?.circuitNames.onNext(circuits)
-            }) { error in
+                self?.view?.hideLoader()
+            }) { [weak self] error in
                 // TODO: Handle error
+                self?.view?.hideLoader()
         }.disposed(by: disposeBag)
     }
     

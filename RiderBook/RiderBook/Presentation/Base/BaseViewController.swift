@@ -11,13 +11,13 @@ import RxSwift
 
 class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
     
-    // MARK: - properties
+    // MARK: - Properties
     
     typealias Presenter = P
     var presenter: Presenter!
     let disposeBag = DisposeBag()
+    private var loader: RBLoader?
 
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -47,6 +47,19 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
         presenter.viewDidDisappear()
     }
     
+    // MARK: - BaseView
+    
+    func showLoader() {
+        if loader == nil {
+            loader = RBLoader()
+        }
+        view.addSubviewWithFillingConstraints(loader!)
+    }
+    
+    func hideLoader() {
+        loader?.removeFromSuperview()
+    }
+    
     // MARK: - Public functions
     
     func enableLargeTitles(_ enable: Bool) {
@@ -71,7 +84,5 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
     
     // MARK: - Overrideable functions
     
-    @objc func rightButtonItemAction(_ sender: Any) {
-        
-    }
+    @objc func rightButtonItemAction(_ sender: Any) { }
 }

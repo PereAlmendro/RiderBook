@@ -8,4 +8,7 @@
 
 import Foundation
 
-protocol BaseView: AnyObject { }
+protocol BaseView: AnyObject {
+    func showLoader()
+    func hideLoader()
+}

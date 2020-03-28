@@ -26,6 +26,7 @@ class LoginPresenter: BasePresenter {
     // MARK: - User Actions
     
     func login(username: String?, password: String?) {
+        view?.showLoader()
         loginInteractor
             .attemptLogin(username: username, password: password)
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
@@ -36,8 +37,10 @@ class LoginPresenter: BasePresenter {
                 } else {
                     // TODO: Handle error
                 }
-            }) { error in
+                self?.view?.hideLoader()
+            }) { [weak self] error in
                 // TODO: Handle error
+                self?.view?.hideLoader()
         }.disposed(by: disposeBag)
     }
     

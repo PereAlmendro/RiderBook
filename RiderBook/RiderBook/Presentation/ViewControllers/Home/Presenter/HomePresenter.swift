@@ -46,14 +46,17 @@ class HomePresenter: BasePresenter {
     // MARK: - Private
     
     func loadView() {
+        view?.hideLoader()
         homeInteractor
             .fetchLastRide()
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] calendarEvent in
                 self?.lasCalendarEvent.onNext(calendarEvent)
-            }) { error in
+                self?.view?.hideLoader()
+            }) { [weak self] error in
                 // TODO: - Handle error
+                self?.view?.hideLoader()
         }.disposed(by: disposeBag)
     }
 }

@@ -27,6 +27,8 @@
 		194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */; };
 		1943377B2427B6DD00050CB0 /* RiderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943377A2427B6DD00050CB0 /* RiderBookTests.swift */; };
 		194337862427B6DD00050CB0 /* RiderBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337852427B6DD00050CB0 /* RiderBookUITests.swift */; };
+		194F6EE4242F700300A1123C /* RBLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F6EE3242F700300A1123C /* RBLoader.swift */; };
+		194F6EE6242F702400A1123C /* RBLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F6EE5242F702400A1123C /* RBLoader.xib */; };
 		195908C7242B54FF0053374B /* RBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908C6242B54FF0053374B /* RBTabBarController.swift */; };
 		195908CE242B56A30053374B /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908CD242B56A30053374B /* LoginRouter.swift */; };
 		195908D1242B585F0053374B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908D0242B585F0053374B /* HomeRouter.swift */; };
@@ -124,6 +126,8 @@
 		194337812427B6DD00050CB0 /* RiderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194337852427B6DD00050CB0 /* RiderBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookUITests.swift; sourceTree = "<group>"; };
 		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		194F6EE3242F700300A1123C /* RBLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBLoader.swift; sourceTree = "<group>"; };
+		194F6EE5242F702400A1123C /* RBLoader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBLoader.xib; sourceTree = "<group>"; };
 		195908C6242B54FF0053374B /* RBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTabBarController.swift; sourceTree = "<group>"; };
 		195908CD242B56A30053374B /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		195908D0242B585F0053374B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 		192EF9DF2427C58500190D7B /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				194F6EE2242F6FCF00A1123C /* RBLoader */,
 				19CB9A85242E203A00561E2D /* RBCircuitPicker */,
 				19CB9A80242E185400561E2D /* RBDatePicker */,
 				19D8B894242D23F600C12FB2 /* RBEmtpyView */,
@@ -320,6 +325,15 @@
 				194337872427B6DD00050CB0 /* Info.plist */,
 			);
 			path = RiderBookUITests;
+			sourceTree = "<group>";
+		};
+		194F6EE2242F6FCF00A1123C /* RBLoader */ = {
+			isa = PBXGroup;
+			children = (
+				194F6EE3242F700300A1123C /* RBLoader.swift */,
+				194F6EE5242F702400A1123C /* RBLoader.xib */,
+			);
+			path = RBLoader;
 			sourceTree = "<group>";
 		};
 		195908C8242B55FD0053374B /* View */ = {
@@ -880,6 +894,7 @@
 				195908DE242B77F90053374B /* ProfileViewController.xib in Resources */,
 				194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */,
 				195908E6242B81F50053374B /* HomeTableViewCell.xib in Resources */,
+				194F6EE6242F702400A1123C /* RBLoader.xib in Resources */,
 				198DD818242B8F5C00388CF0 /* ProfileDashboardView.xib in Resources */,
 				192EF9E32427C63600190D7B /* RBButton.xib in Resources */,
 				1969F9AB242BD58400300C1B /* Localizable.strings in Resources */,
@@ -1039,6 +1054,7 @@
 				19C56079242A960D005C80CB /* HomeViewController.swift in Sources */,
 				198CB6322427D8D200E1638F /* NibView.swift in Sources */,
 				192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */,
+				194F6EE4242F700300A1123C /* RBLoader.swift in Sources */,
 				19CB9A89242E253300561E2D /* RBCircuitPicker.swift in Sources */,
 				199A076224295970002E3A15 /* BasePresenter.swift in Sources */,
 				199A075E24295858002E3A15 /* RouterDIModule.swift in Sources */,
