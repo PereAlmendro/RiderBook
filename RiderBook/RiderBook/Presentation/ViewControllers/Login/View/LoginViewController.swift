@@ -12,10 +12,10 @@ class LoginViewController: BaseViewController<LoginPresenter> {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var usernameTextField: RBTextField!
-    @IBOutlet weak var passwordTextField: RBTextField!
-    @IBOutlet weak var loginButton: RBButton!
-    @IBOutlet weak var guestButton: RBButton!
+    @IBOutlet private weak var usernameTextField: RBTextField!
+    @IBOutlet private weak var passwordTextField: RBTextField!
+    @IBOutlet private weak var loginButton: RBButton!
+    @IBOutlet private weak var guestButton: RBButton!
     
     // MARK: - Lyfecycle
     

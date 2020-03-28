@@ -35,7 +35,11 @@ class AddRidePresenter: BasePresenter {
     // MARK: - User Actions
     
     func saveAction() {
-        addRideRouter.dismiss()
+        view?.showAlert(type: .info,
+                        title: "Under Construction",
+                        message: "This functionality is not developer yet", completion: { [weak self] in
+            self?.addRideRouter.dismiss()
+        })
     }
     
     // MARK: - Private functions

@@ -9,6 +9,13 @@
 import Foundation
 
 protocol BaseView: AnyObject {
+    
+    // MARK: - Alert
+    
+    func showAlert(type: AlertType, title: String?, message: String?, completion: (() -> ())?)
+
+    // MARK: - Loader
+    
     func showLoader()
     func hideLoader()
 }

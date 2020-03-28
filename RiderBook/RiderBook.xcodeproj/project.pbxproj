@@ -29,6 +29,8 @@
 		194337862427B6DD00050CB0 /* RiderBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337852427B6DD00050CB0 /* RiderBookUITests.swift */; };
 		194F6EE4242F700300A1123C /* RBLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F6EE3242F700300A1123C /* RBLoader.swift */; };
 		194F6EE6242F702400A1123C /* RBLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F6EE5242F702400A1123C /* RBLoader.xib */; };
+		194F6EE9242F77C800A1123C /* RBAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F6EE8242F77C800A1123C /* RBAlertView.xib */; };
+		194F6EEB242F77D000A1123C /* RBAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F6EEA242F77D000A1123C /* RBAlertView.swift */; };
 		195908C7242B54FF0053374B /* RBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908C6242B54FF0053374B /* RBTabBarController.swift */; };
 		195908CE242B56A30053374B /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908CD242B56A30053374B /* LoginRouter.swift */; };
 		195908D1242B585F0053374B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908D0242B585F0053374B /* HomeRouter.swift */; };
@@ -128,6 +130,8 @@
 		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194F6EE3242F700300A1123C /* RBLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBLoader.swift; sourceTree = "<group>"; };
 		194F6EE5242F702400A1123C /* RBLoader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBLoader.xib; sourceTree = "<group>"; };
+		194F6EE8242F77C800A1123C /* RBAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBAlertView.xib; sourceTree = "<group>"; };
+		194F6EEA242F77D000A1123C /* RBAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBAlertView.swift; sourceTree = "<group>"; };
 		195908C6242B54FF0053374B /* RBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTabBarController.swift; sourceTree = "<group>"; };
 		195908CD242B56A30053374B /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		195908D0242B585F0053374B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		192EF9DF2427C58500190D7B /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				194F6EE7242F77B400A1123C /* RBAlertView */,
 				194F6EE2242F6FCF00A1123C /* RBLoader */,
 				19CB9A85242E203A00561E2D /* RBCircuitPicker */,
 				19CB9A80242E185400561E2D /* RBDatePicker */,
@@ -334,6 +339,15 @@
 				194F6EE5242F702400A1123C /* RBLoader.xib */,
 			);
 			path = RBLoader;
+			sourceTree = "<group>";
+		};
+		194F6EE7242F77B400A1123C /* RBAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				194F6EE8242F77C800A1123C /* RBAlertView.xib */,
+				194F6EEA242F77D000A1123C /* RBAlertView.swift */,
+			);
+			path = RBAlertView;
 			sourceTree = "<group>";
 		};
 		195908C8242B55FD0053374B /* View */ = {
@@ -901,6 +915,7 @@
 				199A07522428F30D002E3A15 /* LoginViewController.xib in Resources */,
 				19F57D31242CFDFC00A9EA88 /* AddRideViewController.xib in Resources */,
 				19CB9A87242E252200561E2D /* RBCircuitPicker.xib in Resources */,
+				194F6EE9242F77C800A1123C /* RBAlertView.xib in Resources */,
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
 				19F57D22242CDDE400A9EA88 /* CalendarViewController.xib in Resources */,
 				198CB6352427DDA900E1638F /* RBTextField.xib in Resources */,
@@ -1043,6 +1058,7 @@
 				19F57D20242CDDE400A9EA88 /* CalendarPresenter.swift in Sources */,
 				19312B68242E577700269ED3 /* ProfileInteractor.swift in Sources */,
 				19F57D21242CDDE400A9EA88 /* CalendarViewController.swift in Sources */,
+				194F6EEB242F77D000A1123C /* RBAlertView.swift in Sources */,
 				19C5607C242A96B9005C80CB /* HomePresenter.swift in Sources */,
 				192EF9DE2427C19900190D7B /* LoginViewController.swift in Sources */,
 				195908E5242B81F50053374B /* HomeTableViewCell.swift in Sources */,
