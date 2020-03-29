@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class CalendarPresenter: BasePresenter {
     
@@ -15,6 +16,11 @@ class CalendarPresenter: BasePresenter {
     
     private let calendarRouter: CalendarRouter
     private let calendarInteractor: CalendarInteractor
+    private var rides: [Ride] = []
+    
+    // MARK: - Rx Properties
+    
+    var reloadCalendar: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
     
     // MARK: - Lifecycle
     
@@ -23,16 +29,21 @@ class CalendarPresenter: BasePresenter {
         self.calendarInteractor = calendarInteractor
     }
     
-    // MARK: - Public functions
-    
-    func numberOfEvents(for date: Date) -> Int {
-        // TODO
-        return .zero
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        loadView()
     }
     
-    func hasEvents() -> Bool {
-        // TODO
-        return false
+    // MARK: - Public functions
+    
+    func numberOfRides(for date: Date) -> Int {
+        return rides.filter({
+            Calendar.current.isDate($0.date, inSameDayAs: date)
+        }).count
+    }
+    
+    func hasRides() -> Bool {
+        return rides.count > .zero ? true : false
     }
     
     // MARK: - User Actions
@@ -43,5 +54,22 @@ class CalendarPresenter: BasePresenter {
     
     func didSelectDate(date: Date) {
         // TODO: Do something when user selects date.
+    }
+    
+    // MARK: - Private
+    
+    func loadView() {
+        view?.showLoader()
+        calendarInteractor
+            .fetchRides()
+            .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] rides in
+                self?.rides = rides
+                self?.reloadCalendar.onNext(rides.count > 0)
+                self?.view?.hideLoader()
+                }, onError: { [weak self] error in
+                    self?.view?.hideLoader()
+            }).disposed(by: disposeBag)
     }
 }

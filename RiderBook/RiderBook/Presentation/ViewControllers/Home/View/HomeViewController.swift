@@ -19,6 +19,8 @@ class HomeViewController: BaseViewController<HomePresenter> {
     
     @IBOutlet private weak var tableView: UITableView!
     private var dataSource: [HomeCellViewModel] = []
+    private let calendarView = CalendarDashboardView()
+    private let profileView = ProfileDashboardView()
     
     // MARK: - Lifecycle
     
@@ -26,28 +28,28 @@ class HomeViewController: BaseViewController<HomePresenter> {
         super.viewDidLoad()
         setupView()
         
-        let profileRow = HomeCellViewModel(view: ProfileDashboardView(), row: .profile)
+        let profileRow = HomeCellViewModel(view: profileView, row: .profile)
         dataSource.append(profileRow)
         
         bindToRxProperties()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private functions
     
     private func bindToRxProperties() {
         presenter
             .lasCalendarEvent
+            .skip(1)
             .subscribe { [weak self] event in
-                guard let calendarEvent = event.element else { return }
-                
+                guard let calendarEvent = event.element,
+                    let calendarView = self?.calendarView else { return }
+                let calendarRow = HomeCellViewModel(view: calendarView, row: .calendar)
                 if let lastCalendarEvent = calendarEvent {
-                    let calendarView = CalendarDashboardView()
                     calendarView.configureWith(title: lastCalendarEvent.circuit,
                                                description: lastCalendarEvent.date.toString(style: .short))
-                    let calendarRow = HomeCellViewModel(view: calendarView, row: .calendar)
-                    self?.dataSource.append(calendarRow)
-                    self?.tableView.reloadData()
                 }
+                self?.dataSource.append(calendarRow)
+                self?.tableView.reloadData()
         }.disposed(by: disposeBag)
     }
     

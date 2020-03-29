@@ -16,7 +16,6 @@ class CalendarViewController: BaseViewController<CalendarPresenter> {
     @IBOutlet private weak var calendar: FSCalendar!
     @IBOutlet private weak var emptyView: RBEmptyView!
 
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -24,6 +23,7 @@ class CalendarViewController: BaseViewController<CalendarPresenter> {
         navigationItem.title = "Calendar".localized()
         addRightButtonItem(systemItem: .add)
         setupView()
+        bindToRxProperties()
     }
     
     // MARK: - User Actions
@@ -34,10 +34,19 @@ class CalendarViewController: BaseViewController<CalendarPresenter> {
     
     // MARK: - Private functions
     
+    private func bindToRxProperties() {
+        presenter
+            .reloadCalendar
+            .subscribe({ [weak self] event in
+                guard event.element == true else { return }
+                self?.calendar.reloadData()
+        }).disposed(by: disposeBag)
+    }
+    
     private func setupView() {
         calendar.delegate = self
         calendar.dataSource = self
-        if !presenter.hasEvents() {
+        if !presenter.hasRides() {
             emptyView.configureWith(title: "calendar_no_rides".localized(),
                                     description: "calendar_tap_to_add_events".localized(),
                                     image: UIImage(named: "guest_avatar"))
@@ -57,6 +66,6 @@ extension CalendarViewController: FSCalendarDelegate {
 
 extension CalendarViewController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        return presenter.numberOfEvents(for: date)
+        return presenter.numberOfRides(for: date)
     }
 }
