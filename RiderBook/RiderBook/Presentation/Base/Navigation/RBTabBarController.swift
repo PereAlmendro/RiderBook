@@ -11,6 +11,7 @@ import SwinjectStoryboard
 
 public enum TabBarItem: Int {
     case home
+    case myRides
     case calendar
     case profile
 }
