@@ -565,6 +565,7 @@
 		199A076A24295A67002E3A15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				19F57D25242CFD0A00A9EA88 /* AddRideViewController */,
 				19F57D17242CDDE400A9EA88 /* Calendar */,
 				195908D4242B77F90053374B /* Profile */,
 				19C56076242A95D1005C80CB /* Home */,
@@ -676,7 +677,6 @@
 		19F57D17242CDDE400A9EA88 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				19F57D24242CFCFA00A9EA88 /* ChildViewControllers */,
 				19F57D18242CDDE400A9EA88 /* Presenter */,
 				19F57D1A242CDDE400A9EA88 /* View */,
 				19F57D1D242CDDE400A9EA88 /* Interactor */,
@@ -716,14 +716,6 @@
 				19F57D1F242CDDE400A9EA88 /* CalendarRouter.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		19F57D24242CFCFA00A9EA88 /* ChildViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				19F57D25242CFD0A00A9EA88 /* AddRideViewController */,
-			);
-			path = ChildViewControllers;
 			sourceTree = "<group>";
 		};
 		19F57D25242CFD0A00A9EA88 /* AddRideViewController */ = {
