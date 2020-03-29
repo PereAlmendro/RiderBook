@@ -40,10 +40,16 @@ class InteractorDIModule {
             CalendarInteractorImpl()
         }
         
+        // MARK: - Add Ride
+        
         container.register(AddRideInteractor.self) { _ in
             AddRideInteractorImpl()
         }
+        
+        // MARK: - My Rides
+
+        container.register(MyRidesInteractor.self) { r in
+            MyRidesInteractorImpl()
+        }
     }
-    
-    
 }

@@ -46,8 +46,16 @@ class RouterDIModule{
             CalendarRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
         }
         
+        // MARK: - Add Ride
+        
         container.register(AddRideRouter.self) { r in
             AddRideRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+        }
+        
+        // MARK: - My Rides
+        
+        container.register(MyRidesRouter.self) { r in
+            MyRidesRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
         }
     }
 }

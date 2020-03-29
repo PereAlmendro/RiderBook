@@ -44,9 +44,18 @@ class PresenterDIModule {
                               calendarInteractor: r.resolve(CalendarInteractor.self)!)
         }
         
+        // MARK: - Add Ride
+        
         container.register(AddRidePresenter.self) { r in
             AddRidePresenter(addRideRouter: r.resolve(AddRideRouter.self)!,
                              addRideInteractor: r.resolve(AddRideInteractor.self)!)
+        }
+        
+        // MARK: - My Rides
+        
+        container.register(MyRidesPresenter.self) { r in
+            MyRidesPresenter(myRidesRouter: r.resolve(MyRidesRouter.self)!,
+                             myRidesInteractor: r.resolve(MyRidesInteractor.self)!)
         }
         
     }}

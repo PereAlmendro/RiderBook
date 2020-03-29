@@ -44,9 +44,17 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
                                        selectedImage: UIImage(named: "home_on")?.withRenderingMode(.alwaysOriginal))
         homeNavController.tabBarItem = homeTabItem
         
-        // TODO: RidesViewController
+        // MyRidesViewController
+        let myRidesVC = SwinjectStoryboard.defaultContainer.resolve(MyRidesViewController.self)!
+        let myRidesNavController = UINavigationController(rootViewController: myRidesVC)
+        myRidesNavController.modalPresentationStyle = .fullScreen
         
-        // TODO: CalendarViewController
+        let myRidesTabItem = UITabBarItem(title: String(),
+                                          image: UIImage(named: "road_off")?.withRenderingMode(.alwaysOriginal),
+                                          selectedImage: UIImage(named: "road_on")?.withRenderingMode(.alwaysOriginal))
+        myRidesVC.tabBarItem = myRidesTabItem
+        
+        // CalendarViewController
         let calendarVC = SwinjectStoryboard.defaultContainer.resolve(CalendarViewController.self)!
         let calendarNavController = UINavigationController(rootViewController: calendarVC)
         calendarNavController.modalPresentationStyle = .fullScreen
@@ -69,6 +77,7 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
         // Set ViewControllers
         tabBarController.setViewControllers([
             homeNavController,
+            myRidesNavController,
             calendarNavController,
             profileNavController
             ], animated: false)

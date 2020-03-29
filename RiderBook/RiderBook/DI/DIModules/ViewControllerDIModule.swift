@@ -49,9 +49,19 @@ class ViewControllerDIModule {
             return view
         }
         
+        // MARK: - Add Ride
+        
         container.register(AddRideViewController.self) { r in
             let view = AddRideViewController()
             view.presenter = r.resolve(AddRidePresenter.self)!
+            return view
+        }
+        
+        // MARK: - My Rides
+        
+        container.register(MyRidesViewController.self) { r in
+            let view = MyRidesViewController()
+            view.presenter = r.resolve(MyRidesPresenter.self)!
             return view
         }
     }
