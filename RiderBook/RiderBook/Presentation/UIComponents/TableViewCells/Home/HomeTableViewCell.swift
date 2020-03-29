@@ -15,8 +15,12 @@ struct HomeCellViewModel {
 
 class HomeTableViewCell: UITableViewCell {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet private weak var shadowView: UIView!
     @IBOutlet private weak var viewHolder: UIView!
+    
+    // MARK: - Static constants
     
     static var identifier: String {
         return String(describing: HomeTableViewCell.self)
@@ -26,6 +30,8 @@ class HomeTableViewCell: UITableViewCell {
         return UINib(nibName: identifier,
                      bundle: Bundle(for: HomeTableViewCell.self))
     }
+    
+    // MARK: - Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,10 +39,8 @@ class HomeTableViewCell: UITableViewCell {
         shadowView.addShadow()
         selectionStyle = .none
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    
+    // MARK: - Public functions
     
     func configureCell(with viewModel: HomeCellViewModel) {
         viewHolder.addSubviewWithFillingConstraints(viewModel.view)
