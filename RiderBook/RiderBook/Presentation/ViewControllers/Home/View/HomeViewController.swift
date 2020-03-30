@@ -38,7 +38,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
     
     private func bindToRxProperties() {
         presenter
-            .lasCalendarEvent
+            .lastCalendarEvent
             .skip(1)
             .subscribe { [weak self] event in
                 guard let calendarEvent = event.element,

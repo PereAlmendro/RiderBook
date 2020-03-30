@@ -16,21 +16,6 @@ protocol MyRidesInteractor {
 class MyRidesInteractorImpl: MyRidesInteractor {
     func fetchRides() -> Single<[Ride]> {
         // TODO: Fetch all rides
-        let ride1 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*6),
-                         circuit: "Alcarrás")
-        
-        let ride2 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*1),
-                         circuit: "Alcarrás")
-        
-        let ride3 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*24),
-                         circuit: "Alcarrás")
-        
-        let ride4 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*10),
-                         circuit: "Alcarrás")
-        
-        let ride5 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*2),
-                         circuit: "Alcarrás")
-        
-        return Single.just([ride1, ride2, ride3, ride4, ride5])
+        return Single.just(MockData.shared().getRides())
     }
 }

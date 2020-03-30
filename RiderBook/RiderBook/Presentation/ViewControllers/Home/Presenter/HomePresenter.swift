@@ -19,7 +19,7 @@ class HomePresenter: BasePresenter {
     
     // MARK: - Rx Properties
     
-    var lasCalendarEvent: BehaviorSubject<Ride?> = BehaviorSubject<Ride?>(value: nil)
+    var lastCalendarEvent: BehaviorSubject<Ride?> = BehaviorSubject<Ride?>(value: nil)
     
     // MARK: - Lifecycle
     
@@ -52,7 +52,7 @@ class HomePresenter: BasePresenter {
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] calendarEvent in
-                self?.lasCalendarEvent.onNext(calendarEvent)
+                self?.lastCalendarEvent.onNext(calendarEvent)
                 self?.view?.hideLoader()
             }) { [weak self] error in
                 self?.view?.showAlert(type: .error,

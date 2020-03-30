@@ -76,6 +76,7 @@
 		19CB9A87242E252200561E2D /* RBCircuitPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19CB9A86242E252200561E2D /* RBCircuitPicker.xib */; };
 		19CB9A89242E253300561E2D /* RBCircuitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CB9A88242E253300561E2D /* RBCircuitPicker.swift */; };
 		19CEB365243291D4000DDFBB /* Single+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CEB364243291D4000DDFBB /* Single+Extension.swift */; };
+		19CEB36D2432941D000DDFBB /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CEB36C2432941D000DDFBB /* MockData.swift */; };
 		19D8B896242D240C00C12FB2 /* RBEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D8B895242D240C00C12FB2 /* RBEmptyView.xib */; };
 		19D8B898242D241F00C12FB2 /* RBEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8B897242D241F00C12FB2 /* RBEmptyView.swift */; };
 		19F57D20242CDDE400A9EA88 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */; };
@@ -189,6 +190,7 @@
 		19CB9A86242E252200561E2D /* RBCircuitPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBCircuitPicker.xib; sourceTree = "<group>"; };
 		19CB9A88242E253300561E2D /* RBCircuitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBCircuitPicker.swift; sourceTree = "<group>"; };
 		19CEB364243291D4000DDFBB /* Single+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+Extension.swift"; sourceTree = "<group>"; };
+		19CEB36C2432941D000DDFBB /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		19D8B895242D240C00C12FB2 /* RBEmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBEmptyView.xib; sourceTree = "<group>"; };
 		19D8B897242D241F00C12FB2 /* RBEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBEmptyView.swift; sourceTree = "<group>"; };
 		19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				19312B76242E6DFA00269ED3 /* Ride.swift */,
+				19CEB36C2432941D000DDFBB /* MockData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1152,6 +1155,7 @@
 				19932E352430DBD9001867CA /* RideTableViewCell.swift in Sources */,
 				199A075E24295858002E3A15 /* RouterDIModule.swift in Sources */,
 				1969F9B3242BD6CC00300C1B /* String+Localization.swift in Sources */,
+				19CEB36D2432941D000DDFBB /* MockData.swift in Sources */,
 				19CB9A82242E187D00561E2D /* RBDatePicker.swift in Sources */,
 				19312B66242E575E00269ED3 /* CalendarInteractor.swift in Sources */,
 				19932E292430B063001867CA /* MyRidesRouter.swift in Sources */,

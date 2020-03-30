@@ -16,8 +16,6 @@ protocol HomeInteractor {
 class HomeInteractorImpl: HomeInteractor {
     func fetchLastRide() -> Single<Ride?> {
         // TODO: Fetch the events for the current user
-        let date: Date = Date(timeIntervalSinceNow: 60*60*24*6)
-        let circuit: String = "Alcarrás"
-        return Single.just(Ride(date: date, circuit: circuit))
+        return Single.just(MockData.shared().getRides().first)
     }
 }
