@@ -67,6 +67,10 @@ class MyRidesPresenter: BasePresenter {
                 self?.reloadTable.onNext(rides.count > 0)
                 self?.view?.hideLoader()
                 }, onError: { [weak self] error in
+                    self?.view?.showAlert(type: .error,
+                                          title: "Error".localized(),
+                                          message: error.localizedDescription,
+                                          completion: nil)
                     self?.view?.hideLoader()
             }).disposed(by: disposeBag)
     }

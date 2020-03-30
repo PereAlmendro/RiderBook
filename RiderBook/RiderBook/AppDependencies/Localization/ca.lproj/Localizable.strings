@@ -20,3 +20,5 @@
 "select_date" = "Selecciona una data";
 "select_circuit" = "Selecciona un circuit";
 "save" = "Guardar";
+"Error" = "Error";
+"Invalid_login" = "Credencials invàlides";

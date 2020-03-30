@@ -20,3 +20,5 @@
 "select_date" = "Select a date";
 "select_circuit" = "Select a circuit";
 "save" = "Save";
+"Error" = "Error";
+"Invalid_login" = "Invalid credentials";

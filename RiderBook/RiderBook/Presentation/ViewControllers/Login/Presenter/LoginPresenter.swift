@@ -35,11 +35,17 @@ class LoginPresenter: BasePresenter {
                 if success {
                     self?.loginRouter.showHome()
                 } else {
-                    // TODO: Handle error
+                    self?.view?.showAlert(type: .error,
+                                          title: "Error".localized(),
+                                          message: "Invalid_login".localized(),
+                                          completion: nil)
                 }
                 self?.view?.hideLoader()
             }) { [weak self] error in
-                // TODO: Handle error
+                self?.view?.showAlert(type: .error,
+                                      title: "Error".localized(),
+                                      message: error.localizedDescription,
+                                      completion: nil)
                 self?.view?.hideLoader()
         }.disposed(by: disposeBag)
     }
