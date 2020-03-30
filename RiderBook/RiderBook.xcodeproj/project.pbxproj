@@ -253,6 +253,7 @@
 		192EF9DC2427C13800190D7B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				199A0767242959CE002E3A15 /* Navigation */,
 				19312B75242E6DD800269ED3 /* Entities */,
 				198CB63A2427E5FD00E1638F /* Base */,
 				192EF9E42427C65200190D7B /* Extensions */,
@@ -527,7 +528,6 @@
 		198CB63A2427E5FD00E1638F /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				199A0767242959CE002E3A15 /* Navigation */,
 				199A075B2429530F002E3A15 /* BaseRouter.swift */,
 				198CB63C2427E61E00E1638F /* BaseViewController.swift */,
 				199A076124295970002E3A15 /* BasePresenter.swift */,
