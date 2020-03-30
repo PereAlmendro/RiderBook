@@ -75,6 +75,7 @@
 		19CB9A84242E188B00561E2D /* RBDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19CB9A83242E188B00561E2D /* RBDatePicker.xib */; };
 		19CB9A87242E252200561E2D /* RBCircuitPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19CB9A86242E252200561E2D /* RBCircuitPicker.xib */; };
 		19CB9A89242E253300561E2D /* RBCircuitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CB9A88242E253300561E2D /* RBCircuitPicker.swift */; };
+		19CEB365243291D4000DDFBB /* Single+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CEB364243291D4000DDFBB /* Single+Extension.swift */; };
 		19D8B896242D240C00C12FB2 /* RBEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D8B895242D240C00C12FB2 /* RBEmptyView.xib */; };
 		19D8B898242D241F00C12FB2 /* RBEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8B897242D241F00C12FB2 /* RBEmptyView.swift */; };
 		19F57D20242CDDE400A9EA88 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */; };
@@ -187,6 +188,7 @@
 		19CB9A83242E188B00561E2D /* RBDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBDatePicker.xib; sourceTree = "<group>"; };
 		19CB9A86242E252200561E2D /* RBCircuitPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBCircuitPicker.xib; sourceTree = "<group>"; };
 		19CB9A88242E253300561E2D /* RBCircuitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBCircuitPicker.swift; sourceTree = "<group>"; };
+		19CEB364243291D4000DDFBB /* Single+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+Extension.swift"; sourceTree = "<group>"; };
 		19D8B895242D240C00C12FB2 /* RBEmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBEmptyView.xib; sourceTree = "<group>"; };
 		19D8B897242D241F00C12FB2 /* RBEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBEmptyView.swift; sourceTree = "<group>"; };
 		19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		192EF9E42427C65200190D7B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				19CEB363243291B6000DDFBB /* RxExtensions */,
 				192EF9E52427C66C00190D7B /* UIView+Extension.swift */,
 				192EF9E72427C70100190D7B /* UIColor+Extension.swift */,
 				198CB6272427C8A000E1638F /* UIFont+Extension.swift */,
@@ -734,6 +737,14 @@
 			path = RBCircuitPicker;
 			sourceTree = "<group>";
 		};
+		19CEB363243291B6000DDFBB /* RxExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				19CEB364243291D4000DDFBB /* Single+Extension.swift */,
+			);
+			path = RxExtensions;
+			sourceTree = "<group>";
+		};
 		19D8B894242D23F600C12FB2 /* RBEmtpyView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1114,6 +1125,7 @@
 			files = (
 				1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */,
 				19F57D2B242CFD4E00A9EA88 /* AddRideRouter.swift in Sources */,
+				19CEB365243291D4000DDFBB /* Single+Extension.swift in Sources */,
 				19F57D2D242CFDA400A9EA88 /* AddRidePresenter.swift in Sources */,
 				199A074D2428EBCC002E3A15 /* SwinjectStoryboard+Extenstion.swift in Sources */,
 				199A0760242958C1002E3A15 /* ViewControllerDIModule.swift in Sources */,

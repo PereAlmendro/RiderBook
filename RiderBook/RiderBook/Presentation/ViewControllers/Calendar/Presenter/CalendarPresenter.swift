@@ -59,21 +59,19 @@ class CalendarPresenter: BasePresenter {
     // MARK: - Private
     
     func loadView() {
-        view?.showLoader()
         calendarInteractor
             .fetchRides()
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
+            .showLoader(view: view)
             .subscribe(onSuccess: { [weak self] rides in
                 self?.rides = rides
                 self?.reloadCalendar.onNext(rides.count > 0)
-                self?.view?.hideLoader()
                 }, onError: { [weak self] error in
                     self?.view?.showAlert(type: .error,
                                           title: "Error".localized(),
                                           message: error.localizedDescription,
                                           completion: nil)
-                    self?.view?.hideLoader()
             }).disposed(by: disposeBag)
     }
 }

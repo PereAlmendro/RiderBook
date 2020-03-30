@@ -8,14 +8,19 @@
 
 import Foundation
 
-protocol BaseView: AnyObject {
+protocol BaseView: AnyObject, Loadable {
     
     // MARK: - Alert
     
     func showAlert(type: AlertType, title: String?, message: String?, completion: (() -> ())?)
 
-    // MARK: - Loader
+    // MARK: - Loadable
     
+    func showLoader()
+    func hideLoader()
+}
+
+protocol Loadable {
     func showLoader()
     func hideLoader()
 }

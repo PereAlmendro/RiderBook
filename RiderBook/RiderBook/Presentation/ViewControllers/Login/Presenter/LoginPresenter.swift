@@ -26,11 +26,11 @@ class LoginPresenter: BasePresenter {
     // MARK: - User Actions
     
     func login(username: String?, password: String?) {
-        view?.showLoader()
         loginInteractor
             .attemptLogin(username: username, password: password)
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
+            .showLoader(view: view)
             .subscribe(onSuccess: { [weak self] success in
                 if success {
                     self?.loginRouter.showHome()
@@ -40,13 +40,11 @@ class LoginPresenter: BasePresenter {
                                           message: "Invalid_login".localized(),
                                           completion: nil)
                 }
-                self?.view?.hideLoader()
             }) { [weak self] error in
                 self?.view?.showAlert(type: .error,
                                       title: "Error".localized(),
                                       message: error.localizedDescription,
                                       completion: nil)
-                self?.view?.hideLoader()
         }.disposed(by: disposeBag)
     }
     
