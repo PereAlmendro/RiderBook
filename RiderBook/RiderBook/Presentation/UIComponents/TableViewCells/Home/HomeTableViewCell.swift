@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct HomeCellViewModel {
-    let view: UIView
-    let row: HomeRow
-}
-
 class HomeTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
@@ -42,8 +37,8 @@ class HomeTableViewCell: UITableViewCell {
     
     // MARK: - Public functions
     
-    func configureCell(with viewModel: HomeCellViewModel) {
-        viewHolder.addSubviewWithFillingConstraints(viewModel.view)
+    func configureCell(with view: UIView) {
+        viewHolder.addSubviewWithFillingConstraints(view)
     }
     
 }

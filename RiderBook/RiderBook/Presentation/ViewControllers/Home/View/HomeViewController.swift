@@ -18,7 +18,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var tableView: UITableView!
-    private var dataSource: [HomeCellViewModel] = []
+    private var dataSource: [UIView] = []
     private let calendarView = CalendarDashboardView()
     private let profileView = ProfileDashboardView()
     
@@ -28,8 +28,10 @@ class HomeViewController: BaseViewController<HomePresenter> {
         super.viewDidLoad()
         setupView()
         
-        let profileRow = HomeCellViewModel(view: profileView, row: .profile)
-        dataSource.append(profileRow)
+        dataSource = [
+            profileView,
+            calendarView
+        ]
         
         bindToRxProperties()
     }
@@ -38,17 +40,15 @@ class HomeViewController: BaseViewController<HomePresenter> {
     
     private func bindToRxProperties() {
         presenter
-            .lastCalendarEvent
-            .skip(1)
+            .lastRide
             .subscribe { [weak self] event in
-                guard let calendarEvent = event.element,
-                    let calendarView = self?.calendarView else { return }
-                let calendarRow = HomeCellViewModel(view: calendarView, row: .calendar)
-                if let lastCalendarEvent = calendarEvent {
-                    calendarView.configureWith(title: lastCalendarEvent.circuit,
-                                               description: lastCalendarEvent.date.toString(style: .short))
-                }
-                self?.dataSource.append(calendarRow)
+                guard
+                    let calendarEvent = event.element,
+                    let lastCalendarEvent = calendarEvent else { return }
+                
+                self?.calendarView.configureWith(title: lastCalendarEvent.circuit,
+                                                 description: lastCalendarEvent.date.toString(style: .short))
+                
                 self?.tableView.reloadData()
         }.disposed(by: disposeBag)
     }
@@ -94,10 +94,8 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier,
                                                  for: indexPath) as? HomeTableViewCell ?? HomeTableViewCell()
-        
-        let cellViewModel = dataSource[indexPath.row]
-        cell.configureCell(with: cellViewModel)
-        
+        let view = dataSource[indexPath.row]
+        cell.configureCell(with: view)
         return cell
     }
 }
