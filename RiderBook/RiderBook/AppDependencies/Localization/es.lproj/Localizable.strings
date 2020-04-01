@@ -15,7 +15,7 @@
 "Guest_Rider" = "Rider invitado";
 "Login_to_use_all_features" = "Inicie sesión para usar todas las funciones, ¡es gratis!";
 "Calendar" = "Calendario";
-"calendar_no_rides" = "No tienes rodadas en el calendario";
+"calendar_no_rides" = "No tienes rodadas en este día";
 "calendar_tap_to_add_events" = "Dale al boton + para añadir una";
 "select_date" = "Selecciona una fecha";
 "select_circuit" = "Selecciona un circuito";

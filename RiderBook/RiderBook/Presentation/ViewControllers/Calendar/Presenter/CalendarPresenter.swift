@@ -21,6 +21,7 @@ class CalendarPresenter: BasePresenter {
     // MARK: - Rx Properties
     
     var reloadCalendar: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
+    var selectedDayRides: BehaviorSubject<[Ride]> = BehaviorSubject<[Ride]>(value: [])
     
     // MARK: - Lifecycle
     
@@ -53,7 +54,12 @@ class CalendarPresenter: BasePresenter {
     }
     
     func didSelectDate(date: Date) {
-        // TODO: Do something when user selects date.
+        let ridesInDate = rides.filter { $0.date.toString(style: .short) == date.toString(style: .short) }
+        self.selectedDayRides.onNext(ridesInDate)
+    }
+    
+    func didSelectRide(ride: Ride) {
+        // TODO: Open ride detail
     }
     
     // MARK: - Private

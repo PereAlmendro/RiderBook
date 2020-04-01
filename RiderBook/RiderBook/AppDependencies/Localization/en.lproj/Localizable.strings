@@ -15,7 +15,7 @@
 "Guest_Rider" = "Guest Rider";
 "Login_to_use_all_features" = "Log in to use all features, its free!";
 "Calendar" = "Calendar";
-"calendar_no_rides" = "you have no rides in the calendar";
+"calendar_no_rides" = "you have no rides on this day";
 "calendar_tap_to_add_events" = "Tap de + button to add your next ride";
 "select_date" = "Select a date";
 "select_circuit" = "Select a circuit";

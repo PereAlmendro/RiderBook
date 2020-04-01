@@ -15,7 +15,7 @@
 "Guest_Rider" = "Rider invitat";
 "Login_to_use_all_features" = "Inicieu la sessió per utilitzar totes les funcions, és gratis!";
 "Calendar" = "Calendari";
-"calendar_no_rides" = "No tens rodadas al calendari";
+"calendar_no_rides" = "No tens rodadas en aquest dia";
 "calendar_tap_to_add_events" = "Prem el botó + per afegir una";
 "select_date" = "Selecciona una data";
 "select_circuit" = "Selecciona un circuit";
