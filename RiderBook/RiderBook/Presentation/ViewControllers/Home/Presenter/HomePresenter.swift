@@ -20,6 +20,9 @@ class HomePresenter: BasePresenter {
     // MARK: - Rx Properties
     
     var lastRide: BehaviorSubject<Ride?> = BehaviorSubject<Ride?>(value: nil)
+    private var lastRideValue: Ride? {
+        return try? lastRide.value()
+    }
     
     // MARK: - Lifecycle
     
@@ -40,7 +43,11 @@ class HomePresenter: BasePresenter {
     }
     
     func tapOnCalendar() {
-        homeRouter.showCalendar()
+        if let _ = lastRideValue {
+            homeRouter.showLastRideDetail()
+        } else {
+            homeRouter.showCalendar()
+        }
     }
     
     // MARK: - Private

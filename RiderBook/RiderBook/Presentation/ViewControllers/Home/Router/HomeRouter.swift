@@ -11,6 +11,7 @@ import Foundation
 protocol HomeRouter {
     func showCalendar()
     func showProfile()
+    func showLastRideDetail()
 }
 
 class HomeRouterImpl: HomeRouter {
@@ -29,6 +30,10 @@ class HomeRouterImpl: HomeRouter {
     
     func showCalendar() {
         baseRouter.select(tab: .calendar)
+    }
+    
+    func showLastRideDetail() {
+        // TODO: Show last ride detail
     }
     
     func showProfile() {
