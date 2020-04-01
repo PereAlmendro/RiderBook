@@ -17,19 +17,24 @@ class MockData {
     
     func getRides() -> [Ride] {
         let ride1 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*6),
-                         circuit: "Alcarrás")
+                         circuit: "Alcarrás",
+                         bestLapTime: "1' 59''")
         
         let ride2 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*1),
-                         circuit: "Montmeló")
+                         circuit: "Montmeló",
+                         bestLapTime: "27''")
         
         let ride3 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*24),
-                         circuit: "Parcmotor Castellolí")
+                         circuit: "Parcmotor Castellolí",
+                         bestLapTime: "1' 32''")
         
         let ride4 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*10),
-                         circuit: "Calafat")
+                         circuit: "Calafat",
+                         bestLapTime: "1' 07''")
         
         let ride5 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*2),
-                         circuit: "Alcarrás")
+                         circuit: "Alcarrás",
+                         bestLapTime: "35''")
         
         return [ride1, ride2, ride3, ride4, ride5]
     }

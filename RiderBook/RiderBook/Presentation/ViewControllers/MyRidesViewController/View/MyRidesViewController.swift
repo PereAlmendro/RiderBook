@@ -70,7 +70,8 @@ extension MyRidesViewController: UITableViewDataSource {
         
         let ride = presenter.ride(indexPath: indexPath)
         cell.configureWith(circuitName: ride.circuit,
-                           date: ride.date.toString(style: .short))
+                           date: ride.date.toString(style: .short),
+                           bestLapTime: ride.bestLapTime)
         
         return cell
     }

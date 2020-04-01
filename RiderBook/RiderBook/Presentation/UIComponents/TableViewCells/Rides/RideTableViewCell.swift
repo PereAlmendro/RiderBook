@@ -14,6 +14,8 @@ class RideTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var circuitLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet weak var bestLapTitleLabel: UILabel!
+    @IBOutlet weak var bestLapValueLabel: UILabel!
     
     // MARK: - Static constants
     
@@ -30,14 +32,22 @@ class RideTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
+        
         circuitLabel.font = .arialboldMT(size: 17)
         dateLabel.font = .arialMT(size: 17)
+        
+        bestLapTitleLabel.text = "best_lap".localized()
+        bestLapTitleLabel.font = .arialboldMT(size: 17)
+        bestLapValueLabel.font = .arialMT(size: 17)
     }
     
     // MARK: - Public
     
-    func configureWith(circuitName: String, date: String) {
+    func configureWith(circuitName: String, date: String, bestLapTime: String) {
         circuitLabel.text = circuitName
         dateLabel.text = date
+        
+        bestLapValueLabel.text = bestLapTime
     }
 }

@@ -16,33 +16,59 @@
                 <rect key="frame" x="0.0" y="0.0" width="476" height="156"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="5v4-sX-3de">
-                        <rect key="frame" x="0.0" y="10" width="476" height="136"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PYp-0b-8wa">
+                        <rect key="frame" x="10" y="10" width="456" height="136"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO4-0M-ZME">
-                                <rect key="frame" x="0.0" y="0.0" width="476" height="68"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIp-pN-r7f">
-                                <rect key="frame" x="0.0" y="68" width="476" height="68"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="5v4-sX-3de">
+                                <rect key="frame" x="0.0" y="47.5" width="220.5" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO4-0M-ZME">
+                                        <rect key="frame" x="0.0" y="0.0" width="220.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIp-pN-r7f">
+                                        <rect key="frame" x="0.0" y="20.5" width="220.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qo4-OC-ieM">
+                                <rect key="frame" x="235.5" y="47.5" width="220.5" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg3-l8-v0S">
+                                        <rect key="frame" x="89.5" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6m-18-Vfz">
+                                        <rect key="frame" x="89.5" y="20.5" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="5v4-sX-3de" secondAttribute="bottom" constant="10" id="Gik-iX-Cgn"/>
-                    <constraint firstItem="5v4-sX-3de" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="OsL-sw-dar"/>
-                    <constraint firstAttribute="trailing" secondItem="5v4-sX-3de" secondAttribute="trailing" id="PKm-k4-YUu"/>
-                    <constraint firstItem="5v4-sX-3de" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kre-D1-oXG"/>
+                    <constraint firstAttribute="bottom" secondItem="PYp-0b-8wa" secondAttribute="bottom" constant="10" id="Bi6-r4-d1Z"/>
+                    <constraint firstItem="PYp-0b-8wa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Dsf-Ax-9iJ"/>
+                    <constraint firstItem="PYp-0b-8wa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Fya-JR-nxW"/>
+                    <constraint firstAttribute="trailing" secondItem="PYp-0b-8wa" secondAttribute="trailing" constant="10" id="PgR-qe-2cy"/>
+                    <constraint firstItem="PYp-0b-8wa" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="u2A-ro-NpU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bestLapTitleLabel" destination="yg3-l8-v0S" id="Jno-9T-mqw"/>
+                <outlet property="bestLapValueLabel" destination="b6m-18-Vfz" id="YTJ-uN-Xrm"/>
                 <outlet property="circuitLabel" destination="DO4-0M-ZME" id="l5D-bL-sfS"/>
                 <outlet property="dateLabel" destination="kIp-pN-r7f" id="vzG-k5-tVs"/>
             </connections>
