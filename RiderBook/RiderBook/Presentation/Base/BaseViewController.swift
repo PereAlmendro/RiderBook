@@ -49,7 +49,7 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
     
     // MARK: - BaseView
     
-    func showAlert(type: AlertType, title: String?, message: String?, completion: (() -> ())?) {
+    func showAlert(type: AlertType, title: String, message: String?, completion: (() -> ())?) {
         let alertView = RBAlertView()
         alertView.configureWith(type: type, title: title, message: message, completion: completion)
         UIApplication.shared.windows.first?.addSubviewWithFillingConstraints(alertView)

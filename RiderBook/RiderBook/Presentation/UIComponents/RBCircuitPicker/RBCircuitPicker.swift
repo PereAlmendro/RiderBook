@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol RBCircuitPickerDelegate: AnyObject {
-    func didSelectCircuit(at index: Int, sender: RBCircuitPicker)
-}
-
 class RBCircuitPicker: NibView {
     
     // MARK: - IBOutlets
@@ -22,7 +18,7 @@ class RBCircuitPicker: NibView {
     // MARK: - Properties
 
     private var dataSource: [String] = []
-    private weak var delegate: RBCircuitPickerDelegate?
+    private var selectedCircuit: String = ""
     
     // MARK: - Lifecycle
 
@@ -34,11 +30,15 @@ class RBCircuitPicker: NibView {
     
     // MARK: - Public functions
     
-    func configureWith(title: String, circuits: [String], delegate: RBCircuitPickerDelegate? = nil) {
-        self.delegate = delegate
+    func configureWith(title: String, circuits: [String]) {
         titleLabel.text = title
         dataSource = circuits
+        selectedCircuit = circuits.first ?? ""
         circuitPicker.reloadAllComponents()
+    }
+    
+    func getSelectedCircuit() -> String {
+        return selectedCircuit
     }
 }
 
@@ -62,6 +62,6 @@ extension RBCircuitPicker: UIPickerViewDataSource {
 
 extension RBCircuitPicker: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        delegate?.didSelectCircuit(at: row, sender: self)
+        selectedCircuit = dataSource[row]
     }
 }

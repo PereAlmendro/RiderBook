@@ -12,7 +12,10 @@ protocol BaseView: AnyObject, Loadable {
     
     // MARK: - Alert
     
-    func showAlert(type: AlertType, title: String?, message: String?, completion: (() -> ())?)
+    func showAlert(type: AlertType,
+                   title: String,
+                   message: String?,
+                   completion: (() -> ())?)
 
     // MARK: - Loadable
     

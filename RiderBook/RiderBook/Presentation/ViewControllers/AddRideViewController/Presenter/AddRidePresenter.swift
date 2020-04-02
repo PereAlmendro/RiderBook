@@ -34,12 +34,32 @@ class AddRidePresenter: BasePresenter {
     
     // MARK: - User Actions
     
-    func saveAction() {
-        view?.showAlert(type: .info,
-                        title: "Under Construction",
-                        message: "This functionality is not developer yet", completion: { [weak self] in
-            self?.addRideRouter.dismiss()
-        })
+    func saveAction(selectedDate: Date, selectedCircuit: String) {
+        addRideInteractor
+            .attemptAddRide(selectedDate: selectedDate, selectedCircuit: selectedCircuit)
+            .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .showLoader(view: view)
+            .subscribe(onSuccess: { [weak self] success in
+                if success {
+                    self?.view?.showAlert(type: .success,
+                                          title: "ride_created".localized(),
+                                          message: "good_luck".localized(),
+                                          completion: {
+                                            self?.addRideRouter.dismiss()
+                    })
+                } else {
+                    self?.view?.showAlert(type: .error,
+                                          title: "generic_error_title".localized(),
+                                          message: "generic_error_message".localized(),
+                                          completion: nil)
+                }
+            }) { [weak self] error in
+                self?.view?.showAlert(type: .error,
+                                      title: "generic_error_title".localized(),
+                                      message: error.localizedDescription,
+                                      completion: nil)
+        }.disposed(by: disposeBag)
     }
     
     // MARK: - Private functions

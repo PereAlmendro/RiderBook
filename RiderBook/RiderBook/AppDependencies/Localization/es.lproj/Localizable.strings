@@ -23,3 +23,7 @@
 "Error" = "Error";
 "Invalid_login" = "Credenciales inválidas";
 "best_lap" = "Mejor vuelta";
+"ride_created" = "¡Rodada creada!";
+"good_luck" = "Buena suerte";
+"generic_error_title" = "¡Alerta!";
+"generic_error_message" = "Algo ha salido mal, por favor, prueba mas tarde";

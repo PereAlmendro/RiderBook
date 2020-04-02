@@ -30,7 +30,7 @@ class RBDatePicker: NibView {
         titleLabel.text = title
     }
     
-    func getDate() -> Date {
+    func getSelectedDate() -> Date {
         return datePicker.date
     }
 }

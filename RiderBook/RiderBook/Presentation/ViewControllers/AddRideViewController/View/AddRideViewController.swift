@@ -45,6 +45,8 @@ class AddRideViewController: BaseViewController<AddRidePresenter> {
 
 extension AddRideViewController: RBButtonDelegate {
     func rbButtonAction(_ sender: RBButton) {
-        presenter.saveAction()
+        let selectedDate = datePicker.getSelectedDate()
+        let selectedCircuit = circuitPicker.getSelectedCircuit()
+        presenter.saveAction(selectedDate: selectedDate, selectedCircuit: selectedCircuit)
     }
 }

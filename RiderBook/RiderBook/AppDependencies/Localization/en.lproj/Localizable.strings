@@ -23,3 +23,7 @@
 "Error" = "Error";
 "Invalid_login" = "Invalid credentials";
 "best_lap" = "Best lap";
+"ride_created" = "Ride created!";
+"good_luck" = "Good luck";
+"generic_error_title" = "Warning!";
+"generic_error_message" = "Something went wrong, please, try again later";
