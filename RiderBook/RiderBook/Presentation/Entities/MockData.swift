@@ -26,11 +26,11 @@ class MockData {
         
         let ride3 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*24),
                          circuit: "Parcmotor Castellolí",
-                         bestLapTime: "1' 32''")
+                         bestLapTime: "")
         
         let ride4 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*10),
                          circuit: "Calafat",
-                         bestLapTime: "1' 07''")
+                         bestLapTime: "")
         
         let ride5 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*2),
                          circuit: "Alcarrás",

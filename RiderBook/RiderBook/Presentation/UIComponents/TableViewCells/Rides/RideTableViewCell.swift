@@ -48,6 +48,6 @@ class RideTableViewCell: UITableViewCell {
         circuitLabel.text = circuitName
         dateLabel.text = date
         
-        bestLapValueLabel.text = bestLapTime
+        bestLapValueLabel.text = bestLapTime.isEmpty ? "-" : bestLapTime
     }
 }
