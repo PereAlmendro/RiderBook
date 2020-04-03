@@ -16,52 +16,52 @@ class RouterDIModule{
     
     static func resolveRouter(_ container: Container) {
 
-        // MARK: - BaseRouter
-
-        container.register(BaseRouter.self) { _ in
-            BaseRouterImpl()
+        // MARK: - AppCoordinator
+        
+        container.register(AppCoordinator.self) { _ in
+            AppCoordinatorImpl()
         }.inObjectScope(.container)
         
         // MARK: - Login
 
         container.register(LoginRouter.self) { r in
-            LoginRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+            LoginRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
         }
         
         // MARK: - Home
 
         container.register(HomeRouter.self) { r in
-            HomeRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+            HomeRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
         }
         
         // MARK: - Profile
         
         container.register(ProfileRouter.self) { r in
-            ProfileRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+            ProfileRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
         }
         
         // MARK: - Calendar
         
         container.register(CalendarRouter.self) { r in
-            CalendarRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+            CalendarRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
         }
         
         // MARK: - Add Ride
         
         container.register(AddRideRouter.self) { r in
-            AddRideRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+            AddRideRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
         }
         
         // MARK: - My Rides
         
         container.register(MyRidesRouter.self) { r in
-            MyRidesRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+            MyRidesRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
         }
         
         // MARK: - Ride Detail
         
         container.register(RideDetailRouter.self) { r in
-            RideDetailRouterImpl(baseRouter: r.resolve(BaseRouter.self)!)
+            RideDetailRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
         }
     }
 }

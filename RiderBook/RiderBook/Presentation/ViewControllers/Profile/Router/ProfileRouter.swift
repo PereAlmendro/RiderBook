@@ -8,17 +8,17 @@
 
 import Foundation
 
-protocol ProfileRouter { }
+protocol ProfileRouter: BaseRouter { }
 
 class ProfileRouterImpl: ProfileRouter {
     
     // MARK: - Properties
     
-    private let baseRouter: BaseRouter
+    var coordinator: AppCoordinator?
     
     // MARK: - Lifecycle
     
-    init(baseRouter: BaseRouter) {
-        self.baseRouter = baseRouter
+    required init(coordinator: AppCoordinator) {
+        self.coordinator = coordinator
     }
 }

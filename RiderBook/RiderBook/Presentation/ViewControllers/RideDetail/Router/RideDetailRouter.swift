@@ -8,17 +8,17 @@
 
 import Foundation
 
-protocol RideDetailRouter { }
+protocol RideDetailRouter: BaseRouter { }
 
 class RideDetailRouterImpl: RideDetailRouter {
     
     // MARK: - Properties
     
-    private let baseRouter: BaseRouter
+    var coordinator: AppCoordinator?
     
     // MARK: - Lifecycle
     
-    init(baseRouter: BaseRouter) {
-        self.baseRouter = baseRouter
+    required init(coordinator: AppCoordinator) {
+        self.coordinator = coordinator
     }
 }

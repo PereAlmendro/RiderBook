@@ -47,11 +47,7 @@ class MyRidesPresenter: BasePresenter {
     
     func didSelectRow(at indexPath: IndexPath) {
         let ride = rides[indexPath.row]
-        // TODO: open ride detail
-        view?.showAlert(type: .info,
-                        title: "Ride selected",
-                        message: "\(ride.circuit) - \(ride.date.toString(style: .short))",
-                        completion: nil)
+        myRidesRouter.showRide(ride:ride)
     }
     
     // MARK: - Private functions

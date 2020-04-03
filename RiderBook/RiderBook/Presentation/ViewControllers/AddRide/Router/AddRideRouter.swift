@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AddRideRouter {
+protocol AddRideRouter: BaseRouter {
     func dismiss()
 }
 
@@ -16,16 +16,16 @@ class AddRideRouterImpl: AddRideRouter {
     
     // MARK: - Properties
     
-    private let baseRouter: BaseRouter
+    var coordinator: AppCoordinator?
     
     // MARK: - Lifecycle
     
-    init(baseRouter: BaseRouter) {
-        self.baseRouter = baseRouter
+    required init(coordinator: AppCoordinator) {
+        self.coordinator = coordinator
     }
     
     func dismiss() {
-        baseRouter.dismiss(animated: true, completion: nil)
+        coordinator?.dismiss()
     }
 }
 

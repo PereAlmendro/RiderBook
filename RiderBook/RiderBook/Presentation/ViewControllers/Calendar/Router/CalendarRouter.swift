@@ -9,7 +9,7 @@
 import Foundation
 import SwinjectStoryboard
 
-protocol CalendarRouter {
+protocol CalendarRouter: BaseRouter {
     func showAddRide()
 }
 
@@ -17,20 +17,17 @@ class CalendarRouterImpl: CalendarRouter {
     
     // MARK: - Properties
     
-    private let baseRouter: BaseRouter
+    var coordinator: AppCoordinator?
     
     // MARK: - Lifecycle
     
-    init(baseRouter: BaseRouter) {
-        self.baseRouter = baseRouter
+    required init(coordinator: AppCoordinator) {
+        self.coordinator = coordinator
     }
     
     // MARK: - Navigations
     
     func showAddRide() {
-        let addRideVC = AddRideViewController.instantiate()
-        baseRouter.present(viewController: addRideVC,
-                           animated: true,
-                           completion: nil)
+        coordinator?.showAddRide()
     }
 }

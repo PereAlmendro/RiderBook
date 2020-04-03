@@ -8,35 +8,35 @@
 
 import Foundation
 
-protocol HomeRouter {
+protocol HomeRouter: BaseRouter {
     func showCalendar()
     func showProfile()
-    func showLastRideDetail()
+    func showLastRideDetail(_ lastRide: Ride)
 }
 
 class HomeRouterImpl: HomeRouter {
     
     // MARK: - Properties
     
-    private let baseRouter: BaseRouter
+    var coordinator: AppCoordinator?
     
     // MARK: - Lifecycle
     
-    init(baseRouter: BaseRouter) {
-        self.baseRouter = baseRouter
+    required init(coordinator: AppCoordinator) {
+        self.coordinator = coordinator
     }
     
     // MARK: - Navigations
     
     func showCalendar() {
-        baseRouter.select(tab: .calendar)
+        coordinator?.select(tab: .calendar)
     }
     
-    func showLastRideDetail() {
-        // TODO: Show last ride detail
+    func showLastRideDetail(_ lastRide: Ride) {
+        coordinator?.showDetail(of: lastRide)
     }
     
     func showProfile() {
-        baseRouter.select(tab: .profile)
+        coordinator?.select(tab: .profile)
     }
 }

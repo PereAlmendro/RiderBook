@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LoginRouter {
+protocol LoginRouter: BaseRouter {
     func showHomeAsGuest()
     func showHome()
 }
@@ -17,21 +17,21 @@ class LoginRouterImpl: LoginRouter {
     
     // MARK: - Properties
     
-    private let baseRouter: BaseRouter
+    var coordinator: AppCoordinator?
     
     // MARK: - Lifecycle
     
-    init(baseRouter: BaseRouter) {
-        self.baseRouter = baseRouter
+    required init(coordinator: AppCoordinator) {
+        self.coordinator = coordinator
     }
     
     // MARK: - Navigations
     
     func showHome() {
-        baseRouter.openHomeInitializingTabBar()
+        coordinator?.openHomeInitializingTabBar()
     }
     
     func showHomeAsGuest() {
-        baseRouter.openHomeInitializingTabBar()
+        coordinator?.openHomeInitializingTabBar()
     }
 }

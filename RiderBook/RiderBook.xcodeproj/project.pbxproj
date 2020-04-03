@@ -83,6 +83,7 @@
 		19CFCAA624377ECC00FD550B /* RideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCAA424377ECC00FD550B /* RideDetailViewController.swift */; };
 		19CFCAA724377ECC00FD550B /* RideDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19CFCAA524377ECC00FD550B /* RideDetailViewController.xib */; };
 		19CFCAAB24378F6500FD550B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCAAA24378F6500FD550B /* Storyboarded.swift */; };
+		19CFCAAE2437A01D00FD550B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCAAD2437A01D00FD550B /* AppCoordinator.swift */; };
 		19D8B896242D240C00C12FB2 /* RBEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D8B895242D240C00C12FB2 /* RBEmptyView.xib */; };
 		19D8B898242D241F00C12FB2 /* RBEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8B897242D241F00C12FB2 /* RBEmptyView.swift */; };
 		19F57D20242CDDE400A9EA88 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */; };
@@ -203,6 +204,7 @@
 		19CFCAA424377ECC00FD550B /* RideDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailViewController.swift; sourceTree = "<group>"; };
 		19CFCAA524377ECC00FD550B /* RideDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RideDetailViewController.xib; sourceTree = "<group>"; };
 		19CFCAAA24378F6500FD550B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		19CFCAAD2437A01D00FD550B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		19D8B895242D240C00C12FB2 /* RBEmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBEmptyView.xib; sourceTree = "<group>"; };
 		19D8B897242D241F00C12FB2 /* RBEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBEmptyView.swift; sourceTree = "<group>"; };
 		19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 		1943375D2427B6DB00050CB0 /* RiderBook */ = {
 			isa = PBXGroup;
 			children = (
+				19CFCAAC2437A00200FD550B /* Coordinator */,
 				199A07472428EBCC002E3A15 /* DI */,
 				192EF9DC2427C13800190D7B /* Presentation */,
 				199A076824295A14002E3A15 /* AppDependencies */,
@@ -822,6 +825,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		19CFCAAC2437A00200FD550B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				19CFCAAD2437A01D00FD550B /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		19D8B894242D23F600C12FB2 /* RBEmtpyView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1221,6 +1232,7 @@
 				19932E2B2430B09E001867CA /* MyRidesInteractor.swift in Sources */,
 				19312B64242E572800269ED3 /* AddRideInteractor.swift in Sources */,
 				199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */,
+				19CFCAAE2437A01D00FD550B /* AppCoordinator.swift in Sources */,
 				195908C7242B54FF0053374B /* RBTabBarController.swift in Sources */,
 				198CB63D2427E61E00E1638F /* BaseViewController.swift in Sources */,
 				19C56079242A960D005C80CB /* HomeViewController.swift in Sources */,
