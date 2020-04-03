@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class BaseViewController<P: BasePresenter>: UIViewController, BaseView {
+class BaseViewController<P: BasePresenter>: UIViewController, BaseView, SwinjectResolved {
     
     // MARK: - Properties
     

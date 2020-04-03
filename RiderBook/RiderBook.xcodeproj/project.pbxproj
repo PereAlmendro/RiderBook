@@ -77,6 +77,12 @@
 		19CB9A89242E253300561E2D /* RBCircuitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CB9A88242E253300561E2D /* RBCircuitPicker.swift */; };
 		19CEB365243291D4000DDFBB /* Single+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CEB364243291D4000DDFBB /* Single+Extension.swift */; };
 		19CEB36D2432941D000DDFBB /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CEB36C2432941D000DDFBB /* MockData.swift */; };
+		19CFCA9F24377D7500FD550B /* RideDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCA9E24377D7500FD550B /* RideDetailRouter.swift */; };
+		19CFCAA124377DB300FD550B /* RideDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCAA024377DB300FD550B /* RideDetailPresenter.swift */; };
+		19CFCAA324377E0900FD550B /* RideDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCAA224377E0900FD550B /* RideDetailInteractor.swift */; };
+		19CFCAA624377ECC00FD550B /* RideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCAA424377ECC00FD550B /* RideDetailViewController.swift */; };
+		19CFCAA724377ECC00FD550B /* RideDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19CFCAA524377ECC00FD550B /* RideDetailViewController.xib */; };
+		19CFCAAB24378F6500FD550B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCAAA24378F6500FD550B /* Storyboarded.swift */; };
 		19D8B896242D240C00C12FB2 /* RBEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D8B895242D240C00C12FB2 /* RBEmptyView.xib */; };
 		19D8B898242D241F00C12FB2 /* RBEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8B897242D241F00C12FB2 /* RBEmptyView.swift */; };
 		19F57D20242CDDE400A9EA88 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */; };
@@ -191,6 +197,12 @@
 		19CB9A88242E253300561E2D /* RBCircuitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBCircuitPicker.swift; sourceTree = "<group>"; };
 		19CEB364243291D4000DDFBB /* Single+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+Extension.swift"; sourceTree = "<group>"; };
 		19CEB36C2432941D000DDFBB /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		19CFCA9E24377D7500FD550B /* RideDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailRouter.swift; sourceTree = "<group>"; };
+		19CFCAA024377DB300FD550B /* RideDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailPresenter.swift; sourceTree = "<group>"; };
+		19CFCAA224377E0900FD550B /* RideDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailInteractor.swift; sourceTree = "<group>"; };
+		19CFCAA424377ECC00FD550B /* RideDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailViewController.swift; sourceTree = "<group>"; };
+		19CFCAA524377ECC00FD550B /* RideDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RideDetailViewController.xib; sourceTree = "<group>"; };
+		19CFCAAA24378F6500FD550B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		19D8B895242D240C00C12FB2 /* RBEmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBEmptyView.xib; sourceTree = "<group>"; };
 		19D8B897242D241F00C12FB2 /* RBEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBEmptyView.swift; sourceTree = "<group>"; };
 		19F57D19242CDDE400A9EA88 /* CalendarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
@@ -255,7 +267,7 @@
 			children = (
 				199A0767242959CE002E3A15 /* Navigation */,
 				19312B75242E6DD800269ED3 /* Entities */,
-				198CB63A2427E5FD00E1638F /* Base */,
+				198CB63A2427E5FD00E1638F /* BaseView */,
 				192EF9E42427C65200190D7B /* Extensions */,
 				192EF9DF2427C58500190D7B /* UIComponents */,
 				199A076A24295A67002E3A15 /* ViewControllers */,
@@ -525,7 +537,7 @@
 			path = RBTextField;
 			sourceTree = "<group>";
 		};
-		198CB63A2427E5FD00E1638F /* Base */ = {
+		198CB63A2427E5FD00E1638F /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
 				199A075B2429530F002E3A15 /* BaseRouter.swift */,
@@ -533,7 +545,7 @@
 				199A076124295970002E3A15 /* BasePresenter.swift */,
 				199A07652429599B002E3A15 /* BaseView.swift */,
 			);
-			path = Base;
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 		198DD814242B8F2100388CF0 /* DashboardViews */ = {
@@ -554,7 +566,7 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		19932E232430B036001867CA /* MyRidesViewController */ = {
+		19932E232430B036001867CA /* MyRides */ = {
 			isa = PBXGroup;
 			children = (
 				19932E272430B055001867CA /* Router */,
@@ -562,7 +574,7 @@
 				19932E252430B04B001867CA /* Presenter */,
 				19932E242430B044001867CA /* View */,
 			);
-			path = MyRidesViewController;
+			path = MyRides;
 			sourceTree = "<group>";
 		};
 		19932E242430B044001867CA /* View */ = {
@@ -610,7 +622,8 @@
 		199A07472428EBCC002E3A15 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				199A074A2428EBCC002E3A15 /* SwinjectStoryboard+Extenstion.swift */,
+				19CFCAA924378F5500FD550B /* Protocols */,
+				19CFCAA824378F4C00FD550B /* Extensions */,
 				199A076B24295A80002E3A15 /* DIModules */,
 			);
 			path = DI;
@@ -639,8 +652,9 @@
 		199A076A24295A67002E3A15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				19932E232430B036001867CA /* MyRidesViewController */,
-				19F57D25242CFD0A00A9EA88 /* AddRideViewController */,
+				19CFCA9924377D2900FD550B /* RideDetail */,
+				19932E232430B036001867CA /* MyRides */,
+				19F57D25242CFD0A00A9EA88 /* AddRide */,
 				19F57D17242CDDE400A9EA88 /* Calendar */,
 				195908D4242B77F90053374B /* Profile */,
 				19C56076242A95D1005C80CB /* Home */,
@@ -748,6 +762,66 @@
 			path = RxExtensions;
 			sourceTree = "<group>";
 		};
+		19CFCA9924377D2900FD550B /* RideDetail */ = {
+			isa = PBXGroup;
+			children = (
+				19CFCA9D24377D5A00FD550B /* Router */,
+				19CFCA9C24377D5400FD550B /* Presenter */,
+				19CFCA9B24377D4E00FD550B /* Interactor */,
+				19CFCA9A24377D4800FD550B /* View */,
+			);
+			path = RideDetail;
+			sourceTree = "<group>";
+		};
+		19CFCA9A24377D4800FD550B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19CFCAA424377ECC00FD550B /* RideDetailViewController.swift */,
+				19CFCAA524377ECC00FD550B /* RideDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		19CFCA9B24377D4E00FD550B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				19CFCAA224377E0900FD550B /* RideDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		19CFCA9C24377D5400FD550B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				19CFCAA024377DB300FD550B /* RideDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		19CFCA9D24377D5A00FD550B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				19CFCA9E24377D7500FD550B /* RideDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		19CFCAA824378F4C00FD550B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				199A074A2428EBCC002E3A15 /* SwinjectStoryboard+Extenstion.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		19CFCAA924378F5500FD550B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				19CFCAAA24378F6500FD550B /* Storyboarded.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		19D8B894242D23F600C12FB2 /* RBEmtpyView */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,7 +875,7 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		19F57D25242CFD0A00A9EA88 /* AddRideViewController */ = {
+		19F57D25242CFD0A00A9EA88 /* AddRide */ = {
 			isa = PBXGroup;
 			children = (
 				19F57D27242CFD3300A9EA88 /* Presenter */,
@@ -809,7 +883,7 @@
 				19F57D28242CFD3700A9EA88 /* Interactor */,
 				19F57D29242CFD3D00A9EA88 /* Router */,
 			);
-			path = AddRideViewController;
+			path = AddRide;
 			sourceTree = "<group>";
 		};
 		19F57D26242CFD2B00A9EA88 /* View */ = {
@@ -980,6 +1054,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19CB9A84242E188B00561E2D /* RBDatePicker.xib in Resources */,
+				19CFCAA724377ECC00FD550B /* RideDetailViewController.xib in Resources */,
 				19932E362430DBD9001867CA /* RideTableViewCell.xib in Resources */,
 				195908DE242B77F90053374B /* ProfileViewController.xib in Resources */,
 				194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */,
@@ -1133,6 +1208,8 @@
 				199A074D2428EBCC002E3A15 /* SwinjectStoryboard+Extenstion.swift in Sources */,
 				199A0760242958C1002E3A15 /* ViewControllerDIModule.swift in Sources */,
 				195908CE242B56A30053374B /* LoginRouter.swift in Sources */,
+				19CFCAA324377E0900FD550B /* RideDetailInteractor.swift in Sources */,
+				19CFCAA124377DB300FD550B /* RideDetailPresenter.swift in Sources */,
 				19F57D20242CDDE400A9EA88 /* CalendarPresenter.swift in Sources */,
 				19312B68242E577700269ED3 /* ProfileInteractor.swift in Sources */,
 				19F57D21242CDDE400A9EA88 /* CalendarViewController.swift in Sources */,
@@ -1162,8 +1239,11 @@
 				199A07562428FD81002E3A15 /* PresenterDIModule.swift in Sources */,
 				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,
 				199A075C2429530F002E3A15 /* BaseRouter.swift in Sources */,
+				19CFCA9F24377D7500FD550B /* RideDetailRouter.swift in Sources */,
 				195908DF242B77F90053374B /* ProfileViewController.swift in Sources */,
 				19312B6C242E57AB00269ED3 /* LoginInteractor.swift in Sources */,
+				19CFCAAB24378F6500FD550B /* Storyboarded.swift in Sources */,
+				19CFCAA624377ECC00FD550B /* RideDetailViewController.swift in Sources */,
 				19932E302430B114001867CA /* MyRidesViewController.swift in Sources */,
 				198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */,
 				19312B79242E731600269ED3 /* Date+Extension.swift in Sources */,

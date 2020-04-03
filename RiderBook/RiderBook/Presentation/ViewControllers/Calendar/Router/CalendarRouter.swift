@@ -28,10 +28,7 @@ class CalendarRouterImpl: CalendarRouter {
     // MARK: - Navigations
     
     func showAddRide() {
-        guard let addRideVC = SwinjectStoryboard.defaultContainer.resolve(AddRideViewController.self) else {
-            assertionFailure("Unable to resolve AddRideViewController")
-            return
-        }
+        let addRideVC = AddRideViewController.instantiate()
         baseRouter.present(viewController: addRideVC,
                            animated: true,
                            completion: nil)

@@ -9,7 +9,7 @@
 import Foundation
 import SwinjectStoryboard
 
-public extension SwinjectStoryboard {
+extension SwinjectStoryboard {
     class func setup() {
         RouterDIModule.setup(defaultContainer)
         InteractorDIModule.setup(defaultContainer)

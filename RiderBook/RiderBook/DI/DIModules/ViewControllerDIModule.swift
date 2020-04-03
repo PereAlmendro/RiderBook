@@ -64,5 +64,13 @@ class ViewControllerDIModule {
             view.presenter = r.resolve(MyRidesPresenter.self)!
             return view
         }
+        
+        // MARK: - Ride Detail
+
+        container.register(RideDetailViewController.self) { r in
+            let view = RideDetailViewController()
+            view.presenter = r.resolve(RideDetailPresenter.self)!
+            return view
+        }
     }
 }
