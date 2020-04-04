@@ -48,7 +48,7 @@ class InteractorDIModule {
         
         // MARK: - My Rides
 
-        container.register(MyRidesInteractor.self) { _ in
+        container.register(RidesInteractor.self) { _ in
             MyRidesInteractorImpl()
         }
         

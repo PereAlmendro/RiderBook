@@ -54,8 +54,8 @@ class RouterDIModule{
         
         // MARK: - My Rides
         
-        container.register(MyRidesRouter.self) { r in
-            MyRidesRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
+        container.register(RidesRouter.self) { r in
+            RidesRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
         }
         
         // MARK: - Ride Detail

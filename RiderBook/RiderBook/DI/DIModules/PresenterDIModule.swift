@@ -53,9 +53,9 @@ class PresenterDIModule {
         
         // MARK: - My Rides
         
-        container.register(MyRidesPresenter.self) { r in
-            MyRidesPresenter(myRidesRouter: r.resolve(MyRidesRouter.self)!,
-                             myRidesInteractor: r.resolve(MyRidesInteractor.self)!)
+        container.register(RidesPresenter.self) { r in
+            RidesPresenter(myRidesRouter: r.resolve(RidesRouter.self)!,
+                             myRidesInteractor: r.resolve(RidesInteractor.self)!)
         }
         
         // MARK: - Ride Detail

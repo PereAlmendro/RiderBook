@@ -1,5 +1,5 @@
 //
-//  MyRidesInteractor.swift
+//  RidesInteractor.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 29/03/2020.
@@ -9,11 +9,11 @@
 import Foundation
 import RxSwift
 
-protocol MyRidesInteractor {
+protocol RidesInteractor {
     func fetchRides() -> Single<[Ride]>
 }
 
-class MyRidesInteractorImpl: MyRidesInteractor {
+class MyRidesInteractorImpl: RidesInteractor {
     func fetchRides() -> Single<[Ride]> {
         // TODO: Fetch all rides
         return Single.just(MockData.shared().getRides())

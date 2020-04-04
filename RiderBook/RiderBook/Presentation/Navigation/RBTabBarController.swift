@@ -11,7 +11,7 @@ import SwinjectStoryboard
 
 public enum TabBarItem: Int {
     case home
-    case myRides
+    case rides
     case calendar
     case profile
 }
@@ -45,8 +45,8 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
                                        selectedImage: UIImage(named: "home_on")?.withRenderingMode(.alwaysOriginal))
         homeNavController.tabBarItem = homeTabItem
         
-        // MyRidesViewController
-        let myRidesVC = SwinjectStoryboard.defaultContainer.resolve(MyRidesViewController.self)!
+        // RidesViewController
+        let myRidesVC = SwinjectStoryboard.defaultContainer.resolve(RidesViewController.self)!
         let myRidesNavController = UINavigationController(rootViewController: myRidesVC)
         myRidesNavController.modalPresentationStyle = .fullScreen
         

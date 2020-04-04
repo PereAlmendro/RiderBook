@@ -1,5 +1,5 @@
 //
-//  MyRidesPresenter.swift
+//  RidesPresenter.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 29/03/2020.
@@ -9,12 +9,12 @@
 import Foundation
 import RxSwift
 
-class MyRidesPresenter: BasePresenter {
+class RidesPresenter: BasePresenter {
     
     // MARK: - Properties
     
-    private let myRidesRouter: MyRidesRouter
-    private let myRidesInteractor: MyRidesInteractor
+    private let myRidesRouter: RidesRouter
+    private let myRidesInteractor: RidesInteractor
     private var rides: [Ride] = []
     
     var screenTitle: String? {
@@ -27,7 +27,7 @@ class MyRidesPresenter: BasePresenter {
     
     // MARK: - Lyfecycle
     
-    init(myRidesRouter: MyRidesRouter, myRidesInteractor: MyRidesInteractor) {
+    init(myRidesRouter: RidesRouter, myRidesInteractor: RidesInteractor) {
         self.myRidesRouter = myRidesRouter
         self.myRidesInteractor = myRidesInteractor
     }

@@ -1,5 +1,5 @@
 //
-//  MyRidesViewController.swift
+//  RidesViewController.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 29/03/2020.
@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class MyRidesViewController: BaseViewController<MyRidesPresenter> {
+class RidesViewController: BaseViewController<RidesPresenter> {
 
     // MARK: - IBOutlets
     
@@ -51,7 +51,7 @@ class MyRidesViewController: BaseViewController<MyRidesPresenter> {
 
 // MARK: - UITableViewDelegate
 
-extension MyRidesViewController: UITableViewDelegate {
+extension RidesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didSelectRow(at: indexPath)
     }
@@ -59,7 +59,7 @@ extension MyRidesViewController: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 
-extension MyRidesViewController: UITableViewDataSource {
+extension RidesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfRows()
     }

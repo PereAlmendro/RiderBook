@@ -1,5 +1,5 @@
 //
-//  MyRidesRouter.swift
+//  RidesRouter.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 29/03/2020.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol MyRidesRouter: BaseRouter {
+protocol RidesRouter: BaseRouter {
     func showRide(ride: Ride)
 }
 
-class MyRidesRouterImpl: MyRidesRouter {
+class RidesRouterImpl: RidesRouter {
     
     // MARK: - Properties
     
