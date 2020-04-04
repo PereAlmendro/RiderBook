@@ -1,5 +1,5 @@
 //
-//  RBCircuitPicker.swift
+//  CircuitPicker.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 27/03/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RBCircuitPicker: NibView {
+class CircuitPicker: NibView {
     
     // MARK: - IBOutlets
     
@@ -44,7 +44,7 @@ class RBCircuitPicker: NibView {
 
 // MARK: - UIPickerViewDataSource
 
-extension RBCircuitPicker: UIPickerViewDataSource {
+extension CircuitPicker: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -60,7 +60,7 @@ extension RBCircuitPicker: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 
-extension RBCircuitPicker: UIPickerViewDelegate {
+extension CircuitPicker: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedCircuit = dataSource[row]
     }

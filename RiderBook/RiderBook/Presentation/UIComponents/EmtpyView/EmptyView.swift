@@ -1,5 +1,5 @@
 //
-//  RBEmptyView.swift
+//  EmptyView.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 26/03/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RBEmptyView: NibView {
+class EmptyView: NibView {
     
     @IBOutlet private weak var emptyImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!

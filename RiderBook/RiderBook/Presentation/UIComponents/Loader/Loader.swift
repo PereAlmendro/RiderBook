@@ -1,5 +1,5 @@
 //
-//  RBLoader.swift
+//  Loader.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 28/03/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RBLoader: NibView {
+class Loader: NibView {
     
     // MARK: - IBOutlets
     

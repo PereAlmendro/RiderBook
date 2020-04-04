@@ -1,5 +1,5 @@
 //
-//  RBAlertView.swift
+//  AlertView.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 28/03/2020.
@@ -15,7 +15,7 @@ enum AlertType {
     case success
 }
 
-class RBAlertView: NibView {
+class AlertView: NibView {
     
     // MARK: - IBOutlets
     @IBOutlet weak var closeButton: UIButton!

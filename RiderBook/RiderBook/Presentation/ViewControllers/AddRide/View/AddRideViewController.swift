@@ -12,8 +12,8 @@ class AddRideViewController: BaseViewController<AddRidePresenter> {
 
     // MARK: - IBOutlets
 
-    @IBOutlet private weak var datePicker: RBDatePicker!
-    @IBOutlet private weak var circuitPicker: RBCircuitPicker!
+    @IBOutlet private weak var datePicker: DatePicker!
+    @IBOutlet private weak var circuitPicker: CircuitPicker!
     @IBOutlet private weak var saveButton: RBButton!
 
     // MARK: - Lifecycle

@@ -65,7 +65,7 @@ class CalendarViewController: BaseViewController<CalendarPresenter> {
         tableView.dataSource = self
         tableView.register(RideTableViewCell.nib,
                            forCellReuseIdentifier: RideTableViewCell.identifier)
-        let emptyView = RBEmptyView()
+        let emptyView = EmptyView()
         emptyView.configureWith(title: "calendar_no_rides".localized(),
                                 description: "calendar_tap_to_add_events".localized(),
                                 image: UIImage(named: "guest_avatar"))

@@ -14,7 +14,7 @@ class RideDetailViewController: BaseViewController<RideDetailPresenter> {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var rideSummaryView: RBRideSummaryView!
+    @IBOutlet weak var rideSummaryView: RideSummaryView!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Lifecycle

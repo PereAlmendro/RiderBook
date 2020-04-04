@@ -1,5 +1,5 @@
 //
-//  RBDatePicker.swift
+//  DatePicker.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 27/03/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RBDatePicker: NibView {
+class DatePicker: NibView {
     
     // MARK: - IBOutlets
     

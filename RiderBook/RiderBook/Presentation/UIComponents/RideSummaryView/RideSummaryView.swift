@@ -1,5 +1,5 @@
 //
-//  RBRideSummaryView.swift
+//  RideSummaryView.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 04/04/2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class RBRideSummaryView: NibView {
+class RideSummaryView: NibView {
     
 }

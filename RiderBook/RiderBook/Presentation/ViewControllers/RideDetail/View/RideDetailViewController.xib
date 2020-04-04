@@ -40,7 +40,7 @@
                             <rect key="frame" x="0.0" y="241.5" width="414" height="576.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </tableView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ng5-Ta-udN" customClass="RBRideSummaryView" customModule="RiderBook" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ng5-Ta-udN" customClass="RideSummaryView" customModule="RiderBook" customModuleProvider="target">
                             <rect key="frame" x="20" y="93.5" width="374" height="128"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>

@@ -16,7 +16,7 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView, Swinject
     typealias Presenter = P
     var presenter: Presenter!
     let disposeBag = DisposeBag()
-    private var loader: RBLoader?
+    private var loader: Loader?
 
     // MARK: - Lifecycle
     
@@ -50,14 +50,14 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView, Swinject
     // MARK: - BaseView
     
     func showAlert(type: AlertType, title: String, message: String?, completion: (() -> ())?) {
-        let alertView = RBAlertView()
+        let alertView = AlertView()
         alertView.configureWith(type: type, title: title, message: message, completion: completion)
         UIApplication.shared.windows.first?.addSubviewWithFillingConstraints(alertView)
     }
     
     func showLoader() {
         if loader == nil {
-            loader = RBLoader()
+            loader = Loader()
         }
         UIApplication.shared.windows.first?.addSubviewWithFillingConstraints(loader!)
     }
