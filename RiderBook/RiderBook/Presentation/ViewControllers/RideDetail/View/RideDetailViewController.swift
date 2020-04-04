@@ -9,7 +9,14 @@
 import UIKit
 
 class RideDetailViewController: BaseViewController<RideDetailPresenter> {
-
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var rideSummaryView: RBRideSummaryView!
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -20,8 +27,10 @@ class RideDetailViewController: BaseViewController<RideDetailPresenter> {
     // MARK: - Private functions
     
     private func setupView()  {
+        titleLabel.text = presenter.ride?.circuit
+        subtitleLabel.text = presenter.ride?.date.toString(style: .short)
         addBackButton()
-        enableLargeTitles(true)
+        enableLargeTitles(false)
     }
 
 }

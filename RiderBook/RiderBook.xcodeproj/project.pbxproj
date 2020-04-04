@@ -20,6 +20,8 @@
 		19312B6C242E57AB00269ED3 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B6B242E57AB00269ED3 /* LoginInteractor.swift */; };
 		19312B77242E6DFA00269ED3 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B76242E6DFA00269ED3 /* Ride.swift */; };
 		19312B79242E731600269ED3 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B78242E731600269ED3 /* Date+Extension.swift */; };
+		1937DBC7243888CE0091019F /* RBRideSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1937DBC6243888CE0091019F /* RBRideSummaryView.xib */; };
+		1937DBC9243888D90091019F /* RBRideSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937DBC8243888D90091019F /* RBRideSummaryView.swift */; };
 		1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943375E2427B6DB00050CB0 /* AppDelegate.swift */; };
 		194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337602427B6DB00050CB0 /* SceneDelegate.swift */; };
 		1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */; };
@@ -131,6 +133,8 @@
 		19312B6B242E57AB00269ED3 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		19312B76242E6DFA00269ED3 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		19312B78242E731600269ED3 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		1937DBC6243888CE0091019F /* RBRideSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBRideSummaryView.xib; sourceTree = "<group>"; };
+		1937DBC8243888D90091019F /* RBRideSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBRideSummaryView.swift; sourceTree = "<group>"; };
 		1943375B2427B6DB00050CB0 /* RiderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1943375E2427B6DB00050CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		194337602427B6DB00050CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 		192EF9DF2427C58500190D7B /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				1937DBC5243888880091019F /* RBRideSummaryView */,
 				194F6EE7242F77B400A1123C /* RBAlertView */,
 				194F6EE2242F6FCF00A1123C /* RBLoader */,
 				19CB9A85242E203A00561E2D /* RBCircuitPicker */,
@@ -314,6 +319,15 @@
 				19CEB36C2432941D000DDFBB /* MockData.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		1937DBC5243888880091019F /* RBRideSummaryView */ = {
+			isa = PBXGroup;
+			children = (
+				1937DBC6243888CE0091019F /* RBRideSummaryView.xib */,
+				1937DBC8243888D90091019F /* RBRideSummaryView.swift */,
+			);
+			path = RBRideSummaryView;
 			sourceTree = "<group>";
 		};
 		194337522427B6DB00050CB0 = {
@@ -1069,6 +1083,7 @@
 				199A07522428F30D002E3A15 /* LoginViewController.xib in Resources */,
 				19F57D31242CFDFC00A9EA88 /* AddRideViewController.xib in Resources */,
 				19CB9A87242E252200561E2D /* RBCircuitPicker.xib in Resources */,
+				1937DBC7243888CE0091019F /* RBRideSummaryView.xib in Resources */,
 				194F6EE9242F77C800A1123C /* RBAlertView.xib in Resources */,
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
 				19F57D22242CDDE400A9EA88 /* CalendarViewController.xib in Resources */,
@@ -1216,6 +1231,7 @@
 				19F57D20242CDDE400A9EA88 /* CalendarPresenter.swift in Sources */,
 				19312B68242E577700269ED3 /* ProfileInteractor.swift in Sources */,
 				19F57D21242CDDE400A9EA88 /* CalendarViewController.swift in Sources */,
+				1937DBC9243888D90091019F /* RBRideSummaryView.swift in Sources */,
 				194F6EEB242F77D000A1123C /* RBAlertView.swift in Sources */,
 				19C5607C242A96B9005C80CB /* HomePresenter.swift in Sources */,
 				192EF9DE2427C19900190D7B /* LoginViewController.swift in Sources */,

@@ -9,6 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RideDetailViewController" customModule="RiderBook" customModuleProvider="target">
             <connections>
+                <outlet property="rideSummaryView" destination="Ng5-Ta-udN" id="M6q-Lx-nDV"/>
+                <outlet property="subtitleLabel" destination="hiw-i3-rhI" id="CME-n6-vas"/>
+                <outlet property="tableView" destination="Fux-YX-Cvx" id="ZNQ-Yw-6qb"/>
+                <outlet property="titleLabel" destination="uYp-FT-Ehw" id="C7w-Xn-OXW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,9 +20,62 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6u-jl-yYP">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcarrás" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYp-FT-Ehw">
+                            <rect key="frame" x="30" y="20" width="354" height="27.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15/03/2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiw-i3-rhI">
+                            <rect key="frame" x="40" y="52.5" width="334" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fux-YX-Cvx">
+                            <rect key="frame" x="0.0" y="241.5" width="414" height="576.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ng5-Ta-udN" customClass="RBRideSummaryView" customModule="RiderBook" customModuleProvider="target">
+                            <rect key="frame" x="20" y="93.5" width="374" height="128"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="rRR-Jg-VHF"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="hiw-i3-rhI" firstAttribute="leading" secondItem="D6u-jl-yYP" secondAttribute="leading" constant="40" id="50C-Zz-dxE"/>
+                        <constraint firstItem="uYp-FT-Ehw" firstAttribute="leading" secondItem="D6u-jl-yYP" secondAttribute="leading" constant="30" id="6qE-O3-AgN"/>
+                        <constraint firstItem="hiw-i3-rhI" firstAttribute="top" secondItem="uYp-FT-Ehw" secondAttribute="bottom" constant="5" id="8Kb-Ax-ruN"/>
+                        <constraint firstItem="Ng5-Ta-udN" firstAttribute="leading" secondItem="D6u-jl-yYP" secondAttribute="leading" constant="20" id="FSf-UL-YEC"/>
+                        <constraint firstItem="Fux-YX-Cvx" firstAttribute="leading" secondItem="D6u-jl-yYP" secondAttribute="leading" id="FaN-M7-pVz"/>
+                        <constraint firstItem="uYp-FT-Ehw" firstAttribute="centerX" secondItem="D6u-jl-yYP" secondAttribute="centerX" id="JGX-dz-NUJ"/>
+                        <constraint firstAttribute="trailing" secondItem="Fux-YX-Cvx" secondAttribute="trailing" id="Ooy-3C-xhM"/>
+                        <constraint firstItem="Fux-YX-Cvx" firstAttribute="top" secondItem="Ng5-Ta-udN" secondAttribute="bottom" constant="20" id="YEr-cJ-3su"/>
+                        <constraint firstItem="uYp-FT-Ehw" firstAttribute="top" secondItem="D6u-jl-yYP" secondAttribute="top" constant="20" id="awb-GH-Te5"/>
+                        <constraint firstAttribute="trailing" secondItem="uYp-FT-Ehw" secondAttribute="trailing" constant="30" id="cfh-TR-6aR"/>
+                        <constraint firstAttribute="bottom" secondItem="Fux-YX-Cvx" secondAttribute="bottom" id="fDP-J6-EXD"/>
+                        <constraint firstItem="Ng5-Ta-udN" firstAttribute="top" secondItem="hiw-i3-rhI" secondAttribute="bottom" constant="20" id="jAJ-ff-Kmv"/>
+                        <constraint firstAttribute="trailing" secondItem="hiw-i3-rhI" secondAttribute="trailing" constant="40" id="jQh-qL-Thq"/>
+                        <constraint firstAttribute="trailing" secondItem="Ng5-Ta-udN" secondAttribute="trailing" constant="20" id="pbB-VX-vQi"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="D6u-jl-yYP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a3e-Td-QGJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="D6u-jl-yYP" secondAttribute="trailing" id="aeh-oI-4rD"/>
+                <constraint firstItem="D6u-jl-yYP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="upj-0o-Mr0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="D6u-jl-yYP" secondAttribute="bottom" id="zPy-tf-tcd"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="154"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
 </document>
