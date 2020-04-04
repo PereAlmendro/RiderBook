@@ -71,7 +71,7 @@ class AddRidePresenter: BasePresenter {
             .observeOn(MainScheduler.instance)
             .showLoader(view: view)
             .subscribe(onSuccess: { [weak self] (circuits) in
-                self?.circuitNames.onNext(circuits)
+                self?.circuitNames.onNext(circuits.compactMap { $0.name } )
             }) { [weak self] error in
                 self?.view?.showAlert(type: .error,
                                       title: "Error".localized(),

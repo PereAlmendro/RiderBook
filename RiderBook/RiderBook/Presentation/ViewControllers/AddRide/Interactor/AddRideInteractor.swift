@@ -10,15 +10,15 @@ import Foundation
 import RxSwift
 
 protocol AddRideInteractor {
-    func fetchCircuits() -> Single<[String]>
+    func fetchCircuits() -> Single<[Circuit]>
     func attemptAddRide(selectedDate: Date, selectedCircuit: String) -> Single<Bool>
 }
 
 class AddRideInteractorImpl: AddRideInteractor {
     
-    func fetchCircuits() -> Single<[String]> {
+    func fetchCircuits() -> Single<[Circuit]> {
         // TODO: Fetch circuits
-        return Single.just(MockData.shared().getCircuitNames())
+        return Single.just(MockData.shared().getCircuits())
     }
     
     func attemptAddRide(selectedDate: Date, selectedCircuit: String) -> Single<Bool> {

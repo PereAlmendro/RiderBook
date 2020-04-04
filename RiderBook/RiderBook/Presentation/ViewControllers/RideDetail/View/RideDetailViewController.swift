@@ -27,7 +27,7 @@ class RideDetailViewController: BaseViewController<RideDetailPresenter> {
     // MARK: - Private functions
     
     private func setupView()  {
-        titleLabel.text = presenter.ride?.circuit
+        titleLabel.text = presenter.ride?.circuit.name
         subtitleLabel.text = presenter.ride?.date.toString(style: .short)
         addBackButton()
         enableLargeTitles(false)

@@ -46,7 +46,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
                     let calendarEvent = event.element,
                     let lastCalendarEvent = calendarEvent else { return }
                 
-                self?.calendarView.configureWith(title: lastCalendarEvent.circuit,
+                self?.calendarView.configureWith(title: lastCalendarEvent.circuit.name,
                                                  description: lastCalendarEvent.date.toString(style: .short))
                 
                 self?.tableView.reloadData()

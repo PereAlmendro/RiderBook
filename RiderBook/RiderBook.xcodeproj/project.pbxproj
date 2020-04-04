@@ -22,6 +22,8 @@
 		19312B79242E731600269ED3 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19312B78242E731600269ED3 /* Date+Extension.swift */; };
 		1937DBC7243888CE0091019F /* RBRideSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1937DBC6243888CE0091019F /* RBRideSummaryView.xib */; };
 		1937DBC9243888D90091019F /* RBRideSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937DBC8243888D90091019F /* RBRideSummaryView.swift */; };
+		1937DBCB2438A3510091019F /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937DBCA2438A3510091019F /* Circuit.swift */; };
+		1937DBCF2438A3FA0091019F /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937DBCE2438A3FA0091019F /* Lap.swift */; };
 		1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943375E2427B6DB00050CB0 /* AppDelegate.swift */; };
 		194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337602427B6DB00050CB0 /* SceneDelegate.swift */; };
 		1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */; };
@@ -135,6 +137,8 @@
 		19312B78242E731600269ED3 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		1937DBC6243888CE0091019F /* RBRideSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBRideSummaryView.xib; sourceTree = "<group>"; };
 		1937DBC8243888D90091019F /* RBRideSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBRideSummaryView.swift; sourceTree = "<group>"; };
+		1937DBCA2438A3510091019F /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
+		1937DBCE2438A3FA0091019F /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
 		1943375B2427B6DB00050CB0 /* RiderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1943375E2427B6DB00050CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		194337602427B6DB00050CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -317,6 +321,8 @@
 			children = (
 				19312B76242E6DFA00269ED3 /* Ride.swift */,
 				19CEB36C2432941D000DDFBB /* MockData.swift */,
+				1937DBCA2438A3510091019F /* Circuit.swift */,
+				1937DBCE2438A3FA0091019F /* Lap.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1258,6 +1264,7 @@
 				19932E292430B063001867CA /* RidesRouter.swift in Sources */,
 				199A07562428FD81002E3A15 /* PresenterDIModule.swift in Sources */,
 				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,
+				1937DBCB2438A3510091019F /* Circuit.swift in Sources */,
 				199A075C2429530F002E3A15 /* BaseRouter.swift in Sources */,
 				19CFCA9F24377D7500FD550B /* RideDetailRouter.swift in Sources */,
 				195908DF242B77F90053374B /* ProfileViewController.swift in Sources */,
@@ -1283,6 +1290,7 @@
 				19932E2D2430B0D6001867CA /* RidesPresenter.swift in Sources */,
 				19312B6A242E579200269ED3 /* HomeInteractor.swift in Sources */,
 				19312B62242E55B800269ED3 /* InteractorDIModule.swift in Sources */,
+				1937DBCF2438A3FA0091019F /* Lap.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

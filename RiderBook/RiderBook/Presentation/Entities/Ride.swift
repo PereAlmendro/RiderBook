@@ -8,16 +8,8 @@
 
 import Foundation
 
-class Ride {
+struct Ride {
     let date: Date
-    let circuit: String
-    let bestLapTime: String
-    
-    init(date: Date,
-         circuit: String,
-         bestLapTime: String) {
-        self.date = date
-        self.circuit = circuit
-        self.bestLapTime = bestLapTime
-    }
+    let circuit: Circuit
+    let bestLap: Lap
 }

@@ -69,9 +69,9 @@ extension RidesViewController: UITableViewDataSource {
                                                  for: indexPath) as? RideTableViewCell ?? RideTableViewCell()
         
         let ride = presenter.ride(indexPath: indexPath)
-        cell.configureWith(circuitName: ride.circuit,
+        cell.configureWith(circuitName: ride.circuit.name,
                            date: ride.date.toString(style: .short),
-                           bestLapTime: ride.bestLapTime)
+                           bestLapTime: ride.bestLap.time)
         
         return cell
     }
