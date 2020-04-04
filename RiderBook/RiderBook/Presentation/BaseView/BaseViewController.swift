@@ -68,6 +68,10 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView, Swinject
     
     // MARK: - Public functions
     
+    func setScreenTitle(_ title: String?) {
+        navigationItem.title = title
+    }
+    
     func enableLargeTitles(_ enable: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = enable
     }
@@ -88,7 +92,18 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView, Swinject
         navigationItem.setRightBarButton(rightButtonItem, animated: false)
     }
     
+    func addBackButton() {
+        let backButton = UIBarButtonItem(image: UIImage(named: "ic_close")?.withRenderingMode(.alwaysOriginal),
+                                         style: .done, target: self,
+                                         action: #selector(closeButtonItemAction(_:)))
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
     // MARK: - Overrideable functions
     
     @objc func rightButtonItemAction(_ sender: Any) { }
+    
+    @objc func closeButtonItemAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

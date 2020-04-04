@@ -17,6 +17,10 @@ class HomePresenter: BasePresenter {
     private let homeRouter: HomeRouter
     private let homeInteractor: HomeInteractor
     
+    var screenTitle: String? {
+        return "Rider_book".localized()
+    }
+    
     // MARK: - Rx Properties
     
     var lastRide: BehaviorSubject<Ride?> = BehaviorSubject<Ride?>(value: nil)
@@ -50,9 +54,9 @@ class HomePresenter: BasePresenter {
         }
     }
     
-    // MARK: - Private
+    // MARK: - Private functions
     
-    func loadView() {
+    private func loadView() {
         view?.hideLoader()
         homeInteractor
             .fetchLastRide()

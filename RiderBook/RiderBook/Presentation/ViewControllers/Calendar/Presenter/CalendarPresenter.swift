@@ -18,6 +18,10 @@ class CalendarPresenter: BasePresenter {
     private let calendarInteractor: CalendarInteractor
     private var rides: [Ride] = []
     
+    var screenTitle: String? {
+        return "Calendar".localized()
+    }
+    
     // MARK: - Rx Properties
     
     var reloadCalendar: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
@@ -62,9 +66,9 @@ class CalendarPresenter: BasePresenter {
         // TODO: Open ride detail
     }
     
-    // MARK: - Private
+    // MARK: - Private functions
     
-    func loadView() {
+    private func loadView() {
         calendarInteractor
             .fetchRides()
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))

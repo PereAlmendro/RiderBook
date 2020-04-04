@@ -26,16 +26,16 @@ class CalendarDashboardView: NibView {
                       description: "calendar_no_rides".localized())
     }
     
-    // MARK: - Public
+    // MARK: - Public functions
     
     func configureWith(title: String, description: String) {
         titleLabel.text = title
         descriptionLabel.text = description
     }
     
-    // MARK: - Private
+    // MARK: - Private functions
     
-    func setupLabels() {
+    private func setupLabels() {
         titleLabel.font = .arialboldMT(size: 35)
         titleLabel.textColor = .black
         

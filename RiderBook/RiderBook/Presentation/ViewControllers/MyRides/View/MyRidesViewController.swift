@@ -25,7 +25,7 @@ class MyRidesViewController: BaseViewController<MyRidesPresenter> {
     // MARK: - Private functions
     
     private func setupView() {
-        navigationItem.title = "My rides"
+        setScreenTitle(presenter.screenTitle)
         enableLargeTitles(true)
         setupTableView()
         bindToRxProperties()

@@ -20,7 +20,7 @@ class CalendarViewController: BaseViewController<CalendarPresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Calendar".localized()
+        setScreenTitle(presenter.screenTitle)
         addRightButtonItem(systemItem: .add)
         setupView()
         bindToRxProperties()

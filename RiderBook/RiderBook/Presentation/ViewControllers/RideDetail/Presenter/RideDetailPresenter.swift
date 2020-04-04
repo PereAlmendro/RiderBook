@@ -15,6 +15,10 @@ class RideDetailPresenter: BasePresenter {
     private let rideDetailRouter: RideDetailRouter
     private let rideDetailInteractor: RideDetailInteractor
     
+    // MARK: - Outcomming params
+    
+    var ride: Ride?
+    
     // MARK: - Lyfecycle
     
     init(rideDetailRouter: RideDetailRouter, rideDetailInteractor: RideDetailInteractor) {

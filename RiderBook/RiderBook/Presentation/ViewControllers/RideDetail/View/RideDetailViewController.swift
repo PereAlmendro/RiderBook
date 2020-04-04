@@ -14,6 +14,14 @@ class RideDetailViewController: BaseViewController<RideDetailPresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    // MARK: - Private functions
+    
+    private func setupView()  {
+        addBackButton()
+        enableLargeTitles(true)
     }
 
 }

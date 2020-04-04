@@ -14,7 +14,7 @@ class ProfileViewController: BaseViewController<ProfilePresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Profile".localized()
+        setScreenTitle(presenter.screenTitle)
         addBackgroundImage()
     }
 }

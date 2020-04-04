@@ -28,7 +28,7 @@ class ProfileDashboardView: NibView {
                       description: "Login_to_use_all_features".localized())
     }
     
-    // MARK: - Public
+    // MARK: - Public functions
     
     func configureWith(title: String, image: UIImage?, description: String) {
         rightImage.image = image
@@ -36,9 +36,9 @@ class ProfileDashboardView: NibView {
         descriptionLabel.text = description
     }
     
-    // MARK: - Private
+    // MARK: - Private functions
     
-    func setupLabels() {
+    private func setupLabels() {
         titleLabel.font = .arialboldMT(size: 17)
         titleLabel.textColor = .black
         

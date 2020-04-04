@@ -14,13 +14,7 @@ class RBTextField: NibView {
     
     @IBOutlet private weak var textField: UITextField!
     
-    // MARK: - Private
-    
-    override func customSetup() {
-        
-    }
-    
-    // MARK: - Public
+    // MARK: - Public functions
     
     func getText() -> String? {
         return textField.text

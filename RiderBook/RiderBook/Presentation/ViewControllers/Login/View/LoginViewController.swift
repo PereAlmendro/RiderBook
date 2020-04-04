@@ -25,7 +25,7 @@ class LoginViewController: BaseViewController<LoginPresenter> {
         setupTextFields()
     }
     
-    // MARK: - Private
+    // MARK: - Private functions
     
     private func setupButtons() {
         loginButton.setTitle(text: "log_in".localized())

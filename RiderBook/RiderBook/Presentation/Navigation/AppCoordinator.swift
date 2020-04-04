@@ -22,6 +22,7 @@ protocol AppCoordinator {
     
     func dismiss()
     func dismiss(animated: Bool, completion: (() -> Void)?)
+    
     func showAddRide()
     func showDetail(of ride: Ride)
 }
@@ -54,7 +55,7 @@ final class AppCoordinatorImpl: AppCoordinator {
 extension AppCoordinatorImpl {
     func openHomeInitializingTabBar() {
         RBTabbar.configureTabs()
-        present(viewController: RBTabbar.tabBarController, animated: true)
+        present(viewController: RBTabbar.tabBarController)
     }
     
     func select(tab: TabBarItem) {
@@ -80,25 +81,22 @@ extension AppCoordinatorImpl {
     
     func showAddRide() {
         let addRideVC = AddRideViewController.instantiate()
-        present(viewController: addRideVC,
-                animated: true,
-                completion: nil)
+        present(viewController: addRideVC)
     }
     
     // MARK: - Ride Detail
     
     func showDetail(of ride: Ride) {
         let rideDetail = RideDetailViewController.instantiate()
-        present(viewController: rideDetail,
-                animated: true,
-                completion: nil)
+        rideDetail.presenter.ride = ride
+        presentInNavigationController(viewController: rideDetail)
     }
 }
 
 // MARK: - Present, push, dimiss
 
-extension AppCoordinatorImpl {
-    func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
+fileprivate extension AppCoordinatorImpl {
+    func present(viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
         topViewController?.present(viewController, animated: animated, completion: completion)
     }
     
@@ -115,5 +113,12 @@ extension AppCoordinatorImpl {
             viewController.modalPresentationStyle = .fullScreen
             present(viewController: viewController, animated: animated)
         }
+    }
+    
+    func presentInNavigationController(viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.modalPresentationStyle = .fullScreen
+        navController.modalTransitionStyle = .crossDissolve
+        present(viewController: navController, animated: animated, completion: completion)
     }
 }

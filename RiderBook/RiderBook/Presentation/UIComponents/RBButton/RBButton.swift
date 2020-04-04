@@ -22,18 +22,20 @@ class RBButton: NibView {
     
     var delegate: RBButtonDelegate?
     
-    // MARK: - Private
+    // MARK: - Lifecycle
     
     override func customSetup() {
         button.roundCorners()
         button.backgroundColor = .emeraldGreen
     }
     
-    @IBAction func buttonAction(_ sender: Any) {
+    // MARK: - Private functions
+    
+    @IBAction private func buttonAction(_ sender: Any) {
         delegate?.rbButtonAction(self)
     }
     
-    // MARK: - Public
+    // MARK: - Public functions
     
     func setTitle(text: String) {
         button.setTitle(text, for: .normal)

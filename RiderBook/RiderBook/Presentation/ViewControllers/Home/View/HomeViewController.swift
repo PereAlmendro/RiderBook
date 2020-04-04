@@ -54,7 +54,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
     }
     
     private func setupView() {
-        navigationItem.title = "Rider_book".localized()
+        setScreenTitle(presenter.screenTitle)
         addBackgroundImage()
         setupTableView()
     }

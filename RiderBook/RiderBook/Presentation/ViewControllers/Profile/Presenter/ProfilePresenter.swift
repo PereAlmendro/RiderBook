@@ -15,6 +15,10 @@ class ProfilePresenter: BasePresenter {
     private let profileRouter: ProfileRouter
     private let profileInteractor: ProfileInteractor
     
+    var screenTitle: String? {
+        return "Profile".localized()
+    }
+    
     // MARK: - Lifecycle
     
     init(profileRouter: ProfileRouter, profileInteractor: ProfileInteractor) {

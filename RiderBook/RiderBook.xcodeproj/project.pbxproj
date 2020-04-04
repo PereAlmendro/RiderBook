@@ -341,7 +341,6 @@
 		1943375D2427B6DB00050CB0 /* RiderBook */ = {
 			isa = PBXGroup;
 			children = (
-				19CFCAAC2437A00200FD550B /* Coordinator */,
 				199A07472428EBCC002E3A15 /* DI */,
 				192EF9DC2427C13800190D7B /* Presentation */,
 				199A076824295A14002E3A15 /* AppDependencies */,
@@ -635,6 +634,7 @@
 		199A0767242959CE002E3A15 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				19CFCAAD2437A01D00FD550B /* AppCoordinator.swift */,
 				195908C6242B54FF0053374B /* RBTabBarController.swift */,
 			);
 			path = Navigation;
@@ -823,14 +823,6 @@
 				19CFCAAA24378F6500FD550B /* Storyboarded.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		19CFCAAC2437A00200FD550B /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				19CFCAAD2437A01D00FD550B /* AppCoordinator.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		19D8B894242D23F600C12FB2 /* RBEmtpyView */ = {

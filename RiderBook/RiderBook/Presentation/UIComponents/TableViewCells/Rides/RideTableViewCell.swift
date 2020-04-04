@@ -42,7 +42,7 @@ class RideTableViewCell: UITableViewCell {
         bestLapValueLabel.font = .arialMT(size: 17)
     }
     
-    // MARK: - Public
+    // MARK: - Public functions
     
     func configureWith(circuitName: String, date: String, bestLapTime: String) {
         circuitLabel.text = circuitName

@@ -17,6 +17,10 @@ class MyRidesPresenter: BasePresenter {
     private let myRidesInteractor: MyRidesInteractor
     private var rides: [Ride] = []
     
+    var screenTitle: String? {
+        return "rides".localized()
+    }
+    
     // MARK: - Rx Properties
     
     var reloadTable: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)

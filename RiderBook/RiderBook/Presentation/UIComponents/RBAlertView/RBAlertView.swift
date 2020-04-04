@@ -41,7 +41,7 @@ class RBAlertView: NibView {
         shadowView.addShadow()
     }
     
-    // MARK: - Public
+    // MARK: - Public functions
     
     func configureWith(type: AlertType, title: String?, message: String?, completion: (() -> ())?) {
         alertTitleLabel.text = title
@@ -54,7 +54,7 @@ class RBAlertView: NibView {
         addGestureRecognizer(tapGesture)
     }
     
-    // MARK: - Private
+    // MARK: - Private functions
     
     private func getImageFor(type: AlertType) -> UIImage?  {
         let image: UIImage?
@@ -76,7 +76,7 @@ class RBAlertView: NibView {
     
     // MARK: - IBActions
     
-    @IBAction func closeButtonAction(_ sender: Any) {
+    @IBAction private func closeButtonAction(_ sender: Any) {
         dismissAlert()
     }
 }
