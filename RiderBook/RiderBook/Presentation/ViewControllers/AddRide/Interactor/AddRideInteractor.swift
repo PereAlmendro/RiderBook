@@ -17,10 +17,12 @@ protocol AddRideInteractor {
 class AddRideInteractorImpl: AddRideInteractor {
     
     func fetchCircuits() -> Single<[String]> {
+        // TODO: Fetch circuits
         return Single.just(MockData.shared().getCircuitNames())
     }
     
     func attemptAddRide(selectedDate: Date, selectedCircuit: String) -> Single<Bool> {
+        // TODO: Add a ride
         return Single.just(false)
     }
 }

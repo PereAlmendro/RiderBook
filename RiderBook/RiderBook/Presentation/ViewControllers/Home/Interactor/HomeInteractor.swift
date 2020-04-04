@@ -15,7 +15,7 @@ protocol HomeInteractor {
 
 class HomeInteractorImpl: HomeInteractor {
     func fetchLastRide() -> Single<Ride?> {
-        // TODO: Fetch the events for the current user
+        // TODO: Fetch the nearest pending ride
         return Single.just(MockData.shared().getRides().first)
     }
 }
