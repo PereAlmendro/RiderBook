@@ -16,25 +16,35 @@ class MockData {
     }
     
     func getRides() -> [Ride] {
+        var laps = getLaps()
         let ride1 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*6),
                          circuit: getCircuits()[4],
-                         bestLap: Lap(name: "Lap 1", time: "1h 1' 34''", isBestLap: false))
+                         bestLap: laps.first(where: { $0.isBestLap })!,
+                         laps: getLaps())
         
+        laps = getLaps()
         let ride2 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*1),
                          circuit: getCircuits()[6],
-                         bestLap: Lap(name: "Lap 2", time: "1' 34''", isBestLap: false))
+                         bestLap: laps.first(where: { $0.isBestLap })!,
+                         laps: getLaps())
         
+        laps = getLaps()
         let ride3 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*24),
                          circuit: getCircuits()[8],
-                         bestLap: Lap(name: "Lap 3", time: "44''", isBestLap: false))
+                         bestLap: laps.first(where: { $0.isBestLap })!,
+                         laps: getLaps())
         
+        laps = getLaps()
         let ride4 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*10),
                          circuit: getCircuits()[15],
-                         bestLap: Lap(name: "Lap 4", time: "38''", isBestLap: false))
+                         bestLap: laps.first(where: { $0.isBestLap })!,
+                         laps: getLaps())
         
+        laps = getLaps()
         let ride5 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*2),
                          circuit: getCircuits()[1],
-                         bestLap: Lap(name: "Lap 5", time: "48''", isBestLap: false))
+                         bestLap: laps.first(where: { $0.isBestLap })!,
+                         laps: getLaps())
         
         return [ride1, ride2, ride3, ride4, ride5]
     }
@@ -70,6 +80,20 @@ class MockData {
             Circuit(name: "Torremocha", location: nil),
             Circuit(name: "Villaverde de Medina, Circuito internacional", location: nil)
         ]
+    }
+    
+    func getLaps() -> [Lap] {
+        var laps: [Lap] = []
+        let randoom = Int.random(in: 0...18)
+        var bestLap = true
+        for index in 0...randoom {
+            let name = "index \(index)"
+            let minutes = Int.random(in: 0...1)
+            let seconds = Int.random(in: 0...59)
+            laps.append(Lap(name: name, time: "\(minutes)' \(seconds)''", isBestLap: bestLap))
+            bestLap = false
+        }
+        return laps.shuffled()
     }
     
 }

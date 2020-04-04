@@ -12,4 +12,5 @@ struct Ride {
     let date: Date
     let circuit: Circuit
     let bestLap: Lap
+    let laps: [Lap]
 }

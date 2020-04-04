@@ -18,6 +18,7 @@ enum AlertType {
 class AlertView: NibView {
     
     // MARK: - IBOutlets
+    
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet private weak var shadowView: UIView!

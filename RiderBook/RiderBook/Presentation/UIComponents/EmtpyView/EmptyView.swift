@@ -10,9 +10,13 @@ import UIKit
 
 class EmptyView: NibView {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet private weak var emptyImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    
+    // MARK: - Lifecycle
     
     override func customSetup() {
         titleLabel.font = .arialboldMT(size: 17)
@@ -21,10 +25,11 @@ class EmptyView: NibView {
         emptyImageView.contentMode = .scaleAspectFit
     }
     
+    // MARK: - Public functions
+    
     func configureWith(title: String, description: String, image: UIImage? = nil) {
         emptyImageView.image = image
         titleLabel.text = title
         descriptionLabel.text = description
     }
-    
 }
