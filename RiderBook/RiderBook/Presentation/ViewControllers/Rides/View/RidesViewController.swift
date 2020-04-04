@@ -32,8 +32,6 @@ class RidesViewController: BaseViewController<RidesPresenter> {
     }
     
     private func setupTableView() {
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(RideTableViewCell.nib,
@@ -71,7 +69,7 @@ extension RidesViewController: UITableViewDataSource {
         let ride = presenter.ride(indexPath: indexPath)
         cell.configureWith(circuitName: ride.circuit.name,
                            date: ride.date.toString(style: .short),
-                           bestLapTime: ride.bestLap.time)
+                           bestLapTime: ride.bestLap?.time ?? "")
         
         return cell
     }

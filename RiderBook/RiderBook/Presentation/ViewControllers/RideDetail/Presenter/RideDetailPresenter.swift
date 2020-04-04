@@ -25,4 +25,18 @@ class RideDetailPresenter: BasePresenter {
         self.rideDetailRouter = rideDetailRouter
         self.rideDetailInteractor = rideDetailInteractor
     }
+    
+    // MARK: - User actions
+    
+    func didSelect(lap: Lap) {
+        // TODO : Show edit, delete or create Alert
+    }
+    
+    func showRank() {
+        // TODO : Show ranking for the selected ride
+    }
+    
+    func showRankInfo() {
+        // TODO: Show Alert explaining the ranking functionality
+    }
 }

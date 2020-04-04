@@ -24,6 +24,8 @@
 		1937DBC9243888D90091019F /* RideSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937DBC8243888D90091019F /* RideSummaryView.swift */; };
 		1937DBCB2438A3510091019F /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937DBCA2438A3510091019F /* Circuit.swift */; };
 		1937DBCF2438A3FA0091019F /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937DBCE2438A3FA0091019F /* Lap.swift */; };
+		1937DBD32438B7DC0091019F /* LapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937DBD12438B7DC0091019F /* LapTableViewCell.swift */; };
+		1937DBD42438B7DC0091019F /* LapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1937DBD22438B7DC0091019F /* LapTableViewCell.xib */; };
 		1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943375E2427B6DB00050CB0 /* AppDelegate.swift */; };
 		194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337602427B6DB00050CB0 /* SceneDelegate.swift */; };
 		1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */; };
@@ -139,6 +141,8 @@
 		1937DBC8243888D90091019F /* RideSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSummaryView.swift; sourceTree = "<group>"; };
 		1937DBCA2438A3510091019F /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
 		1937DBCE2438A3FA0091019F /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
+		1937DBD12438B7DC0091019F /* LapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapTableViewCell.swift; sourceTree = "<group>"; };
+		1937DBD22438B7DC0091019F /* LapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LapTableViewCell.xib; sourceTree = "<group>"; };
 		1943375B2427B6DB00050CB0 /* RiderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1943375E2427B6DB00050CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		194337602427B6DB00050CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -336,6 +340,15 @@
 			path = RideSummaryView;
 			sourceTree = "<group>";
 		};
+		1937DBD02438B7C60091019F /* Laps */ = {
+			isa = PBXGroup;
+			children = (
+				1937DBD12438B7DC0091019F /* LapTableViewCell.swift */,
+				1937DBD22438B7DC0091019F /* LapTableViewCell.xib */,
+			);
+			path = Laps;
+			sourceTree = "<group>";
+		};
 		194337522427B6DB00050CB0 = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +531,7 @@
 		195908E1242B810F0053374B /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				1937DBD02438B7C60091019F /* Laps */,
 				19932E322430DBBA001867CA /* Rides */,
 				195908E2242B811A0053374B /* Home */,
 			);
@@ -1079,6 +1093,7 @@
 				19CB9A84242E188B00561E2D /* DatePicker.xib in Resources */,
 				19CFCAA724377ECC00FD550B /* RideDetailViewController.xib in Resources */,
 				19932E362430DBD9001867CA /* RideTableViewCell.xib in Resources */,
+				1937DBD42438B7DC0091019F /* LapTableViewCell.xib in Resources */,
 				195908DE242B77F90053374B /* ProfileViewController.xib in Resources */,
 				194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */,
 				195908E6242B81F50053374B /* HomeTableViewCell.xib in Resources */,
@@ -1290,6 +1305,7 @@
 				19932E2D2430B0D6001867CA /* RidesPresenter.swift in Sources */,
 				19312B6A242E579200269ED3 /* HomeInteractor.swift in Sources */,
 				19312B62242E55B800269ED3 /* InteractorDIModule.swift in Sources */,
+				1937DBD32438B7DC0091019F /* LapTableViewCell.swift in Sources */,
 				1937DBCF2438A3FA0091019F /* Lap.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
 			);

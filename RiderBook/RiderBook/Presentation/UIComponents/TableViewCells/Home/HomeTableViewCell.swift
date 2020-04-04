@@ -10,11 +10,6 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
-    // MARK: - IBOutlets
-    
-    @IBOutlet private weak var shadowView: UIView!
-    @IBOutlet private weak var viewHolder: UIView!
-    
     // MARK: - Static constants
     
     static var identifier: String {
@@ -25,6 +20,11 @@ class HomeTableViewCell: UITableViewCell {
         return UINib(nibName: identifier,
                      bundle: Bundle(for: HomeTableViewCell.self))
     }
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet private weak var shadowView: UIView!
+    @IBOutlet private weak var viewHolder: UIView!
     
     // MARK: - Lifecycle
 

@@ -110,7 +110,7 @@ extension CalendarViewController: UITableViewDataSource {
         let ride = dataSource[indexPath.row]
         cell.configureWith(circuitName: ride.circuit.name,
                            date: ride.date.toString(style: .short),
-                           bestLapTime: ride.bestLap.time)
+                           bestLapTime: ride.bestLap?.time ?? "")
         return cell
     }
 }

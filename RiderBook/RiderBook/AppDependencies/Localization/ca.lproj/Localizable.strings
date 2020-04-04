@@ -28,3 +28,9 @@
 "generic_error_title" = "Alerta!";
 "generic_error_message" = "Alguna cosa ha anat malament, si us plau, prova mes tard";
 "rides" = "Rodades";
+"best_lap" = "Millor volta";
+"best_time" = "Millor temps";
+"rank" = "Rànquing";
+"view_ranking" = "veure";
+"unranked" = "Sense rànking";
+"more_information" = "més informació";

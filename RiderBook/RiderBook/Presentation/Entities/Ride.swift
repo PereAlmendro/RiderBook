@@ -11,6 +11,8 @@ import Foundation
 struct Ride {
     let date: Date
     let circuit: Circuit
-    let bestLap: Lap
+    var bestLap: Lap? {
+        return laps.first(where: { $0.isBestLap })
+    }
     let laps: [Lap]
 }

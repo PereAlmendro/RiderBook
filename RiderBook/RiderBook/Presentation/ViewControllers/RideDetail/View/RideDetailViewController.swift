@@ -27,10 +27,66 @@ class RideDetailViewController: BaseViewController<RideDetailPresenter> {
     // MARK: - Private functions
     
     private func setupView()  {
-        titleLabel.text = presenter.ride?.circuit.name
-        subtitleLabel.text = presenter.ride?.date.toString(style: .short)
         addBackButton()
         enableLargeTitles(false)
-    }
+        
+        titleLabel.text = presenter.ride?.circuit.name
+        subtitleLabel.text = presenter.ride?.date.toString(style: .short)
+        
+        if let ride = presenter.ride {
+            rideSummaryView.configureWith(rankingPosition: nil,
+                                          bestLapTime: ride.bestLap?.time ?? "",
+                                          delegate: self)
+        }
 
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(LapTableViewCell.nib,
+                           forCellReuseIdentifier: LapTableViewCell.identifier)
+        tableView.reloadData()
+    }
+}
+
+// MARK: - RideSummaryViewProtocol
+
+extension RideDetailViewController: RideSummaryViewProtocol {
+    func rankButtonAction(_ sender: RideSummaryView, action: RankButtonAction) {
+        switch action {
+        case .showInfoRank:
+            presenter.showRankInfo()
+        case .viewRank:
+            presenter.showRank()
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension RideDetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let lap = presenter.ride?.laps[indexPath.row] else { return }
+        presenter.didSelect(lap: lap)
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension RideDetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.ride?.laps.count ?? .zero
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let lap = presenter.ride?.laps[indexPath.row],
+            let cell = tableView.dequeueReusableCell(withIdentifier: LapTableViewCell.identifier,
+                                                     for: indexPath) as? LapTableViewCell else {
+                                                        return LapTableViewCell()
+        }
+        cell.configureWith(lap: lap)
+        return cell
+    }
 }

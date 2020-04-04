@@ -16,34 +16,24 @@ class MockData {
     }
     
     func getRides() -> [Ride] {
-        var laps = getLaps()
         let ride1 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*6),
                          circuit: getCircuits()[4],
-                         bestLap: laps.first(where: { $0.isBestLap })!,
                          laps: getLaps())
         
-        laps = getLaps()
         let ride2 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*1),
                          circuit: getCircuits()[6],
-                         bestLap: laps.first(where: { $0.isBestLap })!,
                          laps: getLaps())
         
-        laps = getLaps()
         let ride3 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*24),
                          circuit: getCircuits()[8],
-                         bestLap: laps.first(where: { $0.isBestLap })!,
                          laps: getLaps())
         
-        laps = getLaps()
         let ride4 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*10),
                          circuit: getCircuits()[15],
-                         bestLap: laps.first(where: { $0.isBestLap })!,
                          laps: getLaps())
         
-        laps = getLaps()
         let ride5 = Ride(date: Date(timeIntervalSinceNow: 60*60*24*2),
                          circuit: getCircuits()[1],
-                         bestLap: laps.first(where: { $0.isBestLap })!,
                          laps: getLaps())
         
         return [ride1, ride2, ride3, ride4, ride5]
@@ -87,13 +77,13 @@ class MockData {
         let randoom = Int.random(in: 0...18)
         var bestLap = true
         for index in 0...randoom {
-            let name = "index \(index)"
+            let name = "Lap \(index)"
             let minutes = Int.random(in: 0...1)
             let seconds = Int.random(in: 0...59)
             laps.append(Lap(name: name, time: "\(minutes)' \(seconds)''", isBestLap: bestLap))
             bestLap = false
         }
-        return laps.shuffled()
+        return laps
     }
     
 }

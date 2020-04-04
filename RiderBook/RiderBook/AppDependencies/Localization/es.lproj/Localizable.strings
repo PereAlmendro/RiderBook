@@ -28,3 +28,9 @@
 "generic_error_title" = "¡Alerta!";
 "generic_error_message" = "Algo ha salido mal, por favor, prueba mas tarde";
 "rides" = "Rodadas";
+"best_lap" = "Mejor vuelta";
+"best_time" = "Mejor tiempo";
+"rank" = "Clasificación";
+"view_ranking" = "ver";
+"unranked" = "Sin clasificar";
+"more_information" = "más información";

@@ -10,13 +10,6 @@ import UIKit
 
 class RideTableViewCell: UITableViewCell {
     
-    // MARK: - IBOutlets
-    
-    @IBOutlet private weak var circuitLabel: UILabel!
-    @IBOutlet private weak var dateLabel: UILabel!
-    @IBOutlet weak var bestLapTitleLabel: UILabel!
-    @IBOutlet weak var bestLapValueLabel: UILabel!
-    
     // MARK: - Static constants
     
     static var identifier: String {
@@ -27,6 +20,13 @@ class RideTableViewCell: UITableViewCell {
         return UINib(nibName: identifier,
                      bundle: Bundle(for: RideTableViewCell.self))
     }
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet private weak var circuitLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet weak var bestLapTitleLabel: UILabel!
+    @IBOutlet weak var bestLapValueLabel: UILabel!
 
     // MARK: - Lifecycle
     
