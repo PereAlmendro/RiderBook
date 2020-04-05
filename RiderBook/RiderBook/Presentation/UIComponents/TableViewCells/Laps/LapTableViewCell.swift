@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol LapTableViewCellDelegate {
+    func editButtonAction(for lap: Lap)
+    func deleteButtonAction(for lap: Lap)
+}
+
 class LapTableViewCell: UITableViewCell {
     
     // MARK: - Static constants
@@ -23,8 +28,15 @@ class LapTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
 
-    @IBOutlet weak var lapNameLabel: UILabel!
-    @IBOutlet weak var lapTimeLabel: UILabel!
+    @IBOutlet private weak var lapNameLabel: UILabel!
+    @IBOutlet private weak var lapTimeLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    // MARK: - Properties
+    
+    private var lap: Lap?
+    private var delegate: LapTableViewCellDelegate?
     
     // MARK: - lifecycle
     
@@ -34,10 +46,28 @@ class LapTableViewCell: UITableViewCell {
         lapTimeLabel.font = UIFont.arialboldMT(size: 18)
     }
     
-    // MARK: - Public func
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
     
-    func configureWith(lap: Lap) {
-        lapNameLabel.text = lap.name
+    // MARK: - Public functions
+    
+    func configureWith(lap: Lap, delegate: LapTableViewCellDelegate? = nil) {
+        self.delegate = delegate
+        self.lap = lap
+        lapNameLabel.text = "\(lap.number)"
         lapTimeLabel.text = lap.time
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func editButtonAction(_ sender: Any) {
+        guard let lap = lap else { return }
+        delegate?.editButtonAction(for: lap)
+    }
+    
+    @IBAction func deleteButtonAction(_ sender: Any) {
+        guard let lap = lap else { return }
+        delegate?.deleteButtonAction(for: lap)
     }
 }

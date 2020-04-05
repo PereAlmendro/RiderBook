@@ -57,11 +57,11 @@ class HomePresenter: BasePresenter {
     // MARK: - Private functions
     
     private func loadView() {
-        view?.hideLoader()
         homeInteractor
             .fetchLastRide()
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
+            .showLoader(view: view)
             .subscribe(onSuccess: { [weak self] lastRide in
                 self?.lastRide.onNext(lastRide)
                 self?.view?.hideLoader()

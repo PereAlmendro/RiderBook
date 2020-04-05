@@ -68,8 +68,6 @@ extension RideDetailViewController: RideSummaryViewProtocol {
 
 extension RideDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let lap = presenter.ride?.laps[indexPath.row] else { return }
-        presenter.didSelect(lap: lap)
     }
 }
 
@@ -86,7 +84,19 @@ extension RideDetailViewController: UITableViewDataSource {
                                                      for: indexPath) as? LapTableViewCell else {
                                                         return LapTableViewCell()
         }
-        cell.configureWith(lap: lap)
+        cell.configureWith(lap: lap, delegate: self)
         return cell
+    }
+}
+
+// MARK: - LapTableViewCellDelegate
+
+extension RideDetailViewController: LapTableViewCellDelegate {
+    func editButtonAction(for lap: Lap) {
+        presenter.didPressEdit(for: lap)
+    }
+    
+    func deleteButtonAction(for lap: Lap) {
+        presenter.didPressDelete(for: lap)
     }
 }

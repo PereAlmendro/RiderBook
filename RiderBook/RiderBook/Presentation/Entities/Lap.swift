@@ -9,7 +9,7 @@
 import Foundation
 
 struct Lap {
-    let name: String
+    let number: Int
     let time: String
     let isBestLap: Bool
 }

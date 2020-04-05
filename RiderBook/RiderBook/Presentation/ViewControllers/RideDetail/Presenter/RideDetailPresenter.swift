@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class RideDetailPresenter: BasePresenter {
     
@@ -28,8 +29,40 @@ class RideDetailPresenter: BasePresenter {
     
     // MARK: - User actions
     
-    func didSelect(lap: Lap) {
-        // TODO : Show edit, delete or create Alert
+    func didPressEdit(for lap: Lap) {
+        rideDetailInteractor
+            .editLap(lap: lap)
+            .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .showLoader(view: view)
+            .subscribe(onSuccess: { success in
+                // TODO: Show success or failure and reload data
+            }) { [weak self] error in
+                self?.view?.showAlert(type: .error,
+                                      title: "Error".localized(),
+                                      message: error.localizedDescription,
+                                      completion: nil)
+        }.disposed(by: disposeBag)
+    }
+    
+    func didPressDelete(for lap: Lap) {
+        rideDetailInteractor
+            .deleteLap(lap: lap)
+            .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .showLoader(view: view)
+            .subscribe(onSuccess: { success in
+                // TODO: Show success or failure and reload data
+            }) { [weak self] error in
+                self?.view?.showAlert(type: .error,
+                                      title: "Error".localized(),
+                                      message: error.localizedDescription,
+                                      completion: nil)
+        }.disposed(by: disposeBag)
+    }
+    
+    func didPressCreate() {
+        // TODO : Show create lap
     }
     
     func showRank() {

@@ -7,9 +7,27 @@
 //
 
 import Foundation
+import RxSwift
 
-protocol RideDetailInteractor { }
+protocol RideDetailInteractor {
+    func createLap(lap: Lap) -> Single<Bool>
+    func editLap(lap: Lap) -> Single<Bool>
+    func deleteLap(lap: Lap) -> Single<Bool>
+}
 
 class RideDetailInteractorImpl: RideDetailInteractor {
+    func createLap(lap: Lap) -> Single<Bool> {
+        // TODO: Create lap
+        return Single.just(true)
+    }
     
+    func editLap(lap: Lap) -> Single<Bool> {
+        // TODO: Update lap
+        return Single.just(true)
+    }
+    
+    func deleteLap(lap: Lap) -> Single<Bool> {
+        // TODO Delete Lap
+        return Single.just(true)
+    }
 }

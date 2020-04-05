@@ -77,10 +77,9 @@ class MockData {
         let randoom = Int.random(in: 0...18)
         var bestLap = true
         for index in 0...randoom {
-            let name = "Lap \(index)"
             let minutes = Int.random(in: 0...1)
             let seconds = Int.random(in: 0...59)
-            laps.append(Lap(name: name, time: "\(minutes)' \(seconds)''", isBestLap: bestLap))
+            laps.append(Lap(number: index+1, time: "\(minutes)' \(seconds)''", isBestLap: bestLap))
             bestLap = false
         }
         return laps
