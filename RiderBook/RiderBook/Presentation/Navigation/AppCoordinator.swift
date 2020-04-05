@@ -118,7 +118,6 @@ fileprivate extension AppCoordinatorImpl {
     func presentInNavigationController(viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
         let navController = UINavigationController(rootViewController: viewController)
         navController.modalPresentationStyle = .fullScreen
-        navController.modalTransitionStyle = .crossDissolve
         present(viewController: navController, animated: animated, completion: completion)
     }
 }

@@ -11,6 +11,7 @@ import SwinjectStoryboard
 
 protocol CalendarRouter: BaseRouter {
     func showAddRide()
+    func showRide(ride: Ride)
 }
 
 class CalendarRouterImpl: CalendarRouter {
@@ -29,5 +30,9 @@ class CalendarRouterImpl: CalendarRouter {
     
     func showAddRide() {
         coordinator?.showAddRide()
+    }
+    
+    func showRide(ride: Ride) {
+        coordinator?.showDetail(of: ride)
     }
 }

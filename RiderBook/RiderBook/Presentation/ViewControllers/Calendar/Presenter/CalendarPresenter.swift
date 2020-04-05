@@ -63,7 +63,7 @@ class CalendarPresenter: BasePresenter {
     }
     
     func didSelectRide(ride: Ride) {
-        // TODO: Open ride detail
+        calendarRouter.showRide(ride: ride)
     }
     
     // MARK: - Private functions
