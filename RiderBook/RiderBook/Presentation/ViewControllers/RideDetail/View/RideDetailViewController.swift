@@ -54,13 +54,12 @@ class RideDetailViewController: BaseViewController<RideDetailPresenter> {
 // MARK: - RideSummaryViewProtocol
 
 extension RideDetailViewController: RideSummaryViewProtocol {
-    func rankButtonAction(_ sender: RideSummaryView, action: RankButtonAction) {
-        switch action {
-        case .showInfoRank:
-            presenter.showRankInfo()
-        case .viewRank:
-            presenter.showRank()
-        }
+    func viewRankAction(_ sender: RideSummaryView) {
+        presenter.showRank()
+    }
+    
+    func rankInfoAction(_ sender: RideSummaryView) {
+        presenter.showRankInfo()
     }
 }
 

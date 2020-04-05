@@ -10,39 +10,44 @@ import Foundation
 import UIKit
 
 protocol RideSummaryViewProtocol: AnyObject{
-    func rankButtonAction(_ sender: RideSummaryView, action: RankButtonAction)
-}
-
-enum RankButtonAction {
-    case viewRank
-    case showInfoRank
+    func viewRankAction(_ sender: RideSummaryView)
+    func rankInfoAction(_ sender: RideSummaryView)
 }
 
 class RideSummaryView: NibView {
     
     // MARK: - IBOutlets
     
-    @IBOutlet private weak var firstLabelTitle: UILabel!
-    @IBOutlet private weak var middleLabelTitle: UILabel!
+    @IBOutlet private weak var timeTitleLabel: UILabel!
+    @IBOutlet private weak var rankTitleLabel: UILabel!
     
-    @IBOutlet private weak var firstLabelValue: UILabel!
-    @IBOutlet private weak var middleLabelValue: UILabel!
+    @IBOutlet private weak var timeValueLabel: UILabel!
+    @IBOutlet private weak var rankValueLabel: UILabel!
     
-    @IBOutlet private weak var rankingButton: UIButton!
+    @IBOutlet private weak var rankInfoButton: UIButton!
+    @IBOutlet private weak var viewRankButton: UIButton!
+    
+    @IBOutlet private weak var rankValueStackView: UIStackView!
     
     // MARK: - Properties
     
     private weak var delegate: RideSummaryViewProtocol?
-    private var rankAction: RankButtonAction = .viewRank
     
     // MARK: - Lifecycle
     
     override func customSetup() {
-        firstLabelTitle.font = UIFont.arialMT(size: 18)
-        middleLabelTitle.font = UIFont.arialMT(size: 18)
+        timeTitleLabel.font = UIFont.arialMT(size: 18)
+        rankTitleLabel.font = UIFont.arialMT(size: 18)
         
-        firstLabelValue.font = UIFont.arialboldMT(size: 20)
-        middleLabelValue.font = UIFont.arialboldMT(size: 20)
+        timeValueLabel.font = UIFont.arialboldMT(size: 20)
+        rankValueLabel.font = UIFont.arialboldMT(size: 20)
+        
+        viewRankButton.setTitle("view_ranking".localized(), for: .normal)
+        viewRankButton.setTitleColor(.emeraldGreen, for: .normal)
+        
+        rankInfoButton.tintColor = .emeraldGreen
+        
+        timeTitleLabel.text = "best_time".localized()
     }
     
     // MARK: - Public functions
@@ -51,25 +56,27 @@ class RideSummaryView: NibView {
                        delegate: RideSummaryViewProtocol) {
         self.delegate = delegate
         
-        firstLabelTitle.text = "best_time".localized() + " :"
-        firstLabelValue.text = "\(bestLapTime)"
+        timeValueLabel.text = "\(bestLapTime)"
         
         if let rank = rankingPosition {
-            middleLabelTitle.text = "rank".localized() + ":"
-            middleLabelValue.text = "\(rank)".localized()
-            rankingButton.setTitle("view_ranking".localized(), for: .normal)
-            rankAction = .viewRank
+            rankTitleLabel.text = "rank".localized()
+            rankValueLabel.text = "\(rank)"
+            rankValueStackView.isHidden = false
+            rankInfoButton.isHidden = true
         } else {
-            middleLabelTitle.text = "unranked".localized()
-            middleLabelValue.text = nil
-            rankingButton.setTitle("more_information".localized(), for: .normal)
-            rankAction = .showInfoRank
+            rankTitleLabel.text = "unranked".localized()
+            rankValueStackView.isHidden = true
+            rankInfoButton.isHidden = false
         }
     }
     
     // MARK: - IBActions
     
-    @IBAction func rankingButtonAction(_ sender: Any) {
-        delegate?.rankButtonAction(self, action: rankAction)
+    @IBAction func viewRankAction(_ sender: Any) {
+        delegate?.viewRankAction(self)
+    }
+    
+    @IBAction private func rankInfoAction(_ sender: Any) {
+        delegate?.rankInfoAction(self)
     }
 }
