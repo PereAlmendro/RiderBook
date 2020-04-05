@@ -11,7 +11,8 @@ target 'RiderBook' do
   pod 'Swinject', '~> 2.6.2'
   pod 'SwinjectStoryboard', '~> 2.2.0'
   pod 'FSCalendar'
-	
+	pod 'Firebase/Analytics'
+  
   target 'RiderBookTests' do
     inherit! :search_paths
     # Pods for testing

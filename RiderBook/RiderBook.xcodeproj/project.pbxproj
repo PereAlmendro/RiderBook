@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1902E7DA243A298700B10F98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1902E7D9243A298700B10F98 /* GoogleService-Info.plist */; };
 		192EF9DE2427C19900190D7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9DD2427C19900190D7B /* LoginViewController.swift */; };
 		192EF9E12427C62800190D7B /* RBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192EF9E02427C62800190D7B /* RBButton.swift */; };
 		192EF9E32427C63600190D7B /* RBButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192EF9E22427C63600190D7B /* RBButton.xib */; };
@@ -119,6 +120,7 @@
 
 /* Begin PBXFileReference section */
 		14AC98EB8D07CBFA6C9716DB /* Pods-RiderBook-RiderBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook-RiderBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1902E7D9243A298700B10F98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		192EF9DD2427C19900190D7B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		192EF9E02427C62800190D7B /* RBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBButton.swift; sourceTree = "<group>"; };
 		192EF9E22427C63600190D7B /* RBButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBButton.xib; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				1943375D2427B6DB00050CB0 /* RiderBook */,
+				1902E7D9243A298700B10F98 /* GoogleService-Info.plist */,
 				194337792427B6DD00050CB0 /* RiderBookTests */,
 				194337842427B6DD00050CB0 /* RiderBookUITests */,
 				1943375C2427B6DB00050CB0 /* Products */,
@@ -1054,6 +1057,7 @@
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
 				19F57D22242CDDE400A9EA88 /* RidesViewController.xib in Resources */,
 				198CB6352427DDA900E1638F /* RBTextField.xib in Resources */,
+				1902E7DA243A298700B10F98 /* GoogleService-Info.plist in Resources */,
 				19C5607A242A960D005C80CB /* HomeViewController.xib in Resources */,
 				19D8B896242D240C00C12FB2 /* EmptyView.xib in Resources */,
 				19B692AC242CAB0200C9C43B /* CalendarDashboardView.xib in Resources */,
