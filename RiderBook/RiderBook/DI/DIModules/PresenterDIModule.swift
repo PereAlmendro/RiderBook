@@ -37,13 +37,6 @@ class PresenterDIModule {
                              profileInteractor: r.resolve(ProfileInteractor.self)!)
         }
         
-        // MARK: - Calendar
-        
-        container.register(CalendarPresenter.self) { r in
-            CalendarPresenter(calendarRouter: r.resolve(CalendarRouter.self)!,
-                              calendarInteractor: r.resolve(CalendarInteractor.self)!)
-        }
-        
         // MARK: - Add Ride
         
         container.register(AddRidePresenter.self) { r in

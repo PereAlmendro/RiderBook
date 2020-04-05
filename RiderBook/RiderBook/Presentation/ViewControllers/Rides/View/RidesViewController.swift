@@ -2,52 +2,90 @@
 //  RidesViewController.swift
 //  RiderBook
 //
-//  Created by Pere Almendro on 29/03/2020.
+//  Created by Pere Almendro on 24/03/2020.
 //  Copyright © 2020 Pere Almendro. All rights reserved.
 //
 
 import UIKit
-import RxSwift
+import FSCalendar
 
 class RidesViewController: BaseViewController<RidesPresenter> {
 
     // MARK: - IBOutlets
-    
     @IBOutlet private weak var tableView: UITableView!
-    
+    @IBOutlet private weak var calendar: FSCalendar!
+    private var dataSource: [Ride] = []
+
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setScreenTitle(presenter.screenTitle)
+        addRightButtonItem(systemItem: .add)
         setupView()
+        bindToRxProperties()
+    }
+    
+    // MARK: - User Actions
+    
+    override func rightButtonItemAction(_ sender: Any) {
+        presenter.addButtonAction()
     }
     
     // MARK: - Private functions
     
+    private func bindToRxProperties() {
+        presenter
+            .reloadCalendar
+            .subscribe { [weak self] event in
+                guard event.element == true else { return }
+                self?.calendar.reloadData()
+        }.disposed(by: disposeBag)
+        
+        presenter
+            .selectedDayRides
+            .subscribe { [weak self] event in
+                guard let rides = event.element else { return }
+                self?.dataSource = rides
+                self?.tableView.reloadData()
+                self?.tableView.backgroundView?.isHidden = !rides.isEmpty
+        }.disposed(by: disposeBag)
+    }
+    
     private func setupView() {
-        addRightButtonItem(systemItem: .add)
-        setScreenTitle(presenter.screenTitle)
-        enableLargeTitles(true)
         setupTableView()
-        bindToRxProperties()
+        calendar.delegate = self
+        calendar.dataSource = self
     }
     
     private func setupTableView() {
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(RideTableViewCell.nib,
                            forCellReuseIdentifier: RideTableViewCell.identifier)
+        let emptyView = EmptyView()
+        emptyView.configureWith(title: "calendar_no_rides".localized(),
+                                description: "calendar_tap_to_add_events".localized(),
+                                image: UIImage(named: "guest_avatar"))
+        tableView.backgroundView = emptyView
     }
-    
-    private func bindToRxProperties() {
-        presenter.reloadTable.subscribe({ [weak self] event in
-            guard event.element == true else { return }
-            self?.tableView.reloadData()
-        }).disposed(by: disposeBag)
+}
+
+// MARK: - FSCalendarDelegate
+
+extension RidesViewController: FSCalendarDelegate {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        presenter.didSelectDate(date: date)
     }
-    
-    override func rightButtonItemAction(_ sender: Any) {
-        presenter.addRideAction()
+}
+
+// MARK: - FSCalendarDataSource
+
+extension RidesViewController: FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        return presenter.numberOfRides(for: date)
     }
 }
 
@@ -55,7 +93,7 @@ class RidesViewController: BaseViewController<RidesPresenter> {
 
 extension RidesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelectRow(at: indexPath)
+        presenter.didSelectRide(ride: dataSource[indexPath.row])
     }
 }
 
@@ -63,19 +101,16 @@ extension RidesViewController: UITableViewDelegate {
 
 extension RidesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.numberOfRows()
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RideTableViewCell.identifier,
                                                  for: indexPath) as? RideTableViewCell ?? RideTableViewCell()
-        
-        let ride = presenter.ride(indexPath: indexPath)
+        let ride = dataSource[indexPath.row]
         cell.configureWith(circuitName: ride.circuit.name,
                            date: ride.date.toString(style: .short),
                            bestLapTime: ride.bestLap?.time ?? "")
-        
         return cell
     }
 }
-

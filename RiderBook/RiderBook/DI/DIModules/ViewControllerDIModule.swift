@@ -41,14 +41,6 @@ class ViewControllerDIModule {
             return view
         }
         
-        // MARK: - Calendar
-        
-        container.register(CalendarViewController.self) { r in
-            let view = CalendarViewController()
-            view.presenter = r.resolve(CalendarPresenter.self)!
-            return view
-        }
-        
         // MARK: - Add Ride
         
         container.register(AddRideViewController.self) { r in

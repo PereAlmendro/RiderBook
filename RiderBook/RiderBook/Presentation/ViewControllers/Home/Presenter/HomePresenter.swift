@@ -49,8 +49,6 @@ class HomePresenter: BasePresenter {
     func tapOnCalendar() {
         if let lastRide = lastRideValue {
             homeRouter.showLastRideDetail(lastRide)
-        } else {
-            homeRouter.showCalendar()
         }
     }
     

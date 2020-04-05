@@ -2,15 +2,16 @@
 //  RidesRouter.swift
 //  RiderBook
 //
-//  Created by Pere Almendro on 29/03/2020.
+//  Created by Pere Almendro on 25/03/2020.
 //  Copyright © 2020 Pere Almendro. All rights reserved.
 //
 
 import Foundation
+import SwinjectStoryboard
 
 protocol RidesRouter: BaseRouter {
-    func showRide(ride: Ride)
     func showAddRide()
+    func showRide(ride: Ride)
 }
 
 class RidesRouterImpl: RidesRouter {
@@ -25,11 +26,13 @@ class RidesRouterImpl: RidesRouter {
         self.coordinator = coordinator
     }
     
-    func showRide(ride: Ride) {
-        coordinator?.showDetail(of: ride)
-    }
+    // MARK: - Navigations
     
     func showAddRide() {
         coordinator?.showAddRide()
+    }
+    
+    func showRide(ride: Ride) {
+        coordinator?.showDetail(of: ride)
     }
 }

@@ -40,12 +40,6 @@ class RouterDIModule{
             ProfileRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
         }
         
-        // MARK: - Calendar
-        
-        container.register(CalendarRouter.self) { r in
-            CalendarRouterImpl(coordinator: r.resolve(AppCoordinator.self)!)
-        }
-        
         // MARK: - Add Ride
         
         container.register(AddRideRouter.self) { r in

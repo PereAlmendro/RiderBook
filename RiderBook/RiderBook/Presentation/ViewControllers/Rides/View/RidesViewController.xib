@@ -7,9 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RidesViewController" customModule="RiderBook" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="RiderBook" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="jQv-sl-FVw" id="iDS-Hb-aYP"/>
+                <outlet property="calendar" destination="r44-ZM-7BP" id="cUG-8V-gRJ"/>
+                <outlet property="tableView" destination="MeD-co-ogn" id="3Dc-Zx-FkL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,33 +19,44 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sv-kD-b1f">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="jQv-sl-FVw">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                        </tableView>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstItem="jQv-sl-FVw" firstAttribute="leading" secondItem="7sv-kD-b1f" secondAttribute="leading" id="7gP-3g-0CG"/>
-                        <constraint firstItem="jQv-sl-FVw" firstAttribute="top" secondItem="7sv-kD-b1f" secondAttribute="top" id="MvE-99-MQG"/>
-                        <constraint firstAttribute="trailing" secondItem="jQv-sl-FVw" secondAttribute="trailing" id="ZY1-Vw-5jP"/>
-                        <constraint firstAttribute="bottom" secondItem="jQv-sl-FVw" secondAttribute="bottom" id="uSb-Hm-hBd"/>
-                    </constraints>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r44-ZM-7BP" customClass="FSCalendar">
+                    <rect key="frame" x="0.0" y="44" width="414" height="269"/>
+                    <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="42Y-0T-gMd"/>
+                        <outlet property="delegate" destination="-1" id="003-ZW-PoG"/>
+                    </connections>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MeD-co-ogn">
+                    <rect key="frame" x="0.0" y="323" width="414" height="539"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="7sv-kD-b1f" secondAttribute="trailing" id="CPh-Rd-Yfc"/>
-                <constraint firstItem="7sv-kD-b1f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GPP-qs-8SU"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7sv-kD-b1f" secondAttribute="bottom" id="tgC-R3-vRj"/>
-                <constraint firstItem="7sv-kD-b1f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="v6f-DI-wVf"/>
+                <constraint firstItem="r44-ZM-7BP" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="1jD-xE-3uB"/>
+                <constraint firstItem="r44-ZM-7BP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7wq-n7-X0z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MeD-co-ogn" secondAttribute="bottom" id="Hkk-FN-0f7"/>
+                <constraint firstItem="r44-ZM-7BP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NnJ-Xj-HIk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MeD-co-ogn" secondAttribute="trailing" id="Nr6-9d-4Rs"/>
+                <constraint firstItem="MeD-co-ogn" firstAttribute="top" secondItem="r44-ZM-7BP" secondAttribute="bottom" constant="10" id="VSX-k9-EXD"/>
+                <constraint firstItem="MeD-co-ogn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lwa-55-sjk"/>
+                <constraint firstItem="r44-ZM-7BP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uFC-J6-dwp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="154"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
 </document>

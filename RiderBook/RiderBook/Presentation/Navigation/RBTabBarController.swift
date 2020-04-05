@@ -12,7 +12,6 @@ import SwinjectStoryboard
 public enum TabBarItem: Int {
     case home
     case rides
-    case calendar
     case profile
 }
 
@@ -54,17 +53,7 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
                                           image: UIImage(named: "road_off")?.withRenderingMode(.alwaysOriginal),
                                           selectedImage: UIImage(named: "road_on")?.withRenderingMode(.alwaysOriginal))
         myRidesVC.tabBarItem = myRidesTabItem
-        
-        // CalendarViewController
-        let calendarVC = SwinjectStoryboard.defaultContainer.resolve(CalendarViewController.self)!
-        let calendarNavController = UINavigationController(rootViewController: calendarVC)
-        calendarNavController.modalPresentationStyle = .fullScreen
-        
-        let calendarTabItem = UITabBarItem(title: String(),
-                                          image: UIImage(named: "calendar_off")?.withRenderingMode(.alwaysOriginal),
-                                          selectedImage: UIImage(named: "calendar_on")?.withRenderingMode(.alwaysOriginal))
-        calendarVC.tabBarItem = calendarTabItem
-        
+
         // ProfileViewController
         let profileVC = SwinjectStoryboard.defaultContainer.resolve(ProfileViewController.self)!
         let profileNavController = UINavigationController(rootViewController: profileVC)
@@ -79,7 +68,6 @@ public class RBTabBarController: NSObject, UITabBarControllerDelegate {
         tabBarController.setViewControllers([
             homeNavController,
             myRidesNavController,
-            calendarNavController,
             profileNavController
             ], animated: false)
         

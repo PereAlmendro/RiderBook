@@ -34,12 +34,6 @@ class InteractorDIModule {
             ProfileInteractorImpl()
         }
         
-        // MARK: - Calendar
-        
-        container.register(CalendarInteractor.self) { _ in
-            CalendarInteractorImpl()
-        }
-        
         // MARK: - Add Ride
         
         container.register(AddRideInteractor.self) { _ in

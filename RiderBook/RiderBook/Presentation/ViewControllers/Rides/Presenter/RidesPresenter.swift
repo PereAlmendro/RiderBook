@@ -1,12 +1,13 @@
 //
-//  RidesPresenter.swift
+//  CalendarPresenter.swift
 //  RiderBook
 //
-//  Created by Pere Almendro on 29/03/2020.
+//  Created by Pere Almendro on 24/03/2020.
 //  Copyright © 2020 Pere Almendro. All rights reserved.
 //
 
 import Foundation
+import UIKit
 import RxSwift
 
 class RidesPresenter: BasePresenter {
@@ -23,39 +24,46 @@ class RidesPresenter: BasePresenter {
     
     // MARK: - Rx Properties
     
-    var reloadTable: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
+    var reloadCalendar: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
+    var selectedDayRides: BehaviorSubject<[Ride]> = BehaviorSubject<[Ride]>(value: [])
     
-    // MARK: - Lyfecycle
+    // MARK: - Lifecycle
     
     init(ridesRouter: RidesRouter, ridesInteractor: RidesInteractor) {
         self.ridesRouter = ridesRouter
         self.ridesInteractor = ridesInteractor
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear() {
+        super.viewWillAppear()
         loadView()
     }
     
     // MARK: - Public functions
     
-    func numberOfRows() -> Int {
-        return rides.count
+    func numberOfRides(for date: Date) -> Int {
+        return rides.filter({
+            Calendar.current.isDate($0.date, inSameDayAs: date)
+        }).count
     }
     
-    func ride(indexPath: IndexPath) -> Ride {
-        return rides[indexPath.row]
+    func hasRides() -> Bool {
+        return rides.count > .zero ? true : false
     }
     
     // MARK: - User Actions
     
-    func didSelectRow(at indexPath: IndexPath) {
-        let ride = rides[indexPath.row]
-        ridesRouter.showRide(ride:ride)
+    func addButtonAction() {
+        ridesRouter.showAddRide()
     }
     
-    func addRideAction() {
-        ridesRouter.showAddRide()
+    func didSelectDate(date: Date) {
+        let ridesInDate = rides.filter { $0.date.toString(style: .short) == date.toString(style: .short) }
+        self.selectedDayRides.onNext(ridesInDate)
+    }
+    
+    func didSelectRide(ride: Ride) {
+        ridesRouter.showRide(ride: ride)
     }
     
     // MARK: - Private functions
@@ -68,7 +76,7 @@ class RidesPresenter: BasePresenter {
             .showLoader(view: view)
             .subscribe(onSuccess: { [weak self] rides in
                 self?.rides = rides
-                self?.reloadTable.onNext(rides.count > 0)
+                self?.reloadCalendar.onNext(rides.count > 0)
                 }, onError: { [weak self] error in
                     self?.view?.showAlert(type: .error,
                                           title: "Error".localized(),
