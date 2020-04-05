@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol RideDetailRouter: BaseRouter { }
+protocol RideDetailRouter: BaseRouter {
+    func showRanking(for ride: Ride)
+}
 
 class RideDetailRouterImpl: RideDetailRouter {
     
@@ -20,5 +22,11 @@ class RideDetailRouterImpl: RideDetailRouter {
     
     required init(coordinator: AppCoordinator) {
         self.coordinator = coordinator
+    }
+    
+    // MARK: - Public functions
+    
+    func showRanking(for ride: Ride) {
+        // TODO : Open ranking screen
     }
 }
