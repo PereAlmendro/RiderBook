@@ -61,7 +61,7 @@ class RideDetailPresenter: BasePresenter {
         }.disposed(by: disposeBag)
     }
     
-    func didPressCreate() {
+    func didPressCreateLap() {
         // TODO : Show create lap
     }
     

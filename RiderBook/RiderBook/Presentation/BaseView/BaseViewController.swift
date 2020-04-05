@@ -84,12 +84,18 @@ class BaseViewController<P: BasePresenter>: UIViewController, BaseView, Swinject
         view.sendSubviewToBack(backgroundImageView)
     }
     
-    func addRightButtonItem(systemItem: UIBarButtonItem.SystemItem) {
-        let rightButtonItem = UIBarButtonItem(barButtonSystemItem: systemItem,
-                                              target: self,
-                                              action: #selector(rightButtonItemAction(_:)))
-        rightButtonItem.tintColor = .black
-        navigationItem.setRightBarButton(rightButtonItem, animated: false)
+    func addRightButtonItem(systemItem: UIBarButtonItem.SystemItem, title: String? = nil) {
+        if let title = title {
+            let rightButtonItem = UIBarButtonItem(title: title, style: .done, target: self,
+                                                  action: #selector(rightButtonItemAction(_:)))
+            navigationItem.setRightBarButton(rightButtonItem, animated: false)
+        } else {
+            let rightButtonItem = UIBarButtonItem(barButtonSystemItem: systemItem,
+                                                  target: self,
+                                                  action: #selector(rightButtonItemAction(_:)))
+            rightButtonItem.tintColor = .black
+            navigationItem.setRightBarButton(rightButtonItem, animated: false)
+        }
     }
     
     func addBackButton() {

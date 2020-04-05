@@ -27,6 +27,8 @@ class RideDetailViewController: BaseViewController<RideDetailPresenter> {
     // MARK: - Private functions
     
     private func setupView()  {
+        addRightButtonItem(systemItem: .fixedSpace,
+                           title: "add_lap".localized())
         addBackButton()
         enableLargeTitles(false)
         
@@ -43,11 +45,14 @@ class RideDetailViewController: BaseViewController<RideDetailPresenter> {
     }
     
     private func setupTableView() {
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(LapTableViewCell.nib,
                            forCellReuseIdentifier: LapTableViewCell.identifier)
         tableView.reloadData()
+    }
+    
+    override func rightButtonItemAction(_ sender: Any) {
+        presenter.didPressCreateLap()
     }
 }
 
@@ -60,13 +65,6 @@ extension RideDetailViewController: RideSummaryViewProtocol {
     
     func rankInfoAction(_ sender: RideSummaryView) {
         presenter.showRankInfo()
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension RideDetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
 
