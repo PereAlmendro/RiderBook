@@ -10,6 +10,7 @@ import Foundation
 
 protocol RidesRouter: BaseRouter {
     func showRide(ride: Ride)
+    func showAddRide()
 }
 
 class RidesRouterImpl: RidesRouter {
@@ -26,5 +27,9 @@ class RidesRouterImpl: RidesRouter {
     
     func showRide(ride: Ride) {
         coordinator?.showDetail(of: ride)
+    }
+    
+    func showAddRide() {
+        coordinator?.showAddRide()
     }
 }

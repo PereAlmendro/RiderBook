@@ -25,6 +25,7 @@ class RidesViewController: BaseViewController<RidesPresenter> {
     // MARK: - Private functions
     
     private func setupView() {
+        addRightButtonItem(systemItem: .add)
         setScreenTitle(presenter.screenTitle)
         enableLargeTitles(true)
         setupTableView()
@@ -44,7 +45,10 @@ class RidesViewController: BaseViewController<RidesPresenter> {
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
     }
-
+    
+    override func rightButtonItemAction(_ sender: Any) {
+        presenter.addRideAction()
+    }
 }
 
 // MARK: - UITableViewDelegate

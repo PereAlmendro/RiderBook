@@ -13,8 +13,8 @@ class RidesPresenter: BasePresenter {
     
     // MARK: - Properties
     
-    private let myRidesRouter: RidesRouter
-    private let myRidesInteractor: RidesInteractor
+    private let ridesRouter: RidesRouter
+    private let ridesInteractor: RidesInteractor
     private var rides: [Ride] = []
     
     var screenTitle: String? {
@@ -27,9 +27,9 @@ class RidesPresenter: BasePresenter {
     
     // MARK: - Lyfecycle
     
-    init(myRidesRouter: RidesRouter, myRidesInteractor: RidesInteractor) {
-        self.myRidesRouter = myRidesRouter
-        self.myRidesInteractor = myRidesInteractor
+    init(ridesRouter: RidesRouter, ridesInteractor: RidesInteractor) {
+        self.ridesRouter = ridesRouter
+        self.ridesInteractor = ridesInteractor
     }
     
     override func viewDidLoad() {
@@ -51,13 +51,17 @@ class RidesPresenter: BasePresenter {
     
     func didSelectRow(at indexPath: IndexPath) {
         let ride = rides[indexPath.row]
-        myRidesRouter.showRide(ride:ride)
+        ridesRouter.showRide(ride:ride)
+    }
+    
+    func addRideAction() {
+        ridesRouter.showAddRide()
     }
     
     // MARK: - Private functions
     
     private func loadView() {
-        myRidesInteractor
+        ridesInteractor
             .fetchRides()
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
