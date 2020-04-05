@@ -7,13 +7,11 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class LoginViewController: BaseViewController<LoginPresenter> {
     
     // MARK: - Outlets
-    
-    @IBOutlet private weak var usernameTextField: RBTextField!
-    @IBOutlet private weak var passwordTextField: RBTextField!
     @IBOutlet private weak var loginButton: RBButton!
     @IBOutlet private weak var guestButton: RBButton!
     
@@ -22,25 +20,16 @@ class LoginViewController: BaseViewController<LoginPresenter> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
-        setupTextFields()
     }
     
     // MARK: - Private functions
     
     private func setupButtons() {
-        loginButton.setTitle(text: "log_in".localized())
+        loginButton.setTitle(text: "log_in_with_google".localized())
         loginButton.delegate = self
         
         guestButton.setTitle(text: "Join_as_guest!".localized())
         guestButton.delegate = self
-    }
-    
-    private func setupTextFields() {
-        usernameTextField.setKeyboardType(keyboadrdType: .emailAddress)
-        usernameTextField.setplaceholder(placeholder: "Email".localized())
-        
-        passwordTextField.secureType()
-        passwordTextField.setplaceholder(placeholder: "Password".localized())
     }
 }
 
@@ -49,8 +38,7 @@ class LoginViewController: BaseViewController<LoginPresenter> {
 extension LoginViewController: RBButtonDelegate {
     func rbButtonAction(_ sender: RBButton) {
         if sender == loginButton {
-            presenter.login(username: usernameTextField.getText(),
-                            password: passwordTextField.getText())
+            presenter.loginWithGoogle()
         } else if sender == guestButton {
             presenter.guestButtonAction()
         }

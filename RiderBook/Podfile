@@ -12,6 +12,8 @@ target 'RiderBook' do
   pod 'SwinjectStoryboard', '~> 2.2.0'
   pod 'FSCalendar'
 	pod 'Firebase/Analytics'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
   
   target 'RiderBookTests' do
     inherit! :search_paths

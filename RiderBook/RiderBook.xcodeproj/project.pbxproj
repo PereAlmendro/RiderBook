@@ -939,6 +939,7 @@
 				194337582427B6DB00050CB0 /* Frameworks */,
 				194337592427B6DB00050CB0 /* Resources */,
 				6E69674B06697E02D27BB128 /* [CP] Embed Pods Frameworks */,
+				DD250430638D8A65A47D4D2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -977,6 +978,7 @@
 				1943377E2427B6DD00050CB0 /* Frameworks */,
 				1943377F2427B6DD00050CB0 /* Resources */,
 				287FE52BA7A81BF0C42AA795 /* [CP] Embed Pods Frameworks */,
+				DE939BB255F095AC1FA64471 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1179,6 +1181,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD250430638D8A65A47D4D2E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RiderBook/Pods-RiderBook-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RiderBook/Pods-RiderBook-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RiderBook/Pods-RiderBook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE939BB255F095AC1FA64471 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

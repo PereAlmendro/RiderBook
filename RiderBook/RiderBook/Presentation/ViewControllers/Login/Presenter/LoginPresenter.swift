@@ -8,6 +8,8 @@
 
 import Foundation
 import RxSwift
+import Firebase
+import GoogleSignIn
 
 class LoginPresenter: BasePresenter {
     
@@ -21,6 +23,14 @@ class LoginPresenter: BasePresenter {
     init(loginRouter: LoginRouter, loginInteractor: LoginInteractor) {
         self.loginRouter = loginRouter
         self.loginInteractor = loginInteractor
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Google Sign in
+        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance()?.delegate = self
     }
     
     // MARK: - User Actions
@@ -50,5 +60,30 @@ class LoginPresenter: BasePresenter {
     
     func guestButtonAction() {
         loginRouter.showHomeAsGuest()
+    }
+    
+    func loginWithGoogle() {
+        GIDSignIn.sharedInstance()?.presentingViewController = view as? UIViewController
+        GIDSignIn.sharedInstance().signIn()
+    }
+}
+
+extension LoginPresenter: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        guard let authentication = user.authentication else {
+            // Not authenticated
+            return
+        }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if error == nil {
+                // User logged in
+            }
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Sign in interrupted
     }
 }
