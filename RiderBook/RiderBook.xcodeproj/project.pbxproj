@@ -47,8 +47,18 @@
 		195908E0242B77F90053374B /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908DC242B77F90053374B /* ProfileRouter.swift */; };
 		195908E5242B81F50053374B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908E3242B81F50053374B /* HomeTableViewCell.swift */; };
 		195908E6242B81F50053374B /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195908E4242B81F50053374B /* HomeTableViewCell.xib */; };
+		195C9352243BAF04002CFEAD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9350243BAF04002CFEAD /* Menu.swift */; };
+		195C9353243BAF04002CFEAD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9351243BAF04002CFEAD /* Order.swift */; };
+		195C9355243BAF0B002CFEAD /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9354243BAF0B002CFEAD /* Helper.swift */; };
+		195C9357243BAF4C002CFEAD /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 195C9356243BAF4C002CFEAD /* menu.json */; };
+		195C9359243BB59E002CFEAD /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9358243BB59E002CFEAD /* ItemRow.swift */; };
+		195C935B243BB86A002CFEAD /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C935A243BB86A002CFEAD /* ItemDetail.swift */; };
+		195C935E243BD30F002CFEAD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C935D243BD30F002CFEAD /* LoginView.swift */; };
+		195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C935F243BD4EE002CFEAD /* LoginViewModel.swift */; };
+		195C9363243BE00C002CFEAD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9362243BE00C002CFEAD /* CustomButton.swift */; };
 		1969F9AB242BD58400300C1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1969F9AD242BD58400300C1B /* Localizable.strings */; };
 		1969F9B3242BD6CC00300C1B /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969F9B2242BD6CC00300C1B /* String+Localization.swift */; };
+		197D203C243B13090081C78E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D203B243B13090081C78E /* ContentView.swift */; };
 		198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6272427C8A000E1638F /* UIFont+Extension.swift */; };
 		198CB6322427D8D200E1638F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6312427D8D200E1638F /* NibView.swift */; };
 		198CB6352427DDA900E1638F /* RBTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198CB6342427DDA900E1638F /* RBTextField.xib */; };
@@ -166,12 +176,22 @@
 		195908DC242B77F90053374B /* ProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		195908E3242B81F50053374B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		195908E4242B81F50053374B /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		195C9350243BAF04002CFEAD /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		195C9351243BAF04002CFEAD /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		195C9354243BAF0B002CFEAD /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		195C9356243BAF4C002CFEAD /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
+		195C9358243BB59E002CFEAD /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
+		195C935A243BB86A002CFEAD /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
+		195C935D243BD30F002CFEAD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		195C935F243BD4EE002CFEAD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		195C9362243BE00C002CFEAD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		1969F9AC242BD58400300C1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1969F9AE242BD5B200300C1B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1969F9AF242BD5B200300C1B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1969F9B0242BD5BA00300C1B /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1969F9B1242BD5BA00300C1B /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1969F9B2242BD6CC00300C1B /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		197D203B243B13090081C78E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		198CB6272427C8A000E1638F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		198CB6312427D8D200E1638F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		198CB6342427DDA900E1638F /* RBTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RBTextField.xib; sourceTree = "<group>"; };
@@ -367,8 +387,8 @@
 		1943375D2427B6DB00050CB0 /* RiderBook */ = {
 			isa = PBXGroup;
 			children = (
-				199A07472428EBCC002E3A15 /* DI */,
-				192EF9DC2427C13800190D7B /* Presentation */,
+				197D2038243B12E10081C78E /* Source */,
+				195C934E243BAEDF002CFEAD /* OLD */,
 				199A076824295A14002E3A15 /* AppDependencies */,
 				19B692A6242C9BDE00C9C43B /* CoreData */,
 			);
@@ -538,6 +558,72 @@
 				195908E4242B81F50053374B /* HomeTableViewCell.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		195C934E243BAEDF002CFEAD /* OLD */ = {
+			isa = PBXGroup;
+			children = (
+				199A07472428EBCC002E3A15 /* DI */,
+				192EF9DC2427C13800190D7B /* Presentation */,
+			);
+			path = OLD;
+			sourceTree = "<group>";
+		};
+		195C934F243BAEF7002CFEAD /* Paulhudson */ = {
+			isa = PBXGroup;
+			children = (
+				195C935C243BD2E4002CFEAD /* ContentView */,
+				195C9356243BAF4C002CFEAD /* menu.json */,
+				195C9354243BAF0B002CFEAD /* Helper.swift */,
+				195C9350243BAF04002CFEAD /* Menu.swift */,
+				195C9351243BAF04002CFEAD /* Order.swift */,
+			);
+			path = Paulhudson;
+			sourceTree = "<group>";
+		};
+		195C935C243BD2E4002CFEAD /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				197D203B243B13090081C78E /* ContentView.swift */,
+				195C9358243BB59E002CFEAD /* ItemRow.swift */,
+				195C935A243BB86A002CFEAD /* ItemDetail.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		195C9361243BDFF6002CFEAD /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				195C9362243BE00C002CFEAD /* CustomButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		197D2038243B12E10081C78E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				195C934F243BAEF7002CFEAD /* Paulhudson */,
+				197D2039243B12E70081C78E /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		197D2039243B12E70081C78E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				195C9361243BDFF6002CFEAD /* UIComponents */,
+				197D203A243B12EC0081C78E /* Login */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		197D203A243B12EC0081C78E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				195C935D243BD30F002CFEAD /* LoginView.swift */,
+				195C935F243BD4EE002CFEAD /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		198CB62F2427D8BD00E1638F /* RBButton */ = {
@@ -1046,6 +1132,7 @@
 				1937DBD42438B7DC0091019F /* LapTableViewCell.xib in Resources */,
 				195908DE242B77F90053374B /* ProfileViewController.xib in Resources */,
 				194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */,
+				195C9357243BAF4C002CFEAD /* menu.json in Resources */,
 				195908E6242B81F50053374B /* HomeTableViewCell.xib in Resources */,
 				194F6EE6242F702400A1123C /* Loader.xib in Resources */,
 				198DD818242B8F5C00388CF0 /* ProfileDashboardView.xib in Resources */,
@@ -1228,6 +1315,7 @@
 				19F57D2B242CFD4E00A9EA88 /* AddRideRouter.swift in Sources */,
 				19CEB365243291D4000DDFBB /* Single+Extension.swift in Sources */,
 				19F57D2D242CFDA400A9EA88 /* AddRidePresenter.swift in Sources */,
+				195C9353243BAF04002CFEAD /* Order.swift in Sources */,
 				199A074D2428EBCC002E3A15 /* SwinjectStoryboard+Extenstion.swift in Sources */,
 				199A0760242958C1002E3A15 /* ViewControllerDIModule.swift in Sources */,
 				195908CE242B56A30053374B /* LoginRouter.swift in Sources */,
@@ -1247,6 +1335,7 @@
 				19CFCAAE2437A01D00FD550B /* AppCoordinator.swift in Sources */,
 				195908C7242B54FF0053374B /* RBTabBarController.swift in Sources */,
 				198CB63D2427E61E00E1638F /* BaseViewController.swift in Sources */,
+				197D203C243B13090081C78E /* ContentView.swift in Sources */,
 				19C56079242A960D005C80CB /* HomeViewController.swift in Sources */,
 				198CB6322427D8D200E1638F /* NibView.swift in Sources */,
 				192EF9E82427C70100190D7B /* UIColor+Extension.swift in Sources */,
@@ -1266,10 +1355,12 @@
 				19CFCA9F24377D7500FD550B /* RideDetailRouter.swift in Sources */,
 				195908DF242B77F90053374B /* ProfileViewController.swift in Sources */,
 				19312B6C242E57AB00269ED3 /* LoginInteractor.swift in Sources */,
+				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
 				19CFCAAB24378F6500FD550B /* Storyboarded.swift in Sources */,
 				19CFCAA624377ECC00FD550B /* RideDetailViewController.swift in Sources */,
 				198CB6392427E56900E1638F /* LoginPresenter.swift in Sources */,
 				19312B79242E731600269ED3 /* Date+Extension.swift in Sources */,
+				195C9359243BB59E002CFEAD /* ItemRow.swift in Sources */,
 				19D8B898242D241F00C12FB2 /* EmptyView.swift in Sources */,
 				195908D1242B585F0053374B /* HomeRouter.swift in Sources */,
 				195908E0242B77F90053374B /* ProfileRouter.swift in Sources */,
@@ -1280,11 +1371,16 @@
 				19F57D23242CDDE400A9EA88 /* RidesRouter.swift in Sources */,
 				19312B77242E6DFA00269ED3 /* Ride.swift in Sources */,
 				198DD816242B8F4D00388CF0 /* ProfileDashboardView.swift in Sources */,
+				195C935E243BD30F002CFEAD /* LoginView.swift in Sources */,
 				195908DD242B77F90053374B /* ProfilePresenter.swift in Sources */,
+				195C9355243BAF0B002CFEAD /* Helper.swift in Sources */,
 				199A07662429599B002E3A15 /* BaseView.swift in Sources */,
 				198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */,
+				195C935B243BB86A002CFEAD /* ItemDetail.swift in Sources */,
+				195C9352243BAF04002CFEAD /* Menu.swift in Sources */,
 				19312B6A242E579200269ED3 /* HomeInteractor.swift in Sources */,
 				19312B62242E55B800269ED3 /* InteractorDIModule.swift in Sources */,
+				195C9363243BE00C002CFEAD /* CustomButton.swift in Sources */,
 				1937DBD32438B7DC0091019F /* LapTableViewCell.swift in Sources */,
 				1937DBCF2438A3FA0091019F /* Lap.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
