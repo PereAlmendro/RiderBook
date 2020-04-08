@@ -10,14 +10,22 @@ import Foundation
 import Combine
 
 class LoginViewModel: ObservableObject  {
+    
+    // MARK: - View properties
+    
     var screenTitle = "Rider book"
     
-    init() {
-        
+    // MARK: - Private properties
+    
+    private var loginProvider: LoginProvider
+    
+    init(loginProvider: LoginProvider) {
+        self.loginProvider = loginProvider
     }
     
+    //MARK: - User actions
     
     func loginWithGoogleAction() {
-        
+        loginProvider.loginWithGoogle()
     }
 }

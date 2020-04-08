@@ -38,6 +38,7 @@
 		194F6EE6242F702400A1123C /* Loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F6EE5242F702400A1123C /* Loader.xib */; };
 		194F6EE9242F77C800A1123C /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F6EE8242F77C800A1123C /* AlertView.xib */; };
 		194F6EEB242F77D000A1123C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F6EEA242F77D000A1123C /* AlertView.swift */; };
+		1955D7A2243DB5DC00F359CA /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955D7A1243DB5DC00F359CA /* LoginProvider.swift */; };
 		195908C7242B54FF0053374B /* RBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908C6242B54FF0053374B /* RBTabBarController.swift */; };
 		195908CE242B56A30053374B /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908CD242B56A30053374B /* LoginRouter.swift */; };
 		195908D1242B585F0053374B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195908D0242B585F0053374B /* HomeRouter.swift */; };
@@ -58,6 +59,8 @@
 		195C9363243BE00C002CFEAD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9362243BE00C002CFEAD /* CustomButton.swift */; };
 		1969F9AB242BD58400300C1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1969F9AD242BD58400300C1B /* Localizable.strings */; };
 		1969F9B3242BD6CC00300C1B /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969F9B2242BD6CC00300C1B /* String+Localization.swift */; };
+		197B5372243CF5DD00E14FCF /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B5371243CF5DD00E14FCF /* OrderView.swift */; };
+		197B53B5243CF74D00E14FCF /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B53B4243CF74D00E14FCF /* AppView.swift */; };
 		197D203C243B13090081C78E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D203B243B13090081C78E /* ContentView.swift */; };
 		198CB6282427C8A000E1638F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6272427C8A000E1638F /* UIFont+Extension.swift */; };
 		198CB6322427D8D200E1638F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CB6312427D8D200E1638F /* NibView.swift */; };
@@ -167,6 +170,7 @@
 		194F6EE5242F702400A1123C /* Loader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loader.xib; sourceTree = "<group>"; };
 		194F6EE8242F77C800A1123C /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		194F6EEA242F77D000A1123C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		1955D7A1243DB5DC00F359CA /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
 		195908C6242B54FF0053374B /* RBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBTabBarController.swift; sourceTree = "<group>"; };
 		195908CD242B56A30053374B /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		195908D0242B585F0053374B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 		1969F9B0242BD5BA00300C1B /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1969F9B1242BD5BA00300C1B /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1969F9B2242BD6CC00300C1B /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		197B5371243CF5DD00E14FCF /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		197B53B4243CF74D00E14FCF /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		197D203B243B13090081C78E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		198CB6272427C8A000E1638F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		198CB6312427D8D200E1638F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
@@ -326,7 +332,6 @@
 				192EF9E52427C66C00190D7B /* UIView+Extension.swift */,
 				192EF9E72427C70100190D7B /* UIColor+Extension.swift */,
 				198CB6272427C8A000E1638F /* UIFont+Extension.swift */,
-				199A075924294F1D002E3A15 /* UIApplication+extension.swift */,
 				19312B78242E731600269ED3 /* Date+Extension.swift */,
 			);
 			path = Extensions;
@@ -429,6 +434,22 @@
 				194F6EEA242F77D000A1123C /* AlertView.swift */,
 			);
 			path = AlertView;
+			sourceTree = "<group>";
+		};
+		1955D79F243DB58C00F359CA /* UIApplication */ = {
+			isa = PBXGroup;
+			children = (
+				199A075924294F1D002E3A15 /* UIApplication+extension.swift */,
+			);
+			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		1955D7A0243DB59D00F359CA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1955D79F243DB58C00F359CA /* UIApplication */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		195908C8242B55FD0053374B /* View */ = {
@@ -572,11 +593,13 @@
 		195C934F243BAEF7002CFEAD /* Paulhudson */ = {
 			isa = PBXGroup;
 			children = (
+				197B5370243CF5CF00E14FCF /* OrderView */,
 				195C935C243BD2E4002CFEAD /* ContentView */,
 				195C9356243BAF4C002CFEAD /* menu.json */,
 				195C9354243BAF0B002CFEAD /* Helper.swift */,
 				195C9350243BAF04002CFEAD /* Menu.swift */,
 				195C9351243BAF04002CFEAD /* Order.swift */,
+				197B53B4243CF74D00E14FCF /* AppView.swift */,
 			);
 			path = Paulhudson;
 			sourceTree = "<group>";
@@ -599,10 +622,19 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
+		197B5370243CF5CF00E14FCF /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				197B5371243CF5DD00E14FCF /* OrderView.swift */,
+			);
+			path = OrderView;
+			sourceTree = "<group>";
+		};
 		197D2038243B12E10081C78E /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				195C934F243BAEF7002CFEAD /* Paulhudson */,
+				1955D7A0243DB59D00F359CA /* Extensions */,
 				197D2039243B12E70081C78E /* Views */,
 			);
 			path = Source;
@@ -622,6 +654,7 @@
 			children = (
 				195C935D243BD30F002CFEAD /* LoginView.swift */,
 				195C935F243BD4EE002CFEAD /* LoginViewModel.swift */,
+				1955D7A1243DB5DC00F359CA /* LoginProvider.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1320,11 +1353,13 @@
 				199A0760242958C1002E3A15 /* ViewControllerDIModule.swift in Sources */,
 				195908CE242B56A30053374B /* LoginRouter.swift in Sources */,
 				19CFCAA324377E0900FD550B /* RideDetailInteractor.swift in Sources */,
+				197B5372243CF5DD00E14FCF /* OrderView.swift in Sources */,
 				19CFCAA124377DB300FD550B /* RideDetailPresenter.swift in Sources */,
 				19F57D20242CDDE400A9EA88 /* RidesPresenter.swift in Sources */,
 				19312B68242E577700269ED3 /* ProfileInteractor.swift in Sources */,
 				19F57D21242CDDE400A9EA88 /* RidesViewController.swift in Sources */,
 				1937DBC9243888D90091019F /* RideSummaryView.swift in Sources */,
+				197B53B5243CF74D00E14FCF /* AppView.swift in Sources */,
 				194F6EEB242F77D000A1123C /* AlertView.swift in Sources */,
 				19C5607C242A96B9005C80CB /* HomePresenter.swift in Sources */,
 				192EF9DE2427C19900190D7B /* LoginViewController.swift in Sources */,
@@ -1347,6 +1382,7 @@
 				1969F9B3242BD6CC00300C1B /* String+Localization.swift in Sources */,
 				19CEB36D2432941D000DDFBB /* MockData.swift in Sources */,
 				19CB9A82242E187D00561E2D /* DatePicker.swift in Sources */,
+				1955D7A2243DB5DC00F359CA /* LoginProvider.swift in Sources */,
 				19312B66242E575E00269ED3 /* RidesInteractor.swift in Sources */,
 				199A07562428FD81002E3A15 /* PresenterDIModule.swift in Sources */,
 				192EF9E12427C62800190D7B /* RBButton.swift in Sources */,

@@ -13,7 +13,6 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            
             Text(viewModel.screenTitle)
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -34,7 +33,11 @@ struct LoginView: View {
 }
 
 struct Loginview_Previews: PreviewProvider {
+    static var loginViewModel: LoginViewModel {
+        return LoginViewModel(loginProvider: LoginProviderImpl())
+    }
+    
     static var previews: some View {
-        LoginView(viewModel: LoginViewModel())
+        LoginView(viewModel: loginViewModel)
     }
 }
