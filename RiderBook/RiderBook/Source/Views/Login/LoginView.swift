@@ -24,7 +24,7 @@ struct LoginView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                    .padding(.all, 80)
+                    .padding(.vertical, 80)
 
                 CustomButton(title: "Login with google", action: {
                     self.viewModel.loginWithGoogleAction()
