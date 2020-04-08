@@ -11,11 +11,17 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
+protocol LoginProviderDelegate: AnyObject {
+    func userLoggedInWithGoogle(_ authResult: AuthDataResult?, error: Error?)
+}
+
 protocol LoginProvider {
-    func loginWithGoogle()
+    func loginWithGoogle(delegate: LoginProviderDelegate)
 }
 
 class LoginProviderImpl: NSObject, LoginProvider {
+    
+    private weak var delegate: LoginProviderDelegate?
     
     override init() {
         super.init()
@@ -26,7 +32,8 @@ class LoginProviderImpl: NSObject, LoginProvider {
     
     // MARK: - LoginProvider
     
-    func loginWithGoogle() {
+    func loginWithGoogle(delegate: LoginProviderDelegate) {
+        self.delegate = delegate
         GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.topViewController()
         GIDSignIn.sharedInstance().signIn()
     }
@@ -37,19 +44,17 @@ class LoginProviderImpl: NSObject, LoginProvider {
 extension LoginProviderImpl: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         guard let authentication = user.authentication else {
-            // Not authenticated
+            delegate?.userLoggedInWithGoogle(nil, error: error)
             return
         }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { (authResult, error) in
-            if error == nil {
-                // User logged in
-            }
+        Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
+            self?.delegate?.userLoggedInWithGoogle(authResult, error: error)
         }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Sign in interrupted
+        delegate?.userLoggedInWithGoogle(nil, error: error)
     }
 }
