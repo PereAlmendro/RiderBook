@@ -99,6 +99,7 @@
 		19CFCAA724377ECC00FD550B /* RideDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19CFCAA524377ECC00FD550B /* RideDetailViewController.xib */; };
 		19CFCAAB24378F6500FD550B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCAAA24378F6500FD550B /* Storyboarded.swift */; };
 		19CFCAAE2437A01D00FD550B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFCAAD2437A01D00FD550B /* AppCoordinator.swift */; };
+		19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */; };
 		19D8B896242D240C00C12FB2 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D8B895242D240C00C12FB2 /* EmptyView.xib */; };
 		19D8B898242D241F00C12FB2 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8B897242D241F00C12FB2 /* EmptyView.swift */; };
 		19F57D20242CDDE400A9EA88 /* RidesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F57D19242CDDE400A9EA88 /* RidesPresenter.swift */; };
@@ -235,6 +236,7 @@
 		19CFCAA524377ECC00FD550B /* RideDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RideDetailViewController.xib; sourceTree = "<group>"; };
 		19CFCAAA24378F6500FD550B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		19CFCAAD2437A01D00FD550B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		19D8B895242D240C00C12FB2 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		19D8B897242D241F00C12FB2 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		19F57D19242CDDE400A9EA88 /* RidesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidesPresenter.swift; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 		195C934F243BAEF7002CFEAD /* Paulhudson */ = {
 			isa = PBXGroup;
 			children = (
+				19D5E1F0243E3D4300CAEC27 /* CheckoutView */,
 				197B5370243CF5CF00E14FCF /* OrderView */,
 				195C935C243BD2E4002CFEAD /* ContentView */,
 				195C9356243BAF4C002CFEAD /* menu.json */,
@@ -924,6 +927,14 @@
 				19CFCAAA24378F6500FD550B /* Storyboarded.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		19D5E1F0243E3D4300CAEC27 /* CheckoutView */ = {
+			isa = PBXGroup;
+			children = (
+				19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */,
+			);
+			path = CheckoutView;
 			sourceTree = "<group>";
 		};
 		19D8B894242D23F600C12FB2 /* EmtpyView */ = {
@@ -1389,6 +1400,7 @@
 				1937DBCB2438A3510091019F /* Circuit.swift in Sources */,
 				199A075C2429530F002E3A15 /* BaseRouter.swift in Sources */,
 				19CFCA9F24377D7500FD550B /* RideDetailRouter.swift in Sources */,
+				19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */,
 				195908DF242B77F90053374B /* ProfileViewController.swift in Sources */,
 				19312B6C242E57AB00269ED3 /* LoginInteractor.swift in Sources */,
 				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
