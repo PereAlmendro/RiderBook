@@ -12,22 +12,27 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
-        VStack {
-            Text(viewModel.screenTitle)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.center)
-                .padding(.vertical, 100.0)
+        ZStack(alignment: .center) {
             
-            CustomButton(title: "Login with google", action: {
-                self.viewModel.loginWithGoogleAction()
-            })
+            Image("login_background")
+                .resizable()
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .edgesIgnoringSafeArea(.all)
             
-            Spacer()
+            VStack {
+                Text(viewModel.screenTitle)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(.all, 80)
+
+                CustomButton(title: "Login with google", action: {
+                    self.viewModel.loginWithGoogleAction()
+                })
+                
+                Spacer()
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        .background( Image("login_background").resizable() )
-        .edgesIgnoringSafeArea(.all)
     }
 }
 
