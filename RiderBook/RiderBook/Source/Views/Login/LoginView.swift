@@ -16,7 +16,6 @@ struct LoginView: View {
             Text(viewModel.screenTitle)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(Color.black)
                 .multilineTextAlignment(.center)
                 .padding(.vertical, 100.0)
             

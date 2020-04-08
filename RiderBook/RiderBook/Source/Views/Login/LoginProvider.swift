@@ -43,7 +43,8 @@ class LoginProviderImpl: NSObject, LoginProvider {
 
 extension LoginProviderImpl: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        guard let authentication = user.authentication else {
+        guard let user = user,
+            let authentication = user.authentication else {
             delegate?.userLoggedInWithGoogle(nil, error: error)
             return
         }

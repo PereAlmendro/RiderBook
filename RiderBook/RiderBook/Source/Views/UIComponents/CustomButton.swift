@@ -20,8 +20,12 @@ struct CustomButton: View {
                 .foregroundColor(Color.white)
         })
             .padding(20)
-            .background(Color.green)
+            .frame(width: UIScreen.main.bounds.size.width - 40,
+                   alignment: .center)
+            .background(Color.init("emeraldGreen"))
             .cornerRadius(5)
+            .shadow(color: Color.black.opacity(0.2),
+                    radius: 10, x: 10, y: 10)
     }
 }
 
