@@ -10,10 +10,11 @@ import SwiftUI
 
 struct CheckoutView: View {
     @EnvironmentObject var order: Order
-    
+    static let pickupTimes = ["Now", "Tonight", "Tomorrow"]
     static let paymentTypes = ["Cash", "Credit Card", "iDine Points"]
     static let tipAmounts = [10, 15, 20, 25, 0]
     
+    @State private var pickupTime = 0
     @State private var paymentType = 0
     @State private var addLoyaltyDetails = false
     @State private var loyaltyNumber = ""
@@ -39,6 +40,11 @@ struct CheckoutView: View {
                 }
                 if addLoyaltyDetails {
                     TextField("Enter your iDine ID", text: $loyaltyNumber)
+                }
+                Picker("Pick up time", selection: $pickupTime) {
+                    ForEach(0 ..< Self.pickupTimes.count) {
+                        Text(Self.pickupTimes[$0])
+                    }
                 }
             }
             Section(header: Text("Add a tip?")) {

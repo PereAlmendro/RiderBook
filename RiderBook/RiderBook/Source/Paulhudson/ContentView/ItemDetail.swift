@@ -23,17 +23,44 @@ struct ItemDetail: View {
                     .foregroundColor(.white)
                     .offset(x: -5, y: -5)
             }
+            
             Text(item.description)
                 .padding()
             
-            
-            Button("Order this") {
-                self.order.add(item: self.item)
-            }.font(.headline)
-            
             Spacer()
             
+            HStack {
+                
+                Spacer()
+                
+                Button("Order this") {
+                    self.order.add(item: self.item)
+                }.padding()
+                    .font(.headline)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                
+                Spacer()
+
+                Button("Add to favourites") {
+
+                }.padding()
+                    .font(.headline)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                
+                Spacer()
+            }.frame(width: UIScreen.main.bounds.size.width,
+                    alignment: .center)
+            .padding()
+            
         }.navigationBarTitle(Text(item.name), displayMode: .inline)
+            .navigationBarItems(trailing:
+                NavigationLink(destination: FavouritesView()) {
+                    Text("Favourites")
+            })
     }
 }
 
