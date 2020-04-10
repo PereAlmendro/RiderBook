@@ -19,12 +19,13 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack {
+            VStack(alignment: .center, spacing: 60) {
+                Spacer().frame(height: 30)
+                
                 Text(viewModel.screenTitle)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                    .padding(.vertical, 80)
 
                 CustomButton(title: "Login with google", action: {
                     self.viewModel.loginWithGoogleAction()

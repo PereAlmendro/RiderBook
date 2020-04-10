@@ -13,7 +13,7 @@ struct ItemDetail: View {
     var item: MenuItem
     
     var body: some View {
-        VStack {
+        VStack(spacing: 30) {
             ZStack(alignment: .bottomTrailing) {
                 Image(item.mainImage)
                 Text("Photo: \(item.photoCredit)")
@@ -27,11 +27,8 @@ struct ItemDetail: View {
             Text(item.description)
                 .padding()
             
-            Spacer()
             
-            HStack {
-                
-                Spacer()
+            HStack(alignment: .center, spacing: 30) {
                 
                 Button("Order this") {
                     self.order.add(item: self.item)
@@ -41,8 +38,6 @@ struct ItemDetail: View {
                     .background(Color.blue)
                     .cornerRadius(10)
                 
-                Spacer()
-
                 Button("Add to favourites") {
 
                 }.padding()
@@ -51,7 +46,6 @@ struct ItemDetail: View {
                     .background(Color.blue)
                     .cornerRadius(10)
                 
-                Spacer()
             }.frame(width: UIScreen.main.bounds.size.width,
                     alignment: .center)
             .padding()
