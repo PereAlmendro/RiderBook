@@ -26,7 +26,7 @@ class LoginUITest: XCTestCase {
         
     }
     
-    func testExample() throws {
+    func testLoginWithGoogleTap() throws {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         app.buttons["loginWithGoogle"].tap()
