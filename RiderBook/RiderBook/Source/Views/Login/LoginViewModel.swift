@@ -14,7 +14,7 @@ class LoginViewModel: ObservableObject  {
     
     // MARK: - View properties
     
-    var screenTitle = "Rider book"
+    var screenTitle = "Rider_book"
     
     // MARK: - Private properties
     
@@ -34,8 +34,14 @@ class LoginViewModel: ObservableObject  {
 
 extension LoginViewModel: LoginProviderDelegate {
     func userLoggedInWithGoogle(_ authResult: AuthDataResult?, error: Error?) {
-        if error == nil {
+        if error == nil, let user = authResult?.user {
             // Login successfull
+            let user = User(userID: user.uid,
+                            name: user.displayName ?? "",
+                            photoUrl: user.photoURL?.absoluteString ?? "",
+                            email: user.email ?? "",
+                            phoneNumber: user.phoneNumber ?? "")
+            print(user)
         } else {
             // Handle errors
         }

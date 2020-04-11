@@ -22,12 +22,12 @@ struct LoginView: View {
             VStack(alignment: .center, spacing: 60) {
                 Spacer().frame(height: 30)
                 
-                Text(viewModel.screenTitle)
+                Text(viewModel.screenTitle.localized())
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
 
-                CustomButton(title: "Login with google", action: {
+                CustomButton(title: "log_in_with_google" , action: {
                     self.viewModel.loginWithGoogleAction()
                 })
                 
@@ -37,6 +37,7 @@ struct LoginView: View {
     }
 }
 
+#if DEBUG
 struct Loginview_Previews: PreviewProvider {
     static var loginViewModel: LoginViewModel {
         return LoginViewModel(loginProvider: LoginProviderImpl())
@@ -46,3 +47,4 @@ struct Loginview_Previews: PreviewProvider {
         LoginView(viewModel: loginViewModel)
     }
 }
+#endif
