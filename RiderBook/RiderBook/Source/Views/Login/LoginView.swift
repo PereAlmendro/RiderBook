@@ -26,10 +26,10 @@ struct LoginView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-
+                
                 CustomButton(title: "log_in_with_google" , action: {
                     self.viewModel.loginWithGoogleAction()
-                })
+                }).accessibility(identifier: "loginWithGoogle")
                 
                 Spacer()
             }

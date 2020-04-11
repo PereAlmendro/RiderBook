@@ -15,13 +15,13 @@
 		1933B3A42441B01E00D0BF44 /* RidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3A32441B01E00D0BF44 /* RidesView.swift */; };
 		1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3A52441B02600D0BF44 /* HomeView.swift */; };
 		1933B3A92441BC6900D0BF44 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3A82441BC6900D0BF44 /* String+Localization.swift */; };
+		1933B3AE2441C64400D0BF44 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3AD2441C64400D0BF44 /* LoginViewModelTest.swift */; };
+		1933B3B02441CA6D00D0BF44 /* LoginProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3AF2441CA6D00D0BF44 /* LoginProviderTest.swift */; };
 		1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943375E2427B6DB00050CB0 /* AppDelegate.swift */; };
 		194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337602427B6DB00050CB0 /* SceneDelegate.swift */; };
 		1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */; };
 		1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1943376C2427B6DD00050CB0 /* Assets.xcassets */; };
 		194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */; };
-		1943377B2427B6DD00050CB0 /* RiderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943377A2427B6DD00050CB0 /* RiderBookTests.swift */; };
-		194337862427B6DD00050CB0 /* RiderBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337852427B6DD00050CB0 /* RiderBookUITests.swift */; };
 		1955D7A2243DB5DC00F359CA /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955D7A1243DB5DC00F359CA /* LoginProvider.swift */; };
 		195C9352243BAF04002CFEAD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9350243BAF04002CFEAD /* Menu.swift */; };
 		195C9353243BAF04002CFEAD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9351243BAF04002CFEAD /* Order.swift */; };
@@ -37,6 +37,7 @@
 		197B53B5243CF74D00E14FCF /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B53B4243CF74D00E14FCF /* AppView.swift */; };
 		197D203C243B13090081C78E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D203B243B13090081C78E /* ContentView.swift */; };
 		199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A075924294F1D002E3A15 /* UIApplication+extension.swift */; };
+		19B1A0D92441CF9A000D4FA6 /* LoginUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0D82441CF9A000D4FA6 /* LoginUITest.swift */; };
 		19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */; };
 		3D4375E4847972E64AB5A282 /* Pods_RiderBook_RiderBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C357C6A656C4CF69C35876C /* Pods_RiderBook_RiderBookUITests.framework */; };
 		624845AEC4F9B6D565D5BDC3 /* Pods_RiderBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7E1DA9D7FE3C074E192F83 /* Pods_RiderBookTests.framework */; };
@@ -70,6 +71,8 @@
 		1933B3A32441B01E00D0BF44 /* RidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesView.swift; sourceTree = "<group>"; };
 		1933B3A52441B02600D0BF44 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1933B3A82441BC6900D0BF44 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		1933B3AD2441C64400D0BF44 /* LoginViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
+		1933B3AF2441CA6D00D0BF44 /* LoginProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProviderTest.swift; sourceTree = "<group>"; };
 		1943375B2427B6DB00050CB0 /* RiderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1943375E2427B6DB00050CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		194337602427B6DB00050CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,10 +81,8 @@
 		1943376F2427B6DD00050CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194337712427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194337762427B6DD00050CB0 /* RiderBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1943377A2427B6DD00050CB0 /* RiderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookTests.swift; sourceTree = "<group>"; };
 		1943377C2427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194337812427B6DD00050CB0 /* RiderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		194337852427B6DD00050CB0 /* RiderBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookUITests.swift; sourceTree = "<group>"; };
 		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1955D7A1243DB5DC00F359CA /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
 		195C9350243BAF04002CFEAD /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		197B53B4243CF74D00E14FCF /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		197D203B243B13090081C78E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		199A075924294F1D002E3A15 /* UIApplication+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extension.swift"; sourceTree = "<group>"; };
+		19B1A0D82441CF9A000D4FA6 /* LoginUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITest.swift; sourceTree = "<group>"; };
 		19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.debug.xcconfig"; sourceTree = "<group>"; };
 		50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBookTests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBookTests/Pods-RiderBookTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,15 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		1933B3AA2441C5EE00D0BF44 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1933B3AD2441C64400D0BF44 /* LoginViewModelTest.swift */,
+				1933B3AF2441CA6D00D0BF44 /* LoginProviderTest.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		194337522427B6DB00050CB0 = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +249,7 @@
 		194337792427B6DD00050CB0 /* RiderBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				1943377A2427B6DD00050CB0 /* RiderBookTests.swift */,
+				1933B3AA2441C5EE00D0BF44 /* Login */,
 				1943377C2427B6DD00050CB0 /* Info.plist */,
 			);
 			path = RiderBookTests;
@@ -247,7 +258,7 @@
 		194337842427B6DD00050CB0 /* RiderBookUITests */ = {
 			isa = PBXGroup;
 			children = (
-				194337852427B6DD00050CB0 /* RiderBookUITests.swift */,
+				19B1A0D72441CCFE000D4FA6 /* Login */,
 				194337872427B6DD00050CB0 /* Info.plist */,
 			);
 			path = RiderBookUITests;
@@ -352,6 +363,14 @@
 				194337712427B6DD00050CB0 /* Info.plist */,
 			);
 			path = AppDependencies;
+			sourceTree = "<group>";
+		};
+		19B1A0D72441CCFE000D4FA6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				19B1A0D82441CF9A000D4FA6 /* LoginUITest.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		19B692A2242C9A7C00C9C43B /* LaunchScreen */ = {
@@ -508,6 +527,7 @@
 					};
 					194337802427B6DD00050CB0 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1140;
 						TestTargetID = 1943375A2427B6DB00050CB0;
 					};
 				};
@@ -736,7 +756,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1943377B2427B6DD00050CB0 /* RiderBookTests.swift in Sources */,
+				1933B3AE2441C64400D0BF44 /* LoginViewModelTest.swift in Sources */,
+				1933B3B02441CA6D00D0BF44 /* LoginProviderTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,7 +765,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				194337862427B6DD00050CB0 /* RiderBookUITests.swift in Sources */,
+				19B1A0D92441CF9A000D4FA6 /* LoginUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -994,6 +1015,7 @@
 			baseConfigurationReference = 14AC98EB8D07CBFA6C9716DB /* Pods-RiderBook-RiderBookUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
 				INFOPLIST_FILE = RiderBookUITests/Info.plist;
@@ -1004,6 +1026,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.palmendrob.RiderBookUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = RiderBook;
@@ -1015,6 +1038,7 @@
 			baseConfigurationReference = 8F3A2F9D576F84A4597A0B13 /* Pods-RiderBook-RiderBookUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
 				INFOPLIST_FILE = RiderBookUITests/Info.plist;
