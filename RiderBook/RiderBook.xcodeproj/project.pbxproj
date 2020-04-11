@@ -22,7 +22,7 @@
 		1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */; };
 		1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1943376C2427B6DD00050CB0 /* Assets.xcassets */; };
 		194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */; };
-		1955D7A2243DB5DC00F359CA /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955D7A1243DB5DC00F359CA /* LoginProvider.swift */; };
+		1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955D7A1243DB5DC00F359CA /* LoginService.swift */; };
 		195C9352243BAF04002CFEAD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9350243BAF04002CFEAD /* Menu.swift */; };
 		195C9353243BAF04002CFEAD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9351243BAF04002CFEAD /* Order.swift */; };
 		195C9355243BAF0B002CFEAD /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9354243BAF0B002CFEAD /* Helper.swift */; };
@@ -84,7 +84,7 @@
 		1943377C2427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194337812427B6DD00050CB0 /* RiderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1955D7A1243DB5DC00F359CA /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
+		1955D7A1243DB5DC00F359CA /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		195C9350243BAF04002CFEAD /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		195C9351243BAF04002CFEAD /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		195C9354243BAF0B002CFEAD /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -328,7 +328,9 @@
 			children = (
 				1933B3972441AC5E00D0BF44 /* Models */,
 				1955D7A0243DB59D00F359CA /* Extensions */,
+				19B1A0DA24420B53000D4FA6 /* Services */,
 				197D2039243B12E70081C78E /* Views */,
+				19B1A0DC24420B86000D4FA6 /* ViewModels */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -347,8 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				195C935D243BD30F002CFEAD /* LoginView.swift */,
-				195C935F243BD4EE002CFEAD /* LoginViewModel.swift */,
-				1955D7A1243DB5DC00F359CA /* LoginProvider.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -369,6 +369,38 @@
 			isa = PBXGroup;
 			children = (
 				19B1A0D82441CF9A000D4FA6 /* LoginUITest.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		19B1A0DA24420B53000D4FA6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				19B1A0DB24420B5E000D4FA6 /* Login */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		19B1A0DB24420B5E000D4FA6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1955D7A1243DB5DC00F359CA /* LoginService.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		19B1A0DC24420B86000D4FA6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				19B1A0DD24420B91000D4FA6 /* Login */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		19B1A0DD24420B91000D4FA6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				195C935F243BD4EE002CFEAD /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -735,7 +767,7 @@
 				197D203C243B13090081C78E /* ContentView.swift in Sources */,
 				1933B39624406D8200D0BF44 /* FavouritesView.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
-				1955D7A2243DB5DC00F359CA /* LoginProvider.swift in Sources */,
+				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
 				19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */,
 				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
 				195C9359243BB59E002CFEAD /* ItemRow.swift in Sources */,

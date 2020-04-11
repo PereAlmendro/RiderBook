@@ -28,7 +28,7 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
                 
                 CustomButton(title: "log_in_with_google" , action: {
-                    self.viewModel.loginWithGoogleAction()
+                    self.viewModel.loginWithGoogle()
                 }).accessibility(identifier: "loginWithGoogle")
                 
                 Spacer()
@@ -40,7 +40,7 @@ struct LoginView: View {
 #if DEBUG
 struct Loginview_Previews: PreviewProvider {
     static var loginViewModel: LoginViewModel {
-        return LoginViewModel(loginProvider: LoginProviderImpl())
+        return LoginViewModel(loginService: LoginServiceI())
     }
     
     static var previews: some View {

@@ -1,5 +1,5 @@
 //
-//  LoginProvider.swift
+//  LoginService.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 08/04/2020.
@@ -11,17 +11,11 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-protocol LoginProviderDelegate: AnyObject {
-    func userLoggedInWithGoogle(_ authResult: AuthDataResult?, error: Error?)
+protocol LoginService {
+    func loginWithGoogle()
 }
 
-protocol LoginProvider {
-    func loginWithGoogle(delegate: LoginProviderDelegate)
-}
-
-class LoginProviderImpl: NSObject, LoginProvider {
-    
-    private weak var delegate: LoginProviderDelegate?
+class LoginServiceI: NSObject, LoginService {
     
     override init() {
         super.init()
@@ -30,10 +24,9 @@ class LoginProviderImpl: NSObject, LoginProvider {
         GIDSignIn.sharedInstance()?.delegate = self
     }
     
-    // MARK: - LoginProvider
+    // MARK: - LoginService
     
-    func loginWithGoogle(delegate: LoginProviderDelegate) {
-        self.delegate = delegate
+    func loginWithGoogle() {
         GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.topViewController()
         GIDSignIn.sharedInstance().signIn()
     }
@@ -41,21 +34,21 @@ class LoginProviderImpl: NSObject, LoginProvider {
 
 // MARK: - GIDSignInDelegate
 
-extension LoginProviderImpl: GIDSignInDelegate {
+extension LoginServiceI: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         guard let user = user,
             let authentication = user.authentication else {
-            delegate?.userLoggedInWithGoogle(nil, error: error)
+            // Google login complete
             return
         }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
-            self?.delegate?.userLoggedInWithGoogle(authResult, error: error)
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            // Google login complete
         }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        delegate?.userLoggedInWithGoogle(nil, error: error)
+        // Google login complete
     }
 }
