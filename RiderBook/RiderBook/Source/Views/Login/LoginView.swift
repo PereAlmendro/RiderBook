@@ -38,9 +38,13 @@ struct LoginView: View {
 }
 
 #if DEBUG
+import GoogleSignIn
+
 struct Loginview_Previews: PreviewProvider {
+    static let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance())
+    static let fakeCoordinator = AppCoordinatorI(window: UIWindow())
     static var loginViewModel: LoginViewModel {
-        return LoginViewModel(loginService: LoginServiceI())
+        return LoginViewModel(loginService: loginService, coordinator: fakeCoordinator)
     }
     
     static var previews: some View {

@@ -19,9 +19,11 @@ class LoginViewModel: ObservableObject  {
     // MARK: - Private properties
     
     private var loginService: LoginService
+    private var coordinator: AppCoordinator
     
-    init(loginService: LoginService) {
+    init(loginService: LoginService, coordinator: AppCoordinator) {
         self.loginService = loginService
+        self.coordinator = coordinator
     }
     
     //MARK: - User actions

@@ -17,18 +17,20 @@ protocol LoginService {
 
 class LoginServiceI: NSObject, LoginService {
     
-    override init() {
-        super.init()
-        // Google Sign in
-        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance()?.delegate = self
+    private let gidSignIn: GIDSignIn!
+    
+    init(gidSignIn: GIDSignIn) {
+        self.gidSignIn = gidSignIn
     }
     
     // MARK: - LoginService
     
     func loginWithGoogle() {
-        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.topViewController()
-        GIDSignIn.sharedInstance().signIn()
+        gidSignIn.clientID = FirebaseApp.app()?.options.clientID
+        gidSignIn.delegate = self
+        
+        gidSignIn.presentingViewController = UIApplication.topViewController()
+        gidSignIn.signIn()
     }
 }
 

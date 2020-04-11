@@ -11,17 +11,21 @@ import Foundation
 import SwiftUI
 
 struct TabBarView: View {
+    let homeView: HomeView
+    let ridesView: RidesView
+    let profileView: ProfileView
+    
     var body: some View {
         TabView {
-            HomeView()
+            homeView
                 .tabItem {
                     Image("home_off")
             }
-            RidesView()
+            ridesView
                 .tabItem {
                     Image("road_off")
             }
-            ProfileView()
+            profileView
                 .tabItem {
                     Image("profile_off")
             }
@@ -31,8 +35,12 @@ struct TabBarView: View {
 
 #if DEBUG
 struct TabBarView_Previews: PreviewProvider {
+    static let homeView = HomeView()
+    static let ridesView = RidesView()
+    static let profileView = ProfileView()
+    
     static var previews: some View {
-        TabBarView()
+        TabBarView(homeView: homeView, ridesView: ridesView, profileView: profileView)
     }
 }
 #endif

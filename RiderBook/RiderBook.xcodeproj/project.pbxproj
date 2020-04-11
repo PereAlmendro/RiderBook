@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1902E7DA243A298700B10F98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1902E7D9243A298700B10F98 /* GoogleService-Info.plist */; };
+		190DC0C1244224F700BDFD9A /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DC0C0244224F700BDFD9A /* HomeAssembly.swift */; };
+		190DC0C32442250000BDFD9A /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DC0C22442250000BDFD9A /* ProfileAssembly.swift */; };
+		190DC0C52442250F00BDFD9A /* RidesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DC0C42442250F00BDFD9A /* RidesAssembly.swift */; };
 		1933B39624406D8200D0BF44 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B39524406D8200D0BF44 /* FavouritesView.swift */; };
 		1933B39A2441ACAE00D0BF44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3992441ACAE00D0BF44 /* User.swift */; };
 		1933B39D2441AFC500D0BF44 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B39C2441AFC500D0BF44 /* TabBarView.swift */; };
@@ -38,6 +41,8 @@
 		197D203C243B13090081C78E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D203B243B13090081C78E /* ContentView.swift */; };
 		199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A075924294F1D002E3A15 /* UIApplication+extension.swift */; };
 		19B1A0D92441CF9A000D4FA6 /* LoginUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0D82441CF9A000D4FA6 /* LoginUITest.swift */; };
+		19B1A0E5244219B6000D4FA6 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0E4244219B6000D4FA6 /* LoginAssembly.swift */; };
+		19B1A0E924421A62000D4FA6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */; };
 		19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */; };
 		3D4375E4847972E64AB5A282 /* Pods_RiderBook_RiderBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C357C6A656C4CF69C35876C /* Pods_RiderBook_RiderBookUITests.framework */; };
 		624845AEC4F9B6D565D5BDC3 /* Pods_RiderBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7E1DA9D7FE3C074E192F83 /* Pods_RiderBookTests.framework */; };
@@ -64,6 +69,9 @@
 /* Begin PBXFileReference section */
 		14AC98EB8D07CBFA6C9716DB /* Pods-RiderBook-RiderBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook-RiderBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1902E7D9243A298700B10F98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		190DC0C0244224F700BDFD9A /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		190DC0C22442250000BDFD9A /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		190DC0C42442250F00BDFD9A /* RidesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesAssembly.swift; sourceTree = "<group>"; };
 		1933B39524406D8200D0BF44 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		1933B3992441ACAE00D0BF44 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1933B39C2441AFC500D0BF44 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -104,6 +112,8 @@
 		197D203B243B13090081C78E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		199A075924294F1D002E3A15 /* UIApplication+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extension.swift"; sourceTree = "<group>"; };
 		19B1A0D82441CF9A000D4FA6 /* LoginUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITest.swift; sourceTree = "<group>"; };
+		19B1A0E4244219B6000D4FA6 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.debug.xcconfig"; sourceTree = "<group>"; };
 		50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBookTests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBookTests/Pods-RiderBookTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -326,6 +336,7 @@
 		197D2038243B12E10081C78E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				19B1A0DE24420FBA000D4FA6 /* Assembly */,
 				1933B3972441AC5E00D0BF44 /* Models */,
 				1955D7A0243DB59D00F359CA /* Extensions */,
 				19B1A0DA24420B53000D4FA6 /* Services */,
@@ -403,6 +414,26 @@
 				195C935F243BD4EE002CFEAD /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		19B1A0DE24420FBA000D4FA6 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */,
+				19B1A0E3244218A1000D4FA6 /* Assemblies */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		19B1A0E3244218A1000D4FA6 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				19B1A0E4244219B6000D4FA6 /* LoginAssembly.swift */,
+				190DC0C0244224F700BDFD9A /* HomeAssembly.swift */,
+				190DC0C42442250F00BDFD9A /* RidesAssembly.swift */,
+				190DC0C22442250000BDFD9A /* ProfileAssembly.swift */,
+			);
+			path = Assemblies;
 			sourceTree = "<group>";
 		};
 		19B692A2242C9A7C00C9C43B /* LaunchScreen */ = {
@@ -761,16 +792,21 @@
 				195C9353243BAF04002CFEAD /* Order.swift in Sources */,
 				197B5372243CF5DD00E14FCF /* OrderView.swift in Sources */,
 				197B53B5243CF74D00E14FCF /* AppView.swift in Sources */,
+				19B1A0E924421A62000D4FA6 /* AppCoordinator.swift in Sources */,
 				1933B3A42441B01E00D0BF44 /* RidesView.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
 				199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */,
 				197D203C243B13090081C78E /* ContentView.swift in Sources */,
+				190DC0C1244224F700BDFD9A /* HomeAssembly.swift in Sources */,
 				1933B39624406D8200D0BF44 /* FavouritesView.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
+				190DC0C52442250F00BDFD9A /* RidesAssembly.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
+				19B1A0E5244219B6000D4FA6 /* LoginAssembly.swift in Sources */,
 				19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */,
 				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
 				195C9359243BB59E002CFEAD /* ItemRow.swift in Sources */,
+				190DC0C32442250000BDFD9A /* ProfileAssembly.swift in Sources */,
 				195C935E243BD30F002CFEAD /* LoginView.swift in Sources */,
 				195C9355243BAF0B002CFEAD /* Helper.swift in Sources */,
 				1933B39D2441AFC500D0BF44 /* TabBarView.swift in Sources */,
