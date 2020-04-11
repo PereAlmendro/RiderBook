@@ -15,15 +15,15 @@ struct TabBarView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Image(systemName: "home_off")
+                    Image("home_off")
             }
             RidesView()
                 .tabItem {
-                    Image(systemName: "road_off")
+                    Image("road_off")
             }
             ProfileView()
                 .tabItem {
-                    Image(systemName: "profile_off")
+                    Image("profile_off")
             }
         }
     }

@@ -161,6 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				1933B39C2441AFC500D0BF44 /* TabBarView.swift */,
+				1933B39E2441AFF700D0BF44 /* Home */,
+				1933B39F2441AFFD00D0BF44 /* Rides */,
+				1933B3A02441B00300D0BF44 /* Profile */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -324,9 +327,6 @@
 			children = (
 				197D203A243B12EC0081C78E /* Login */,
 				1933B39B2441AFB100D0BF44 /* TabBar */,
-				1933B3A02441B00300D0BF44 /* Profile */,
-				1933B39F2441AFFD00D0BF44 /* Rides */,
-				1933B39E2441AFF700D0BF44 /* Home */,
 				195C9361243BDFF6002CFEAD /* Components */,
 			);
 			path = Views;
