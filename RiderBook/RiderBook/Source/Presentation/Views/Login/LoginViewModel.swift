@@ -9,12 +9,14 @@
 import Foundation
 import FirebaseAuth
 import Combine
+import RxSwift
 
 class LoginViewModel: ObservableObject  {
     
     // MARK: - View properties
     
     var screenTitle = "Rider_book"
+    var disposeBag = DisposeBag()
     
     // MARK: - Private properties
     
@@ -29,7 +31,22 @@ class LoginViewModel: ObservableObject  {
     //MARK: - User actions
     
     func loginWithGoogle() {
-        loginService.loginWithGoogle()
+        
+        loginService
+            .registerUser(name: "manolo", password: "test", email: "testolo@test.com", imageURL: "")
+            .subscribe(onSuccess: { (user) in
+                print(user ?? "NO USER")
+            }) { (error) in
+                print(error)
+        }.disposed(by: disposeBag)
+        
+        loginService
+            .attemptLogin(email: "test@test.com", password: "test")
+            .subscribe(onSuccess: { (user) in
+                print(user ?? "NO USER")
+            }) { (error) in
+                print(error)
+        }.disposed(by: disposeBag)
     }
     
     func loginWithFacebook() {

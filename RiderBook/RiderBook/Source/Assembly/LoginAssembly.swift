@@ -17,7 +17,7 @@ class LoginAssembly {
     }
 
     func getView() -> LoginView {
-        let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance())
+        let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance(), userRepository: UserRepositoryI(apiService: ApiService()))
         let loginViewModel = LoginViewModel(loginService: loginService, coordinator: coordinator)
         return LoginView(viewModel: loginViewModel)
     }

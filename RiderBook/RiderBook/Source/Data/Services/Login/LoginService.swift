@@ -10,17 +10,25 @@ import Foundation
 import UIKit
 import Firebase
 import GoogleSignIn
+import RxSwift
 
 protocol LoginService {
     func loginWithGoogle()
+    func attemptLogin(email: String, password: String) -> Single<User?>
+    func registerUser(name: String,
+                      password: String,
+                      email: String,
+                      imageURL: String) -> Single<User?>
 }
 
 class LoginServiceI: NSObject, LoginService {
     
     private let gidSignIn: GIDSignIn!
+    private let userRepository: UserRepository
     
-    init(gidSignIn: GIDSignIn) {
+    init(gidSignIn: GIDSignIn, userRepository: UserRepository) {
         self.gidSignIn = gidSignIn
+        self.userRepository = userRepository
     }
     
     // MARK: - LoginService
@@ -53,4 +61,23 @@ extension LoginServiceI: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // Google login complete
     }
+}
+
+// MARK: - RiderBookLogin
+
+extension LoginServiceI {
+    
+    func attemptLogin(email: String, password: String) -> Single<User?> {
+        return userRepository.login(email: email, password: password)
+    }
+    func registerUser(name: String,
+                      password: String,
+                      email: String,
+                      imageURL: String) -> Single<User?> {
+        return userRepository.createUser(name: name,
+                                         password: password,
+                                         email: email,
+                                         imageURL: imageURL)
+    }
+    
 }

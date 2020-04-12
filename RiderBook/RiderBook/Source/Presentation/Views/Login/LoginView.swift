@@ -41,7 +41,7 @@ struct LoginView: View {
 import GoogleSignIn
 
 struct Loginview_Previews: PreviewProvider {
-    static let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance())
+    static let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance(), userRepository: UserRepositoryI(apiService: ApiService()))
     static let fakeCoordinator = AppCoordinatorI(window: UIWindow())
     static var loginViewModel: LoginViewModel {
         return LoginViewModel(loginService: loginService, coordinator: fakeCoordinator)
