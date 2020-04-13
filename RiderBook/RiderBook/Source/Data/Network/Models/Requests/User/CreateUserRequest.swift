@@ -15,12 +15,10 @@ struct CreateUserRequest: Encodable, Requestable {
     let email: String
     
     func toJsonData() -> Data? {
-        let jsonDict = ["name" : name,
-                        "password" : password,
-                        "image" : image,
-                        "email" : email ]
-        return try? JSONSerialization.data(withJSONObject: jsonDict,
-                                           options: .prettyPrinted)
+        return ["name" : name,
+                "password" : password,
+                "image" : image,
+                "email" : email ].toJsonData()
     }
 }
 

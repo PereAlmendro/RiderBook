@@ -13,9 +13,7 @@ struct LoginRequest: Encodable, Requestable {
     let password: String
     
     func toJsonData() -> Data? {
-        let jsonDict = ["email" : email,
-                        "password" : password ]
-        return try? JSONSerialization.data(withJSONObject: jsonDict,
-                                           options: .prettyPrinted)
+        return ["email" : email,
+                "password" : password ].toJsonData()
     }
 }

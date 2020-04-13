@@ -9,10 +9,7 @@
 import Foundation
 
 extension Dictionary {
-    var toJsonData: Data? {
-        guard let theJSONData = try? JSONSerialization.data(withJSONObject: self, options: [.withoutEscapingSlashes]) else {
-            return nil
-        }
-        return theJSONData
+    func toJsonData() -> Data? {
+        return try? JSONSerialization.data(withJSONObject: self, options: [.prettyPrinted])
     }
 }
