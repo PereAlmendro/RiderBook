@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RiderBookServiceError: Error {
+enum RiderBookApiServiceError: Error {
     case invalidUrl(error: RiderBookServiceError)
     case generic(error: RiderBookServiceError)
     case parse(error: RiderBookServiceError)

@@ -35,12 +35,12 @@ struct CreateUserRequest: Encodable, Requestable {
 }
 
 struct UserResponse: Codable {
-    let id: Int?
-    let email: String?
-    let name: String?
+    let id: Int
+    let email: String
+    let auth: String
+    let name: String
     let image: String?
     let expiryDate: Int?
-    let auth: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"

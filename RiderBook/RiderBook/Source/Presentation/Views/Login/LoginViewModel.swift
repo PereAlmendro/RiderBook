@@ -31,22 +31,7 @@ class LoginViewModel: ObservableObject  {
     //MARK: - User actions
     
     func loginWithGoogle() {
-        
-        loginService
-            .registerUser(name: "manolo", password: "test", email: "testolo@test.com", imageURL: "")
-            .subscribe(onSuccess: { (user) in
-                print(user ?? "NO USER")
-            }) { (error) in
-                print(error)
-        }.disposed(by: disposeBag)
-        
-        loginService
-            .attemptLogin(email: "test@test.com", password: "test")
-            .subscribe(onSuccess: { (user) in
-                print(user ?? "NO USER")
-            }) { (error) in
-                print(error)
-        }.disposed(by: disposeBag)
+        loginService.loginWithGoogle()
     }
     
     func loginWithFacebook() {

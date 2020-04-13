@@ -17,10 +17,10 @@ protocol UserRepository {
 
 class UserRepositoryI: UserRepository {
     
-    private let apiService: ApiService
+    private let riderBookApiService: RiderBookApiService
     
-    init(apiService: ApiService) {
-        self.apiService = apiService
+    init(riderBookApiService: RiderBookApiService) {
+        self.riderBookApiService = riderBookApiService
     }
     
     func createUser(name: String, password: String, email: String, imageURL: String) -> Single<User?> {
@@ -28,16 +28,16 @@ class UserRepositoryI: UserRepository {
         let userRequest = CreateUserRequest(name: name, password: password,
                                             image: imageURL, email: email)
         
-        return apiService.loadRequest(UserTarget.createUser(userRequest),
+        return riderBookApiService.loadRequest(UserTarget.createUser(userRequest),
                                       responseModel: UserResponse.self)
             .flatMap({ (result) -> Single<User?> in
                 if let userData = try? result.get() {
-                    // Make a factory to do this mappings ?
-                    let user = User(userID: userData.id ?? 0,
-                                    name: userData.name ?? "" ,
+                    // TODO: Make a factory to do this mappings ?
+                    let user = User(userID: userData.id ,
+                                    name: userData.name ,
                                     photoUrl: userData.image ?? "" ,
-                                    email: userData.email ?? "",
-                                    authorization: userData.auth ?? "")
+                                    email: userData.email ,
+                                    authorization: userData.auth )
                     
                     return Single.just(user)
                 } else {
@@ -50,16 +50,16 @@ class UserRepositoryI: UserRepository {
         
         let loginRequest = LoginRequest(email: email, password: password)
         
-        return apiService.loadRequest(UserTarget.login(loginRequest),
+        return riderBookApiService.loadRequest(UserTarget.login(loginRequest),
                                       responseModel: UserResponse.self)
             .flatMap({ (result) -> Single<User?> in
                 if let userData = try? result.get() {
-                    // Make a factory to do this mappings ?
-                    let user = User(userID: userData.id ?? 0,
-                                    name: userData.name ?? "" ,
+                    // TODO: Make a factory to do this mappings ?
+                    let user = User(userID: userData.id ,
+                                    name: userData.name ,
                                     photoUrl: userData.image ?? "" ,
-                                    email: userData.email ?? "",
-                                    authorization: userData.auth ?? "")
+                                    email: userData.email ,
+                                    authorization: userData.auth )
                     
                     return Single.just(user)
                 } else {

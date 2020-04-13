@@ -70,6 +70,7 @@ extension LoginServiceI {
     func attemptLogin(email: String, password: String) -> Single<User?> {
         return userRepository.login(email: email, password: password)
     }
+    
     func registerUser(name: String,
                       password: String,
                       email: String,

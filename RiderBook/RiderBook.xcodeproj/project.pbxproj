@@ -25,9 +25,9 @@
 		1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */; };
 		1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1943376C2427B6DD00050CB0 /* Assets.xcassets */; };
 		194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */; };
-		1954D004244323B200401EB2 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D003244323B200401EB2 /* ApiService.swift */; };
+		1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D003244323B200401EB2 /* RiderBookApiService.swift */; };
 		1954D00624432B6600401EB2 /* ApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00524432B6600401EB2 /* ApiTarget.swift */; };
-		1954D00824432B9600401EB2 /* ApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00724432B9600401EB2 /* ApiServiceError.swift */; };
+		1954D00824432B9600401EB2 /* RiderBookApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */; };
 		1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00B24432E1E00401EB2 /* UserRepository.swift */; };
 		1954D01024432E9500401EB2 /* UserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00F24432E9500401EB2 /* UserTarget.swift */; };
 		1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955D7A1243DB5DC00F359CA /* LoginService.swift */; };
@@ -99,9 +99,9 @@
 		1943377C2427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194337812427B6DD00050CB0 /* RiderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1954D003244323B200401EB2 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		1954D003244323B200401EB2 /* RiderBookApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiService.swift; sourceTree = "<group>"; };
 		1954D00524432B6600401EB2 /* ApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTarget.swift; sourceTree = "<group>"; };
-		1954D00724432B9600401EB2 /* ApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceError.swift; sourceTree = "<group>"; };
+		1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiServiceError.swift; sourceTree = "<group>"; };
 		1954D00B24432E1E00401EB2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		1954D00F24432E9500401EB2 /* UserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTarget.swift; sourceTree = "<group>"; };
 		1955D7A1243DB5DC00F359CA /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -351,8 +351,8 @@
 		1954D00924432DF100401EB2 /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
-				1954D003244323B200401EB2 /* ApiService.swift */,
-				1954D00724432B9600401EB2 /* ApiServiceError.swift */,
+				1954D003244323B200401EB2 /* RiderBookApiService.swift */,
+				1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */,
 			);
 			path = ApiService;
 			sourceTree = "<group>";
@@ -894,7 +894,7 @@
 				197D203C243B13090081C78E /* ContentView.swift in Sources */,
 				190DC0C1244224F700BDFD9A /* HomeAssembly.swift in Sources */,
 				1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */,
-				1954D00824432B9600401EB2 /* ApiServiceError.swift in Sources */,
+				1954D00824432B9600401EB2 /* RiderBookApiServiceError.swift in Sources */,
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
 				1933B39624406D8200D0BF44 /* FavouritesView.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
@@ -913,7 +913,7 @@
 				1954D01024432E9500401EB2 /* UserTarget.swift in Sources */,
 				195C9352243BAF04002CFEAD /* Menu.swift in Sources */,
 				195C9363243BE00C002CFEAD /* CustomButton.swift in Sources */,
-				1954D004244323B200401EB2 /* ApiService.swift in Sources */,
+				1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */,
 				1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */,
 				1933B3A22441B01100D0BF44 /* ProfileView.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
