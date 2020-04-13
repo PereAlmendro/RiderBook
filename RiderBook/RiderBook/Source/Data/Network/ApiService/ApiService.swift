@@ -10,7 +10,8 @@ import Foundation
 import RxSwift
 
 final class ApiService {
-    func loadRequest<ResponseModel: Decodable>(_ target: ApiTarget, responseModel: ResponseModel.Type) -> Observable<Result<ResponseModel?, ApiServiceError>> {
+    func loadRequest<ResponseModel: Decodable>(_ target: ApiTarget,
+                                               responseModel: ResponseModel.Type) -> Observable<Result<ResponseModel?, ApiServiceError>> {
         
         return Observable<Result<ResponseModel?, ApiServiceError>>.create { observer in
         
@@ -29,17 +30,19 @@ final class ApiService {
             }
             
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) -> Void in
+                
                 if let error = error {
                     observer.onError(ApiServiceError.generic(errorMessage: error.localizedDescription))
+                
                 } else if let data = data {
+                
                     do {
-                        print(String(data: data, encoding: .utf8) as Any)
-                        
                         let responseModel: ResponseModel = try JSONDecoder().decode(ResponseModel.self, from: data)
                         observer.onNext(.success(responseModel))
                     } catch let decoderError {
                         observer.onError(ApiServiceError.parse(errorMessage: decoderError.localizedDescription))
                     }
+                
                 } else {
                     observer.onNext(.success(nil))
                 }
