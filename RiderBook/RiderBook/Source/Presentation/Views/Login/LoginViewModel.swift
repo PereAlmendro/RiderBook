@@ -32,6 +32,26 @@ class LoginViewModel: ObservableObject  {
     
     func loginWithGoogle() {
         loginService.loginWithGoogle()
+        
+        
+//        loginService
+//            .registerUser(name: "Testeoapp", password: "test", email: "testApp@test.com", imageURL: "")
+//            .subscribe(onSuccess: { (user) in
+//                print(user ?? "NO USER")
+//            }) { (error) in
+//                guard let error = error as? RiderBookApiServiceError else { return }
+//                error.getError().printError()
+//        }.disposed(by: disposeBag)
+//        
+//        loginService
+//            .attemptLogin(email: "test@test.com", password: "test")
+//            .subscribe(onSuccess: { (user) in
+//                print(user ?? "NO USER")
+//            }) { (error) in
+//                guard let error = error as? RiderBookApiServiceError else { return }
+//                error.getError().printError()
+//        }.disposed(by: disposeBag)
+        
     }
     
     func loginWithFacebook() {

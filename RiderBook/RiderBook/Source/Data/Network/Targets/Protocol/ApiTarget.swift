@@ -8,19 +8,6 @@
 
 import Foundation
 
-enum ApiBaseUrl: String {
-    case riderBookBaseUrl = "http://192.168.0.19/RiderBook/symfony/web/"
-}
-
-enum HttpMethod: String {
-    case get = "get"
-    case post = "post"
-}
-
-protocol Requestable {
-    func toJsonData() -> Data?
-}
-
 protocol ApiTarget {
     var baseUrl: ApiBaseUrl { get }
     var endPoint: String { get }

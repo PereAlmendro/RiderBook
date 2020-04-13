@@ -28,9 +28,10 @@ class UserRepositoryI: UserRepository {
         let userRequest = CreateUserRequest(name: name, password: password,
                                             image: imageURL, email: email)
         
-        return riderBookApiService.loadRequest(UserTarget.createUser(userRequest),
-                                      responseModel: UserResponse.self)
+        return riderBookApiService
+            .loadRequest(UserTarget.createUser(userRequest), responseModel: UserResponse.self)
             .flatMap({ (result) -> Single<User?> in
+                
                 if let userData = try? result.get() {
                     // TODO: Make a factory to do this mappings ?
                     let user = User(userID: userData.id ,
@@ -50,8 +51,8 @@ class UserRepositoryI: UserRepository {
         
         let loginRequest = LoginRequest(email: email, password: password)
         
-        return riderBookApiService.loadRequest(UserTarget.login(loginRequest),
-                                      responseModel: UserResponse.self)
+        return riderBookApiService
+            .loadRequest(UserTarget.login(loginRequest), responseModel: UserResponse.self)
             .flatMap({ (result) -> Single<User?> in
                 if let userData = try? result.get() {
                     // TODO: Make a factory to do this mappings ?
