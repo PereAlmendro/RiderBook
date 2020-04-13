@@ -14,9 +14,12 @@ class UserRepositoryTest: XCTestCase {
     private var userRepository: UserRepository!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         let riderBookApiService = RiderBookApiService()
         userRepository = UserRepositoryI(riderBookApiService: riderBookApiService)
+    }
+    
+    override func tearDownWithError() throws {
+        userRepository = nil
     }
     
     func testLoginSuccess() throws {
