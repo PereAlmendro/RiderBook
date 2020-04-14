@@ -17,6 +17,7 @@ class GoogleSignInProvider: NSObject {
     var googleSignInResult: BehaviorSubject<(user: GIDGoogleUser?, error: Error?)> = BehaviorSubject<(user: GIDGoogleUser?, error: Error?)>(value: (nil, nil))
     
     // MARK: - Private properties
+    
     private let gidSignIn = GIDSignIn.sharedInstance()
     
     // MARK: - Lifecycle
@@ -29,25 +30,22 @@ class GoogleSignInProvider: NSObject {
     
     // MARK: - Public functions
     
-    func hasPreviousSignIn() -> Bool {
+    var hasPreviousSignIn: Bool {
         return gidSignIn?.hasPreviousSignIn() ?? false
     }
     
     func restorePreviousLogin() {
-        guard let gidSignIn = gidSignIn else { return }
-        gidSignIn.presentingViewController = UIApplication.topViewController()
-        gidSignIn.restorePreviousSignIn()
+        gidSignIn?.presentingViewController = UIApplication.topViewController()
+        gidSignIn?.restorePreviousSignIn()
     }
     
     func signIn() {
-        guard let gidSignIn = gidSignIn else { return }
-        gidSignIn.presentingViewController = UIApplication.topViewController()
-        gidSignIn.signIn()
+        gidSignIn?.presentingViewController = UIApplication.topViewController()
+        gidSignIn?.signIn()
     }
     
     func signOut() {
-        guard let gidSignIn = gidSignIn else { return }
-        gidSignIn.disconnect()
+        gidSignIn?.disconnect()
     }
     
     // MARK: - Private functions

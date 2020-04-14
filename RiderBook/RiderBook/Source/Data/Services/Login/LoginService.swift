@@ -51,7 +51,7 @@ class LoginServiceI: NSObject, LoginService {
     
     func attemptAutoLogin() {
         isAutoLogin = true
-        if googleSignInProvider.hasPreviousSignIn() {
+        if googleSignInProvider.hasPreviousSignIn {
             googleSignInProvider.restorePreviousLogin()
         } else {
             notifyLoginComplete(false)
