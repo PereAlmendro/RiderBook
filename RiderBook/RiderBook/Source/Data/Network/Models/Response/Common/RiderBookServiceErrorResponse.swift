@@ -9,9 +9,8 @@
 import Foundation
 
 struct RiderBookServiceErrorResponse: Decodable {
-    let status: String?
-    let message: String?
-    let code: Int?
+    var code: Int?
+    var message: String?
     var requestPath: String?
     
     func printError() {

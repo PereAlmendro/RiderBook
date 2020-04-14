@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum UserEndpoint: String, CaseIterable  {
+enum UserEndpoint: String  {
     case new = "user/new"
     case login = "user/login"
 }
