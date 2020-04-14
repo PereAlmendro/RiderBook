@@ -27,7 +27,7 @@ class LoginViewModel: ObservableObject  {
         self.loginService = loginService
         self.coordinator = coordinator
         
-        setuploginCompletedBinding()
+        setuploginResultBinding()
         
         // TODO: Show loading
         self.loginService.attemptAutoLogin()
@@ -35,7 +35,7 @@ class LoginViewModel: ObservableObject  {
     
     // MARK: - RxBindings
     
-    func setuploginCompletedBinding() {
+    func setuploginResultBinding() {
         loginService.loginResult.subscribe { [weak self] (event) in
             guard let (success, isAutoLogin) = event.element else { return }
             
