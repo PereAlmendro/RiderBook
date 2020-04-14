@@ -77,7 +77,7 @@ class LoginServiceI: NSObject, LoginService {
         Auth.auth().signIn(with: credentials) { [weak self] (authResult, error) in
             guard let self = self else { return }
             
-            // TODO: Save or do whatever with user data.
+            // TODO: LogIn to my backend creating user if not exists
             
             self.notifyLoginComplete(true)
         }
