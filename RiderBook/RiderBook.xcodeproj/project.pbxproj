@@ -49,6 +49,7 @@
 		197B5372243CF5DD00E14FCF /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B5371243CF5DD00E14FCF /* OrderView.swift */; };
 		197B53B5243CF74D00E14FCF /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B53B4243CF74D00E14FCF /* AppView.swift */; };
 		197D203C243B13090081C78E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D203B243B13090081C78E /* ContentView.swift */; };
+		198463992446216200C4E25B /* GoogleSignInProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198463982446216200C4E25B /* GoogleSignInProvider.swift */; };
 		199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A075924294F1D002E3A15 /* UIApplication+extension.swift */; };
 		19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5DE7024433F17008D4886 /* Dictionary+Json.swift */; };
 		19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */; };
@@ -132,6 +133,7 @@
 		197B5371243CF5DD00E14FCF /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		197B53B4243CF74D00E14FCF /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		197D203B243B13090081C78E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		198463982446216200C4E25B /* GoogleSignInProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInProvider.swift; sourceTree = "<group>"; };
 		199A075924294F1D002E3A15 /* UIApplication+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extension.swift"; sourceTree = "<group>"; };
 		19A5DE7024433F17008D4886 /* Dictionary+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Json.swift"; sourceTree = "<group>"; };
 		19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 		1954CFFC2443202C00401EB2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				198463972446215300C4E25B /* Providers */,
 				1954CFFE244320B100401EB2 /* Common */,
 				1954CFFF244320B800401EB2 /* Network */,
 				1954CFFD2443203200401EB2 /* Repositories */,
@@ -559,6 +562,14 @@
 				195C935D243BD30F002CFEAD /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		198463972446215300C4E25B /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				198463982446216200C4E25B /* GoogleSignInProvider.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		199A076824295A14002E3A15 /* AppDependencies */ = {
@@ -984,6 +995,7 @@
 				1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */,
 				1954D00824432B9600401EB2 /* RiderBookApiServiceError.swift in Sources */,
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
+				198463992446216200C4E25B /* GoogleSignInProvider.swift in Sources */,
 				193DEE9F24446E2500815150 /* UserResponse.swift in Sources */,
 				193DEEAD24446FFB00815150 /* Requestable.swift in Sources */,
 				1933B39624406D8200D0BF44 /* FavouritesView.swift in Sources */,

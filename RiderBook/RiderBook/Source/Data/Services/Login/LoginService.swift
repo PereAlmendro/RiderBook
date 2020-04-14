@@ -12,19 +12,24 @@ import Firebase
 import GoogleSignIn
 import RxSwift
 
+protocol LoginServiceDelegate: AnyObject {
+    func loginComplete(_ success: Bool, isAutoLogin: Bool)
+}
+
 protocol LoginService {
-    func loginWithGoogle()
-    func attemptLogin(email: String, password: String) -> Single<User?>
-    func registerUser(name: String,
-                      password: String,
-                      email: String,
-                      imageURL: String) -> Single<User?>
+    var delegate: LoginServiceDelegate? { get set }
+    
+    func attemptAutoLogin()
+    func signInWithGoogle()
 }
 
 class LoginServiceI: NSObject, LoginService {
     
     private let gidSignIn: GIDSignIn!
     private let userRepository: UserRepository
+    private var isAutoLogin: Bool = false
+    
+    weak var delegate: LoginServiceDelegate?
     
     init(gidSignIn: GIDSignIn, userRepository: UserRepository) {
         self.gidSignIn = gidSignIn
@@ -33,52 +38,42 @@ class LoginServiceI: NSObject, LoginService {
     
     // MARK: - LoginService
     
-    func loginWithGoogle() {
-        gidSignIn.clientID = FirebaseApp.app()?.options.clientID
-        gidSignIn.delegate = self
+    func attemptAutoLogin() {
+        isAutoLogin = true
+        signInWithGoogle()
+    }
+    
+    func signInWithGoogle() {
+        guard let clientId = FirebaseApp.app()?.options.clientID else {
+            delegate?.loginComplete(false, isAutoLogin: isAutoLogin)
+            return
+        }
         
-        gidSignIn.presentingViewController = UIApplication.topViewController()
-        gidSignIn.signIn()
+        let googleSingInProvider = GoogleSignInProvider(clientID: clientId)
+        googleSingInProvider.delegate = self
+        googleSingInProvider.signIn()
     }
 }
 
 // MARK: - GIDSignInDelegate
 
-extension LoginServiceI: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+extension LoginServiceI: GoogleSignInProviderDelegate {
+    
+    func didSignIn(with user: GIDGoogleUser?, error: Error?) {
         guard let user = user,
             let authentication = user.authentication else {
-            // Google login complete
+            delegate?.loginComplete(false, isAutoLogin: isAutoLogin)
             return
         }
+        
+        // firebase signIn
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { (authResult, error) in
-            // Google login complete
+        Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
+            guard let self = self else { return }
+            // TODO: Save or do whatever with user data.
+            
+            self.delegate?.loginComplete(true, isAutoLogin: self.isAutoLogin)
         }
     }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Google login complete
-    }
-}
-
-// MARK: - RiderBookLogin
-
-extension LoginServiceI {
-    
-    func attemptLogin(email: String, password: String) -> Single<User?> {
-        return userRepository.login(email: email, password: password)
-    }
-    
-    func registerUser(name: String,
-                      password: String,
-                      email: String,
-                      imageURL: String) -> Single<User?> {
-        return userRepository.createUser(name: name,
-                                         password: password,
-                                         email: email,
-                                         imageURL: imageURL)
-    }
-    
 }

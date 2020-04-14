@@ -26,16 +26,31 @@ class LoginViewModel: ObservableObject  {
     init(loginService: LoginService, coordinator: AppCoordinator) {
         self.loginService = loginService
         self.coordinator = coordinator
+        self.loginService.delegate = self
+        
+        // TODO: Show loading
+        self.loginService.attemptAutoLogin()
     }
     
     //MARK: - User actions
     
-    func loginWithGoogle() {
-        loginService.loginWithGoogle() 
+    func signInWithGoogle() {
+        // TODO: Show loading
+        loginService.signInWithGoogle()
     }
-    
-    func loginWithFacebook() {
-        // TODO
+}
+
+extension LoginViewModel: LoginServiceDelegate {
+    func loginComplete(_ success: Bool, isAutoLogin: Bool) {
+        // TODO: remove loading
+        if success {
+            if (isAutoLogin) {
+                coordinator.openHomeAfterLogin()
+            } else {
+                // TODO: Show welcome message, go to home
+            }
+        } else {
+            // TODO: display error
+        }
     }
-    
 }

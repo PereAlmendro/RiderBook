@@ -28,7 +28,7 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
                 
                 CustomButton(title: "log_in_with_google" , action: {
-                    self.viewModel.loginWithGoogle()
+                    self.viewModel.signInWithGoogle()
                 }).accessibility(identifier: "loginWithGoogle")
                 
                 Spacer()
