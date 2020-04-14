@@ -8,15 +8,18 @@
 
 import Foundation
 import GoogleSignIn
-
-protocol GoogleSignInProviderDelegate: AnyObject {
-    func didSignIn(with user: GIDGoogleUser?, error: Error?)
-}
+import RxSwift
 
 class GoogleSignInProvider: NSObject {
     
+    // MARK: - Rx bindings
+    
+    var googleSignInResult: BehaviorSubject<(user: GIDGoogleUser?, error: Error?)> = BehaviorSubject<(user: GIDGoogleUser?, error: Error?)>(value: (nil, nil))
+    
+    // MARK: - Private properties
     private let gidSignIn = GIDSignIn.sharedInstance()
-    weak var delegate: GoogleSignInProviderDelegate?
+    
+    // MARK: - Lifecycle
     
     init(clientID: String) {
         super.init()
@@ -24,25 +27,33 @@ class GoogleSignInProvider: NSObject {
         gidSignIn?.delegate = self
     }
     
+    // MARK: - Public functions
+    
     func hasPreviousSignIn() -> Bool {
         return gidSignIn?.hasPreviousSignIn() ?? false
     }
     
+    func restorePreviousLogin() {
+        guard let gidSignIn = gidSignIn else { return }
+        gidSignIn.presentingViewController = UIApplication.topViewController()
+        gidSignIn.restorePreviousSignIn()
+    }
+    
     func signIn() {
         guard let gidSignIn = gidSignIn else { return }
-        
         gidSignIn.presentingViewController = UIApplication.topViewController()
-        
-        if gidSignIn.hasPreviousSignIn() {
-            gidSignIn.restorePreviousSignIn()
-        } else {
-            gidSignIn.signIn()
-        }
+        gidSignIn.signIn()
     }
     
     func signOut() {
         guard let gidSignIn = gidSignIn else { return }
         gidSignIn.disconnect()
+    }
+    
+    // MARK: - Private functions
+    
+    private func notifySignInResult(with user: GIDGoogleUser?, error: Error?) {
+        googleSignInResult.onNext((user: user, error: error))
     }
 }
 
@@ -50,10 +61,10 @@ class GoogleSignInProvider: NSObject {
 
 extension GoogleSignInProvider: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        delegate?.didSignIn(with: user, error: error)
+        notifySignInResult(with: user, error: error)
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        delegate?.didSignIn(with: user, error: error)
+        notifySignInResult(with: user, error: error)
     }
 }

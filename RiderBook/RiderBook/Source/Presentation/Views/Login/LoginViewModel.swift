@@ -26,10 +26,30 @@ class LoginViewModel: ObservableObject  {
     init(loginService: LoginService, coordinator: AppCoordinator) {
         self.loginService = loginService
         self.coordinator = coordinator
-        self.loginService.delegate = self
+        
+        setuploginCompletedBinding()
         
         // TODO: Show loading
         self.loginService.attemptAutoLogin()
+    }
+    
+    // MARK: - RxBindings
+    
+    func setuploginCompletedBinding() {
+        loginService.loginResult.subscribe { [weak self] (event) in
+            guard let (success, isAutoLogin) = event.element else { return }
+            
+            // TODO: remove loading
+            if success {
+                if (!isAutoLogin) {
+                    // TODO: Show welcome message
+                }
+                self?.coordinator.openHomeAfterLogin()
+            } else {
+                // TODO: display error
+            }
+            
+        }.disposed(by: disposeBag)
     }
     
     //MARK: - User actions
@@ -37,19 +57,5 @@ class LoginViewModel: ObservableObject  {
     func signInWithGoogle() {
         // TODO: Show loading
         loginService.signInWithGoogle()
-    }
-}
-
-extension LoginViewModel: LoginServiceDelegate {
-    func loginComplete(_ success: Bool, isAutoLogin: Bool) {
-        // TODO: remove loading
-        if success {
-            if (!isAutoLogin) {
-                // TODO: Show welcome message
-            }
-            coordinator.openHomeAfterLogin()
-        } else {
-            // TODO: display error
-        }
     }
 }

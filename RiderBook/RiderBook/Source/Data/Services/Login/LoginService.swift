@@ -12,12 +12,9 @@ import Firebase
 import GoogleSignIn
 import RxSwift
 
-protocol LoginServiceDelegate: AnyObject {
-    func loginComplete(_ success: Bool, isAutoLogin: Bool)
-}
-
 protocol LoginService {
-    var delegate: LoginServiceDelegate? { get set }
+    
+    var loginResult: BehaviorSubject<(success: Bool, isAutoLogin: Bool)> { get }
     
     func attemptAutoLogin()
     func signInWithGoogle()
@@ -26,12 +23,19 @@ protocol LoginService {
 
 class LoginServiceI: NSObject, LoginService {
     
+    // MARK: - Rx bindings
+    
+    var loginResult = BehaviorSubject<(success: Bool, isAutoLogin: Bool)>(value: (false, false))
+    
+    // MARK: - Private properties
+    
     private let gidSignIn: GIDSignIn!
     private let userRepository: UserRepository
     private let googleSignInProvider: GoogleSignInProvider
     private var isAutoLogin: Bool = false
+    private var disposeBag = DisposeBag()
     
-    weak var delegate: LoginServiceDelegate?
+    // MARK: - Lifecycle
     
     init(gidSignIn: GIDSignIn,
          userRepository: UserRepository,
@@ -40,15 +44,15 @@ class LoginServiceI: NSObject, LoginService {
         self.userRepository = userRepository
         self.googleSignInProvider = googleSignInProvider
         super.init()
-        googleSignInProvider.delegate = self
+        self.setupSignInProviderBinding()
     }
     
-    // MARK: - LoginService
+    // MARK: - Public functions
     
     func attemptAutoLogin() {
         isAutoLogin = true
         if googleSignInProvider.hasPreviousSignIn() {
-            googleSignInProvider.signIn()
+            googleSignInProvider.restorePreviousLogin()
         } else {
             notifyLoginComplete(false)
         }
@@ -62,32 +66,33 @@ class LoginServiceI: NSObject, LoginService {
         googleSignInProvider.signOut()
     }
     
+    // MARK: - Private functions
+    
     private func notifyLoginComplete(_ success: Bool) {
-        delegate?.loginComplete(success, isAutoLogin: isAutoLogin)
+        loginResult.onNext((success: success, isAutoLogin: isAutoLogin))
         isAutoLogin = false
     }
-}
-
-// MARK: - GoogleSignInProviderDelegate
-
-extension LoginServiceI: GoogleSignInProviderDelegate {
     
-    func didSignIn(with user: GIDGoogleUser?, error: Error?) {
-        guard let user = user,
-            let authentication = user.authentication else {
-            notifyLoginComplete(false)
-            return
-        }
-        
-        // firebase signIn
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
-            guard let self = self else { return }
-            
-            // TODO: Save or do whatever with user data.
-            
-            self.notifyLoginComplete(true)
-        }
+    private func setupSignInProviderBinding() {
+        googleSignInProvider
+            .googleSignInResult
+            .subscribe { [weak self] (event) in
+                guard let (user, _) = event.element,
+                    let authentication = user?.authentication else {
+                        self?.notifyLoginComplete(false)
+                        return
+                }
+                
+                // firebase signIn
+                let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                               accessToken: authentication.accessToken)
+                Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
+                    guard let self = self else { return }
+                    
+                    // TODO: Save or do whatever with user data.
+                    
+                    self.notifyLoginComplete(true)
+                }
+        }.disposed(by: disposeBag)
     }
 }
