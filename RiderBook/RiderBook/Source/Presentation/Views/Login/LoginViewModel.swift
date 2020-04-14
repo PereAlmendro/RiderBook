@@ -44,11 +44,10 @@ extension LoginViewModel: LoginServiceDelegate {
     func loginComplete(_ success: Bool, isAutoLogin: Bool) {
         // TODO: remove loading
         if success {
-            if (isAutoLogin) {
-                coordinator.openHomeAfterLogin()
-            } else {
-                // TODO: Show welcome message, go to home
+            if (!isAutoLogin) {
+                // TODO: Show welcome message
             }
+            coordinator.openHomeAfterLogin()
         } else {
             // TODO: display error
         }

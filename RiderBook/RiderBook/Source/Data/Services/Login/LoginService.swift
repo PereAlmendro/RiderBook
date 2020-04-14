@@ -21,37 +21,50 @@ protocol LoginService {
     
     func attemptAutoLogin()
     func signInWithGoogle()
+    func signOut()
 }
 
 class LoginServiceI: NSObject, LoginService {
     
     private let gidSignIn: GIDSignIn!
     private let userRepository: UserRepository
+    private let googleSignInProvider: GoogleSignInProvider
     private var isAutoLogin: Bool = false
     
     weak var delegate: LoginServiceDelegate?
     
-    init(gidSignIn: GIDSignIn, userRepository: UserRepository) {
+    init(gidSignIn: GIDSignIn,
+         userRepository: UserRepository,
+         googleSignInProvider: GoogleSignInProvider) {
         self.gidSignIn = gidSignIn
         self.userRepository = userRepository
+        self.googleSignInProvider = googleSignInProvider
+        super.init()
+        googleSignInProvider.delegate = self
     }
     
     // MARK: - LoginService
     
     func attemptAutoLogin() {
         isAutoLogin = true
-        signInWithGoogle()
+        if googleSignInProvider.hasPreviousSignIn() {
+            googleSignInProvider.signIn()
+        } else {
+            notifyLoginComplete(false)
+        }
     }
     
     func signInWithGoogle() {
-        guard let clientId = FirebaseApp.app()?.options.clientID else {
-            delegate?.loginComplete(false, isAutoLogin: isAutoLogin)
-            return
-        }
-        
-        let googleSingInProvider = GoogleSignInProvider(clientID: clientId)
-        googleSingInProvider.delegate = self
-        googleSingInProvider.signIn()
+        googleSignInProvider.signIn()
+    }
+    
+    func signOut() {
+        googleSignInProvider.signOut()
+    }
+    
+    private func notifyLoginComplete(_ success: Bool) {
+        delegate?.loginComplete(success, isAutoLogin: isAutoLogin)
+        isAutoLogin = false
     }
 }
 
@@ -62,7 +75,7 @@ extension LoginServiceI: GoogleSignInProviderDelegate {
     func didSignIn(with user: GIDGoogleUser?, error: Error?) {
         guard let user = user,
             let authentication = user.authentication else {
-            delegate?.loginComplete(false, isAutoLogin: isAutoLogin)
+            notifyLoginComplete(false)
             return
         }
         
@@ -71,9 +84,10 @@ extension LoginServiceI: GoogleSignInProviderDelegate {
                                                        accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
             guard let self = self else { return }
+            
             // TODO: Save or do whatever with user data.
             
-            self.delegate?.loginComplete(true, isAutoLogin: self.isAutoLogin)
+            self.notifyLoginComplete(true)
         }
     }
 }

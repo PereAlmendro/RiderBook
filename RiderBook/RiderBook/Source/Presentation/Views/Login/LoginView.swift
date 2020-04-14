@@ -41,7 +41,12 @@ struct LoginView: View {
 import GoogleSignIn
 
 struct Loginview_Previews: PreviewProvider {
-    static let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance(), userRepository: UserRepositoryI(riderBookApiService: RiderBookApiService()))
+    static let rbApiService = RiderBookApiService()
+    static let userRepository = UserRepositoryI(riderBookApiService: rbApiService)
+    static let googleSignInProvider = GoogleSignInProvider(clientID: "fake ID")
+    static let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance(),
+                                            userRepository: userRepository,
+                                            googleSignInProvider: googleSignInProvider)
     static let fakeCoordinator = AppCoordinatorI(window: UIWindow())
     static var loginViewModel: LoginViewModel {
         return LoginViewModel(loginService: loginService, coordinator: fakeCoordinator)

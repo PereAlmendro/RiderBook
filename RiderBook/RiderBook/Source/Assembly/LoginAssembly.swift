@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleSignIn
+import Firebase
 
 class LoginAssembly {
     private let coordinator: AppCoordinator
@@ -15,11 +16,14 @@ class LoginAssembly {
     init(coordinator: AppCoordinator) {
         self.coordinator = coordinator
     }
-
+    
     func getView() -> LoginView {
         let riderBookApiService = RiderBookApiService()
         let userRepository = UserRepositoryI(riderBookApiService: riderBookApiService)
-        let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance(), userRepository: userRepository)
+        let googleSignInProvider = GoogleSignInProvider(clientID: FirebaseApp.app()?.options.clientID ?? "")
+        let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance(),
+                                         userRepository: userRepository,
+                                         googleSignInProvider: googleSignInProvider)
         let loginViewModel = LoginViewModel(loginService: loginService, coordinator: coordinator)
         return LoginView(viewModel: loginViewModel)
     }

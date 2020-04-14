@@ -24,6 +24,10 @@ class GoogleSignInProvider: NSObject {
         gidSignIn?.delegate = self
     }
     
+    func hasPreviousSignIn() -> Bool {
+        return gidSignIn?.hasPreviousSignIn() ?? false
+    }
+    
     func signIn() {
         guard let gidSignIn = gidSignIn else { return }
         
@@ -34,6 +38,11 @@ class GoogleSignInProvider: NSObject {
         } else {
             gidSignIn.signIn()
         }
+    }
+    
+    func signOut() {
+        guard let gidSignIn = gidSignIn else { return }
+        gidSignIn.disconnect()
     }
 }
 
@@ -47,6 +56,4 @@ extension GoogleSignInProvider: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         delegate?.didSignIn(with: user, error: error)
     }
-    
-    
 }
