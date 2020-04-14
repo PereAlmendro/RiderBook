@@ -55,7 +55,7 @@ class LoginServiceI: NSObject, LoginService {
     }
 }
 
-// MARK: - GIDSignInDelegate
+// MARK: - GoogleSignInProviderDelegate
 
 extension LoginServiceI: GoogleSignInProviderDelegate {
     
