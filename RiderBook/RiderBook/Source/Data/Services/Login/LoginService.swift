@@ -73,6 +73,16 @@ class LoginServiceI: NSObject, LoginService {
         isAutoLogin = false
     }
     
+    private func performFirebaseLogin(with credentials: AuthCredential) {
+        Auth.auth().signIn(with: credentials) { [weak self] (authResult, error) in
+            guard let self = self else { return }
+            
+            // TODO: Save or do whatever with user data.
+            
+            self.notifyLoginComplete(true)
+        }
+    }
+    
     private func setupSignInProviderBinding() {
         googleSignInProvider
             .googleSignInResult
@@ -83,16 +93,10 @@ class LoginServiceI: NSObject, LoginService {
                         return
                 }
                 
-                // firebase signIn
-                let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                               accessToken: authentication.accessToken)
-                Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
-                    guard let self = self else { return }
-                    
-                    // TODO: Save or do whatever with user data.
-                    
-                    self.notifyLoginComplete(true)
-                }
+                // Firebase signIn
+                let credentials = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                                accessToken: authentication.accessToken)
+                self?.performFirebaseLogin(with: credentials)
         }.disposed(by: disposeBag)
     }
 }
