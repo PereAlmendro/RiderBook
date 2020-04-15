@@ -11,7 +11,7 @@ import RxSwift
 
 final class RiderBookApiService {
     
-    func loadRequest<ResponseModel: Decodable>(_ target: ApiTarget,
+    func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
                                                responseModel: ResponseModel.Type) -> Observable<Result<ResponseModel?, RiderBookApiServiceError>> {
         return Observable<Result<ResponseModel?, RiderBookApiServiceError>>.create { observer in
             

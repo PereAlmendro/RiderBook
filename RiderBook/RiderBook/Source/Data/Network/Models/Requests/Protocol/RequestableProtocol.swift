@@ -1,5 +1,5 @@
 //
-//  Requestable.swift
+//  RequestableProtocol.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 13/04/2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Requestable {
+protocol RequestableProtocol {
     func toJsonData() -> Data?
 }

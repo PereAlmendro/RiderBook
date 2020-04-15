@@ -1,6 +1,6 @@
 
 //
-//  UserRepository.swift
+//  UserRepositoryProtocol.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 12/04/2020.
@@ -10,12 +10,12 @@
 import Foundation
 import RxSwift
 
-protocol UserRepository {
+protocol UserRepositoryProtocol {
     func createUser(name: String, password: String, email: String, imageURL: String) -> Single<User?>
     func login(email: String, password: String) -> Single<User?>
 }
 
-class UserRepositoryI: UserRepository {
+class UserRepository: UserRepositoryProtocol {
     
     private let riderBookApiService: RiderBookApiService
     

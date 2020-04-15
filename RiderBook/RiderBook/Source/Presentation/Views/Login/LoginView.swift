@@ -42,12 +42,12 @@ import GoogleSignIn
 
 struct Loginview_Previews: PreviewProvider {
     static let rbApiService = RiderBookApiService()
-    static let userRepository = UserRepositoryI(riderBookApiService: rbApiService)
+    static let userRepository = UserRepository(riderBookApiService: rbApiService)
     static let googleSignInProvider = GoogleSignInProvider(clientID: "fake ID")
-    static let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance(),
-                                            userRepository: userRepository,
-                                            googleSignInProvider: googleSignInProvider)
-    static let fakeCoordinator = AppCoordinatorI(window: UIWindow())
+    static let loginService = LoginService(gidSignIn: GIDSignIn.sharedInstance(),
+                                           userRepository: userRepository,
+                                           googleSignInProvider: googleSignInProvider)
+    static let fakeCoordinator = AppCoordinator(window: UIWindow())
     static var loginViewModel: LoginViewModel {
         return LoginViewModel(loginService: loginService, coordinator: fakeCoordinator)
     }

@@ -10,13 +10,13 @@ import Foundation
 import SwiftUI
 import UIKit
 
-protocol AppCoordinator {
+protocol AppCoordinatorProtocol {
     /// Called in the scene delegate, shows login after the launchScreen
     func start()
     func openHomeAfterLogin()
 }
 
-final class AppCoordinatorI: AppCoordinator {
+final class AppCoordinator: AppCoordinatorProtocol {
 
     private var window: UIWindow
     private var tabView: TabBarView?
@@ -44,7 +44,7 @@ final class AppCoordinatorI: AppCoordinator {
 
 // MARK: - View builder
 
-private extension AppCoordinatorI {
+private extension AppCoordinator {
     
     func getLoginView() -> LoginView {
         let loginAssembly = LoginAssembly(coordinator: self)

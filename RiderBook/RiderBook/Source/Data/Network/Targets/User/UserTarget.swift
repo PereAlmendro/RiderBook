@@ -13,7 +13,7 @@ enum UserEndpoint: String  {
     case login = "user/login"
 }
 
-enum UserTarget: ApiTarget {
+enum UserTarget: ApiTargetProtocol {
     case createUser(_ request: CreateUserRequest)
     case login(_ request: LoginRequest)
 }
@@ -39,7 +39,7 @@ extension UserTarget {
         }
     }
     
-    var requestObject: Requestable? {
+    var requestObject: RequestableProtocol? {
         switch self {
         case .createUser(let request):
             return request

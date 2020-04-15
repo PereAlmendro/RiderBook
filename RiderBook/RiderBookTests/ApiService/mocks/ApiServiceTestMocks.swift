@@ -14,7 +14,7 @@ enum MockEndpoints: String {
     case valid = "user/login"
 }
 
-enum MockTarget: ApiTarget {
+enum MockTarget: ApiTargetProtocol {
     case errorDomain
     case success
     case error
@@ -54,7 +54,7 @@ extension MockTarget {
         return ["Content-Type": "application/json"]
     }
     
-    var requestObject: Requestable? {
+    var requestObject: RequestableProtocol? {
         switch self {
         case .success:
             return LoginRequest(email: "test@test.com", password: "test")

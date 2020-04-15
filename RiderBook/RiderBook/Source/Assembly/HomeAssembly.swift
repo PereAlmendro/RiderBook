@@ -9,9 +9,9 @@
 import Foundation
 
 class HomeAssembly {
-    private let coordinator: AppCoordinator
+    private let coordinator: AppCoordinatorProtocol
     
-    init(coordinator: AppCoordinator) {
+    init(coordinator: AppCoordinatorProtocol) {
         self.coordinator = coordinator
     }
 

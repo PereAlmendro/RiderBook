@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LoginRequest: Encodable, Requestable {
+struct LoginRequest: Encodable, RequestableProtocol {
     let email: String
     let password: String
     

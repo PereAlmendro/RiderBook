@@ -1,5 +1,5 @@
 //
-//  ApiTarget.swift
+//  ApiTargetProtocol.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 12/04/2020.
@@ -8,23 +8,23 @@
 
 import Foundation
 
-protocol ApiTarget {
+protocol ApiTargetProtocol {
     var baseUrl: ApiBaseUrl { get }
     var endPoint: String { get }
     var method: HttpMethod { get }
     var url: URL? { get }
     var headers: [String: String]? { get }
-    var requestObject: Requestable? { get }
+    var requestObject: RequestableProtocol? { get }
 }
 
-extension ApiTarget {
+extension ApiTargetProtocol {
     var url: URL? {
         return URL(string: baseUrl.rawValue.appending(endPoint))
     }
     var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }
-    var requestObject: Requestable? {
+    var requestObject: RequestableProtocol? {
         return nil
     }
 }

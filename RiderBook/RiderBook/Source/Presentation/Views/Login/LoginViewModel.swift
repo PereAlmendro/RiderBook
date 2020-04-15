@@ -11,7 +11,11 @@ import FirebaseAuth
 import Combine
 import RxSwift
 
-class LoginViewModel: ObservableObject  {
+protocol LoginViewModelProtocol: ObservableObject {
+    func signInWithGoogle()
+}
+
+class LoginViewModel: LoginViewModelProtocol  {
     
     // MARK: - View properties
     
@@ -20,10 +24,10 @@ class LoginViewModel: ObservableObject  {
     
     // MARK: - Private properties
     
-    private var loginService: LoginService
-    private var coordinator: AppCoordinator
+    private var loginService: LoginServiceProtocol
+    private var coordinator: AppCoordinatorProtocol
     
-    init(loginService: LoginService, coordinator: AppCoordinator) {
+    init(loginService: LoginServiceProtocol, coordinator: AppCoordinatorProtocol) {
         self.loginService = loginService
         self.coordinator = coordinator
         

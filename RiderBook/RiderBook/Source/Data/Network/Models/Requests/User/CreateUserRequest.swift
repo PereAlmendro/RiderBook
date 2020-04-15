@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CreateUserRequest: Encodable, Requestable {
+struct CreateUserRequest: Encodable, RequestableProtocol {
     let name: String
     let password: String
     let image: String

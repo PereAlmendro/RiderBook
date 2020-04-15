@@ -11,19 +11,19 @@ import GoogleSignIn
 import Firebase
 
 class LoginAssembly {
-    private let coordinator: AppCoordinator
+    private let coordinator: AppCoordinatorProtocol
     
-    init(coordinator: AppCoordinator) {
+    init(coordinator: AppCoordinatorProtocol) {
         self.coordinator = coordinator
     }
     
     func getView() -> LoginView {
         let riderBookApiService = RiderBookApiService()
-        let userRepository = UserRepositoryI(riderBookApiService: riderBookApiService)
+        let userRepository = UserRepository(riderBookApiService: riderBookApiService)
         let googleSignInProvider = GoogleSignInProvider(clientID: FirebaseApp.app()?.options.clientID ?? "")
-        let loginService = LoginServiceI(gidSignIn: GIDSignIn.sharedInstance(),
-                                         userRepository: userRepository,
-                                         googleSignInProvider: googleSignInProvider)
+        let loginService = LoginService(gidSignIn: GIDSignIn.sharedInstance(),
+                                        userRepository: userRepository,
+                                        googleSignInProvider: googleSignInProvider)
         let loginViewModel = LoginViewModel(loginService: loginService, coordinator: coordinator)
         return LoginView(viewModel: loginViewModel)
     }

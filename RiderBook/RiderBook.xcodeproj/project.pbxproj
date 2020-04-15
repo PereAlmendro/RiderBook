@@ -22,7 +22,7 @@
 		193DEEA124446E5300815150 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA024446E5300815150 /* LoginRequest.swift */; };
 		193DEEA824446F8100815150 /* ApiBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA724446F8100815150 /* ApiBaseUrl.swift */; };
 		193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAA24446FAB00815150 /* HttpMethod.swift */; };
-		193DEEAD24446FFB00815150 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAC24446FFB00815150 /* Requestable.swift */; };
+		193DEEAD24446FFB00815150 /* RequestableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAC24446FFB00815150 /* RequestableProtocol.swift */; };
 		193DEEAF244472B900815150 /* RiderBookServiceErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAE244472B900815150 /* RiderBookServiceErrorResponse.swift */; };
 		1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943375E2427B6DB00050CB0 /* AppDelegate.swift */; };
 		194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337602427B6DB00050CB0 /* SceneDelegate.swift */; };
@@ -30,7 +30,7 @@
 		1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1943376C2427B6DD00050CB0 /* Assets.xcassets */; };
 		194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */; };
 		1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D003244323B200401EB2 /* RiderBookApiService.swift */; };
-		1954D00624432B6600401EB2 /* ApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00524432B6600401EB2 /* ApiTarget.swift */; };
+		1954D00624432B6600401EB2 /* ApiTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00524432B6600401EB2 /* ApiTargetProtocol.swift */; };
 		1954D00824432B9600401EB2 /* RiderBookApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */; };
 		1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00B24432E1E00401EB2 /* UserRepository.swift */; };
 		1954D01024432E9500401EB2 /* UserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00F24432E9500401EB2 /* UserTarget.swift */; };
@@ -96,7 +96,7 @@
 		193DEEA024446E5300815150 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		193DEEA724446F8100815150 /* ApiBaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBaseUrl.swift; sourceTree = "<group>"; };
 		193DEEAA24446FAB00815150 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
-		193DEEAC24446FFB00815150 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		193DEEAC24446FFB00815150 /* RequestableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestableProtocol.swift; sourceTree = "<group>"; };
 		193DEEAE244472B900815150 /* RiderBookServiceErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookServiceErrorResponse.swift; sourceTree = "<group>"; };
 		1943375B2427B6DB00050CB0 /* RiderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1943375E2427B6DB00050CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		194337812427B6DD00050CB0 /* RiderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1954D003244323B200401EB2 /* RiderBookApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiService.swift; sourceTree = "<group>"; };
-		1954D00524432B6600401EB2 /* ApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTarget.swift; sourceTree = "<group>"; };
+		1954D00524432B6600401EB2 /* ApiTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTargetProtocol.swift; sourceTree = "<group>"; };
 		1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiServiceError.swift; sourceTree = "<group>"; };
 		1954D00B24432E1E00401EB2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		1954D00F24432E9500401EB2 /* UserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTarget.swift; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 		193DEEA324446F0300815150 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				193DEEAC24446FFB00815150 /* Requestable.swift */,
+				193DEEAC24446FFB00815150 /* RequestableProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 		193DEEA424446F1C00815150 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				1954D00524432B6600401EB2 /* ApiTarget.swift */,
+				1954D00524432B6600401EB2 /* ApiTargetProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -979,7 +979,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1954D00624432B6600401EB2 /* ApiTarget.swift in Sources */,
+				1954D00624432B6600401EB2 /* ApiTargetProtocol.swift in Sources */,
 				1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */,
 				195C9353243BAF04002CFEAD /* Order.swift in Sources */,
 				197B5372243CF5DD00E14FCF /* OrderView.swift in Sources */,
@@ -997,7 +997,7 @@
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
 				198463992446216200C4E25B /* GoogleSignInProvider.swift in Sources */,
 				193DEE9F24446E2500815150 /* UserResponse.swift in Sources */,
-				193DEEAD24446FFB00815150 /* Requestable.swift in Sources */,
+				193DEEAD24446FFB00815150 /* RequestableProtocol.swift in Sources */,
 				1933B39624406D8200D0BF44 /* FavouritesView.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
 				193DEEA824446F8100815150 /* ApiBaseUrl.swift in Sources */,

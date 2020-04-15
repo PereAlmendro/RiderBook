@@ -12,7 +12,7 @@ import Firebase
 import GoogleSignIn
 import RxSwift
 
-protocol LoginService {
+protocol LoginServiceProtocol {
     
     var loginResult: BehaviorSubject<(success: Bool, isAutoLogin: Bool)> { get }
     
@@ -21,7 +21,7 @@ protocol LoginService {
     func signOut()
 }
 
-class LoginServiceI: NSObject, LoginService {
+class LoginService: NSObject, LoginServiceProtocol {
     
     // MARK: - Rx bindings
     
@@ -30,7 +30,7 @@ class LoginServiceI: NSObject, LoginService {
     // MARK: - Private properties
     
     private let gidSignIn: GIDSignIn!
-    private let userRepository: UserRepository
+    private let userRepository: UserRepositoryProtocol
     private let googleSignInProvider: GoogleSignInProvider
     private var isAutoLogin: Bool = false
     private var disposeBag = DisposeBag()
@@ -38,7 +38,7 @@ class LoginServiceI: NSObject, LoginService {
     // MARK: - Lifecycle
     
     init(gidSignIn: GIDSignIn,
-         userRepository: UserRepository,
+         userRepository: UserRepositoryProtocol,
          googleSignInProvider: GoogleSignInProvider) {
         self.gidSignIn = gidSignIn
         self.userRepository = userRepository

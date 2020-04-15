@@ -14,7 +14,7 @@ class GoogleSignInProvider: NSObject {
     
     // MARK: - Rx bindings
     
-    var googleSignInResult: BehaviorSubject<(user: GIDGoogleUser?, error: Error?)> = BehaviorSubject<(user: GIDGoogleUser?, error: Error?)>(value: (nil, nil))
+    var googleSignInResult = BehaviorSubject<(user: GIDGoogleUser?, error: Error?)>(value: (nil, nil))
     
     // MARK: - Private properties
     
