@@ -60,6 +60,7 @@
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
 		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
+		19FDE8332448D0040037F246 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8322448D0040037F246 /* UserFactory.swift */; };
 		3D4375E4847972E64AB5A282 /* Pods_RiderBook_RiderBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C357C6A656C4CF69C35876C /* Pods_RiderBook_RiderBookUITests.framework */; };
 		624845AEC4F9B6D565D5BDC3 /* Pods_RiderBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7E1DA9D7FE3C074E192F83 /* Pods_RiderBookTests.framework */; };
 		B0411AA3AD476E8A27B5A428 /* Pods_RiderBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E1BAB2AB70C897429CB477 /* Pods_RiderBook.framework */; };
@@ -147,6 +148,7 @@
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
 		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		19FDE8322448D0040037F246 /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.debug.xcconfig"; sourceTree = "<group>"; };
 		50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBookTests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBookTests/Pods-RiderBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		580BF0E91CF67A73FE34D248 /* Pods-RiderBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.release.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		1954CFFC2443202C00401EB2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				19FDE8312448CFE20037F246 /* Factories */,
 				198463972446215300C4E25B /* Providers */,
 				1954CFFE244320B100401EB2 /* Common */,
 				1954CFFF244320B800401EB2 /* Network */,
@@ -699,6 +702,14 @@
 				19FDE82B2448BD9F0037F246 /* RideTarget.swift */,
 			);
 			path = Ride;
+			sourceTree = "<group>";
+		};
+		19FDE8312448CFE20037F246 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				19FDE8322448D0040037F246 /* UserFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		768177653A31C0F480BF87B0 /* Pods */ = {
@@ -1032,6 +1043,7 @@
 				19B1A0E5244219B6000D4FA6 /* LoginAssembly.swift in Sources */,
 				193DEEA124446E5300815150 /* LoginRequest.swift in Sources */,
 				19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */,
+				19FDE8332448D0040037F246 /* UserFactory.swift in Sources */,
 				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
 				19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */,
 				195C9359243BB59E002CFEAD /* ItemRow.swift in Sources */,

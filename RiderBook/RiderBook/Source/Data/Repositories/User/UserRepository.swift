@@ -31,16 +31,10 @@ class UserRepository: UserRepositoryProtocol {
         return riderBookApiService
             .loadRequest(UserTarget.createUser(userRequest), responseModel: UserResponse.self)
             .flatMap({ (result) -> Single<User?> in
-                
                 if let userData = try? result.get() {
-                    // TODO: Make a factory to do this mappings ?
-                    let user = User(userID: userData.id ,
-                                    name: userData.name ,
-                                    photoUrl: userData.image ?? "" ,
-                                    email: userData.email ,
-                                    authorization: userData.auth )
-                    
-                    return Single.just(user)
+                    return Single.just(
+                        UserFactory.createUser(from: userData)
+                    )
                 } else {
                     return Single.just(nil)
                 }
@@ -55,14 +49,9 @@ class UserRepository: UserRepositoryProtocol {
             .loadRequest(UserTarget.login(loginRequest), responseModel: UserResponse.self)
             .flatMap({ (result) -> Single<User?> in
                 if let userData = try? result.get() {
-                    // TODO: Make a factory to do this mappings ?
-                    let user = User(userID: userData.id ,
-                                    name: userData.name ,
-                                    photoUrl: userData.image ?? "" ,
-                                    email: userData.email ,
-                                    authorization: userData.auth )
-                    
-                    return Single.just(user)
+                    return Single.just(
+                        UserFactory.createUser(from: userData)
+                    )
                 } else {
                     return Single.just(nil)
                 }
