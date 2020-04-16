@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import FirebaseAuth
 import Combine
 import RxSwift
 
 protocol LoginViewModelProtocol: ObservableObject {
-    func signInWithGoogle()
+    
 }
 
 class LoginViewModel: LoginViewModelProtocol  {
@@ -30,32 +29,5 @@ class LoginViewModel: LoginViewModelProtocol  {
     init(loginService: LoginServiceProtocol, coordinator: AppCoordinatorProtocol) {
         self.loginService = loginService
         self.coordinator = coordinator
-        
-        setuploginResultBinding()
-        
-        showLoading = true
-        self.loginService.attemptAutoLogin()
-    }
-    
-    // MARK: - RxBindings
-    
-    func setuploginResultBinding() {
-        loginService.loginResult.subscribe { [weak self] (event) in
-            guard let (success, _) = event.element else { return }
-            
-            self?.showLoading = false
-            if success {
-                self?.coordinator.openHomeAfterLogin()
-            } else {
-                // TODO: display error
-            }
-            
-        }.disposed(by: disposeBag)
-    }
-    
-    //MARK: - User actions
-    
-    func signInWithGoogle() {
-        loginService.signInWithGoogle()
     }
 }

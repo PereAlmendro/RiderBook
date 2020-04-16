@@ -29,7 +29,7 @@ struct LoginView: View {
                         .multilineTextAlignment(.center)
                     
                     CustomButton(title: "log_in_with_google" , action: {
-                        self.viewModel.signInWithGoogle()
+                        // TODO: Action
                     }).accessibility(identifier: "loginWithGoogle")
                     
                     Spacer()
@@ -40,15 +40,13 @@ struct LoginView: View {
 }
 
 #if DEBUG
-import GoogleSignIn
 
 struct Loginview_Previews: PreviewProvider {
-    static let rbApiService = RiderBookApiService()
-    static let userRepository = UserRepository(riderBookApiService: rbApiService)
-    static let googleSignInProvider = GoogleSignInProvider(clientID: "fake ID")
-    static let loginService = LoginService(gidSignIn: GIDSignIn.sharedInstance(),
-                                           userRepository: userRepository,
-                                           googleSignInProvider: googleSignInProvider)
+    static let riderBookApiService = RiderBookApiService()
+    static let userRepository = UserRepository(riderBookApiService: riderBookApiService)
+    static let localRepository = LocalRepository()
+    static let loginService = LoginService(userRepository: userRepository,
+                                    localRepository: localRepository)
     static let fakeCoordinator = AppCoordinator(window: UIWindow())
     static var loginViewModel: LoginViewModel {
         return LoginViewModel(loginService: loginService, coordinator: fakeCoordinator)

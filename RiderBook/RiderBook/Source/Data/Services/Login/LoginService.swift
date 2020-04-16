@@ -8,95 +8,40 @@
 
 import Foundation
 import UIKit
-import Firebase
-import GoogleSignIn
 import RxSwift
 
 protocol LoginServiceProtocol {
-    
-    var loginResult: BehaviorSubject<(success: Bool, isAutoLogin: Bool)> { get }
-    
-    func attemptAutoLogin()
-    func signInWithGoogle()
-    func signOut()
+    var loginResult: BehaviorSubject<Bool> { get }
 }
 
-class LoginService: NSObject, LoginServiceProtocol {
+class LoginService: LoginServiceProtocol {
     
     // MARK: - Rx bindings
     
-    var loginResult = BehaviorSubject<(success: Bool, isAutoLogin: Bool)>(value: (false, false))
+    var loginResult: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
+    var registerResult: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
     
     // MARK: - Private properties
     
-    private let gidSignIn: GIDSignIn!
     private let userRepository: UserRepositoryProtocol
-    private let googleSignInProvider: GoogleSignInProvider
-    private var isAutoLogin: Bool = false
+    private let localRepository: LocalRepositoryProtocol
     private var disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
     
-    init(gidSignIn: GIDSignIn,
-         userRepository: UserRepositoryProtocol,
-         googleSignInProvider: GoogleSignInProvider) {
-        self.gidSignIn = gidSignIn
+    init(userRepository: UserRepositoryProtocol,
+         localRepository: LocalRepositoryProtocol) {
         self.userRepository = userRepository
-        self.googleSignInProvider = googleSignInProvider
-        super.init()
-        self.setupSignInProviderBinding()
+        self.localRepository = localRepository
     }
     
     // MARK: - Public functions
     
-    func attemptAutoLogin() {
-        isAutoLogin = true
-        if googleSignInProvider.hasPreviousSignIn {
-            googleSignInProvider.restorePreviousLogin()
-        } else {
-            notifyLoginComplete(false)
-        }
+    func register(name: String, password: String, email: String, imageURL: String = "") {
+//        userRepository.createUser(name: name, password: password, email: email, imageURL: imageURL)
     }
     
-    func signInWithGoogle() {
-        googleSignInProvider.signIn()
-    }
-    
-    func signOut() {
-        googleSignInProvider.signOut()
-    }
-    
-    // MARK: - Private functions
-    
-    private func notifyLoginComplete(_ success: Bool) {
-        loginResult.onNext((success: success, isAutoLogin: isAutoLogin))
-        isAutoLogin = false
-    }
-    
-    private func performFirebaseLogin(with credentials: AuthCredential) {
-        Auth.auth().signIn(with: credentials) { [weak self] (authResult, error) in
-            guard let self = self else { return }
-            
-            // TODO: LogIn to my backend creating user if not exists
-            
-            self.notifyLoginComplete(true)
-        }
-    }
-    
-    private func setupSignInProviderBinding() {
-        googleSignInProvider
-            .googleSignInResult
-            .subscribe { [weak self] (event) in
-                guard let (user, _) = event.element,
-                    let authentication = user?.authentication else {
-                        self?.notifyLoginComplete(false)
-                        return
-                }
-                
-                // Firebase signIn
-                let credentials = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                                accessToken: authentication.accessToken)
-                self?.performFirebaseLogin(with: credentials)
-        }.disposed(by: disposeBag)
+    func logIn(email: String, password: String) {
+//        userRepository.login(email: email, password: password)
     }
 }

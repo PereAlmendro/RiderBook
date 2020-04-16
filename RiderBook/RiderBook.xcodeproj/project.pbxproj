@@ -48,7 +48,6 @@
 		197B5372243CF5DD00E14FCF /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B5371243CF5DD00E14FCF /* OrderView.swift */; };
 		197B53B5243CF74D00E14FCF /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B53B4243CF74D00E14FCF /* AppView.swift */; };
 		197D203C243B13090081C78E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D203B243B13090081C78E /* ContentView.swift */; };
-		198463992446216200C4E25B /* GoogleSignInProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198463982446216200C4E25B /* GoogleSignInProvider.swift */; };
 		1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984639B24465C7800C4E25B /* RiderBookApiServiceTest.swift */; };
 		1984639F24465D5900C4E25B /* ApiServiceTestMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984639E24465D5800C4E25B /* ApiServiceTestMocks.swift */; };
 		199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A075924294F1D002E3A15 /* UIApplication+extension.swift */; };
@@ -61,6 +60,7 @@
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
 		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
 		19FDE8332448D0040037F246 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8322448D0040037F246 /* UserFactory.swift */; };
+		19FDE8362448D55D0037F246 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8352448D55D0037F246 /* LocalRepository.swift */; };
 		3D4375E4847972E64AB5A282 /* Pods_RiderBook_RiderBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C357C6A656C4CF69C35876C /* Pods_RiderBook_RiderBookUITests.framework */; };
 		624845AEC4F9B6D565D5BDC3 /* Pods_RiderBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7E1DA9D7FE3C074E192F83 /* Pods_RiderBookTests.framework */; };
 		B0411AA3AD476E8A27B5A428 /* Pods_RiderBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E1BAB2AB70C897429CB477 /* Pods_RiderBook.framework */; };
@@ -136,7 +136,6 @@
 		197B5371243CF5DD00E14FCF /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		197B53B4243CF74D00E14FCF /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		197D203B243B13090081C78E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		198463982446216200C4E25B /* GoogleSignInProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInProvider.swift; sourceTree = "<group>"; };
 		1984639B24465C7800C4E25B /* RiderBookApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiServiceTest.swift; sourceTree = "<group>"; };
 		1984639E24465D5800C4E25B /* ApiServiceTestMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTestMocks.swift; sourceTree = "<group>"; };
 		199A075924294F1D002E3A15 /* UIApplication+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extension.swift"; sourceTree = "<group>"; };
@@ -149,6 +148,7 @@
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
 		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		19FDE8322448D0040037F246 /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
+		19FDE8352448D55D0037F246 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
 		4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.debug.xcconfig"; sourceTree = "<group>"; };
 		50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBookTests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBookTests/Pods-RiderBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		580BF0E91CF67A73FE34D248 /* Pods-RiderBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.release.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -384,7 +384,6 @@
 			isa = PBXGroup;
 			children = (
 				19FDE8312448CFE20037F246 /* Factories */,
-				198463972446215300C4E25B /* Providers */,
 				1954CFFE244320B100401EB2 /* Common */,
 				1954CFFF244320B800401EB2 /* Network */,
 				1954CFFD2443203200401EB2 /* Repositories */,
@@ -396,6 +395,7 @@
 		1954CFFD2443203200401EB2 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				19FDE8342448D5420037F246 /* LocalRepository */,
 				1954D00A24432E0F00401EB2 /* User */,
 			);
 			path = Repositories;
@@ -567,14 +567,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		198463972446215300C4E25B /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				198463982446216200C4E25B /* GoogleSignInProvider.swift */,
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
 		1984639A24465C5100C4E25B /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
@@ -712,6 +704,14 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		19FDE8342448D5420037F246 /* LocalRepository */ = {
+			isa = PBXGroup;
+			children = (
+				19FDE8352448D55D0037F246 /* LocalRepository.swift */,
+			);
+			path = LocalRepository;
+			sourceTree = "<group>";
+		};
 		768177653A31C0F480BF87B0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,7 +747,6 @@
 				194337582427B6DB00050CB0 /* Frameworks */,
 				194337592427B6DB00050CB0 /* Resources */,
 				6E69674B06697E02D27BB128 /* [CP] Embed Pods Frameworks */,
-				DD250430638D8A65A47D4D2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -786,7 +785,6 @@
 				1943377E2427B6DD00050CB0 /* Frameworks */,
 				1943377F2427B6DD00050CB0 /* Resources */,
 				287FE52BA7A81BF0C42AA795 /* [CP] Embed Pods Frameworks */,
-				DE939BB255F095AC1FA64471 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -974,40 +972,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DD250430638D8A65A47D4D2E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RiderBook/Pods-RiderBook-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RiderBook/Pods-RiderBook-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RiderBook/Pods-RiderBook-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE939BB255F095AC1FA64471 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1018,6 +982,7 @@
 				1954D00624432B6600401EB2 /* ApiTargetProtocol.swift in Sources */,
 				1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */,
 				195C9353243BAF04002CFEAD /* Order.swift in Sources */,
+				19FDE8362448D55D0037F246 /* LocalRepository.swift in Sources */,
 				197B5372243CF5DD00E14FCF /* OrderView.swift in Sources */,
 				197B53B5243CF74D00E14FCF /* AppView.swift in Sources */,
 				19B1A0E924421A62000D4FA6 /* AppCoordinator.swift in Sources */,
@@ -1032,7 +997,6 @@
 				1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */,
 				1954D00824432B9600401EB2 /* RiderBookApiServiceError.swift in Sources */,
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
-				198463992446216200C4E25B /* GoogleSignInProvider.swift in Sources */,
 				193DEE9F24446E2500815150 /* UserResponse.swift in Sources */,
 				193DEEAD24446FFB00815150 /* RequestableProtocol.swift in Sources */,
 				1933B39624406D8200D0BF44 /* FavouritesView.swift in Sources */,

@@ -9,8 +9,6 @@ target 'RiderBook' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
 	pod 'Firebase/Analytics'
-  pod 'FirebaseUI/Auth'
-  pod 'FirebaseUI/Google'
   
   target 'RiderBookTests' do
     inherit! :search_paths

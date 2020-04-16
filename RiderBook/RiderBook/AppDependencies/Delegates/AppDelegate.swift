@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import Firebase
-import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // Handle Google sign in
-        return GIDSignIn.sharedInstance().handle(url)
+        return true
     }
 
     // MARK: UISceneSession Lifecycle
