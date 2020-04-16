@@ -14,14 +14,11 @@ struct UserResponse: Codable {
     let auth: String
     let name: String
     let image: String?
+    let password: String
     let expiryDate: Int?
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case email = "email"
-        case name = "name"
-        case image = "image"
-        case auth = "auth"
+        case id, email, name, image, auth, password
         case expiryDate = "expiry_date"
     }
 }

@@ -18,6 +18,7 @@ final class UserFactory: UserFactoryProtocol {
                     name: userResponse.name,
                     photoUrl: userResponse.image ?? "",
                     email: userResponse.email,
+                    password: userResponse.password,
                     authorization: userResponse.auth)
     }
 }

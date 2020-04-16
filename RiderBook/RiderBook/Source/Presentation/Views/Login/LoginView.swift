@@ -42,18 +42,11 @@ struct LoginView: View {
 #if DEBUG
 
 struct Loginview_Previews: PreviewProvider {
-    static let riderBookApiService = RiderBookApiService()
-    static let userRepository = UserRepository(riderBookApiService: riderBookApiService)
-    static let localRepository = LocalRepository()
-    static let loginService = LoginService(userRepository: userRepository,
-                                    localRepository: localRepository)
     static let fakeCoordinator = AppCoordinator(window: UIWindow())
-    static var loginViewModel: LoginViewModel {
-        return LoginViewModel(loginService: loginService, coordinator: fakeCoordinator)
-    }
+    static let loginAssembly = LoginAssembly(coordinator: fakeCoordinator)
     
     static var previews: some View {
-        LoginView(viewModel: loginViewModel)
+        loginAssembly.getView()
     }
 }
 #endif

@@ -7,20 +7,59 @@
 //
 
 import Foundation
+import CoreData
+import RxSwift
+
+fileprivate enum EntityName: String {
+    case User
+}
 
 protocol LocalRepositoryProtocol {
     func getUser() -> User?
-    func saveUser(_ user: User)
+    func saveUser(_ user: User) -> Bool
 }
 
 final class LocalRepository: LocalRepositoryProtocol {
     
-    func getUser() -> User? {
-        // TODO: Get user
-        return nil
+    private var context: NSManagedObjectContext!
+    
+    init(context: NSManagedObjectContext) {
+        self.context = context
     }
     
-    func saveUser(_ user: User) {
-        // TODO: Get user
+    func getUser() -> User? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: EntityName.User.rawValue)
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try context.fetch(request) as? [NSManagedObject] ?? []
+            var user: User?
+            for data in result  {
+                let email = data.value(forKey: "email") as! String
+                let password = data.value(forKey: "password") as! String
+                
+                user = User(userID: 0, name: "", photoUrl: "", email: email, password: password, authorization: "")
+            }
+            return user
+        } catch {
+            return nil
+        }
+    }
+    
+    func saveUser(_ user: User) -> Bool {
+        guard
+            let entity = NSEntityDescription.entity(forEntityName: EntityName.User.rawValue, in: context)
+            else { return false  }
+        
+        let userObject = NSManagedObject(entity: entity, insertInto: context)
+        userObject.setValue(user.email, forKey: "email")
+        userObject.setValue(user.password, forKey: "password")
+        
+        do {
+            try context.save()
+        } catch {
+            return false
+        }
+        return true
     }
 }

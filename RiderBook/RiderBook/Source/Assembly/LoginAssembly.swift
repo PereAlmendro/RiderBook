@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class LoginAssembly {
     private let coordinator: AppCoordinatorProtocol
@@ -18,7 +19,8 @@ class LoginAssembly {
     func getView() -> LoginView {
         let riderBookApiService = RiderBookApiService()
         let userRepository = UserRepository(riderBookApiService: riderBookApiService)
-        let localRepository = LocalRepository()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let localRepository = LocalRepository(context: context)
         let loginService = LoginService(userRepository: userRepository,
                                         localRepository: localRepository)
         let loginViewModel = LoginViewModel(loginService: loginService, coordinator: coordinator)

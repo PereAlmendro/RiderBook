@@ -13,5 +13,6 @@ struct User {
     let name: String
     let photoUrl: String
     let email: String
+    let password: String
     let authorization: String
 }
