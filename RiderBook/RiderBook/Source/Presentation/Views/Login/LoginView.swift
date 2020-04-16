@@ -12,26 +12,28 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
-        ZStack(alignment: .center) {
-            
-            Image("login_background")
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack(alignment: .center, spacing: 60) {
-                Spacer().frame(height: 30)
+        LoadingView(isShowing: $viewModel.showLoading) {
+            ZStack(alignment: .center) {
                 
-                Text(viewModel.screenTitle.localized())
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
+                Image("login_background")
+                    .resizable()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .edgesIgnoringSafeArea(.all)
                 
-                CustomButton(title: "log_in_with_google" , action: {
-                    self.viewModel.signInWithGoogle()
-                }).accessibility(identifier: "loginWithGoogle")
-                
-                Spacer()
+                VStack(alignment: .center, spacing: 60) {
+                    Spacer().frame(height: 30)
+                    
+                    Text(self.viewModel.screenTitle.localized())
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                    
+                    CustomButton(title: "log_in_with_google" , action: {
+                        self.viewModel.signInWithGoogle()
+                    }).accessibility(identifier: "loginWithGoogle")
+                    
+                    Spacer()
+                }
             }
         }
     }

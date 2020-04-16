@@ -18,7 +18,7 @@ protocol LoginViewModelProtocol: ObservableObject {
 class LoginViewModel: LoginViewModelProtocol  {
     
     // MARK: - View properties
-    
+    var showLoading: Bool = false
     var screenTitle = "Rider_book"
     var disposeBag = DisposeBag()
     
@@ -33,7 +33,7 @@ class LoginViewModel: LoginViewModelProtocol  {
         
         setuploginResultBinding()
         
-        // TODO: Show loading
+        showLoading = true
         self.loginService.attemptAutoLogin()
     }
     
@@ -41,13 +41,10 @@ class LoginViewModel: LoginViewModelProtocol  {
     
     func setuploginResultBinding() {
         loginService.loginResult.subscribe { [weak self] (event) in
-            guard let (success, isAutoLogin) = event.element else { return }
+            guard let (success, _) = event.element else { return }
             
-            // TODO: remove loading
+            self?.showLoading = false
             if success {
-                if (!isAutoLogin) {
-                    // TODO: Show welcome message
-                }
                 self?.coordinator.openHomeAfterLogin()
             } else {
                 // TODO: display error
@@ -59,7 +56,6 @@ class LoginViewModel: LoginViewModelProtocol  {
     //MARK: - User actions
     
     func signInWithGoogle() {
-        // TODO: Show loading
         loginService.signInWithGoogle()
     }
 }

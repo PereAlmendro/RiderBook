@@ -11,4 +11,5 @@ import Foundation
 enum HttpMethod: String {
     case get = "get"
     case post = "post"
+    case put = "put"
 }

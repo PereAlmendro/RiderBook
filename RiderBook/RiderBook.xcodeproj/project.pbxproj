@@ -57,6 +57,9 @@
 		19B1A0E5244219B6000D4FA6 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0E4244219B6000D4FA6 /* LoginAssembly.swift */; };
 		19B1A0E924421A62000D4FA6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */; };
 		19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */; };
+		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
+		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
+		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
 		3D4375E4847972E64AB5A282 /* Pods_RiderBook_RiderBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C357C6A656C4CF69C35876C /* Pods_RiderBook_RiderBookUITests.framework */; };
 		624845AEC4F9B6D565D5BDC3 /* Pods_RiderBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7E1DA9D7FE3C074E192F83 /* Pods_RiderBookTests.framework */; };
 		B0411AA3AD476E8A27B5A428 /* Pods_RiderBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E1BAB2AB70C897429CB477 /* Pods_RiderBook.framework */; };
@@ -141,6 +144,9 @@
 		19B1A0E4244219B6000D4FA6 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
+		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
+		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4CFAF104EF8D57CECD7FBD20 /* Pods-RiderBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.debug.xcconfig"; sourceTree = "<group>"; };
 		50803D61C79B43C89D0B94AC /* Pods-RiderBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBookTests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBookTests/Pods-RiderBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		580BF0E91CF67A73FE34D248 /* Pods-RiderBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook.release.xcconfig"; path = "Target Support Files/Pods-RiderBook/Pods-RiderBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -450,6 +456,8 @@
 			isa = PBXGroup;
 			children = (
 				193DEEA424446F1C00815150 /* Protocol */,
+				19FDE8282448BD7F0037F246 /* Ride */,
+				19FDE8272448BD730037F246 /* Circuit */,
 				1954D00E24432E8400401EB2 /* User */,
 			);
 			path = Targets;
@@ -512,6 +520,7 @@
 			children = (
 				1933B39C2441AFC500D0BF44 /* TabBarView.swift */,
 				195C9362243BE00C002CFEAD /* CustomButton.swift */,
+				19FDE82F2448C7780037F246 /* LoadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -674,6 +683,22 @@
 				19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */,
 			);
 			path = CheckoutView;
+			sourceTree = "<group>";
+		};
+		19FDE8272448BD730037F246 /* Circuit */ = {
+			isa = PBXGroup;
+			children = (
+				19FDE8292448BD950037F246 /* CircuitTarget.swift */,
+			);
+			path = Circuit;
+			sourceTree = "<group>";
+		};
+		19FDE8282448BD7F0037F246 /* Ride */ = {
+			isa = PBXGroup;
+			children = (
+				19FDE82B2448BD9F0037F246 /* RideTarget.swift */,
+			);
+			path = Ride;
 			sourceTree = "<group>";
 		};
 		768177653A31C0F480BF87B0 /* Pods */ = {
@@ -990,6 +1015,7 @@
 				199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */,
 				19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */,
 				197D203C243B13090081C78E /* ContentView.swift in Sources */,
+				19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */,
 				190DC0C1244224F700BDFD9A /* HomeAssembly.swift in Sources */,
 				193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */,
 				1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */,
@@ -1007,6 +1033,7 @@
 				193DEEA124446E5300815150 /* LoginRequest.swift in Sources */,
 				19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */,
 				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
+				19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */,
 				195C9359243BB59E002CFEAD /* ItemRow.swift in Sources */,
 				190DC0C32442250000BDFD9A /* ProfileAssembly.swift in Sources */,
 				195C935E243BD30F002CFEAD /* LoginView.swift in Sources */,
@@ -1022,6 +1049,7 @@
 				1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */,
 				1933B3A22441B01100D0BF44 /* ProfileView.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
+				19FDE8302448C7780037F246 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
