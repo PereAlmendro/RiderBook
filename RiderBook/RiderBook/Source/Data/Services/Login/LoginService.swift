@@ -25,7 +25,6 @@ class LoginService: LoginServiceProtocol {
     
     private let userRepository: UserRepositoryProtocol
     private let localRepository: LocalRepositoryProtocol
-    private var disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
     
@@ -37,11 +36,27 @@ class LoginService: LoginServiceProtocol {
     
     // MARK: - Public functions
     
-    func register(name: String, password: String, email: String, imageURL: String = "") {
-//        userRepository.createUser(name: name, password: password, email: email, imageURL: imageURL)
+    func register(name: String, password: String,
+                  email: String, imageURL: String = "")  -> Single<User?> {
+        return userRepository
+            .createUser(name: name, password: password,
+                        email: email, imageURL: imageURL)
+            .flatMap({ [weak self] (user) -> Single<User?> in
+                if let user = user {
+                    self?.localRepository.saveUser(user)
+                }
+                return Single.just(user)
+            })
     }
     
-    func logIn(email: String, password: String) {
-//        userRepository.login(email: email, password: password)
+    func logIn(email: String, password: String) -> Single<User?> {
+        return userRepository
+            .login(email: email, password: password)
+            .flatMap({ [weak self] (user) -> Single<User?> in
+                if let user = user {
+                    self?.localRepository.saveUser(user)
+                }
+                return Single.just(user)
+            })
     }
 }
