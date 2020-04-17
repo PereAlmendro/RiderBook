@@ -48,6 +48,7 @@ struct LoadingView<Content>: View where Content: View {
     }
 }
 
+#if DEBUG
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
         LoadingView(isShowing: .constant(true)) {
@@ -55,3 +56,4 @@ struct LoadingView_Previews: PreviewProvider {
         }
     }
 }
+#endif

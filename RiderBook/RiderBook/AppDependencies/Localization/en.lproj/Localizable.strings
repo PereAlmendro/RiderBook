@@ -8,9 +8,9 @@
 
 "Rider_book" = "Rider book";
 "Profile" = "Profile";
-"log_in_with_google" = "Log in with google";
+"register" = "Sign up";
 "log_in" = "Log in";
-"Join_as_guest!" = "Join as guest!";
+"Join_as_guest" = "Join as guest!";
 "Email" = "Email";
 "Password" = "Password";
 "Guest_Rider" = "Guest Rider";

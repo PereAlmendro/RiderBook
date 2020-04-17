@@ -7,19 +7,10 @@
 //
 
 import Foundation
-import Combine
-import RxSwift
 
-protocol LoginViewModelProtocol: ObservableObject {
-    
-}
-
-class LoginViewModel: LoginViewModelProtocol  {
+class LoginViewModel: ObservableObject  {
     
     // MARK: - View properties
-    var showLoading: Bool = false
-    var screenTitle = "Rider_book"
-    var disposeBag = DisposeBag()
     
     // MARK: - Private properties
     
@@ -29,5 +20,13 @@ class LoginViewModel: LoginViewModelProtocol  {
     init(loginService: LoginServiceProtocol, coordinator: AppCoordinatorProtocol) {
         self.loginService = loginService
         self.coordinator = coordinator
+    }
+    
+    func signUpAction() {
+        // TODO: Attempt login
+    }
+    
+    func guestAction() {
+        // TODO: continue as guest
     }
 }

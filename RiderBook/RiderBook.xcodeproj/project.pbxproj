@@ -29,6 +29,7 @@
 		1943376B2427B6DB00050CB0 /* RiderBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 194337692427B6DB00050CB0 /* RiderBook.xcdatamodeld */; };
 		1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1943376C2427B6DD00050CB0 /* Assets.xcassets */; };
 		194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */; };
+		194641EF24499B56000B9B6C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194641EE24499B56000B9B6C /* CustomTextField.swift */; };
 		1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D003244323B200401EB2 /* RiderBookApiService.swift */; };
 		1954D00624432B6600401EB2 /* ApiTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00524432B6600401EB2 /* ApiTargetProtocol.swift */; };
 		1954D00824432B9600401EB2 /* RiderBookApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */; };
@@ -113,6 +114,7 @@
 		1943377C2427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194337812427B6DD00050CB0 /* RiderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		194641EE24499B56000B9B6C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		1954D003244323B200401EB2 /* RiderBookApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiService.swift; sourceTree = "<group>"; };
 		1954D00524432B6600401EB2 /* ApiTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTargetProtocol.swift; sourceTree = "<group>"; };
 		1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiServiceError.swift; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 				1933B39C2441AFC500D0BF44 /* TabBarView.swift */,
 				195C9362243BE00C002CFEAD /* CustomButton.swift */,
 				19FDE82F2448C7780037F246 /* LoadingView.swift */,
+				194641EE24499B56000B9B6C /* CustomTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -999,6 +1002,7 @@
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
 				193DEE9F24446E2500815150 /* UserResponse.swift in Sources */,
 				193DEEAD24446FFB00815150 /* RequestableProtocol.swift in Sources */,
+				194641EF24499B56000B9B6C /* CustomTextField.swift in Sources */,
 				1933B39624406D8200D0BF44 /* FavouritesView.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
 				193DEEA824446F8100815150 /* ApiBaseUrl.swift in Sources */,

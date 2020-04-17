@@ -15,12 +15,14 @@ struct CustomButton: View {
     var body: some View {
         Button(title.localized()) {
             self.action()
-        }.padding()
+        }.frame(maxWidth: .infinity)
+            .padding()
             .background(Color.init("emeraldGreen"))
             .cornerRadius(5)
             .foregroundColor(Color.white)
             .shadow(color: Color.black.opacity(0.2),
                     radius: 10, x: 10, y: 10)
+            .padding()
     }
 }
 
