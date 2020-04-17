@@ -61,7 +61,12 @@ struct LoginView: View {
 #if DEBUG
 
 struct Loginview_Previews: PreviewProvider {
-    static let fakeCoordinator = AppCoordinator(window: UIWindow())
+    static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    static let localRepository = LocalRepository(context: context)
+    static let apiService = RiderBookApiService()
+    static let userRepository = UserRepository(riderBookApiService: apiService)
+    static let loginService = LoginService(userRepository: userRepository, localRepository: localRepository)
+    static let fakeCoordinator = AppCoordinator(window: UIWindow(), localRepository: localRepository, loginService: loginService)
     static let loginAssembly = LoginAssembly(coordinator: fakeCoordinator)
     
     static var previews: some View {

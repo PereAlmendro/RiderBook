@@ -38,8 +38,8 @@ class LoginViewModel: ObservableObject  {
             .subscribe(onSuccess: { [weak self] (user) in
                 
                 self?.loading = false
-                guard let user = user else { return }
-                print(user)
+                guard user?.authorization != nil else { return }
+                self?.coordinator.openHomeAfterLogin()
             
             }) { [weak self] (error) in
             
