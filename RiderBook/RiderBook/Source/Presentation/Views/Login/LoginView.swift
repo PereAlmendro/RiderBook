@@ -12,44 +12,46 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
 
     var body: some View {
-        ZStack(alignment: .center) {
-            
-            Image("login_background")
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack(alignment: .center) {
+        LoadingView(isShowing: $viewModel.loading) {
+            ZStack(alignment: .center) {
                 
-                Text("Rider_book".localized())
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .padding(90)
+                Image("login_background")
+                    .resizable()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .edgesIgnoringSafeArea(.all)
                 
-                VStack(alignment: .center, spacing: 20) {
+                VStack(alignment: .center) {
                     
-                    CustomTextField(title: "Email",
-                                    text: .constant(""),
-                                    textFieldPlaceholder: "type email...")
+                    Text("Rider_book".localized())
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 90)
+                        .padding(.bottom, 20)
                     
-                    CustomTextField(title: "Password",
-                                    text: .constant(""),
-                                    textFieldPlaceholder: "type password...",
-                                    secureField: true)
-                    
-                    Spacer()
-                    
-                    CustomButton(title: "register" , action: {
-                        self.viewModel.signUpAction()
-                    })
-                    
-                    CustomButton(title: "Join_as_guest" , action: {
-                        self.viewModel.guestAction()
-                    })
-                    
-                    Spacer().frame(height: 50)
-                    
+                    VStack(alignment: .center) {
+                        
+                        CustomTextField(title: "Email",
+                                        text: self.$viewModel.email,
+                                        textFieldPlaceholder: "Email")
+                        
+                        CustomTextField(title: "Password",
+                                        text: self.$viewModel.password,
+                                        textFieldPlaceholder: "Password",
+                                        secureField: true)
+                        
+                        Spacer()
+                        
+                        CustomButton(title: "register" , action: {
+                            self.viewModel.signUpAction()
+                        })
+                        
+                        CustomButton(title: "Join_as_guest" , action: {
+                            self.viewModel.guestAction()
+                        })
+                        
+                        Spacer().frame(height: 50)
+                    }
                 }
             }
         }

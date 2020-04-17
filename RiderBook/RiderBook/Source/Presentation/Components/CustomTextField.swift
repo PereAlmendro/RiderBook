@@ -19,29 +19,25 @@ struct CustomTextField: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(title)
+            Text(title.localized())
                 .font(.system(size: 20, weight: .bold, design: .rounded))
             
             if secureField {
-                SecureField(textFieldPlaceholder, text: text)
+                SecureField(textFieldPlaceholder.localized(), text: text)
                     .font(.system(size: 18, weight: .regular, design: .rounded))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .foregroundColor(Color.black)
                     .lineLimit(0)
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(Color.white) )
                     .keyboardType(keyboardType)
                     .shadow(color: Color.black.opacity(0.2),
                             radius: 10, x: 10, y: 10)
             } else {
-                TextField(textFieldPlaceholder, text: text,
+                TextField(textFieldPlaceholder.localized(), text: text,
                           onEditingChanged: onEditingChanged)
                     .font(.system(size: 18, weight: .regular, design: .rounded))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .foregroundColor(Color.black)
                     .lineLimit(0)
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(Color.white) )
                     .keyboardType(keyboardType)
                     .shadow(color: Color.black.opacity(0.2),
                             radius: 10, x: 10, y: 10)
