@@ -11,15 +11,12 @@ import UIKit
 import RxSwift
 
 protocol LoginServiceProtocol {
-    var loginResult: BehaviorSubject<Bool> { get }
+    func register(name: String, password: String,
+                  email: String, imageURL: String)  -> Single<User?>
+    func logIn(email: String, password: String) -> Single<User?>
 }
 
 class LoginService: LoginServiceProtocol {
-    
-    // MARK: - Rx bindings
-    
-    var loginResult: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
-    var registerResult: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
     
     // MARK: - Private properties
     
@@ -42,9 +39,11 @@ class LoginService: LoginServiceProtocol {
         return userRepository
             .createUser(name: name, password: password, email: email, imageURL: imageURL)
             .flatMap({ [weak self] (user) -> Single<User?> in
-                guard let user = user else { return Single.just(nil) }
-                let userSaved = self?.localRepository.saveUser(user) ?? false
-                return Single.just( userSaved ? user : nil)
+                guard
+                    let user = user,
+                    let userSaved = self?.localRepository.saveUser(user),
+                    userSaved else { return Single.just(nil) }
+                return Single.just(user)
             })
     }
     
@@ -52,9 +51,11 @@ class LoginService: LoginServiceProtocol {
         return userRepository
             .login(email: email, password: password)
             .flatMap({ [weak self] (user) -> Single<User?> in
-                guard let user = user else { return Single.just(nil) }
-                let userSaved = self?.localRepository.saveUser(user) ?? false
-                return Single.just( userSaved ? user : nil)
+                guard
+                    let user = user,
+                    let userSaved = self?.localRepository.saveUser(user),
+                    userSaved else { return Single.just(nil) }
+                return Single.just(user)
             })
     }
 }

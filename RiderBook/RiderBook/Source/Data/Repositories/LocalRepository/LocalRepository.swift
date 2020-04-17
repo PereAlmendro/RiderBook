@@ -11,7 +11,7 @@ import CoreData
 import RxSwift
 
 fileprivate enum EntityName: String {
-    case User
+    case UserEntity
 }
 
 protocol LocalRepositoryProtocol {
@@ -28,7 +28,7 @@ final class LocalRepository: LocalRepositoryProtocol {
     }
     
     func getUser() -> User? {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: EntityName.User.rawValue)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: EntityName.UserEntity.rawValue)
         request.returnsObjectsAsFaults = false
         
         do {
@@ -48,7 +48,7 @@ final class LocalRepository: LocalRepositoryProtocol {
     
     func saveUser(_ user: User) -> Bool {
         guard
-            let entity = NSEntityDescription.entity(forEntityName: EntityName.User.rawValue, in: context)
+            let entity = NSEntityDescription.entity(forEntityName: EntityName.UserEntity.rawValue, in: context)
             else { return false  }
         
         let userObject = NSManagedObject(entity: entity, insertInto: context)
