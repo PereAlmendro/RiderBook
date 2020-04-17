@@ -13,7 +13,7 @@ import RxSwift
 protocol LoginServiceProtocol {
     func register(name: String, password: String,
                   email: String, imageURL: String)  -> Single<User?>
-    func logIn(email: String, password: String) -> Single<User?>
+    func logIn(email: String, password: String, encodedPassword: Bool) -> Single<User?>
 }
 
 class LoginService: LoginServiceProtocol {
@@ -47,9 +47,9 @@ class LoginService: LoginServiceProtocol {
             })
     }
     
-    func logIn(email: String, password: String) -> Single<User?> {
+    func logIn(email: String, password: String, encodedPassword: Bool = false) -> Single<User?> {
         return userRepository
-            .login(email: email, password: password)
+            .login(email: email, password: password, encodedPassword: false)
             .flatMap({ [weak self] (user) -> Single<User?> in
                 guard
                     let user = user,

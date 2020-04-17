@@ -12,7 +12,7 @@ import RxSwift
 
 protocol UserRepositoryProtocol {
     func createUser(name: String, password: String, email: String, imageURL: String) -> Single<User?>
-    func login(email: String, password: String) -> Single<User?>
+    func login(email: String, password: String, encodedPassword: Bool) -> Single<User?>
 }
 
 class UserRepository: UserRepositoryProtocol {
@@ -41,9 +41,10 @@ class UserRepository: UserRepositoryProtocol {
             }).asSingle()
     }
     
-    func login(email: String, password: String) -> Single<User?> {
+    func login(email: String, password: String, encodedPassword: Bool = false) -> Single<User?> {
         
-        let loginRequest = LoginRequest(email: email, password: password)
+        let loginRequest = LoginRequest(email: email, password: password,
+                                        encodedPassword: encodedPassword)
         
         return riderBookApiService
             .loadRequest(UserTarget.login(loginRequest), responseModel: UserResponse.self)

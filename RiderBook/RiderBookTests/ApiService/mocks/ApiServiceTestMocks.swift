@@ -57,11 +57,11 @@ extension MockTarget {
     var requestObject: RequestableProtocol? {
         switch self {
         case .success:
-            return LoginRequest(email: "test@test.com", password: "test")
+            return LoginRequest(email: "test@test.com", password: "test", encodedPassword: false)
         case .error:
-            return LoginRequest(email: "testLoginError", password: "testLoginError")
+            return LoginRequest(email: "testLoginError", password: "testLoginError", encodedPassword: false)
         case .errorDomain, .invalidUrl:
-            return LoginRequest(email: "testLoginError", password: "testLoginError")
+            return LoginRequest(email: "testLoginError", password: "testLoginError", encodedPassword: false)
         }
     }
 }

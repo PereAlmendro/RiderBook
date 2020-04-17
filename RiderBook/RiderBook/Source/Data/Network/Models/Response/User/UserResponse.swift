@@ -13,8 +13,8 @@ struct UserResponse: Codable {
     let email: String
     let auth: String
     let name: String
-    let image: String?
     let password: String
+    let image: String?
     let expiryDate: Int?
 
     enum CodingKeys: String, CodingKey {

@@ -11,9 +11,11 @@ import Foundation
 struct LoginRequest: Encodable, RequestableProtocol {
     let email: String
     let password: String
+    let encodedPassword: Bool
     
     func toJsonData() -> Data? {
         return ["email" : email,
-                "password" : password ].toJsonData()
+                "password" : password,
+                "encodedPassword" : encodedPassword ].toJsonData()
     }
 }

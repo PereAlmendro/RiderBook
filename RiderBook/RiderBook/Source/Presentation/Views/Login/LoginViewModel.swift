@@ -32,7 +32,7 @@ class LoginViewModel: ObservableObject  {
     func signUpAction() {
         loading = true
         loginService
-            .logIn(email: email, password: password)
+            .logIn(email: email, password: password, encodedPassword: false)
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (user) in
