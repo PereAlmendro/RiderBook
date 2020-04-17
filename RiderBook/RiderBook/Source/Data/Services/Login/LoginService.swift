@@ -49,7 +49,7 @@ class LoginService: LoginServiceProtocol {
     
     func logIn(email: String, password: String, encodedPassword: Bool = false) -> Single<User?> {
         return userRepository
-            .login(email: email, password: password, encodedPassword: false)
+            .login(email: email, password: password, encodedPassword: encodedPassword)
             .flatMap({ [weak self] (user) -> Single<User?> in
                 guard
                     let user = user,
