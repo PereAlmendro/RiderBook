@@ -17,9 +17,9 @@ protocol UserRepositoryProtocol {
 
 class UserRepository: UserRepositoryProtocol {
     
-    private let riderBookApiService: RiderBookApiService
+    private let riderBookApiService: RiderBookApiServiceProtocol
     
-    init(riderBookApiService: RiderBookApiService) {
+    init(riderBookApiService: RiderBookApiServiceProtocol) {
         self.riderBookApiService = riderBookApiService
     }
     
