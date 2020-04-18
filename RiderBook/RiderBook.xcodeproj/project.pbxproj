@@ -62,6 +62,7 @@
 		19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */; };
 		19CA2F70244AF0FA00DBDAA4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */; };
 		19CA2F72244AF37C00DBDAA4 /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */; };
+		19CA2F7B244AFC5A00DBDAA4 /* UserRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F7A244AFC5A00DBDAA4 /* UserRepositoryTest.swift */; };
 		19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
@@ -157,6 +158,7 @@
 		19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
+		19CA2F7A244AFC5A00DBDAA4 /* UserRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTest.swift; sourceTree = "<group>"; };
 		19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 		194337792427B6DD00050CB0 /* RiderBookTests */ = {
 			isa = PBXGroup;
 			children = (
+				19CA2F79244AFBDB00DBDAA4 /* UserRepository */,
 				1984639A24465C5100C4E25B /* ApiService */,
 				1943377C2427B6DD00050CB0 /* Info.plist */,
 			);
@@ -707,6 +710,14 @@
 				19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */,
 			);
 			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		19CA2F79244AFBDB00DBDAA4 /* UserRepository */ = {
+			isa = PBXGroup;
+			children = (
+				19CA2F7A244AFC5A00DBDAA4 /* UserRepositoryTest.swift */,
+			);
+			path = UserRepository;
 			sourceTree = "<group>";
 		};
 		19D5E1F0243E3D4300CAEC27 /* CheckoutView */ = {
@@ -1079,6 +1090,7 @@
 			files = (
 				1984639F24465D5900C4E25B /* ApiServiceTestMocks.swift in Sources */,
 				1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */,
+				19CA2F7B244AFC5A00DBDAA4 /* UserRepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

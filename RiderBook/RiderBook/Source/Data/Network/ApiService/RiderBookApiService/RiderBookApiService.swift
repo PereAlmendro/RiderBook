@@ -9,7 +9,12 @@
 import Foundation
 import RxSwift
 
-final class RiderBookApiService {
+protocol RiderBookApiServiceProtocol {
+    func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
+                                               responseModel: ResponseModel.Type) -> Observable<Result<ResponseModel?, RiderBookApiServiceError>>
+}
+
+final class RiderBookApiService: RiderBookApiServiceProtocol {
     
     func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
                                                responseModel: ResponseModel.Type) -> Observable<Result<ResponseModel?, RiderBookApiServiceError>> {

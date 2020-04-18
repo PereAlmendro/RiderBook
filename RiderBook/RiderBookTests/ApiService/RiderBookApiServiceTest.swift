@@ -100,6 +100,4 @@ final class RiderBookApiServiceTest: XCTestCase {
         wait(for: [expectation], timeout: 10)
     }
     
-
-    
 }
