@@ -11,9 +11,10 @@ import UIKit
 import RxSwift
 
 protocol LoginServiceProtocol {
+    func attemptAutologin() -> Single<Bool>
     func register(name: String, password: String,
-                  email: String, imageURL: String)  -> Single<User?>
-    func logIn(email: String, password: String, encodedPassword: Bool) -> Single<User?>
+                  email: String, imageURL: String)  -> Single<Bool>
+    func logIn(email: String, password: String, encodedPassword: Bool) -> Single<Bool>
 }
 
 class LoginService: LoginServiceProtocol {
@@ -35,27 +36,34 @@ class LoginService: LoginServiceProtocol {
     // MARK: - Public functions
     
     func register(name: String, password: String,
-                  email: String, imageURL: String = "")  -> Single<User?> {
+                  email: String, imageURL: String = "")  -> Single<Bool> {
         return userRepository
             .createUser(name: name, password: password, email: email, imageURL: imageURL)
-            .flatMap({ [weak self] (user) -> Single<User?> in
+            .flatMap({ [weak self] (user) -> Single<Bool> in
                 guard
                     let user = user,
                     let userSaved = self?.localRepository.saveUser(user),
-                    userSaved else { return Single.just(nil) }
-                return Single.just(user)
+                    userSaved else { return Single.just(false) }
+                return Single.just(userSaved)
             })
     }
     
-    func logIn(email: String, password: String, encodedPassword: Bool = false) -> Single<User?> {
+    func logIn(email: String, password: String, encodedPassword: Bool = false) -> Single<Bool> {
         return userRepository
             .login(email: email, password: password, encodedPassword: encodedPassword)
-            .flatMap({ [weak self] (user) -> Single<User?> in
+            .flatMap({ [weak self] (user) -> Single<Bool> in
                 guard
                     let user = user,
                     let userSaved = self?.localRepository.saveUser(user),
-                    userSaved else { return Single.just(nil) }
-                return Single.just(user)
+                    userSaved else { return Single.just(false) }
+                return Single.just(userSaved)
             })
+    }
+    
+    func attemptAutologin() -> Single<Bool> {
+        guard let user = localRepository.getUser() else {
+            return Single.just(false)
+        }
+        return logIn(email: user.email, password: user.password, encodedPassword: true)
     }
 }

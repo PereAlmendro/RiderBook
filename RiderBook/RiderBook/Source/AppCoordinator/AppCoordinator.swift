@@ -14,55 +14,23 @@ import UIKit
 protocol AppCoordinatorProtocol {
     /// Called in the scene delegate, shows login after the launchScreen
     func start()
-    func openHomeAfterLogin()
+    func showHome()
+    func showLogin()
+    func showRegister()
 }
 
 final class AppCoordinator: AppCoordinatorProtocol {
 
     private var window: UIWindow
     private var tabView: TabBarView?
-    private var localRepository: LocalRepositoryProtocol
-    private var loginService: LoginServiceProtocol
     
-    init(window: UIWindow,
-         localRepository: LocalRepositoryProtocol,
-         loginService: LoginServiceProtocol) {
+    init(window: UIWindow) {
         self.window = window
-        self.localRepository = localRepository
-        self.loginService = loginService
     }
     
     func start() {
-        if let user = localRepository.getUser() {
-            _ = loginService
-                .logIn(email: user.email, password: user.password, encodedPassword: true)
-                .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
-                .subscribeOn(MainScheduler.instance)
-                .subscribe(onSuccess: { [weak self] (user) in
-                    DispatchQueue.main.async {
-                        if user?.authorization != nil {
-                            self?.openHome()
-                        } else {
-                            self?.openLogin()
-                        }
-                    }
-                }) { [weak self] (error) in
-                    self?.openLogin()
-            }
-        } else {
-            openLogin()
-        }
-    }
-    
-    private func openLogin() {
-        let loginView = getLoginView()
-        window.rootViewController = UIHostingController(rootView: loginView)
-        window.makeKeyAndVisible()
-    }
-    
-    private func openHome() {
-        let tabView = getTabBarView()
-        window.rootViewController = UIHostingController(rootView: tabView)
+        let splashView = getSplashView()
+        window.rootViewController = UIHostingController(rootView: splashView)
         window.makeKeyAndVisible()
     }
     
@@ -72,11 +40,22 @@ final class AppCoordinator: AppCoordinatorProtocol {
 
 extension AppCoordinator {
     
-    func openHomeAfterLogin() {
+    func showHome() {
         let tabView = getTabBarView()
         let hostingController = UIHostingController(rootView: tabView)
         hostingController.modalPresentationStyle = .fullScreen
         UIApplication.topViewController()?.present(hostingController, animated: true, completion: nil)
+    }
+    
+    func showLogin() {
+        let loginView = getLoginView()
+        let hostingController = UIHostingController(rootView: loginView)
+        hostingController.modalPresentationStyle = .fullScreen
+        UIApplication.topViewController()?.present(hostingController, animated: false, completion: nil)
+    }
+    
+    func showRegister() {
+        
     }
     
 }
@@ -84,6 +63,12 @@ extension AppCoordinator {
 // MARK: - View builder
 
 private extension AppCoordinator {
+    
+    private func getSplashView() -> SplashView {
+        let splashAssembly = SplashAssembly(coordinator: self)
+        let splashView = splashAssembly.getView()
+        return splashView
+    }
     
     private func getLoginView() -> LoginView {
         let loginAssembly = LoginAssembly(coordinator: self)

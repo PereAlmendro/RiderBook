@@ -18,14 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: windowScene)
-        
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let apiService = RiderBookApiService()
-        let userRepository = UserRepository(riderBookApiService: apiService)
-        let localRepository = LocalRepository(context: context)
-        let loginService = LoginService(userRepository: userRepository, localRepository: localRepository)
-        
-        coordinator = AppCoordinator(window: window, localRepository: localRepository, loginService: loginService)
+        coordinator = AppCoordinator(window: window)
         coordinator?.start()
     }
 

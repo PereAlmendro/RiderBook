@@ -42,12 +42,12 @@ struct LoginView: View {
                         
                         Spacer()
                         
-                        CustomButton(title: "register" , action: {
-                            self.viewModel.signUpAction()
+                        CustomButton(title: "log_in" , action: {
+                            self.viewModel.loginAction()
                         })
                         
-                        CustomButton(title: "Join_as_guest" , action: {
-                            self.viewModel.guestAction()
+                        CustomButton(title: "register" , action: {
+                            self.viewModel.registerAction()
                         })
                         
                         Spacer().frame(height: 50)
@@ -61,12 +61,7 @@ struct LoginView: View {
 #if DEBUG
 
 struct Loginview_Previews: PreviewProvider {
-    static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    static let localRepository = LocalRepository(context: context)
-    static let apiService = RiderBookApiService()
-    static let userRepository = UserRepository(riderBookApiService: apiService)
-    static let loginService = LoginService(userRepository: userRepository, localRepository: localRepository)
-    static let fakeCoordinator = AppCoordinator(window: UIWindow(), localRepository: localRepository, loginService: loginService)
+    static let fakeCoordinator = AppCoordinator(window: UIWindow())
     static let loginAssembly = LoginAssembly(coordinator: fakeCoordinator)
     
     static var previews: some View {
