@@ -11,7 +11,7 @@ import Foundation
 import RxSwift
 
 protocol UserRepositoryProtocol {
-    func createUser(name: String, password: String, email: String, imageURL: String) -> Single<User?>
+    func createUser(name: String, password: String, email: String) -> Single<User?>
     func login(email: String, password: String, encodedPassword: Bool) -> Single<User?>
 }
 
@@ -23,10 +23,8 @@ class UserRepository: UserRepositoryProtocol {
         self.riderBookApiService = riderBookApiService
     }
     
-    func createUser(name: String, password: String, email: String, imageURL: String) -> Single<User?> {
-        
-        let userRequest = CreateUserRequest(name: name, password: password,
-                                            image: imageURL, email: email)
+    func createUser(name: String, password: String, email: String) -> Single<User?> {
+        let userRequest = CreateUserRequest(name: name, password: password, image: nil, email: email)
         
         return riderBookApiService
             .loadRequest(UserTarget.createUser(userRequest), responseModel: UserResponse.self)

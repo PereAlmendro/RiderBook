@@ -11,13 +11,13 @@ import Foundation
 struct CreateUserRequest: Encodable, RequestableProtocol {
     let name: String
     let password: String
-    let image: String
+    let image: String?
     let email: String
     
     func toJsonData() -> Data? {
         return ["name" : name,
                 "password" : password,
-                "image" : image,
+                "image" : image ?? "",
                 "email" : email ].toJsonData()
     }
 }

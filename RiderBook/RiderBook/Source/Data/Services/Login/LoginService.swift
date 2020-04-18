@@ -12,8 +12,7 @@ import RxSwift
 
 protocol LoginServiceProtocol {
     func attemptAutologin() -> Single<Bool>
-    func register(name: String, password: String,
-                  email: String, imageURL: String)  -> Single<Bool>
+    func register(name: String, password: String, email: String)  -> Single<Bool>
     func logIn(email: String, password: String, encodedPassword: Bool) -> Single<Bool>
 }
 
@@ -35,10 +34,9 @@ class LoginService: LoginServiceProtocol {
     
     // MARK: - Public functions
     
-    func register(name: String, password: String,
-                  email: String, imageURL: String = "")  -> Single<Bool> {
+    func register(name: String, password: String, email: String)  -> Single<Bool> {
         return userRepository
-            .createUser(name: name, password: password, email: email, imageURL: imageURL)
+            .createUser(name: name, password: password, email: email)
             .flatMap({ [weak self] (user) -> Single<Bool> in
                 guard
                     let user = user,

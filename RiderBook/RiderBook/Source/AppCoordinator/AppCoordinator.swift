@@ -34,6 +34,24 @@ final class AppCoordinator: AppCoordinatorProtocol {
         window.makeKeyAndVisible()
     }
     
+    // MARK: - Private functions
+    
+    private func push(viewController: UIViewController, animated: Bool) {
+        var viewController = viewController
+        if let navigationController = UIApplication.topViewController()?.parent as? UINavigationController {
+            if let viewControllerNVC = viewController as? UINavigationController,
+                let lastViewController = viewControllerNVC.viewControllers.last {
+                viewController = lastViewController
+            }
+            navigationController.pushViewController(viewController, animated: animated)
+        } else {
+            present(viewController: viewController, animated: animated)
+        }
+    }
+    
+    private func present(viewController: UIViewController, animated: Bool) {
+        UIApplication.topViewController()?.present(viewController, animated: animated, completion: nil)
+    }
 }
 
 // MARK: - Navigations
@@ -44,18 +62,21 @@ extension AppCoordinator {
         let tabView = getTabBarView()
         let hostingController = UIHostingController(rootView: tabView)
         hostingController.modalPresentationStyle = .fullScreen
-        UIApplication.topViewController()?.present(hostingController, animated: true, completion: nil)
+        present(viewController: hostingController, animated: true)
     }
     
     func showLogin() {
         let loginView = getLoginView()
         let hostingController = UIHostingController(rootView: loginView)
-        hostingController.modalPresentationStyle = .fullScreen
-        UIApplication.topViewController()?.present(hostingController, animated: false, completion: nil)
+        let navController = UINavigationController(rootViewController: hostingController)
+        navController.modalPresentationStyle = .fullScreen
+        present(viewController: navController, animated: true)
     }
     
     func showRegister() {
-        
+        let registerView = getRegisterView()
+        let hostingController = UIHostingController(rootView: registerView)
+        push(viewController: hostingController, animated: true)
     }
     
 }
@@ -63,6 +84,12 @@ extension AppCoordinator {
 // MARK: - View builder
 
 private extension AppCoordinator {
+    
+    private func getRegisterView() -> RegisterView {
+        let registerAssembly = RegisterAssembly(coordinator: self)
+        let registerView = registerAssembly.getView()
+        return registerView
+    }
     
     private func getSplashView() -> SplashView {
         let splashAssembly = SplashAssembly(coordinator: self)

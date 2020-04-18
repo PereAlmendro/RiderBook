@@ -17,7 +17,7 @@
 		1933B3A22441B01100D0BF44 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3A12441B01100D0BF44 /* ProfileView.swift */; };
 		1933B3A42441B01E00D0BF44 /* RidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3A32441B01E00D0BF44 /* RidesView.swift */; };
 		1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3A52441B02600D0BF44 /* HomeView.swift */; };
-		1933B3A92441BC6900D0BF44 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3A82441BC6900D0BF44 /* String+Localization.swift */; };
+		1933B3A92441BC6900D0BF44 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3A82441BC6900D0BF44 /* String+Extension.swift */; };
 		193DEE9F24446E2500815150 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEE9E24446E2500815150 /* UserResponse.swift */; };
 		193DEEA124446E5300815150 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA024446E5300815150 /* LoginRequest.swift */; };
 		193DEEA824446F8100815150 /* ApiBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA724446F8100815150 /* ApiBaseUrl.swift */; };
@@ -59,6 +59,9 @@
 		19CA2F67244AE6C400DBDAA4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F66244AE6C400DBDAA4 /* SplashView.swift */; };
 		19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */; };
 		19CA2F6B244AE95F00DBDAA4 /* SplashAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6A244AE95F00DBDAA4 /* SplashAssembly.swift */; };
+		19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */; };
+		19CA2F70244AF0FA00DBDAA4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */; };
+		19CA2F72244AF37C00DBDAA4 /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */; };
 		19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
@@ -99,7 +102,7 @@
 		1933B3A12441B01100D0BF44 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1933B3A32441B01E00D0BF44 /* RidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesView.swift; sourceTree = "<group>"; };
 		1933B3A52441B02600D0BF44 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		1933B3A82441BC6900D0BF44 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		1933B3A82441BC6900D0BF44 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		193DEE9E24446E2500815150 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		193DEEA024446E5300815150 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		193DEEA724446F8100815150 /* ApiBaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBaseUrl.swift; sourceTree = "<group>"; };
@@ -151,6 +154,9 @@
 		19CA2F66244AE6C400DBDAA4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		19CA2F6A244AE95F00DBDAA4 /* SplashAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAssembly.swift; sourceTree = "<group>"; };
+		19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
 		19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
@@ -239,7 +245,7 @@
 		1933B3A72441BC5900D0BF44 /* String */ = {
 			isa = PBXGroup;
 			children = (
-				1933B3A82441BC6900D0BF44 /* String+Localization.swift */,
+				1933B3A82441BC6900D0BF44 /* String+Extension.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 		1954D0012443220600401EB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				19CA2F6C244AEFEE00DBDAA4 /* RegisterView */,
 				19CA2F65244AE5EA00DBDAA4 /* SplashView */,
 				197D203A243B12EC0081C78E /* Login */,
 				1933B39E2441AFF700D0BF44 /* Home */,
@@ -638,6 +645,7 @@
 				190DC0C0244224F700BDFD9A /* HomeAssembly.swift */,
 				190DC0C42442250F00BDFD9A /* RidesAssembly.swift */,
 				190DC0C22442250000BDFD9A /* ProfileAssembly.swift */,
+				19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -690,6 +698,15 @@
 				19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */,
 			);
 			path = SplashView;
+			sourceTree = "<group>";
+		};
+		19CA2F6C244AEFEE00DBDAA4 /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */,
+				19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */,
+			);
+			path = RegisterView;
 			sourceTree = "<group>";
 		};
 		19D5E1F0243E3D4300CAEC27 /* CheckoutView */ = {
@@ -1008,12 +1025,14 @@
 				19B1A0E924421A62000D4FA6 /* AppCoordinator.swift in Sources */,
 				1933B3A42441B01E00D0BF44 /* RidesView.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
+				19CA2F70244AF0FA00DBDAA4 /* RegisterViewModel.swift in Sources */,
 				199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */,
 				19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */,
 				197D203C243B13090081C78E /* ContentView.swift in Sources */,
 				19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */,
 				190DC0C1244224F700BDFD9A /* HomeAssembly.swift in Sources */,
 				193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */,
+				19CA2F72244AF37C00DBDAA4 /* RegisterAssembly.swift in Sources */,
 				1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */,
 				1954D00824432B9600401EB2 /* RiderBookApiServiceError.swift in Sources */,
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
@@ -1040,7 +1059,8 @@
 				195C9355243BAF0B002CFEAD /* Helper.swift in Sources */,
 				1933B39D2441AFC500D0BF44 /* TabBarView.swift in Sources */,
 				195C935B243BB86A002CFEAD /* ItemDetail.swift in Sources */,
-				1933B3A92441BC6900D0BF44 /* String+Localization.swift in Sources */,
+				19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */,
+				1933B3A92441BC6900D0BF44 /* String+Extension.swift in Sources */,
 				1954D01024432E9500401EB2 /* UserTarget.swift in Sources */,
 				195C9352243BAF04002CFEAD /* Menu.swift in Sources */,
 				195C9363243BE00C002CFEAD /* CustomButton.swift in Sources */,

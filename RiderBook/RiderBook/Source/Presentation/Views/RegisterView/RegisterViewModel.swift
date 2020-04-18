@@ -1,8 +1,8 @@
 //
-//  LoginViewModel.swift
+//  RegisterViewModel.swift
 //  RiderBook
 //
-//  Created by Pere Almendro on 06/04/2020.
+//  Created by Pere Almendro on 18/04/2020.
 //  Copyright © 2020 Pere Almendro. All rights reserved.
 //
 
@@ -10,13 +10,15 @@ import Foundation
 import SwiftUI
 import RxSwift
 
-class LoginViewModel: ObservableObject  {
+class RegisterViewModel: ObservableObject  {
     
     // MARK: - View properties
     
     @Published var loading: Bool = false
+    @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
+    @Published var repeatedPassword: String = ""
     
     // MARK: - Private properties
     
@@ -26,19 +28,20 @@ class LoginViewModel: ObservableObject  {
     
     // MARK: - Lifecycle
     
-    init(loginService: LoginServiceProtocol, coordinator: AppCoordinatorProtocol) {
+    init(loginService: LoginServiceProtocol,
+         coordinator: AppCoordinatorProtocol) {
         self.loginService = loginService
         self.coordinator = coordinator
     }
     
     // MARK: - User Actions
     
-    func loginAction() {
+    func registerAction() {
+        
         guard validateCredentials() else { return }
         
-        loading = true
         loginService
-            .logIn(email: email, password: password, encodedPassword: false)
+            .register(name: name, password: password, email: email)
             .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (success) in
@@ -63,20 +66,22 @@ class LoginViewModel: ObservableObject  {
         }.disposed(by: disposeBag)
     }
     
-    func registerAction() {
-        coordinator.showRegister()
-    }
-    
-    // MARK: - Private methods
+    // MARK: - Private functions
     
     private func validateCredentials() -> Bool {
         var credentialsValid = true
         
-        if !email.isValidEmail() {
+        if name.count < 1 {
+            showError(message: "This name is not valid")
+            credentialsValid = false
+        } else if !email.isValidEmail() {
             showError(message: "This email is not valid")
             credentialsValid = false
         } else if !password.isValidPassword() {
             showError(message: "Password must be longer than 4 characters")
+            credentialsValid = false
+        } else if password != repeatedPassword {
+            showError(message: "Passwords don't match")
             credentialsValid = false
         }
         
