@@ -26,8 +26,8 @@ struct LoginView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
-                        .padding(.top, 90)
-                        .padding(.bottom, 20)
+                        .padding(.top, 70)
+                        .padding(.bottom, 30)
                     
                     VStack(alignment: .center) {
                         
