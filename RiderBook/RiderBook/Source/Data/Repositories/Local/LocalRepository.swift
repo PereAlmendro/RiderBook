@@ -16,7 +16,7 @@ fileprivate enum EntityName: String {
 
 protocol LocalRepositoryProtocol {
     func getUser() -> User?
-    func saveUser(_ user: User) -> Bool
+    @discardableResult func saveUser(_ user: User) -> Bool
 }
 
 final class LocalRepository: LocalRepositoryProtocol {
@@ -46,10 +46,10 @@ final class LocalRepository: LocalRepositoryProtocol {
         }
     }
     
-    func saveUser(_ user: User) -> Bool {
-        guard
-            let entity = NSEntityDescription.entity(forEntityName: EntityName.UserEntity.rawValue, in: context)
-            else { return false  }
+    @discardableResult func saveUser(_ user: User) -> Bool {
+        guard let entity = NSEntityDescription.entity(forEntityName: EntityName.UserEntity.rawValue, in: context) else {
+            return false
+        }
         
         let userObject = NSManagedObject(entity: entity, insertInto: context)
         userObject.setValue(user.email, forKey: "email")
@@ -57,9 +57,9 @@ final class LocalRepository: LocalRepositoryProtocol {
         
         do {
             try context.save()
+            return true
         } catch {
             return false
         }
-        return true
     }
 }

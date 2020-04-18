@@ -64,6 +64,7 @@
 		19CA2F72244AF37C00DBDAA4 /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */; };
 		19CA2F7B244AFC5A00DBDAA4 /* UserRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F7A244AFC5A00DBDAA4 /* UserRepositoryTest.swift */; };
 		19CA2F7E244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F7D244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift */; };
+		19CA2F83244B41F300DBDAA4 /* LocalRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F82244B41F300DBDAA4 /* LocalRepositoryTest.swift */; };
 		19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
@@ -161,6 +162,7 @@
 		19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
 		19CA2F7A244AFC5A00DBDAA4 /* UserRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTest.swift; sourceTree = "<group>"; };
 		19CA2F7D244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTestMocks.swift; sourceTree = "<group>"; };
+		19CA2F82244B41F300DBDAA4 /* LocalRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryTest.swift; sourceTree = "<group>"; };
 		19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
@@ -368,8 +370,8 @@
 		194337792427B6DD00050CB0 /* RiderBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				19CA2F79244AFBDB00DBDAA4 /* UserRepository */,
-				1984639A24465C5100C4E25B /* ApiService */,
+				19CA2F81244B41CD00DBDAA4 /* Data */,
+				19CA2F80244B41C600DBDAA4 /* Network */,
 				1943377C2427B6DD00050CB0 /* Info.plist */,
 			);
 			path = RiderBookTests;
@@ -414,7 +416,7 @@
 		1954CFFD2443203200401EB2 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				19FDE8342448D5420037F246 /* LocalRepository */,
+				19FDE8342448D5420037F246 /* Local */,
 				1954D00A24432E0F00401EB2 /* User */,
 			);
 			path = Repositories;
@@ -714,13 +716,13 @@
 			path = RegisterView;
 			sourceTree = "<group>";
 		};
-		19CA2F79244AFBDB00DBDAA4 /* UserRepository */ = {
+		19CA2F79244AFBDB00DBDAA4 /* User */ = {
 			isa = PBXGroup;
 			children = (
 				19CA2F7C244B1F3700DBDAA4 /* mocks */,
 				19CA2F7A244AFC5A00DBDAA4 /* UserRepositoryTest.swift */,
 			);
-			path = UserRepository;
+			path = User;
 			sourceTree = "<group>";
 		};
 		19CA2F7C244B1F3700DBDAA4 /* mocks */ = {
@@ -729,6 +731,31 @@
 				19CA2F7D244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift */,
 			);
 			path = mocks;
+			sourceTree = "<group>";
+		};
+		19CA2F7F244B41BB00DBDAA4 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				19CA2F82244B41F300DBDAA4 /* LocalRepositoryTest.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		19CA2F80244B41C600DBDAA4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1984639A24465C5100C4E25B /* ApiService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		19CA2F81244B41CD00DBDAA4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				19CA2F7F244B41BB00DBDAA4 /* Local */,
+				19CA2F79244AFBDB00DBDAA4 /* User */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		19D5E1F0243E3D4300CAEC27 /* CheckoutView */ = {
@@ -763,12 +790,12 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
-		19FDE8342448D5420037F246 /* LocalRepository */ = {
+		19FDE8342448D5420037F246 /* Local */ = {
 			isa = PBXGroup;
 			children = (
 				19FDE8352448D55D0037F246 /* LocalRepository.swift */,
 			);
-			path = LocalRepository;
+			path = Local;
 			sourceTree = "<group>";
 		};
 		768177653A31C0F480BF87B0 /* Pods */ = {
@@ -1118,6 +1145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19CA2F7E244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift in Sources */,
+				19CA2F83244B41F300DBDAA4 /* LocalRepositoryTest.swift in Sources */,
 				1984639F24465D5900C4E25B /* ApiServiceTestMocks.swift in Sources */,
 				1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */,
 				19CA2F7B244AFC5A00DBDAA4 /* UserRepositoryTest.swift in Sources */,
