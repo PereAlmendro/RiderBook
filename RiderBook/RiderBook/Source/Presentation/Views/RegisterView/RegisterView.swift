@@ -42,6 +42,11 @@ struct RegisterView: View {
                 })
             }
         }
+        .alert(isPresented: $viewModel.showAlert) { () -> Alert in
+            Alert(title: Text(viewModel.errorTitle.localized()),
+                  message: Text(viewModel.errorMessage),
+                  dismissButton: .default(Text("Ok")))
+        }
     }
 }
 

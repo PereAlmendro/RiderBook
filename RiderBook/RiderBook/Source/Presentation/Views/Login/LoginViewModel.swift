@@ -14,9 +14,12 @@ class LoginViewModel: ObservableObject  {
     
     // MARK: - View properties
     
+    @Published var showAlert: Bool = false
     @Published var loading: Bool = false
     @Published var email: String = ""
     @Published var password: String = ""
+    var errorTitle = "Error"
+    var errorMessage = ""
     
     // MARK: - Private properties
     
@@ -84,6 +87,7 @@ class LoginViewModel: ObservableObject  {
     }
     
     private func showError(message: String) {
-        // TODO: Show error
+        errorMessage = message
+        showAlert = true
     }
 }

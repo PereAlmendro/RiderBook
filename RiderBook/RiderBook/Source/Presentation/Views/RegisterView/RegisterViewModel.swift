@@ -14,11 +14,14 @@ class RegisterViewModel: ObservableObject  {
     
     // MARK: - View properties
     
+    @Published var showAlert: Bool = false
     @Published var loading: Bool = false
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var repeatedPassword: String = ""
+    var errorTitle = ""
+    var errorMessage = ""
     
     // MARK: - Private properties
     
@@ -89,6 +92,8 @@ class RegisterViewModel: ObservableObject  {
     }
     
     private func showError(message: String) {
-        // TODO: Show error
+        errorTitle = "error"
+        errorMessage = message
+        showAlert = true
     }
 }
