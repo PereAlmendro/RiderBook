@@ -15,9 +15,9 @@ class UserRepoApiServiceMock: RiderBookApiServiceProtocol {
         return Observable<Result<ResponseModel?, RiderBookApiServiceError>>.create { observer in
             if let request = target.requestObject as? LoginRequest,
                 request.email == "success" {
-                let userResponseModel = UserResponse(id: 11, email: "test@test.com",
-                                                     auth: "", name: "test",
-                                                     password: "test", image: "",
+                let userResponseModel = UserResponse(id: 11, email: "",
+                                                     auth: "", name: "success",
+                                                     password: "", image: "",
                                                      expiryDate: nil)
                 observer.onNext(.success(userResponseModel as? ResponseModel))
             } else {

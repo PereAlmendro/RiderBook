@@ -29,13 +29,10 @@ class UserRepository: UserRepositoryProtocol {
         return riderBookApiService
             .loadRequest(UserTarget.createUser(userRequest), responseModel: UserResponse.self)
             .flatMap({ (result) -> Single<User?> in
-                if let userData = try? result.get() {
-                    return Single.just(
-                        UserFactory.createUser(from: userData)
-                    )
-                } else {
+                guard let userData = try? result.get() else {
                     return Single.just(nil)
                 }
+                return Single.just( UserFactory.createUser(from: userData) )
             }).asSingle()
     }
     
@@ -47,13 +44,10 @@ class UserRepository: UserRepositoryProtocol {
         return riderBookApiService
             .loadRequest(UserTarget.login(loginRequest), responseModel: UserResponse.self)
             .flatMap({ (result) -> Single<User?> in
-                if let userData = try? result.get() {
-                    return Single.just(
-                        UserFactory.createUser(from: userData)
-                    )
-                } else {
+                guard let userData = try? result.get() else {
                     return Single.just(nil)
                 }
+                return Single.just( UserFactory.createUser(from: userData) )
             }).asSingle()
     }
 }
