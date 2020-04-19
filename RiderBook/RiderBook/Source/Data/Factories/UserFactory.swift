@@ -14,7 +14,7 @@ protocol UserFactoryProtocol {
 
 final class UserFactory: UserFactoryProtocol {
     static func createUser(from userResponse: UserResponse) -> User? {
-        return User(userID: userResponse.id,
+        return User(userId: userResponse.id,
                     name: userResponse.name,
                     photoUrl: userResponse.image ?? "",
                     email: userResponse.email,

@@ -9,13 +9,26 @@
 import SwiftUI
 
 struct RidesView: View {
+    @ObservedObject var viewModel: RidesViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("Rides View")
+            }.navigationBarItems(trailing:
+                Button("Add ride".localized()) {
+                self.viewModel.addRideAction()
+            })
+        }
+        
+        
     }
 }
 
 struct RidesView_Previews: PreviewProvider {
+    static let fakeCoordinator = AppCoordinator(window: UIWindow())
+    static let ridesAssembly = RidesAssembly(coordinator: fakeCoordinator)
     static var previews: some View {
-        RidesView()
+        ridesAssembly.getView()
     }
 }

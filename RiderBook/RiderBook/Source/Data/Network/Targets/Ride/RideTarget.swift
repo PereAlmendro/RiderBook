@@ -8,24 +8,14 @@
 
 import Foundation
 
-struct CreateRideRequest: Encodable, RequestableProtocol {
-    let circuitId: String
-    let dateTimeStamp: String
-    let authorization: String
-    
-    func toJsonData() -> Data? {
-        return ["circuitId" : circuitId,
-                "date" : dateTimeStamp ].toJsonData()
-    }
-}
-
 enum RideEndpoint: String  {
     case addRide = "rides/addRide"
     case ridesList = "rides/ridesList"
 }
 
 enum RideTarget: ApiTargetProtocol {
-    case addRide(_ request: CreateRideRequest)
+    case addRide(_ request: AddRideRequest)
+    case rideList(_ request: RideListRequest)
 }
 
 extension RideTarget {
@@ -37,6 +27,8 @@ extension RideTarget {
         switch self {
         case .addRide:
             return RideEndpoint.addRide.rawValue
+        case .rideList:
+            return RideEndpoint.ridesList.rawValue
         }
     }
     
@@ -44,6 +36,8 @@ extension RideTarget {
         switch self {
         case .addRide:
             return .put
+        case .rideList:
+            return .get
         }
     }
     
@@ -51,12 +45,16 @@ extension RideTarget {
         switch self {
         case .addRide(let request):
             return request
+        case .rideList(let request):
+            return request
         }
     }
     
     var headers: [String: String]? {
         switch self {
         case .addRide(let request):
+            return ["Content-Type": "application/json", "authorization" : request.authorization]
+        case .rideList(let request):
             return ["Content-Type": "application/json", "authorization" : request.authorization]
         }
     }

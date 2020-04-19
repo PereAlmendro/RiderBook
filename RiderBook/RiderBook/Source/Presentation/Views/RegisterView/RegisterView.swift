@@ -32,7 +32,6 @@ struct RegisterView: View {
                                     text: self.$viewModel.repeatedPassword,
                                     textFieldPlaceholder: "Repeat password",
                                     secureField: true)
-                    
                 }
                 
                 Spacer()

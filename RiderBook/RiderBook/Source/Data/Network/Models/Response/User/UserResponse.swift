@@ -16,9 +16,4 @@ struct UserResponse: Codable {
     let password: String
     let image: String?
     let expiryDate: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case id, email, name, image, auth, password
-        case expiryDate = "expiry_date"
-    }
 }

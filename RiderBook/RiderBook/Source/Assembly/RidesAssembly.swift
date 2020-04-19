@@ -16,6 +16,7 @@ class RidesAssembly {
     }
 
     func getView() -> RidesView {
-        return RidesView()
+        let rideViewModel = RidesViewModel()
+        return RidesView(viewModel: rideViewModel)
     }
 }

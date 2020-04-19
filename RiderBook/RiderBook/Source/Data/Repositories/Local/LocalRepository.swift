@@ -38,7 +38,7 @@ final class LocalRepository: LocalRepositoryProtocol {
                 let email = data.value(forKey: "email") as! String
                 let password = data.value(forKey: "password") as! String
                 
-                user = User(userID: 0, name: "", photoUrl: "", email: email, password: password, authorization: "")
+                user = User(userId: 0, name: "", photoUrl: "", email: email, password: password, authorization: "")
             }
             return user
         } catch {

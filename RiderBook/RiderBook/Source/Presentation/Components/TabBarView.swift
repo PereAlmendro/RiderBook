@@ -35,9 +35,10 @@ struct TabBarView: View {
 
 #if DEBUG
 struct TabBarView_Previews: PreviewProvider {
-    static let homeView = HomeView()
-    static let ridesView = RidesView()
-    static let profileView = ProfileView()
+    static let fakeCoordinator = AppCoordinator(window: UIWindow())
+    static let homeView = HomeAssembly(coordinator: fakeCoordinator).getView()
+    static let ridesView = RidesAssembly(coordinator: fakeCoordinator).getView()
+    static let profileView = ProfileAssembly(coordinator: fakeCoordinator).getView()
     
     static var previews: some View {
         TabBarView(homeView: homeView, ridesView: ridesView, profileView: profileView)
