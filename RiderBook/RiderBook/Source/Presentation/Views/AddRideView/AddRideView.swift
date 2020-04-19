@@ -15,9 +15,22 @@ struct AddRideView: View {
         LoadingView(isShowing: $viewModel.loading) {
             VStack(alignment: .center) {
                 List {
-                    DatePicker("Select a date",
-                               selection: .constant(Date()), in: ...Date(),
+                    
+                    Text("Select a date").font(.headline).padding()
+                    
+                    DatePicker("", selection: .constant(Date()), in: Date()...,
                                displayedComponents: .date)
+                        .labelsHidden()
+                    
+                    Text("Select a circuit").font(.headline).padding()
+                    
+                    // SWIFT UI BUG : PICKER DOES NOT REFRESH
+                    Picker(selection: self.$viewModel.selectedCircuit,
+                           label: Text("Select a circuit")) {
+                            ForEach(self.viewModel.circuits, id: \.self) { circuit in
+                                Text(circuit.name)
+                            }
+                    }.labelsHidden()
                 }
                 
                 Spacer()
@@ -27,14 +40,6 @@ struct AddRideView: View {
                 })
             }
         }
-        .alert(isPresented: .constant(false)) { () -> Alert in
-            Alert(title: Text("viewModel.errorTitle.localized()"),
-                  message: Text("viewModel.errorMessage"),
-                  dismissButton: .default(Text("Ok")))
-        }
-        
-        
-        
     }
 }
 

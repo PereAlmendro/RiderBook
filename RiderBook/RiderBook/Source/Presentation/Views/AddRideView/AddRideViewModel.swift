@@ -15,6 +15,7 @@ class AddRideViewModel: ObservableObject  {
     
     @Published var loading: Bool = false
     @Published var circuits: [Circuit] = []
+    @Published var selectedCircuit: Circuit? 
     
     // MARK: - Private properties
     

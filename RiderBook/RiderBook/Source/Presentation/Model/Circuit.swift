@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Circuit {
+struct Circuit: Hashable {
     let id: Int
     let name: String
     let location: String
