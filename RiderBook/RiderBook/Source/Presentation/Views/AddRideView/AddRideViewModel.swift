@@ -1,5 +1,5 @@
 //
-//  RidesViewModel.swift
+//  AddRideViewModel.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 19/04/2020.
@@ -8,24 +8,26 @@
 
 import Foundation
 
-class RidesViewModel: ObservableObject  {
+class AddRideViewModel: ObservableObject  {
 
     // MARK: - View properties
     
     // MARK: - Private properties
     
+    private let rideService: RideServiceProtocol
     private var coordinator: AppCoordinatorProtocol
-
+    
     // MARK: - Lifecycle
     
-    init(coordinator: AppCoordinatorProtocol) {
+    init(rideService: RideServiceProtocol, coordinator: AppCoordinatorProtocol) {
+        self.rideService = rideService
         self.coordinator = coordinator
     }
     
     // MARK: - User Actions
     
     func addRideAction() {
-        coordinator.showAddRide()
+        
     }
     
     // MARK: - Private methods
