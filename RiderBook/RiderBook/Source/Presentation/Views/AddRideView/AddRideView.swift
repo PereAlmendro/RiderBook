@@ -12,8 +12,7 @@ struct AddRideView: View {
     @ObservedObject var viewModel: AddRideViewModel
 
     var body: some View {
-        
-        LoadingView(isShowing: .constant(false)) {
+        LoadingView(isShowing: $viewModel.loading) {
             VStack(alignment: .center) {
                 List {
                     DatePicker("Select a date",
@@ -22,10 +21,9 @@ struct AddRideView: View {
                 }
                 
                 Spacer()
-                
+                 
                 CustomButton(title: "Add_ride" , action: {
-                    
-                    
+                    self.viewModel.addRideAction()
                 })
             }
         }

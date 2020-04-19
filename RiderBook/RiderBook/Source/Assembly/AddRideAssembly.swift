@@ -18,9 +18,17 @@ class AddRideAssembly {
     
     func getView() -> AddRideView {
         let riderBookApiService = RiderBookApiService()
+        
         let rideRepository = RideRepository(riderBookApiService: riderBookApiService)
+        let circuitRepository = CircuitRepository(riderBookApiService: riderBookApiService)
+
         let rideService = RideService(rideRepository: rideRepository)
-        let addRideViewModel = AddRideViewModel(rideService: rideService, coordinator: coordinator)
+        let circuitService = CircuitService(circuitRepository: circuitRepository)
+        
+        let addRideViewModel = AddRideViewModel(rideService: rideService,
+                                                circuitService: circuitService,
+                                                coordinator: coordinator)
+        
         return AddRideView(viewModel: addRideViewModel)
     }
 }
