@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 import RxSwift
 
 protocol RiderBookApiServiceProtocol {
@@ -15,6 +16,33 @@ protocol RiderBookApiServiceProtocol {
 }
 
 final class RiderBookApiService: RiderBookApiServiceProtocol {
+    func loadCombineRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
+                                    responseModel: ResponseModel.Type)
+        -> AnyPublisher<ResponseModel, RiderBookApiServiceError> {
+            
+            // TODO : Remove Forceds
+            var urlComponents = URLComponents(url: URL(string: target.baseUrl.rawValue)!, resolvingAgainstBaseURL: true)!
+            urlComponents.queryItems = target.queryItems
+            urlComponents.path = target.endPoint
+            
+            var request = URLRequest(url: urlComponents.url!)
+            request.httpMethod = target.method.rawValue
+            request.allHTTPHeaderFields = target.headers
+            if let requestJsonData = target.requestObject?.toJsonData() {
+                request.httpBody = requestJsonData
+            }
+            
+            let decoder = JSONDecoder()
+            
+            return URLSession.shared.dataTaskPublisher(for: request)
+                .map { data, response in data }
+                .mapError { error in RiderBookApiServiceError.responseError(error) }
+                .decode(type: responseModel.self, decoder: decoder)
+                .mapError { error in RiderBookApiServiceError.parseError(error) }
+                .receive(on: DispatchQueue.main)
+                .eraseToAnyPublisher()
+            
+    }
     
     func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
                                                responseModel: ResponseModel.Type) -> Observable<Result<ResponseModel?, RiderBookApiServiceError>> {

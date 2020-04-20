@@ -15,6 +15,7 @@ protocol ApiTargetProtocol {
     var url: URL? { get }
     var headers: [String: String]? { get }
     var requestObject: RequestableProtocol? { get }
+    var queryItems: [URLQueryItem]? { get }
 }
 
 extension ApiTargetProtocol {
@@ -25,6 +26,9 @@ extension ApiTargetProtocol {
         return ["Content-Type": "application/json"]
     }
     var requestObject: RequestableProtocol? {
+        return nil
+    }
+    var queryItems: [URLQueryItem]? {
         return nil
     }
 }

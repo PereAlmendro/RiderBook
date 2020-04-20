@@ -9,6 +9,12 @@
 import Foundation
 
 enum RiderBookApiServiceError: Error {
+    case responseError(Error)
+    case parseError(Error)
+    
+    
+    
+    
     case invalidUrl(error: RiderBookServiceErrorResponse)
     case generic(error: RiderBookServiceErrorResponse)
     case parse(error: RiderBookServiceErrorResponse)
@@ -19,6 +25,8 @@ enum RiderBookApiServiceError: Error {
              .generic(let error),
              .parse(let error):
             return error
+        case .parseError, .responseError:
+            return RiderBookServiceErrorResponse()
         }
     }
 }

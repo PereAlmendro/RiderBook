@@ -23,7 +23,7 @@ class LocalRepositoryTest: XCTestCase {
     }
 
     func testGetSaveUser() throws {
-        let user = User(userID: 11, name: "test",
+        let user = User(userId: 11, name: "test",
                         photoUrl: "", email: "test@test.com",
                         password: "test", authorization: "")
         
