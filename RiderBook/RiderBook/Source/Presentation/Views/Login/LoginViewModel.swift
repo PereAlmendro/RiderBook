@@ -50,6 +50,7 @@ class LoginViewModel: ObservableObject  {
                     default:
                         return
                     }
+                    self?.loading = false
                     },
                       receiveValue: { [weak self] (success) in
                         if success {
