@@ -8,11 +8,11 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 protocol UserRepositoryProtocol {
-    func createUser(name: String, password: String, email: String) -> Single<User?>
-    func login(email: String, password: String, encodedPassword: Bool) -> Single<User?>
+    func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookApiServiceError>
+    func login(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<User?, RiderBookApiServiceError>
 }
 
 class UserRepository: UserRepositoryProtocol {
@@ -23,32 +23,29 @@ class UserRepository: UserRepositoryProtocol {
         self.riderBookApiService = riderBookApiService
     }
     
-    func createUser(name: String, password: String, email: String) -> Single<User?> {
-//        let userRequest = CreateUserRequest(name: name, password: password, image: nil, email: email)
+    func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookApiServiceError> {
+        let userRequest = CreateUserRequest(name: name, password: password, image: nil, email: email)
         
-        return Single.just(nil)
-//        return riderBookApiService
-//            .loadRequest(UserTarget.createUser(userRequest), responseModel: UserResponse.self)
-//            .flatMap({ (result) -> Single<User?> in
-//                guard let userData = try? result.get() else {
-//                    return Single.just(nil)
-//                }
-//                return Single.just( UserFactory.createUser(from: userData) )
-//            }).asSingle()
+        return riderBookApiService
+            .loadRequest(UserTarget.createUser(userRequest), responseModel: UserResponse.self)
+            .map { (response) -> User? in
+                guard let userResponse = response else {
+                    return nil
+                }
+                return UserFactory.createUser(from: userResponse)
+        }.eraseToAnyPublisher()
     }
     
-    func login(email: String, password: String, encodedPassword: Bool = false) -> Single<User?> {
+    func login(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<User?, RiderBookApiServiceError> {
+        let loginRequest = LoginRequest(email: email, password: password, encodedPassword: encodedPassword)
         
-//        let loginRequest = LoginRequest(email: email, password: password, encodedPassword: encodedPassword)
-        
-        return Single.just(nil)
-//        return riderBookApiService
-//            .loadRequest(UserTarget.login(loginRequest), responseModel: UserResponse.self)
-//            .flatMap({ (result) -> Single<User?> in
-//                guard let userData = try? result.get() else {
-//                    return Single.just(nil)
-//                }
-//                return Single.just( UserFactory.createUser(from: userData) )
-//            }).asSingle()
+        return riderBookApiService
+            .loadRequest(UserTarget.login(loginRequest), responseModel: UserResponse.self)
+            .map { (response) -> User? in
+                guard let userResponse = response else {
+                    return nil
+                }
+                return UserFactory.createUser(from: userResponse)
+        }.eraseToAnyPublisher()
     }
 }

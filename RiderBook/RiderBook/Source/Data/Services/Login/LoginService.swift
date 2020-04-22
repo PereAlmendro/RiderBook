@@ -35,27 +35,29 @@ class LoginService: LoginServiceProtocol {
     // MARK: - Public functions
     
     func register(name: String, password: String, email: String)  -> Single<Bool> {
-        return userRepository
-            .createUser(name: name, password: password, email: email)
-            .flatMap({ [weak self] (user) -> Single<Bool> in
-                guard
-                    let user = user,
-                    let userSaved = self?.localRepository.saveUser(user),
-                    userSaved else { return Single.just(false) }
-                return Single.just(userSaved)
-            })
+        return Single.just(true)
+//        return userRepository
+//            .createUser(name: name, password: password, email: email)
+//            .flatMap({ [weak self] (user) -> Single<Bool> in
+//                guard
+//                    let user = user,
+//                    let userSaved = self?.localRepository.saveUser(user),
+//                    userSaved else { return Single.just(false) }
+//                return Single.just(userSaved)
+//            })
     }
     
     func logIn(email: String, password: String, encodedPassword: Bool = false) -> Single<Bool> {
-        return userRepository
-            .login(email: email, password: password, encodedPassword: encodedPassword)
-            .flatMap({ [weak self] (user) -> Single<Bool> in
-                guard
-                    let user = user,
-                    let userSaved = self?.localRepository.saveUser(user),
-                    userSaved else { return Single.just(false) }
-                return Single.just(userSaved)
-            })
+        return Single.just(true)
+//        return userRepository
+//            .login(email: email, password: password, encodedPassword: encodedPassword)
+//            .flatMap({ [weak self] (user) -> Single<Bool> in
+//                guard
+//                    let user = user,
+//                    let userSaved = self?.localRepository.saveUser(user),
+//                    userSaved else { return Single.just(false) }
+//                return Single.just(userSaved)
+//            })
     }
     
     func attemptAutologin() -> Single<Bool> {
