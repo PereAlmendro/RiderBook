@@ -22,17 +22,19 @@ class RideRepository: RideRepositoryProtocol {
     }
     
     func addRide(circuitId: Int, date: Date) -> Single<Bool> {
-        let addRideRequest = AddRideRequest(circuitId: circuitId, dateTimeStamp: Int(date.timeIntervalSince1970), authorization: "")
+//        let addRideRequest = AddRideRequest(circuitId: circuitId, dateTimeStamp: Int(date.timeIntervalSince1970), authorization: "")
         
-        return riderBookApiService
-            .loadRequest(RideTarget.addRide(addRideRequest), responseModel: AddRideResponse.self)
-            .flatMap({ (result) -> Single<Bool> in
-                guard let result = try? result.get(),
-                    result.id != nil else {
-                    return Single.just(false)
-                }
-                return Single.just(true)
-        }).asSingle()
+        return Single.just(true)
+        
+//        return riderBookApiService
+//            .loadRequest(RideTarget.addRide(addRideRequest), responseModel: AddRideResponse.self)
+//            .flatMap({ (result) -> Single<Bool> in
+//                guard let result = try? result.get(),
+//                    result.id != nil else {
+//                    return Single.just(false)
+//                }
+//                return Single.just(true)
+//        }).asSingle()
     }
     
 }

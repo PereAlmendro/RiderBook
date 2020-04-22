@@ -24,30 +24,31 @@ class UserRepository: UserRepositoryProtocol {
     }
     
     func createUser(name: String, password: String, email: String) -> Single<User?> {
-        let userRequest = CreateUserRequest(name: name, password: password, image: nil, email: email)
+//        let userRequest = CreateUserRequest(name: name, password: password, image: nil, email: email)
         
-        return riderBookApiService
-            .loadRequest(UserTarget.createUser(userRequest), responseModel: UserResponse.self)
-            .flatMap({ (result) -> Single<User?> in
-                guard let userData = try? result.get() else {
-                    return Single.just(nil)
-                }
-                return Single.just( UserFactory.createUser(from: userData) )
-            }).asSingle()
+        return Single.just(nil)
+//        return riderBookApiService
+//            .loadRequest(UserTarget.createUser(userRequest), responseModel: UserResponse.self)
+//            .flatMap({ (result) -> Single<User?> in
+//                guard let userData = try? result.get() else {
+//                    return Single.just(nil)
+//                }
+//                return Single.just( UserFactory.createUser(from: userData) )
+//            }).asSingle()
     }
     
     func login(email: String, password: String, encodedPassword: Bool = false) -> Single<User?> {
         
-        let loginRequest = LoginRequest(email: email, password: password,
-                                        encodedPassword: encodedPassword)
+//        let loginRequest = LoginRequest(email: email, password: password, encodedPassword: encodedPassword)
         
-        return riderBookApiService
-            .loadRequest(UserTarget.login(loginRequest), responseModel: UserResponse.self)
-            .flatMap({ (result) -> Single<User?> in
-                guard let userData = try? result.get() else {
-                    return Single.just(nil)
-                }
-                return Single.just( UserFactory.createUser(from: userData) )
-            }).asSingle()
+        return Single.just(nil)
+//        return riderBookApiService
+//            .loadRequest(UserTarget.login(loginRequest), responseModel: UserResponse.self)
+//            .flatMap({ (result) -> Single<User?> in
+//                guard let userData = try? result.get() else {
+//                    return Single.just(nil)
+//                }
+//                return Single.just( UserFactory.createUser(from: userData) )
+//            }).asSingle()
     }
 }

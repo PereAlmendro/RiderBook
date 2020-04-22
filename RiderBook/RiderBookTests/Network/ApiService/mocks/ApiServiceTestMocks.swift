@@ -10,39 +10,38 @@ import Foundation
 @testable import RiderBook
 
 enum MockEndpoints: String {
-    case Invalid = ""
-    case valid = "user/login"
+    case invalid = "hello/fake"
+    case valid = "/RiderBook/symfony/web/user/login"
 }
 
 enum MockTarget: ApiTargetProtocol {
-    case errorDomain
+    case invalidUrl
+    case invalidPath
     case success
     case error
-    case invalidUrl
 }
 
 extension MockTarget {
-    var url: URL? {
-        switch self {
-        case .invalidUrl:
-            return nil
-        case .errorDomain:
-            return URL(string: "www.testAbsolutelyAFakeDomain.com")
-        case .success, .error:
-            return URL(string: baseUrl.rawValue.appending(endPoint))
-        }
-    }
     
-    var baseUrl: ApiBaseUrl {
-        return .riderBookBaseUrl
+    var baseUrl: ApiHostUrl {
+        switch self {
+        case .invalidPath:
+            return .riderBook
+        case .invalidUrl:
+            return .noHost
+        case .error:
+            return .invalidHost
+        default:
+            return .riderBook
+        }
     }
     
     var endPoint: String {
         switch self {
         case .success, .error:
             return MockEndpoints.valid.rawValue
-        case .errorDomain, .invalidUrl:
-            return MockEndpoints.Invalid.rawValue
+        case .invalidPath, .invalidUrl:
+            return MockEndpoints.invalid.rawValue
         }
     }
     
@@ -58,9 +57,7 @@ extension MockTarget {
         switch self {
         case .success:
             return LoginRequest(email: "test@test.com", password: "test", encodedPassword: false)
-        case .error:
-            return LoginRequest(email: "testLoginError", password: "testLoginError", encodedPassword: false)
-        case .errorDomain, .invalidUrl:
+        case .error, .invalidPath, .invalidUrl:
             return LoginRequest(email: "testLoginError", password: "testLoginError", encodedPassword: false)
         }
     }

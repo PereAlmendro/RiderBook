@@ -17,8 +17,8 @@ enum CircuitTarget: ApiTargetProtocol {
 }
 
 extension CircuitTarget {
-    var baseUrl: ApiBaseUrl {
-        return .riderBookBaseUrl
+    var baseUrl: ApiHostUrl {
+        return .riderBook
     }
     
     var endPoint: String {

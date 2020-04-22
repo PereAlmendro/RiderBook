@@ -22,17 +22,19 @@ class CircuitRepository: CircuitRepositoryProtocol {
     }
 
     func getCircuits() -> Single<[Circuit]> {
-        return riderBookApiService
-            .loadRequest(CircuitTarget.getCircuits, responseModel: [CircuitResponse].self)
-            .flatMap({ (result) -> Single<[Circuit]> in
-                guard let circuits = try? result.get() else {
-                    return Single.just([])
-                }
-                return Single.just(
-                    circuits.compactMap({ CircuitFactory.createCircuit(from: $0)  })
-                )
-            })
-            .asSingle()
+        
+        return Single.just([])
+//        return riderBookApiService
+//            .loadRequest(CircuitTarget.getCircuits, responseModel: [CircuitResponse].self)
+//            .flatMap({ (result) -> Single<[Circuit]> in
+//                guard let circuits = try? result.get() else {
+//                    return Single.just([])
+//                }
+//                return Single.just(
+//                    circuits.compactMap({ CircuitFactory.createCircuit(from: $0)  })
+//                )
+//            })
+//            .asSingle()
     }
     
 }

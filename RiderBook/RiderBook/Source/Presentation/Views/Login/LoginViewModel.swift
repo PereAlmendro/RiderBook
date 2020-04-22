@@ -56,9 +56,8 @@ class LoginViewModel: ObservableObject  {
             }) { [weak self] (error) in
                 
                 self?.loading = false
-                if let error = error as? RiderBookApiServiceError,
-                    let errorMessage = error.getError().message {
-                    self?.showError(message: errorMessage)
+                if let error = error as? RiderBookApiServiceError {
+                    self?.showError(message: error.description())
                 } else {
                     self?.showError(message: "Something went wrong, try again later")
                 }

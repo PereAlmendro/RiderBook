@@ -9,19 +9,15 @@
 import Foundation
 
 protocol ApiTargetProtocol {
-    var baseUrl: ApiBaseUrl { get }
+    var baseUrl: ApiHostUrl { get }
     var endPoint: String { get }
     var method: HttpMethod { get }
-    var url: URL? { get }
     var headers: [String: String]? { get }
     var requestObject: RequestableProtocol? { get }
     var queryItems: [URLQueryItem]? { get }
 }
 
 extension ApiTargetProtocol {
-    var url: URL? {
-        return URL(string: baseUrl.rawValue.appending(endPoint))
-    }
     var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }

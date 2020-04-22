@@ -7,13 +7,13 @@
 //
 
 import XCTest
-import RxSwift
+import Combine
 @testable import RiderBook
 
 final class RiderBookApiServiceTest: XCTestCase {
     
     private var rbApiService: RiderBookApiService!
-    private var disposeBag = DisposeBag()
+    private var anyCancellables: [AnyCancellable] = []
     
     override func setUp() {
         super.setUp()
@@ -23,81 +23,96 @@ final class RiderBookApiServiceTest: XCTestCase {
     override func tearDown() {
         super.tearDown()
         rbApiService = nil
+        for cancellable in anyCancellables {
+            cancellable.cancel()
+        }
+        anyCancellables = []
     }
     
-    func testInvalidUrl() {
-        let expectation = XCTestExpectation(description: "Empty URL")
+    func testSuccessResult() {
+        let expectation = XCTestExpectation()
         
-        rbApiService
+        let request = rbApiService
+            .loadRequest(MockTarget.success, responseModel: UserResponse.self)
+            .sink(receiveCompletion: {
+                print($0)
+            }, receiveValue: {
+                $0?.email == "test@test.com" ? expectation.fulfill() : XCTFail()
+            })
+        
+        anyCancellables += [
+            request
+        ]
+        
+        wait(for: [expectation], timeout: 10)
+    }
+    
+    func testInvalidBaseUrl() {
+        let expectation = XCTestExpectation()
+        
+        let request = rbApiService
             .loadRequest(MockTarget.invalidUrl, responseModel: String.self)
-            .subscribe(onError: { (error) in
-                guard let error = error as? RiderBookApiServiceError else { return }
-                if error.getError().message == expectation.description {
-                    expectation.fulfill()
+            .sink(receiveCompletion: { (completion) in
+                print(completion)
+                switch completion {
+                case .failure(let error):
+                    if error.description() == "Malformed URL" {
+                        expectation.fulfill()
+                    }
+                case .finished: return
                 }
-            }).disposed(by: disposeBag)
+            }, receiveValue: { print($0 as Any) })
+        
+        anyCancellables += [
+            request
+        ]
         
         wait(for: [expectation], timeout: 10)
     }
     
-    func testInvalidDomainUrl() {
-        let expectation = XCTestExpectation(description: "www.testAbsolutelyAFakeDomain.com")
+    func testInvalidPathUrl() {
+        let expectation = XCTestExpectation()
         
-        rbApiService
-            .loadRequest(MockTarget.errorDomain, responseModel: String.self)
-            .subscribe(onError: { (error) in
-                guard let error = error as? RiderBookApiServiceError else { return }
-                if error.getError().requestPath == expectation.description {
-                    expectation.fulfill()
+        let request = rbApiService
+            .loadRequest(MockTarget.invalidPath, responseModel: String.self)
+            .sink(receiveCompletion: { (completion) in
+                print(completion)
+                switch completion {
+                case .failure(let error):
+                    if error.description() == "Malformed URL" {
+                        expectation.fulfill()
+                    }
+                case .finished: return
                 }
-            }).disposed(by: disposeBag)
+            }, receiveValue: { print($0 as Any) })
+        
+        anyCancellables += [
+            request
+        ]
         
         wait(for: [expectation], timeout: 10)
     }
-    
+
     func testErrorResult() {
         let expectation = XCTestExpectation()
         
-        rbApiService
+        let request = rbApiService
             .loadRequest(MockTarget.error, responseModel: UserResponse.self)
-            .subscribe(onError: { (error) in
-                guard let error = error as? RiderBookApiServiceError else { return }
-                if error.getError().code == 400 {
-                    expectation.fulfill()
+            .sink(receiveCompletion: { (completion) in
+                print(completion)
+                switch completion {
+                case .failure(let error):
+                    if error.description() == "Response error" {
+                        expectation.fulfill()
+                    }
+                case .finished: return
                 }
-            }).disposed(by: disposeBag)
+            }, receiveValue: { print($0 as Any) })
+        
+        anyCancellables += [
+            request
+        ]
         
         wait(for: [expectation], timeout: 10)
     }
-    
-    func testErrorDecodingResult() {
-        let expectation = XCTestExpectation(description: "Unable to decode the response")
-        
-        rbApiService
-            .loadRequest(MockTarget.success, responseModel: String.self)
-            .subscribe(onError: { (error) in
-                guard let error = error as? RiderBookApiServiceError else { return }
-                if error.getError().message == expectation.description {
-                    expectation.fulfill()
-                }
-            }).disposed(by: disposeBag)
-        
-        wait(for: [expectation], timeout: 10)
-    }
-    
-    func testSucessResult() {
-        let expectation = XCTestExpectation()
-        
-        rbApiService
-            .loadRequest(MockTarget.success, responseModel: UserResponse.self)
-            .subscribe(onNext: { (result) in
-                guard let userData = try? result.get() else { return }
-                if userData.name == "test" && userData.email == "test@test.com" {
-                    expectation.fulfill()
-                }
-            }).disposed(by: disposeBag)
-        
-        wait(for: [expectation], timeout: 10)
-    }
-    
 }

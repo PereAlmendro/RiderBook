@@ -19,8 +19,8 @@ enum RideTarget: ApiTargetProtocol {
 }
 
 extension RideTarget {
-    var baseUrl: ApiBaseUrl {
-        return .riderBookBaseUrl
+    var baseUrl: ApiHostUrl {
+        return .riderBook
     }
     
     var endPoint: String {

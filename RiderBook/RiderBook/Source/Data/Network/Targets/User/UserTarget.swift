@@ -9,8 +9,8 @@
 import Foundation
 
 enum UserEndpoint: String  {
-    case new = "user/new"
-    case login = "user/login"
+    case new = "/RiderBook/symfony/web/user/new"
+    case login = "/RiderBook/symfony/web/user/login"
 }
 
 enum UserTarget: ApiTargetProtocol {
@@ -19,8 +19,8 @@ enum UserTarget: ApiTargetProtocol {
 }
 
 extension UserTarget {
-    var baseUrl: ApiBaseUrl {
-        return .riderBookBaseUrl
+    var baseUrl: ApiHostUrl {
+        return .riderBook
     }
     
     var endPoint: String {

@@ -31,7 +31,7 @@
 		193BF2CB244CA4A50017E644 /* AddRideAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2CA244CA4A50017E644 /* AddRideAssembly.swift */; };
 		193DEE9F24446E2500815150 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEE9E24446E2500815150 /* UserResponse.swift */; };
 		193DEEA124446E5300815150 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA024446E5300815150 /* LoginRequest.swift */; };
-		193DEEA824446F8100815150 /* ApiBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA724446F8100815150 /* ApiBaseUrl.swift */; };
+		193DEEA824446F8100815150 /* ApiHostUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA724446F8100815150 /* ApiHostUrl.swift */; };
 		193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAA24446FAB00815150 /* HttpMethod.swift */; };
 		193DEEAD24446FFB00815150 /* RequestableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAC24446FFB00815150 /* RequestableProtocol.swift */; };
 		193DEEAF244472B900815150 /* RiderBookServiceErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAE244472B900815150 /* RiderBookServiceErrorResponse.swift */; };
@@ -78,8 +78,6 @@
 		19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */; };
 		19CA2F70244AF0FA00DBDAA4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */; };
 		19CA2F72244AF37C00DBDAA4 /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */; };
-		19CA2F7B244AFC5A00DBDAA4 /* UserRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F7A244AFC5A00DBDAA4 /* UserRepositoryTest.swift */; };
-		19CA2F7E244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F7D244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift */; };
 		19CA2F83244B41F300DBDAA4 /* LocalRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F82244B41F300DBDAA4 /* LocalRepositoryTest.swift */; };
 		19D5E1F2243E3D6000CAEC27 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
@@ -135,7 +133,7 @@
 		193BF2CA244CA4A50017E644 /* AddRideAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideAssembly.swift; sourceTree = "<group>"; };
 		193DEE9E24446E2500815150 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		193DEEA024446E5300815150 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
-		193DEEA724446F8100815150 /* ApiBaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBaseUrl.swift; sourceTree = "<group>"; };
+		193DEEA724446F8100815150 /* ApiHostUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHostUrl.swift; sourceTree = "<group>"; };
 		193DEEAA24446FAB00815150 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		193DEEAC24446FFB00815150 /* RequestableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestableProtocol.swift; sourceTree = "<group>"; };
 		193DEEAE244472B900815150 /* RiderBookServiceErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookServiceErrorResponse.swift; sourceTree = "<group>"; };
@@ -192,8 +190,6 @@
 		19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
-		19CA2F7A244AFC5A00DBDAA4 /* UserRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTest.swift; sourceTree = "<group>"; };
-		19CA2F7D244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTestMocks.swift; sourceTree = "<group>"; };
 		19CA2F82244B41F300DBDAA4 /* LocalRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryTest.swift; sourceTree = "<group>"; };
 		19D5E1F1243E3D6000CAEC27 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
@@ -383,7 +379,7 @@
 		193DEEA624446F7100815150 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				193DEEA724446F8100815150 /* ApiBaseUrl.swift */,
+				193DEEA724446F8100815150 /* ApiHostUrl.swift */,
 				193DEEAA24446FAB00815150 /* HttpMethod.swift */,
 			);
 			path = Common;
@@ -827,23 +823,6 @@
 			path = RegisterView;
 			sourceTree = "<group>";
 		};
-		19CA2F79244AFBDB00DBDAA4 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				19CA2F7C244B1F3700DBDAA4 /* mocks */,
-				19CA2F7A244AFC5A00DBDAA4 /* UserRepositoryTest.swift */,
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
-		19CA2F7C244B1F3700DBDAA4 /* mocks */ = {
-			isa = PBXGroup;
-			children = (
-				19CA2F7D244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift */,
-			);
-			path = mocks;
-			sourceTree = "<group>";
-		};
 		19CA2F7F244B41BB00DBDAA4 /* Local */ = {
 			isa = PBXGroup;
 			children = (
@@ -864,7 +843,6 @@
 			isa = PBXGroup;
 			children = (
 				19CA2F7F244B41BB00DBDAA4 /* Local */,
-				19CA2F79244AFBDB00DBDAA4 /* User */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1229,7 +1207,7 @@
 				1933B39624406D8200D0BF44 /* FavouritesView.swift in Sources */,
 				19CA2F6B244AE95F00DBDAA4 /* SplashAssembly.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
-				193DEEA824446F8100815150 /* ApiBaseUrl.swift in Sources */,
+				193DEEA824446F8100815150 /* ApiHostUrl.swift in Sources */,
 				190DC0C52442250F00BDFD9A /* RidesAssembly.swift in Sources */,
 				19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
@@ -1272,11 +1250,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19CA2F7E244B1F5400DBDAA4 /* UserRepositoryTestMocks.swift in Sources */,
 				19CA2F83244B41F300DBDAA4 /* LocalRepositoryTest.swift in Sources */,
 				1984639F24465D5900C4E25B /* ApiServiceTestMocks.swift in Sources */,
 				1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */,
-				19CA2F7B244AFC5A00DBDAA4 /* UserRepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,26 +8,34 @@
 
 import Foundation
 import Combine
-import RxSwift
 
 protocol RiderBookApiServiceProtocol {
     func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
-                                               responseModel: ResponseModel.Type) -> Observable<Result<ResponseModel?, RiderBookApiServiceError>>
+                                               responseModel: ResponseModel.Type)
+        -> AnyPublisher<ResponseModel?, RiderBookApiServiceError>
 }
 
 final class RiderBookApiService: RiderBookApiServiceProtocol {
-    func loadCombineRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
-                                    responseModel: ResponseModel.Type)
-        -> AnyPublisher<ResponseModel, RiderBookApiServiceError> {
+    func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
+                                               responseModel: ResponseModel.Type)
+        -> AnyPublisher<ResponseModel?, RiderBookApiServiceError> {
             
-            // TODO : Remove Forceds
-            var urlComponents = URLComponents(url: URL(string: target.baseUrl.rawValue)!, resolvingAgainstBaseURL: true)!
-            urlComponents.queryItems = target.queryItems
+            guard let url = URL(string: target.baseUrl.rawValue),
+                var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
+                    return getbadUrlError(responseModel: responseModel)
+            }
+            
             urlComponents.path = target.endPoint
+            urlComponents.queryItems = target.queryItems
             
-            var request = URLRequest(url: urlComponents.url!)
+            guard let finalUrl = urlComponents.url else {
+                return getbadUrlError(responseModel: responseModel)
+            }
+            var request = URLRequest(url: finalUrl)
+            
             request.httpMethod = target.method.rawValue
             request.allHTTPHeaderFields = target.headers
+            
             if let requestJsonData = target.requestObject?.toJsonData() {
                 request.httpBody = requestJsonData
             }
@@ -38,74 +46,18 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
                 .map { data, response in data }
                 .mapError { error in RiderBookApiServiceError.responseError(error) }
                 .decode(type: responseModel.self, decoder: decoder)
-                .mapError { error in RiderBookApiServiceError.parseError(error) }
+                .mapError { error in RiderBookApiServiceError.responseError(error) }
+                .map({ (result) -> ResponseModel? in result })
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
-            
     }
     
-    func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
-                                               responseModel: ResponseModel.Type) -> Observable<Result<ResponseModel?, RiderBookApiServiceError>> {
-        return Observable<Result<ResponseModel?, RiderBookApiServiceError>>.create { observer in
-            
-            guard let url = target.url else {
-                let serviceError = RiderBookServiceErrorResponse(code: 0,
-                                                                 message: "Empty URL",
-                                                                 requestPath: "")
-                observer.onError(
-                    RiderBookApiServiceError.invalidUrl(error: serviceError)
-                )
-                observer.onCompleted()
-                return Disposables.create()
-            }
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = target.method.rawValue
-            request.allHTTPHeaderFields = target.headers
-            
-            if let requestJsonData = target.requestObject?.toJsonData() {
-                request.httpBody = requestJsonData
-            }
-            
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) -> Void in
-                if let error = error {
-                    let serviceError = RiderBookServiceErrorResponse(code: 0,
-                                                                     message: error.localizedDescription,
-                                                                     requestPath: request.url?.absoluteString)
-                    observer.onError(
-                        RiderBookApiServiceError.generic(error: serviceError)
-                    )
-                } else if let data = data,
-                    let responseModel = try? JSONDecoder().decode(ResponseModel.self, from: data) {
-                    // sucess. Return decoded object
-                    observer.onNext(
-                        .success(responseModel)
-                    )
-                } else if let data = data,
-                    var error: RiderBookServiceErrorResponse = try? JSONDecoder().decode(RiderBookServiceErrorResponse.self, from: data) {
-                    error.requestPath = request.url?.absoluteString
-                    
-                    if error.code == nil && error.message == nil {
-                        // Unable to decode backend error message, this can be a server crash
-                        error.code = 0
-                        error.message = "Unable to decode the response"
-                    }
-                    
-                    observer.onError(
-                        RiderBookApiServiceError.generic(error: error)
-                    )
-                } else {
-                    observer.onNext(
-                        .success(nil)
-                    )
-                }
-                observer.onCompleted()
-            }
-            task.resume()
-            
-            return Disposables.create {
-                task.cancel()
-            }
-        }
+    private func getbadUrlError<ResponseModel: Decodable>(responseModel: ResponseModel.Type)
+        -> AnyPublisher<ResponseModel?, RiderBookApiServiceError> {
+        return Result<Int, Error>.Publisher(URLError(.badURL))
+            .map({ response -> ResponseModel? in nil })
+            .mapError({ error in RiderBookApiServiceError.badRequest(error) })
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
 }
