@@ -12,7 +12,7 @@ import Combine
 
 class UserRepositoryMockSuccessApiService: RiderBookApiServiceProtocol {
     func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol, responseModel: ResponseModel.Type)
-        -> AnyPublisher<ResponseModel?, RiderBookApiServiceError> {
+        -> AnyPublisher<ResponseModel?, RiderBookError> {
             return Result<Int, Error>.Publisher(0)
                 .map({ (result) -> ResponseModel? in
                     return UserResponse(id: 11,
@@ -23,7 +23,7 @@ class UserRepositoryMockSuccessApiService: RiderBookApiServiceProtocol {
                                         image: nil,
                                         expiryDate: 1587574406) as? ResponseModel
                 })
-                .mapError({ error in RiderBookApiServiceError.badRequest(error) })
+                .mapError({ error in RiderBookError.badRequest(error) })
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
     }
@@ -31,12 +31,12 @@ class UserRepositoryMockSuccessApiService: RiderBookApiServiceProtocol {
 
 class UserRepositoryMockNilUserApiService: RiderBookApiServiceProtocol {
     func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol, responseModel: ResponseModel.Type)
-        -> AnyPublisher<ResponseModel?, RiderBookApiServiceError> {
+        -> AnyPublisher<ResponseModel?, RiderBookError> {
             return Result<Int, Error>.Publisher(0)
                 .map({ (result) -> ResponseModel? in
                     return nil
                 })
-                .mapError({ error in RiderBookApiServiceError.badRequest(error) })
+                .mapError({ error in RiderBookError.badRequest(error) })
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
     }

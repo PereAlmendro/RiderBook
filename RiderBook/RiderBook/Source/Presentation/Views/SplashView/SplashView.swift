@@ -17,6 +17,9 @@ struct SplashView: View {
             .resizable()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .edgesIgnoringSafeArea(.all)
+            .onAppear {
+                self.viewModel.attemptAutoLogin()
+        }
     }
 }
 

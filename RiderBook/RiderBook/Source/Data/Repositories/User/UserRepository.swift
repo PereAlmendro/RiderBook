@@ -11,8 +11,8 @@ import Foundation
 import Combine
 
 protocol UserRepositoryProtocol {
-    func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookApiServiceError>
-    func login(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<User?, RiderBookApiServiceError>
+    func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookError>
+    func login(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<User?, RiderBookError>
 }
 
 class UserRepository: UserRepositoryProtocol {
@@ -23,7 +23,7 @@ class UserRepository: UserRepositoryProtocol {
         self.riderBookApiService = riderBookApiService
     }
     
-    func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookApiServiceError> {
+    func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookError> {
         let userRequest = CreateUserRequest(name: name, password: password, image: nil, email: email)
         
         return riderBookApiService
@@ -36,7 +36,7 @@ class UserRepository: UserRepositoryProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func login(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<User?, RiderBookApiServiceError> {
+    func login(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<User?, RiderBookError> {
         let loginRequest = LoginRequest(email: email, password: password, encodedPassword: encodedPassword)
         
         return riderBookApiService

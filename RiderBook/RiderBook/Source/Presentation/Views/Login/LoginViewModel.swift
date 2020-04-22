@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-import RxSwift
+import Combine
 
 class LoginViewModel: ObservableObject  {
     
@@ -25,7 +25,7 @@ class LoginViewModel: ObservableObject  {
     
     private var loginService: LoginServiceProtocol
     private var coordinator: AppCoordinatorProtocol
-    private var disposeBag = DisposeBag()
+    private var cancellables: [AnyCancellable?] = []
     
     // MARK: - Lifecycle
     
@@ -40,29 +40,25 @@ class LoginViewModel: ObservableObject  {
         guard validateCredentials() else { return }
         
         loading = true
-        loginService
-            .logIn(email: email, password: password, encodedPassword: false)
-            .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
-            .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] (success) in
-                
-                self?.loading = false
-                if success {
-                    self?.coordinator.showHome()
-                } else {
-                    self?.showError(message: "Something went wrong, try again later")
-                }
-            
-            }) { [weak self] (error) in
-                
-                self?.loading = false
-                if let error = error as? RiderBookApiServiceError {
-                    self?.showError(message: error.description())
-                } else {
-                    self?.showError(message: "Something went wrong, try again later")
-                }
-                
-        }.disposed(by: disposeBag)
+        cancellables += [
+            loginService
+                .logIn(email: email, password: password, encodedPassword: false)
+                .sink(receiveCompletion: { [weak self] (completion) in
+                    switch completion {
+                    case .failure(let error):
+                        self?.showError(message: error.description())
+                    default:
+                        return
+                    }
+                    },
+                      receiveValue: { [weak self] (success) in
+                        if success {
+                            self?.coordinator.showHome()
+                        } else {
+                            self?.showError(message: "Something went wrong, try again later")
+                        }
+                })
+        ]
     }
     
     func registerAction() {

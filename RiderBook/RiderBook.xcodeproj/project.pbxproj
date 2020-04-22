@@ -43,7 +43,7 @@
 		194641EF24499B56000B9B6C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194641EE24499B56000B9B6C /* CustomTextField.swift */; };
 		1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D003244323B200401EB2 /* RiderBookApiService.swift */; };
 		1954D00624432B6600401EB2 /* ApiTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00524432B6600401EB2 /* ApiTargetProtocol.swift */; };
-		1954D00824432B9600401EB2 /* RiderBookApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */; };
+		1954D00824432B9600401EB2 /* RiderBookError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00724432B9600401EB2 /* RiderBookError.swift */; };
 		1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00B24432E1E00401EB2 /* UserRepository.swift */; };
 		1954D01024432E9500401EB2 /* UserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954D00F24432E9500401EB2 /* UserTarget.swift */; };
 		1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955D7A1243DB5DC00F359CA /* LoginService.swift */; };
@@ -153,7 +153,7 @@
 		194641EE24499B56000B9B6C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		1954D003244323B200401EB2 /* RiderBookApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiService.swift; sourceTree = "<group>"; };
 		1954D00524432B6600401EB2 /* ApiTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTargetProtocol.swift; sourceTree = "<group>"; };
-		1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiServiceError.swift; sourceTree = "<group>"; };
+		1954D00724432B9600401EB2 /* RiderBookError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookError.swift; sourceTree = "<group>"; };
 		1954D00B24432E1E00401EB2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		1954D00F24432E9500401EB2 /* UserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTarget.swift; sourceTree = "<group>"; };
 		1955D7A1243DB5DC00F359CA /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 		193DEEA224446E7B00815150 /* RiderBookApiService */ = {
 			isa = PBXGroup;
 			children = (
-				1954D00724432B9600401EB2 /* RiderBookApiServiceError.swift */,
+				1954D00724432B9600401EB2 /* RiderBookError.swift */,
 				1954D003244323B200401EB2 /* RiderBookApiService.swift */,
 			);
 			path = RiderBookApiService;
@@ -1219,7 +1219,7 @@
 				193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */,
 				19CA2F72244AF37C00DBDAA4 /* RegisterAssembly.swift in Sources */,
 				1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */,
-				1954D00824432B9600401EB2 /* RiderBookApiServiceError.swift in Sources */,
+				1954D00824432B9600401EB2 /* RiderBookError.swift in Sources */,
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
 				193DEE9F24446E2500815150 /* UserResponse.swift in Sources */,
 				193DEEAD24446FFB00815150 /* RequestableProtocol.swift in Sources */,

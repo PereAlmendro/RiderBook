@@ -12,13 +12,13 @@ import Combine
 protocol RiderBookApiServiceProtocol {
     func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
                                                responseModel: ResponseModel.Type)
-        -> AnyPublisher<ResponseModel?, RiderBookApiServiceError>
+        -> AnyPublisher<ResponseModel?, RiderBookError>
 }
 
 final class RiderBookApiService: RiderBookApiServiceProtocol {
     func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol,
                                                responseModel: ResponseModel.Type)
-        -> AnyPublisher<ResponseModel?, RiderBookApiServiceError> {
+        -> AnyPublisher<ResponseModel?, RiderBookError> {
             
             guard let url = URL(string: target.baseUrl.rawValue),
                 var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
@@ -44,19 +44,19 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
             
             return URLSession.shared.dataTaskPublisher(for: request)
                 .map { data, response in data }
-                .mapError { error in RiderBookApiServiceError.responseError(error) }
+                .mapError { error in RiderBookError.responseError(error) }
                 .decode(type: responseModel.self, decoder: decoder)
-                .mapError { error in RiderBookApiServiceError.responseError(error) }
+                .mapError { error in RiderBookError.responseError(error) }
                 .map({ (result) -> ResponseModel? in result })
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
     }
     
     private func getbadUrlError<ResponseModel: Decodable>(responseModel: ResponseModel.Type)
-        -> AnyPublisher<ResponseModel?, RiderBookApiServiceError> {
+        -> AnyPublisher<ResponseModel?, RiderBookError> {
         return Result<Int, Error>.Publisher(URLError(.badURL))
             .map({ response -> ResponseModel? in nil })
-            .mapError({ error in RiderBookApiServiceError.badRequest(error) })
+            .mapError({ error in RiderBookError.badRequest(error) })
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }

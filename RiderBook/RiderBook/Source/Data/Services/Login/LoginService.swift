@@ -8,12 +8,12 @@
 
 import Foundation
 import UIKit
-import RxSwift
+import Combine
 
 protocol LoginServiceProtocol {
-    func attemptAutologin() -> Single<Bool>
-    func register(name: String, password: String, email: String)  -> Single<Bool>
-    func logIn(email: String, password: String, encodedPassword: Bool) -> Single<Bool>
+    func attemptAutologin() -> AnyPublisher<Bool, RiderBookError>?
+    func register(name: String, password: String, email: String) -> AnyPublisher<Bool, RiderBookError>
+    func logIn(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<Bool, RiderBookError>
 }
 
 class LoginService: LoginServiceProtocol {
@@ -22,7 +22,6 @@ class LoginService: LoginServiceProtocol {
     
     private let userRepository: UserRepositoryProtocol
     private let localRepository: LocalRepositoryProtocol
-    private var disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
     
@@ -34,36 +33,34 @@ class LoginService: LoginServiceProtocol {
     
     // MARK: - Public functions
     
-    func register(name: String, password: String, email: String)  -> Single<Bool> {
-        return Single.just(true)
-//        return userRepository
-//            .createUser(name: name, password: password, email: email)
-//            .flatMap({ [weak self] (user) -> Single<Bool> in
-//                guard
-//                    let user = user,
-//                    let userSaved = self?.localRepository.saveUser(user),
-//                    userSaved else { return Single.just(false) }
-//                return Single.just(userSaved)
-//            })
-    }
-    
-    func logIn(email: String, password: String, encodedPassword: Bool = false) -> Single<Bool> {
-        return Single.just(true)
-//        return userRepository
-//            .login(email: email, password: password, encodedPassword: encodedPassword)
-//            .flatMap({ [weak self] (user) -> Single<Bool> in
-//                guard
-//                    let user = user,
-//                    let userSaved = self?.localRepository.saveUser(user),
-//                    userSaved else { return Single.just(false) }
-//                return Single.just(userSaved)
-//            })
-    }
-    
-    func attemptAutologin() -> Single<Bool> {
+    func attemptAutologin() -> AnyPublisher<Bool, RiderBookError>? {
         guard let user = localRepository.getUser() else {
-            return Single.just(false)
+            return nil
         }
         return logIn(email: user.email, password: user.password, encodedPassword: true)
+    }
+    
+    func register(name: String, password: String, email: String) -> AnyPublisher<Bool, RiderBookError> {
+        return userRepository
+            .createUser(name: name, password: password, email: email)
+            .map { [weak self] (user) -> Bool in
+                guard let user = user,
+                    let userSaved = self?.localRepository.saveUser(user) else {
+                        return false
+                }
+                return userSaved
+        }.eraseToAnyPublisher()
+    }
+    
+    func logIn(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<Bool, RiderBookError> {
+        return userRepository
+            .login(email: email, password: password, encodedPassword: encodedPassword)
+            .map { [weak self] (user) -> Bool in
+                guard let user = user,
+                    let userSaved = self?.localRepository.saveUser(user) else {
+                    return false
+                }
+                return userSaved
+        }.eraseToAnyPublisher()
     }
 }

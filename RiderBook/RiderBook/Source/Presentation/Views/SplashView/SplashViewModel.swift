@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-import RxSwift
+import Combine
 
 class SplashViewModel: ObservableObject  {
     
@@ -16,7 +16,7 @@ class SplashViewModel: ObservableObject  {
     
     private var loginService: LoginServiceProtocol
     private var coordinator: AppCoordinatorProtocol
-    private var disposeBag = DisposeBag()
+    private var cancellables: [AnyCancellable?] = []
     
     // MARK: - Lifecycle
     
@@ -24,19 +24,25 @@ class SplashViewModel: ObservableObject  {
          coordinator: AppCoordinatorProtocol) {
         self.loginService = loginService
         self.coordinator = coordinator
-        
-        attemptAutoLogin()
     }
     
     func attemptAutoLogin() {
-        loginService
-            .attemptAutologin()
-            .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
-            .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self]  (success) in
-                success ? self?.coordinator.showHome() : self?.coordinator.showLogin()
-            }) { [weak self] (error) in
-                self?.coordinator.showLogin()
-        }.disposed(by: disposeBag)
+        guard let autologinRequest = loginService.attemptAutologin() else {
+            coordinator.showLogin()
+            return
+        }
+        
+        cancellables += [
+            autologinRequest.sink(receiveCompletion: { [weak self] (completion) in
+                switch completion {
+                case .failure:
+                    self?.coordinator.showLogin()
+                default:
+                    return
+                }
+                }, receiveValue: { [weak self] (success) in
+                    success ? self?.coordinator.showHome() : self?.coordinator.showLogin()
+            })
+        ]
     }
 }

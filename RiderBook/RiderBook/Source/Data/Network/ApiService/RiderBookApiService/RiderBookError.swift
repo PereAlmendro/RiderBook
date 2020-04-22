@@ -8,16 +8,19 @@
 
 import Foundation
 
-enum RiderBookApiServiceError: Error {
+enum RiderBookError: Error {
     case responseError(Error)
     case badRequest(Error)
+    case generic(Error)
     
     func description() -> String {
         switch self {
         case .responseError:
             return "Response error"
-        case . badRequest:
+        case .badRequest:
             return "Malformed URL"
+        case .generic:
+            return "Generic error"
         }
     }
 }
