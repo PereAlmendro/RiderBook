@@ -68,6 +68,7 @@
 		1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984639B24465C7800C4E25B /* RiderBookApiServiceTest.swift */; };
 		1984639F24465D5900C4E25B /* MockTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984639E24465D5800C4E25B /* MockTarget.swift */; };
 		199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A075924294F1D002E3A15 /* UIApplication+extension.swift */; };
+		199EAFB62451FF8D005AD180 /* LoginServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */; };
 		19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5DE7024433F17008D4886 /* Dictionary+Json.swift */; };
 		19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */; };
 		19ABECD32450AA37005BCDEC /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */; };
@@ -182,6 +183,7 @@
 		1984639B24465C7800C4E25B /* RiderBookApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiServiceTest.swift; sourceTree = "<group>"; };
 		1984639E24465D5800C4E25B /* MockTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTarget.swift; sourceTree = "<group>"; };
 		199A075924294F1D002E3A15 /* UIApplication+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extension.swift"; sourceTree = "<group>"; };
+		199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTest.swift; sourceTree = "<group>"; };
 		19A5DE7024433F17008D4886 /* Dictionary+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Json.swift"; sourceTree = "<group>"; };
 		19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
 		19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
@@ -728,6 +730,31 @@
 			path = AppDependencies;
 			sourceTree = "<group>";
 		};
+		199EAFB22451FF47005AD180 /* LoginService */ = {
+			isa = PBXGroup;
+			children = (
+				199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */,
+			);
+			path = LoginService;
+			sourceTree = "<group>";
+		};
+		199EAFB32451FF68005AD180 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				199EAFB22451FF47005AD180 /* LoginService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		199EAFB42451FF72005AD180 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				19ABECD02450AA15005BCDEC /* UserRepository */,
+				19CA2F7F244B41BB00DBDAA4 /* LocalRepository */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		19A5DE6F24433EF9008D4886 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,13 +763,13 @@
 			path = Dictionary;
 			sourceTree = "<group>";
 		};
-		19ABECD02450AA15005BCDEC /* User */ = {
+		19ABECD02450AA15005BCDEC /* UserRepository */ = {
 			isa = PBXGroup;
 			children = (
 				19ABECD12450AA1E005BCDEC /* Mocks */,
 				19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */,
 			);
-			path = User;
+			path = UserRepository;
 			sourceTree = "<group>";
 		};
 		19ABECD12450AA1E005BCDEC /* Mocks */ = {
@@ -843,12 +870,12 @@
 			path = RegisterView;
 			sourceTree = "<group>";
 		};
-		19CA2F7F244B41BB00DBDAA4 /* Local */ = {
+		19CA2F7F244B41BB00DBDAA4 /* LocalRepository */ = {
 			isa = PBXGroup;
 			children = (
 				19CA2F82244B41F300DBDAA4 /* LocalRepositoryTest.swift */,
 			);
-			path = Local;
+			path = LocalRepository;
 			sourceTree = "<group>";
 		};
 		19CA2F80244B41C600DBDAA4 /* Network */ = {
@@ -862,8 +889,8 @@
 		19CA2F81244B41CD00DBDAA4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				19ABECD02450AA15005BCDEC /* User */,
-				19CA2F7F244B41BB00DBDAA4 /* Local */,
+				199EAFB32451FF68005AD180 /* Services */,
+				199EAFB42451FF72005AD180 /* Repositories */,
 				19ABECD42450AD4D005BCDEC /* MockApiService.swift */,
 			);
 			path = Data;
@@ -1277,6 +1304,7 @@
 				19ABECD32450AA37005BCDEC /* UserRepositoryTests.swift in Sources */,
 				19ABECD52450AD4D005BCDEC /* MockApiService.swift in Sources */,
 				1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */,
+				199EAFB62451FF8D005AD180 /* LoginServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
