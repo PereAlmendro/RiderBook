@@ -10,7 +10,7 @@ import Foundation
 import Combine
 @testable import RiderBook
 
-class UserRepositoryMockSuccessApiService: RiderBookApiServiceProtocol {
+class MockLoginSuccessApiService: RiderBookApiServiceProtocol {
     func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol, responseModel: ResponseModel.Type)
         -> AnyPublisher<ResponseModel?, RiderBookError> {
             return Result<Int, Error>.Publisher(0)
@@ -29,7 +29,7 @@ class UserRepositoryMockSuccessApiService: RiderBookApiServiceProtocol {
     }
 }
 
-class UserRepositoryMockNilUserApiService: RiderBookApiServiceProtocol {
+class MockNilApiService: RiderBookApiServiceProtocol {
     func loadRequest<ResponseModel: Decodable>(_ target: ApiTargetProtocol, responseModel: ResponseModel.Type)
         -> AnyPublisher<ResponseModel?, RiderBookError> {
             return Result<Int, Error>.Publisher(0)

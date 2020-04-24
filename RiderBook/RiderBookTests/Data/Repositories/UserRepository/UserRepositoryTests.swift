@@ -21,7 +21,7 @@ class UserRepositoryTest: XCTestCase {
     
     func testLoginSuccess() {
         
-        let apiService = UserRepositoryMockSuccessApiService()
+        let apiService = MockLoginSuccessApiService()
         userRepository = UserRepository(riderBookApiService: apiService)
         
         let expectation = XCTestExpectation()
@@ -43,7 +43,7 @@ class UserRepositoryTest: XCTestCase {
     
     func testRegisterSuccess() {
         
-        let apiService = UserRepositoryMockSuccessApiService()
+        let apiService = MockLoginSuccessApiService()
         userRepository = UserRepository(riderBookApiService: apiService)
         
         let expectation = XCTestExpectation()
@@ -65,7 +65,7 @@ class UserRepositoryTest: XCTestCase {
     
     func testLoginNilUser() {
         
-        let apiService = UserRepositoryMockNilUserApiService()
+        let apiService = MockNilApiService()
         userRepository = UserRepository(riderBookApiService: apiService)
         
         let expectation = XCTestExpectation()
@@ -87,7 +87,7 @@ class UserRepositoryTest: XCTestCase {
     
     func testRegisterNilUser() {
         
-        let apiService = UserRepositoryMockNilUserApiService()
+        let apiService = MockNilApiService()
         userRepository = UserRepository(riderBookApiService: apiService)
         
         let expectation = XCTestExpectation()
