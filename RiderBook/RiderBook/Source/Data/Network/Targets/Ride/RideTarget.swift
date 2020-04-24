@@ -9,8 +9,8 @@
 import Foundation
 
 enum RideEndpoint: String  {
-    case addRide = "rides/addRide"
-    case ridesList = "rides/ridesList"
+    case addRide = "/RiderBook/symfony/web/rides/addRide"
+    case ridesList = "/RiderBook/symfony/web/rides/ridesList"
 }
 
 enum RideTarget: ApiTargetProtocol {
