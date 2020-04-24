@@ -14,7 +14,7 @@ class RidesViewModel: ObservableObject  {
     
     // MARK: - Private properties
     
-    private var coordinator: AppCoordinatorProtocol
+    private let coordinator: AppCoordinatorProtocol
 
     // MARK: - Lifecycle
     

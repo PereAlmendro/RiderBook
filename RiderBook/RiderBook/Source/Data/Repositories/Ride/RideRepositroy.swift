@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import RxSwift
 
 protocol RideRepositoryProtocol {
-    func addRide(circuitId: Int, date: Date) -> Single<Bool>
+    func addRide(circuitId: Int, date: Date) -> Bool
 }
 
 class RideRepository: RideRepositoryProtocol {
@@ -21,10 +20,10 @@ class RideRepository: RideRepositoryProtocol {
         self.riderBookApiService = riderBookApiService
     }
     
-    func addRide(circuitId: Int, date: Date) -> Single<Bool> {
+    func addRide(circuitId: Int, date: Date) -> Bool {
 //        let addRideRequest = AddRideRequest(circuitId: circuitId, dateTimeStamp: Int(date.timeIntervalSince1970), authorization: "")
         
-        return Single.just(true)
+        return true
         
 //        return riderBookApiService
 //            .loadRequest(RideTarget.addRide(addRideRequest), responseModel: AddRideResponse.self)

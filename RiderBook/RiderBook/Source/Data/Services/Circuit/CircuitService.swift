@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 protocol CircuitServiceProtocol {
-    func getCircuits() -> Single<[Circuit]>
+    func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError>
 }
 
 class CircuitService: CircuitServiceProtocol {
@@ -21,7 +21,7 @@ class CircuitService: CircuitServiceProtocol {
         self.circuitRepository = circuitRepository
     }
     
-    func getCircuits() -> Single<[Circuit]> {
+    func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError> {
         return circuitRepository.getCircuits()
     }
     

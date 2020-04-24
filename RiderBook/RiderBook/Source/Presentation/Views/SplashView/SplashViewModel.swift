@@ -14,8 +14,8 @@ class SplashViewModel: ObservableObject  {
     
     // MARK: - Private properties
     
-    private var loginService: LoginServiceProtocol
-    private var coordinator: AppCoordinatorProtocol
+    private let loginService: LoginServiceProtocol
+    private let coordinator: AppCoordinatorProtocol
     private var cancellables: [AnyCancellable?] = []
     
     // MARK: - Lifecycle

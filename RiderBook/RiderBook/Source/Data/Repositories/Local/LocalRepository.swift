@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import RxSwift
 
 fileprivate enum EntityName: String {
     case UserEntity

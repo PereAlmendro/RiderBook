@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
+import SwiftUI
 
 class AddRideViewModel: ObservableObject  {
 
@@ -15,14 +16,14 @@ class AddRideViewModel: ObservableObject  {
     
     @Published var loading: Bool = false
     @Published var circuits: [Circuit] = []
-    @Published var selectedCircuit: Circuit? 
+    @Published var selectedCircuit: Circuit?
     
     // MARK: - Private properties
     
-    private let disposeBag = DisposeBag()
+    private var anyCancellables: [AnyCancellable] = []
     private let rideService: RideServiceProtocol
-    private var circuitService: CircuitServiceProtocol
-    private var coordinator: AppCoordinatorProtocol
+    private let circuitService: CircuitServiceProtocol
+    private let coordinator: AppCoordinatorProtocol
     
     // MARK: - Lifecycle
     
@@ -46,17 +47,23 @@ class AddRideViewModel: ObservableObject  {
     
     private func fetchCirctuis() {
         loading = true
-        circuitService
-            .getCircuits()
-            .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
-            .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] (circuits) in
-                self?.circuits = circuits
-                self?.loading = false
-            }) { [weak self] (error) in
-                self?.loading = false
-                // TODO: Show error
-                print(error)
-        }.disposed(by: disposeBag)
+        
+        anyCancellables += [
+            circuitService.getCircuits().receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { [weak self] (completion) in
+                    switch completion {
+                    case .failure(let error):
+                        // TODO: Show error
+                        print(error)
+                        break
+                    case .finished:
+                        break
+                    }
+                    self?.loading = false
+                }) { [weak self] (result) in
+                    guard let result = result else {  return }
+                    self?.circuits = result
+            }
+        ]
     }
 }

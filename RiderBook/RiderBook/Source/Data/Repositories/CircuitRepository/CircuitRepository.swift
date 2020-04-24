@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
 protocol CircuitRepositoryProtocol {
-    func getCircuits() -> Single<[Circuit]>
+    func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError>
 }
 
 class CircuitRepository: CircuitRepositoryProtocol {
@@ -20,21 +20,11 @@ class CircuitRepository: CircuitRepositoryProtocol {
     init(riderBookApiService: RiderBookApiServiceProtocol) {
         self.riderBookApiService = riderBookApiService
     }
-
-    func getCircuits() -> Single<[Circuit]> {
-        
-        return Single.just([])
-//        return riderBookApiService
-//            .loadRequest(CircuitTarget.getCircuits, responseModel: [CircuitResponse].self)
-//            .flatMap({ (result) -> Single<[Circuit]> in
-//                guard let circuits = try? result.get() else {
-//                    return Single.just([])
-//                }
-//                return Single.just(
-//                    circuits.compactMap({ CircuitFactory.createCircuit(from: $0)  })
-//                )
-//            })
-//            .asSingle()
-    }
     
+    func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError> {
+        return riderBookApiService.loadRequest(CircuitTarget.getCircuits, responseModel: [CircuitResponse].self)
+            .map { (response) -> [Circuit]? in
+                return response?.compactMap { CircuitFactory.createCircuit(from: $0) }
+        }.eraseToAnyPublisher()
+    }
 }
