@@ -14,9 +14,11 @@ class AddRideViewModel: ObservableObject  {
 
     // MARK: - View properties
     
+    @Published var reloadPicker: Bool = false
     @Published var loading: Bool = false
     @Published var circuits: [Circuit] = []
-    @Published var selectedCircuit: Circuit?
+    @Published var circuitIndex = 0
+    @Published var selectedDate: Date = Date()
     
     // MARK: - Private properties
     
@@ -47,7 +49,6 @@ class AddRideViewModel: ObservableObject  {
     
     private func fetchCirctuis() {
         loading = true
-        
         anyCancellables += [
             circuitService.getCircuits().receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { [weak self] (completion) in
@@ -63,6 +64,7 @@ class AddRideViewModel: ObservableObject  {
                 }) { [weak self] (result) in
                     guard let result = result else {  return }
                     self?.circuits = result
+                    self?.reloadPicker.toggle()
             }
         ]
     }

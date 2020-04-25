@@ -14,26 +14,25 @@ struct AddRideView: View {
     var body: some View {
         LoadingView(isShowing: $viewModel.loading) {
             VStack(alignment: .center) {
-                List {
-                    
+                Form {
                     Text("Select a date").font(.headline).padding()
-                    
-                    DatePicker("", selection: .constant(Date()), in: Date()...,
+                    DatePicker("", selection: self.$viewModel.selectedDate, in: Date()...,
                                displayedComponents: .date)
                         .labelsHidden()
                     
+                    // SWIFTUI BUG : PICKER DOES NOT REFRESH PROPERLY
+                    // WORKAROUND : We show picker when flag is set to true
                     Text("Select a circuit").font(.headline).padding()
-                    
-                    // SWIFT UI BUG : PICKER DOES NOT REFRESH
-                    Picker(selection: self.$viewModel.selectedCircuit,
-                           label: Text("Select a circuit")) {
-                            ForEach(self.viewModel.circuits, id: \.self) { circuit in
-                                Text(circuit.name)
-                            }
-                    }.labelsHidden()
-                }
-                
-                Spacer()
+                    if (self.viewModel.reloadPicker) {
+                        Picker(selection: self.$viewModel.circuitIndex,
+                               label: Text("Select a circuit")) {
+                                ForEach(0 ..< self.viewModel.circuits.count) {
+                                    Text(self.viewModel.circuits[$0].name)
+                                }
+                        }.labelsHidden()
+                        .pickerStyle(WheelPickerStyle())
+                    }
+                }.listStyle(GroupedListStyle())
                  
                 CustomButton(title: "Add_ride" , action: {
                     self.viewModel.addRideAction()
