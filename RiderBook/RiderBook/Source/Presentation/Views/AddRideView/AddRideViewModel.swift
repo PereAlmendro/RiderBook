@@ -19,6 +19,9 @@ class AddRideViewModel: ObservableObject  {
     @Published var circuits: [Circuit] = []
     @Published var circuitIndex = 0
     @Published var selectedDate: Date = Date()
+    @Published var showAlert: Bool = false
+    var alertTitle = ""
+    var alertMessage = ""
     
     // MARK: - Private properties
     
@@ -42,7 +45,34 @@ class AddRideViewModel: ObservableObject  {
     // MARK: - User Actions
     
     func addRideAction() {
+        loading = true
         
+        let ride = Ride(date: selectedDate,
+                        circuit: circuits[circuitIndex].name,
+                        circuitId: circuits[circuitIndex].id)
+        
+        anyCancellables += [
+            rideService.addRide(ride: ride)
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { [weak self] (completion) in
+                    switch completion {
+                    case .failure:
+                        self?.showMessage(title: "Error",
+                                          message: "Something went wrong creating the ride, please try again later")
+                    case .finished:
+                        break
+                    }
+                    self?.loading = false
+                    }, receiveValue: { [weak self] (success) in
+                        if success {
+                            self?.showMessage(title: "Sucess",
+                                              message: "Ride added successfully")
+                        } else {
+                            self?.showMessage(title: "Error",
+                                              message: "Something went wrong creating the ride, please try again later")
+                        }
+                })
+        ]
     }
     
     // MARK: - Private functions
@@ -53,10 +83,9 @@ class AddRideViewModel: ObservableObject  {
             circuitService.getCircuits().receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { [weak self] (completion) in
                     switch completion {
-                    case .failure(let error):
-                        // TODO: Show error
-                        print(error)
-                        break
+                    case .failure:
+                        self?.showMessage(title: "Error",
+                                          message: "Something went wrong fetching the circuits, please try again later")
                     case .finished:
                         break
                     }
@@ -67,5 +96,11 @@ class AddRideViewModel: ObservableObject  {
                     self?.reloadPicker.toggle()
             }
         ]
+    }
+    
+    private func showMessage(title: String, message: String) {
+        alertTitle = title
+        alertMessage = message
+        showAlert = true
     }
 }

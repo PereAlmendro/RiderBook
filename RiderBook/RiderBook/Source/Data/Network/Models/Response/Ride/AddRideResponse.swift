@@ -9,8 +9,5 @@
 import Foundation
 
 struct AddRideResponse: Codable {
-    let id: String?
-    let date: Int?
-    let circuitId: Int?
-    let userId: Int?
+    var success: Bool?
 }

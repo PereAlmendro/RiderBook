@@ -34,10 +34,13 @@ final class LocalRepository: LocalRepositoryProtocol {
             let result = try context.fetch(request) as? [NSManagedObject] ?? []
             var user: User?
             for data in result  {
-                let email = data.value(forKey: "email") as! String
-                let password = data.value(forKey: "password") as! String
+                guard let email = data.value(forKey: "email") as? String,
+                    let password = data.value(forKey: "password") as? String,
+                    let authorization = data.value(forKey: "authorization") as? String else {
+                        return nil
+                }
                 
-                user = User(userId: 0, name: "", photoUrl: "", email: email, password: password, authorization: "")
+                user = User(userId: 0, name: "", photoUrl: "", email: email, password: password, authorization: authorization)
             }
             return user
         } catch {
@@ -53,6 +56,7 @@ final class LocalRepository: LocalRepositoryProtocol {
         let userObject = NSManagedObject(entity: entity, insertInto: context)
         userObject.setValue(user.email, forKey: "email")
         userObject.setValue(user.password, forKey: "password")
+        userObject.setValue(user.authorization, forKey: "authorization")
         
         do {
             try context.save()

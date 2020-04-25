@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Combine
 
 protocol RideServiceProtocol {
-    func addRide(ride: Ride) -> Bool
+    func addRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError>
 }
 
 class RideService: RideServiceProtocol {
@@ -20,7 +21,7 @@ class RideService: RideServiceProtocol {
         self.rideRepository = rideRepository
     }
     
-    func addRide(ride: Ride) -> Bool {
+    func addRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError> {
         return rideRepository.addRide(circuitId: ride.circuitId, date: ride.date)
     }
 }

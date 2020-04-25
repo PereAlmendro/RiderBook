@@ -23,14 +23,18 @@ class LocalRepositoryTest: XCTestCase {
     }
 
     func testGetSaveUser() throws {
-        let user = User(userId: 11, name: "test",
+        let user = User(userId: 0, name: "test",
                         photoUrl: "", email: "test@test.com",
-                        password: "test", authorization: "")
+                        password: "test", authorization: "authorizationTokenValidForOneWeeek")
         
         localRepository.saveUser(user)
         let persistingUser = localRepository.getUser()
         
-        XCTAssertTrue(persistingUser?.email == user.email && persistingUser?.password == user.password )
+        XCTAssertTrue(
+            persistingUser?.email == user.email
+            && persistingUser?.password == user.password
+            && persistingUser?.authorization == user.authorization
+        )
     }
 
 }

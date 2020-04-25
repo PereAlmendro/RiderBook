@@ -45,10 +45,9 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
             return URLSession.shared.dataTaskPublisher(for: request)
                 .map { data, response in data }
                 .mapError { error in RiderBookError.responseError(error) }
-                .decode(type: responseModel.self, decoder: decoder)
+                .decode(type: responseModel, decoder: decoder)
                 .mapError { error in RiderBookError.responseError(error) }
                 .map({ (result) -> ResponseModel? in result })
-                .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
     }
     

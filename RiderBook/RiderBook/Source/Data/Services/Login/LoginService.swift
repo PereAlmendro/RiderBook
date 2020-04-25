@@ -63,4 +63,7 @@ class LoginService: LoginServiceProtocol {
                 return userSaved
         }.eraseToAnyPublisher()
     }
+    
+    // TODO: Logout
+    // TODO: Edit user
 }

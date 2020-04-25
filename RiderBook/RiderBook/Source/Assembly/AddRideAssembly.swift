@@ -19,7 +19,11 @@ class AddRideAssembly {
     func getView() -> AddRideView {
         let riderBookApiService = RiderBookApiService()
         
-        let rideRepository = RideRepository(riderBookApiService: riderBookApiService)
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let localRepository = LocalRepository(context: context)
+        
+        let rideRepository = RideRepository(riderBookApiService: riderBookApiService,
+                                            localRepository: localRepository)
         let circuitRepository = CircuitRepository(riderBookApiService: riderBookApiService)
 
         let rideService = RideService(rideRepository: rideRepository)

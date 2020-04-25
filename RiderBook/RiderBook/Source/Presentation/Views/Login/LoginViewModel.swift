@@ -43,6 +43,7 @@ class LoginViewModel: ObservableObject  {
         cancellables += [
             loginService
                 .logIn(email: email, password: password, encodedPassword: false)
+                .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { [weak self] (completion) in
                     switch completion {
                     case .failure(let error):

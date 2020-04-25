@@ -33,7 +33,9 @@ class SplashViewModel: ObservableObject  {
         }
         
         cancellables += [
-            autologinRequest.sink(receiveCompletion: { [weak self] (completion) in
+            autologinRequest
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { [weak self] (completion) in
                 switch completion {
                 case .failure:
                     self?.coordinator.showLogin()

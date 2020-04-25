@@ -39,6 +39,11 @@ struct AddRideView: View {
                 })
             }
         }
+        .alert(isPresented: $viewModel.showAlert) { () -> Alert in
+            Alert(title: Text(viewModel.alertTitle.localized()),
+                  message: Text(viewModel.alertMessage.localized()),
+                  dismissButton: .default(Text("Ok")))
+        }
     }
 }
 
