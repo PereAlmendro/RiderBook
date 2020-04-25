@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1902E7DA243A298700B10F98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1902E7D9243A298700B10F98 /* GoogleService-Info.plist */; };
 		190DC0C1244224F700BDFD9A /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DC0C0244224F700BDFD9A /* HomeAssembly.swift */; };
 		190DC0C32442250000BDFD9A /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DC0C22442250000BDFD9A /* ProfileAssembly.swift */; };
 		190DC0C52442250F00BDFD9A /* RidesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DC0C42442250F00BDFD9A /* RidesAssembly.swift */; };
@@ -103,7 +102,6 @@
 
 /* Begin PBXFileReference section */
 		14AC98EB8D07CBFA6C9716DB /* Pods-RiderBook-RiderBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderBook-RiderBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1902E7D9243A298700B10F98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		190DC0C0244224F700BDFD9A /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		190DC0C22442250000BDFD9A /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		190DC0C42442250F00BDFD9A /* RidesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesAssembly.swift; sourceTree = "<group>"; };
@@ -404,7 +402,6 @@
 			isa = PBXGroup;
 			children = (
 				1943375D2427B6DB00050CB0 /* RiderBook */,
-				1902E7D9243A298700B10F98 /* GoogleService-Info.plist */,
 				194337792427B6DD00050CB0 /* RiderBookTests */,
 				194337842427B6DD00050CB0 /* RiderBookUITests */,
 				1943375C2427B6DB00050CB0 /* Products */,
@@ -912,7 +909,6 @@
 				194337572427B6DB00050CB0 /* Sources */,
 				194337582427B6DB00050CB0 /* Frameworks */,
 				194337592427B6DB00050CB0 /* Resources */,
-				6E69674B06697E02D27BB128 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -950,7 +946,6 @@
 				1943377D2427B6DD00050CB0 /* Sources */,
 				1943377E2427B6DD00050CB0 /* Frameworks */,
 				1943377F2427B6DD00050CB0 /* Resources */,
-				287FE52BA7A81BF0C42AA795 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1016,7 +1011,6 @@
 				194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */,
 				1969F9AB242BD58400300C1B /* Localizable.strings in Resources */,
 				1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */,
-				1902E7DA243A298700B10F98 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,23 +1031,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		287FE52BA7A81BF0C42AA795 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RiderBook-RiderBookUITests/Pods-RiderBook-RiderBookUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5D18DD9787BBCCAA3DFF5A39 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1074,23 +1051,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E69674B06697E02D27BB128 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RiderBook/Pods-RiderBook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RiderBook/Pods-RiderBook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RiderBook/Pods-RiderBook-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B096D7A5BE3B2CC51A86B19 /* [CP] Check Pods Manifest.lock */ = {

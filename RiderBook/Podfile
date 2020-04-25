@@ -6,7 +6,6 @@ target 'RiderBook' do
   use_frameworks!
 
   # Pods for RiderBook
-	pod 'Firebase/Analytics'
   
   target 'RiderBookTests' do
     inherit! :search_paths
