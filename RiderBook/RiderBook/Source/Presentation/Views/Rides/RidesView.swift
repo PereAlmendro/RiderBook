@@ -13,15 +13,18 @@ struct RidesView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Rides View")
+            List {
+                ForEach(0 ..< self.viewModel.rides.count) {
+                    Text(self.viewModel.rides[$0].circuit)
+                    Text(self.viewModel.rides[$0].dateString)
+                }
             }.navigationBarItems(trailing:
                 Button("Add ride".localized()) {
                 self.viewModel.addRideAction()
             })
+        }.onAppear {
+            self.viewModel.fetchNextRides()
         }
-        
-        
     }
 }
 

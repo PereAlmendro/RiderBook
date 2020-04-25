@@ -18,7 +18,7 @@ struct RideListResponse: Codable {
 
 struct RideResponse: Codable {
     let rideId: Int
-    let rideDate: Int
+    let rideDate: String
     let circuitId: Int
     let circuitName: String
     let circuitLocation: String

@@ -9,8 +9,8 @@
 import Foundation
 
 enum RideEndpoint: String  {
-    case addRide = "/RiderBook/symfony/web/rides/addRide"
-    case ridesList = "/RiderBook/symfony/web/rides/ridesList"
+    case addRide = "/RiderBookBackend/symfony/web/rides/addRide"
+    case ridesList = "/RiderBookBackend/symfony/web/rides/ridesList"
 }
 
 enum RideTarget: ApiTargetProtocol {
@@ -45,8 +45,17 @@ extension RideTarget {
         switch self {
         case .addRide(let request):
             return request
+        case .rideList:
+            return nil
+        }
+    }
+    
+    var queryItems: [URLQueryItem]? {
+        switch self {
+        case .addRide:
+            return nil
         case .rideList(let request):
-            return request
+            return [URLQueryItem(name: "page", value: String(request.page))]
         }
     }
     

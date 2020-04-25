@@ -62,6 +62,7 @@
 		199EAFB62451FF8D005AD180 /* LoginServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */; };
 		19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5DE7024433F17008D4886 /* Dictionary+Json.swift */; };
 		19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */; };
+		19A862D724546167003BA6D1 /* RideFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A862D624546167003BA6D1 /* RideFactory.swift */; };
 		19ABECD32450AA37005BCDEC /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */; };
 		19ABECD52450AD4D005BCDEC /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABECD42450AD4D005BCDEC /* MockApiService.swift */; };
 		19B1A0E5244219B6000D4FA6 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0E4244219B6000D4FA6 /* LoginAssembly.swift */; };
@@ -167,6 +168,7 @@
 		199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTest.swift; sourceTree = "<group>"; };
 		19A5DE7024433F17008D4886 /* Dictionary+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Json.swift"; sourceTree = "<group>"; };
 		19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
+		19A862D624546167003BA6D1 /* RideFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideFactory.swift; sourceTree = "<group>"; };
 		19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
 		19ABECD42450AD4D005BCDEC /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
 		19B1A0E4244219B6000D4FA6 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
@@ -863,6 +865,7 @@
 			children = (
 				19FDE8322448D0040037F246 /* UserFactory.swift */,
 				196B8AEA244CC6FA0013D16C /* CircuitFactory.swift */,
+				19A862D624546167003BA6D1 /* RideFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1131,6 +1134,7 @@
 				193BF2BC244C99000017E644 /* RideListRequest.swift in Sources */,
 				193BF2C0244C9C510017E644 /* AddRideResponse.swift in Sources */,
 				194641EF24499B56000B9B6C /* CustomTextField.swift in Sources */,
+				19A862D724546167003BA6D1 /* RideFactory.swift in Sources */,
 				19CA2F6B244AE95F00DBDAA4 /* SplashAssembly.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
 				193DEEA824446F8100815150 /* ApiHostUrl.swift in Sources */,

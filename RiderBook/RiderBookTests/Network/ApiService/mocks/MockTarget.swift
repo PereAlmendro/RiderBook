@@ -11,7 +11,7 @@ import Foundation
 
 enum MockEndpoints: String {
     case invalid = "hello/fake"
-    case valid = "/RiderBook/symfony/web/user/login"
+    case valid = "/RiderBookBackend/symfony/web/user/login"
 }
 
 enum MockTarget: ApiTargetProtocol {

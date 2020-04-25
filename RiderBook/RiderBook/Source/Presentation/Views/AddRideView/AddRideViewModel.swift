@@ -47,9 +47,11 @@ class AddRideViewModel: ObservableObject  {
     func addRideAction() {
         loading = true
         
+        let selectedCircuit = circuits[circuitIndex]
         let ride = Ride(date: selectedDate,
-                        circuit: circuits[circuitIndex].name,
-                        circuitId: circuits[circuitIndex].id)
+                        circuit: selectedCircuit.name,
+                        circuitId: selectedCircuit.id,
+                        circuitLocation: selectedCircuit.location)
         
         anyCancellables += [
             rideService.addRide(ride: ride)

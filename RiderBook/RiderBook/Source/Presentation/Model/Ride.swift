@@ -12,4 +12,11 @@ struct Ride {
     let date: Date
     let circuit: String
     let circuitId: Int
+    let circuitLocation: String
+    
+    var dateString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        return dateFormatter.string(from: date)
+    }
 }

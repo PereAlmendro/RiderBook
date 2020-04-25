@@ -11,6 +11,7 @@ import Combine
 
 protocol RideServiceProtocol {
     func addRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError>
+    func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError>
 }
 
 class RideService: RideServiceProtocol {
@@ -24,4 +25,11 @@ class RideService: RideServiceProtocol {
     func addRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError> {
         return rideRepository.addRide(circuitId: ride.circuitId, date: ride.date)
     }
+    
+    func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError> {
+        return rideRepository.fetchRides(page: page)
+    }
+    
+    // TODO: Delete ride
+    // TODO: Edit ride
 }
