@@ -16,7 +16,6 @@ struct CustomTextField: View {
     var keyboardType: UIKeyboardType = .default
     var onEditingChanged: (Bool) -> Void = { _ in }
     
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text(title.localized())

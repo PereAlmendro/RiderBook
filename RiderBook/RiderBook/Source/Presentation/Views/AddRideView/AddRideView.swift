@@ -47,6 +47,7 @@ struct AddRideView: View {
     }
 }
 
+#if DEBUG
 struct AddRideView_Previews: PreviewProvider {
     static let fakeCoordinator = AppCoordinator(window: UIWindow())
     static let addRideAssembly = AddRideAssembly(coordinator: fakeCoordinator)
@@ -55,3 +56,4 @@ struct AddRideView_Previews: PreviewProvider {
         addRideAssembly.getView()
     }
 }
+#endif

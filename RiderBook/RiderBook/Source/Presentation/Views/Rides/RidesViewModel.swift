@@ -20,7 +20,7 @@ class RidesViewModel: ObservableObject  {
     private var anyCancellables: [AnyCancellable] = []
     private let coordinator: AppCoordinatorProtocol
     private let rideService: RideServiceProtocol
-    private var actualPage: Int = 0
+    private var actualPage: Int = 1
 
     // MARK: - Lifecycle
     
@@ -36,12 +36,12 @@ class RidesViewModel: ObservableObject  {
         coordinator.showAddRide()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private functions
     
-    func fetchNextRides() {
+    private func fetchRides(page: Int) {
         anyCancellables += [
             rideService
-                .fetchRides(page: actualPage)
+                .fetchRides(page: page)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { (completion) in
                     switch completion {
@@ -53,8 +53,15 @@ class RidesViewModel: ObservableObject  {
                     }
                 }, receiveValue: { [weak self] (rides) in
                     self?.rides += rides
-                    self?.actualPage += 1
                 })
         ]
+    }
+    
+    // MARK: - Public functions
+    
+    func refreshList() {
+        rides = []
+        actualPage = 1
+        fetchRides(page: actualPage)
     }
 }

@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct Ride {
+struct Ride: Identifiable {
+    var id = UUID()
+    
     let date: Date
     let circuit: String
     let circuitId: Int

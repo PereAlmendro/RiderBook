@@ -13,21 +13,19 @@ struct RidesView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(0 ..< self.viewModel.rides.count) {
-                    Text(self.viewModel.rides[$0].circuit)
-                    Text(self.viewModel.rides[$0].dateString)
-                }
-            }.navigationBarItems(trailing:
+            List(self.viewModel.rides, rowContent: RideListItem.init)
+            .listStyle(GroupedListStyle())
+            .navigationBarItems(trailing:
                 Button("Add ride".localized()) {
                 self.viewModel.addRideAction()
             })
         }.onAppear {
-            self.viewModel.fetchNextRides()
+            self.viewModel.refreshList()
         }
     }
 }
 
+#if DEBUG
 struct RidesView_Previews: PreviewProvider {
     static let fakeCoordinator = AppCoordinator(window: UIWindow())
     static let ridesAssembly = RidesAssembly(coordinator: fakeCoordinator)
@@ -35,3 +33,4 @@ struct RidesView_Previews: PreviewProvider {
         ridesAssembly.getView()
     }
 }
+#endif

@@ -23,6 +23,7 @@ struct SplashView: View {
     }
 }
 
+#if DEBUG
 struct SplashView_Previews: PreviewProvider {
     static let fakeCoordinator = AppCoordinator(window: UIWindow())
     static let splashAssembly = SplashAssembly(coordinator: fakeCoordinator)
@@ -30,3 +31,4 @@ struct SplashView_Previews: PreviewProvider {
         splashAssembly.getView()
     }
 }
+#endif

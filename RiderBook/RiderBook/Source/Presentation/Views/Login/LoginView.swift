@@ -64,7 +64,6 @@ struct LoginView: View {
 }
 
 #if DEBUG
-
 struct Loginview_Previews: PreviewProvider {
     static let fakeCoordinator = AppCoordinator(window: UIWindow())
     static let loginAssembly = LoginAssembly(coordinator: fakeCoordinator)

@@ -49,6 +49,7 @@ struct RegisterView: View {
     }
 }
 
+#if DEBUG
 struct RegisterView_Previews: PreviewProvider {
     static let fakeCoordinator = AppCoordinator(window: UIWindow())
     static let registerAssembly = RegisterAssembly(coordinator: fakeCoordinator)
@@ -57,3 +58,4 @@ struct RegisterView_Previews: PreviewProvider {
         registerAssembly.getView()
     }
 }
+#endif
