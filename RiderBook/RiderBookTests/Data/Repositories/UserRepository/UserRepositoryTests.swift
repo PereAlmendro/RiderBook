@@ -10,9 +10,8 @@ import XCTest
 import Combine
 @testable import RiderBook
 
-class UserRepositoryTest: XCTestCase {
-    
-    var userRepository: UserRepositoryProtocol!
+final class UserRepositoryTest: XCTestCase {
+    private var userRepository: UserRepositoryProtocol!
     private var anyCancellables: [AnyCancellable] = []
     
     override func tearDownWithError() throws {

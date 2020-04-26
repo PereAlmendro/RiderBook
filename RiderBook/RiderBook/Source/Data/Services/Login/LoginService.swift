@@ -16,7 +16,7 @@ protocol LoginServiceProtocol {
     func logIn(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<Bool, RiderBookError>
 }
 
-class LoginService: LoginServiceProtocol {
+final class LoginService: LoginServiceProtocol {
     
     // MARK: - Private properties
     
@@ -31,7 +31,7 @@ class LoginService: LoginServiceProtocol {
         self.localRepository = localRepository
     }
     
-    // MARK: - Public functions
+    // MARK: - LoginServiceProtocol
     
     func attemptAutologin() -> AnyPublisher<Bool, RiderBookError>? {
         guard let user = localRepository.getUser() else {

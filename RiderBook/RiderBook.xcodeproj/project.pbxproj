@@ -11,6 +11,8 @@
 		190DC0C32442250000BDFD9A /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DC0C22442250000BDFD9A /* ProfileAssembly.swift */; };
 		190DC0C52442250F00BDFD9A /* RidesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DC0C42442250F00BDFD9A /* RidesAssembly.swift */; };
 		1911D4412455833D00495AD8 /* RideListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D4402455833D00495AD8 /* RideListItem.swift */; };
+		1911D44524558A3F00495AD8 /* CircuitRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */; };
+		1911D44724558A4900495AD8 /* RideRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D44624558A4900495AD8 /* RideRepositoryTest.swift */; };
 		1912B881245349970026CD83 /* MockLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1912B880245349970026CD83 /* MockLocalRepository.swift */; };
 		1912B88324534FEE0026CD83 /* UserRepositoryMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1912B88224534FEE0026CD83 /* UserRepositoryMocks.swift */; };
 		1933B39A2441ACAE00D0BF44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3992441ACAE00D0BF44 /* User.swift */; };
@@ -108,6 +110,8 @@
 		190DC0C22442250000BDFD9A /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		190DC0C42442250F00BDFD9A /* RidesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesAssembly.swift; sourceTree = "<group>"; };
 		1911D4402455833D00495AD8 /* RideListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideListItem.swift; sourceTree = "<group>"; };
+		1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitRepositoryTest.swift; sourceTree = "<group>"; };
+		1911D44624558A4900495AD8 /* RideRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRepositoryTest.swift; sourceTree = "<group>"; };
 		1912B880245349970026CD83 /* MockLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocalRepository.swift; sourceTree = "<group>"; };
 		1912B88224534FEE0026CD83 /* UserRepositoryMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMocks.swift; sourceTree = "<group>"; };
 		1933B3992441ACAE00D0BF44 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -225,6 +229,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1911D44224558A1D00495AD8 /* CircuitRepository */ = {
+			isa = PBXGroup;
+			children = (
+				1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */,
+			);
+			path = CircuitRepository;
+			sourceTree = "<group>";
+		};
+		1911D44324558A2600495AD8 /* RideRepository */ = {
+			isa = PBXGroup;
+			children = (
+				1911D44624558A4900495AD8 /* RideRepositoryTest.swift */,
+			);
+			path = RideRepository;
+			sourceTree = "<group>";
+		};
 		1912B87F245349870026CD83 /* CommonMocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +720,8 @@
 		199EAFB42451FF72005AD180 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				1911D44324558A2600495AD8 /* RideRepository */,
+				1911D44224558A1D00495AD8 /* CircuitRepository */,
 				19ABECD02450AA15005BCDEC /* UserRepository */,
 				19CA2F7F244B41BB00DBDAA4 /* LocalRepository */,
 			);
@@ -717,17 +739,9 @@
 		19ABECD02450AA15005BCDEC /* UserRepository */ = {
 			isa = PBXGroup;
 			children = (
-				19ABECD12450AA1E005BCDEC /* Mocks */,
 				19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */,
 			);
 			path = UserRepository;
-			sourceTree = "<group>";
-		};
-		19ABECD12450AA1E005BCDEC /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mocks;
 			sourceTree = "<group>";
 		};
 		19B1A0DA24420B53000D4FA6 /* Services */ = {
@@ -1183,10 +1197,12 @@
 				19CA2F83244B41F300DBDAA4 /* LocalRepositoryTest.swift in Sources */,
 				1912B881245349970026CD83 /* MockLocalRepository.swift in Sources */,
 				1984639F24465D5900C4E25B /* MockTarget.swift in Sources */,
+				1911D44524558A3F00495AD8 /* CircuitRepositoryTest.swift in Sources */,
 				19ABECD32450AA37005BCDEC /* UserRepositoryTests.swift in Sources */,
 				19ABECD52450AD4D005BCDEC /* MockApiService.swift in Sources */,
 				1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */,
 				199EAFB62451FF8D005AD180 /* LoginServiceTest.swift in Sources */,
+				1911D44724558A4900495AD8 /* RideRepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

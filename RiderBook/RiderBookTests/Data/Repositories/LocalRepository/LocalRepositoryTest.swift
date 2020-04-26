@@ -9,9 +9,8 @@
 import XCTest
 @testable import RiderBook
 
-class LocalRepositoryTest: XCTestCase {
-
-    var localRepository: LocalRepositoryProtocol!
+final class LocalRepositoryTest: XCTestCase {
+    private var localRepository: LocalRepositoryProtocol!
     
     override func setUpWithError() throws {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

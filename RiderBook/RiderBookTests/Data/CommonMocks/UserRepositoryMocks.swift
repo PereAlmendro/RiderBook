@@ -10,7 +10,7 @@ import Foundation
 import Combine
 @testable import RiderBook
 
-class UserRepositorySuccessMock: UserRepositoryProtocol {
+final class UserRepositorySuccessMock: UserRepositoryProtocol {
     func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookError> {
         return Result<Int, Error>.Publisher(0)
             .map({ (result) -> User? in
@@ -36,7 +36,7 @@ class UserRepositorySuccessMock: UserRepositoryProtocol {
     }
 }
 
-class UserRepositoryNilMock: UserRepositoryProtocol {
+final class UserRepositoryNilMock: UserRepositoryProtocol {
     func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookError> {
         return Result<Int, Error>.Publisher(0)
             .map({ (result) -> User? in

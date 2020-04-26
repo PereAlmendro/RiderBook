@@ -9,7 +9,7 @@
 import Foundation
 @testable import RiderBook
 
-class MockLocalRepositorySuccess: LocalRepositoryProtocol {
+final class MockLocalRepositorySuccess: LocalRepositoryProtocol {
     func getUser() -> User? {
         return User(userId: 11, name: "test",
                     photoUrl: "", email: "test@test.com",
@@ -21,7 +21,7 @@ class MockLocalRepositorySuccess: LocalRepositoryProtocol {
     }
 }
 
-class MockLocalRepositoryNil: LocalRepositoryProtocol {
+final class MockLocalRepositoryNil: LocalRepositoryProtocol {
     func getUser() -> User? {
         return nil
     }

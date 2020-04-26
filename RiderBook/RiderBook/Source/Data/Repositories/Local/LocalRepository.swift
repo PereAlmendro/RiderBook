@@ -20,11 +20,17 @@ protocol LocalRepositoryProtocol {
 
 final class LocalRepository: LocalRepositoryProtocol {
     
+    // MARK: - Private properties
+    
     private var context: NSManagedObjectContext!
+    
+    // MARK: - Lifecycle
     
     init(context: NSManagedObjectContext) {
         self.context = context
     }
+    
+    // MARK: - LocalRepositoryProtocol
     
     func getUser() -> User? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: EntityName.UserEntity.rawValue)

@@ -14,13 +14,19 @@ protocol RideServiceProtocol {
     func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError>
 }
 
-class RideService: RideServiceProtocol {
+final class RideService: RideServiceProtocol {
+    
+    // MARK: - Private properties
     
     private let rideRepository: RideRepositoryProtocol
+    
+    // MARK: - Lifecycle
     
     init(rideRepository: RideRepositoryProtocol) {
         self.rideRepository = rideRepository
     }
+    
+    // MARK: - RideServiceProtocol
     
     func addRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError> {
         return rideRepository.addRide(circuitId: ride.circuitId, date: ride.date)

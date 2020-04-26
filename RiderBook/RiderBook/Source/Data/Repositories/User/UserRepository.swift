@@ -15,13 +15,19 @@ protocol UserRepositoryProtocol {
     func login(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<User?, RiderBookError>
 }
 
-class UserRepository: UserRepositoryProtocol {
+final class UserRepository: UserRepositoryProtocol {
+    
+    // MARK: - Private properties
     
     private let riderBookApiService: RiderBookApiServiceProtocol
+    
+    // MARK: - Lifecycle
     
     init(riderBookApiService: RiderBookApiServiceProtocol) {
         self.riderBookApiService = riderBookApiService
     }
+    
+    // MARK: - UserRepositoryProtocol
     
     func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookError> {
         let userRequest = CreateUserRequest(name: name, password: password, image: nil, email: email)

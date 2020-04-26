@@ -14,16 +14,22 @@ protocol RideRepositoryProtocol {
     func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError>
 }
 
-class RideRepository: RideRepositoryProtocol {
+final class RideRepository: RideRepositoryProtocol {
+    
+    // MARK: - Private properties
     
     private let riderBookApiService: RiderBookApiServiceProtocol
     private let localRepository: LocalRepositoryProtocol
+    
+    // MARK: - Lifecycle
     
     init(riderBookApiService: RiderBookApiServiceProtocol,
          localRepository: LocalRepositoryProtocol) {
         self.riderBookApiService = riderBookApiService
         self.localRepository = localRepository
     }
+    
+    // MARK: - RideRepositoryProtocol
     
     func addRide(circuitId: Int, date: Date) -> AnyPublisher<Bool, RiderBookError> {
         let userAuth = localRepository.getUser()?.authorization ?? ""
@@ -43,7 +49,10 @@ class RideRepository: RideRepositoryProtocol {
         return riderBookApiService
             .loadRequest(RideTarget.rideList(rideListRequest), responseModel: RideListResponse.self)
             .map { (response) -> [Ride] in
-                return response?.rides?.compactMap { RideFactory.createRide(from: $0) } ?? []
+                guard let rides = response?.rides else {
+                    return []
+                }
+                return rides.compactMap { RideFactory.createRide(from: $0) }
         }.eraseToAnyPublisher()
     }
     
