@@ -52,10 +52,7 @@ class RideDetailViewModel: ObservableObject  {
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { (completion) in
                     switch completion {
-                    case .failure(let error):
-                        print(error)
-                        break
-                    case .finished:
+                    case .failure, .finished:
                         break
                     }
                 }, receiveValue: { [weak self] (laps) in
@@ -81,9 +78,7 @@ class RideDetailViewModel: ObservableObject  {
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { (completion) in
                     switch completion {
-                    case .failure(let error):
-                        print(error)
-                    case .finished:
+                    case .failure, .finished:
                         break
                     }
                 }, receiveValue: { [weak self] (success) in
@@ -97,7 +92,18 @@ class RideDetailViewModel: ObservableObject  {
     }
     
     private func deleteLap(_ lap: Lap) {
-        // TODO: delete lap
+        anyCancellables += [
+            lapService
+            .deleteLap(lap: lap)
+                .sink(receiveCompletion: { (completion) in
+                    switch completion {
+                    case .failure, .finished:
+                        break
+                    }
+                }, receiveValue: { [weak self] (success) in
+                    self?.refreshList()
+                })
+        ]
     }
     
     // MARK: - Public functions

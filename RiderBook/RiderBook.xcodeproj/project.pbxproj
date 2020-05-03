@@ -90,6 +90,8 @@
 		19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */; };
 		19DB4048245EEBDA00C52CA8 /* RideDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */; };
 		19DB404A245EFDB000C52CA8 /* LapListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4049245EFDB000C52CA8 /* LapListItem.swift */; };
+		19DB404D245F1C2600C52CA8 /* DeleteLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */; };
+		19DB404F245F1D5200C52CA8 /* DeleteLapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB404E245F1D5200C52CA8 /* DeleteLapResponse.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
 		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
@@ -212,6 +214,8 @@
 		19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailViewModel.swift; sourceTree = "<group>"; };
 		19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailAssembly.swift; sourceTree = "<group>"; };
 		19DB4049245EFDB000C52CA8 /* LapListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListItem.swift; sourceTree = "<group>"; };
+		19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLapRequest.swift; sourceTree = "<group>"; };
+		19DB404E245F1D5200C52CA8 /* DeleteLapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLapResponse.swift; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
 		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -909,6 +913,7 @@
 			children = (
 				19DB402E245EDA4700C52CA8 /* LapListRequest.swift */,
 				19DB4030245EDA5000C52CA8 /* AddLapRequest.swift */,
+				19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */,
 			);
 			path = Lap;
 			sourceTree = "<group>";
@@ -918,6 +923,7 @@
 			children = (
 				19DB4033245EDC8900C52CA8 /* LapListResponse.swift */,
 				19DB4035245EDC9600C52CA8 /* AddLapResponse.swift */,
+				19DB404E245F1D5200C52CA8 /* DeleteLapResponse.swift */,
 			);
 			path = Lap;
 			sourceTree = "<group>";
@@ -1245,6 +1251,7 @@
 				193BF2BC244C99000017E644 /* RideListRequest.swift in Sources */,
 				193BF2C0244C9C510017E644 /* AddRideResponse.swift in Sources */,
 				194641EF24499B56000B9B6C /* CustomTextField.swift in Sources */,
+				19DB404D245F1C2600C52CA8 /* DeleteLapRequest.swift in Sources */,
 				19A862D724546167003BA6D1 /* RideFactory.swift in Sources */,
 				19CA2F6B244AE95F00DBDAA4 /* SplashAssembly.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
@@ -1253,6 +1260,7 @@
 				19DB4034245EDC8900C52CA8 /* LapListResponse.swift in Sources */,
 				19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
+				19DB404F245F1D5200C52CA8 /* DeleteLapResponse.swift in Sources */,
 				19B1A0E5244219B6000D4FA6 /* LoginAssembly.swift in Sources */,
 				193DEEA124446E5300815150 /* LoginRequest.swift in Sources */,
 				19FDE8332448D0040037F246 /* UserFactory.swift in Sources */,

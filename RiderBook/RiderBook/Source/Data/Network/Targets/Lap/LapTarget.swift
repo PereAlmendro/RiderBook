@@ -11,11 +11,13 @@ import Foundation
 enum LapEndpoint: String  {
     case new = "/laps/new"
     case lapList = "/laps/list"
+    case deleteLap = "/laps/delete"
 }
 
 enum LapTarget: ApiTargetProtocol {
     case addLap(_ request: AddLapRequest)
     case lapList(_ request: LapListRequest)
+    case deleteLap(_ request: DeleteLapRequest)
 }
 
 extension LapTarget {
@@ -25,6 +27,8 @@ extension LapTarget {
             return LapEndpoint.new.rawValue
         case .lapList:
             return LapEndpoint.lapList.rawValue
+        case .deleteLap:
+            return LapEndpoint.deleteLap.rawValue
         }
     }
     
@@ -34,6 +38,8 @@ extension LapTarget {
             return .put
         case .lapList:
             return .get
+        case .deleteLap:
+            return .delete
         }
     }
     
@@ -43,12 +49,14 @@ extension LapTarget {
             return request
         case .lapList:
             return nil
+        case .deleteLap(let request):
+            return request
         }
     }
     
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .addLap:
+        case .addLap, .deleteLap:
             return nil
         case .lapList(let request):
             return [URLQueryItem(name: "page", value: String(request.page)),
@@ -61,6 +69,8 @@ extension LapTarget {
         case .addLap(let request):
             return ["Content-Type": "application/json", "authorization" : request.authorization]
         case .lapList(let request):
+            return ["Content-Type": "application/json", "authorization" : request.authorization]
+        case .deleteLap(let request):
             return ["Content-Type": "application/json", "authorization" : request.authorization]
         }
     }

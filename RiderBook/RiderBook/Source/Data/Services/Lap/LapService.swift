@@ -12,6 +12,7 @@ import Combine
 protocol LapServiceProtocol {
     func addLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError>
     func fetchLaps(page: Int, rideId: Int) -> AnyPublisher<[Lap], RiderBookError>
+    func deleteLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class LapService: LapServiceProtocol {
@@ -36,6 +37,9 @@ final class LapService: LapServiceProtocol {
         return lapRepository.fetchLaps(page: page, rideId: rideId)
     }
     
-    // TODO: Delete Lap
+    func deleteLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError> {
+        return lapRepository.deleteLap(lapId: lap.lapId)
+    }
+    
     // TODO: Edit Lap
 }

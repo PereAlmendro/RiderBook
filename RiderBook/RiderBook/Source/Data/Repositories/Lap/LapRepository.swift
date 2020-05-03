@@ -12,6 +12,7 @@ import Combine
 protocol LapRepositoryProtocol {
     func addLap(rideId: Int, lapTimeInSeconds: String, number: Int) -> AnyPublisher<Bool, RiderBookError>
     func fetchLaps(page: Int, rideId: Int) -> AnyPublisher<[Lap], RiderBookError>
+    func deleteLap(lapId: Int) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class LapRepository: LapRepositoryProtocol {
@@ -54,6 +55,16 @@ final class LapRepository: LapRepositoryProtocol {
                     return []
                 }
                 return laps.compactMap { LapFactory.createLap(from: $0) }
+        }.eraseToAnyPublisher()
+    }
+    
+    func deleteLap(lapId: Int) -> AnyPublisher<Bool, RiderBookError> {
+        let userAuth = localRepository.getUser()?.authorization ?? ""
+        let deleteLapRequest = DeleteLapRequest(lapId: lapId, authorization: userAuth)
+        return riderBookApiService
+            .loadRequest(LapTarget.deleteLap(deleteLapRequest), responseModel: DeleteLapResponse.self)
+            .map { (response) -> Bool in
+                return response?.success ?? false
         }.eraseToAnyPublisher()
     }
     
