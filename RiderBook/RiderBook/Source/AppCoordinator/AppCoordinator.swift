@@ -17,6 +17,7 @@ protocol AppCoordinatorProtocol {
     func showLogin()
     func showRegister()
     func showAddRide()
+    func showRideDetail(for ride: Ride)
 }
 
 final class AppCoordinator: AppCoordinatorProtocol {
@@ -85,11 +86,23 @@ extension AppCoordinator {
         present(viewController: hostingController, animated: true)
     }
     
+    func showRideDetail(for ride: Ride) {
+        let detailView = getRideDetailView(for: ride)
+        let hostingController = UIHostingController(rootView: detailView)
+        present(viewController: hostingController, animated: true)
+    }
+    
 }
 
 // MARK: - View builder
 
 private extension AppCoordinator {
+    
+    private func getRideDetailView(for ride: Ride) -> RideDetailView {
+        let rideDetailAssembly = RideDetailAssembly(coordinator: self)
+        let rideDetailView = rideDetailAssembly.getView(for: ride)
+        return rideDetailView
+    }
     
     private func getAddRideView() -> AddRideView {
         let addRideAssembly = AddRideAssembly(coordinator: self)

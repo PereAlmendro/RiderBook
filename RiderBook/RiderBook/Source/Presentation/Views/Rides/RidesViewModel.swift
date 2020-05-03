@@ -66,6 +66,6 @@ class RidesViewModel: ObservableObject  {
     }
     
     func selectedRide(_ ride: Ride) {
-        print(ride)
+        coordinator.showRideDetail(for: ride)
     }
 }

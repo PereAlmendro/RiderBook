@@ -86,6 +86,9 @@
 		19DB403B245EDDA300C52CA8 /* LapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB403A245EDDA300C52CA8 /* LapFactory.swift */; };
 		19DB403D245EDDD900C52CA8 /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB403C245EDDD900C52CA8 /* Lap.swift */; };
 		19DB4040245EDEEE00C52CA8 /* LapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB403F245EDEEE00C52CA8 /* LapService.swift */; };
+		19DB4043245EEB2F00C52CA8 /* RideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4042245EEB2F00C52CA8 /* RideDetailView.swift */; };
+		19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */; };
+		19DB4048245EEBDA00C52CA8 /* RideDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
 		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
@@ -204,6 +207,9 @@
 		19DB403A245EDDA300C52CA8 /* LapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapFactory.swift; sourceTree = "<group>"; };
 		19DB403C245EDDD900C52CA8 /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
 		19DB403F245EDEEE00C52CA8 /* LapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapService.swift; sourceTree = "<group>"; };
+		19DB4042245EEB2F00C52CA8 /* RideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailView.swift; sourceTree = "<group>"; };
+		19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailViewModel.swift; sourceTree = "<group>"; };
+		19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailAssembly.swift; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
 		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -352,13 +358,13 @@
 			path = Ride;
 			sourceTree = "<group>";
 		};
-		193BF2C5244CA4290017E644 /* AddRideView */ = {
+		193BF2C5244CA4290017E644 /* AddRide */ = {
 			isa = PBXGroup;
 			children = (
 				193BF2C6244CA45B0017E644 /* AddRideView.swift */,
 				193BF2C8244CA4650017E644 /* AddRideViewModel.swift */,
 			);
-			path = AddRideView;
+			path = AddRide;
 			sourceTree = "<group>";
 		};
 		193DEE9C24446E1000815150 /* Requests */ = {
@@ -562,9 +568,10 @@
 		1954D0012443220600401EB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				193BF2C5244CA4290017E644 /* AddRideView */,
-				19CA2F6C244AEFEE00DBDAA4 /* RegisterView */,
-				19CA2F65244AE5EA00DBDAA4 /* SplashView */,
+				19DB4041245EEB0800C52CA8 /* RideDetail */,
+				193BF2C5244CA4290017E644 /* AddRide */,
+				19CA2F6C244AEFEE00DBDAA4 /* Register */,
+				19CA2F65244AE5EA00DBDAA4 /* Splash */,
 				197D203A243B12EC0081C78E /* Login */,
 				1933B39E2441AFF700D0BF44 /* Home */,
 				1933B39F2441AFFD00D0BF44 /* Rides */,
@@ -796,6 +803,7 @@
 				190DC0C22442250000BDFD9A /* ProfileAssembly.swift */,
 				19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */,
 				193BF2CA244CA4A50017E644 /* AddRideAssembly.swift */,
+				19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -841,22 +849,22 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		19CA2F65244AE5EA00DBDAA4 /* SplashView */ = {
+		19CA2F65244AE5EA00DBDAA4 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
 				19CA2F66244AE6C400DBDAA4 /* SplashView.swift */,
 				19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */,
 			);
-			path = SplashView;
+			path = Splash;
 			sourceTree = "<group>";
 		};
-		19CA2F6C244AEFEE00DBDAA4 /* RegisterView */ = {
+		19CA2F6C244AEFEE00DBDAA4 /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */,
 				19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */,
 			);
-			path = RegisterView;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		19CA2F7F244B41BB00DBDAA4 /* LocalRepository */ = {
@@ -925,6 +933,15 @@
 				19DB403F245EDEEE00C52CA8 /* LapService.swift */,
 			);
 			path = Lap;
+			sourceTree = "<group>";
+		};
+		19DB4041245EEB0800C52CA8 /* RideDetail */ = {
+			isa = PBXGroup;
+			children = (
+				19DB4042245EEB2F00C52CA8 /* RideDetailView.swift */,
+				19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */,
+			);
+			path = RideDetail;
 			sourceTree = "<group>";
 		};
 		19FDE8272448BD730037F246 /* Circuit */ = {
@@ -1208,6 +1225,7 @@
 				199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */,
 				193BF2B6244C95A20017E644 /* RideRepository.swift in Sources */,
 				196B8AEB244CC6FA0013D16C /* CircuitFactory.swift in Sources */,
+				19DB4043245EEB2F00C52CA8 /* RideDetailView.swift in Sources */,
 				19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */,
 				19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */,
 				19DB402F245EDA4700C52CA8 /* LapListRequest.swift in Sources */,
@@ -1248,12 +1266,14 @@
 				193BF2B3244C956B0017E644 /* RideService.swift in Sources */,
 				196B8AE9244CC68B0013D16C /* CircuitResponse.swift in Sources */,
 				1933B39D2441AFC500D0BF44 /* TabBarView.swift in Sources */,
+				19DB4048245EEBDA00C52CA8 /* RideDetailAssembly.swift in Sources */,
 				196B8AE0244CC5230013D16C /* CircuitService.swift in Sources */,
 				19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */,
 				1933B3A92441BC6900D0BF44 /* String+Extension.swift in Sources */,
 				1954D01024432E9500401EB2 /* UserTarget.swift in Sources */,
 				195C9363243BE00C002CFEAD /* CustomButton.swift in Sources */,
 				1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */,
+				19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */,
 				193BF2C2244C9DBB0017E644 /* Ride.swift in Sources */,
 				1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */,
 				1933B3A22441B01100D0BF44 /* ProfileView.swift in Sources */,
