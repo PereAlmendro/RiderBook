@@ -9,7 +9,7 @@
 import Foundation
 
 enum CircuitEndpoint: String  {
-    case getCircuits = "/RiderBookBackend/symfony/web/circuits"
+    case getCircuits = "/circuits"
 }
 
 enum CircuitTarget: ApiTargetProtocol {
@@ -17,10 +17,6 @@ enum CircuitTarget: ApiTargetProtocol {
 }
 
 extension CircuitTarget {
-    var baseUrl: ApiHostUrl {
-        return .riderBook
-    }
-    
     var endPoint: String {
         switch self {
         case .getCircuits:

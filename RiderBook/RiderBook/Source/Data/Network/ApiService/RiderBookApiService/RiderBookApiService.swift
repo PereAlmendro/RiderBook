@@ -25,7 +25,7 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
                     return getbadUrlError(responseModel: responseModel)
             }
             
-            urlComponents.path = target.endPoint
+            urlComponents.path = target.basePath.rawValue.appending(target.endPoint)
             urlComponents.queryItems = target.queryItems
             
             guard let finalUrl = urlComponents.url else {

@@ -13,3 +13,7 @@ enum ApiHostUrl: String {
     case invalidHost = "www.fakeHostToTestApiService.com"
     case riderBook = "http://192.168.0.19"
 }
+
+enum ApiBasePathUrl: String {
+    case riderBook = "/RiderBookBackend/symfony/web"
+}

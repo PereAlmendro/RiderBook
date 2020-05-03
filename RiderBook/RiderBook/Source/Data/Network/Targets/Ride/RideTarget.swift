@@ -9,8 +9,8 @@
 import Foundation
 
 enum RideEndpoint: String  {
-    case addRide = "/RiderBookBackend/symfony/web/rides/addRide"
-    case ridesList = "/RiderBookBackend/symfony/web/rides/ridesList"
+    case addRide = "/rides/new"
+    case ridesList = "/rides/list"
 }
 
 enum RideTarget: ApiTargetProtocol {
@@ -19,10 +19,6 @@ enum RideTarget: ApiTargetProtocol {
 }
 
 extension RideTarget {
-    var baseUrl: ApiHostUrl {
-        return .riderBook
-    }
-    
     var endPoint: String {
         switch self {
         case .addRide:
