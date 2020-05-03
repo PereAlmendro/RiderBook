@@ -13,6 +13,10 @@ extension String {
         return LocalizedStringKey(stringLiteral: self)
     }
     
+    func localizedString() -> String {
+        return NSLocalizedString(self, comment: self)
+    }
+    
     func isValidEmail() -> Bool {
         return contains("@") && contains(".")
     }

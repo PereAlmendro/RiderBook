@@ -22,6 +22,7 @@ protocol AppCoordinatorProtocol {
     func showRideDetail(for ride: Ride)
     
     func dismiss()
+    func showAlert(alert: UIAlertController)
 }
 
 final class AppCoordinator: AppCoordinatorProtocol {
@@ -100,6 +101,10 @@ extension AppCoordinator {
     
     func dismiss() {
         UIApplication.topViewController()?.dismiss(animated: true, completion: nil)
+    }
+    
+    func showAlert(alert: UIAlertController) {
+        present(viewController: alert, animated: true)
     }
     
 }

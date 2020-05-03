@@ -23,6 +23,11 @@ class RideDetailViewModel: ObservableObject  {
     private let lapService: LapServiceProtocol
     private let coordinator: AppCoordinatorProtocol
     private var actualPage: Int = 1
+
+    private enum Constants: Int {
+        case minutesTextFieldTag = 0
+        case secondsTextFieldTag = 1
+    }
     
     // MARK: - Lifecycle
     
@@ -53,6 +58,35 @@ class RideDetailViewModel: ObservableObject  {
         ]
     }
     
+    // MARK: - Private functions
+    
+    private func addLap(with minutes: Double, seconds: Double) {
+        let number = laps.sorted { (lap1, lap2) -> Bool in
+            lap1.number > lap2.number
+        }.first?.number ?? 0
+        
+        let timeInSeconds = (minutes * 60) + seconds
+        
+        let lapToAdd = Lap(rideId: ride.id, lapId: 0, number: number + 1, timeInSeconds: String(timeInSeconds))
+        
+        anyCancellables += [
+            lapService
+            .addLap(lap: lapToAdd)
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { (completion) in
+                    switch completion {
+                    case .failure(let error):
+                        print(error)
+                    case .finished:
+                        break
+                    }
+                }, receiveValue: { [weak self] (success) in
+                    self?.refreshList()
+                })
+        ]
+        
+    }
+    
     // MARK: - Public functions
     
     func refreshList() {
@@ -72,7 +106,39 @@ class RideDetailViewModel: ObservableObject  {
     }
     
     func addLapAction() {
-        // TODO: Implement
+        let alert = UIAlertController(title: "Add a new lap".localizedString(),
+                                      message: nil,
+                                      preferredStyle: .alert)
+        
+        alert.addTextField() { textField in
+            textField.placeholder = "Minutes".localizedString()
+            textField.keyboardType = .numberPad
+            textField.tag = Constants.minutesTextFieldTag.rawValue
+        }
+        
+        alert.addTextField() { textField in
+            textField.placeholder = "Seconds".localizedString()
+            textField.keyboardType = .numbersAndPunctuation
+            textField.tag = Constants.secondsTextFieldTag.rawValue
+        }
+        
+        alert.addAction(
+            UIAlertAction(title: "Add".localizedString(), style: .default, handler: { [weak self] (action) in
+                
+                var minutes: Double = 0
+                var seconds: Double = 0
+                alert.textFields?.forEach { textField in
+                    if textField.tag == Constants.minutesTextFieldTag.rawValue {
+                        minutes = Double(textField.text ?? "0") ?? 0.0
+                    } else if (textField.tag == Constants.secondsTextFieldTag.rawValue) {
+                        seconds = Double(textField.text ?? "0") ?? 0.0
+                    }
+                }
+                self?.addLap(with: minutes, seconds: seconds)
+            }))
+        alert.addAction(UIAlertAction(title: "Cancel".localizedString(), style: .cancel))
+        
+        coordinator.showAlert(alert: alert)
     }
     
     func editLapAction(_ lap: Lap) {
