@@ -74,7 +74,7 @@ final class RiderBookApiServiceTest: XCTestCase {
         let expectation = XCTestExpectation()
         
         let request = rbApiService
-            .loadRequest(MockTarget.invalidPath, responseModel: String.self)
+            .loadRequest(MockTarget.invalidPath, responseModel: UserResponse.self)
             .sink(receiveCompletion: { (completion) in
                 print(completion)
                 switch completion {

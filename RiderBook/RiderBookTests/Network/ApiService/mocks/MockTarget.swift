@@ -11,7 +11,7 @@ import Foundation
 
 enum MockEndpoints: String {
     case invalid = "hello/fake"
-    case valid = "/RiderBookBackend/symfony/web/user/login"
+    case valid = "/user/login"
 }
 
 enum MockTarget: ApiTargetProtocol {
@@ -31,6 +31,15 @@ extension MockTarget {
             return .noHost
         case .error:
             return .invalidHost
+        default:
+            return .riderBook
+        }
+    }
+    
+    var basePath: ApiBasePathUrl {
+        switch self {
+        case .invalidPath:
+            return .noBasePath
         default:
             return .riderBook
         }

@@ -15,5 +15,6 @@ enum ApiHostUrl: String {
 }
 
 enum ApiBasePathUrl: String {
+    case noBasePath = ""
     case riderBook = "/RiderBookBackend/symfony/web"
 }
