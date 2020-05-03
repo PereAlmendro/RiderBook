@@ -10,11 +10,14 @@ import SwiftUI
 
 struct RideListItem: View {
     var ride: Ride
+    var selectRide: (_ ride: Ride) -> Void
     
     var body: some View {
         VStack {
             Text(ride.circuit)
             Text(ride.dateString)
+        }.onTapGesture {
+            self.selectRide(self.ride)
         }
     }
 }
@@ -24,7 +27,7 @@ struct RideListItem_Previews: PreviewProvider {
     private static let ride = Ride(date: Date(), circuit: "Alcarrás",
                                circuitId: 4, circuitLocation: "42.12321, -2.23237")
     static var previews: some View {
-        RideListItem(ride: ride)
+        RideListItem(ride: ride, selectRide: { _ in })
     }
 }
 #endif

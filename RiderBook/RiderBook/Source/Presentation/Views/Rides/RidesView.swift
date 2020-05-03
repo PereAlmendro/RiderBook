@@ -13,7 +13,13 @@ struct RidesView: View {
 
     var body: some View {
         NavigationView {
-            List(self.viewModel.rides, rowContent: RideListItem.init)
+            List {
+                ForEach(self.viewModel.rides, id: \.self) { ride in
+                    RideListItem(ride: ride, selectRide: { ride in
+                        self.viewModel.selectedRide(ride)
+                    })
+                }
+            }
             .listStyle(GroupedListStyle())
             .navigationBarItems(trailing:
                 Button("Add ride".localized()) {

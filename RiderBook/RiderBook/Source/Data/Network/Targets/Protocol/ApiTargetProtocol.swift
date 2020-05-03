@@ -22,15 +22,19 @@ extension ApiTargetProtocol {
     var baseUrl: ApiHostUrl {
         return .riderBook
     }
+    
     var basePath: ApiBasePathUrl {
         return .riderBook
     }
+    
     var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }
+    
     var requestObject: RequestableProtocol? {
         return nil
     }
+    
     var queryItems: [URLQueryItem]? {
         return nil
     }

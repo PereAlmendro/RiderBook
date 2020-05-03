@@ -64,4 +64,8 @@ class RidesViewModel: ObservableObject  {
         actualPage = 1
         fetchRides(page: actualPage)
     }
+    
+    func selectedRide(_ ride: Ride) {
+        print(ride)
+    }
 }

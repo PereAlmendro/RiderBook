@@ -42,12 +42,24 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
             
             let decoder = JSONDecoder()
             
+            #if DEBUG
+            print("START SERVICE REQUEST : ")
+            print(request.url?.absoluteString ?? "Empty URL")
+            #endif
+            
             return URLSession.shared.dataTaskPublisher(for: request)
                 .map { data, response in data }
                 .mapError { error in RiderBookError.responseError(error) }
                 .decode(type: responseModel, decoder: decoder)
                 .mapError { error in RiderBookError.responseError(error) }
-                .map({ (result) -> ResponseModel? in result })
+                .map({ (result) -> ResponseModel? in
+                    #if DEBUG
+                    print("END SERVICE REQUEST : ")
+                    print(request.url?.absoluteString ?? "Empty URL")
+                    print(result)
+                    #endif
+                    return result
+                })
                 .eraseToAnyPublisher()
     }
     

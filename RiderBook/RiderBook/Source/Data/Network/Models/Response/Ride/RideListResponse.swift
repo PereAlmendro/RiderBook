@@ -13,7 +13,7 @@ struct RideListResponse: Codable {
     let actualPage: Int?
     let itemsPerPage: Int?
     let totalPages: Int?
-    let rides: [RideResponse]?    
+    let rides: [RideResponse]?
 }
 
 struct RideResponse: Codable {

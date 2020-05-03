@@ -58,7 +58,8 @@ class AddRideViewModel: ObservableObject  {
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { [weak self] (completion) in
                     switch completion {
-                    case .failure:
+                    case .failure(let error):
+                        print(error)
                         self?.showMessage(title: "Error",
                                           message: "Something went wrong creating the ride, please try again later")
                     case .finished:
