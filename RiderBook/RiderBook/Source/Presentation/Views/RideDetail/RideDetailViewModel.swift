@@ -17,6 +17,12 @@ class RideDetailViewModel: ObservableObject  {
     @Published var ride: Ride
     @Published var laps: [Lap] = []
     
+    enum LapAction {
+        case edit
+        case add
+        case delete
+    }
+    
     // MARK: - Private properties
     
     private var anyCancellables: [AnyCancellable] = []
@@ -84,7 +90,14 @@ class RideDetailViewModel: ObservableObject  {
                     self?.refreshList()
                 })
         ]
-        
+    }
+    
+    private func editLap(_ lap: Lap, with minutes: Double, seconds: Double) {
+        // TODO: edit lap
+    }
+    
+    private func deleteLap(_ lap: Lap) {
+        // TODO: delete lap
     }
     
     // MARK: - Public functions
@@ -105,48 +118,55 @@ class RideDetailViewModel: ObservableObject  {
         // TODO: Implement
     }
     
-    func addLapAction() {
-        let alert = UIAlertController(title: "Add a new lap".localizedString(),
-                                      message: nil,
-                                      preferredStyle: .alert)
-        
-        alert.addTextField() { textField in
-            textField.placeholder = "Minutes".localizedString()
-            textField.keyboardType = .numberPad
-            textField.tag = Constants.minutesTextFieldTag.rawValue
-        }
-        
-        alert.addTextField() { textField in
-            textField.placeholder = "Seconds".localizedString()
-            textField.keyboardType = .numbersAndPunctuation
-            textField.tag = Constants.secondsTextFieldTag.rawValue
-        }
-        
-        alert.addAction(
-            UIAlertAction(title: "Add".localizedString(), style: .default, handler: { [weak self] (action) in
-                
-                var minutes: Double = 0
-                var seconds: Double = 0
-                alert.textFields?.forEach { textField in
-                    if textField.tag == Constants.minutesTextFieldTag.rawValue {
-                        minutes = Double(textField.text ?? "0") ?? 0.0
-                    } else if (textField.tag == Constants.secondsTextFieldTag.rawValue) {
-                        seconds = Double(textField.text ?? "0") ?? 0.0
+    func lapAction(_ lapAction: LapAction, lap: Lap? = nil) {
+        if lapAction == .delete {
+            guard let lap = lap else { return }
+            deleteLap(lap)
+        } else {
+            let alert = UIAlertController(title: "Add a new lap".localizedString(),
+                                          message: nil,
+                                          preferredStyle: .alert)
+            
+            alert.addTextField() { textField in
+                textField.placeholder = "Minutes".localizedString()
+                textField.keyboardType = .numberPad
+                textField.tag = Constants.minutesTextFieldTag.rawValue
+            }
+            
+            alert.addTextField() { textField in
+                textField.placeholder = "Seconds".localizedString()
+                textField.keyboardType = .numbersAndPunctuation
+                textField.tag = Constants.secondsTextFieldTag.rawValue
+            }
+            
+            alert.addAction(
+                UIAlertAction(title: "Add".localizedString(), style: .default, handler: { [weak self] (action) in
+                    
+                    var minutes: Double = 0
+                    var seconds: Double = 0
+                    alert.textFields?.forEach { textField in
+                        if textField.tag == Constants.minutesTextFieldTag.rawValue {
+                            minutes = Double(textField.text ?? "0") ?? 0.0
+                        } else if (textField.tag == Constants.secondsTextFieldTag.rawValue) {
+                            seconds = Double(textField.text ?? "0") ?? 0.0
+                        }
                     }
-                }
-                self?.addLap(with: minutes, seconds: seconds)
-            }))
-        alert.addAction(UIAlertAction(title: "Cancel".localizedString(), style: .cancel))
-        
-        coordinator.showAlert(alert: alert)
-    }
-    
-    func editLapAction(_ lap: Lap) {
-        // TODO: Implement
-    }
-    
-    func deleteLapAction(_ lap: Lap) {
-        // TODO: Implement
+                    
+                    switch lapAction {
+                    case .add:
+                        self?.addLap(with: minutes, seconds: seconds)
+                    case .edit:
+                        guard let lap = lap else { return }
+                        self?.editLap(lap, with: minutes, seconds: seconds)
+                        break
+                    default:
+                        break
+                    }
+                }))
+            alert.addAction(UIAlertAction(title: "Cancel".localizedString(), style: .cancel))
+            
+            coordinator.showAlert(alert: alert)
+        }
     }
     
     func closeAction() {

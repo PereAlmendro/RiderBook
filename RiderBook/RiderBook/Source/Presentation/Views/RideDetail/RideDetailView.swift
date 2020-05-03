@@ -17,16 +17,16 @@ struct RideDetailView: View {
             RideListItem(ride: viewModel.ride) { _ in }
             
             Button("Add lap") {
-                self.viewModel.addLapAction()
+                self.viewModel.lapAction(.add)
             }.foregroundColor(Color.blue)
             
             ForEach(self.viewModel.laps, id: \.self) { lap in
                 LapListItem(lap: lap,
                             editAction: { lap in
-                                self.viewModel.editLapAction(lap)
+                                self.viewModel.lapAction(.edit, lap: lap)
                 },
                             deleteAction: { lap in
-                                self.viewModel.deleteLapAction(lap)
+                                self.viewModel.lapAction(.delete, lap: lap)
                 })
             }
         }
