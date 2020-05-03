@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Combine
 
 class RidesViewModel: ObservableObject  {
@@ -36,6 +37,21 @@ class RidesViewModel: ObservableObject  {
         coordinator.showAddRide()
     }
     
+    func showAlertToDeleteRide(_ ride: Ride) {
+        let alert = UIAlertController(title: "Warning!".localizedString(),
+                                      message: "You are going to delete a ride, all laps for this ride will be deleted".localizedString(),
+                                      preferredStyle: .alert)
+        
+        alert.addAction(
+            UIAlertAction(title: "Delete".localizedString(), style: .destructive, handler: { [weak self] (action) in
+                self?.deleteRideAction(ride)
+            })
+        )
+        alert.addAction(UIAlertAction(title: "Cancel".localizedString(), style: .cancel))
+     
+        coordinator.showAlert(alert: alert)
+    }
+    
     // MARK: - Private functions
     
     private func fetchRides(page: Int) {
@@ -55,6 +71,26 @@ class RidesViewModel: ObservableObject  {
                     self?.rides += rides
                 })
         ]
+    }
+    
+    private func deleteRideAction(_ ride: Ride) {
+        anyCancellables += [
+            rideService
+            .deleteRide(ride: ride)
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { (completion) in
+                    switch completion {
+                    case .failure, .finished:
+                        break
+                    }
+                }, receiveValue: { [weak self] (success) in
+                    self?.refreshList()
+                })
+        ]
+    }
+    
+    private func editRideAction(_ ride: Ride) {
+        // TODO: Implement
     }
     
     // MARK: - Public functions

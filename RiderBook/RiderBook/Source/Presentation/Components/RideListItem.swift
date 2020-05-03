@@ -11,11 +11,25 @@ import SwiftUI
 struct RideListItem: View {
     var ride: Ride
     var selectRide: (_ ride: Ride) -> Void
+    var editAction: (_ ride: Ride) -> Void
+    var deleteAction: (_ ride: Ride) -> Void
     
     var body: some View {
-        VStack {
-            Text(ride.circuit)
-            Text(ride.dateString)
+        HStack {
+            VStack {
+                Text(ride.circuit)
+                Text(ride.dateString)
+            }
+            
+            Spacer()
+            
+            Image("ic_edit").onTapGesture {
+                self.editAction(self.ride)
+            }.padding()
+            Image("ic_delete").onTapGesture {
+                self.deleteAction(self.ride)
+            }
+            
         }.onTapGesture {
             self.selectRide(self.ride)
         }
@@ -27,7 +41,7 @@ struct RideListItem_Previews: PreviewProvider {
     private static let ride = Ride(id: 0, date: Date(), circuit: "Alcarrás",
                                circuitId: 4, circuitLocation: "42.12321, -2.23237")
     static var previews: some View {
-        RideListItem(ride: ride, selectRide: { _ in })
+        RideListItem(ride: ride, selectRide: { _ in }, editAction: { _ in }, deleteAction: { _ in } )
     }
 }
 #endif

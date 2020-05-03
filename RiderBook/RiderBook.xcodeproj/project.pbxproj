@@ -92,6 +92,8 @@
 		19DB404A245EFDB000C52CA8 /* LapListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4049245EFDB000C52CA8 /* LapListItem.swift */; };
 		19DB404D245F1C2600C52CA8 /* DeleteLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */; };
 		19DB404F245F1D5200C52CA8 /* DeleteLapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB404E245F1D5200C52CA8 /* DeleteLapResponse.swift */; };
+		19DB4051245F2DD400C52CA8 /* DeleteRideResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4050245F2DD400C52CA8 /* DeleteRideResponse.swift */; };
+		19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
 		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
@@ -216,6 +218,8 @@
 		19DB4049245EFDB000C52CA8 /* LapListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListItem.swift; sourceTree = "<group>"; };
 		19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLapRequest.swift; sourceTree = "<group>"; };
 		19DB404E245F1D5200C52CA8 /* DeleteLapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLapResponse.swift; sourceTree = "<group>"; };
+		19DB4050245F2DD400C52CA8 /* DeleteRideResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRideResponse.swift; sourceTree = "<group>"; };
+		19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRideRequest.swift; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
 		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -351,6 +355,7 @@
 			children = (
 				193BF2B8244C96C60017E644 /* RideListResponse.swift */,
 				193BF2BF244C9C510017E644 /* AddRideResponse.swift */,
+				19DB4050245F2DD400C52CA8 /* DeleteRideResponse.swift */,
 			);
 			path = Ride;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 			children = (
 				193BF2BB244C99000017E644 /* RideListRequest.swift */,
 				193BF2BD244C99E70017E644 /* AddRideRequest.swift */,
+				19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */,
 			);
 			path = Ride;
 			sourceTree = "<group>";
@@ -1254,6 +1260,7 @@
 				19DB404D245F1C2600C52CA8 /* DeleteLapRequest.swift in Sources */,
 				19A862D724546167003BA6D1 /* RideFactory.swift in Sources */,
 				19CA2F6B244AE95F00DBDAA4 /* SplashAssembly.swift in Sources */,
+				19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
 				193DEEA824446F8100815150 /* ApiHostUrl.swift in Sources */,
 				190DC0C52442250F00BDFD9A /* RidesAssembly.swift in Sources */,
@@ -1292,6 +1299,7 @@
 				193BF2BE244C99E70017E644 /* AddRideRequest.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
 				19FDE8302448C7780037F246 /* LoadingView.swift in Sources */,
+				19DB4051245F2DD400C52CA8 /* DeleteRideResponse.swift in Sources */,
 				19CA2F67244AE6C400DBDAA4 /* SplashView.swift in Sources */,
 				196B8AE6244CC59A0013D16C /* Circuit.swift in Sources */,
 			);

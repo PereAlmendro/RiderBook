@@ -17,6 +17,10 @@ struct RidesView: View {
                 ForEach(self.viewModel.rides, id: \.self) { ride in
                     RideListItem(ride: ride, selectRide: { ride in
                         self.viewModel.selectedRide(ride)
+                    }, editAction: { ride in
+                        
+                    }, deleteAction: { ride in
+                        self.viewModel.showAlertToDeleteRide(ride)
                     })
                 }
             }

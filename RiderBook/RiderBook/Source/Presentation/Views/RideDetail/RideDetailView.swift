@@ -13,8 +13,8 @@ struct RideDetailView: View {
     
     var body: some View {
         List {
-            
-            RideListItem(ride: viewModel.ride) { _ in }
+            Text("\(viewModel.ride.circuit) - \(viewModel.ride.dateString)")
+                .padding()
             
             Button("Add lap") {
                 self.viewModel.lapAction(.add)
@@ -33,15 +33,7 @@ struct RideDetailView: View {
         .navigationBarItems(leading:
             Image("ic_close").onTapGesture {
                 self.viewModel.closeAction()
-            }, trailing:
-            HStack {
-                Image("ic_edit").onTapGesture {
-                    self.viewModel.editRideAction()
-                }.padding()
-                Image("ic_delete").onTapGesture {
-                    self.viewModel.deleteRideAction()
-                }
-        })
+            })
             .onAppear(perform: {
                 self.viewModel.refreshList()
             })

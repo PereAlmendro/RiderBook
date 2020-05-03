@@ -12,6 +12,7 @@ import Combine
 protocol RideRepositoryProtocol {
     func addRide(circuitId: Int, date: Date) -> AnyPublisher<Bool, RiderBookError>
     func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError>
+    func deleteRide(rideId: Int) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class RideRepository: RideRepositoryProtocol {
@@ -53,6 +54,16 @@ final class RideRepository: RideRepositoryProtocol {
                     return []
                 }
                 return rides.compactMap { RideFactory.createRide(from: $0) }
+        }.eraseToAnyPublisher()
+    }
+    
+    func deleteRide(rideId: Int) -> AnyPublisher<Bool, RiderBookError> {
+        let userAuth = localRepository.getUser()?.authorization ?? ""
+        let deleteRideRequest = DeleteRideRequest(rideId: rideId, authorization: userAuth)
+        return riderBookApiService
+            .loadRequest(RideTarget.deleteRide(deleteRideRequest), responseModel: DeleteRideResponse.self)
+            .map { (response) -> Bool in
+                return response?.success ?? false
         }.eraseToAnyPublisher()
     }
     

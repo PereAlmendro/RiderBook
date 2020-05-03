@@ -109,20 +109,14 @@ class RideDetailViewModel: ObservableObject  {
     // MARK: - Public functions
     
     func refreshList() {
-        laps = []
+        DispatchQueue.main.async {
+            self.laps = []
+        }
         actualPage = 1
         fetchLaps(page: actualPage)
     }
     
     // MARK: - User actions
-    
-    func editRideAction() {
-        // TODO: Implement
-    }
-    
-    func deleteRideAction() {
-        // TODO: Implement
-    }
     
     func lapAction(_ lapAction: LapAction, lap: Lap? = nil) {
         if lapAction == .delete {
