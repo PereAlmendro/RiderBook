@@ -9,6 +9,7 @@
 import Foundation
 
 struct Ride: Hashable {
+    let id: Int
     let date: Date
     let circuit: String
     let circuitId: Int

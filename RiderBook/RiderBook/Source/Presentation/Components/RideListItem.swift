@@ -24,7 +24,7 @@ struct RideListItem: View {
 
 #if DEBUG
 struct RideListItem_Previews: PreviewProvider {
-    private static let ride = Ride(date: Date(), circuit: "Alcarrás",
+    private static let ride = Ride(id: 0, date: Date(), circuit: "Alcarrás",
                                circuitId: 4, circuitLocation: "42.12321, -2.23237")
     static var previews: some View {
         RideListItem(ride: ride, selectRide: { _ in })

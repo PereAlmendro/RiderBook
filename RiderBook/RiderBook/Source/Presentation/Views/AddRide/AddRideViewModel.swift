@@ -48,7 +48,8 @@ class AddRideViewModel: ObservableObject  {
         loading = true
         
         let selectedCircuit = circuits[circuitIndex]
-        let ride = Ride(date: selectedDate,
+        let ride = Ride(id: 0,
+                        date: selectedDate,
                         circuit: selectedCircuit.name,
                         circuitId: selectedCircuit.id,
                         circuitLocation: selectedCircuit.location)

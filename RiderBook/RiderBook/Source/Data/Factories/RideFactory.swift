@@ -17,7 +17,8 @@ final class RideFactory: RideFactoryProtocol {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-mm-dd hh:mm:ss"
         let date = dateFormatter.date(from: rideResponse.rideDate) ?? Date()
-        return Ride(date: date,
+        return Ride(id: rideResponse.rideId,
+                    date: date,
                     circuit: rideResponse.circuitName,
                     circuitId: rideResponse.circuitId,
                     circuitLocation: rideResponse.circuitLocation)

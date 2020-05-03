@@ -89,6 +89,7 @@
 		19DB4043245EEB2F00C52CA8 /* RideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4042245EEB2F00C52CA8 /* RideDetailView.swift */; };
 		19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */; };
 		19DB4048245EEBDA00C52CA8 /* RideDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */; };
+		19DB404A245EFDB000C52CA8 /* LapListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4049245EFDB000C52CA8 /* LapListItem.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
 		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
@@ -210,6 +211,7 @@
 		19DB4042245EEB2F00C52CA8 /* RideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailView.swift; sourceTree = "<group>"; };
 		19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailViewModel.swift; sourceTree = "<group>"; };
 		19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailAssembly.swift; sourceTree = "<group>"; };
+		19DB4049245EFDB000C52CA8 /* LapListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListItem.swift; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
 		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 				19FDE82F2448C7780037F246 /* LoadingView.swift */,
 				194641EE24499B56000B9B6C /* CustomTextField.swift */,
 				1911D4402455833D00495AD8 /* RideListItem.swift */,
+				19DB4049245EFDB000C52CA8 /* LapListItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1262,6 +1265,7 @@
 				19DB403B245EDDA300C52CA8 /* LapFactory.swift in Sources */,
 				195C935E243BD30F002CFEAD /* LoginView.swift in Sources */,
 				193DEEAF244472B900815150 /* RiderBookServiceErrorResponse.swift in Sources */,
+				19DB404A245EFDB000C52CA8 /* LapListItem.swift in Sources */,
 				19DB4040245EDEEE00C52CA8 /* LapService.swift in Sources */,
 				193BF2B3244C956B0017E644 /* RideService.swift in Sources */,
 				196B8AE9244CC68B0013D16C /* CircuitResponse.swift in Sources */,

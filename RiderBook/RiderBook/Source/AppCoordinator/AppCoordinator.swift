@@ -13,11 +13,15 @@ import UIKit
 protocol AppCoordinatorProtocol {
     /// Called in the scene delegate, shows login after the launchScreen
     func start()
+    
+    // Screens
     func showHome()
     func showLogin()
     func showRegister()
     func showAddRide()
     func showRideDetail(for ride: Ride)
+    
+    func dismiss()
 }
 
 final class AppCoordinator: AppCoordinatorProtocol {
@@ -89,7 +93,13 @@ extension AppCoordinator {
     func showRideDetail(for ride: Ride) {
         let detailView = getRideDetailView(for: ride)
         let hostingController = UIHostingController(rootView: detailView)
-        present(viewController: hostingController, animated: true)
+        let navController = UINavigationController(rootViewController: hostingController)
+        navController.modalPresentationStyle = .fullScreen
+        present(viewController: navController, animated: true)
+    }
+    
+    func dismiss() {
+        UIApplication.topViewController()?.dismiss(animated: true, completion: nil)
     }
     
 }

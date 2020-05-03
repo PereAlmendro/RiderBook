@@ -8,11 +8,14 @@
 
 import Foundation
 
-struct Lap: Identifiable {
-    var id = UUID()
-    
+struct Lap: Hashable {
     let rideId: Int
     let lapId: Int
     let number: Int
     let timeInSeconds: String
+    
+    func getFormattedTime() -> String {
+        // TODO: return a visual format
+        return timeInSeconds
+    }
 }
