@@ -15,7 +15,7 @@ protocol RideFactoryProtocol {
 final class RideFactory: RideFactoryProtocol {
     static func createRide(from rideResponse: RideResponse) -> Ride? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd hh:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormatter.date(from: rideResponse.rideDate) ?? Date()
         return Ride(id: rideResponse.rideId,
                     date: date,

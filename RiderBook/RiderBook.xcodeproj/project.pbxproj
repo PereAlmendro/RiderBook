@@ -26,12 +26,11 @@
 		193BF2B9244C96C60017E644 /* RideListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2B8244C96C60017E644 /* RideListResponse.swift */; };
 		193BF2BC244C99000017E644 /* RideListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2BB244C99000017E644 /* RideListRequest.swift */; };
 		193BF2BE244C99E70017E644 /* AddRideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2BD244C99E70017E644 /* AddRideRequest.swift */; };
-		193BF2C0244C9C510017E644 /* AddRideResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2BF244C9C510017E644 /* AddRideResponse.swift */; };
 		193BF2C2244C9DBB0017E644 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C1244C9DBB0017E644 /* Ride.swift */; };
 		193BF2C4244C9F770017E644 /* RidesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C3244C9F770017E644 /* RidesViewModel.swift */; };
-		193BF2C7244CA45B0017E644 /* AddRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C6244CA45B0017E644 /* AddRideView.swift */; };
-		193BF2C9244CA4650017E644 /* AddRideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C8244CA4650017E644 /* AddRideViewModel.swift */; };
-		193BF2CB244CA4A50017E644 /* AddRideAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2CA244CA4A50017E644 /* AddRideAssembly.swift */; };
+		193BF2C7244CA45B0017E644 /* AddEditRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C6244CA45B0017E644 /* AddEditRideView.swift */; };
+		193BF2C9244CA4650017E644 /* AddEditRideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C8244CA4650017E644 /* AddEditRideViewModel.swift */; };
+		193BF2CB244CA4A50017E644 /* AddEditRideAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2CA244CA4A50017E644 /* AddEditRideAssembly.swift */; };
 		193DEE9F24446E2500815150 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEE9E24446E2500815150 /* UserResponse.swift */; };
 		193DEEA124446E5300815150 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA024446E5300815150 /* LoginRequest.swift */; };
 		193DEEA824446F8100815150 /* ApiHostUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA724446F8100815150 /* ApiHostUrl.swift */; };
@@ -68,6 +67,9 @@
 		19A862D724546167003BA6D1 /* RideFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A862D624546167003BA6D1 /* RideFactory.swift */; };
 		19ABECD32450AA37005BCDEC /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */; };
 		19ABECD52450AD4D005BCDEC /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABECD42450AD4D005BCDEC /* MockApiService.swift */; };
+		19AD193C246EE2570035269F /* EditRideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193B246EE2570035269F /* EditRideRequest.swift */; };
+		19AD193E246EE2990035269F /* EditLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193D246EE2990035269F /* EditLapRequest.swift */; };
+		19AD1940246EE5C00035269F /* RiderBookServiceSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193F246EE5C00035269F /* RiderBookServiceSuccessResponse.swift */; };
 		19B1A0E5244219B6000D4FA6 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0E4244219B6000D4FA6 /* LoginAssembly.swift */; };
 		19B1A0E924421A62000D4FA6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */; };
 		19CA2F67244AE6C400DBDAA4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F66244AE6C400DBDAA4 /* SplashView.swift */; };
@@ -81,7 +83,6 @@
 		19DB402F245EDA4700C52CA8 /* LapListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB402E245EDA4700C52CA8 /* LapListRequest.swift */; };
 		19DB4031245EDA5000C52CA8 /* AddLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4030245EDA5000C52CA8 /* AddLapRequest.swift */; };
 		19DB4034245EDC8900C52CA8 /* LapListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4033245EDC8900C52CA8 /* LapListResponse.swift */; };
-		19DB4036245EDC9600C52CA8 /* AddLapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4035245EDC9600C52CA8 /* AddLapResponse.swift */; };
 		19DB4039245EDCEE00C52CA8 /* LapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4038245EDCEE00C52CA8 /* LapRepository.swift */; };
 		19DB403B245EDDA300C52CA8 /* LapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB403A245EDDA300C52CA8 /* LapFactory.swift */; };
 		19DB403D245EDDD900C52CA8 /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB403C245EDDD900C52CA8 /* Lap.swift */; };
@@ -91,8 +92,6 @@
 		19DB4048245EEBDA00C52CA8 /* RideDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */; };
 		19DB404A245EFDB000C52CA8 /* LapListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4049245EFDB000C52CA8 /* LapListItem.swift */; };
 		19DB404D245F1C2600C52CA8 /* DeleteLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */; };
-		19DB404F245F1D5200C52CA8 /* DeleteLapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB404E245F1D5200C52CA8 /* DeleteLapResponse.swift */; };
-		19DB4051245F2DD400C52CA8 /* DeleteRideResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4050245F2DD400C52CA8 /* DeleteRideResponse.swift */; };
 		19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
@@ -142,12 +141,11 @@
 		193BF2B8244C96C60017E644 /* RideListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideListResponse.swift; sourceTree = "<group>"; };
 		193BF2BB244C99000017E644 /* RideListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideListRequest.swift; sourceTree = "<group>"; };
 		193BF2BD244C99E70017E644 /* AddRideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideRequest.swift; sourceTree = "<group>"; };
-		193BF2BF244C9C510017E644 /* AddRideResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideResponse.swift; sourceTree = "<group>"; };
 		193BF2C1244C9DBB0017E644 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		193BF2C3244C9F770017E644 /* RidesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesViewModel.swift; sourceTree = "<group>"; };
-		193BF2C6244CA45B0017E644 /* AddRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideView.swift; sourceTree = "<group>"; };
-		193BF2C8244CA4650017E644 /* AddRideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideViewModel.swift; sourceTree = "<group>"; };
-		193BF2CA244CA4A50017E644 /* AddRideAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideAssembly.swift; sourceTree = "<group>"; };
+		193BF2C6244CA45B0017E644 /* AddEditRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRideView.swift; sourceTree = "<group>"; };
+		193BF2C8244CA4650017E644 /* AddEditRideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRideViewModel.swift; sourceTree = "<group>"; };
+		193BF2CA244CA4A50017E644 /* AddEditRideAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRideAssembly.swift; sourceTree = "<group>"; };
 		193DEE9E24446E2500815150 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		193DEEA024446E5300815150 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		193DEEA724446F8100815150 /* ApiHostUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHostUrl.swift; sourceTree = "<group>"; };
@@ -194,6 +192,9 @@
 		19A862D624546167003BA6D1 /* RideFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideFactory.swift; sourceTree = "<group>"; };
 		19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
 		19ABECD42450AD4D005BCDEC /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
+		19AD193B246EE2570035269F /* EditRideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRideRequest.swift; sourceTree = "<group>"; };
+		19AD193D246EE2990035269F /* EditLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLapRequest.swift; sourceTree = "<group>"; };
+		19AD193F246EE5C00035269F /* RiderBookServiceSuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookServiceSuccessResponse.swift; sourceTree = "<group>"; };
 		19B1A0E4244219B6000D4FA6 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		19CA2F66244AE6C400DBDAA4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -207,7 +208,6 @@
 		19DB402E245EDA4700C52CA8 /* LapListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListRequest.swift; sourceTree = "<group>"; };
 		19DB4030245EDA5000C52CA8 /* AddLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLapRequest.swift; sourceTree = "<group>"; };
 		19DB4033245EDC8900C52CA8 /* LapListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListResponse.swift; sourceTree = "<group>"; };
-		19DB4035245EDC9600C52CA8 /* AddLapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLapResponse.swift; sourceTree = "<group>"; };
 		19DB4038245EDCEE00C52CA8 /* LapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapRepository.swift; sourceTree = "<group>"; };
 		19DB403A245EDDA300C52CA8 /* LapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapFactory.swift; sourceTree = "<group>"; };
 		19DB403C245EDDD900C52CA8 /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
@@ -217,8 +217,6 @@
 		19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailAssembly.swift; sourceTree = "<group>"; };
 		19DB4049245EFDB000C52CA8 /* LapListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListItem.swift; sourceTree = "<group>"; };
 		19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLapRequest.swift; sourceTree = "<group>"; };
-		19DB404E245F1D5200C52CA8 /* DeleteLapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLapResponse.swift; sourceTree = "<group>"; };
-		19DB4050245F2DD400C52CA8 /* DeleteRideResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRideResponse.swift; sourceTree = "<group>"; };
 		19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRideRequest.swift; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
@@ -354,8 +352,6 @@
 			isa = PBXGroup;
 			children = (
 				193BF2B8244C96C60017E644 /* RideListResponse.swift */,
-				193BF2BF244C9C510017E644 /* AddRideResponse.swift */,
-				19DB4050245F2DD400C52CA8 /* DeleteRideResponse.swift */,
 			);
 			path = Ride;
 			sourceTree = "<group>";
@@ -364,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				193BF2BB244C99000017E644 /* RideListRequest.swift */,
+				19AD193B246EE2570035269F /* EditRideRequest.swift */,
 				193BF2BD244C99E70017E644 /* AddRideRequest.swift */,
 				19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */,
 			);
@@ -373,8 +370,8 @@
 		193BF2C5244CA4290017E644 /* AddRide */ = {
 			isa = PBXGroup;
 			children = (
-				193BF2C6244CA45B0017E644 /* AddRideView.swift */,
-				193BF2C8244CA4650017E644 /* AddRideViewModel.swift */,
+				193BF2C6244CA45B0017E644 /* AddEditRideView.swift */,
+				193BF2C8244CA4650017E644 /* AddEditRideViewModel.swift */,
 			);
 			path = AddRide;
 			sourceTree = "<group>";
@@ -449,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				193DEEAE244472B900815150 /* RiderBookServiceErrorResponse.swift */,
+				19AD193F246EE5C00035269F /* RiderBookServiceSuccessResponse.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -815,7 +813,7 @@
 				190DC0C42442250F00BDFD9A /* RidesAssembly.swift */,
 				190DC0C22442250000BDFD9A /* ProfileAssembly.swift */,
 				19CA2F71244AF37C00DBDAA4 /* RegisterAssembly.swift */,
-				193BF2CA244CA4A50017E644 /* AddRideAssembly.swift */,
+				193BF2CA244CA4A50017E644 /* AddEditRideAssembly.swift */,
 				19DB4047245EEBDA00C52CA8 /* RideDetailAssembly.swift */,
 			);
 			path = Assembly;
@@ -920,6 +918,7 @@
 				19DB402E245EDA4700C52CA8 /* LapListRequest.swift */,
 				19DB4030245EDA5000C52CA8 /* AddLapRequest.swift */,
 				19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */,
+				19AD193D246EE2990035269F /* EditLapRequest.swift */,
 			);
 			path = Lap;
 			sourceTree = "<group>";
@@ -928,8 +927,6 @@
 			isa = PBXGroup;
 			children = (
 				19DB4033245EDC8900C52CA8 /* LapListResponse.swift */,
-				19DB4035245EDC9600C52CA8 /* AddLapResponse.swift */,
-				19DB404E245F1D5200C52CA8 /* DeleteLapResponse.swift */,
 			);
 			path = Lap;
 			sourceTree = "<group>";
@@ -1232,10 +1229,10 @@
 				19B1A0E924421A62000D4FA6 /* AppCoordinator.swift in Sources */,
 				1933B3A42441B01E00D0BF44 /* RidesView.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
-				193BF2C9244CA4650017E644 /* AddRideViewModel.swift in Sources */,
+				193BF2C9244CA4650017E644 /* AddEditRideViewModel.swift in Sources */,
 				19CA2F70244AF0FA00DBDAA4 /* RegisterViewModel.swift in Sources */,
 				19DB4039245EDCEE00C52CA8 /* LapRepository.swift in Sources */,
-				193BF2CB244CA4A50017E644 /* AddRideAssembly.swift in Sources */,
+				193BF2CB244CA4A50017E644 /* AddEditRideAssembly.swift in Sources */,
 				19DB403D245EDDD900C52CA8 /* Lap.swift in Sources */,
 				199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */,
 				193BF2B6244C95A20017E644 /* RideRepository.swift in Sources */,
@@ -1255,9 +1252,11 @@
 				193DEE9F24446E2500815150 /* UserResponse.swift in Sources */,
 				193DEEAD24446FFB00815150 /* RequestableProtocol.swift in Sources */,
 				193BF2BC244C99000017E644 /* RideListRequest.swift in Sources */,
-				193BF2C0244C9C510017E644 /* AddRideResponse.swift in Sources */,
+				19AD1940246EE5C00035269F /* RiderBookServiceSuccessResponse.swift in Sources */,
 				194641EF24499B56000B9B6C /* CustomTextField.swift in Sources */,
 				19DB404D245F1C2600C52CA8 /* DeleteLapRequest.swift in Sources */,
+				19AD193C246EE2570035269F /* EditRideRequest.swift in Sources */,
+				19AD193E246EE2990035269F /* EditLapRequest.swift in Sources */,
 				19A862D724546167003BA6D1 /* RideFactory.swift in Sources */,
 				19CA2F6B244AE95F00DBDAA4 /* SplashAssembly.swift in Sources */,
 				19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */,
@@ -1267,13 +1266,11 @@
 				19DB4034245EDC8900C52CA8 /* LapListResponse.swift in Sources */,
 				19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
-				19DB404F245F1D5200C52CA8 /* DeleteLapResponse.swift in Sources */,
 				19B1A0E5244219B6000D4FA6 /* LoginAssembly.swift in Sources */,
 				193DEEA124446E5300815150 /* LoginRequest.swift in Sources */,
 				19FDE8332448D0040037F246 /* UserFactory.swift in Sources */,
 				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
-				19DB4036245EDC9600C52CA8 /* AddLapResponse.swift in Sources */,
-				193BF2C7244CA45B0017E644 /* AddRideView.swift in Sources */,
+				193BF2C7244CA45B0017E644 /* AddEditRideView.swift in Sources */,
 				19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */,
 				193BF2B9244C96C60017E644 /* RideListResponse.swift in Sources */,
 				190DC0C32442250000BDFD9A /* ProfileAssembly.swift in Sources */,
@@ -1299,7 +1296,6 @@
 				193BF2BE244C99E70017E644 /* AddRideRequest.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
 				19FDE8302448C7780037F246 /* LoadingView.swift in Sources */,
-				19DB4051245F2DD400C52CA8 /* DeleteRideResponse.swift in Sources */,
 				19CA2F67244AE6C400DBDAA4 /* SplashView.swift in Sources */,
 				196B8AE6244CC59A0013D16C /* Circuit.swift in Sources */,
 			);

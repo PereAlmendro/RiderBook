@@ -1,5 +1,5 @@
 //
-//  AddRideView.swift
+//  AddEditRideView.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 19/04/2020.
@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct AddRideView: View {
-    @ObservedObject var viewModel: AddRideViewModel
+struct AddEditRideView: View {
+    @ObservedObject var viewModel: AddEditRideViewModel
 
     var body: some View {
         LoadingView(isShowing: $viewModel.loading) {
@@ -34,8 +34,8 @@ struct AddRideView: View {
                     }
                 }.listStyle(GroupedListStyle())
                  
-                CustomButton(title: "Add_ride" , action: {
-                    self.viewModel.addRideAction()
+                CustomButton(title: "Save" , action: {
+                    self.viewModel.submitAction()
                 })
             }
         }
@@ -50,7 +50,7 @@ struct AddRideView: View {
 #if DEBUG
 struct AddRideView_Previews: PreviewProvider {
     static let fakeCoordinator = AppCoordinator(window: UIWindow())
-    static let addRideAssembly = AddRideAssembly(coordinator: fakeCoordinator)
+    static let addRideAssembly = AddEditRideAssembly(coordinator: fakeCoordinator)
     
     static var previews: some View {
         addRideAssembly.getView()

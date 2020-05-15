@@ -29,7 +29,7 @@ class RideDetailViewModel: ObservableObject  {
     private let lapService: LapServiceProtocol
     private let coordinator: AppCoordinatorProtocol
     private var actualPage: Int = 1
-
+    
     private enum Constants: Int {
         case minutesTextFieldTag = 0
         case secondsTextFieldTag = 1
@@ -63,18 +63,22 @@ class RideDetailViewModel: ObservableObject  {
     
     // MARK: - Private functions
     
+    private func convertToSeconds(minutes: Double, seconds: Double) -> Double {
+        return (minutes * 60) + seconds
+    }
+    
     private func addLap(with minutes: Double, seconds: Double) {
         let number = laps.sorted { (lap1, lap2) -> Bool in
             lap1.number > lap2.number
         }.first?.number ?? 0
         
-        let timeInSeconds = (minutes * 60) + seconds
-        
-        let lapToAdd = Lap(rideId: ride.id, lapId: 0, number: number + 1, timeInSeconds: String(timeInSeconds))
+        let timeInSeconds = convertToSeconds(minutes: minutes, seconds: seconds)
+        let lapToAdd = Lap(rideId: ride.id, lapId: 0,
+                           number: number + 1, timeInSeconds: String(timeInSeconds))
         
         anyCancellables += [
             lapService
-            .addLap(lap: lapToAdd)
+                .addLap(lap: lapToAdd)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { (completion) in
                     switch completion {
@@ -88,13 +92,29 @@ class RideDetailViewModel: ObservableObject  {
     }
     
     private func editLap(_ lap: Lap, with minutes: Double, seconds: Double) {
-        // TODO: edit lap
+        let timeInSeconds = convertToSeconds(minutes: minutes, seconds: seconds)
+        let lapToEdit = Lap(rideId: lap.rideId, lapId: lap.lapId,
+                            number: lap.number, timeInSeconds: String(timeInSeconds))
+        
+        anyCancellables += [
+            lapService
+                .editLap(lap: lapToEdit)
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { (completion) in
+                    switch completion {
+                    case .failure, .finished:
+                        break
+                    }
+                }, receiveValue: { [weak self] (success) in
+                    self?.refreshList()
+                })
+        ]
     }
     
     private func deleteLap(_ lap: Lap) {
         anyCancellables += [
             lapService
-            .deleteLap(lap: lap)
+                .deleteLap(lap: lap)
                 .sink(receiveCompletion: { (completion) in
                     switch completion {
                     case .failure, .finished:
@@ -123,7 +143,10 @@ class RideDetailViewModel: ObservableObject  {
             guard let lap = lap else { return }
             deleteLap(lap)
         } else {
-            let alert = UIAlertController(title: "Add a new lap".localizedString(),
+            let alertTitle = lapAction == .add ? "Add a new lap" : "Edit lap"
+            let alertActionTitle = lapAction == .add ? "Add" : "Edit"
+            
+            let alert = UIAlertController(title: alertTitle.localizedString(),
                                           message: nil,
                                           preferredStyle: .alert)
             
@@ -140,28 +163,28 @@ class RideDetailViewModel: ObservableObject  {
             }
             
             alert.addAction(
-                UIAlertAction(title: "Add".localizedString(), style: .default, handler: { [weak self] (action) in
-                    
-                    var minutes: Double = 0
-                    var seconds: Double = 0
-                    alert.textFields?.forEach { textField in
-                        if textField.tag == Constants.minutesTextFieldTag.rawValue {
-                            minutes = Double(textField.text ?? "0") ?? 0.0
-                        } else if (textField.tag == Constants.secondsTextFieldTag.rawValue) {
-                            seconds = Double(textField.text ?? "0") ?? 0.0
-                        }
-                    }
-                    
-                    switch lapAction {
-                    case .add:
-                        self?.addLap(with: minutes, seconds: seconds)
-                    case .edit:
-                        guard let lap = lap else { return }
-                        self?.editLap(lap, with: minutes, seconds: seconds)
-                        break
-                    default:
-                        break
-                    }
+                UIAlertAction(title: alertActionTitle.localizedString(),
+                              style: .default, handler: { [weak self] (action) in
+                                
+                                var minutes: Double = 0
+                                var seconds: Double = 0
+                                alert.textFields?.forEach { textField in
+                                    if textField.tag == Constants.minutesTextFieldTag.rawValue {
+                                        minutes = Double(textField.text ?? "0") ?? 0.0
+                                    } else if (textField.tag == Constants.secondsTextFieldTag.rawValue) {
+                                        seconds = Double(textField.text ?? "0") ?? 0.0
+                                    }
+                                }
+                                
+                                switch lapAction {
+                                case .add:
+                                    self?.addLap(with: minutes, seconds: seconds)
+                                case .edit:
+                                    guard let lap = lap else { return }
+                                    self?.editLap(lap, with: minutes, seconds: seconds)
+                                default:
+                                    break
+                                }
                 }))
             alert.addAction(UIAlertAction(title: "Cancel".localizedString(), style: .cancel))
             

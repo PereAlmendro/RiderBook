@@ -11,7 +11,7 @@ import UIKit
 import Combine
 
 class RidesViewModel: ObservableObject  {
-
+    
     // MARK: - View properties
     
     @Published var rides: [Ride] = []
@@ -22,7 +22,7 @@ class RidesViewModel: ObservableObject  {
     private let coordinator: AppCoordinatorProtocol
     private let rideService: RideServiceProtocol
     private var actualPage: Int = 1
-
+    
     // MARK: - Lifecycle
     
     init(coordinator: AppCoordinatorProtocol,
@@ -48,7 +48,7 @@ class RidesViewModel: ObservableObject  {
             })
         )
         alert.addAction(UIAlertAction(title: "Cancel".localizedString(), style: .cancel))
-     
+        
         coordinator.showAlert(alert: alert)
     }
     
@@ -76,7 +76,7 @@ class RidesViewModel: ObservableObject  {
     private func deleteRideAction(_ ride: Ride) {
         anyCancellables += [
             rideService
-            .deleteRide(ride: ride)
+                .deleteRide(ride: ride)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { (completion) in
                     switch completion {
@@ -89,10 +89,6 @@ class RidesViewModel: ObservableObject  {
         ]
     }
     
-    private func editRideAction(_ ride: Ride) {
-        // TODO: Implement
-    }
-    
     // MARK: - Public functions
     
     func refreshList() {
@@ -103,5 +99,9 @@ class RidesViewModel: ObservableObject  {
     
     func selectedRide(_ ride: Ride) {
         coordinator.showRideDetail(for: ride)
+    }
+    
+    func editRideAction(_ ride: Ride) {
+        coordinator.showEditRide(for: ride)
     }
 }

@@ -18,7 +18,7 @@ struct RidesView: View {
                     RideListItem(ride: ride, selectRide: { ride in
                         self.viewModel.selectedRide(ride)
                     }, editAction: { ride in
-                        
+                        self.viewModel.editRideAction(ride)
                     }, deleteAction: { ride in
                         self.viewModel.showAlertToDeleteRide(ride)
                     })

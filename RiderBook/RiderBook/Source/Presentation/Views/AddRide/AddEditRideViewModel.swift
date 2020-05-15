@@ -57,9 +57,53 @@ class AddEditRideViewModel: ObservableObject  {
     
     // MARK: - User Actions
     
-    func addRideAction() {
+    func submitAction() {
         loading = true
         
+        switch screenMode {
+        case .add:
+            addRideAction()
+        case .edit:
+            editRideAction()
+        }
+    }
+    
+    func editRideAction() {
+        guard let ride = ride else { return }
+        let selectedCircuit = circuits[circuitIndex]
+        let rideWithChanges = Ride(id: ride.id,
+                                   date: selectedDate,
+                                   circuit: selectedCircuit.name,
+                                   circuitId: selectedCircuit.id,
+                                   circuitLocation: selectedCircuit.location)
+        
+        anyCancellables += [
+            rideService
+                .editRide(ride: rideWithChanges)
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { [weak self] (completion) in
+                    switch completion {
+                    case .failure(let error):
+                        print(error)
+                        self?.showMessage(title: "Error",
+                                          message: "Something went wrong editing the ride, please try again later")
+                    case .finished:
+                        break
+                    }
+                    self?.loading = false
+                    }, receiveValue: { [weak self] (success) in
+                        if success {
+                            self?.showMessage(title: "Sucess",
+                                              message: "Ride Edited successfully")
+                        } else {
+                            self?.showMessage(title: "Error",
+                                              message: "Something went wrong editing the ride, please try again later")
+                        }
+                })
+        ]
+    }
+    
+    func addRideAction() {
         let selectedCircuit = circuits[circuitIndex]
         let ride = Ride(id: 0,
                         date: selectedDate,
@@ -68,7 +112,8 @@ class AddEditRideViewModel: ObservableObject  {
                         circuitLocation: selectedCircuit.location)
         
         anyCancellables += [
-            rideService.addRide(ride: ride)
+            rideService
+                .addRide(ride: ride)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { [weak self] (completion) in
                     switch completion {
@@ -110,9 +155,18 @@ class AddEditRideViewModel: ObservableObject  {
                 }) { [weak self] (result) in
                     guard let result = result else {  return }
                     self?.circuits = result
-                    self?.reloadPicker.toggle()
+                    self?.setupView()
             }
         ]
+    }
+    
+    private func setupView() {
+        if screenMode == .edit, let ride = ride {
+            selectedDate = ride.date
+            circuitIndex = circuits.firstIndex(where: { $0.id == ride.circuitId }) ?? 0
+        }
+        
+        reloadPicker.toggle()
     }
     
     private func showMessage(title: String, message: String) {

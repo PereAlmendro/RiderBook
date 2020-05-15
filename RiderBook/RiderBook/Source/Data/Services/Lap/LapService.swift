@@ -13,6 +13,7 @@ protocol LapServiceProtocol {
     func addLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError>
     func fetchLaps(page: Int, rideId: Int) -> AnyPublisher<[Lap], RiderBookError>
     func deleteLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError>
+    func editLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class LapService: LapServiceProtocol {
@@ -41,5 +42,7 @@ final class LapService: LapServiceProtocol {
         return lapRepository.deleteLap(lapId: lap.lapId)
     }
     
-    // TODO: Edit Lap
+    func editLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError> {
+        return lapRepository.editLap(rideId: lap.rideId, lapId: lap.lapId, lapTimeInSeconds: lap.timeInSeconds)
+    }
 }

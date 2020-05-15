@@ -19,6 +19,7 @@ protocol AppCoordinatorProtocol {
     func showLogin()
     func showRegister()
     func showAddRide()
+    func showEditRide(for ride: Ride)
     func showRideDetail(for ride: Ride)
     
     func dismiss()
@@ -86,7 +87,13 @@ extension AppCoordinator {
     }
     
     func showAddRide() {
-        let addRideView = getAddRideView()
+        let addRideView = getAddEditRideView()
+        let hostingController = UIHostingController(rootView: addRideView)
+        present(viewController: hostingController, animated: true)
+    }
+    
+    func showEditRide(for ride: Ride) {
+        let addRideView = getAddEditRideView(mode: .edit, ride: ride)
         let hostingController = UIHostingController(rootView: addRideView)
         present(viewController: hostingController, animated: true)
     }
@@ -119,9 +126,9 @@ private extension AppCoordinator {
         return rideDetailView
     }
     
-    private func getAddRideView() -> AddRideView {
-        let addRideAssembly = AddRideAssembly(coordinator: self)
-        let addRideView = addRideAssembly.getView()
+    private func getAddEditRideView(mode: AddEditRideViewModel.ScreenMode = .add, ride: Ride? = nil) -> AddEditRideView {
+        let addRideAssembly = AddEditRideAssembly(coordinator: self)
+        let addRideView = addRideAssembly.getView(mode: mode, ride: ride)
         return addRideView
     }
     

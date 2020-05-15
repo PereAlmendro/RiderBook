@@ -12,12 +12,14 @@ enum LapEndpoint: String  {
     case new = "/laps/new"
     case lapList = "/laps/list"
     case deleteLap = "/laps/delete"
+    case editLap = "/laps/edit"
 }
 
 enum LapTarget: ApiTargetProtocol {
     case addLap(_ request: AddLapRequest)
     case lapList(_ request: LapListRequest)
     case deleteLap(_ request: DeleteLapRequest)
+    case editLap(_ request: EditLapRequest)
 }
 
 extension LapTarget {
@@ -29,6 +31,8 @@ extension LapTarget {
             return LapEndpoint.lapList.rawValue
         case .deleteLap:
             return LapEndpoint.deleteLap.rawValue
+        case .editLap:
+            return LapEndpoint.editLap.rawValue
         }
     }
     
@@ -40,6 +44,8 @@ extension LapTarget {
             return .get
         case .deleteLap:
             return .delete
+        case .editLap:
+            return .post
         }
     }
     
@@ -51,12 +57,14 @@ extension LapTarget {
             return nil
         case .deleteLap(let request):
             return request
+        case .editLap(let request):
+            return request
         }
     }
     
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .addLap, .deleteLap:
+        case .addLap, .deleteLap, .editLap:
             return nil
         case .lapList(let request):
             return [URLQueryItem(name: "page", value: String(request.page)),
@@ -71,6 +79,8 @@ extension LapTarget {
         case .lapList(let request):
             return ["Content-Type": "application/json", "authorization" : request.authorization]
         case .deleteLap(let request):
+            return ["Content-Type": "application/json", "authorization" : request.authorization]
+        case .editLap(let request):
             return ["Content-Type": "application/json", "authorization" : request.authorization]
         }
     }

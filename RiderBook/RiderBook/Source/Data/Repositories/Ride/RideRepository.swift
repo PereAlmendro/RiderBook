@@ -13,6 +13,7 @@ protocol RideRepositoryProtocol {
     func addRide(circuitId: Int, date: Date) -> AnyPublisher<Bool, RiderBookError>
     func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError>
     func deleteRide(rideId: Int) -> AnyPublisher<Bool, RiderBookError>
+    func editRide(rideId: Int, circuitId: Int, date: Date) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class RideRepository: RideRepositoryProtocol {
@@ -38,7 +39,7 @@ final class RideRepository: RideRepositoryProtocol {
                                             dateTimeStamp: Int(date.timeIntervalSince1970),
                                             authorization: userAuth)
         return riderBookApiService
-            .loadRequest(RideTarget.addRide(addRideRequest), responseModel: AddRideResponse.self)
+            .loadRequest(RideTarget.addRide(addRideRequest), responseModel: RiderBookServiceSuccessResponse.self)
             .map { (response) -> Bool in
                 return response?.success ?? false
         }.eraseToAnyPublisher()
@@ -61,7 +62,20 @@ final class RideRepository: RideRepositoryProtocol {
         let userAuth = localRepository.getUser()?.authorization ?? ""
         let deleteRideRequest = DeleteRideRequest(rideId: rideId, authorization: userAuth)
         return riderBookApiService
-            .loadRequest(RideTarget.deleteRide(deleteRideRequest), responseModel: DeleteRideResponse.self)
+            .loadRequest(RideTarget.deleteRide(deleteRideRequest), responseModel: RiderBookServiceSuccessResponse.self)
+            .map { (response) -> Bool in
+                return response?.success ?? false
+        }.eraseToAnyPublisher()
+    }
+    
+    func editRide(rideId: Int, circuitId: Int, date: Date) -> AnyPublisher<Bool, RiderBookError> {
+        let userAuth = localRepository.getUser()?.authorization ?? ""
+        let editRideRequest = EditRideRequest(rideId: rideId,
+                                              circuitId: circuitId,
+                                              dateTimeStamp: Int(date.timeIntervalSince1970),
+                                              authorization: userAuth)
+        return riderBookApiService
+            .loadRequest(RideTarget.editRide(editRideRequest), responseModel: RiderBookServiceSuccessResponse.self)
             .map { (response) -> Bool in
                 return response?.success ?? false
         }.eraseToAnyPublisher()
