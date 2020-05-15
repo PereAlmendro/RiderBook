@@ -9,9 +9,14 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @ObservedObject var viewModel: ProfileViewModel
+
     var body: some View {
         VStack {
-            Text("Profile View")
+            Spacer()
+            Button("Logout") {
+                self.viewModel.logoutAction()
+            }
         }
     }
 }
@@ -19,7 +24,8 @@ struct ProfileView: View {
 #if DEBUG
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        let fakeCoordinator = AppCoordinator(window: UIWindow())
+        return ProfileAssembly(coordinator: fakeCoordinator).getView()
     }
 }
 #endif

@@ -15,6 +15,7 @@ fileprivate enum EntityName: String {
 
 protocol LocalRepositoryProtocol {
     func getUser() -> User?
+    @discardableResult func deleteSavedUser() -> Bool
     @discardableResult func saveUser(_ user: User) -> Bool
 }
 
@@ -66,6 +67,20 @@ final class LocalRepository: LocalRepositoryProtocol {
         
         do {
             try context.save()
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    func deleteSavedUser() -> Bool {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: EntityName.UserEntity.rawValue)
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request) as? [NSManagedObject] ?? []
+            for data in result  {
+                context.delete(data)
+            }
             return true
         } catch {
             return false

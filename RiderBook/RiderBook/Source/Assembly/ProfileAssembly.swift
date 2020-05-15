@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ProfileAssembly {
     private let coordinator: AppCoordinatorProtocol
@@ -16,6 +17,13 @@ class ProfileAssembly {
     }
 
     func getView() -> ProfileView {
-        return ProfileView()
+        let riderBookApiService = RiderBookApiService()
+        let userRepository = UserRepository(riderBookApiService: riderBookApiService)
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let localRepository = LocalRepository(context: context)
+        let loginService = LoginService(userRepository: userRepository,
+                                        localRepository: localRepository)
+        let profileViewModel = ProfileViewModel(loginService: loginService, coordinator: coordinator)
+        return ProfileView(viewModel: profileViewModel)
     }
 }

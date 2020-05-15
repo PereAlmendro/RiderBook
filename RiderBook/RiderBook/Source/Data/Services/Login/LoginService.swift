@@ -14,6 +14,7 @@ protocol LoginServiceProtocol {
     func attemptAutologin() -> AnyPublisher<Bool, RiderBookError>?
     func register(name: String, password: String, email: String) -> AnyPublisher<Bool, RiderBookError>
     func logIn(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<Bool, RiderBookError>
+    func logOut() -> Bool
 }
 
 final class LoginService: LoginServiceProtocol {
@@ -64,6 +65,9 @@ final class LoginService: LoginServiceProtocol {
         }.eraseToAnyPublisher()
     }
     
-    // TODO: Logout
+    func logOut() -> Bool {
+        return localRepository.deleteSavedUser()
+    }
+    
     // TODO: Edit user
 }
