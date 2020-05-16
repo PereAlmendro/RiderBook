@@ -43,7 +43,7 @@ struct LoginView: View {
             }
         }
         .background(Color.dlBackgroundWhite)
-        .navigationBarTitle("Welcome".localized())
+        .navigationBarTitle("log_in".localized())
         .alert(isPresented: $viewModel.showAlert) { () -> Alert in
             Alert(title: Text(viewModel.errorTitle.localized()),
                   message: Text(viewModel.errorMessage),
