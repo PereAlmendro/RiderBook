@@ -14,8 +14,10 @@
 "Login_advice" = "Once logged in, your credentials will be saved securely.";
 "log_in" = "Log in";
 "Join_as_guest" = "Join as guest!";
+"Name" = "Name";
 "Email" = "Email";
 "Password" = "Password";
+"Repeat_password" = "Repeat password";
 "Guest_Rider" = "Guest Rider";
 "Login_to_use_all_features" = "Log in to use all features, its free!";
 "Calendar" = "Calendar";

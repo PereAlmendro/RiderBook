@@ -22,8 +22,10 @@ struct LoginView: View {
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 30)
                     CustomTextField(text: self.$viewModel.email,
+                                    leftImageName: "envelope",
                                     textFieldPlaceholder: "Email")
                     CustomTextField(text: self.$viewModel.password,
+                                    leftImageName: "lock",
                                     textFieldPlaceholder: "Password",
                                     secureField: true)
                     Button("log_in") {

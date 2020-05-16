@@ -14,8 +14,10 @@
 "Login_advice" = "Una vez iniciada la sesión, se guardaran tus credenciales de forma segura.";
 "log_in" = "Iniciar sesión";
 "Join_as_guest" = "¡Entra como invitado!";
+"Name" = "Nombre";
 "Email" = "Email";
 "Password" = "Contraseña";
+"Repeat_password" = "Repite la contraseña";
 "Guest_Rider" = "Rider invitado";
 "Login_to_use_all_features" = "Inicie sesión para usar todas las funciones, ¡es gratis!";
 "Calendar" = "Calendario";

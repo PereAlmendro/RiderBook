@@ -12,6 +12,7 @@ struct CustomTextField: View {
     @State private var showPassword = false
     
     var text: Binding<String>
+    var leftImageName: String = ""
     var textFieldPlaceholder: String = ""
     var secureField: Bool = false
     var keyboardType: UIKeyboardType = .default
@@ -20,11 +21,16 @@ struct CustomTextField: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                if secureField {
-                    Image(systemName: "lock")
+                
+                if !leftImageName.isEmpty {
+                    Image(systemName: leftImageName)
                         .accentColor(.dlBlack)
+                }
+                
+                if secureField {
+                    
                     if showPassword {
-                        TextField("", text: text, onEditingChanged: onEditingChanged)
+                        TextField(textFieldPlaceholder.localized(), text: text, onEditingChanged: onEditingChanged)
                             .font(.system(size: 20, weight: .regular, design: .rounded))
                             .keyboardType(keyboardType)
                             .foregroundColor(.dlBlack)
@@ -34,18 +40,19 @@ struct CustomTextField: View {
                             .keyboardType(keyboardType)
                             .foregroundColor(.dlBlack)
                     }
+                    
                     Button(action: { self.showPassword.toggle() }) {
                         Image(systemName: "eye")
                             .foregroundColor(.dlBlack)
                     }
                 } else {
-                    Image(systemName: "person")
-                        .accentColor(.dlBlack)
+                    
                     TextField(textFieldPlaceholder.localized(), text: text,
                               onEditingChanged: onEditingChanged)
                         .font(.system(size: 20, weight: .regular, design: .rounded))
                         .keyboardType(keyboardType)
                         .foregroundColor(.dlBlack)
+                    
                 }
             }   .padding()
                 .background(
@@ -59,6 +66,7 @@ struct CustomTextField: View {
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
         CustomTextField(text: .constant(""),
+                        leftImageName: "",
                         secureField: true,
                         onEditingChanged: { _ in
                             print("Editing changed")

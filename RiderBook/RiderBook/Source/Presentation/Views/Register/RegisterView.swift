@@ -13,30 +13,34 @@ struct RegisterView: View {
     
     var body: some View {
         LoadingView(isShowing: $viewModel.loading) {
-            VStack(alignment: .center) {
-                List {
+            ScrollView {
+                VStack(alignment: .center, spacing: 30) {
                     CustomTextField(text: self.$viewModel.name,
+                                    leftImageName: "person",
                                     textFieldPlaceholder: "Name")
                     
                     CustomTextField(text: self.$viewModel.email,
+                                    leftImageName: "envelope",
                                     textFieldPlaceholder: "Email")
                     
                     CustomTextField(text: self.$viewModel.password,
+                                    leftImageName: "lock",
                                     textFieldPlaceholder: "Password",
                                     secureField: true)
                     
                     CustomTextField(text: self.$viewModel.repeatedPassword,
-                                    textFieldPlaceholder: "Repeat password",
+                                    leftImageName: "lock",
+                                    textFieldPlaceholder: "Repeat_password",
                                     secureField: true)
-                }
-                
-                Spacer()
-                
-                Button("Register") {
-                     self.viewModel.registerAction()
-                }.buttonStyle(CustomButtonStyle())
+                    Spacer()
+                    
+                    Button("Register") {
+                        self.viewModel.registerAction()
+                    }.buttonStyle(CustomButtonStyle())
+                }.padding(20)
             }
         }
+        .navigationBarTitle("Register".localized())
         .alert(isPresented: $viewModel.showAlert) { () -> Alert in
             Alert(title: Text(viewModel.errorTitle.localized()),
                   message: Text(viewModel.errorMessage),

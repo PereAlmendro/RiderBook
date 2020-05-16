@@ -14,8 +14,10 @@
 "Login_advice" = "Una cop iniciada la sessió, es guardaran les credenciales de forma segura.";
 "log_in" = "Inicia sessió";
 "Join_as_guest" = "Entra d\'invitat!";
+"Name" = "Nom";
 "Email" = "Email";
 "Password" = "Contrasenya";
+"Repeat_password" = "Repeteix la contrasenya";
 "Guest_Rider" = "Rider invitat";
 "Login_to_use_all_features" = "Inicieu la sessió per utilitzar totes les funcions, és gratis!";
 "Calendar" = "Calendari";
