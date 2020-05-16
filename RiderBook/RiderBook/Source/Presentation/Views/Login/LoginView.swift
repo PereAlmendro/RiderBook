@@ -13,30 +13,32 @@ struct LoginView: View {
     
     var body: some View {
         LoadingView(isShowing: $viewModel.loading) {
-            VStack(alignment: .center, spacing: 30.0) {
-                Text("Rider_book".localized())
-                    .foregroundColor(Color.dlBlack)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .padding(.vertical, 30)
-                CustomTextField(text: self.$viewModel.email,
-                                textFieldPlaceholder: "Email")
-                CustomTextField(text: self.$viewModel.password,
-                                textFieldPlaceholder: "Password",
-                                secureField: true)
-                Button("log_in") {
-                    self.viewModel.loginAction()
-                }.buttonStyle(CustomButtonStyle())
-                Text("Login_advice")
-                    .multilineTextAlignment(.center)
-                Spacer()
-                Text("Or")
-                Button("Register") {
-                    self.viewModel.registerAction()
-                }.buttonStyle(CustomButtonStyle())
-                Spacer()
-            }.padding(.horizontal, 20.0)
+            ScrollView {
+                VStack(alignment: .center, spacing: 30.0) {
+                    Text("Rider_book".localized())
+                        .foregroundColor(Color.dlBlack)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .padding(.vertical, 30)
+                    CustomTextField(text: self.$viewModel.email,
+                                    textFieldPlaceholder: "Email")
+                    CustomTextField(text: self.$viewModel.password,
+                                    textFieldPlaceholder: "Password",
+                                    secureField: true)
+                    Button("log_in") {
+                        self.viewModel.loginAction()
+                    }.buttonStyle(CustomButtonStyle())
+                    Text("Login_advice")
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                    Text("Or")
+                    Button("Register") {
+                        self.viewModel.registerAction()
+                    }.buttonStyle(CustomButtonStyle())
+                    Spacer()
+                }.padding(.horizontal, 20.0)
+            }
         }
         .background(Color.dlBackgroundWhite)
         .navigationBarTitle("Welcome".localized())
