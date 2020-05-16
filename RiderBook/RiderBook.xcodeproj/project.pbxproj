@@ -51,7 +51,7 @@
 		1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955D7A1243DB5DC00F359CA /* LoginService.swift */; };
 		195C935E243BD30F002CFEAD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C935D243BD30F002CFEAD /* LoginView.swift */; };
 		195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C935F243BD4EE002CFEAD /* LoginViewModel.swift */; };
-		195C9363243BE00C002CFEAD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9362243BE00C002CFEAD /* CustomButton.swift */; };
+		195C9363243BE00C002CFEAD /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9362243BE00C002CFEAD /* CustomButtonStyle.swift */; };
 		1969F9AB242BD58400300C1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1969F9AD242BD58400300C1B /* Localizable.strings */; };
 		196B8AE0244CC5230013D16C /* CircuitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196B8ADF244CC5230013D16C /* CircuitService.swift */; };
 		196B8AE3244CC5630013D16C /* CircuitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196B8AE2244CC5630013D16C /* CircuitRepository.swift */; };
@@ -60,6 +60,7 @@
 		196B8AEB244CC6FA0013D16C /* CircuitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196B8AEA244CC6FA0013D16C /* CircuitFactory.swift */; };
 		1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984639B24465C7800C4E25B /* RiderBookApiServiceTest.swift */; };
 		1984639F24465D5900C4E25B /* MockTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984639E24465D5800C4E25B /* MockTarget.swift */; };
+		1991D4E4247038AC00869327 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1991D4E3247038AC00869327 /* Color+Extension.swift */; };
 		199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A075924294F1D002E3A15 /* UIApplication+extension.swift */; };
 		199EAFB62451FF8D005AD180 /* LoginServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */; };
 		19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5DE7024433F17008D4886 /* Dictionary+Json.swift */; };
@@ -173,7 +174,7 @@
 		1955D7A1243DB5DC00F359CA /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		195C935D243BD30F002CFEAD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		195C935F243BD4EE002CFEAD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		195C9362243BE00C002CFEAD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		195C9362243BE00C002CFEAD /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		1969F9AC242BD58400300C1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1969F9AE242BD5B200300C1B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1969F9AF242BD5B200300C1B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 		196B8AEA244CC6FA0013D16C /* CircuitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitFactory.swift; sourceTree = "<group>"; };
 		1984639B24465C7800C4E25B /* RiderBookApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiServiceTest.swift; sourceTree = "<group>"; };
 		1984639E24465D5800C4E25B /* MockTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTarget.swift; sourceTree = "<group>"; };
+		1991D4E3247038AC00869327 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		199A075924294F1D002E3A15 /* UIApplication+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extension.swift"; sourceTree = "<group>"; };
 		199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTest.swift; sourceTree = "<group>"; };
 		19A5DE7024433F17008D4886 /* Dictionary+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Json.swift"; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 		1955D7A0243DB59D00F359CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1991D4E22470389C00869327 /* Color */,
 				19A5DE6F24433EF9008D4886 /* Dictionary */,
 				1933B3A72441BC5900D0BF44 /* String */,
 				1955D79F243DB58C00F359CA /* UIApplication */,
@@ -652,7 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				1933B39C2441AFC500D0BF44 /* TabBarView.swift */,
-				195C9362243BE00C002CFEAD /* CustomButton.swift */,
+				195C9362243BE00C002CFEAD /* CustomButtonStyle.swift */,
 				19FDE82F2448C7780037F246 /* LoadingView.swift */,
 				194641EE24499B56000B9B6C /* CustomTextField.swift */,
 				1911D4402455833D00495AD8 /* RideListItem.swift */,
@@ -731,6 +734,14 @@
 				1984639E24465D5800C4E25B /* MockTarget.swift */,
 			);
 			path = mocks;
+			sourceTree = "<group>";
+		};
+		1991D4E22470389C00869327 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				1991D4E3247038AC00869327 /* Color+Extension.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 		199A076824295A14002E3A15 /* AppDependencies */ = {
@@ -1290,10 +1301,11 @@
 				19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */,
 				1933B3A92441BC6900D0BF44 /* String+Extension.swift in Sources */,
 				1954D01024432E9500401EB2 /* UserTarget.swift in Sources */,
-				195C9363243BE00C002CFEAD /* CustomButton.swift in Sources */,
+				195C9363243BE00C002CFEAD /* CustomButtonStyle.swift in Sources */,
 				1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */,
 				19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */,
 				193BF2C2244C9DBB0017E644 /* Ride.swift in Sources */,
+				1991D4E4247038AC00869327 /* Color+Extension.swift in Sources */,
 				1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */,
 				1933B3A22441B01100D0BF44 /* ProfileView.swift in Sources */,
 				193BF2BE244C99E70017E644 /* AddRideRequest.swift in Sources */,

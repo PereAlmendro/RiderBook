@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    var title: String
+    @State private var showPassword = false
+    
     var text: Binding<String>
     var textFieldPlaceholder: String = ""
     var secureField: Bool = false
@@ -18,41 +19,49 @@ struct CustomTextField: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(title.localized())
-                .font(.system(size: 20, weight: .bold, design: .rounded))
-            
-            if secureField {
-                SecureField(textFieldPlaceholder.localized(), text: text)
-                    .font(.system(size: 18, weight: .regular, design: .rounded))
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .foregroundColor(Color.black)
-                    .lineLimit(0)
-                    .keyboardType(keyboardType)
-                    .shadow(color: Color.black.opacity(0.2),
-                            radius: 10, x: 10, y: 10)
-            } else {
-                TextField(textFieldPlaceholder.localized(), text: text,
-                          onEditingChanged: onEditingChanged)
-                    .font(.system(size: 18, weight: .regular, design: .rounded))
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .foregroundColor(Color.black)
-                    .lineLimit(0)
-                    .keyboardType(keyboardType)
-                    .shadow(color: Color.black.opacity(0.2),
-                            radius: 10, x: 10, y: 10)
-            }
-        }.padding()
+            HStack {
+                if secureField {
+                    Image(systemName: "lock")
+                        .accentColor(.dlBlack)
+                    if showPassword {
+                        TextField("", text: text, onEditingChanged: onEditingChanged)
+                            .font(.system(size: 20, weight: .regular, design: .rounded))
+                            .keyboardType(keyboardType)
+                            .foregroundColor(.dlBlack)
+                    } else {
+                        SecureField(textFieldPlaceholder.localized(), text: text)
+                            .font(.system(size: 20, weight: .regular, design: .rounded))
+                            .keyboardType(keyboardType)
+                            .foregroundColor(.dlBlack)
+                    }
+                    Button(action: { self.showPassword.toggle() }) {
+                        Image(systemName: "eye")
+                            .foregroundColor(.dlBlack)
+                    }
+                } else {
+                    Image(systemName: "person")
+                        .accentColor(.dlBlack)
+                    TextField(textFieldPlaceholder.localized(), text: text,
+                              onEditingChanged: onEditingChanged)
+                        .font(.system(size: 20, weight: .regular, design: .rounded))
+                        .keyboardType(keyboardType)
+                        .foregroundColor(.dlBlack)
+                }
+            }   .padding()
+                .background(
+                    CustomButtonBackground(shape: Capsule())
+            )
+        }
     }
 }
 
 #if DEBUG
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(title: "TextFieldTitle",
-                        text: .constant(""),
+        CustomTextField(text: .constant(""),
                         secureField: true,
                         onEditingChanged: { _ in
-                            print("Editing chang[ed")
+                            print("Editing changed")
         })
     }
 }

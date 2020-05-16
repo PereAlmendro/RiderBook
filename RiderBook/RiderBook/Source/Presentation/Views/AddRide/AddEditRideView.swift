@@ -34,9 +34,9 @@ struct AddEditRideView: View {
                     }
                 }.listStyle(GroupedListStyle())
                  
-                CustomButton(title: "Save" , action: {
+                Button("Save") {
                     self.viewModel.submitAction()
-                })
+                }.buttonStyle(CustomButtonStyle())
             }
         }
         .alert(isPresented: $viewModel.showAlert) { () -> Alert in

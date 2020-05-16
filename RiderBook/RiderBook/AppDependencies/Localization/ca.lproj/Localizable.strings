@@ -8,7 +8,10 @@
 
 "Rider_book" = "Rider book";
 "Profile" = "Perfil";
-"register" = "Registra't";
+"Welcome" = "Benvingut";
+"Or" = "O be";
+"Register" = "Registra't";
+"Login_advice" = "Una cop iniciada la sessió, es guardaran les credenciales de forma segura.";
 "log_in" = "Inicia sessió";
 "Join_as_guest" = "Entra d\'invitat!";
 "Email" = "Email";

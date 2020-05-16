@@ -15,30 +15,26 @@ struct RegisterView: View {
         LoadingView(isShowing: $viewModel.loading) {
             VStack(alignment: .center) {
                 List {
-                    CustomTextField(title: "Name",
-                                    text: self.$viewModel.name,
+                    CustomTextField(text: self.$viewModel.name,
                                     textFieldPlaceholder: "Name")
                     
-                    CustomTextField(title: "Email",
-                                    text: self.$viewModel.email,
+                    CustomTextField(text: self.$viewModel.email,
                                     textFieldPlaceholder: "Email")
                     
-                    CustomTextField(title: "Password",
-                                    text: self.$viewModel.password,
+                    CustomTextField(text: self.$viewModel.password,
                                     textFieldPlaceholder: "Password",
                                     secureField: true)
                     
-                    CustomTextField(title: "Repeat password",
-                                    text: self.$viewModel.repeatedPassword,
+                    CustomTextField(text: self.$viewModel.repeatedPassword,
                                     textFieldPlaceholder: "Repeat password",
                                     secureField: true)
                 }
                 
                 Spacer()
                 
-                CustomButton(title: "Register" , action: {
-                    self.viewModel.registerAction()
-                })
+                Button("Register") {
+                     self.viewModel.registerAction()
+                }.buttonStyle(CustomButtonStyle())
             }
         }
         .alert(isPresented: $viewModel.showAlert) { () -> Alert in
