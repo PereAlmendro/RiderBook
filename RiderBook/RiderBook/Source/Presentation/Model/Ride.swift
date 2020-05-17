@@ -17,7 +17,7 @@ struct Ride: Hashable {
     
     var dateString: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateStyle = .medium
         return dateFormatter.string(from: date)
     }
 }

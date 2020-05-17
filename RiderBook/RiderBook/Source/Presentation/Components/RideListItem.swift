@@ -17,20 +17,28 @@ struct RideListItem: View {
     var body: some View {
         HStack {
             VStack {
-                Text(ride.circuit)
-                Text(ride.dateString)
+                Text("\(ride.circuit) - \(ride.dateString)")
+                    .multilineTextAlignment(.leading)
             }
             
             Spacer()
             
-            Image("ic_edit").onTapGesture {
+            Image("ic_edit")
+                .renderingMode(.template)
+                .foregroundColor(Color.dlBlack)
+                .padding()
+                .onTapGesture {
                 self.editAction(self.ride)
-            }.padding()
-            Image("ic_delete").onTapGesture {
-                self.deleteAction(self.ride)
             }
             
-        }.onTapGesture {
+            Image("ic_delete")
+                .renderingMode(.template)
+                .foregroundColor(Color.dlBlack)
+                .onTapGesture {
+                self.deleteAction(self.ride)
+            }
+        }
+        .onTapGesture {
             self.selectRide(self.ride)
         }
     }
