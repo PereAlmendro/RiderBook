@@ -20,14 +20,21 @@ struct TabBarView: View {
             homeView
                 .tabItem {
                     Image("home_off")
+                        .renderingMode(.template)
+                        .foregroundColor(.dlBlack)
             }
             ridesView
                 .tabItem {
                     Image("road_off")
+                        .renderingMode(.template)
+                        .foregroundColor(.dlBlack)
             }
             profileView
                 .tabItem {
+                    
                     Image("profile_off")
+                        .renderingMode(.template)
+                        .foregroundColor(.dlBlack)
             }
         }
     }
