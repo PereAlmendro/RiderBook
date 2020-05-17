@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Combine
 
-class RidesViewModel: ObservableObject  {
+final class RidesViewModel: ObservableObject  {
     
     // MARK: - View properties
     

@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-class RegisterViewModel: ObservableObject  {
+final class RegisterViewModel: ObservableObject  {
     
     // MARK: - View properties
     

@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class ProfileViewModel: ObservableObject  {
+final class ProfileViewModel: ObservableObject  {
 
     // MARK: - Private properties
     
@@ -19,7 +19,8 @@ class ProfileViewModel: ObservableObject  {
     
     // MARK: - Lifecycle
     
-    init(loginService: LoginServiceProtocol, coordinator: AppCoordinatorProtocol) {
+    init(loginService: LoginServiceProtocol,
+         coordinator: AppCoordinatorProtocol) {
         self.loginService = loginService
         self.coordinator = coordinator
     }
@@ -34,4 +35,11 @@ class ProfileViewModel: ObservableObject  {
         }
     }
     
+    func deleteAccountAction() {
+        // TODO: - Delete account action
+    }
+    
+    func uploadImageAction() {
+        // TODO: - Upload image action
+    }
 }

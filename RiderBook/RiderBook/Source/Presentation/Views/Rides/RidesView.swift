@@ -10,7 +10,7 @@ import SwiftUI
 
 struct RidesView: View {
     @ObservedObject var viewModel: RidesViewModel
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -25,12 +25,14 @@ struct RidesView: View {
                 }
             }
             .listStyle(GroupedListStyle())
+            .navigationBarTitle("rides".localized())
             .navigationBarItems(trailing:
                 Button("Add ride".localized()) {
-                self.viewModel.addRideAction()
+                    self.viewModel.addRideAction()
             })
-        }.onAppear {
-            self.viewModel.refreshList()
+        }
+        .onAppear {
+                self.viewModel.refreshList()
         }
     }
 }

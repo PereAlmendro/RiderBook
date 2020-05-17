@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class RideDetailViewModel: ObservableObject  {
+final class RideDetailViewModel: ObservableObject  {
     
     // MARK: - View properties
     

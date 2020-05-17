@@ -13,6 +13,7 @@
 "Register" = "Regístrate";
 "Login_advice" = "Una vez iniciada la sesión, se guardaran tus credenciales de forma segura.";
 "log_in" = "Iniciar sesión";
+"Logout" = "Cerrar sesión";
 "Join_as_guest" = "¡Entra como invitado!";
 "Name" = "Nombre";
 "Email" = "Email";
@@ -41,3 +42,6 @@
 "unranked" = "Sin clasificar";
 "more_information" = "más información";
 "add_lap" = "Añadir vuelta";
+"Upload_image" = "Cambiar imagen";
+"Delete_account" = "Eliminar cuenta";
+"Leave_biker_comunity" = "Abandona la comunidad biker";

@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-class SplashViewModel: ObservableObject  {
+final class SplashViewModel: ObservableObject  {
     
     // MARK: - Private properties
     
