@@ -31,7 +31,6 @@ struct TabBarView: View {
             }
             profileView
                 .tabItem {
-                    
                     Image("profile_off")
                         .renderingMode(.template)
                         .foregroundColor(.dlBlack)
