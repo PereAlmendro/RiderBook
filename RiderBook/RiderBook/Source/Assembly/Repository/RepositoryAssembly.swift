@@ -15,6 +15,7 @@ protocol RepositoryAssemblyProtocol {
     func getRideRepository() -> RideRepositoryProtocol
     func getCircuitRepository() -> CircuitRepositoryProtocol
     func getLapRepository() -> LapRepositoryProtocol
+    func getRankingRepository() -> RankingRepositoryProtocol
 }
 
 final class RepositoryAssembly: RepositoryAssemblyProtocol {
@@ -55,5 +56,9 @@ final class RepositoryAssembly: RepositoryAssemblyProtocol {
     
     func getLapRepository() -> LapRepositoryProtocol {
         return LapRepository(riderBookApiService: riderBookApiService)
+    }
+    
+    func getRankingRepository() -> RankingRepositoryProtocol {
+        return RankingRepository(riderBookApiService: riderBookApiService)
     }
 }

@@ -38,7 +38,7 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
         if loginService.logOut() {
             coordinator.start()
         } else {
-            // TODO: Logout failed
+            // TODO: - Logout failed
         }
     }
     

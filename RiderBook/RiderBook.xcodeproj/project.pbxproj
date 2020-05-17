@@ -17,6 +17,8 @@
 		19113164247176E0009F2BA1 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19113163247176E0009F2BA1 /* ViewModelAssembly.swift */; };
 		1911316624717BC2009F2BA1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316524717BC2009F2BA1 /* HomeViewModel.swift */; };
 		1911316924719120009F2BA1 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316824719120009F2BA1 /* Double+Extension.swift */; };
+		1911316C2471AF20009F2BA1 /* RankingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316B2471AF20009F2BA1 /* RankingRepository.swift */; };
+		1911316F2471AF5C009F2BA1 /* RankingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316E2471AF5C009F2BA1 /* RankingService.swift */; };
 		1911D4412455833D00495AD8 /* RideListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D4402455833D00495AD8 /* RideListItem.swift */; };
 		1911D44524558A3F00495AD8 /* CircuitRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */; };
 		1911D44724558A4900495AD8 /* RideRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D44624558A4900495AD8 /* RideRepositoryTest.swift */; };
@@ -134,6 +136,8 @@
 		19113163247176E0009F2BA1 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		1911316524717BC2009F2BA1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1911316824719120009F2BA1 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		1911316B2471AF20009F2BA1 /* RankingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingRepository.swift; sourceTree = "<group>"; };
+		1911316E2471AF5C009F2BA1 /* RankingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingService.swift; sourceTree = "<group>"; };
 		1911D4402455833D00495AD8 /* RideListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideListItem.swift; sourceTree = "<group>"; };
 		1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitRepositoryTest.swift; sourceTree = "<group>"; };
 		1911D44624558A4900495AD8 /* RideRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRepositoryTest.swift; sourceTree = "<group>"; };
@@ -328,6 +332,22 @@
 				1911316824719120009F2BA1 /* Double+Extension.swift */,
 			);
 			path = Double;
+			sourceTree = "<group>";
+		};
+		1911316A2471AF0B009F2BA1 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				1911316B2471AF20009F2BA1 /* RankingRepository.swift */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		1911316D2471AF50009F2BA1 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				1911316E2471AF5C009F2BA1 /* RankingService.swift */,
+			);
+			path = Ranking;
 			sourceTree = "<group>";
 		};
 		1911D44224558A1D00495AD8 /* CircuitRepository */ = {
@@ -601,6 +621,7 @@
 		1954CFFD2443203200401EB2 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				1911316A2471AF0B009F2BA1 /* Ranking */,
 				19DB4037245EDCE100C52CA8 /* Lap */,
 				196B8AE1244CC5560013D16C /* CircuitRepository */,
 				193BF2B4244C95970017E644 /* Ride */,
@@ -859,6 +880,7 @@
 		19B1A0DA24420B53000D4FA6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1911316D2471AF50009F2BA1 /* Ranking */,
 				1911314D24714FDD009F2BA1 /* User */,
 				19DB403E245EDEE300C52CA8 /* Lap */,
 				196B8ADE244CC50C0013D16C /* Circuit */,
@@ -1308,6 +1330,7 @@
 				19113157247157DF009F2BA1 /* ServiceAssembly.swift in Sources */,
 				19113160247173F9009F2BA1 /* ProfileView.swift in Sources */,
 				196B8AEB244CC6FA0013D16C /* CircuitFactory.swift in Sources */,
+				1911316C2471AF20009F2BA1 /* RankingRepository.swift in Sources */,
 				19DB4043245EEB2F00C52CA8 /* RideDetailView.swift in Sources */,
 				19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */,
 				19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */,
@@ -1358,6 +1381,7 @@
 				1954D01024432E9500401EB2 /* UserTarget.swift in Sources */,
 				195C9363243BE00C002CFEAD /* CustomButtonStyle.swift in Sources */,
 				1911316924719120009F2BA1 /* Double+Extension.swift in Sources */,
+				1911316F2471AF5C009F2BA1 /* RankingService.swift in Sources */,
 				1911315924715914009F2BA1 /* RepositoryAssembly.swift in Sources */,
 				1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */,
 				19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */,

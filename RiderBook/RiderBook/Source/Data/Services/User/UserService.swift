@@ -13,7 +13,6 @@ protocol UserServiceProtocol {
     
 }
 
-
 final class UserService: UserServiceProtocol {
     
     // MARK: - Private properties
@@ -29,7 +28,7 @@ final class UserService: UserServiceProtocol {
         self.localRepository = localRepository
     }
     
-    // TODO: Edit user
-    // TODO: Upload image
-    // TODO: Delete user
+    // TODO: - Edit user
+    // TODO: - Upload image
+    // TODO: - Delete user
 }

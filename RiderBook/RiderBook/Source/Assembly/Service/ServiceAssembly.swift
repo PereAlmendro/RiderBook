@@ -15,6 +15,7 @@ protocol ServiceAssemblyProtocol {
     func getRideService() -> RideServiceProtocol
     func getLoginService() -> LoginServiceProtocol
     func getCircuitService() -> CircuitServiceProtocol
+    func getRankingService() -> RankingServiceProtocol
 }
 
 final class ServiceAssembly: ServiceAssemblyProtocol {
@@ -62,5 +63,10 @@ final class ServiceAssembly: ServiceAssemblyProtocol {
     func getCircuitService() -> CircuitServiceProtocol {
         let circuitRepository = repositoryAssembly.getCircuitRepository()
         return CircuitService(circuitRepository: circuitRepository)
+    }
+    
+    func getRankingService() -> RankingServiceProtocol {
+        let rankingRepository = repositoryAssembly.getRankingRepository()
+        return RankingService(rankingRepository: rankingRepository)
     }
 }
