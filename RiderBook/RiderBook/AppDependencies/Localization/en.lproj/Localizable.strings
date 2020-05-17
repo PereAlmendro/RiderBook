@@ -41,7 +41,9 @@
 "view_ranking" = "see";
 "unranked" = "Unranked";
 "more_information" = "more_information";
-"add_lap" = "Add lap";
+"Circuit_and_date" = "Circuit & date";
+"Laps" = "Laps";
+"Add_lap" = "Add lap";
 "Upload_image" = "Upload image";
 "Delete_account" = "Delete account";
 "Leave_biker_comunity" = "Leave the biker comunity";

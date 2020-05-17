@@ -41,7 +41,9 @@
 "view_ranking" = "ver";
 "unranked" = "Sin clasificar";
 "more_information" = "más información";
-"add_lap" = "Añadir vuelta";
+"Circuit_and_date" = "Circuito y fecha";
+"Laps" = "Vueltas";
+"Add_lap" = "Añadir vuelta";
 "Upload_image" = "Cambiar imagen";
 "Delete_account" = "Eliminar cuenta";
 "Leave_biker_comunity" = "Abandona la comunidad biker";

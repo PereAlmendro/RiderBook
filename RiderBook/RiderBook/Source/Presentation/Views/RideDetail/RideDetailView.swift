@@ -13,30 +13,39 @@ struct RideDetailView: View {
     
     var body: some View {
         List {
-            Text("\(viewModel.ride.circuit) - \(viewModel.ride.dateString)")
-                .padding()
+            Section(header: Text("Circuit_and_date".localized()).foregroundColor(Color.dlBlack)) {
+                Text("\(viewModel.ride.circuit) - \(viewModel.ride.dateString)")
+                    .multilineTextAlignment(.center)
+            }
             
-            Button("Add lap") {
-                self.viewModel.lapAction(.add)
-            }.foregroundColor(Color.blue)
-            
-            ForEach(self.viewModel.laps, id: \.self) { lap in
-                LapListItem(lap: lap,
-                            editAction: { lap in
-                                self.viewModel.lapAction(.edit, lap: lap)
-                },
-                            deleteAction: { lap in
-                                self.viewModel.lapAction(.delete, lap: lap)
-                })
+            Section(header: Text("Laps".localized()).foregroundColor(Color.dlBlack)) {
+                ForEach(self.viewModel.laps, id: \.self) { lap in
+                    LapListItem(lap: lap,
+                                editAction: { lap in
+                                    self.viewModel.lapAction(.edit, lap: lap)
+                    },
+                                deleteAction: { lap in
+                                    self.viewModel.lapAction(.delete, lap: lap)
+                    })
+                }
             }
         }
+        .listStyle(GroupedListStyle())
         .navigationBarItems(leading:
-            Image("ic_close").onTapGesture {
-                self.viewModel.closeAction()
-            })
-            .onAppear(perform: {
-                self.viewModel.refreshList()
-            })
-        
+            Image("ic_close")
+                .renderingMode(.template)
+                .foregroundColor(Color.dlBlack)
+                .frame(width: 30, height: 30, alignment: .center)
+                .onTapGesture {
+                    self.viewModel.closeAction()
+            }, trailing:
+            
+            Button("Add_lap".localized()) {
+                self.viewModel.lapAction(.add)
+            }
+            .foregroundColor(Color.blue))
+        .onAppear(perform: {
+            self.viewModel.refreshList()
+        })
     }
 }

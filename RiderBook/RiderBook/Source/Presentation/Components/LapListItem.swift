@@ -15,14 +15,24 @@ struct LapListItem: View {
     
     var body: some View {
         HStack {
-            Text("\(lap.number) -> \(lap.getFormattedTime())")
+            
+            Text("\(lap.getFormattedTime())")
+                .font(.system(size: 18))
+                .foregroundColor(Color.dlBlack)
             
             Spacer()
 
-            Image("ic_edit").onTapGesture {
+            Image("ic_edit")
+                .renderingMode(.template)
+                .foregroundColor(Color.dlBlack)
+                .onTapGesture {
                 self.editAction(self.lap)
             }.padding()
-            Image("ic_delete").onTapGesture {
+            
+            Image("ic_delete")
+                .renderingMode(.template)
+                .foregroundColor(Color.dlBlack)
+                .onTapGesture {
                 self.deleteAction(self.lap)
             }
         }

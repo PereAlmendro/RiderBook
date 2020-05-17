@@ -41,7 +41,9 @@
 "view_ranking" = "veure";
 "unranked" = "Sense rànking";
 "more_information" = "més informació";
-"add_lap" = "Afegir volta";
+"Circuit_and_date" = "Circuit i data";
+"Laps" = "Voltes";
+"Add_lap" = "Afegir volta";
 "Upload_image" = "Canviar imatge";
 "Delete_account" = "Eliminar compte";
 "Leave_biker_comunity" = "Abandona la comunitat biker";

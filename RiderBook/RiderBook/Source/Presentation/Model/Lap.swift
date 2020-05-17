@@ -15,7 +15,10 @@ struct Lap: Hashable {
     let timeInSeconds: String
     
     func getFormattedTime() -> String {
-        // TODO: return a visual format
-        return timeInSeconds
+        let time = Double(timeInSeconds) ?? 0.0
+        let (hr,  minf) = modf (time / 3600)
+        let (min, secf) = modf (60 * minf)
+        let (_ ,minutes,seconds) = (hr, min, 60 * secf)
+        return "\(Int(minutes)) min \(String(format: "%.02f", seconds)) sec"
     }
 }
