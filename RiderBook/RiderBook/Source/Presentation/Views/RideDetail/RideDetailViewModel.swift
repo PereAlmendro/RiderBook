@@ -35,8 +35,9 @@ final class RideDetailViewModel: ObservableObject, RideDetailViewModelProtocol  
     private var actualPage: Int = 1
     
     private enum Constants: Int {
-        case minutesTextFieldTag = 0
-        case secondsTextFieldTag = 1
+        case minutesTextFieldTag
+        case secondsTextFieldTag
+        case deciSecondsTextFieldTag
     }
     
     // MARK: - Lifecycle
@@ -67,18 +68,22 @@ final class RideDetailViewModel: ObservableObject, RideDetailViewModelProtocol  
     
     // MARK: - Private functions
     
-    private func convertToSeconds(minutes: Double, seconds: Double) -> Double {
-        return (minutes * 60) + seconds
+    private func convertToSeconds(minutes: String, seconds: String, deciSecond: String) -> String {
+        let minutesInSeconds = (Double(minutes) ?? 0) * 60
+        let secondsInt = Double(seconds) ?? 0.0
+        let deciSecondsInt = (Double(deciSecond) ?? 0.0) / 100
+        let totalSeconds = minutesInSeconds + secondsInt + deciSecondsInt
+        return String(totalSeconds)
     }
     
-    private func addLap(with minutes: Double, seconds: Double) {
+    private func addLap(with minutes: String, seconds: String, deciSecond: String) {
         let number = laps.sorted { (lap1, lap2) -> Bool in
             lap1.number > lap2.number
         }.first?.number ?? 0
         
-        let timeInSeconds = convertToSeconds(minutes: minutes, seconds: seconds)
+        let timeInSeconds = convertToSeconds(minutes: minutes, seconds: seconds, deciSecond: deciSecond)
         let lapToAdd = Lap(rideId: ride.id, lapId: 0,
-                           number: number + 1, timeInSeconds: String(timeInSeconds))
+                           number: number + 1, timeInSeconds: timeInSeconds)
         
         anyCancellables += [
             lapService
@@ -95,10 +100,10 @@ final class RideDetailViewModel: ObservableObject, RideDetailViewModelProtocol  
         ]
     }
     
-    private func editLap(_ lap: Lap, with minutes: Double, seconds: Double) {
-        let timeInSeconds = convertToSeconds(minutes: minutes, seconds: seconds)
+    private func editLap(_ lap: Lap, with minutes: String, seconds: String, deciSecond: String) {
+        let timeInSeconds = convertToSeconds(minutes: minutes, seconds: seconds, deciSecond: deciSecond)
         let lapToEdit = Lap(rideId: lap.rideId, lapId: lap.lapId,
-                            number: lap.number, timeInSeconds: String(timeInSeconds))
+                            number: lap.number, timeInSeconds: timeInSeconds)
         
         anyCancellables += [
             lapService
@@ -162,30 +167,39 @@ final class RideDetailViewModel: ObservableObject, RideDetailViewModelProtocol  
             
             alert.addTextField() { textField in
                 textField.placeholder = "Seconds".localizedString()
-                textField.keyboardType = .numbersAndPunctuation
+                textField.keyboardType = .numberPad
                 textField.tag = Constants.secondsTextFieldTag.rawValue
+            }
+            
+            alert.addTextField() { textField in
+                textField.placeholder = "Decimals".localizedString()
+                textField.keyboardType = .numberPad
+                textField.tag = Constants.deciSecondsTextFieldTag.rawValue
             }
             
             alert.addAction(
                 UIAlertAction(title: alertActionTitle.localizedString(),
                               style: .default, handler: { [weak self] (action) in
                                 
-                                var minutes: Double = 0
-                                var seconds: Double = 0
+                                var minutes: String = "0"
+                                var seconds: String = "0"
+                                var deciSeconds: String = "0"
                                 alert.textFields?.forEach { textField in
                                     if textField.tag == Constants.minutesTextFieldTag.rawValue {
-                                        minutes = Double(textField.text ?? "0") ?? 0.0
+                                        minutes = textField.text ?? "0"
                                     } else if (textField.tag == Constants.secondsTextFieldTag.rawValue) {
-                                        seconds = Double(textField.text ?? "0") ?? 0.0
+                                        seconds = textField.text ?? "0"
+                                    } else if (textField.tag == Constants.deciSecondsTextFieldTag.rawValue) {
+                                        deciSeconds = textField.text ?? "0"
                                     }
                                 }
                                 
                                 switch lapAction {
                                 case .add:
-                                    self?.addLap(with: minutes, seconds: seconds)
+                                    self?.addLap(with: minutes, seconds: seconds, deciSecond: deciSeconds)
                                 case .edit:
                                     guard let lap = lap else { return }
-                                    self?.editLap(lap, with: minutes, seconds: seconds)
+                                    self?.editLap(lap, with: minutes, seconds: seconds, deciSecond: deciSeconds)
                                 default:
                                     break
                                 }

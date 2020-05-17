@@ -19,6 +19,6 @@ struct Lap: Hashable {
         let (hr,  minf) = modf (time / 3600)
         let (min, secf) = modf (60 * minf)
         let (_ ,minutes,seconds) = (hr, min, 60 * secf)
-        return "\(Int(minutes)) min \(String(format: "%.02f", seconds)) sec"
+        return "\(Int(minutes)) min \(seconds.string(maximumFractionDigits: 2)) sec"
     }
 }

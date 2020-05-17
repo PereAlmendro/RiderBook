@@ -16,6 +16,7 @@
 		19113161247173F9009F2BA1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911315F247173F9009F2BA1 /* ProfileViewModel.swift */; };
 		19113164247176E0009F2BA1 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19113163247176E0009F2BA1 /* ViewModelAssembly.swift */; };
 		1911316624717BC2009F2BA1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316524717BC2009F2BA1 /* HomeViewModel.swift */; };
+		1911316924719120009F2BA1 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316824719120009F2BA1 /* Double+Extension.swift */; };
 		1911D4412455833D00495AD8 /* RideListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D4402455833D00495AD8 /* RideListItem.swift */; };
 		1911D44524558A3F00495AD8 /* CircuitRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */; };
 		1911D44724558A4900495AD8 /* RideRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D44624558A4900495AD8 /* RideRepositoryTest.swift */; };
@@ -132,6 +133,7 @@
 		1911315F247173F9009F2BA1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		19113163247176E0009F2BA1 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		1911316524717BC2009F2BA1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1911316824719120009F2BA1 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		1911D4402455833D00495AD8 /* RideListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideListItem.swift; sourceTree = "<group>"; };
 		1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitRepositoryTest.swift; sourceTree = "<group>"; };
 		1911D44624558A4900495AD8 /* RideRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRepositoryTest.swift; sourceTree = "<group>"; };
@@ -318,6 +320,14 @@
 				19113163247176E0009F2BA1 /* ViewModelAssembly.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1911316724719110009F2BA1 /* Double */ = {
+			isa = PBXGroup;
+			children = (
+				1911316824719120009F2BA1 /* Double+Extension.swift */,
+			);
+			path = Double;
 			sourceTree = "<group>";
 		};
 		1911D44224558A1D00495AD8 /* CircuitRepository */ = {
@@ -689,6 +699,7 @@
 		1955D7A0243DB59D00F359CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1911316724719110009F2BA1 /* Double */,
 				1991D4E22470389C00869327 /* Color */,
 				19A5DE6F24433EF9008D4886 /* Dictionary */,
 				1933B3A72441BC5900D0BF44 /* String */,
@@ -1346,6 +1357,7 @@
 				1933B3A92441BC6900D0BF44 /* String+Extension.swift in Sources */,
 				1954D01024432E9500401EB2 /* UserTarget.swift in Sources */,
 				195C9363243BE00C002CFEAD /* CustomButtonStyle.swift in Sources */,
+				1911316924719120009F2BA1 /* Double+Extension.swift in Sources */,
 				1911315924715914009F2BA1 /* RepositoryAssembly.swift in Sources */,
 				1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */,
 				19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */,
