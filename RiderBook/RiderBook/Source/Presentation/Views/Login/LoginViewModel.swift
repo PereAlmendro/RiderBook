@@ -10,7 +10,11 @@ import Foundation
 import SwiftUI
 import Combine
 
-final class LoginViewModel: ObservableObject  {
+protocol LoginViewModelProtocol: AnyObject {
+    
+}
+
+final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     
     // MARK: - View properties
     

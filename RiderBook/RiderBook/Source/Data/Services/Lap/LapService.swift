@@ -21,28 +21,43 @@ final class LapService: LapServiceProtocol {
     // MARK: - Private properties
     
     private let lapRepository: LapRepositoryProtocol
+    private let localRepository: LocalRepositoryProtocol
+    private var userAuth: String {
+        return self.localRepository.getUser()?.authorization ?? ""
+    }
     
     // MARK: - Lifecycle
     
-    init(lapRepository: LapRepositoryProtocol) {
+    init(lapRepository: LapRepositoryProtocol,
+         localRepository: LocalRepositoryProtocol) {
         self.lapRepository = lapRepository
+        self.localRepository = localRepository
     }
     
     // MARK: - LapServiceProtocol
     
     func addLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError> {
-        return lapRepository.addLap(rideId: lap.rideId, lapTimeInSeconds: lap.timeInSeconds, number: lap.number)
+        return lapRepository.addLap(rideId: lap.rideId,
+                                    lapTimeInSeconds: lap.timeInSeconds,
+                                    number: lap.number,
+                                    userAuth: userAuth)
     }
     
     func fetchLaps(page: Int, rideId: Int) -> AnyPublisher<[Lap], RiderBookError> {
-        return lapRepository.fetchLaps(page: page, rideId: rideId)
+        return lapRepository.fetchLaps(page: page,
+                                       rideId: rideId,
+                                       userAuth: userAuth)
     }
     
     func deleteLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError> {
-        return lapRepository.deleteLap(lapId: lap.lapId)
+        return lapRepository.deleteLap(lapId: lap.lapId,
+                                       userAuth: userAuth)
     }
     
     func editLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError> {
-        return lapRepository.editLap(rideId: lap.rideId, lapId: lap.lapId, lapTimeInSeconds: lap.timeInSeconds)
+        return lapRepository.editLap(rideId: lap.rideId,
+                                     lapId: lap.lapId,
+                                     lapTimeInSeconds: lap.timeInSeconds,
+                                     userAuth: userAuth)
     }
 }

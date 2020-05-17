@@ -10,7 +10,11 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class RideDetailViewModel: ObservableObject  {
+protocol RideDetailViewModelProtocol: AnyObject {
+    
+}
+
+final class RideDetailViewModel: ObservableObject, RideDetailViewModelProtocol  {
     
     // MARK: - View properties
     

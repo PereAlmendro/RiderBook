@@ -9,10 +9,15 @@
 import Foundation
 import Combine
 
-final class ProfileViewModel: ObservableObject  {
+protocol ProfileViewModelProtocol: AnyObject {
+    
+}
+
+final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
 
     // MARK: - Private properties
     
+    private let userService: UserServiceProtocol
     private let loginService: LoginServiceProtocol
     private let coordinator: AppCoordinatorProtocol
     private var cancellables: [AnyCancellable?] = []
@@ -20,8 +25,10 @@ final class ProfileViewModel: ObservableObject  {
     // MARK: - Lifecycle
     
     init(loginService: LoginServiceProtocol,
+         userService: UserServiceProtocol,
          coordinator: AppCoordinatorProtocol) {
         self.loginService = loginService
+        self.userService = userService
         self.coordinator = coordinator
     }
     

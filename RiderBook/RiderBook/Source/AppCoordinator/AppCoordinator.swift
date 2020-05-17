@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import UIKit
 
-protocol AppCoordinatorProtocol {
+protocol AppCoordinatorProtocol: AnyObject {
     /// Called in the scene delegate, shows login after the launchScreen
     func start()
     
@@ -29,19 +29,94 @@ protocol AppCoordinatorProtocol {
 final class AppCoordinator: AppCoordinatorProtocol {
 
     private var window: UIWindow
+    private var viewAssembly: ViewAssemblyProtocol!
     private var tabView: TabBarView?
     
     init(window: UIWindow) {
         self.window = window
+        self.viewAssembly = getViewAssembly()
     }
     
     func start() {
-        let splashView = getSplashView()
+        let splashView = viewAssembly.getSplashView()
         window.rootViewController = UIHostingController(rootView: splashView)
         window.makeKeyAndVisible()
     }
+}
+
+// MARK: - Navigations
+
+extension AppCoordinator {
     
-    // MARK: - Private functions
+    func showHome() {
+        let tabView = getTabBarView()
+        let hostingController = UIHostingController(rootView: tabView)
+        hostingController.modalPresentationStyle = .fullScreen
+        present(viewController: hostingController, animated: true)
+    }
+    
+    func showLogin() {
+        let loginView = viewAssembly.getLoginView()
+        let hostingController = UIHostingController(rootView: loginView)
+        let navController = UINavigationController(rootViewController: hostingController)
+        navController.modalPresentationStyle = .fullScreen
+        present(viewController: navController, animated: true)
+    }
+    
+    func showRegister() {
+        let registerView = viewAssembly.getRegisterView()
+        let hostingController = UIHostingController(rootView: registerView)
+        push(viewController: hostingController, animated: true)
+    }
+    
+    func showAddRide() {
+        let addRideView = viewAssembly.getAddEditRideView(mode: .add, ride: nil)
+        let hostingController = UIHostingController(rootView: addRideView)
+        present(viewController: hostingController, animated: true)
+    }
+    
+    func showEditRide(for ride: Ride) {
+        let addRideView = viewAssembly.getAddEditRideView(mode: .edit, ride: ride)
+        let hostingController = UIHostingController(rootView: addRideView)
+        present(viewController: hostingController, animated: true)
+    }
+    
+    func showRideDetail(for ride: Ride) {
+        let detailView = viewAssembly.getRideDetailView(for: ride)
+        let hostingController = UIHostingController(rootView: detailView)
+        let navController = UINavigationController(rootViewController: hostingController)
+        navController.modalPresentationStyle = .fullScreen
+        present(viewController: navController, animated: true)
+    }
+    
+    func dismiss() {
+        UIApplication.topViewController()?.dismiss(animated: true, completion: nil)
+    }
+    
+    func showAlert(alert: UIAlertController) {
+        present(viewController: alert, animated: true)
+    }
+    
+}
+
+// MARK: - Private functions
+
+private extension AppCoordinator {
+    
+    private func getTabBarView() -> TabBarView? {
+        
+        if let tabView = tabView {
+            return tabView
+        }
+        
+        let homeView = viewAssembly.getHomeView()
+        let ridesView = viewAssembly.getRidesView()
+        let profileView = viewAssembly.getProfileView()
+        
+        return TabBarView(homeView: homeView,
+                          ridesView: ridesView,
+                          profileView: profileView)
+    }
     
     private func push(viewController: UIViewController, animated: Bool) {
         var viewController = viewController
@@ -59,114 +134,13 @@ final class AppCoordinator: AppCoordinatorProtocol {
     private func present(viewController: UIViewController, animated: Bool) {
         UIApplication.topViewController()?.present(viewController, animated: animated, completion: nil)
     }
-}
-
-// MARK: - Navigations
-
-extension AppCoordinator {
     
-    func showHome() {
-        let tabView = getTabBarView()
-        let hostingController = UIHostingController(rootView: tabView)
-        hostingController.modalPresentationStyle = .fullScreen
-        present(viewController: hostingController, animated: true)
-    }
-    
-    func showLogin() {
-        let loginView = getLoginView()
-        let hostingController = UIHostingController(rootView: loginView)
-        let navController = UINavigationController(rootViewController: hostingController)
-        navController.modalPresentationStyle = .fullScreen
-        present(viewController: navController, animated: true)
-    }
-    
-    func showRegister() {
-        let registerView = getRegisterView()
-        let hostingController = UIHostingController(rootView: registerView)
-        push(viewController: hostingController, animated: true)
-    }
-    
-    func showAddRide() {
-        let addRideView = getAddEditRideView()
-        let hostingController = UIHostingController(rootView: addRideView)
-        present(viewController: hostingController, animated: true)
-    }
-    
-    func showEditRide(for ride: Ride) {
-        let addRideView = getAddEditRideView(mode: .edit, ride: ride)
-        let hostingController = UIHostingController(rootView: addRideView)
-        present(viewController: hostingController, animated: true)
-    }
-    
-    func showRideDetail(for ride: Ride) {
-        let detailView = getRideDetailView(for: ride)
-        let hostingController = UIHostingController(rootView: detailView)
-        let navController = UINavigationController(rootViewController: hostingController)
-        navController.modalPresentationStyle = .fullScreen
-        present(viewController: navController, animated: true)
-    }
-    
-    func dismiss() {
-        UIApplication.topViewController()?.dismiss(animated: true, completion: nil)
-    }
-    
-    func showAlert(alert: UIAlertController) {
-        present(viewController: alert, animated: true)
-    }
-    
-}
-
-// MARK: - View builder
-
-private extension AppCoordinator {
-    
-    private func getRideDetailView(for ride: Ride) -> RideDetailView {
-        let rideDetailAssembly = RideDetailAssembly(coordinator: self)
-        let rideDetailView = rideDetailAssembly.getView(for: ride)
-        return rideDetailView
-    }
-    
-    private func getAddEditRideView(mode: AddEditRideViewModel.ScreenMode = .add, ride: Ride? = nil) -> AddEditRideView {
-        let addRideAssembly = AddEditRideAssembly(coordinator: self)
-        let addRideView = addRideAssembly.getView(mode: mode, ride: ride)
-        return addRideView
-    }
-    
-    private func getRegisterView() -> RegisterView {
-        let registerAssembly = RegisterAssembly(coordinator: self)
-        let registerView = registerAssembly.getView()
-        return registerView
-    }
-    
-    private func getSplashView() -> SplashView {
-        let splashAssembly = SplashAssembly(coordinator: self)
-        let splashView = splashAssembly.getView()
-        return splashView
-    }
-    
-    private func getLoginView() -> LoginView {
-        let loginAssembly = LoginAssembly(coordinator: self)
-        let loginView = loginAssembly.getView()
-        return loginView
-    }
-    
-    private func getTabBarView() -> TabBarView {
-        
-        if let tabView = tabView {
-            return tabView
-        }
-        
-        let homeAssembly = HomeAssembly(coordinator: self)
-        let homeView = homeAssembly.getView()
-        
-        let ridesAssembly = RidesAssembly(coordinator: self)
-        let ridesView = ridesAssembly.getView()
-        
-        let profileAssembly = ProfileAssembly(coordinator: self)
-        let profileView = profileAssembly.getView()
-        
-        return TabBarView(homeView: homeView,
-                          ridesView: ridesView,
-                          profileView: profileView)
+    private func getViewAssembly() -> ViewAssemblyProtocol {
+        let coreDataContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let apiServiceAssembly = ApiServiceAssembly()
+        let repositoryAssembly = RepositoryAssembly(coreDataContext: coreDataContext,
+                                                    apiServiceAssembly: apiServiceAssembly)
+        let serviceAssembly = ServiceAssembly(repositoryAssembly: repositoryAssembly)
+        return ViewAssembly(coordinator: self, serviceAssembly: serviceAssembly)
     }
 }

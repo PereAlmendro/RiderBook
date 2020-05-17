@@ -10,10 +10,10 @@ import Foundation
 import Combine
 
 protocol LapRepositoryProtocol {
-    func addLap(rideId: Int, lapTimeInSeconds: String, number: Int) -> AnyPublisher<Bool, RiderBookError>
-    func fetchLaps(page: Int, rideId: Int) -> AnyPublisher<[Lap], RiderBookError>
-    func deleteLap(lapId: Int) -> AnyPublisher<Bool, RiderBookError>
-    func editLap(rideId: Int, lapId: Int, lapTimeInSeconds: String) -> AnyPublisher<Bool, RiderBookError>
+    func addLap(rideId: Int, lapTimeInSeconds: String, number: Int, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
+    func fetchLaps(page: Int, rideId: Int, userAuth: String) -> AnyPublisher<[Lap], RiderBookError>
+    func deleteLap(lapId: Int, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
+    func editLap(rideId: Int, lapId: Int, lapTimeInSeconds: String, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class LapRepository: LapRepositoryProtocol {
@@ -21,20 +21,16 @@ final class LapRepository: LapRepositoryProtocol {
     // MARK: - Private properties
     
     private let riderBookApiService: RiderBookApiServiceProtocol
-    private let localRepository: LocalRepositoryProtocol
     
     // MARK: - Lifecycle
     
-    init(riderBookApiService: RiderBookApiServiceProtocol,
-         localRepository: LocalRepositoryProtocol) {
+    init(riderBookApiService: RiderBookApiServiceProtocol) {
         self.riderBookApiService = riderBookApiService
-        self.localRepository = localRepository
     }
     
     // MARK: - LapRepositoryProtocol
     
-    func addLap(rideId: Int, lapTimeInSeconds: String, number: Int) -> AnyPublisher<Bool, RiderBookError> {
-        let userAuth = localRepository.getUser()?.authorization ?? ""
+    func addLap(rideId: Int, lapTimeInSeconds: String, number: Int, userAuth: String) -> AnyPublisher<Bool, RiderBookError> {
         let addLapRequest = AddLapRequest(rideId: rideId,
                                           lapTimeInSeconds: lapTimeInSeconds,
                                           number: number,
@@ -46,8 +42,7 @@ final class LapRepository: LapRepositoryProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func fetchLaps(page: Int, rideId: Int) -> AnyPublisher<[Lap], RiderBookError> {
-        let userAuth = localRepository.getUser()?.authorization ?? ""
+    func fetchLaps(page: Int, rideId: Int, userAuth: String) -> AnyPublisher<[Lap], RiderBookError> {
         let lapListRequest = LapListRequest(page: page, rideId: rideId, authorization: userAuth)
         return riderBookApiService
             .loadRequest(LapTarget.lapList(lapListRequest), responseModel: LapListResponse.self)
@@ -59,8 +54,7 @@ final class LapRepository: LapRepositoryProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func deleteLap(lapId: Int) -> AnyPublisher<Bool, RiderBookError> {
-        let userAuth = localRepository.getUser()?.authorization ?? ""
+    func deleteLap(lapId: Int, userAuth: String) -> AnyPublisher<Bool, RiderBookError> {
         let deleteLapRequest = DeleteLapRequest(lapId: lapId, authorization: userAuth)
         return riderBookApiService
             .loadRequest(LapTarget.deleteLap(deleteLapRequest), responseModel: RiderBookServiceSuccessResponse.self)
@@ -69,8 +63,7 @@ final class LapRepository: LapRepositoryProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func editLap(rideId: Int, lapId: Int, lapTimeInSeconds: String) -> AnyPublisher<Bool, RiderBookError> {
-        let userAuth = localRepository.getUser()?.authorization ?? ""
+    func editLap(rideId: Int, lapId: Int, lapTimeInSeconds: String, userAuth: String) -> AnyPublisher<Bool, RiderBookError> {
         let editLapRequest = EditLapRequest(rideId: rideId,
                                             lapId: lapId,
                                             lapTimeInSeconds: lapTimeInSeconds,

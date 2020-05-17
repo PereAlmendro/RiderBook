@@ -36,13 +36,3 @@ struct RidesView: View {
         }
     }
 }
-
-#if DEBUG
-struct RidesView_Previews: PreviewProvider {
-    static let fakeCoordinator = AppCoordinator(window: UIWindow())
-    static let ridesAssembly = RidesAssembly(coordinator: fakeCoordinator)
-    static var previews: some View {
-        ridesAssembly.getView()
-    }
-}
-#endif

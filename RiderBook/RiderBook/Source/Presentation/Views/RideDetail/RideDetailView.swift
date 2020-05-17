@@ -40,11 +40,3 @@ struct RideDetailView: View {
         
     }
 }
-
-struct RideDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        let fakeCoordinator = AppCoordinator(window: UIWindow())
-        let rideDetailAssembly = RideDetailAssembly(coordinator: fakeCoordinator)
-        return rideDetailAssembly.getView(for: Ride(id: 0, date: Date(), circuit: "", circuitId: 0, circuitLocation: ""))
-    }
-}

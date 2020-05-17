@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 import Combine
 
-final class RidesViewModel: ObservableObject  {
+protocol RidesViewModelProtocol: AnyObject {
+    
+}
+
+final class RidesViewModel: ObservableObject, RidesViewModelProtocol  {
     
     // MARK: - View properties
     
@@ -25,10 +29,10 @@ final class RidesViewModel: ObservableObject  {
     
     // MARK: - Lifecycle
     
-    init(coordinator: AppCoordinatorProtocol,
-         rideService: RideServiceProtocol) {
-        self.coordinator = coordinator
+    init(rideService: RideServiceProtocol,
+         coordinator: AppCoordinatorProtocol) {
         self.rideService = rideService
+        self.coordinator = coordinator
     }
     
     // MARK: - User Actions

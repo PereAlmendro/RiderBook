@@ -68,6 +68,4 @@ final class LoginService: LoginServiceProtocol {
     func logOut() -> Bool {
         return localRepository.deleteSavedUser()
     }
-    
-    // TODO: Edit user
 }

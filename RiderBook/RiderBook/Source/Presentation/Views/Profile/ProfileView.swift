@@ -46,12 +46,3 @@ struct ProfileView: View {
         }
     }
 }
-
-#if DEBUG
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        let fakeCoordinator = AppCoordinator(window: UIWindow())
-        return ProfileAssembly(coordinator: fakeCoordinator).getView()
-    }
-}
-#endif

@@ -10,7 +10,11 @@ import Foundation
 import SwiftUI
 import Combine
 
-final class SplashViewModel: ObservableObject  {
+protocol SplashViewModelProtocol: AnyObject {
+    func attemptAutoLogin()
+}
+
+final class SplashViewModel: ObservableObject, SplashViewModelProtocol  {
     
     // MARK: - Private properties
     

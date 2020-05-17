@@ -46,14 +46,3 @@ struct AddEditRideView: View {
         }
     }
 }
-
-#if DEBUG
-struct AddRideView_Previews: PreviewProvider {
-    static let fakeCoordinator = AppCoordinator(window: UIWindow())
-    static let addRideAssembly = AddEditRideAssembly(coordinator: fakeCoordinator)
-    
-    static var previews: some View {
-        addRideAssembly.getView()
-    }
-}
-#endif

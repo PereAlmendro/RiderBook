@@ -10,7 +10,11 @@ import Foundation
 import SwiftUI
 import Combine
 
-final class RegisterViewModel: ObservableObject  {
+protocol RegisterViewModelProtocol: AnyObject {
+    
+}
+
+final class RegisterViewModel: ObservableObject, RegisterViewModelProtocol {
     
     // MARK: - View properties
     

@@ -10,10 +10,10 @@ import Foundation
 import Combine
 
 protocol RideRepositoryProtocol {
-    func addRide(circuitId: Int, date: Date) -> AnyPublisher<Bool, RiderBookError>
-    func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError>
-    func deleteRide(rideId: Int) -> AnyPublisher<Bool, RiderBookError>
-    func editRide(rideId: Int, circuitId: Int, date: Date) -> AnyPublisher<Bool, RiderBookError>
+    func addRide(circuitId: Int, date: Date, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
+    func fetchRides(page: Int, userAuth: String) -> AnyPublisher<[Ride], RiderBookError>
+    func deleteRide(rideId: Int, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
+    func editRide(rideId: Int, circuitId: Int, date: Date, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class RideRepository: RideRepositoryProtocol {
@@ -21,20 +21,16 @@ final class RideRepository: RideRepositoryProtocol {
     // MARK: - Private properties
     
     private let riderBookApiService: RiderBookApiServiceProtocol
-    private let localRepository: LocalRepositoryProtocol
     
     // MARK: - Lifecycle
     
-    init(riderBookApiService: RiderBookApiServiceProtocol,
-         localRepository: LocalRepositoryProtocol) {
+    init(riderBookApiService: RiderBookApiServiceProtocol) {
         self.riderBookApiService = riderBookApiService
-        self.localRepository = localRepository
     }
     
     // MARK: - RideRepositoryProtocol
     
-    func addRide(circuitId: Int, date: Date) -> AnyPublisher<Bool, RiderBookError> {
-        let userAuth = localRepository.getUser()?.authorization ?? ""
+    func addRide(circuitId: Int, date: Date, userAuth: String) -> AnyPublisher<Bool, RiderBookError> {
         let addRideRequest = AddRideRequest(circuitId: circuitId,
                                             dateTimeStamp: Int(date.timeIntervalSince1970),
                                             authorization: userAuth)
@@ -45,8 +41,7 @@ final class RideRepository: RideRepositoryProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError> {
-        let userAuth = localRepository.getUser()?.authorization ?? ""
+    func fetchRides(page: Int, userAuth: String) -> AnyPublisher<[Ride], RiderBookError> {
         let rideListRequest = RideListRequest(page: page, authorization: userAuth)
         return riderBookApiService
             .loadRequest(RideTarget.rideList(rideListRequest), responseModel: RideListResponse.self)
@@ -58,8 +53,7 @@ final class RideRepository: RideRepositoryProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func deleteRide(rideId: Int) -> AnyPublisher<Bool, RiderBookError> {
-        let userAuth = localRepository.getUser()?.authorization ?? ""
+    func deleteRide(rideId: Int, userAuth: String) -> AnyPublisher<Bool, RiderBookError> {
         let deleteRideRequest = DeleteRideRequest(rideId: rideId, authorization: userAuth)
         return riderBookApiService
             .loadRequest(RideTarget.deleteRide(deleteRideRequest), responseModel: RiderBookServiceSuccessResponse.self)
@@ -68,8 +62,7 @@ final class RideRepository: RideRepositoryProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func editRide(rideId: Int, circuitId: Int, date: Date) -> AnyPublisher<Bool, RiderBookError> {
-        let userAuth = localRepository.getUser()?.authorization ?? ""
+    func editRide(rideId: Int, circuitId: Int, date: Date, userAuth: String) -> AnyPublisher<Bool, RiderBookError> {
         let editRideRequest = EditRideRequest(rideId: rideId,
                                               circuitId: circuitId,
                                               dateTimeStamp: Int(date.timeIntervalSince1970),

@@ -31,7 +31,6 @@ final class UserRepository: UserRepositoryProtocol {
     
     func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookError> {
         let userRequest = CreateUserRequest(name: name, password: password, image: nil, email: email)
-        
         return riderBookApiService
             .loadRequest(UserTarget.createUser(userRequest), responseModel: UserResponse.self)
             .map { (response) -> User? in
@@ -44,7 +43,6 @@ final class UserRepository: UserRepositoryProtocol {
     
     func login(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<User?, RiderBookError> {
         let loginRequest = LoginRequest(email: email, password: password, encodedPassword: encodedPassword)
-        
         return riderBookApiService
             .loadRequest(UserTarget.login(loginRequest), responseModel: UserResponse.self)
             .map { (response) -> User? in
