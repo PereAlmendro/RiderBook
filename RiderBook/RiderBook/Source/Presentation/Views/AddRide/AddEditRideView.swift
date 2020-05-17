@@ -10,33 +10,44 @@ import SwiftUI
 
 struct AddEditRideView: View {
     @ObservedObject var viewModel: AddEditRideViewModel
-
+    
     var body: some View {
         LoadingView(isShowing: $viewModel.loading) {
-            VStack(alignment: .center) {
-                Form {
-                    Text("Select a date").font(.headline).padding()
-                    DatePicker("", selection: self.$viewModel.selectedDate, in: Date()...,
-                               displayedComponents: .date)
-                        .labelsHidden()
+            ScrollView {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button("Save") {
+                            self.viewModel.submitAction()
+                        }
+                    }.padding(20)
                     
-                    // SWIFTUI BUG : PICKER DOES NOT REFRESH PROPERLY
-                    // WORKAROUND : We show picker when flag is set to true
-                    Text("Select a circuit").font(.headline).padding()
-                    if (self.viewModel.reloadPicker) {
-                        Picker(selection: self.$viewModel.circuitIndex,
-                               label: Text("Select a circuit")) {
-                                ForEach(0 ..< self.viewModel.circuits.count) {
-                                    Text(self.viewModel.circuits[$0].name)
-                                }
-                        }.labelsHidden()
-                        .pickerStyle(WheelPickerStyle())
+                    VStack(alignment: .center) {
+                        Text("Select a date")
+                            .font(.system(size: 20))
+                            .padding(.horizontal)
+                        
+                        DatePicker("",
+                                   selection: self.$viewModel.selectedDate, in: Date()...,
+                                   displayedComponents: .date).labelsHidden()
+                        
+                        // SWIFTUI BUG : PICKER DOES NOT REFRESH PROPERLY
+                        // WORKAROUND : We show picker when flag is set to true
+                        Text("Select a circuit")
+                            .font(.system(size: 20))
+                            .padding(.horizontal)
+                        
+                        if (self.viewModel.reloadPicker) {
+                            Picker(selection: self.$viewModel.circuitIndex,
+                                   label: Text("Select a circuit")) {
+                                    ForEach(0 ..< self.viewModel.circuits.count) {
+                                        Text(self.viewModel.circuits[$0].name)
+                                    }
+                            }
+                            .labelsHidden()
+                        }
                     }
-                }.listStyle(GroupedListStyle())
-                 
-                Button("Save") {
-                    self.viewModel.submitAction()
-                }.buttonStyle(CustomButtonStyle())
+                }
             }
         }
         .alert(isPresented: $viewModel.showAlert) { () -> Alert in
