@@ -97,6 +97,9 @@
 		19DB404A245EFDB000C52CA8 /* LapListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4049245EFDB000C52CA8 /* LapListItem.swift */; };
 		19DB404D245F1C2600C52CA8 /* DeleteLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */; };
 		19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */; };
+		19E21B8024780CA50043D151 /* UploadImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E21B7F24780CA50043D151 /* UploadImageRequest.swift */; };
+		19E21B82247817370043D151 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E21B81247817370043D151 /* ImagePicker.swift */; };
+		19E21B88247833610043D151 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E21B87247833610043D151 /* UIImage+Extensions.swift */; };
 		19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8292448BD950037F246 /* CircuitTarget.swift */; };
 		19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82B2448BD9F0037F246 /* RideTarget.swift */; };
 		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
@@ -226,6 +229,9 @@
 		19DB4049245EFDB000C52CA8 /* LapListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListItem.swift; sourceTree = "<group>"; };
 		19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLapRequest.swift; sourceTree = "<group>"; };
 		19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRideRequest.swift; sourceTree = "<group>"; };
+		19E21B7F24780CA50043D151 /* UploadImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageRequest.swift; sourceTree = "<group>"; };
+		19E21B81247817370043D151 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		19E21B87247833610043D151 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		19FDE8292448BD950037F246 /* CircuitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTarget.swift; sourceTree = "<group>"; };
 		19FDE82B2448BD9F0037F246 /* RideTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTarget.swift; sourceTree = "<group>"; };
 		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -519,6 +525,7 @@
 			children = (
 				19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */,
 				193DEEA024446E5300815150 /* LoginRequest.swift */,
+				19E21B7F24780CA50043D151 /* UploadImageRequest.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -720,6 +727,7 @@
 		1955D7A0243DB59D00F359CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				19E21B86247833580043D151 /* Image */,
 				1911316724719110009F2BA1 /* Double */,
 				1991D4E22470389C00869327 /* Color */,
 				19A5DE6F24433EF9008D4886 /* Dictionary */,
@@ -738,6 +746,7 @@
 				194641EE24499B56000B9B6C /* CustomTextField.swift */,
 				1911D4402455833D00495AD8 /* RideListItem.swift */,
 				19DB4049245EFDB000C52CA8 /* LapListItem.swift */,
+				19E21B81247817370043D151 /* ImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1045,6 +1054,14 @@
 				19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */,
 			);
 			path = RideDetail;
+			sourceTree = "<group>";
+		};
+		19E21B86247833580043D151 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				19E21B87247833610043D151 /* UIImage+Extensions.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		19FDE8272448BD730037F246 /* Circuit */ = {
@@ -1356,6 +1373,7 @@
 				19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
 				193DEEA824446F8100815150 /* ApiHostUrl.swift in Sources */,
+				19E21B82247817370043D151 /* ImagePicker.swift in Sources */,
 				19DB4034245EDC8900C52CA8 /* LapListResponse.swift in Sources */,
 				19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
@@ -1390,7 +1408,9 @@
 				1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */,
 				193BF2BE244C99E70017E644 /* AddRideRequest.swift in Sources */,
 				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
+				19E21B8024780CA50043D151 /* UploadImageRequest.swift in Sources */,
 				19FDE8302448C7780037F246 /* LoadingView.swift in Sources */,
+				19E21B88247833610043D151 /* UIImage+Extensions.swift in Sources */,
 				19CA2F67244AE6C400DBDAA4 /* SplashView.swift in Sources */,
 				196B8AE6244CC59A0013D16C /* Circuit.swift in Sources */,
 			);

@@ -17,10 +17,22 @@ struct ProfileView: View {
                 Section {
                     HStack(alignment: .center, spacing: 20) {
                         VStack(alignment: .center, spacing: 5) {
-                            Image(systemName: "person")
-                                .frame(width: 100, height: 100, alignment: .center)
-                                .scaledToFill()
-                                .contentShape(Circle())
+                            if viewModel.image != nil {
+                                viewModel.image!
+                                    .resizable()
+                                    .scaledToFit()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipShape(Circle())
+                                    .frame(width: 100, height: 100, alignment: .center)
+                            } else {
+                                Image(systemName: "person")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipShape(Circle())
+                                    .frame(width: 100, height: 100, alignment: .center)
+                            }
+                            
                             Button("Upload_image".localized()) {
                                 self.viewModel.uploadImageAction()
                             }
@@ -43,6 +55,13 @@ struct ProfileView: View {
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Profile".localized())
+        }
+        .sheet(isPresented: $viewModel.showImagePicker,
+               onDismiss: viewModel.onImagePickerDismiss) {
+            ImagePicker(image: self.$viewModel.inputImage)
+        }
+        .alert(isPresented: $viewModel.showAlert) { () -> Alert in
+            viewModel.createAlert()
         }
     }
 }

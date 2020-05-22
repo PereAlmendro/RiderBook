@@ -49,13 +49,13 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
                 .logIn(email: email, password: password, encodedPassword: false)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { [weak self] (completion) in
+                    self?.loading = false
                     switch completion {
                     case .failure(let error):
-                        self?.showError(message: error.description())
+                        self?.showError(message: error.localizedDescription)
                     default:
                         return
                     }
-                    self?.loading = false
                     },
                       receiveValue: { [weak self] (success) in
                         if success {

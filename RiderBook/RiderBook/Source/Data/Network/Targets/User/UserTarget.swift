@@ -11,6 +11,9 @@ import Foundation
 enum UserEndpoint: String  {
     case new = "/user/new"
     case login = "/user/login"
+    case uploadImage = "/user/upload-image"
+    case edit = "/user/edit"
+    case delete = "/user/delete"
 }
 
 enum UserTarget: ApiTargetProtocol {
