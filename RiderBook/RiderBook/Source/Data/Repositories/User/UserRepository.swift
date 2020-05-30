@@ -13,6 +13,7 @@ import Combine
 protocol UserRepositoryProtocol {
     func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookError>
     func login(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<User?, RiderBookError>
+    func uploadImage(imageBase64: String, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class UserRepository: UserRepositoryProtocol {
@@ -50,6 +51,16 @@ final class UserRepository: UserRepositoryProtocol {
                     return nil
                 }
                 return UserFactory.createUser(from: userResponse)
+        }.eraseToAnyPublisher()
+    }
+    
+    func uploadImage(imageBase64: String, userAuth: String) -> AnyPublisher<Bool, RiderBookError> {
+        let uploadImageRequest =  UploadImageRequest(image: imageBase64,
+                                                     authorization: userAuth)
+        return riderBookApiService
+            .loadRequest(UserTarget.uploadImage(uploadImageRequest), responseModel: RiderBookServiceSuccessResponse.self)
+            .map { (response) -> Bool in
+                return response?.success ?? false
         }.eraseToAnyPublisher()
     }
 }

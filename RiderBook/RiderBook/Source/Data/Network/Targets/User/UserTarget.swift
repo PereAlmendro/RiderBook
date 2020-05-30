@@ -19,6 +19,7 @@ enum UserEndpoint: String  {
 enum UserTarget: ApiTargetProtocol {
     case createUser(_ request: CreateUserRequest)
     case login(_ request: LoginRequest)
+    case uploadImage(_ request: UploadImageRequest)
 }
 
 extension UserTarget {
@@ -28,12 +29,14 @@ extension UserTarget {
             return UserEndpoint.new.rawValue
         case .login:
             return UserEndpoint.login.rawValue
+        case .uploadImage:
+            return UserEndpoint.uploadImage.rawValue
         }
     }
     
     var method: HttpMethod {
         switch self {
-        case .createUser, .login:
+        case .createUser, .login, .uploadImage:
             return .post
         }
     }
@@ -44,6 +47,17 @@ extension UserTarget {
             return request
         case .login(let request):
             return request
+        case .uploadImage(let request):
+            return request
+        }
+    }
+    
+    var headers: [String : String]? {
+        switch self {
+        case .uploadImage(let request):
+            return ["Content-Type": "application/json", "authorization" : request.authorization]
+        default:
+            return ["Content-Type": "application/json"]
         }
     }
 }

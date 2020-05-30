@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 import Combine
 
 protocol UserServiceProtocol {
-    
+    func getUser() -> User?
+    func uploadImage(image: UIImage) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class UserService: UserServiceProtocol {
@@ -19,6 +21,9 @@ final class UserService: UserServiceProtocol {
     
     private let userRepository: UserRepositoryProtocol
     private let localRepository: LocalRepositoryProtocol
+    private var userAuth: String {
+        return self.localRepository.getUser()?.authorization ?? ""
+    }
     
     // MARK: - Lifecycle
     
@@ -28,7 +33,14 @@ final class UserService: UserServiceProtocol {
         self.localRepository = localRepository
     }
     
+    func getUser() -> User? {
+        return localRepository.getUser()
+    }
+    
     // TODO: - Edit user
-    // TODO: - Upload image
     // TODO: - Delete user
+    
+    func uploadImage(image: UIImage) -> AnyPublisher<Bool, RiderBookError> {
+        return userRepository.uploadImage(imageBase64: image.toBase64(), userAuth: userAuth)
+    }
 }

@@ -19,4 +19,8 @@ extension UIImage {
 
         return imageMB > megabytes
     }
+    
+    func toBase64() -> String {
+        return jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
+    }
 }

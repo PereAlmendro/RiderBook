@@ -16,7 +16,7 @@ final class UserFactory: UserFactoryProtocol {
     static func createUser(from userResponse: UserResponse) -> User? {
         return User(userId: userResponse.id,
                     name: userResponse.name,
-                    photoUrl: userResponse.image ?? "",
+                    photoUrl: "http://192.168.0.19/RiderBookBackend/symfony/web/user/profile-image/\(userResponse.image ?? "")",
                     email: userResponse.email,
                     password: userResponse.password,
                     authorization: userResponse.auth)
