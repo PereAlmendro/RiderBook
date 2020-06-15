@@ -43,11 +43,12 @@ final class LocalRepository: LocalRepositoryProtocol {
             for data in result  {
                 guard let email = data.value(forKey: "email") as? String,
                     let password = data.value(forKey: "password") as? String,
-                    let authorization = data.value(forKey: "authorization") as? String else {
+                    let authorization = data.value(forKey: "authorization") as? String,
+                    let photoUrl = data.value(forKey: "photoUrl") as? String else {
                         return nil
                 }
                 
-                user = User(userId: 0, name: "", photoUrl: "", email: email, password: password, authorization: authorization)
+                user = User(userId: 0, name: "", photoUrl: photoUrl, email: email, password: password, authorization: authorization)
             }
             return user
         } catch {
@@ -64,7 +65,7 @@ final class LocalRepository: LocalRepositoryProtocol {
         userObject.setValue(user.email, forKey: "email")
         userObject.setValue(user.password, forKey: "password")
         userObject.setValue(user.authorization, forKey: "authorization")
-        
+        userObject.setValue(user.photoUrl, forKey: "photoUrl")
         do {
             try context.save()
             return true

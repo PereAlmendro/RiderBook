@@ -63,5 +63,8 @@ struct ProfileView: View {
         .alert(isPresented: $viewModel.showAlert) { () -> Alert in
             viewModel.createAlert()
         }
+        .onAppear {
+            self.viewModel.loadUserImage()
+        }
     }
 }

@@ -40,20 +40,9 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
         self.loginService = loginService
         self.userService = userService
         self.coordinator = coordinator
-        
-        loadUserImage()
     }
     
     // MARK: - Private functions
-    
-    private func loadUserImage() {
-        guard let url = URL(string: userService.getUser()?.photoUrl ?? ""),
-            let data = try? Data(contentsOf: url),
-            let uiImage = UIImage(data: data) else {
-            return
-        }
-        image = Image(uiImage: uiImage)
-    }
     
     private func uploadImage(image: UIImage) {
         cancellables += [
@@ -83,6 +72,19 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     }
     
     // MARK: - Public functions
+    
+    func loadUserImage() {
+        DispatchQueue.global().async { [weak self] in
+            if let url = URL(string: self?.userService.getUser()?.photoUrl ?? ""),
+                let data = try? Data(contentsOf: url),
+                let uiImage = UIImage(data: data) {
+                
+                DispatchQueue.main.async {
+                    self?.image = Image(uiImage: uiImage)
+                }
+            }
+        }
+    }
     
     func onImagePickerDismiss() {
         guard let inputImage = inputImage else {
