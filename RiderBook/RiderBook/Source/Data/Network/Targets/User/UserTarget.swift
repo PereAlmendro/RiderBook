@@ -20,6 +20,7 @@ enum UserTarget: ApiTargetProtocol {
     case createUser(_ request: CreateUserRequest)
     case login(_ request: LoginRequest)
     case uploadImage(_ request: UploadImageRequest)
+    case deleteUser(_ request: DeleteUserRequest)
 }
 
 extension UserTarget {
@@ -31,6 +32,8 @@ extension UserTarget {
             return UserEndpoint.login.rawValue
         case .uploadImage:
             return UserEndpoint.uploadImage.rawValue
+        case .deleteUser:
+            return UserEndpoint.delete.rawValue
         }
     }
     
@@ -38,6 +41,8 @@ extension UserTarget {
         switch self {
         case .createUser, .login, .uploadImage:
             return .post
+        case .deleteUser:
+            return .delete
         }
     }
     
@@ -49,12 +54,16 @@ extension UserTarget {
             return request
         case .uploadImage(let request):
             return request
+        case .deleteUser(let request):
+            return request
         }
     }
     
     var headers: [String : String]? {
         switch self {
         case .uploadImage(let request):
+            return ["Content-Type": "application/json", "authorization" : request.authorization]
+        case .deleteUser(let request):
             return ["Content-Type": "application/json", "authorization" : request.authorization]
         default:
             return ["Content-Type": "application/json"]

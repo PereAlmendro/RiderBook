@@ -41,14 +41,23 @@ final class LocalRepository: LocalRepositoryProtocol {
             let result = try context.fetch(request) as? [NSManagedObject] ?? []
             var user: User?
             for data in result  {
-                guard let email = data.value(forKey: "email") as? String,
+                guard
+                    let userId = data.value(forKey: "userId") as? Int,
+                    let name = data.value(forKey: "name") as? String,
+                    let photoUrl = data.value(forKey: "photoUrl") as? String,
+                    let email = data.value(forKey: "email") as? String,
                     let password = data.value(forKey: "password") as? String,
-                    let authorization = data.value(forKey: "authorization") as? String,
-                    let photoUrl = data.value(forKey: "photoUrl") as? String else {
+                    let authorization = data.value(forKey: "authorization") as? String
+                     else {
                         return nil
                 }
                 
-                user = User(userId: 0, name: "", photoUrl: photoUrl, email: email, password: password, authorization: authorization)
+                user = User(userId: userId,
+                            name: name,
+                            photoUrl: photoUrl,
+                            email: email,
+                            password: password,
+                            authorization: authorization)
             }
             return user
         } catch {
@@ -62,10 +71,12 @@ final class LocalRepository: LocalRepositoryProtocol {
         }
         
         let userObject = NSManagedObject(entity: entity, insertInto: context)
+        userObject.setValue(user.userId, forKey: "userId")
+        userObject.setValue(user.name, forKey: "name")
+        userObject.setValue(user.photoUrl, forKey: "photoUrl")
         userObject.setValue(user.email, forKey: "email")
         userObject.setValue(user.password, forKey: "password")
         userObject.setValue(user.authorization, forKey: "authorization")
-        userObject.setValue(user.photoUrl, forKey: "photoUrl")
         do {
             try context.save()
             return true

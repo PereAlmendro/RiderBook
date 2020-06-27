@@ -24,20 +24,13 @@ struct ProfileView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .clipShape(Circle())
                                     .frame(width: 100, height: 100, alignment: .center)
-                            } else {
-                                Image(systemName: "person")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .aspectRatio(contentMode: .fill)
-                                    .clipShape(Circle())
-                                    .frame(width: 100, height: 100, alignment: .center)
                             }
                             
                             Button("Upload_image".localized()) {
                                 self.viewModel.uploadImageAction()
                             }
                         }
-                        Text("Pere Almendro").foregroundColor(Color.dlBlack)
+                        Text(self.viewModel.userName).foregroundColor(Color.dlBlack)
                     }
                 }
                 
@@ -64,7 +57,7 @@ struct ProfileView: View {
             viewModel.createAlert()
         }
         .onAppear {
-            self.viewModel.loadUserImage()
+            self.viewModel.loadUserData()
         }
     }
 }

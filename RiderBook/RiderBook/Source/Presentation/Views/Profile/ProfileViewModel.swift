@@ -22,6 +22,7 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     @Published var showImagePicker = false
     @Published var inputImage: UIImage?
     @Published var image: Image?
+    @Published var userName: String = ""
     
     // MARK: - Private properties
     
@@ -73,13 +74,15 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     
     // MARK: - Public functions
     
-    func loadUserImage() {
-        DispatchQueue.global().async { [weak self] in
-            if let url = URL(string: self?.userService.getUser()?.photoUrl ?? ""),
+    func loadUserData() {
+        guard let user = userService.getUser() else { return }
+        userName = user.name
+        
+        DispatchQueue.global().async {
+            if let url = URL(string: user.photoUrl),
                 let data = try? Data(contentsOf: url),
                 let uiImage = UIImage(data: data) {
-                
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     self?.image = Image(uiImage: uiImage)
                 }
             }
@@ -122,7 +125,33 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     }
     
     func deleteAccountAction() {
-        // TODO: - Delete account action
+        guard let user = userService.getUser() else { return }
+        cancellables += [
+            userService
+                .deleteUser(user)
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { [weak self] (completion) in
+                    switch completion {
+                    case .failure(let error):
+                        self?.alertTitle = "Error".localizedString()
+                        self?.alertMessage = "\(error.description()), \(error.localizedDescription)"
+                        self?.showAlert.toggle()
+                        break
+                    case .finished:
+                        break
+                    }
+                    }, receiveValue: { [weak self] (success) in
+                        if success {
+                            self?.coordinator.start()
+                        } else {
+                            self?.inputImage = nil
+                            self?.image = nil
+                            self?.alertTitle = "T_Oops".localizedString()
+                            self?.alertMessage = "T_algo a ido mal, por favor, prueba mas tarde".localizedString()
+                            self?.showAlert.toggle()
+                        }
+                })
+        ]
     }
     
     func uploadImageAction() {

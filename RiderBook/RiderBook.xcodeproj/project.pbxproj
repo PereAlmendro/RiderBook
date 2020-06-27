@@ -59,6 +59,7 @@
 		195C935E243BD30F002CFEAD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C935D243BD30F002CFEAD /* LoginView.swift */; };
 		195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C935F243BD4EE002CFEAD /* LoginViewModel.swift */; };
 		195C9363243BE00C002CFEAD /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C9362243BE00C002CFEAD /* CustomButtonStyle.swift */; };
+		1967995C24A72EB000F1DB07 /* DeleteUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967995B24A72EB000F1DB07 /* DeleteUserRequest.swift */; };
 		1969F9AB242BD58400300C1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1969F9AD242BD58400300C1B /* Localizable.strings */; };
 		196B8AE0244CC5230013D16C /* CircuitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196B8ADF244CC5230013D16C /* CircuitService.swift */; };
 		196B8AE3244CC5630013D16C /* CircuitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196B8AE2244CC5630013D16C /* CircuitRepository.swift */; };
@@ -187,6 +188,7 @@
 		195C935D243BD30F002CFEAD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		195C935F243BD4EE002CFEAD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		195C9362243BE00C002CFEAD /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		1967995B24A72EB000F1DB07 /* DeleteUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserRequest.swift; sourceTree = "<group>"; };
 		1969F9AC242BD58400300C1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1969F9AE242BD5B200300C1B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1969F9AF242BD5B200300C1B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 				19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */,
 				193DEEA024446E5300815150 /* LoginRequest.swift */,
 				19E21B7F24780CA50043D151 /* UploadImageRequest.swift */,
+				1967995B24A72EB000F1DB07 /* DeleteUserRequest.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1375,6 +1378,7 @@
 				193DEEA824446F8100815150 /* ApiHostUrl.swift in Sources */,
 				19E21B82247817370043D151 /* ImagePicker.swift in Sources */,
 				19DB4034245EDC8900C52CA8 /* LapListResponse.swift in Sources */,
+				1967995C24A72EB000F1DB07 /* DeleteUserRequest.swift in Sources */,
 				19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
 				193DEEA124446E5300815150 /* LoginRequest.swift in Sources */,

@@ -13,6 +13,7 @@ import Combine
 protocol UserServiceProtocol {
     func getUser() -> User?
     func uploadImage(image: UIImage) -> AnyPublisher<Bool, RiderBookError>
+    func deleteUser(_ user: User) -> AnyPublisher<Bool, RiderBookError>
 }
 
 final class UserService: UserServiceProtocol {
@@ -37,11 +38,14 @@ final class UserService: UserServiceProtocol {
         return localRepository.getUser()
     }
     
-    // TODO: - Edit user
-    // TODO: - Delete user
+    func deleteUser(_ user: User) -> AnyPublisher<Bool, RiderBookError> {
+        return userRepository.deleteUser(user, userAuth: userAuth)
+    }
     
     func uploadImage(image: UIImage) -> AnyPublisher<Bool, RiderBookError> {
         return userRepository.uploadImage(imageBase64: image.toBase64(),
                                           userAuth: userAuth)
     }
+    
+    // TODO: - Edit user
 }
