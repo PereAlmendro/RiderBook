@@ -67,8 +67,7 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
                 print(result)
                 #endif
                 return result
-            })
-                .eraseToAnyPublisher()
+            }).eraseToAnyPublisher()
     }
     
     private func getbadUrlError<ResponseModel: Decodable>(responseModel: ResponseModel.Type)

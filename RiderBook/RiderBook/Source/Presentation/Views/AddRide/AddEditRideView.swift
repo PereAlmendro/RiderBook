@@ -28,7 +28,7 @@ struct AddEditRideView: View {
                             .padding(.horizontal)
                         
                         DatePicker("",
-                                   selection: self.$viewModel.selectedDate, in: Date()...,
+                                   selection: self.$viewModel.selectedDate, in: Date(timeIntervalSince1970: 0 )...,
                                    displayedComponents: .date).labelsHidden()
                         
                         // SWIFTUI BUG : PICKER DOES NOT REFRESH PROPERLY
