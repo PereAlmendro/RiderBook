@@ -41,6 +41,7 @@ final class UserService: UserServiceProtocol {
     // TODO: - Delete user
     
     func uploadImage(image: UIImage) -> AnyPublisher<Bool, RiderBookError> {
-        return userRepository.uploadImage(imageBase64: image.toBase64(), userAuth: userAuth)
+        return userRepository.uploadImage(imageBase64: image.toBase64(),
+                                          userAuth: userAuth)
     }
 }

@@ -15,7 +15,9 @@ protocol RankingServiceProtocol {
 final class RankingService: RankingServiceProtocol {
     
     // MARK: - Private properties
+    
     private let rankingRepository: RankingRepositoryProtocol
+    
     // MARK: - Lifecycle
     
     init(rankingRepository: RankingRepositoryProtocol) {
