@@ -22,7 +22,7 @@ final class UserService: UserServiceProtocol {
     private let userRepository: UserRepositoryProtocol
     private let localRepository: LocalRepositoryProtocol
     private var userAuth: String {
-        return self.localRepository.getUser()?.authorization ?? ""
+        return localRepository.getUser()?.authorization ?? ""
     }
     
     // MARK: - Lifecycle

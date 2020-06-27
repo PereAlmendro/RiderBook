@@ -23,7 +23,7 @@ final class LapService: LapServiceProtocol {
     private let lapRepository: LapRepositoryProtocol
     private let localRepository: LocalRepositoryProtocol
     private var userAuth: String {
-        return self.localRepository.getUser()?.authorization ?? ""
+        return localRepository.getUser()?.authorization ?? ""
     }
     
     // MARK: - Lifecycle

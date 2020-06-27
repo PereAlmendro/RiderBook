@@ -59,14 +59,14 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
                     case .finished:
                         break
                     }
-                }, receiveValue: { [weak self] (success) in
-                    if !success {
-                        self?.inputImage = nil
-                        self?.image = nil
-                        self?.alertTitle = "Error".localizedString()
-                        self?.alertMessage = "image upload failed, please try again later or choose another image".localizedString()
-                        self?.showAlert.toggle()
-                    }
+                    }, receiveValue: { [weak self] (success) in
+                        if !success {
+                            self?.inputImage = nil
+                            self?.image = nil
+                            self?.alertTitle = "Error".localizedString()
+                            self?.alertMessage = "image upload failed, please try again later or choose another image".localizedString()
+                            self?.showAlert.toggle()
+                        }
                 })
         ]
     }
