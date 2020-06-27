@@ -36,39 +36,47 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
             request.httpMethod = target.method.rawValue
             request.allHTTPHeaderFields = target.headers
             
-            if let requestJsonData = target.requestObject?.toJsonData() {
-                request.httpBody = requestJsonData
-            }
-            
-            let decoder = JSONDecoder()
-            
             #if DEBUG
             print("START SERVICE REQUEST : ")
             print(request.url?.absoluteString ?? "Empty URL")
             #endif
             
+            let decoder = JSONDecoder()
+            
+            if let requestJsonData = target.requestObject?.toJsonData() {
+                request.httpBody = requestJsonData
+                #if DEBUG
+                print("httpBody : ")
+                print(target.requestObject as Any)
+                #endif
+            }
+            
             return URLSession.shared.dataTaskPublisher(for: request)
-                .map { data, response in data }
-                .mapError { error in RiderBookError.responseError(error) }
-                .decode(type: responseModel, decoder: decoder)
-                .mapError { error in RiderBookError.responseError(error) }
-                .map({ (result) -> ResponseModel? in
+                .map { data, response in
                     #if DEBUG
-                    print("END SERVICE REQUEST : ")
-                    print(request.url?.absoluteString ?? "Empty URL")
-                    print(result)
+                    print("RESPONSE : ")
+                    print(response)
                     #endif
-                    return result
-                })
+                    return data
+            }
+            .mapError { error in RiderBookError.responseError(error) }
+            .decode(type: responseModel, decoder: decoder)
+            .mapError { error in RiderBookError.responseError(error) }
+            .map({ (result) -> ResponseModel? in
+                #if DEBUG
+                print(result)
+                #endif
+                return result
+            })
                 .eraseToAnyPublisher()
     }
     
     private func getbadUrlError<ResponseModel: Decodable>(responseModel: ResponseModel.Type)
         -> AnyPublisher<ResponseModel?, RiderBookError> {
-        return Result<Int, Error>.Publisher(URLError(.badURL))
-            .map({ response -> ResponseModel? in nil })
-            .mapError({ error in RiderBookError.badRequest(error) })
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+            return Result<Int, Error>.Publisher(URLError(.badURL))
+                .map({ response -> ResponseModel? in nil })
+                .mapError({ error in RiderBookError.badRequest(error) })
+                .receive(on: DispatchQueue.main)
+                .eraseToAnyPublisher()
     }
 }
