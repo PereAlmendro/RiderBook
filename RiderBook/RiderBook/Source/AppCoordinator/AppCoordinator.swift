@@ -46,7 +46,6 @@ final class AppCoordinator: AppCoordinatorProtocol {
 
     private func loadApplication() {
         viewAssembly = getViewAssembly()
-        EnvironmentController.shared.loadEnvironment()
     }
 }
 

@@ -31,14 +31,16 @@ struct EnvironmentBaseUrl {
 }
 
 struct EnvironmentController {
-    var urls: EnvironmentBaseUrl?
+    lazy var urls: EnvironmentBaseUrl = {
+        return loadEnvironment()
+    }()
 
     static var shared = EnvironmentController()
     private init() {
         // Private initalization as this class is a singleton
     }
 
-    func loadEnvironment() {
-        Self.shared.urls = EnvironmentBaseUrl(environment: .production)
+    private func loadEnvironment() -> EnvironmentBaseUrl {
+        return EnvironmentBaseUrl(environment: .production)
     }
 }

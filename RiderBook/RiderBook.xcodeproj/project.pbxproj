@@ -20,10 +20,6 @@
 		1911316C2471AF20009F2BA1 /* RankingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316B2471AF20009F2BA1 /* RankingRepository.swift */; };
 		1911316F2471AF5C009F2BA1 /* RankingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316E2471AF5C009F2BA1 /* RankingService.swift */; };
 		1911D4412455833D00495AD8 /* RideListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D4402455833D00495AD8 /* RideListItem.swift */; };
-		1911D44524558A3F00495AD8 /* CircuitRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */; };
-		1911D44724558A4900495AD8 /* RideRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D44624558A4900495AD8 /* RideRepositoryTest.swift */; };
-		1912B881245349970026CD83 /* MockLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1912B880245349970026CD83 /* MockLocalRepository.swift */; };
-		1912B88324534FEE0026CD83 /* UserRepositoryMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1912B88224534FEE0026CD83 /* UserRepositoryMocks.swift */; };
 		1933B39A2441ACAE00D0BF44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3992441ACAE00D0BF44 /* User.swift */; };
 		1933B39D2441AFC500D0BF44 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B39C2441AFC500D0BF44 /* TabBarView.swift */; };
 		1933B3A42441B01E00D0BF44 /* RidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3A32441B01E00D0BF44 /* RidesView.swift */; };
@@ -40,7 +36,6 @@
 		193BF2C9244CA4650017E644 /* AddEditRideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C8244CA4650017E644 /* AddEditRideViewModel.swift */; };
 		193DEE9F24446E2500815150 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEE9E24446E2500815150 /* UserResponse.swift */; };
 		193DEEA124446E5300815150 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA024446E5300815150 /* LoginRequest.swift */; };
-		193DEEA824446F8100815150 /* ApiHostUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA724446F8100815150 /* ApiHostUrl.swift */; };
 		193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAA24446FAB00815150 /* HttpMethod.swift */; };
 		193DEEAD24446FFB00815150 /* RequestableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAC24446FFB00815150 /* RequestableProtocol.swift */; };
 		193DEEAF244472B900815150 /* RiderBookServiceErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAE244472B900815150 /* RiderBookServiceErrorResponse.swift */; };
@@ -65,16 +60,11 @@
 		196B8AE6244CC59A0013D16C /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196B8AE5244CC59A0013D16C /* Circuit.swift */; };
 		196B8AE9244CC68B0013D16C /* CircuitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196B8AE8244CC68B0013D16C /* CircuitResponse.swift */; };
 		196B8AEB244CC6FA0013D16C /* CircuitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196B8AEA244CC6FA0013D16C /* CircuitFactory.swift */; };
-		1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984639B24465C7800C4E25B /* RiderBookApiServiceTest.swift */; };
-		1984639F24465D5900C4E25B /* MockTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984639E24465D5800C4E25B /* MockTarget.swift */; };
 		1991D4E4247038AC00869327 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1991D4E3247038AC00869327 /* Color+Extension.swift */; };
 		199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A075924294F1D002E3A15 /* UIApplication+extension.swift */; };
-		199EAFB62451FF8D005AD180 /* LoginServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */; };
 		19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5DE7024433F17008D4886 /* Dictionary+Json.swift */; };
 		19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */; };
 		19A862D724546167003BA6D1 /* RideFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A862D624546167003BA6D1 /* RideFactory.swift */; };
-		19ABECD32450AA37005BCDEC /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */; };
-		19ABECD52450AD4D005BCDEC /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABECD42450AD4D005BCDEC /* MockApiService.swift */; };
 		19AD193C246EE2570035269F /* EditRideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193B246EE2570035269F /* EditRideRequest.swift */; };
 		19AD193E246EE2990035269F /* EditLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193D246EE2990035269F /* EditLapRequest.swift */; };
 		19AD1940246EE5C00035269F /* RiderBookServiceSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193F246EE5C00035269F /* RiderBookServiceSuccessResponse.swift */; };
@@ -83,7 +73,6 @@
 		19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */; };
 		19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */; };
 		19CA2F70244AF0FA00DBDAA4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */; };
-		19CA2F83244B41F300DBDAA4 /* LocalRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F82244B41F300DBDAA4 /* LocalRepositoryTest.swift */; };
 		19DB402C245ED8CC00C52CA8 /* LapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB402B245ED8CC00C52CA8 /* LapTarget.swift */; };
 		19DB402F245EDA4700C52CA8 /* LapListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB402E245EDA4700C52CA8 /* LapListRequest.swift */; };
 		19DB4031245EDA5000C52CA8 /* AddLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4030245EDA5000C52CA8 /* AddLapRequest.swift */; };
@@ -106,6 +95,7 @@
 		19FDE8332448D0040037F246 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8322448D0040037F246 /* UserFactory.swift */; };
 		19FDE8362448D55D0037F246 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8352448D55D0037F246 /* LocalRepository.swift */; };
 		5B936822258CFF1E00EE6CAD /* UserDefaults+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936821258CFF1E00EE6CAD /* UserDefaults+Storage.swift */; };
+		5B936845258D0A3300EE6CAD /* RiderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936844258D0A3300EE6CAD /* RiderBookTests.swift */; };
 		5BCF61ED258CDA8000082F5A /* production.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF61EC258CDA8000082F5A /* production.plist */; };
 		5BCF61F5258CF05300082F5A /* EnvironmentBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */; };
 		5BCF61FB258CF87300082F5A /* PlistFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF61FA258CF87200082F5A /* PlistFileReader.swift */; };
@@ -113,13 +103,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		194337772427B6DD00050CB0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 194337532427B6DB00050CB0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1943375A2427B6DB00050CB0;
-			remoteInfo = RiderBook;
-		};
-		194337822427B6DD00050CB0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 194337532427B6DB00050CB0 /* Project object */;
 			proxyType = 1;
@@ -142,10 +125,6 @@
 		1911316B2471AF20009F2BA1 /* RankingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingRepository.swift; sourceTree = "<group>"; };
 		1911316E2471AF5C009F2BA1 /* RankingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingService.swift; sourceTree = "<group>"; };
 		1911D4402455833D00495AD8 /* RideListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideListItem.swift; sourceTree = "<group>"; };
-		1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitRepositoryTest.swift; sourceTree = "<group>"; };
-		1911D44624558A4900495AD8 /* RideRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRepositoryTest.swift; sourceTree = "<group>"; };
-		1912B880245349970026CD83 /* MockLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocalRepository.swift; sourceTree = "<group>"; };
-		1912B88224534FEE0026CD83 /* UserRepositoryMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMocks.swift; sourceTree = "<group>"; };
 		1933B3992441ACAE00D0BF44 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1933B39C2441AFC500D0BF44 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		1933B3A32441B01E00D0BF44 /* RidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesView.swift; sourceTree = "<group>"; };
@@ -162,7 +141,6 @@
 		193BF2C8244CA4650017E644 /* AddEditRideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRideViewModel.swift; sourceTree = "<group>"; };
 		193DEE9E24446E2500815150 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		193DEEA024446E5300815150 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
-		193DEEA724446F8100815150 /* ApiHostUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHostUrl.swift; sourceTree = "<group>"; };
 		193DEEAA24446FAB00815150 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		193DEEAC24446FFB00815150 /* RequestableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestableProtocol.swift; sourceTree = "<group>"; };
 		193DEEAE244472B900815150 /* RiderBookServiceErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookServiceErrorResponse.swift; sourceTree = "<group>"; };
@@ -174,8 +152,6 @@
 		194337712427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194337762427B6DD00050CB0 /* RiderBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1943377C2427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		194337812427B6DD00050CB0 /* RiderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		194337872427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194641EE24499B56000B9B6C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		1954D003244323B200401EB2 /* RiderBookApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiService.swift; sourceTree = "<group>"; };
 		1954D00524432B6600401EB2 /* ApiTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTargetProtocol.swift; sourceTree = "<group>"; };
@@ -197,16 +173,11 @@
 		196B8AE5244CC59A0013D16C /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
 		196B8AE8244CC68B0013D16C /* CircuitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitResponse.swift; sourceTree = "<group>"; };
 		196B8AEA244CC6FA0013D16C /* CircuitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitFactory.swift; sourceTree = "<group>"; };
-		1984639B24465C7800C4E25B /* RiderBookApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookApiServiceTest.swift; sourceTree = "<group>"; };
-		1984639E24465D5800C4E25B /* MockTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTarget.swift; sourceTree = "<group>"; };
 		1991D4E3247038AC00869327 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		199A075924294F1D002E3A15 /* UIApplication+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extension.swift"; sourceTree = "<group>"; };
-		199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTest.swift; sourceTree = "<group>"; };
 		19A5DE7024433F17008D4886 /* Dictionary+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Json.swift"; sourceTree = "<group>"; };
 		19A5DE7224433FDF008D4886 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
 		19A862D624546167003BA6D1 /* RideFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideFactory.swift; sourceTree = "<group>"; };
-		19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
-		19ABECD42450AD4D005BCDEC /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
 		19AD193B246EE2570035269F /* EditRideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRideRequest.swift; sourceTree = "<group>"; };
 		19AD193D246EE2990035269F /* EditLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLapRequest.swift; sourceTree = "<group>"; };
 		19AD193F246EE5C00035269F /* RiderBookServiceSuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookServiceSuccessResponse.swift; sourceTree = "<group>"; };
@@ -215,7 +186,6 @@
 		19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		19CA2F82244B41F300DBDAA4 /* LocalRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryTest.swift; sourceTree = "<group>"; };
 		19DB402B245ED8CC00C52CA8 /* LapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapTarget.swift; sourceTree = "<group>"; };
 		19DB402E245EDA4700C52CA8 /* LapListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListRequest.swift; sourceTree = "<group>"; };
 		19DB4030245EDA5000C52CA8 /* AddLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLapRequest.swift; sourceTree = "<group>"; };
@@ -238,6 +208,7 @@
 		19FDE8322448D0040037F246 /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		19FDE8352448D55D0037F246 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
 		5B936821258CFF1E00EE6CAD /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
+		5B936844258D0A3300EE6CAD /* RiderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookTests.swift; sourceTree = "<group>"; };
 		5BCF61EC258CDA8000082F5A /* production.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = production.plist; sourceTree = "<group>"; };
 		5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentBaseUrl.swift; sourceTree = "<group>"; };
 		5BCF61FA258CF87200082F5A /* PlistFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFileReader.swift; sourceTree = "<group>"; };
@@ -252,13 +223,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		194337732427B6DD00050CB0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1943377E2427B6DD00050CB0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -339,32 +303,6 @@
 				1911316E2471AF5C009F2BA1 /* RankingService.swift */,
 			);
 			path = Ranking;
-			sourceTree = "<group>";
-		};
-		1911D44224558A1D00495AD8 /* CircuitRepository */ = {
-			isa = PBXGroup;
-			children = (
-				1911D44424558A3F00495AD8 /* CircuitRepositoryTest.swift */,
-			);
-			path = CircuitRepository;
-			sourceTree = "<group>";
-		};
-		1911D44324558A2600495AD8 /* RideRepository */ = {
-			isa = PBXGroup;
-			children = (
-				1911D44624558A4900495AD8 /* RideRepositoryTest.swift */,
-			);
-			path = RideRepository;
-			sourceTree = "<group>";
-		};
-		1912B87F245349870026CD83 /* CommonMocks */ = {
-			isa = PBXGroup;
-			children = (
-				19ABECD42450AD4D005BCDEC /* MockApiService.swift */,
-				1912B880245349970026CD83 /* MockLocalRepository.swift */,
-				1912B88224534FEE0026CD83 /* UserRepositoryMocks.swift */,
-			);
-			path = CommonMocks;
 			sourceTree = "<group>";
 		};
 		1933B3972441AC5E00D0BF44 /* Model */ = {
@@ -484,7 +422,6 @@
 		193DEEA624446F7100815150 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				193DEEA724446F8100815150 /* ApiHostUrl.swift */,
 				193DEEAA24446FAB00815150 /* HttpMethod.swift */,
 			);
 			path = Common;
@@ -523,7 +460,6 @@
 			children = (
 				1943375D2427B6DB00050CB0 /* RiderBook */,
 				194337792427B6DD00050CB0 /* RiderBookTests */,
-				194337842427B6DD00050CB0 /* RiderBookUITests */,
 				1943375C2427B6DB00050CB0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -533,7 +469,6 @@
 			children = (
 				1943375B2427B6DB00050CB0 /* RiderBook.app */,
 				194337762427B6DD00050CB0 /* RiderBookTests.xctest */,
-				194337812427B6DD00050CB0 /* RiderBookUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -550,19 +485,10 @@
 		194337792427B6DD00050CB0 /* RiderBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				19CA2F81244B41CD00DBDAA4 /* Data */,
-				19CA2F80244B41C600DBDAA4 /* Network */,
 				1943377C2427B6DD00050CB0 /* Info.plist */,
+				5B936844258D0A3300EE6CAD /* RiderBookTests.swift */,
 			);
 			path = RiderBookTests;
-			sourceTree = "<group>";
-		};
-		194337842427B6DD00050CB0 /* RiderBookUITests */ = {
-			isa = PBXGroup;
-			children = (
-				194337872427B6DD00050CB0 /* Info.plist */,
-			);
-			path = RiderBookUITests;
 			sourceTree = "<group>";
 		};
 		1954CFFA24431FBB00401EB2 /* Common */ = {
@@ -743,23 +669,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		1984639A24465C5100C4E25B /* ApiService */ = {
-			isa = PBXGroup;
-			children = (
-				1984639D24465D4800C4E25B /* mocks */,
-				1984639B24465C7800C4E25B /* RiderBookApiServiceTest.swift */,
-			);
-			path = ApiService;
-			sourceTree = "<group>";
-		};
-		1984639D24465D4800C4E25B /* mocks */ = {
-			isa = PBXGroup;
-			children = (
-				1984639E24465D5800C4E25B /* MockTarget.swift */,
-			);
-			path = mocks;
-			sourceTree = "<group>";
-		};
 		199A076824295A14002E3A15 /* AppDependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,41 +679,6 @@
 				194337712427B6DD00050CB0 /* Info.plist */,
 			);
 			path = AppDependencies;
-			sourceTree = "<group>";
-		};
-		199EAFB22451FF47005AD180 /* LoginService */ = {
-			isa = PBXGroup;
-			children = (
-				199EAFB52451FF8D005AD180 /* LoginServiceTest.swift */,
-			);
-			path = LoginService;
-			sourceTree = "<group>";
-		};
-		199EAFB32451FF68005AD180 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				199EAFB22451FF47005AD180 /* LoginService */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		199EAFB42451FF72005AD180 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				1911D44324558A2600495AD8 /* RideRepository */,
-				1911D44224558A1D00495AD8 /* CircuitRepository */,
-				19ABECD02450AA15005BCDEC /* UserRepository */,
-				19CA2F7F244B41BB00DBDAA4 /* LocalRepository */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		19ABECD02450AA15005BCDEC /* UserRepository */ = {
-			isa = PBXGroup;
-			children = (
-				19ABECD22450AA37005BCDEC /* UserRepositoryTests.swift */,
-			);
-			path = UserRepository;
 			sourceTree = "<group>";
 		};
 		19B1A0DA24420B53000D4FA6 /* Services */ = {
@@ -889,32 +763,6 @@
 				19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */,
 			);
 			path = Register;
-			sourceTree = "<group>";
-		};
-		19CA2F7F244B41BB00DBDAA4 /* LocalRepository */ = {
-			isa = PBXGroup;
-			children = (
-				19CA2F82244B41F300DBDAA4 /* LocalRepositoryTest.swift */,
-			);
-			path = LocalRepository;
-			sourceTree = "<group>";
-		};
-		19CA2F80244B41C600DBDAA4 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				1984639A24465C5100C4E25B /* ApiService */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		19CA2F81244B41CD00DBDAA4 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				199EAFB32451FF68005AD180 /* Services */,
-				199EAFB42451FF72005AD180 /* Repositories */,
-				1912B87F245349870026CD83 /* CommonMocks */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		19DB402D245EDA1E00C52CA8 /* Lap */ = {
@@ -1036,24 +884,6 @@
 			productReference = 194337762427B6DD00050CB0 /* RiderBookTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		194337802427B6DD00050CB0 /* RiderBookUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 194337902427B6DD00050CB0 /* Build configuration list for PBXNativeTarget "RiderBookUITests" */;
-			buildPhases = (
-				1943377D2427B6DD00050CB0 /* Sources */,
-				1943377E2427B6DD00050CB0 /* Frameworks */,
-				1943377F2427B6DD00050CB0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				194337832427B6DD00050CB0 /* PBXTargetDependency */,
-			);
-			name = RiderBookUITests;
-			productName = RiderBookUITests;
-			productReference = 194337812427B6DD00050CB0 /* RiderBookUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1069,11 +899,7 @@
 					};
 					194337752427B6DD00050CB0 = {
 						CreatedOnToolsVersion = 11.2.1;
-						TestTargetID = 1943375A2427B6DB00050CB0;
-					};
-					194337802427B6DD00050CB0 = {
-						CreatedOnToolsVersion = 11.2.1;
-						LastSwiftMigration = 1140;
+						LastSwiftMigration = 1230;
 						TestTargetID = 1943375A2427B6DB00050CB0;
 					};
 				};
@@ -1095,7 +921,6 @@
 			targets = (
 				1943375A2427B6DB00050CB0 /* RiderBook */,
 				194337752427B6DD00050CB0 /* RiderBookTests */,
-				194337802427B6DD00050CB0 /* RiderBookUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1113,13 +938,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		194337742427B6DD00050CB0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1943377F2427B6DD00050CB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1178,7 +996,6 @@
 				19113154247151C0009F2BA1 /* ViewAssembly.swift in Sources */,
 				19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
-				193DEEA824446F8100815150 /* ApiHostUrl.swift in Sources */,
 				19E21B82247817370043D151 /* ImagePicker.swift in Sources */,
 				19DB4034245EDC8900C52CA8 /* LapListResponse.swift in Sources */,
 				1967995C24A72EB000F1DB07 /* DeleteUserRequest.swift in Sources */,
@@ -1228,23 +1045,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1912B88324534FEE0026CD83 /* UserRepositoryMocks.swift in Sources */,
-				19CA2F83244B41F300DBDAA4 /* LocalRepositoryTest.swift in Sources */,
-				1912B881245349970026CD83 /* MockLocalRepository.swift in Sources */,
-				1984639F24465D5900C4E25B /* MockTarget.swift in Sources */,
-				1911D44524558A3F00495AD8 /* CircuitRepositoryTest.swift in Sources */,
-				19ABECD32450AA37005BCDEC /* UserRepositoryTests.swift in Sources */,
-				19ABECD52450AD4D005BCDEC /* MockApiService.swift in Sources */,
-				1984639C24465C7800C4E25B /* RiderBookApiServiceTest.swift in Sources */,
-				199EAFB62451FF8D005AD180 /* LoginServiceTest.swift in Sources */,
-				1911D44724558A4900495AD8 /* RideRepositoryTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1943377D2427B6DD00050CB0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				5B936845258D0A3300EE6CAD /* RiderBookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1255,11 +1056,6 @@
 			isa = PBXTargetDependency;
 			target = 1943375A2427B6DB00050CB0 /* RiderBook */;
 			targetProxy = 194337772427B6DD00050CB0 /* PBXContainerItemProxy */;
-		};
-		194337832427B6DD00050CB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1943375A2427B6DB00050CB0 /* RiderBook */;
-			targetProxy = 194337822427B6DD00050CB0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1448,10 +1244,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
 				INFOPLIST_FILE = RiderBookTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1459,8 +1256,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.palmendrob.RiderBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RiderBook.app/RiderBook";
 			};
 			name = Debug;
@@ -1470,10 +1268,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2Q32UK29R;
 				INFOPLIST_FILE = RiderBookTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1482,51 +1281,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.palmendrob.RiderBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RiderBook.app/RiderBook";
-			};
-			name = Release;
-		};
-		194337912427B6DD00050CB0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2Q32UK29R;
-				INFOPLIST_FILE = RiderBookUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.palmendrob.RiderBookUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RiderBook;
-			};
-			name = Debug;
-		};
-		194337922427B6DD00050CB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2Q32UK29R;
-				INFOPLIST_FILE = RiderBookUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.palmendrob.RiderBookUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RiderBook;
 			};
 			name = Release;
 		};
@@ -1556,15 +1312,6 @@
 			buildConfigurations = (
 				1943378E2427B6DD00050CB0 /* Debug */,
 				1943378F2427B6DD00050CB0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		194337902427B6DD00050CB0 /* Build configuration list for PBXNativeTarget "RiderBookUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				194337912427B6DD00050CB0 /* Debug */,
-				194337922427B6DD00050CB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
