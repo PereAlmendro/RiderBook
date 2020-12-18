@@ -14,7 +14,7 @@ protocol LoginServiceProtocol {
     func attemptAutologin() -> AnyPublisher<Bool, RiderBookError>?
     func register(name: String, password: String, email: String) -> AnyPublisher<Bool, RiderBookError>
     func logIn(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<Bool, RiderBookError>
-    func logOut() -> Bool
+    func logOut()
 }
 
 final class LoginService: LoginServiceProtocol {
@@ -45,11 +45,11 @@ final class LoginService: LoginServiceProtocol {
         return userRepository
             .createUser(name: name, password: password, email: email)
             .map { [weak self] (user) -> Bool in
-                guard let user = user,
-                    let userSaved = self?.localRepository.saveUser(user) else {
+                guard let user = user else {
                         return false
                 }
-                return userSaved
+                self?.localRepository.saveUser(user)
+                return true
         }.eraseToAnyPublisher()
     }
     
@@ -57,15 +57,15 @@ final class LoginService: LoginServiceProtocol {
         return userRepository
             .login(email: email, password: password, encodedPassword: encodedPassword)
             .map { [weak self] (user) -> Bool in
-                guard let user = user,
-                    let userSaved = self?.localRepository.saveUser(user) else {
+                guard let user = user else {
                     return false
                 }
-                return userSaved
+                self?.localRepository.saveUser(user)
+                return true
         }.eraseToAnyPublisher()
     }
     
-    func logOut() -> Bool {
-        return localRepository.deleteSavedUser()
+    func logOut() {
+        localRepository.deleteSavedUser()
     }
 }

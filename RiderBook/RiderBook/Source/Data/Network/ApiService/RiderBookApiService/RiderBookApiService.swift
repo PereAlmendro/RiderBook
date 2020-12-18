@@ -20,12 +20,12 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
                                                responseModel: ResponseModel.Type)
         -> AnyPublisher<ResponseModel?, RiderBookError> {
             
-            guard let url = URL(string: target.baseUrl.rawValue),
+            guard let url = URL(string: target.baseUrl),
                 var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
                     return getbadUrlError(responseModel: responseModel)
             }
             
-            urlComponents.path = target.basePath.rawValue.appending(target.endPoint)
+            urlComponents.path = urlComponents.path.appending(target.endPoint)
             urlComponents.queryItems = target.queryItems
             
             guard let finalUrl = urlComponents.url else {

@@ -1,6 +1,0 @@
-framework module Pods_RiderBook {
-  umbrella header "Pods-RiderBook-umbrella.h"
-
-  export *
-  module * { export * }
-}

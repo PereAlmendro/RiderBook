@@ -34,13 +34,19 @@ final class AppCoordinator: AppCoordinatorProtocol {
     
     init(window: UIWindow) {
         self.window = window
-        self.viewAssembly = getViewAssembly()
     }
     
     func start() {
+        loadApplication()
+
         let splashView = viewAssembly.getSplashView()
         window.rootViewController = UIHostingController(rootView: splashView)
         window.makeKeyAndVisible()
+    }
+
+    private func loadApplication() {
+        viewAssembly = getViewAssembly()
+        EnvironmentController.shared.loadEnvironment()
     }
 }
 

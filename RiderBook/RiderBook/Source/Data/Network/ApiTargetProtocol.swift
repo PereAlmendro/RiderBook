@@ -9,8 +9,7 @@
 import Foundation
 
 protocol ApiTargetProtocol {
-    var baseUrl: ApiHostUrl { get }
-    var basePath: ApiBasePathUrl { get }
+    var baseUrl: String { get }
     var endPoint: String { get }
     var method: HttpMethod { get }
     var headers: [String: String]? { get }
@@ -19,12 +18,8 @@ protocol ApiTargetProtocol {
 }
 
 extension ApiTargetProtocol {
-    var baseUrl: ApiHostUrl {
-        return .riderBook
-    }
-    
-    var basePath: ApiBasePathUrl {
-        return .riderBook
+    var baseUrl: String {
+        return EnvironmentController.shared.urls?.baseUrl ?? ""
     }
     
     var headers: [String: String]? {

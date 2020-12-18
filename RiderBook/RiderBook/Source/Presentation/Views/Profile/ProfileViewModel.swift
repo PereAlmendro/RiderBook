@@ -115,13 +115,8 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     // MARK: - User Actions
     
     func logoutAction() {
-        if loginService.logOut() {
-            coordinator.start()
-        } else {
-            alertTitle = "T_Oops".localizedString()
-            alertMessage = "T_algo a ido mal, por favor, prueba mas tarde".localizedString()
-            showAlert.toggle()
-        }
+        loginService.logOut()
+        coordinator.start()
     }
     
     func deleteAccountAction() {
