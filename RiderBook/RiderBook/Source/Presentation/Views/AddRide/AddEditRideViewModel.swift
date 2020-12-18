@@ -32,7 +32,7 @@ final class AddEditRideViewModel: ObservableObject, AddEditRideViewModelProtocol
     private var anyCancellables: [AnyCancellable] = []
     private let rideService: RideServiceProtocol
     private let circuitService: CircuitServiceProtocol
-    private let coordinator: AppCoordinatorProtocol
+    private let coordinator: CoordinatorProtocol
     private let screenMode: ScreenMode
     private let ride: Ride?
     
@@ -47,9 +47,9 @@ final class AddEditRideViewModel: ObservableObject, AddEditRideViewModelProtocol
     
     init(rideService: RideServiceProtocol,
          circuitService: CircuitServiceProtocol,
-         coordinator: AppCoordinatorProtocol,
+         coordinator: CoordinatorProtocol,
          screenMode: ScreenMode,
-         ride: Ride?) {
+         ride: Ride? = nil) {
         self.rideService = rideService
         self.circuitService = circuitService
         self.coordinator = coordinator

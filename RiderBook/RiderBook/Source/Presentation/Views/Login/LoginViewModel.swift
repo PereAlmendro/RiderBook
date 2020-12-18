@@ -28,12 +28,12 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     // MARK: - Private properties
     
     private let loginService: LoginServiceProtocol
-    private let coordinator: AppCoordinatorProtocol
+    private let coordinator: LoginViewCoordinator
     private var cancellables: [AnyCancellable?] = []
     
     // MARK: - Lifecycle
     
-    init(loginService: LoginServiceProtocol, coordinator: AppCoordinatorProtocol) {
+    init(loginService: LoginServiceProtocol, coordinator: LoginViewCoordinator) {
         self.loginService = loginService
         self.coordinator = coordinator
     }
@@ -59,7 +59,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
                     },
                       receiveValue: { [weak self] (success) in
                         if success {
-                            self?.coordinator.showHome()
+//                            self?.coordinator.showHome()
                         } else {
                             self?.showError(message: "Something went wrong, try again later")
                         }
@@ -68,7 +68,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     }
     
     func registerAction() {
-        coordinator.showRegister()
+//        coordinator.showRegister()
     }
     
     // MARK: - Private methods

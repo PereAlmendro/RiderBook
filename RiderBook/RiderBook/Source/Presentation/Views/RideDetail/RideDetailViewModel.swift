@@ -31,7 +31,7 @@ final class RideDetailViewModel: ObservableObject, RideDetailViewModelProtocol  
     
     private var anyCancellables: [AnyCancellable] = []
     private let lapService: LapServiceProtocol
-    private let coordinator: AppCoordinatorProtocol
+    private let coordinator: CoordinatorProtocol
     private var actualPage: Int = 1
     
     private enum Constants: Int {
@@ -43,7 +43,7 @@ final class RideDetailViewModel: ObservableObject, RideDetailViewModelProtocol  
     // MARK: - Lifecycle
     
     init(lapService: LapServiceProtocol,
-         coordinator: AppCoordinatorProtocol,
+         coordinator: CoordinatorProtocol,
          ride: Ride) {
         self.lapService = lapService
         self.coordinator = coordinator
@@ -206,11 +206,11 @@ final class RideDetailViewModel: ObservableObject, RideDetailViewModelProtocol  
                 }))
             alert.addAction(UIAlertAction(title: "Cancel".localizedString(), style: .cancel))
             
-            coordinator.showAlert(alert: alert)
+//            coordinator.showAlert(alert: alert)
         }
     }
     
     func closeAction() {
-        coordinator.dismiss()
+//        coordinator.dismiss()
     }
 }

@@ -30,14 +30,14 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     private var alertMessage: String = ""
     private let userService: UserServiceProtocol
     private let loginService: LoginServiceProtocol
-    private let coordinator: AppCoordinatorProtocol
+    private let coordinator: TabBarCoordinator
     private var cancellables: [AnyCancellable?] = []
     
     // MARK: - Lifecycle
     
     init(loginService: LoginServiceProtocol,
          userService: UserServiceProtocol,
-         coordinator: AppCoordinatorProtocol) {
+         coordinator: TabBarCoordinator) {
         self.loginService = loginService
         self.userService = userService
         self.coordinator = coordinator

@@ -8,13 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1911314F24714FFD009F2BA1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911314E24714FFD009F2BA1 /* UserService.swift */; };
-		19113154247151C0009F2BA1 /* ViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19113153247151C0009F2BA1 /* ViewAssembly.swift */; };
-		19113157247157DF009F2BA1 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19113156247157DF009F2BA1 /* ServiceAssembly.swift */; };
-		1911315924715914009F2BA1 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911315824715914009F2BA1 /* RepositoryAssembly.swift */; };
-		1911315C24715BA9009F2BA1 /* ApiServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911315B24715BA9009F2BA1 /* ApiServiceAssembly.swift */; };
 		19113160247173F9009F2BA1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911315E247173F9009F2BA1 /* ProfileView.swift */; };
 		19113161247173F9009F2BA1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911315F247173F9009F2BA1 /* ProfileViewModel.swift */; };
-		19113164247176E0009F2BA1 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19113163247176E0009F2BA1 /* ViewModelAssembly.swift */; };
 		1911316624717BC2009F2BA1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316524717BC2009F2BA1 /* HomeViewModel.swift */; };
 		1911316924719120009F2BA1 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316824719120009F2BA1 /* Double+Extension.swift */; };
 		1911316C2471AF20009F2BA1 /* RankingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316B2471AF20009F2BA1 /* RankingRepository.swift */; };
@@ -40,7 +35,6 @@
 		193DEEAD24446FFB00815150 /* RequestableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAC24446FFB00815150 /* RequestableProtocol.swift */; };
 		193DEEAF244472B900815150 /* RiderBookServiceErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAE244472B900815150 /* RiderBookServiceErrorResponse.swift */; };
 		1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943375E2427B6DB00050CB0 /* AppDelegate.swift */; };
-		194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194337602427B6DB00050CB0 /* SceneDelegate.swift */; };
 		1943376D2427B6DD00050CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1943376C2427B6DD00050CB0 /* Assets.xcassets */; };
 		194337702427B6DD00050CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943376E2427B6DD00050CB0 /* LaunchScreen.storyboard */; };
 		194641EF24499B56000B9B6C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194641EE24499B56000B9B6C /* CustomTextField.swift */; };
@@ -68,7 +62,6 @@
 		19AD193C246EE2570035269F /* EditRideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193B246EE2570035269F /* EditRideRequest.swift */; };
 		19AD193E246EE2990035269F /* EditLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193D246EE2990035269F /* EditLapRequest.swift */; };
 		19AD1940246EE5C00035269F /* RiderBookServiceSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193F246EE5C00035269F /* RiderBookServiceSuccessResponse.swift */; };
-		19B1A0E924421A62000D4FA6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */; };
 		19CA2F67244AE6C400DBDAA4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F66244AE6C400DBDAA4 /* SplashView.swift */; };
 		19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */; };
 		19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */; };
@@ -96,6 +89,11 @@
 		19FDE8362448D55D0037F246 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8352448D55D0037F246 /* LocalRepository.swift */; };
 		5B936822258CFF1E00EE6CAD /* UserDefaults+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936821258CFF1E00EE6CAD /* UserDefaults+Storage.swift */; };
 		5B936845258D0A3300EE6CAD /* RiderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936844258D0A3300EE6CAD /* RiderBookTests.swift */; };
+		5B93684A258D0CC200EE6CAD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936849258D0CC200EE6CAD /* CoordinatorProtocol.swift */; };
+		5B93685B258D1E4D00EE6CAD /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B93685A258D1E4D00EE6CAD /* TabBarCoordinator.swift */; };
+		5B93685F258D1E8C00EE6CAD /* SplashViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B93685E258D1E8C00EE6CAD /* SplashViewCoordinator.swift */; };
+		5B936865258D213100EE6CAD /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936864258D213100EE6CAD /* LoginViewCoordinator.swift */; };
+		5B93686D258D285F00EE6CAD /* AddEditRideCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B93686C258D285F00EE6CAD /* AddEditRideCoordinator.swift */; };
 		5BCF61ED258CDA8000082F5A /* production.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF61EC258CDA8000082F5A /* production.plist */; };
 		5BCF61F5258CF05300082F5A /* EnvironmentBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */; };
 		5BCF61FB258CF87300082F5A /* PlistFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF61FA258CF87200082F5A /* PlistFileReader.swift */; };
@@ -113,13 +111,8 @@
 
 /* Begin PBXFileReference section */
 		1911314E24714FFD009F2BA1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		19113153247151C0009F2BA1 /* ViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAssembly.swift; sourceTree = "<group>"; };
-		19113156247157DF009F2BA1 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
-		1911315824715914009F2BA1 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
-		1911315B24715BA9009F2BA1 /* ApiServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceAssembly.swift; sourceTree = "<group>"; };
 		1911315E247173F9009F2BA1 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1911315F247173F9009F2BA1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		19113163247176E0009F2BA1 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		1911316524717BC2009F2BA1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1911316824719120009F2BA1 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		1911316B2471AF20009F2BA1 /* RankingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingRepository.swift; sourceTree = "<group>"; };
@@ -146,7 +139,6 @@
 		193DEEAE244472B900815150 /* RiderBookServiceErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookServiceErrorResponse.swift; sourceTree = "<group>"; };
 		1943375B2427B6DB00050CB0 /* RiderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1943375E2427B6DB00050CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		194337602427B6DB00050CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1943376C2427B6DD00050CB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1943376F2427B6DD00050CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194337712427B6DD00050CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,7 +173,6 @@
 		19AD193B246EE2570035269F /* EditRideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRideRequest.swift; sourceTree = "<group>"; };
 		19AD193D246EE2990035269F /* EditLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLapRequest.swift; sourceTree = "<group>"; };
 		19AD193F246EE5C00035269F /* RiderBookServiceSuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookServiceSuccessResponse.swift; sourceTree = "<group>"; };
-		19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		19CA2F66244AE6C400DBDAA4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -209,6 +200,11 @@
 		19FDE8352448D55D0037F246 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
 		5B936821258CFF1E00EE6CAD /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
 		5B936844258D0A3300EE6CAD /* RiderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookTests.swift; sourceTree = "<group>"; };
+		5B936849258D0CC200EE6CAD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		5B93685A258D1E4D00EE6CAD /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		5B93685E258D1E8C00EE6CAD /* SplashViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewCoordinator.swift; sourceTree = "<group>"; };
+		5B936864258D213100EE6CAD /* LoginViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewCoordinator.swift; sourceTree = "<group>"; };
+		5B93686C258D285F00EE6CAD /* AddEditRideCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRideCoordinator.swift; sourceTree = "<group>"; };
 		5BCF61EC258CDA8000082F5A /* production.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = production.plist; sourceTree = "<group>"; };
 		5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentBaseUrl.swift; sourceTree = "<group>"; };
 		5BCF61FA258CF87200082F5A /* PlistFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFileReader.swift; sourceTree = "<group>"; };
@@ -240,38 +236,6 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		1911315024715192009F2BA1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				19113153247151C0009F2BA1 /* ViewAssembly.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		1911315124715197009F2BA1 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				19113156247157DF009F2BA1 /* ServiceAssembly.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		19113152247151A6009F2BA1 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				1911315824715914009F2BA1 /* RepositoryAssembly.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		1911315A24715B9A009F2BA1 /* ApiService */ = {
-			isa = PBXGroup;
-			children = (
-				1911315B24715BA9009F2BA1 /* ApiServiceAssembly.swift */,
-			);
-			path = ApiService;
-			sourceTree = "<group>";
-		};
 		1911315D247173F9009F2BA1 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,14 +243,6 @@
 				1911315F247173F9009F2BA1 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		19113162247176C4009F2BA1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				19113163247176E0009F2BA1 /* ViewModelAssembly.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1911316A2471AF0B009F2BA1 /* Ranking */ = {
@@ -375,6 +331,7 @@
 			children = (
 				193BF2C6244CA45B0017E644 /* AddEditRideView.swift */,
 				193BF2C8244CA4650017E644 /* AddEditRideViewModel.swift */,
+				5B93686C258D285F00EE6CAD /* AddEditRideCoordinator.swift */,
 			);
 			path = AddRide;
 			sourceTree = "<group>";
@@ -494,18 +451,11 @@
 		1954CFFA24431FBB00401EB2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5B936848258D0CB100EE6CAD /* Protocols */,
 				5BCF6203258CF8C100082F5A /* Tools */,
 				1955D7A0243DB59D00F359CA /* Extensions */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		1954CFFB2443200B00401EB2 /* AppCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-				19B1A0E824421A62000D4FA6 /* AppCoordinator.swift */,
-			);
-			path = AppCoordinator;
 			sourceTree = "<group>";
 		};
 		1954CFFC2443202C00401EB2 /* Data */ = {
@@ -559,9 +509,7 @@
 				19CA2F6C244AEFEE00DBDAA4 /* Register */,
 				19CA2F65244AE5EA00DBDAA4 /* Splash */,
 				197D203A243B12EC0081C78E /* Login */,
-				1933B39E2441AFF700D0BF44 /* Home */,
-				1911315D247173F9009F2BA1 /* Profile */,
-				1933B39F2441AFFD00D0BF44 /* Rides */,
+				5B936857258D1E3A00EE6CAD /* TabBarViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -642,9 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				1954CFFA24431FBB00401EB2 /* Common */,
-				1954CFFB2443200B00401EB2 /* AppCoordinator */,
 				197D2039243B12E70081C78E /* Presentation */,
-				19B1A0DE24420FBA000D4FA6 /* Assembly */,
 				1954CFFC2443202C00401EB2 /* Data */,
 			);
 			path = Source;
@@ -665,6 +611,7 @@
 			children = (
 				195C935F243BD4EE002CFEAD /* LoginViewModel.swift */,
 				195C935D243BD30F002CFEAD /* LoginView.swift */,
+				5B936864258D213100EE6CAD /* LoginViewCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -702,18 +649,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		19B1A0DE24420FBA000D4FA6 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				19113162247176C4009F2BA1 /* ViewModel */,
-				1911315A24715B9A009F2BA1 /* ApiService */,
-				19113152247151A6009F2BA1 /* Repository */,
-				1911315124715197009F2BA1 /* Service */,
-				1911315024715192009F2BA1 /* View */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
 		19B692A2242C9A7C00C9C43B /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -741,7 +676,6 @@
 		19B692A5242C9B7300C9C43B /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				194337602427B6DB00050CB0 /* SceneDelegate.swift */,
 				1943375E2427B6DB00050CB0 /* AppDelegate.swift */,
 			);
 			path = Delegates;
@@ -752,6 +686,7 @@
 			children = (
 				19CA2F66244AE6C400DBDAA4 /* SplashView.swift */,
 				19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */,
+				5B93685E258D1E8C00EE6CAD /* SplashViewCoordinator.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -827,6 +762,25 @@
 				19FDE8352448D55D0037F246 /* LocalRepository.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		5B936848258D0CB100EE6CAD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5B936849258D0CC200EE6CAD /* CoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5B936857258D1E3A00EE6CAD /* TabBarViews */ = {
+			isa = PBXGroup;
+			children = (
+				5B93685A258D1E4D00EE6CAD /* TabBarCoordinator.swift */,
+				1933B39E2441AFF700D0BF44 /* Home */,
+				1911315D247173F9009F2BA1 /* Profile */,
+				1933B39F2441AFFD00D0BF44 /* Rides */,
+			);
+			path = TabBarViews;
 			sourceTree = "<group>";
 		};
 		5BCF61F9258CF84800082F5A /* Environments */ = {
@@ -956,7 +910,6 @@
 				193BF2C4244C9F770017E644 /* RidesViewModel.swift in Sources */,
 				1954D00624432B6600401EB2 /* ApiTargetProtocol.swift in Sources */,
 				19FDE8362448D55D0037F246 /* LocalRepository.swift in Sources */,
-				19B1A0E924421A62000D4FA6 /* AppCoordinator.swift in Sources */,
 				5BCF61FB258CF87300082F5A /* PlistFileReader.swift in Sources */,
 				1933B3A42441B01E00D0BF44 /* RidesView.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
@@ -967,7 +920,6 @@
 				19DB403D245EDDD900C52CA8 /* Lap.swift in Sources */,
 				199A075A24294F1D002E3A15 /* UIApplication+extension.swift in Sources */,
 				193BF2B6244C95A20017E644 /* RideRepository.swift in Sources */,
-				19113157247157DF009F2BA1 /* ServiceAssembly.swift in Sources */,
 				19113160247173F9009F2BA1 /* ProfileView.swift in Sources */,
 				196B8AEB244CC6FA0013D16C /* CircuitFactory.swift in Sources */,
 				1911316C2471AF20009F2BA1 /* RankingRepository.swift in Sources */,
@@ -975,9 +927,9 @@
 				19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */,
 				19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */,
 				19DB402F245EDA4700C52CA8 /* LapListRequest.swift in Sources */,
-				1911315C24715BA9009F2BA1 /* ApiServiceAssembly.swift in Sources */,
 				193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */,
 				1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */,
+				5B936865258D213100EE6CAD /* LoginViewCoordinator.swift in Sources */,
 				1911D4412455833D00495AD8 /* RideListItem.swift in Sources */,
 				1954D00824432B9600401EB2 /* RiderBookError.swift in Sources */,
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
@@ -993,7 +945,6 @@
 				19AD193C246EE2570035269F /* EditRideRequest.swift in Sources */,
 				19AD193E246EE2990035269F /* EditLapRequest.swift in Sources */,
 				19A862D724546167003BA6D1 /* RideFactory.swift in Sources */,
-				19113154247151C0009F2BA1 /* ViewAssembly.swift in Sources */,
 				19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
 				19E21B82247817370043D151 /* ImagePicker.swift in Sources */,
@@ -1001,6 +952,8 @@
 				1967995C24A72EB000F1DB07 /* DeleteUserRequest.swift in Sources */,
 				19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
+				5B93685B258D1E4D00EE6CAD /* TabBarCoordinator.swift in Sources */,
+				5B93684A258D0CC200EE6CAD /* CoordinatorProtocol.swift in Sources */,
 				193DEEA124446E5300815150 /* LoginRequest.swift in Sources */,
 				19FDE8332448D0040037F246 /* UserFactory.swift in Sources */,
 				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
@@ -1009,10 +962,10 @@
 				193BF2B9244C96C60017E644 /* RideListResponse.swift in Sources */,
 				19DB403B245EDDA300C52CA8 /* LapFactory.swift in Sources */,
 				195C935E243BD30F002CFEAD /* LoginView.swift in Sources */,
-				19113164247176E0009F2BA1 /* ViewModelAssembly.swift in Sources */,
 				193DEEAF244472B900815150 /* RiderBookServiceErrorResponse.swift in Sources */,
 				19DB404A245EFDB000C52CA8 /* LapListItem.swift in Sources */,
 				19DB4040245EDEEE00C52CA8 /* LapService.swift in Sources */,
+				5B93685F258D1E8C00EE6CAD /* SplashViewCoordinator.swift in Sources */,
 				193BF2B3244C956B0017E644 /* RideService.swift in Sources */,
 				196B8AE9244CC68B0013D16C /* CircuitResponse.swift in Sources */,
 				1933B39D2441AFC500D0BF44 /* TabBarView.swift in Sources */,
@@ -1025,14 +978,13 @@
 				1911316924719120009F2BA1 /* Double+Extension.swift in Sources */,
 				1911316F2471AF5C009F2BA1 /* RankingService.swift in Sources */,
 				5B936822258CFF1E00EE6CAD /* UserDefaults+Storage.swift in Sources */,
-				1911315924715914009F2BA1 /* RepositoryAssembly.swift in Sources */,
 				1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */,
 				19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */,
+				5B93686D258D285F00EE6CAD /* AddEditRideCoordinator.swift in Sources */,
 				193BF2C2244C9DBB0017E644 /* Ride.swift in Sources */,
 				1991D4E4247038AC00869327 /* Color+Extension.swift in Sources */,
 				1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */,
 				193BF2BE244C99E70017E644 /* AddRideRequest.swift in Sources */,
-				194337612427B6DB00050CB0 /* SceneDelegate.swift in Sources */,
 				19E21B8024780CA50043D151 /* UploadImageRequest.swift in Sources */,
 				19FDE8302448C7780037F246 /* LoadingView.swift in Sources */,
 				19E21B88247833610043D151 /* UIImage+Extensions.swift in Sources */,

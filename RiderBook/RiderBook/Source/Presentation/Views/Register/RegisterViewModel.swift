@@ -30,13 +30,13 @@ final class RegisterViewModel: ObservableObject, RegisterViewModelProtocol {
     // MARK: - Private properties
     
     private let loginService: LoginServiceProtocol
-    private let coordinator: AppCoordinatorProtocol
+    private let coordinator: CoordinatorProtocol
     private var cancellables: [AnyCancellable?] = []
     
     // MARK: - Lifecycle
     
     init(loginService: LoginServiceProtocol,
-         coordinator: AppCoordinatorProtocol) {
+         coordinator: CoordinatorProtocol) {
         self.loginService = loginService
         self.coordinator = coordinator
     }
@@ -62,7 +62,7 @@ final class RegisterViewModel: ObservableObject, RegisterViewModelProtocol {
                     self?.loading = false
                 }, receiveValue: { [weak self] (success) in
                     if success {
-                        self?.coordinator.showHome()
+//                        self?.coordinator.showHome()
                     } else {
                         self?.showError(message: "Something went wrong, try again later")
                     }

@@ -23,14 +23,14 @@ final class RidesViewModel: ObservableObject, RidesViewModelProtocol  {
     // MARK: - Private properties
     
     private var anyCancellables: [AnyCancellable] = []
-    private let coordinator: AppCoordinatorProtocol
+    private let coordinator: TabBarCoordinator
     private let rideService: RideServiceProtocol
     private var actualPage: Int = 1
     
     // MARK: - Lifecycle
     
     init(rideService: RideServiceProtocol,
-         coordinator: AppCoordinatorProtocol) {
+         coordinator: TabBarCoordinator) {
         self.rideService = rideService
         self.coordinator = coordinator
     }
@@ -53,7 +53,7 @@ final class RidesViewModel: ObservableObject, RidesViewModelProtocol  {
         )
         alert.addAction(UIAlertAction(title: "Cancel".localizedString(), style: .cancel))
         
-        coordinator.showAlert(alert: alert)
+//        coordinator.showAlert(alert: alert)
     }
     
     // MARK: - Private functions
