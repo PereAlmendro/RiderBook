@@ -23,22 +23,19 @@ final class RidesViewModel: ObservableObject, RidesViewModelProtocol  {
     // MARK: - Private properties
     
     private var anyCancellables: [AnyCancellable] = []
-    private let coordinator: TabBarCoordinator
     private let rideService: RideServiceProtocol
     private var actualPage: Int = 1
     
     // MARK: - Lifecycle
     
-    init(rideService: RideServiceProtocol,
-         coordinator: TabBarCoordinator) {
+    init(rideService: RideServiceProtocol) {
         self.rideService = rideService
-        self.coordinator = coordinator
     }
     
     // MARK: - User Actions
     
     func addRideAction() {
-        coordinator.showAddRide()
+//        coordinator.showAddRide()
     }
     
     func showAlertToDeleteRide(_ ride: Ride) {
@@ -102,10 +99,10 @@ final class RidesViewModel: ObservableObject, RidesViewModelProtocol  {
     }
     
     func selectedRide(_ ride: Ride) {
-        coordinator.showRideDetail(for: ride)
+//        coordinator.showRideDetail(for: ride)
     }
     
     func editRideAction(_ ride: Ride) {
-        coordinator.showEditRide(for: ride)
+//        coordinator.showEditRide(for: ride)
     }
 }

@@ -30,17 +30,14 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     private var alertMessage: String = ""
     private let userService: UserServiceProtocol
     private let loginService: LoginServiceProtocol
-    private let coordinator: TabBarCoordinator
     private var cancellables: [AnyCancellable?] = []
     
     // MARK: - Lifecycle
     
     init(loginService: LoginServiceProtocol,
-         userService: UserServiceProtocol,
-         coordinator: TabBarCoordinator) {
+         userService: UserServiceProtocol) {
         self.loginService = loginService
         self.userService = userService
-        self.coordinator = coordinator
     }
     
     // MARK: - Private functions
@@ -116,7 +113,7 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     
     func logoutAction() {
         loginService.logOut()
-        coordinator.start()
+//        coordinator.start()
     }
     
     func deleteAccountAction() {
@@ -137,7 +134,7 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
                     }
                     }, receiveValue: { [weak self] (success) in
                         if success {
-                            self?.coordinator.start()
+//                            self?.coordinator.start()
                         } else {
                             self?.inputImage = nil
                             self?.image = nil

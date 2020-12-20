@@ -12,10 +12,8 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
 
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("Home View")
-            }.navigationBarTitle("Rider_book".localized())
-        }
+        VStack {
+            Text("Home View")
+        }.navigationBarTitle("Rider_book".localized())
     }
 }

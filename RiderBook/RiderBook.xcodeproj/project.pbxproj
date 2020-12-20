@@ -27,8 +27,6 @@
 		193BF2BE244C99E70017E644 /* AddRideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2BD244C99E70017E644 /* AddRideRequest.swift */; };
 		193BF2C2244C9DBB0017E644 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C1244C9DBB0017E644 /* Ride.swift */; };
 		193BF2C4244C9F770017E644 /* RidesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C3244C9F770017E644 /* RidesViewModel.swift */; };
-		193BF2C7244CA45B0017E644 /* AddEditRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C6244CA45B0017E644 /* AddEditRideView.swift */; };
-		193BF2C9244CA4650017E644 /* AddEditRideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193BF2C8244CA4650017E644 /* AddEditRideViewModel.swift */; };
 		193DEE9F24446E2500815150 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEE9E24446E2500815150 /* UserResponse.swift */; };
 		193DEEA124446E5300815150 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEA024446E5300815150 /* LoginRequest.swift */; };
 		193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DEEAA24446FAB00815150 /* HttpMethod.swift */; };
@@ -64,8 +62,6 @@
 		19AD1940246EE5C00035269F /* RiderBookServiceSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD193F246EE5C00035269F /* RiderBookServiceSuccessResponse.swift */; };
 		19CA2F67244AE6C400DBDAA4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F66244AE6C400DBDAA4 /* SplashView.swift */; };
 		19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */; };
-		19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */; };
-		19CA2F70244AF0FA00DBDAA4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */; };
 		19DB402C245ED8CC00C52CA8 /* LapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB402B245ED8CC00C52CA8 /* LapTarget.swift */; };
 		19DB402F245EDA4700C52CA8 /* LapListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB402E245EDA4700C52CA8 /* LapListRequest.swift */; };
 		19DB4031245EDA5000C52CA8 /* AddLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4030245EDA5000C52CA8 /* AddLapRequest.swift */; };
@@ -74,8 +70,6 @@
 		19DB403B245EDDA300C52CA8 /* LapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB403A245EDDA300C52CA8 /* LapFactory.swift */; };
 		19DB403D245EDDD900C52CA8 /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB403C245EDDD900C52CA8 /* Lap.swift */; };
 		19DB4040245EDEEE00C52CA8 /* LapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB403F245EDEEE00C52CA8 /* LapService.swift */; };
-		19DB4043245EEB2F00C52CA8 /* RideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4042245EEB2F00C52CA8 /* RideDetailView.swift */; };
-		19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */; };
 		19DB404A245EFDB000C52CA8 /* LapListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4049245EFDB000C52CA8 /* LapListItem.swift */; };
 		19DB404D245F1C2600C52CA8 /* DeleteLapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */; };
 		19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */; };
@@ -87,13 +81,14 @@
 		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
 		19FDE8332448D0040037F246 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8322448D0040037F246 /* UserFactory.swift */; };
 		19FDE8362448D55D0037F246 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8352448D55D0037F246 /* LocalRepository.swift */; };
+		5B7FE682258F8B59005BE089 /* SplashView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FE681258F8B59005BE089 /* SplashView+Instantiate.swift */; };
+		5B7FE688258F8BEC005BE089 /* HomeView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FE687258F8BEC005BE089 /* HomeView+Instantiate.swift */; };
+		5B7FE68C258F8BFD005BE089 /* ProfileView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FE68B258F8BFD005BE089 /* ProfileView+Instantiate.swift */; };
+		5B7FE690258F8CA5005BE089 /* RidesView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FE68F258F8CA5005BE089 /* RidesView+Instantiate.swift */; };
 		5B936822258CFF1E00EE6CAD /* UserDefaults+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936821258CFF1E00EE6CAD /* UserDefaults+Storage.swift */; };
 		5B936845258D0A3300EE6CAD /* RiderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936844258D0A3300EE6CAD /* RiderBookTests.swift */; };
-		5B93684A258D0CC200EE6CAD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936849258D0CC200EE6CAD /* CoordinatorProtocol.swift */; };
 		5B93685B258D1E4D00EE6CAD /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B93685A258D1E4D00EE6CAD /* TabBarCoordinator.swift */; };
-		5B93685F258D1E8C00EE6CAD /* SplashViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B93685E258D1E8C00EE6CAD /* SplashViewCoordinator.swift */; };
-		5B936865258D213100EE6CAD /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936864258D213100EE6CAD /* LoginViewCoordinator.swift */; };
-		5B93686D258D285F00EE6CAD /* AddEditRideCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B93686C258D285F00EE6CAD /* AddEditRideCoordinator.swift */; };
+		5B936865258D213100EE6CAD /* LoginView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936864258D213100EE6CAD /* LoginView+Instantiate.swift */; };
 		5BCF61ED258CDA8000082F5A /* production.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF61EC258CDA8000082F5A /* production.plist */; };
 		5BCF61F5258CF05300082F5A /* EnvironmentBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */; };
 		5BCF61FB258CF87300082F5A /* PlistFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF61FA258CF87200082F5A /* PlistFileReader.swift */; };
@@ -130,8 +125,6 @@
 		193BF2BD244C99E70017E644 /* AddRideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideRequest.swift; sourceTree = "<group>"; };
 		193BF2C1244C9DBB0017E644 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		193BF2C3244C9F770017E644 /* RidesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesViewModel.swift; sourceTree = "<group>"; };
-		193BF2C6244CA45B0017E644 /* AddEditRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRideView.swift; sourceTree = "<group>"; };
-		193BF2C8244CA4650017E644 /* AddEditRideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRideViewModel.swift; sourceTree = "<group>"; };
 		193DEE9E24446E2500815150 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		193DEEA024446E5300815150 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		193DEEAA24446FAB00815150 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
@@ -175,8 +168,6 @@
 		19AD193F246EE5C00035269F /* RiderBookServiceSuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookServiceSuccessResponse.swift; sourceTree = "<group>"; };
 		19CA2F66244AE6C400DBDAA4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		19DB402B245ED8CC00C52CA8 /* LapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapTarget.swift; sourceTree = "<group>"; };
 		19DB402E245EDA4700C52CA8 /* LapListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListRequest.swift; sourceTree = "<group>"; };
 		19DB4030245EDA5000C52CA8 /* AddLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLapRequest.swift; sourceTree = "<group>"; };
@@ -185,8 +176,6 @@
 		19DB403A245EDDA300C52CA8 /* LapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapFactory.swift; sourceTree = "<group>"; };
 		19DB403C245EDDD900C52CA8 /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
 		19DB403F245EDEEE00C52CA8 /* LapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapService.swift; sourceTree = "<group>"; };
-		19DB4042245EEB2F00C52CA8 /* RideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailView.swift; sourceTree = "<group>"; };
-		19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailViewModel.swift; sourceTree = "<group>"; };
 		19DB4049245EFDB000C52CA8 /* LapListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapListItem.swift; sourceTree = "<group>"; };
 		19DB404C245F1C2600C52CA8 /* DeleteLapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLapRequest.swift; sourceTree = "<group>"; };
 		19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRideRequest.swift; sourceTree = "<group>"; };
@@ -198,13 +187,14 @@
 		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		19FDE8322448D0040037F246 /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		19FDE8352448D55D0037F246 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
+		5B7FE681258F8B59005BE089 /* SplashView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashView+Instantiate.swift"; sourceTree = "<group>"; };
+		5B7FE687258F8BEC005BE089 /* HomeView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Instantiate.swift"; sourceTree = "<group>"; };
+		5B7FE68B258F8BFD005BE089 /* ProfileView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileView+Instantiate.swift"; sourceTree = "<group>"; };
+		5B7FE68F258F8CA5005BE089 /* RidesView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RidesView+Instantiate.swift"; sourceTree = "<group>"; };
 		5B936821258CFF1E00EE6CAD /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
 		5B936844258D0A3300EE6CAD /* RiderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookTests.swift; sourceTree = "<group>"; };
-		5B936849258D0CC200EE6CAD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		5B93685A258D1E4D00EE6CAD /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		5B93685E258D1E8C00EE6CAD /* SplashViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewCoordinator.swift; sourceTree = "<group>"; };
-		5B936864258D213100EE6CAD /* LoginViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewCoordinator.swift; sourceTree = "<group>"; };
-		5B93686C258D285F00EE6CAD /* AddEditRideCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRideCoordinator.swift; sourceTree = "<group>"; };
+		5B936864258D213100EE6CAD /* LoginView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Instantiate.swift"; sourceTree = "<group>"; };
 		5BCF61EC258CDA8000082F5A /* production.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = production.plist; sourceTree = "<group>"; };
 		5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentBaseUrl.swift; sourceTree = "<group>"; };
 		5BCF61FA258CF87200082F5A /* PlistFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFileReader.swift; sourceTree = "<group>"; };
@@ -241,6 +231,7 @@
 			children = (
 				1911315E247173F9009F2BA1 /* ProfileView.swift */,
 				1911315F247173F9009F2BA1 /* ProfileViewModel.swift */,
+				5B7FE68B258F8BFD005BE089 /* ProfileView+Instantiate.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -277,6 +268,7 @@
 			children = (
 				1933B3A52441B02600D0BF44 /* HomeView.swift */,
 				1911316524717BC2009F2BA1 /* HomeViewModel.swift */,
+				5B7FE687258F8BEC005BE089 /* HomeView+Instantiate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -286,6 +278,7 @@
 			children = (
 				1933B3A32441B01E00D0BF44 /* RidesView.swift */,
 				193BF2C3244C9F770017E644 /* RidesViewModel.swift */,
+				5B7FE68F258F8CA5005BE089 /* RidesView+Instantiate.swift */,
 			);
 			path = Rides;
 			sourceTree = "<group>";
@@ -324,16 +317,6 @@
 				19DB4052245F2E2D00C52CA8 /* DeleteRideRequest.swift */,
 			);
 			path = Ride;
-			sourceTree = "<group>";
-		};
-		193BF2C5244CA4290017E644 /* AddRide */ = {
-			isa = PBXGroup;
-			children = (
-				193BF2C6244CA45B0017E644 /* AddEditRideView.swift */,
-				193BF2C8244CA4650017E644 /* AddEditRideViewModel.swift */,
-				5B93686C258D285F00EE6CAD /* AddEditRideCoordinator.swift */,
-			);
-			path = AddRide;
 			sourceTree = "<group>";
 		};
 		193DEE9C24446E1000815150 /* Requests */ = {
@@ -451,7 +434,6 @@
 		1954CFFA24431FBB00401EB2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				5B936848258D0CB100EE6CAD /* Protocols */,
 				5BCF6203258CF8C100082F5A /* Tools */,
 				1955D7A0243DB59D00F359CA /* Extensions */,
 			);
@@ -504,9 +486,6 @@
 		1954D0012443220600401EB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				19DB4041245EEB0800C52CA8 /* RideDetail */,
-				193BF2C5244CA4290017E644 /* AddRide */,
-				19CA2F6C244AEFEE00DBDAA4 /* Register */,
 				19CA2F65244AE5EA00DBDAA4 /* Splash */,
 				197D203A243B12EC0081C78E /* Login */,
 				5B936857258D1E3A00EE6CAD /* TabBarViews */,
@@ -611,7 +590,7 @@
 			children = (
 				195C935F243BD4EE002CFEAD /* LoginViewModel.swift */,
 				195C935D243BD30F002CFEAD /* LoginView.swift */,
-				5B936864258D213100EE6CAD /* LoginViewCoordinator.swift */,
+				5B936864258D213100EE6CAD /* LoginView+Instantiate.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -686,18 +665,9 @@
 			children = (
 				19CA2F66244AE6C400DBDAA4 /* SplashView.swift */,
 				19CA2F68244AE75800DBDAA4 /* SplashViewModel.swift */,
-				5B93685E258D1E8C00EE6CAD /* SplashViewCoordinator.swift */,
+				5B7FE681258F8B59005BE089 /* SplashView+Instantiate.swift */,
 			);
 			path = Splash;
-			sourceTree = "<group>";
-		};
-		19CA2F6C244AEFEE00DBDAA4 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				19CA2F6D244AF0F000DBDAA4 /* RegisterView.swift */,
-				19CA2F6F244AF0FA00DBDAA4 /* RegisterViewModel.swift */,
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 		19DB402D245EDA1E00C52CA8 /* Lap */ = {
@@ -736,15 +706,6 @@
 			path = Lap;
 			sourceTree = "<group>";
 		};
-		19DB4041245EEB0800C52CA8 /* RideDetail */ = {
-			isa = PBXGroup;
-			children = (
-				19DB4042245EEB2F00C52CA8 /* RideDetailView.swift */,
-				19DB4044245EEB4500C52CA8 /* RideDetailViewModel.swift */,
-			);
-			path = RideDetail;
-			sourceTree = "<group>";
-		};
 		19FDE8312448CFE20037F246 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -762,14 +723,6 @@
 				19FDE8352448D55D0037F246 /* LocalRepository.swift */,
 			);
 			path = Local;
-			sourceTree = "<group>";
-		};
-		5B936848258D0CB100EE6CAD /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				5B936849258D0CC200EE6CAD /* CoordinatorProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		5B936857258D1E3A00EE6CAD /* TabBarViews */ = {
@@ -913,8 +866,6 @@
 				5BCF61FB258CF87300082F5A /* PlistFileReader.swift in Sources */,
 				1933B3A42441B01E00D0BF44 /* RidesView.swift in Sources */,
 				1943375F2427B6DB00050CB0 /* AppDelegate.swift in Sources */,
-				193BF2C9244CA4650017E644 /* AddEditRideViewModel.swift in Sources */,
-				19CA2F70244AF0FA00DBDAA4 /* RegisterViewModel.swift in Sources */,
 				19DB4039245EDCEE00C52CA8 /* LapRepository.swift in Sources */,
 				1911316624717BC2009F2BA1 /* HomeViewModel.swift in Sources */,
 				19DB403D245EDDD900C52CA8 /* Lap.swift in Sources */,
@@ -923,15 +874,15 @@
 				19113160247173F9009F2BA1 /* ProfileView.swift in Sources */,
 				196B8AEB244CC6FA0013D16C /* CircuitFactory.swift in Sources */,
 				1911316C2471AF20009F2BA1 /* RankingRepository.swift in Sources */,
-				19DB4043245EEB2F00C52CA8 /* RideDetailView.swift in Sources */,
 				19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */,
 				19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */,
 				19DB402F245EDA4700C52CA8 /* LapListRequest.swift in Sources */,
 				193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */,
 				1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */,
-				5B936865258D213100EE6CAD /* LoginViewCoordinator.swift in Sources */,
+				5B936865258D213100EE6CAD /* LoginView+Instantiate.swift in Sources */,
 				1911D4412455833D00495AD8 /* RideListItem.swift in Sources */,
 				1954D00824432B9600401EB2 /* RiderBookError.swift in Sources */,
+				5B7FE688258F8BEC005BE089 /* HomeView+Instantiate.swift in Sources */,
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
 				19DB4031245EDA5000C52CA8 /* AddLapRequest.swift in Sources */,
 				5BCF61F5258CF05300082F5A /* EnvironmentBaseUrl.swift in Sources */,
@@ -946,18 +897,19 @@
 				19AD193E246EE2990035269F /* EditLapRequest.swift in Sources */,
 				19A862D724546167003BA6D1 /* RideFactory.swift in Sources */,
 				19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */,
+				5B7FE690258F8CA5005BE089 /* RidesView+Instantiate.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
 				19E21B82247817370043D151 /* ImagePicker.swift in Sources */,
 				19DB4034245EDC8900C52CA8 /* LapListResponse.swift in Sources */,
 				1967995C24A72EB000F1DB07 /* DeleteUserRequest.swift in Sources */,
 				19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */,
+				5B7FE682258F8B59005BE089 /* SplashView+Instantiate.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
+				5B7FE68C258F8BFD005BE089 /* ProfileView+Instantiate.swift in Sources */,
 				5B93685B258D1E4D00EE6CAD /* TabBarCoordinator.swift in Sources */,
-				5B93684A258D0CC200EE6CAD /* CoordinatorProtocol.swift in Sources */,
 				193DEEA124446E5300815150 /* LoginRequest.swift in Sources */,
 				19FDE8332448D0040037F246 /* UserFactory.swift in Sources */,
 				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
-				193BF2C7244CA45B0017E644 /* AddEditRideView.swift in Sources */,
 				19FDE82A2448BD950037F246 /* CircuitTarget.swift in Sources */,
 				193BF2B9244C96C60017E644 /* RideListResponse.swift in Sources */,
 				19DB403B245EDDA300C52CA8 /* LapFactory.swift in Sources */,
@@ -965,12 +917,10 @@
 				193DEEAF244472B900815150 /* RiderBookServiceErrorResponse.swift in Sources */,
 				19DB404A245EFDB000C52CA8 /* LapListItem.swift in Sources */,
 				19DB4040245EDEEE00C52CA8 /* LapService.swift in Sources */,
-				5B93685F258D1E8C00EE6CAD /* SplashViewCoordinator.swift in Sources */,
 				193BF2B3244C956B0017E644 /* RideService.swift in Sources */,
 				196B8AE9244CC68B0013D16C /* CircuitResponse.swift in Sources */,
 				1933B39D2441AFC500D0BF44 /* TabBarView.swift in Sources */,
 				196B8AE0244CC5230013D16C /* CircuitService.swift in Sources */,
-				19CA2F6E244AF0F000DBDAA4 /* RegisterView.swift in Sources */,
 				19113161247173F9009F2BA1 /* ProfileViewModel.swift in Sources */,
 				1933B3A92441BC6900D0BF44 /* String+Extension.swift in Sources */,
 				1954D01024432E9500401EB2 /* UserTarget.swift in Sources */,
@@ -979,8 +929,6 @@
 				1911316F2471AF5C009F2BA1 /* RankingService.swift in Sources */,
 				5B936822258CFF1E00EE6CAD /* UserDefaults+Storage.swift in Sources */,
 				1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */,
-				19DB4045245EEB4500C52CA8 /* RideDetailViewModel.swift in Sources */,
-				5B93686D258D285F00EE6CAD /* AddEditRideCoordinator.swift in Sources */,
 				193BF2C2244C9DBB0017E644 /* Ride.swift in Sources */,
 				1991D4E4247038AC00869327 /* Color+Extension.swift in Sources */,
 				1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */,

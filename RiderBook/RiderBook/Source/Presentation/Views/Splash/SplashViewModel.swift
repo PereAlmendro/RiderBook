@@ -16,39 +16,35 @@ protocol SplashViewModelProtocol: AnyObject {
 
 final class SplashViewModel: ObservableObject, SplashViewModelProtocol  {
 
+    @Published var navigateHome: Bool = false
+    @Published var navigateLogin: Bool = false
+
     private let loginService: LoginServiceProtocol
-    private let coordinator: SplashViewCoordinator
     private var cancellables: [AnyCancellable?] = []
 
-    init(loginService: LoginServiceProtocol,
-         coordinator: SplashViewCoordinator) {
+    init(loginService: LoginServiceProtocol) {
         self.loginService = loginService
-        self.coordinator = coordinator
     }
     
     func attemptAutoLogin() {
         guard let autologinRequest = loginService.attemptAutologin() else {
-            coordinator.showLogin()
+            navigateLogin = true
             return
         }
 
-        cancellables += [
-            autologinRequest
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { [weak self] (completion) in
-                    switch completion {
-                    case .failure:
-                        self?.coordinator.showLogin()
-                    default:
-                        return
-                    }
-                }, receiveValue: { [weak self] (success) in
-                    if success {
-                        self?.coordinator.showHome()
-                    } else {
-                        self?.coordinator.showLogin()
-                    }
-                })
-        ]
+        let autologinCancellable = autologinRequest
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] (completion) in
+                switch completion {
+                case .failure:
+                    self?.navigateLogin = true
+                default:
+                    return
+                }
+            }, receiveValue: { [weak self] (success) in
+                self?.navigateHome = true
+            })
+
+        cancellables.append(autologinCancellable)
     }
 }

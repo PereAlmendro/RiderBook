@@ -28,14 +28,12 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     // MARK: - Private properties
     
     private let loginService: LoginServiceProtocol
-    private let coordinator: LoginViewCoordinator
     private var cancellables: [AnyCancellable?] = []
     
     // MARK: - Lifecycle
     
-    init(loginService: LoginServiceProtocol, coordinator: LoginViewCoordinator) {
+    init(loginService: LoginServiceProtocol) {
         self.loginService = loginService
-        self.coordinator = coordinator
     }
     
     // MARK: - User Actions

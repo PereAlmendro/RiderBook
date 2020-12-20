@@ -42,6 +42,7 @@ struct LoginView: View {
                 }.padding(.horizontal, 20.0)
             }
         }
+        .navigationBarHidden(true)
         .background(Color.dlBackgroundWhite)
         .navigationBarTitle("log_in".localized())
         .alert(isPresented: $viewModel.showAlert) { () -> Alert in

@@ -19,6 +19,17 @@ struct SplashView: View {
             .edgesIgnoringSafeArea(.all)
             .onAppear {
                 self.viewModel.attemptAutoLogin()
-        }
+            }
+
+        NavigationLink(
+            destination: TabBarView(
+                homeView: HomeView.instantiate(),
+                ridesView: RidesView.instantiate(),
+                profileView: ProfileView.instantiate() ),
+            isActive: self.$viewModel.navigateHome) { EmptyView() }
+
+        NavigationLink(
+            destination: LoginView.instantiate(),
+            isActive: self.$viewModel.navigateLogin) { EmptyView() }
     }
 }
