@@ -87,7 +87,6 @@
 		5B7FE690258F8CA5005BE089 /* RidesView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FE68F258F8CA5005BE089 /* RidesView+Instantiate.swift */; };
 		5B936822258CFF1E00EE6CAD /* UserDefaults+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936821258CFF1E00EE6CAD /* UserDefaults+Storage.swift */; };
 		5B936845258D0A3300EE6CAD /* RiderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936844258D0A3300EE6CAD /* RiderBookTests.swift */; };
-		5B93685B258D1E4D00EE6CAD /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B93685A258D1E4D00EE6CAD /* TabBarCoordinator.swift */; };
 		5B936865258D213100EE6CAD /* LoginView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936864258D213100EE6CAD /* LoginView+Instantiate.swift */; };
 		5BCF61ED258CDA8000082F5A /* production.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF61EC258CDA8000082F5A /* production.plist */; };
 		5BCF61F5258CF05300082F5A /* EnvironmentBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */; };
@@ -193,7 +192,6 @@
 		5B7FE68F258F8CA5005BE089 /* RidesView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RidesView+Instantiate.swift"; sourceTree = "<group>"; };
 		5B936821258CFF1E00EE6CAD /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
 		5B936844258D0A3300EE6CAD /* RiderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookTests.swift; sourceTree = "<group>"; };
-		5B93685A258D1E4D00EE6CAD /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		5B936864258D213100EE6CAD /* LoginView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Instantiate.swift"; sourceTree = "<group>"; };
 		5BCF61EC258CDA8000082F5A /* production.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = production.plist; sourceTree = "<group>"; };
 		5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentBaseUrl.swift; sourceTree = "<group>"; };
@@ -728,7 +726,6 @@
 		5B936857258D1E3A00EE6CAD /* TabBarViews */ = {
 			isa = PBXGroup;
 			children = (
-				5B93685A258D1E4D00EE6CAD /* TabBarCoordinator.swift */,
 				1933B39E2441AFF700D0BF44 /* Home */,
 				1911315D247173F9009F2BA1 /* Profile */,
 				1933B39F2441AFFD00D0BF44 /* Rides */,
@@ -906,7 +903,6 @@
 				5B7FE682258F8B59005BE089 /* SplashView+Instantiate.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
 				5B7FE68C258F8BFD005BE089 /* ProfileView+Instantiate.swift in Sources */,
-				5B93685B258D1E4D00EE6CAD /* TabBarCoordinator.swift in Sources */,
 				193DEEA124446E5300815150 /* LoginRequest.swift in Sources */,
 				19FDE8332448D0040037F246 /* UserFactory.swift in Sources */,
 				195C9360243BD4EE002CFEAD /* LoginViewModel.swift in Sources */,
