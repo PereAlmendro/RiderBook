@@ -14,10 +14,7 @@ struct CustomButtonBackground<S: Shape>: View {
         ZStack {
             shape
                 .fill(Color.dlBackgroundWhite)
-                .shadow(color: Color.dlShadowBlack.opacity(0.2),
-                        radius: 10, x: 10, y: 10)
-                .shadow(color: Color.dlShadowWhite.opacity(0.7),
-                        radius: 10, x: -5, y: -5)
+                .shadow(color: Color.dlShadowBlack.opacity(0.2), radius: 10, x: 10, y: 10)
         }
     }
 }

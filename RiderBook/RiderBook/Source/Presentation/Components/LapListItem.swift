@@ -15,7 +15,6 @@ struct LapListItem: View {
     
     var body: some View {
         HStack {
-            
             Text("\(lap.getFormattedTime())")
                 .font(.system(size: 18))
                 .foregroundColor(Color.dlBlack)

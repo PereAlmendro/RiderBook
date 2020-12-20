@@ -527,7 +527,6 @@
 		195C9361243BDFF6002CFEAD /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1933B39C2441AFC500D0BF44 /* TabBarView.swift */,
 				195C9362243BE00C002CFEAD /* CustomButtonStyle.swift */,
 				19FDE82F2448C7780037F246 /* LoadingView.swift */,
 				194641EE24499B56000B9B6C /* CustomTextField.swift */,
@@ -726,6 +725,7 @@
 		5B936857258D1E3A00EE6CAD /* TabBarViews */ = {
 			isa = PBXGroup;
 			children = (
+				1933B39C2441AFC500D0BF44 /* TabBarView.swift */,
 				1933B39E2441AFF700D0BF44 /* Home */,
 				1911315D247173F9009F2BA1 /* Profile */,
 				1933B39F2441AFFD00D0BF44 /* Rides */,

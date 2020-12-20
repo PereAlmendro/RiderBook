@@ -23,12 +23,10 @@ struct CustomTextField: View {
             HStack {
                 
                 if !leftImageName.isEmpty {
-                    Image(systemName: leftImageName)
-                        .accentColor(.dlBlack)
+                    Image(systemName: leftImageName).accentColor(.dlBlack)
                 }
                 
                 if secureField {
-                    
                     if showPassword {
                         TextField(textFieldPlaceholder.localized(), text: text, onEditingChanged: onEditingChanged)
                             .font(.system(size: 20, weight: .regular, design: .rounded))
@@ -42,22 +40,17 @@ struct CustomTextField: View {
                     }
                     
                     Button(action: { self.showPassword.toggle() }) {
-                        Image(systemName: "eye")
-                            .foregroundColor(.dlBlack)
+                        Image(systemName: "eye").foregroundColor(.dlBlack)
                     }
                 } else {
-                    
-                    TextField(textFieldPlaceholder.localized(), text: text,
-                              onEditingChanged: onEditingChanged)
+                    TextField(textFieldPlaceholder.localized(), text: text, onEditingChanged: onEditingChanged)
                         .font(.system(size: 20, weight: .regular, design: .rounded))
                         .keyboardType(keyboardType)
                         .foregroundColor(.dlBlack)
-                    
                 }
-            }   .padding()
-                .background(
-                    CustomButtonBackground(shape: Capsule())
-            )
+            }
+            .padding()
+            .border(Color.dlBlack, width: 1)
         }
     }
 }

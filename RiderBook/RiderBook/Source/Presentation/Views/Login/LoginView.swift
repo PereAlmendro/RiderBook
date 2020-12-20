@@ -21,6 +21,7 @@ struct LoginView: View {
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 30)
+
                     CustomTextField(text: self.$viewModel.email,
                                     leftImageName: "envelope",
                                     textFieldPlaceholder: "Email")
@@ -31,14 +32,9 @@ struct LoginView: View {
                     Button("log_in") {
                         self.viewModel.loginAction()
                     }.buttonStyle(CustomButtonStyle())
-                    Text("Login_advice")
-                        .multilineTextAlignment(.center)
-                    Spacer()
-                    Text("Or")
                     Button("Register") {
                         self.viewModel.registerAction()
                     }.buttonStyle(CustomButtonStyle())
-                    Spacer()
                 }.padding(.horizontal, 20.0)
             }
         }

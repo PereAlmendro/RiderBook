@@ -15,29 +15,21 @@ protocol LoginViewModelProtocol: AnyObject {
 }
 
 final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
-    
-    // MARK: - View properties
-    
+
     @Published var showAlert: Bool = false
     @Published var loading: Bool = false
     @Published var email: String = ""
     @Published var password: String = ""
     var errorTitle = "Error"
     var errorMessage = ""
-    
-    // MARK: - Private properties
-    
+
     private let loginService: LoginServiceProtocol
     private var cancellables: [AnyCancellable?] = []
-    
-    // MARK: - Lifecycle
-    
+
     init(loginService: LoginServiceProtocol) {
         self.loginService = loginService
     }
-    
-    // MARK: - User Actions
-    
+
     func loginAction() {
         guard validateCredentials() else { return }
         
