@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct SplashView: View {
-    
     @ObservedObject var viewModel: SplashViewModel
     
     var body: some View {
+        SplashViewWireFrame(viewModel: viewModel)
+
         Image("login_background")
             .resizable()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
@@ -20,16 +21,5 @@ struct SplashView: View {
             .onAppear {
                 self.viewModel.attemptAutoLogin()
             }
-
-        NavigationLink(
-            destination: TabBarView(
-                homeView: HomeView.instantiate(),
-                ridesView: RidesView.instantiate(),
-                profileView: ProfileView.instantiate() ),
-            isActive: self.$viewModel.navigateHome) { EmptyView() }
-
-        NavigationLink(
-            destination: LoginView.instantiate(),
-            isActive: self.$viewModel.navigateLogin) { EmptyView() }
     }
 }

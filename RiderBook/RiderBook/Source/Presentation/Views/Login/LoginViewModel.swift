@@ -34,27 +34,27 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
         guard validateCredentials() else { return }
         
         loading = true
-        cancellables += [
-            loginService
-                .logIn(email: email, password: password, encodedPassword: false)
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { [weak self] (completion) in
-                    self?.loading = false
-                    switch completion {
-                    case .failure(let error):
-                        self?.showError(message: error.localizedDescription)
-                    default:
-                        return
-                    }
-                    },
-                      receiveValue: { [weak self] (success) in
-                        if success {
-//                            self?.coordinator.showHome()
-                        } else {
-                            self?.showError(message: "Something went wrong, try again later")
-                        }
-                })
-        ]
+        let loginCancellable = loginService
+            .logIn(email: email, password: password, encodedPassword: false)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] (completion) in
+                self?.loading = false
+                switch completion {
+                case .failure(let error):
+                    self?.showError(message: error.localizedDescription)
+                default:
+                    return
+                }
+            },
+            receiveValue: { [weak self] (success) in
+                if success {
+                    // self?.coordinator.showHome()
+                } else {
+                    self?.showError(message: "Something went wrong, try again later")
+                }
+            })
+
+        cancellables.append(loginCancellable)
     }
     
     func registerAction() {
@@ -65,7 +65,6 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     
     private func validateCredentials() -> Bool {
         var credentialsValid = true
-        
         if !email.isValidEmail() {
             showError(message: "This email is not valid")
             credentialsValid = false
@@ -73,7 +72,6 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
             showError(message: "Password must be longer than 4 characters")
             credentialsValid = false
         }
-        
         return credentialsValid
     }
     

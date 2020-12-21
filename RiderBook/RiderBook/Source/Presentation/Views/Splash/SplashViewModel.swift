@@ -16,8 +16,11 @@ protocol SplashViewModelProtocol: AnyObject {
 
 final class SplashViewModel: ObservableObject, SplashViewModelProtocol  {
 
-    @Published var navigateHome: Bool = false
-    @Published var navigateLogin: Bool = false
+    @Published var navigation: Navigation? = nil
+    enum Navigation {
+        case home(title: String)
+        case login
+    }
 
     private let loginService: LoginServiceProtocol
     private var cancellables: [AnyCancellable?] = []
@@ -28,7 +31,7 @@ final class SplashViewModel: ObservableObject, SplashViewModelProtocol  {
     
     func attemptAutoLogin() {
         guard let autologinRequest = loginService.attemptAutologin() else {
-            navigateLogin = true
+            navigation = .login
             return
         }
 
@@ -37,12 +40,12 @@ final class SplashViewModel: ObservableObject, SplashViewModelProtocol  {
             .sink(receiveCompletion: { [weak self] (completion) in
                 switch completion {
                 case .failure:
-                    self?.navigateLogin = true
+                    self?.navigation = .login
                 default:
                     return
                 }
             }, receiveValue: { [weak self] (success) in
-                self?.navigateHome = true
+                self?.navigation = .home(title: "Hello pipol")
             })
 
         cancellables.append(autologinCancellable)

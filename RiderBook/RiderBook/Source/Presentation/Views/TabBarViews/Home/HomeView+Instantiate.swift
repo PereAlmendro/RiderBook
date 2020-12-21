@@ -9,8 +9,8 @@
 import Foundation
 
 extension HomeView {
-    static func instantiate() -> HomeView {
-        let homeViewModel = HomeViewModel()
+    static func instantiate(title: String) -> HomeView {
+        let homeViewModel = HomeViewModel(title: title)
         return HomeView(viewModel: homeViewModel)
     }
 }

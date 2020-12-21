@@ -43,7 +43,7 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
             let decoder = JSONDecoder()
             
             #if DEBUG
-            print("START SERVICE REQUEST : ")
+            print("\nREQUEST : ")
             print(request.url?.absoluteString ?? "Empty URL")
             #endif
             
@@ -54,7 +54,7 @@ final class RiderBookApiService: RiderBookApiServiceProtocol {
                 .mapError { error in RiderBookError.responseError(error) }
                 .map({ (result) -> ResponseModel? in
                     #if DEBUG
-                    print("END SERVICE REQUEST : ")
+                    print("\nRESPONSE : ")
                     print(request.url?.absoluteString ?? "Empty URL")
                     print(result)
                     #endif

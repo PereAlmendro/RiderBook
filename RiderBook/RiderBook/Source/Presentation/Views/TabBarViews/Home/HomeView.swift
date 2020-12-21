@@ -13,7 +13,7 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
-            Text("Home View")
-        }.navigationBarTitle("Rider_book".localized())
+            Text(viewModel.title)
+        }
     }
 }

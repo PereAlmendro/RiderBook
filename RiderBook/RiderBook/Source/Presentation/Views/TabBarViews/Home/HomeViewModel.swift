@@ -14,5 +14,10 @@ protocol HomeViewModelProtocol: AnyObject {
 }
 
 final class HomeViewModel: ObservableObject, HomeViewModelProtocol  {
+    @Published var title: String
+
+    init(title: String) {
+        self.title = title
+    }
     
 }
