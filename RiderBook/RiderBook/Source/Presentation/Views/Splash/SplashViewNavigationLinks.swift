@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct SplashViewWireFrame: View {
+struct SplashViewNavigationLinks: View {
     @ObservedObject var viewModel: SplashViewModel
 
     var body: some View {

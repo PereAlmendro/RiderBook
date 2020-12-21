@@ -12,7 +12,7 @@ struct SplashView: View {
     @ObservedObject var viewModel: SplashViewModel
     
     var body: some View {
-        SplashViewWireFrame(viewModel: viewModel)
+        SplashViewNavigationLinks(viewModel: viewModel)
 
         Image("login_background")
             .resizable()
