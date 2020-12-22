@@ -14,12 +14,9 @@ struct SplashViewNavigationLinks: View {
 
     var body: some View {
         switch self.viewModel.navigation {
-        case .home(let title):
+        case .home:
             NavigationLink(
-                destination: TabBarView(
-                    homeView: HomeView.instantiate(title: title),
-                    ridesView: RidesView.instantiate(),
-                    profileView: ProfileView.instantiate() ),
+                destination: TabBarView.instantiate(),
                 isActive: .constant(true)) { EmptyView() }
 
         case .login:

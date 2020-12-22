@@ -18,7 +18,7 @@ final class SplashViewModel: ObservableObject, SplashViewModelProtocol  {
 
     @Published var navigation: Navigation? = nil
     enum Navigation {
-        case home(title: String)
+        case home
         case login
     }
 
@@ -45,7 +45,7 @@ final class SplashViewModel: ObservableObject, SplashViewModelProtocol  {
                     return
                 }
             }, receiveValue: { [weak self] (success) in
-                self?.navigation = .home(title: "Hello pipol")
+                self?.navigation = .home
             })
 
         cancellables.append(autologinCancellable)

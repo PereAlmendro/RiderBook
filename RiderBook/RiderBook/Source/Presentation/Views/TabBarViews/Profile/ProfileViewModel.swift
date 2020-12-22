@@ -16,11 +16,6 @@ protocol ProfileViewModelProtocol: AnyObject {
 
 final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
 
-    @Published var navigation: Navigation? = nil
-    enum Navigation {
-        case login
-    }
-
     @Published var showImagePicker = false
     @Published var inputImage: UIImage?
     @Published var image: Image?
@@ -115,7 +110,14 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     
     func logoutAction() {
         loginService.logOut()
-        navigation = .login
+        restartApp()
+    }
+
+    func restartApp() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.appCoordinator?.start()
     }
     
     func deleteAccountAction() {
@@ -136,7 +138,7 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
                 }
             }, receiveValue: { [weak self] (success) in
                 if success {
-                    self?.navigation = .login
+                    self?.restartApp()
                 } else {
                     self?.inputImage = nil
                     self?.image = nil

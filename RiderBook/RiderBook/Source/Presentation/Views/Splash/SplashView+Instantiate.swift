@@ -10,13 +10,12 @@ import Foundation
 import SwiftUI
 
 extension SplashView {
-    static func instantiate() -> UIHostingController<SplashView> {
+    static func instantiate() -> SplashView {
         let riderBookApiService = RiderBookApiService()
         let userRepository = UserRepository(riderBookApiService: riderBookApiService)
         let localRepository = LocalRepository()
         let loginService = LoginService(userRepository: userRepository, localRepository: localRepository)
         let viewModel = SplashViewModel(loginService: loginService)
-        let view = SplashView(viewModel: viewModel)
-        return UIHostingController(rootView: view)
+        return SplashView(viewModel: viewModel)
     }
 }

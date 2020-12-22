@@ -10,10 +10,8 @@ import SwiftUI
 
 struct ProfileView: View {
     @ObservedObject var viewModel: ProfileViewModel
-    
+
     var body: some View {
-        ProfileViewNavigationLinks(viewModel: viewModel)
-        
         NavigationView {
             List {
                 Section {
