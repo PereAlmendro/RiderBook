@@ -81,6 +81,8 @@
 		19FDE8302448C7780037F246 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE82F2448C7780037F246 /* LoadingView.swift */; };
 		19FDE8332448D0040037F246 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8322448D0040037F246 /* UserFactory.swift */; };
 		19FDE8362448D55D0037F246 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8352448D55D0037F246 /* LocalRepository.swift */; };
+		5B1A78392591E4350045C827 /* LoginVewNavigationLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A78382591E4350045C827 /* LoginVewNavigationLinks.swift */; };
+		5B1A783D2591E88A0045C827 /* ProfileViewNavigationLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A783C2591E88A0045C827 /* ProfileViewNavigationLinks.swift */; };
 		5B7663AE2590E19B0073EB7B /* SplashViewNavigationLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7663AD2590E19B0073EB7B /* SplashViewNavigationLinks.swift */; };
 		5B7FE682258F8B59005BE089 /* SplashView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FE681258F8B59005BE089 /* SplashView+Instantiate.swift */; };
 		5B7FE688258F8BEC005BE089 /* HomeView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FE687258F8BEC005BE089 /* HomeView+Instantiate.swift */; };
@@ -187,6 +189,8 @@
 		19FDE82F2448C7780037F246 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		19FDE8322448D0040037F246 /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		19FDE8352448D55D0037F246 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
+		5B1A78382591E4350045C827 /* LoginVewNavigationLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVewNavigationLinks.swift; sourceTree = "<group>"; };
+		5B1A783C2591E88A0045C827 /* ProfileViewNavigationLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewNavigationLinks.swift; sourceTree = "<group>"; };
 		5B7663AD2590E19B0073EB7B /* SplashViewNavigationLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewNavigationLinks.swift; sourceTree = "<group>"; };
 		5B7FE681258F8B59005BE089 /* SplashView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashView+Instantiate.swift"; sourceTree = "<group>"; };
 		5B7FE687258F8BEC005BE089 /* HomeView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Instantiate.swift"; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				1911315E247173F9009F2BA1 /* ProfileView.swift */,
 				1911315F247173F9009F2BA1 /* ProfileViewModel.swift */,
 				5B7FE68B258F8BFD005BE089 /* ProfileView+Instantiate.swift */,
+				5B1A783C2591E88A0045C827 /* ProfileViewNavigationLinks.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -590,6 +595,7 @@
 				195C935F243BD4EE002CFEAD /* LoginViewModel.swift */,
 				195C935D243BD30F002CFEAD /* LoginView.swift */,
 				5B936864258D213100EE6CAD /* LoginView+Instantiate.swift */,
+				5B1A78382591E4350045C827 /* LoginVewNavigationLinks.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -904,6 +910,7 @@
 				19DB4034245EDC8900C52CA8 /* LapListResponse.swift in Sources */,
 				1967995C24A72EB000F1DB07 /* DeleteUserRequest.swift in Sources */,
 				19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */,
+				5B1A783D2591E88A0045C827 /* ProfileViewNavigationLinks.swift in Sources */,
 				5B7FE682258F8B59005BE089 /* SplashView+Instantiate.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,
 				5B7FE68C258F8BFD005BE089 /* ProfileView+Instantiate.swift in Sources */,
@@ -933,6 +940,7 @@
 				1991D4E4247038AC00869327 /* Color+Extension.swift in Sources */,
 				1933B3A62441B02600D0BF44 /* HomeView.swift in Sources */,
 				193BF2BE244C99E70017E644 /* AddRideRequest.swift in Sources */,
+				5B1A78392591E4350045C827 /* LoginVewNavigationLinks.swift in Sources */,
 				19E21B8024780CA50043D151 /* UploadImageRequest.swift in Sources */,
 				19FDE8302448C7780037F246 /* LoadingView.swift in Sources */,
 				19E21B88247833610043D151 /* UIImage+Extensions.swift in Sources */,

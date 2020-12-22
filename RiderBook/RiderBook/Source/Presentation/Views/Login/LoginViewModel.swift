@@ -16,10 +16,17 @@ protocol LoginViewModelProtocol: AnyObject {
 
 final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
 
-    @Published var showAlert: Bool = false
+    @Published var navigation: Navigation? = nil
+    enum Navigation {
+        case home
+        case register
+    }
+
     @Published var loading: Bool = false
     @Published var email: String = ""
     @Published var password: String = ""
+
+    @Published var showAlert: Bool = false
     var errorTitle = "Error"
     var errorMessage = ""
 
@@ -35,7 +42,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
         
         loading = true
         let loginCancellable = loginService
-            .logIn(email: email, password: password, encodedPassword: false)
+            .logIn(email: email, password: password)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] (completion) in
                 self?.loading = false
@@ -48,7 +55,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
             },
             receiveValue: { [weak self] (success) in
                 if success {
-                    // self?.coordinator.showHome()
+                    self?.navigation = .home
                 } else {
                     self?.showError(message: "Something went wrong, try again later")
                 }
@@ -58,7 +65,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     }
     
     func registerAction() {
-//        coordinator.showRegister()
+        self.navigation = .register
     }
     
     // MARK: - Private methods

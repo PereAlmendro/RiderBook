@@ -12,6 +12,8 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
+        LoginVewNavigationLinks(viewModel: viewModel)
+        
         LoadingView(isShowing: $viewModel.loading) {
             ScrollView {
                 VStack(alignment: .center, spacing: 30.0) {
@@ -40,7 +42,6 @@ struct LoginView: View {
         }
         .navigationBarHidden(true)
         .background(Color.dlBackgroundWhite)
-        .navigationBarTitle("log_in".localized())
         .alert(isPresented: $viewModel.showAlert) { () -> Alert in
             Alert(title: Text(viewModel.errorTitle.localized()),
                   message: Text(viewModel.errorMessage),

@@ -17,6 +17,12 @@ protocol LoginServiceProtocol {
     func logOut()
 }
 
+extension LoginServiceProtocol {
+    func logIn(email: String, password: String, encodedPassword: Bool = false) -> AnyPublisher<Bool, RiderBookError> {
+        return logIn(email: email, password: password, encodedPassword: encodedPassword)
+    }
+}
+
 final class LoginService: LoginServiceProtocol {
     
     // MARK: - Private properties
@@ -53,7 +59,7 @@ final class LoginService: LoginServiceProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func logIn(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<Bool, RiderBookError> {
+    func logIn(email: String, password: String, encodedPassword: Bool = false) -> AnyPublisher<Bool, RiderBookError> {
         return userRepository
             .login(email: email, password: password, encodedPassword: encodedPassword)
             .map { [weak self] (user) -> Bool in

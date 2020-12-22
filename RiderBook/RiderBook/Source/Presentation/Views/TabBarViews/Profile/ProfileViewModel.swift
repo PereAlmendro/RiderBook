@@ -15,19 +15,21 @@ protocol ProfileViewModelProtocol: AnyObject {
 }
 
 final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
-    
-    // MARK: - View Properties
-    
-    @Published var showAlert = false
+
+    @Published var navigation: Navigation? = nil
+    enum Navigation {
+        case login
+    }
+
     @Published var showImagePicker = false
     @Published var inputImage: UIImage?
     @Published var image: Image?
     @Published var userName: String = ""
     
-    // MARK: - Private properties
-    
+    @Published var showAlert = false
     private var alertTitle: String = ""
     private var alertMessage: String = ""
+
     private let userService: UserServiceProtocol
     private let loginService: LoginServiceProtocol
     private var cancellables: [AnyCancellable?] = []
@@ -43,30 +45,30 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     // MARK: - Private functions
     
     private func uploadImage(image: UIImage) {
-        cancellables += [
-            userService
-                .uploadImage(image: image)
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { [weak self] (completion) in
-                    switch completion {
-                    case .failure(let error):
-                        self?.alertTitle = "Error".localizedString()
-                        self?.alertMessage = "\(error.description()), \(error.localizedDescription)"
-                        self?.showAlert.toggle()
-                        break
-                    case .finished:
-                        break
-                    }
-                    }, receiveValue: { [weak self] (success) in
-                        if !success {
-                            self?.inputImage = nil
-                            self?.image = nil
-                            self?.alertTitle = "Error".localizedString()
-                            self?.alertMessage = "image upload failed, please try again later or choose another image".localizedString()
-                            self?.showAlert.toggle()
-                        }
-                })
-        ]
+        let uploadImageCancellable = userService
+            .uploadImage(image: image)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] (completion) in
+                switch completion {
+                case .failure(let error):
+                    self?.alertTitle = "Error".localizedString()
+                    self?.alertMessage = "\(error.description()), \(error.localizedDescription)"
+                    self?.showAlert.toggle()
+                    break
+                case .finished:
+                    break
+                }
+            }, receiveValue: { [weak self] (success) in
+                if !success {
+                    self?.inputImage = nil
+                    self?.image = nil
+                    self?.alertTitle = "Error".localizedString()
+                    self?.alertMessage = "image upload failed, please try again later or choose another image".localizedString()
+                    self?.showAlert.toggle()
+                }
+            })
+
+        cancellables.append(uploadImageCancellable)
     }
     
     // MARK: - Public functions
@@ -113,37 +115,38 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     
     func logoutAction() {
         loginService.logOut()
-//        coordinator.start()
+        navigation = .login
     }
     
     func deleteAccountAction() {
         guard let user = userService.getUser() else { return }
-        cancellables += [
-            userService
-                .deleteUser(user)
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { [weak self] (completion) in
-                    switch completion {
-                    case .failure(let error):
-                        self?.alertTitle = "Error".localizedString()
-                        self?.alertMessage = "\(error.description()), \(error.localizedDescription)"
-                        self?.showAlert.toggle()
-                        break
-                    case .finished:
-                        break
-                    }
-                    }, receiveValue: { [weak self] (success) in
-                        if success {
-//                            self?.coordinator.start()
-                        } else {
-                            self?.inputImage = nil
-                            self?.image = nil
-                            self?.alertTitle = "T_Oops".localizedString()
-                            self?.alertMessage = "T_algo a ido mal, por favor, prueba mas tarde".localizedString()
-                            self?.showAlert.toggle()
-                        }
-                })
-        ]
+
+        let deleteUserCancellable = userService
+            .deleteUser(user)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] (completion) in
+                switch completion {
+                case .failure(let error):
+                    self?.alertTitle = "Error".localizedString()
+                    self?.alertMessage = "\(error.description()), \(error.localizedDescription)"
+                    self?.showAlert.toggle()
+                    break
+                case .finished:
+                    break
+                }
+            }, receiveValue: { [weak self] (success) in
+                if success {
+                    self?.navigation = .login
+                } else {
+                    self?.inputImage = nil
+                    self?.image = nil
+                    self?.alertTitle = "T_Oops".localizedString()
+                    self?.alertMessage = "T_algo a ido mal, por favor, prueba mas tarde".localizedString()
+                    self?.showAlert.toggle()
+                }
+            })
+
+        cancellables.append(deleteUserCancellable)
     }
     
     func uploadImageAction() {
