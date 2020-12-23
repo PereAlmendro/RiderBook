@@ -82,6 +82,10 @@
 		19FDE8332448D0040037F246 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8322448D0040037F246 /* UserFactory.swift */; };
 		19FDE8362448D55D0037F246 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDE8352448D55D0037F246 /* LocalRepository.swift */; };
 		5B1A78392591E4350045C827 /* LoginVewNavigationLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A78382591E4350045C827 /* LoginVewNavigationLinks.swift */; };
+		5B3187EC2593C4E700C96449 /* AddRideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3187EB2593C4E600C96449 /* AddRideViewModel.swift */; };
+		5B3187F02593C50600C96449 /* AddRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3187EF2593C50600C96449 /* AddRideView.swift */; };
+		5B3187F62593C51000C96449 /* AddRideView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3187F52593C51000C96449 /* AddRideView+Instantiate.swift */; };
+		5B3187FA2593C75100C96449 /* RidesViewNavigationLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3187F92593C75100C96449 /* RidesViewNavigationLinks.swift */; };
 		5B7663AE2590E19B0073EB7B /* SplashViewNavigationLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7663AD2590E19B0073EB7B /* SplashViewNavigationLinks.swift */; };
 		5B7FE682258F8B59005BE089 /* SplashView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FE681258F8B59005BE089 /* SplashView+Instantiate.swift */; };
 		5B7FE688258F8BEC005BE089 /* HomeView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FE687258F8BEC005BE089 /* HomeView+Instantiate.swift */; };
@@ -191,6 +195,10 @@
 		19FDE8322448D0040037F246 /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		19FDE8352448D55D0037F246 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
 		5B1A78382591E4350045C827 /* LoginVewNavigationLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVewNavigationLinks.swift; sourceTree = "<group>"; };
+		5B3187EB2593C4E600C96449 /* AddRideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRideViewModel.swift; sourceTree = "<group>"; };
+		5B3187EF2593C50600C96449 /* AddRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRideView.swift; sourceTree = "<group>"; };
+		5B3187F52593C51000C96449 /* AddRideView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddRideView+Instantiate.swift"; sourceTree = "<group>"; };
+		5B3187F92593C75100C96449 /* RidesViewNavigationLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesViewNavigationLinks.swift; sourceTree = "<group>"; };
 		5B7663AD2590E19B0073EB7B /* SplashViewNavigationLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewNavigationLinks.swift; sourceTree = "<group>"; };
 		5B7FE681258F8B59005BE089 /* SplashView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashView+Instantiate.swift"; sourceTree = "<group>"; };
 		5B7FE687258F8BEC005BE089 /* HomeView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Instantiate.swift"; sourceTree = "<group>"; };
@@ -285,6 +293,7 @@
 				1933B3A32441B01E00D0BF44 /* RidesView.swift */,
 				193BF2C3244C9F770017E644 /* RidesViewModel.swift */,
 				5B7FE68F258F8CA5005BE089 /* RidesView+Instantiate.swift */,
+				5B3187F92593C75100C96449 /* RidesViewNavigationLinks.swift */,
 			);
 			path = Rides;
 			sourceTree = "<group>";
@@ -492,6 +501,7 @@
 		1954D0012443220600401EB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5B3187EA2593C4E600C96449 /* AddRide */,
 				19CA2F65244AE5EA00DBDAA4 /* Splash */,
 				197D203A243B12EC0081C78E /* Login */,
 				5B936857258D1E3A00EE6CAD /* TabBarViews */,
@@ -701,6 +711,16 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		5B3187EA2593C4E600C96449 /* AddRide */ = {
+			isa = PBXGroup;
+			children = (
+				5B3187EB2593C4E600C96449 /* AddRideViewModel.swift */,
+				5B3187EF2593C50600C96449 /* AddRideView.swift */,
+				5B3187F52593C51000C96449 /* AddRideView+Instantiate.swift */,
+			);
+			path = AddRide;
+			sourceTree = "<group>";
+		};
 		5B936857258D1E3A00EE6CAD /* TabBarViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -855,12 +875,14 @@
 				19A5DE7124433F17008D4886 /* Dictionary+Json.swift in Sources */,
 				19FDE82C2448BD9F0037F246 /* RideTarget.swift in Sources */,
 				19DB402F245EDA4700C52CA8 /* LapListRequest.swift in Sources */,
+				5B3187FA2593C75100C96449 /* RidesViewNavigationLinks.swift in Sources */,
 				193DEEAB24446FAB00815150 /* HttpMethod.swift in Sources */,
 				1954D00C24432E1E00401EB2 /* UserRepository.swift in Sources */,
 				5B936865258D213100EE6CAD /* LoginView+Instantiate.swift in Sources */,
 				1911D4412455833D00495AD8 /* RideListItem.swift in Sources */,
 				1954D00824432B9600401EB2 /* RiderBookError.swift in Sources */,
 				5B7FE688258F8BEC005BE089 /* HomeView+Instantiate.swift in Sources */,
+				5B3187EC2593C4E700C96449 /* AddRideViewModel.swift in Sources */,
 				19A5DE7324433FDF008D4886 /* CreateUserRequest.swift in Sources */,
 				19DB4031245EDA5000C52CA8 /* AddLapRequest.swift in Sources */,
 				5BCF61F5258CF05300082F5A /* EnvironmentBaseUrl.swift in Sources */,
@@ -875,6 +897,7 @@
 				19AD193E246EE2990035269F /* EditLapRequest.swift in Sources */,
 				19A862D724546167003BA6D1 /* RideFactory.swift in Sources */,
 				19DB4053245F2E2D00C52CA8 /* DeleteRideRequest.swift in Sources */,
+				5B3187F62593C51000C96449 /* AddRideView+Instantiate.swift in Sources */,
 				5B7FE690258F8CA5005BE089 /* RidesView+Instantiate.swift in Sources */,
 				1933B39A2441ACAE00D0BF44 /* User.swift in Sources */,
 				19E21B82247817370043D151 /* ImagePicker.swift in Sources */,
@@ -882,6 +905,7 @@
 				1967995C24A72EB000F1DB07 /* DeleteUserRequest.swift in Sources */,
 				5BEC48DA259229E200A5A17B /* TabBarView+Instantiate.swift in Sources */,
 				19CA2F69244AE75800DBDAA4 /* SplashViewModel.swift in Sources */,
+				5B3187F02593C50600C96449 /* AddRideView.swift in Sources */,
 				5BEC48E025922D9900A5A17B /* AppCoordinator.swift in Sources */,
 				5B7FE682258F8B59005BE089 /* SplashView+Instantiate.swift in Sources */,
 				1955D7A2243DB5DC00F359CA /* LoginService.swift in Sources */,

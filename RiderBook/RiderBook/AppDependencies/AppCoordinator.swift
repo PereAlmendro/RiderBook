@@ -24,4 +24,11 @@ final class AppCoordinator {
         window.rootViewController = navController
         window.makeKeyAndVisible()
     }
+
+    static func restartApp() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.appCoordinator?.start()
+    }
 }

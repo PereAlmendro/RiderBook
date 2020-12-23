@@ -10,11 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-protocol SplashViewModelProtocol: AnyObject {
-    func attemptAutoLogin()
-}
-
-final class SplashViewModel: ObservableObject, SplashViewModelProtocol  {
+final class SplashViewModel: ObservableObject  {
 
     @Published var navigation: Navigation? = nil
     enum Navigation {

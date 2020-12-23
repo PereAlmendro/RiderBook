@@ -10,8 +10,8 @@ import Foundation
 import SwiftUI
 
 extension TabBarView {
-    static func instantiate() -> TabBarView {
-        return TabBarView(homeView: HomeView.instantiate(),
+    static func instantiate(title: String = "") -> TabBarView {
+        return TabBarView(homeView: HomeView.instantiate(title: title),
                           ridesView: RidesView.instantiate(),
                           profileView: ProfileView.instantiate())
     }

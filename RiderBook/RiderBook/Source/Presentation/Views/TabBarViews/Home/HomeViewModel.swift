@@ -9,11 +9,7 @@
 import Foundation
 import Combine
 
-protocol HomeViewModelProtocol: AnyObject {
-    
-}
-
-final class HomeViewModel: ObservableObject, HomeViewModelProtocol  {
+final class HomeViewModel: ObservableObject  {
     @Published var title: String
 
     init(title: String) {

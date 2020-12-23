@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 import UIKit
 
-
 extension LoginView {
     static func instantiate() -> LoginView {
         let apiService = RiderBookApiService()

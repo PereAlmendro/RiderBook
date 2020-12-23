@@ -10,11 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-protocol LoginViewModelProtocol: AnyObject {
-    
-}
-
-final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
+final class LoginViewModel: ObservableObject {
 
     @Published var navigation: Navigation? = nil
     enum Navigation {

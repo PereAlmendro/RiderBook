@@ -12,6 +12,8 @@ struct RidesView: View {
     @ObservedObject var viewModel: RidesViewModel
     
     var body: some View {
+        RidesViewNavigationLinks(viewModel: viewModel)
+
         NavigationView {
             List {
                 ForEach(self.viewModel.rides, id: \.self) { ride in

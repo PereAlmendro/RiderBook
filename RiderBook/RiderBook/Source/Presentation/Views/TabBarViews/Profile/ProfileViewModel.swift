@@ -10,11 +10,7 @@ import SwiftUI
 import Combine
 import UIKit
 
-protocol ProfileViewModelProtocol: AnyObject {
-    
-}
-
-final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
+final class ProfileViewModel: ObservableObject  {
 
     @Published var showImagePicker = false
     @Published var inputImage: UIImage?
@@ -110,14 +106,7 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
     
     func logoutAction() {
         loginService.logOut()
-        restartApp()
-    }
-
-    func restartApp() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        appDelegate.appCoordinator?.start()
+        AppCoordinator.restartApp()
     }
     
     func deleteAccountAction() {
@@ -138,7 +127,7 @@ final class ProfileViewModel: ObservableObject, ProfileViewModelProtocol  {
                 }
             }, receiveValue: { [weak self] (success) in
                 if success {
-                    self?.restartApp()
+                    AppCoordinator.restartApp()
                 } else {
                     self?.inputImage = nil
                     self?.image = nil

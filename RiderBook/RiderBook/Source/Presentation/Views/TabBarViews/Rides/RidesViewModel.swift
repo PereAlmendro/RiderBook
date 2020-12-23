@@ -10,32 +10,25 @@ import Foundation
 import UIKit
 import Combine
 
-protocol RidesViewModelProtocol: AnyObject {
-    
-}
+final class RidesViewModel: ObservableObject  {
 
-final class RidesViewModel: ObservableObject, RidesViewModelProtocol  {
-    
-    // MARK: - View properties
-    
+    @Published var navigation: Navigation?
+    enum Navigation {
+        case AddRide
+    }
+
     @Published var rides: [Ride] = []
-    
-    // MARK: - Private properties
-    
-    private var anyCancellables: [AnyCancellable] = []
+
+    private var cancellables: [AnyCancellable] = []
     private let rideService: RideServiceProtocol
     private var actualPage: Int = 1
-    
-    // MARK: - Lifecycle
-    
+
     init(rideService: RideServiceProtocol) {
         self.rideService = rideService
     }
-    
-    // MARK: - User Actions
-    
+
     func addRideAction() {
-//        coordinator.showAddRide()
+        navigation = .AddRide
     }
     
     func showAlertToDeleteRide(_ ride: Ride) {
@@ -52,46 +45,40 @@ final class RidesViewModel: ObservableObject, RidesViewModelProtocol  {
         
 //        coordinator.showAlert(alert: alert)
     }
-    
-    // MARK: - Private functions
-    
+
     private func fetchRides(page: Int) {
-        anyCancellables += [
-            rideService
-                .fetchRides(page: page)
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { (completion) in
-                    switch completion {
-                    case .failure(let error):
-                        print(error)
-                        break
-                    case .finished:
-                        break
-                    }
-                }, receiveValue: { [weak self] (rides) in
-                    self?.rides += rides
-                })
-        ]
+        let fetchRidesCancellable = rideService
+            .fetchRides(page: page)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                    break
+                case .finished:
+                    break
+                }
+            }, receiveValue: { [weak self] (rides) in
+                self?.rides += rides
+            })
+        cancellables.append(fetchRidesCancellable)
     }
     
     private func deleteRideAction(_ ride: Ride) {
-        anyCancellables += [
-            rideService
-                .deleteRide(ride: ride)
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { (completion) in
-                    switch completion {
-                    case .failure, .finished:
-                        break
-                    }
-                }, receiveValue: { [weak self] (success) in
-                    self?.refreshList()
-                })
-        ]
+        let deleteRideCancellable = rideService
+            .deleteRide(ride: ride)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case .failure, .finished:
+                    break
+                }
+            }, receiveValue: { [weak self] (success) in
+                self?.refreshList()
+            })
+        cancellables.append(deleteRideCancellable)
     }
-    
-    // MARK: - Public functions
-    
+
     func refreshList() {
         rides = []
         actualPage = 1
