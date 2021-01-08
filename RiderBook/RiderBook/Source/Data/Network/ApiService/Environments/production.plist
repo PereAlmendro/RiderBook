@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>baseUrl</key>
-	<string>http://192.168.0.19/RiderBookBackend/symfony/web</string>
+	<string>http://192.168.0.22/RiderBookBackend/symfony/web</string>
 </dict>
 </plist>

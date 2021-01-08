@@ -16,10 +16,7 @@ struct LoginVewNavigationLinks: View {
         switch self.viewModel.navigation {
         case .home:
             NavigationLink(
-                destination: TabBarView(
-                    homeView: HomeView.instantiate(),
-                    ridesView: RidesView.instantiate(),
-                    profileView: ProfileView.instantiate() ),
+                destination: TabBarView.instantiate(),
                 isActive: .constant(true)) { EmptyView() }
 
         case .register:

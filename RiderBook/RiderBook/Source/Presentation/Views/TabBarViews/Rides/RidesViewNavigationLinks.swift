@@ -20,6 +20,7 @@ struct RidesViewNavigationLinks: View {
                 isActive: .constant(true)) {
                 EmptyView()
             }.isDetailLink(false)
+            
         default:
             EmptyView()
         }
