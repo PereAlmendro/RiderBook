@@ -10,10 +10,9 @@ import SwiftUI
 
 struct RidesView: View {
     @ObservedObject var viewModel: RidesViewModel
-    
-    var body: some View {
-        RidesViewNavigationLinks(viewModel: viewModel)
+    @State private var AddRideNavigationActive: Bool = false
 
+    var body: some View {
         NavigationView {
             List {
                 ForEach(self.viewModel.rides, id: \.self) { ride in
@@ -29,12 +28,18 @@ struct RidesView: View {
             .listStyle(GroupedListStyle())
             .navigationBarTitle("rides".localized())
             .navigationBarItems(trailing:
-                Button("Add ride".localized()) {
-                    self.viewModel.addRideAction()
-            })
+                                    NavigationLink(
+                                        destination: AddRideView.instantiate(),
+                                        isActive: $AddRideNavigationActive,
+                                        label: { Button("Add ride".localized()) {
+                                            AddRideNavigationActive = true
+                                        }}).isDetailLink(false)
+            )
         }
+        .navigationBarHidden(true)
         .onAppear {
-                self.viewModel.refreshList()
+            self.viewModel.refreshList()
         }
+
     }
 }

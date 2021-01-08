@@ -22,19 +22,22 @@ struct TabBarView: View {
                     Image("home_off")
                         .renderingMode(.template)
                         .foregroundColor(.dlBlack)
-                }.navigationBarHidden(true)
+                }
+
             ridesView
                 .tabItem {
                     Image("road_off")
                         .renderingMode(.template)
                         .foregroundColor(.dlBlack)
-                }.navigationBarHidden(true)
+                }
+
             profileView
                 .tabItem {
                     Image("profile_off")
                         .renderingMode(.template)
                         .foregroundColor(.dlBlack)
-                }.navigationBarHidden(true)
-        }
+                }
+        }.navigationBarHidden(true)
+
     }
 }

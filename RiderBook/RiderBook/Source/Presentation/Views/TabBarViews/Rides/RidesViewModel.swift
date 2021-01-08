@@ -12,11 +12,6 @@ import Combine
 
 final class RidesViewModel: ObservableObject  {
 
-    @Published var navigation: Navigation?
-    enum Navigation {
-        case AddRide
-    }
-
     @Published var rides: [Ride] = []
 
     private var cancellables: [AnyCancellable] = []
@@ -25,10 +20,6 @@ final class RidesViewModel: ObservableObject  {
 
     init(rideService: RideServiceProtocol) {
         self.rideService = rideService
-    }
-
-    func addRideAction() {
-        navigation = .AddRide
     }
     
     func showAlertToDeleteRide(_ ride: Ride) {

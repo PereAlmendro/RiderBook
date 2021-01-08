@@ -14,6 +14,6 @@ struct HomeView: View {
     var body: some View {
         VStack {
             Text(viewModel.title)
-        }
+        }.navigationBarHidden(true)
     }
 }

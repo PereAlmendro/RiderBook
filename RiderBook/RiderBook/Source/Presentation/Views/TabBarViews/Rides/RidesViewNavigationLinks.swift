@@ -13,16 +13,6 @@ struct RidesViewNavigationLinks: View {
     @ObservedObject var viewModel: RidesViewModel
 
     var body: some View {
-        switch self.viewModel.navigation {
-        case .AddRide:
-            NavigationLink(
-                destination: AddRideView.instantiate(),
-                isActive: .constant(true)) {
-                EmptyView()
-            }.isDetailLink(false)
-            
-        default:
-            EmptyView()
-        }
+        return EmptyView()
     }
 }

@@ -49,6 +49,7 @@ struct ProfileView: View {
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Profile".localized())
         }
+        .navigationBarHidden(true)
         .sheet(isPresented: $viewModel.showImagePicker,
                onDismiss: viewModel.onImagePickerDismiss) {
             ImagePicker(image: self.$viewModel.inputImage)
