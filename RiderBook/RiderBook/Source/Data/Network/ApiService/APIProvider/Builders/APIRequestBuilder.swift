@@ -31,7 +31,9 @@ final class APIRequestBuilder {
 
         return request
     }
+}
 
+private extension APIRequestBuilder {
     static func makeUrlFrom(target: ApiTargetProtocol) -> URL? {
         guard
             let url = URL(string: target.baseUrl),
