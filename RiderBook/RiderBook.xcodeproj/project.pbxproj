@@ -356,8 +356,7 @@
 			children = (
 				1954D00724432B9600401EB2 /* APIProviderError.swift */,
 				1954D003244323B200401EB2 /* APIProvider.swift */,
-				5BCF070B25AEF9F00066DF36 /* APIRequestBuilder.swift */,
-				5BCF070F25AEFA6C0066DF36 /* APIErrorBuilder.swift */,
+				5BCF071725AEFC7E0066DF36 /* Builders */,
 			);
 			path = APIProvider;
 			sourceTree = "<group>";
@@ -726,6 +725,15 @@
 				1933B39F2441AFFD00D0BF44 /* Rides */,
 			);
 			path = TabBarViews;
+			sourceTree = "<group>";
+		};
+		5BCF071725AEFC7E0066DF36 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF070B25AEF9F00066DF36 /* APIRequestBuilder.swift */,
+				5BCF070F25AEFA6C0066DF36 /* APIErrorBuilder.swift */,
+			);
+			path = Builders;
 			sourceTree = "<group>";
 		};
 		5BCF61F9258CF84800082F5A /* Environments */ = {
