@@ -13,7 +13,6 @@
 		1911316624717BC2009F2BA1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316524717BC2009F2BA1 /* HomeViewModel.swift */; };
 		1911316924719120009F2BA1 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316824719120009F2BA1 /* Double+Extension.swift */; };
 		1911316C2471AF20009F2BA1 /* RankingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316B2471AF20009F2BA1 /* RankingRepository.swift */; };
-		1911316F2471AF5C009F2BA1 /* RankingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911316E2471AF5C009F2BA1 /* RankingService.swift */; };
 		1911D4412455833D00495AD8 /* RideListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911D4402455833D00495AD8 /* RideListItem.swift */; };
 		1933B39A2441ACAE00D0BF44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B3992441ACAE00D0BF44 /* User.swift */; };
 		1933B39D2441AFC500D0BF44 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933B39C2441AFC500D0BF44 /* TabBarView.swift */; };
@@ -118,7 +117,6 @@
 		1911316524717BC2009F2BA1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1911316824719120009F2BA1 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		1911316B2471AF20009F2BA1 /* RankingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingRepository.swift; sourceTree = "<group>"; };
-		1911316E2471AF5C009F2BA1 /* RankingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingService.swift; sourceTree = "<group>"; };
 		1911D4402455833D00495AD8 /* RideListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideListItem.swift; sourceTree = "<group>"; };
 		1933B3992441ACAE00D0BF44 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1933B39C2441AFC500D0BF44 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -254,14 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				1911316B2471AF20009F2BA1 /* RankingRepository.swift */,
-			);
-			path = Ranking;
-			sourceTree = "<group>";
-		};
-		1911316D2471AF50009F2BA1 /* Ranking */ = {
-			isa = PBXGroup;
-			children = (
-				1911316E2471AF5C009F2BA1 /* RankingService.swift */,
 			);
 			path = Ranking;
 			sourceTree = "<group>";
@@ -627,7 +617,6 @@
 		19B1A0DA24420B53000D4FA6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1911316D2471AF50009F2BA1 /* Ranking */,
 				1911314D24714FDD009F2BA1 /* User */,
 				19DB403E245EDEE300C52CA8 /* Lap */,
 				196B8ADE244CC50C0013D16C /* Circuit */,
@@ -929,7 +918,6 @@
 				1954D01024432E9500401EB2 /* UserTarget.swift in Sources */,
 				195C9363243BE00C002CFEAD /* CustomButtonStyle.swift in Sources */,
 				1911316924719120009F2BA1 /* Double+Extension.swift in Sources */,
-				1911316F2471AF5C009F2BA1 /* RankingService.swift in Sources */,
 				5B936822258CFF1E00EE6CAD /* UserDefaults+Storage.swift in Sources */,
 				1954D004244323B200401EB2 /* RiderBookApiService.swift in Sources */,
 				193BF2C2244C9DBB0017E644 /* Ride.swift in Sources */,

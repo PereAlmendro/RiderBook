@@ -16,20 +16,17 @@ protocol LapRepositoryProtocol {
     func editLap(rideId: Int, lapId: Int, lapTimeInSeconds: String, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
 }
 
-final class LapRepository: LapRepositoryProtocol {
-    
-    // MARK: - Private properties
-    
+final class LapRepository {
+
     private let riderBookApiService: RiderBookApiServiceProtocol
-    
-    // MARK: - Lifecycle
-    
+
     init(riderBookApiService: RiderBookApiServiceProtocol) {
         self.riderBookApiService = riderBookApiService
     }
-    
-    // MARK: - LapRepositoryProtocol
-    
+}
+
+extension LapRepository: LapRepositoryProtocol {
+
     func addLap(rideId: Int, lapTimeInSeconds: String, number: Int, userAuth: String) -> AnyPublisher<Bool, RiderBookError> {
         let addLapRequest = AddLapRequest(rideId: rideId,
                                           lapTimeInSeconds: lapTimeInSeconds,
@@ -74,5 +71,4 @@ final class LapRepository: LapRepositoryProtocol {
                 return response?.success ?? false
         }.eraseToAnyPublisher()
     }
-    
 }

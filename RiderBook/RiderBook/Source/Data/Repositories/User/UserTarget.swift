@@ -8,14 +8,6 @@
 
 import Foundation
 
-enum UserEndpoint: String  {
-    case new = "/user/new"
-    case login = "/user/login"
-    case uploadImage = "/user/upload-image"
-    case edit = "/user/edit"
-    case delete = "/user/delete"
-}
-
 enum UserTarget: ApiTargetProtocol {
     case createUser(_ request: CreateUserRequest)
     case login(_ request: LoginRequest)
@@ -27,13 +19,13 @@ extension UserTarget {
     var endPoint: String {
         switch self {
         case .createUser:
-            return UserEndpoint.new.rawValue
+            return "/user/new"
         case .login:
-            return UserEndpoint.login.rawValue
+            return "/user/login"
         case .uploadImage:
-            return UserEndpoint.uploadImage.rawValue
+            return "/user/upload-image"
         case .deleteUser:
-            return UserEndpoint.delete.rawValue
+            return "/user/delete"
         }
     }
     

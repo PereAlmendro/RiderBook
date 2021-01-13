@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum CircuitEndpoint: String  {
-    case getCircuits = "/circuits"
-}
-
 enum CircuitTarget: ApiTargetProtocol {
     case getCircuits
 }
@@ -20,7 +16,7 @@ extension CircuitTarget {
     var endPoint: String {
         switch self {
         case .getCircuits:
-            return CircuitEndpoint.getCircuits.rawValue
+            return "/circuits"
         }
     }
     

@@ -16,25 +16,22 @@ protocol LapServiceProtocol {
     func editLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError>
 }
 
-final class LapService: LapServiceProtocol {
-    
-    // MARK: - Private properties
-    
+final class LapService {
+
     private let lapRepository: LapRepositoryProtocol
     private let localRepository: LocalRepositoryProtocol
     private var userAuth: String {
         return localRepository.getUser()?.authorization ?? ""
     }
-    
-    // MARK: - Lifecycle
-    
+
     init(lapRepository: LapRepositoryProtocol,
          localRepository: LocalRepositoryProtocol) {
         self.lapRepository = lapRepository
         self.localRepository = localRepository
     }
-    
-    // MARK: - LapServiceProtocol
+}
+
+extension LapService: LapServiceProtocol {
     
     func addLap(lap: Lap) -> AnyPublisher<Bool, RiderBookError> {
         return lapRepository.addLap(rideId: lap.rideId,

@@ -8,13 +8,6 @@
 
 import Foundation
 
-enum LapEndpoint: String  {
-    case new = "/laps/new"
-    case lapList = "/laps/list"
-    case deleteLap = "/laps/delete"
-    case editLap = "/laps/edit"
-}
-
 enum LapTarget: ApiTargetProtocol {
     case addLap(_ request: AddLapRequest)
     case lapList(_ request: LapListRequest)
@@ -26,13 +19,13 @@ extension LapTarget {
     var endPoint: String {
         switch self {
         case .addLap:
-            return LapEndpoint.new.rawValue
+            return "/laps/new"
         case .lapList:
-            return LapEndpoint.lapList.rawValue
+            return "/laps/list"
         case .deleteLap:
-            return LapEndpoint.deleteLap.rawValue
+            return "/laps/delete"
         case .editLap:
-            return LapEndpoint.editLap.rawValue
+            return "/laps/edit"
         }
     }
     

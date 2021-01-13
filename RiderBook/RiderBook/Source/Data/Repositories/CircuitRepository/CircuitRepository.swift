@@ -13,19 +13,16 @@ protocol CircuitRepositoryProtocol {
     func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError>
 }
 
-final class CircuitRepository: CircuitRepositoryProtocol {
-    
-    // MARK: - Private properties
-    
+final class CircuitRepository {
+
     private let riderBookApiService: RiderBookApiServiceProtocol
-    
-    // MARK: - Lifecycle
-    
+
     init(riderBookApiService: RiderBookApiServiceProtocol) {
         self.riderBookApiService = riderBookApiService
     }
-    
-    // MARK: - CircuitRepositoryProtocol
+}
+
+extension CircuitRepository: CircuitRepositoryProtocol {
     
     func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError> {
         return riderBookApiService.loadRequest(CircuitTarget.getCircuits, responseModel: [CircuitResponse].self)

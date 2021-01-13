@@ -16,19 +16,16 @@ protocol RideRepositoryProtocol {
     func editRide(rideId: Int, circuitId: Int, date: Date, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
 }
 
-final class RideRepository: RideRepositoryProtocol {
-    
-    // MARK: - Private properties
-    
+final class RideRepository {
+
     private let riderBookApiService: RiderBookApiServiceProtocol
-    
-    // MARK: - Lifecycle
-    
+
     init(riderBookApiService: RiderBookApiServiceProtocol) {
         self.riderBookApiService = riderBookApiService
     }
-    
-    // MARK: - RideRepositoryProtocol
+}
+
+extension RideRepository: RideRepositoryProtocol {
     
     func addRide(circuitId: Int, date: Date, userAuth: String) -> AnyPublisher<Bool, RiderBookError> {
         let addRideRequest = AddRideRequest(circuitId: circuitId,

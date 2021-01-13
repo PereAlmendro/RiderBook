@@ -16,24 +16,23 @@ protocol UserServiceProtocol {
     func deleteUser(_ user: User) -> AnyPublisher<Bool, RiderBookError>
 }
 
-final class UserService: UserServiceProtocol {
-    
-    // MARK: - Private properties
-    
+final class UserService {
+
     private let userRepository: UserRepositoryProtocol
     private let localRepository: LocalRepositoryProtocol
     private var userAuth: String {
         return localRepository.getUser()?.authorization ?? ""
     }
-    
-    // MARK: - Lifecycle
-    
+
     init(userRepository: UserRepositoryProtocol,
          localRepository: LocalRepositoryProtocol) {
         self.userRepository = userRepository
         self.localRepository = localRepository
     }
-    
+}
+
+extension UserService: UserServiceProtocol {
+
     func getUser() -> User? {
         return localRepository.getUser()
     }

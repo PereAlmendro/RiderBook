@@ -17,19 +17,16 @@ protocol UserRepositoryProtocol {
     func deleteUser(_ user: User, userAuth: String) -> AnyPublisher<Bool, RiderBookError>
 }
 
-final class UserRepository: UserRepositoryProtocol {
-    
-    // MARK: - Private properties
-    
+final class UserRepository {
+
     private let riderBookApiService: RiderBookApiServiceProtocol
-    
-    // MARK: - Lifecycle
-    
+
     init(riderBookApiService: RiderBookApiServiceProtocol) {
         self.riderBookApiService = riderBookApiService
     }
-    
-    // MARK: - UserRepositoryProtocol
+}
+
+extension UserRepository: UserRepositoryProtocol {
     
     func createUser(name: String, password: String, email: String) -> AnyPublisher<User?, RiderBookError> {
         let userRequest = CreateUserRequest(name: name, password: password, image: nil, email: email)

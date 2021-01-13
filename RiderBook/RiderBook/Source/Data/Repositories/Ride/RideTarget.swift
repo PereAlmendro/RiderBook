@@ -8,13 +8,6 @@
 
 import Foundation
 
-enum RideEndpoint: String  {
-    case addRide = "/rides/new"
-    case ridesList = "/rides/list"
-    case deleteRide = "/rides/delete"
-    case editRide = "/rides/edit"
-}
-
 enum RideTarget: ApiTargetProtocol {
     case addRide(_ request: AddRideRequest)
     case rideList(_ request: RideListRequest)
@@ -26,13 +19,13 @@ extension RideTarget {
     var endPoint: String {
         switch self {
         case .addRide:
-            return RideEndpoint.addRide.rawValue
+            return "/rides/new"
         case .rideList:
-            return RideEndpoint.ridesList.rawValue
+            return "/rides/list"
         case .deleteRide:
-            return RideEndpoint.deleteRide.rawValue
+            return "/rides/delete"
         case .editRide:
-            return RideEndpoint.editRide.rawValue
+            return "/rides/edit"
         }
     }
     

@@ -23,22 +23,19 @@ extension LoginServiceProtocol {
     }
 }
 
-final class LoginService: LoginServiceProtocol {
-    
-    // MARK: - Private properties
-    
+final class LoginService {
+
     private let userRepository: UserRepositoryProtocol
     private let localRepository: LocalRepositoryProtocol
-    
-    // MARK: - Lifecycle
-    
+
     init(userRepository: UserRepositoryProtocol,
          localRepository: LocalRepositoryProtocol) {
         self.userRepository = userRepository
         self.localRepository = localRepository
     }
-    
-    // MARK: - LoginServiceProtocol
+}
+
+extension LoginService: LoginServiceProtocol {
     
     func attemptAutologin() -> AnyPublisher<Bool, RiderBookError>? {
         guard let user = localRepository.getUser() else {
