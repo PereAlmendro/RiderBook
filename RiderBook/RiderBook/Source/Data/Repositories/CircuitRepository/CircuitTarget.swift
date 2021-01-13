@@ -13,6 +13,10 @@ enum CircuitTarget: ApiTargetProtocol {
 }
 
 extension CircuitTarget {
+
+    var baseUrl: String {
+        return EnvironmentController.shared.urls.baseUrl
+    }
     var endPoint: String {
         switch self {
         case .getCircuits:

@@ -18,9 +18,6 @@ protocol ApiTargetProtocol {
 }
 
 extension ApiTargetProtocol {
-    var baseUrl: String {
-        return EnvironmentController.shared.urls.baseUrl
-    }
     
     var headers: [String: String]? {
         return ["Content-Type": "application/json"]

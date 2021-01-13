@@ -16,6 +16,11 @@ enum UserTarget: ApiTargetProtocol {
 }
 
 extension UserTarget {
+
+    var baseUrl: String {
+        return EnvironmentController.shared.urls.baseUrl
+    }
+    
     var endPoint: String {
         switch self {
         case .createUser:

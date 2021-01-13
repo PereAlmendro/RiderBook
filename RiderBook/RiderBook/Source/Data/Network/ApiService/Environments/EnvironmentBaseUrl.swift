@@ -32,15 +32,9 @@ struct EnvironmentBaseUrl {
 
 struct EnvironmentController {
     lazy var urls: EnvironmentBaseUrl = {
-        return loadEnvironment()
+        return EnvironmentBaseUrl(environment: .production)
     }()
 
     static var shared = EnvironmentController()
-    private init() {
-        // Private initalization as this class is a singleton
-    }
-
-    private func loadEnvironment() -> EnvironmentBaseUrl {
-        return EnvironmentBaseUrl(environment: .production)
-    }
+    private init() { }
 }
