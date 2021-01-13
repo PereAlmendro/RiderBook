@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class APIRequestBuilder {
+struct APIRequestBuilder {
 
     static func makeRequestFrom(target: ApiTargetProtocol) -> URLRequest? {
         guard
@@ -34,6 +34,7 @@ final class APIRequestBuilder {
 }
 
 private extension APIRequestBuilder {
+    
     static func makeUrlFrom(target: ApiTargetProtocol) -> URL? {
         guard
             let url = URL(string: target.baseUrl),

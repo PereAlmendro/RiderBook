@@ -9,7 +9,8 @@
 import Foundation
 import Combine
 
-final class APIErrorBuilder {
+struct APIErrorBuilder {
+    
     static func makeBadUrlError<ResponseModel: Decodable>(responseModel: ResponseModel.Type)
     -> AnyPublisher<ResponseModel?, APIProviderError> {
 

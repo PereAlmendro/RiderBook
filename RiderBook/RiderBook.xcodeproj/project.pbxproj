@@ -354,8 +354,8 @@
 		193DEEA224446E7B00815150 /* APIProvider */ = {
 			isa = PBXGroup;
 			children = (
-				1954D00724432B9600401EB2 /* APIProviderError.swift */,
 				1954D003244323B200401EB2 /* APIProvider.swift */,
+				193DEEA624446F7100815150 /* Models */,
 				5BCF071725AEFC7E0066DF36 /* Builders */,
 			);
 			path = APIProvider;
@@ -369,12 +369,13 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		193DEEA624446F7100815150 /* Common */ = {
+		193DEEA624446F7100815150 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1954D00724432B9600401EB2 /* APIProviderError.swift */,
 				193DEEAA24446FAB00815150 /* HttpMethod.swift */,
 			);
-			path = Common;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		193DEEB02444759F00815150 /* User */ = {
@@ -508,7 +509,6 @@
 			isa = PBXGroup;
 			children = (
 				5BCF61F9258CF84800082F5A /* Environments */,
-				193DEEA624446F7100815150 /* Common */,
 				193DEEA224446E7B00815150 /* APIProvider */,
 			);
 			path = ApiService;
