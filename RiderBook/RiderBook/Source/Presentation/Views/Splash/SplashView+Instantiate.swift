@@ -11,8 +11,8 @@ import SwiftUI
 
 extension SplashView {
     static func instantiate() -> SplashView {
-        let riderBookApiService = RiderBookApiService()
-        let userRepository = UserRepository(riderBookApiService: riderBookApiService)
+        let apiProvider = APIProvider()
+        let userRepository = UserRepository(apiProvider: apiProvider)
         let localRepository = LocalRepository()
         let loginService = LoginService(userRepository: userRepository, localRepository: localRepository)
         let viewModel = SplashViewModel(loginService: loginService)

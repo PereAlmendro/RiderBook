@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 protocol CircuitServiceProtocol {
-    func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError>
+    func getCircuits() -> AnyPublisher<[Circuit]?, APIProviderError>
 }
 
 final class CircuitService {
@@ -24,7 +24,7 @@ final class CircuitService {
 
 extension CircuitService: CircuitServiceProtocol {
 
-    func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError> {
+    func getCircuits() -> AnyPublisher<[Circuit]?, APIProviderError> {
         return circuitRepository.getCircuits()
     }
 }

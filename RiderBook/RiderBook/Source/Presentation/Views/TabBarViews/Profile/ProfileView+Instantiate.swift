@@ -10,8 +10,8 @@ import Foundation
 
 extension ProfileView {
     static func instantiate() -> ProfileView {
-        let riderBookApiService = RiderBookApiService()
-        let userRepository = UserRepository(riderBookApiService: riderBookApiService)
+        let apiProvider = APIProvider()
+        let userRepository = UserRepository(apiProvider: apiProvider)
         let localRepository = LocalRepository()
         let loginService = LoginService(userRepository: userRepository, localRepository: localRepository)
         let userService = UserService(userRepository: userRepository, localRepository: localRepository)

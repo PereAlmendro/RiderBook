@@ -12,8 +12,8 @@ import UIKit
 
 extension LoginView {
     static func instantiate() -> LoginView {
-        let apiService = RiderBookApiService()
-        let userRepository = UserRepository(riderBookApiService: apiService)
+        let apiService = APIProvider()
+        let userRepository = UserRepository(apiProvider: apiService)
         let localRepository = LocalRepository()
         let loginService = LoginService(userRepository: userRepository, localRepository: localRepository)
         let loginViewModel = LoginViewModel(loginService: loginService)

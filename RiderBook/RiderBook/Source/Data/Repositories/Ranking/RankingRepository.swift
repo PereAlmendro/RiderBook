@@ -17,12 +17,12 @@ final class RankingRepository: RankingRepositoryProtocol {
     
     // MARK: - Private properties
     
-    private let riderBookApiService: RiderBookApiServiceProtocol
+    private let apiProvider: APIProvider
     
     // MARK: - Lifecycle
     
-    init(riderBookApiService: RiderBookApiServiceProtocol) {
-        self.riderBookApiService = riderBookApiService
+    init(apiProvider: APIProvider) {
+        self.apiProvider = apiProvider
     }
     
     // MARK: - RankingRepositoryProtocol

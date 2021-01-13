@@ -10,10 +10,10 @@ import Foundation
 import Combine
 
 protocol RideServiceProtocol {
-    func addRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError>
-    func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError>
-    func deleteRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError>
-    func editRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError>
+    func addRide(ride: Ride) -> AnyPublisher<Bool, APIProviderError>
+    func fetchRides(page: Int) -> AnyPublisher<[Ride], APIProviderError>
+    func deleteRide(ride: Ride) -> AnyPublisher<Bool, APIProviderError>
+    func editRide(ride: Ride) -> AnyPublisher<Bool, APIProviderError>
 }
 
 final class RideService {
@@ -32,23 +32,23 @@ final class RideService {
 }
 
 extension RideService: RideServiceProtocol {
-    func addRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError> {
+    func addRide(ride: Ride) -> AnyPublisher<Bool, APIProviderError> {
         return rideRepository.addRide(circuitId: ride.circuitId,
                                       date: ride.date,
                                       userAuth: userAuth)
     }
     
-    func fetchRides(page: Int) -> AnyPublisher<[Ride], RiderBookError> {
+    func fetchRides(page: Int) -> AnyPublisher<[Ride], APIProviderError> {
         return rideRepository.fetchRides(page: page,
                                          userAuth: userAuth)
     }
     
-    func deleteRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError> {
+    func deleteRide(ride: Ride) -> AnyPublisher<Bool, APIProviderError> {
         return rideRepository.deleteRide(rideId: ride.id,
                                          userAuth: userAuth)
     }
     
-    func editRide(ride: Ride) -> AnyPublisher<Bool, RiderBookError> {
+    func editRide(ride: Ride) -> AnyPublisher<Bool, APIProviderError> {
         return rideRepository.editRide(rideId: ride.id,
                                        circuitId: ride.circuitId,
                                        date: ride.date,

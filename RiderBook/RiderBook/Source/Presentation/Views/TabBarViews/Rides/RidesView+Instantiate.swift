@@ -10,8 +10,8 @@ import Foundation
 
 extension RidesView {
     static func instantiate() -> RidesView {
-        let riderBookApiService = RiderBookApiService()
-        let rideRepository = RideRepository(riderBookApiService: riderBookApiService)
+        let apiProvider = APIProvider()
+        let rideRepository = RideRepository(apiProvider: apiProvider)
         let localRepository = LocalRepository()
         let rideService = RideService(rideRepository: rideRepository, localRepository: localRepository)
         let rideViewModel = RidesViewModel(rideService: rideService)

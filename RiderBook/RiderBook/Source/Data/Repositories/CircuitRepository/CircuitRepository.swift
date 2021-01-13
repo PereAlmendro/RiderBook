@@ -10,22 +10,22 @@ import Foundation
 import Combine
 
 protocol CircuitRepositoryProtocol {
-    func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError>
+    func getCircuits() -> AnyPublisher<[Circuit]?, APIProviderError>
 }
 
 final class CircuitRepository {
 
-    private let riderBookApiService: RiderBookApiServiceProtocol
+    private let apiProvider: APIProvider
 
-    init(riderBookApiService: RiderBookApiServiceProtocol) {
-        self.riderBookApiService = riderBookApiService
+    init(apiProvider: APIProvider) {
+        self.apiProvider = apiProvider
     }
 }
 
 extension CircuitRepository: CircuitRepositoryProtocol {
     
-    func getCircuits() -> AnyPublisher<[Circuit]?, RiderBookError> {
-        return riderBookApiService.loadRequest(CircuitTarget.getCircuits, responseModel: [CircuitResponse].self)
+    func getCircuits() -> AnyPublisher<[Circuit]?, APIProviderError> {
+        return apiProvider.loadRequest(CircuitTarget.getCircuits, responseModel: [CircuitResponse].self)
             .map { (response) -> [Circuit]? in
                 return response?.compactMap { CircuitFactory.createCircuit(from: $0) }
         }.eraseToAnyPublisher()

@@ -1,5 +1,5 @@
 //
-//  ApiServiceError.swift
+//  APIProviderError.swift
 //  RiderBook
 //
 //  Created by Pere Almendro on 12/04/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RiderBookError: Error {
+enum APIProviderError: Error {
     case responseError(Error)
     case badRequest(Error)
     case generic(Error)

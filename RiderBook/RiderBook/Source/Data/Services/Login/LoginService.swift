@@ -11,14 +11,14 @@ import UIKit
 import Combine
 
 protocol LoginServiceProtocol {
-    func attemptAutologin() -> AnyPublisher<Bool, RiderBookError>?
-    func register(name: String, password: String, email: String) -> AnyPublisher<Bool, RiderBookError>
-    func logIn(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<Bool, RiderBookError>
+    func attemptAutologin() -> AnyPublisher<Bool, APIProviderError>?
+    func register(name: String, password: String, email: String) -> AnyPublisher<Bool, APIProviderError>
+    func logIn(email: String, password: String, encodedPassword: Bool) -> AnyPublisher<Bool, APIProviderError>
     func logOut()
 }
 
 extension LoginServiceProtocol {
-    func logIn(email: String, password: String, encodedPassword: Bool = false) -> AnyPublisher<Bool, RiderBookError> {
+    func logIn(email: String, password: String, encodedPassword: Bool = false) -> AnyPublisher<Bool, APIProviderError> {
         return logIn(email: email, password: password, encodedPassword: encodedPassword)
     }
 }
@@ -37,14 +37,14 @@ final class LoginService {
 
 extension LoginService: LoginServiceProtocol {
     
-    func attemptAutologin() -> AnyPublisher<Bool, RiderBookError>? {
+    func attemptAutologin() -> AnyPublisher<Bool, APIProviderError>? {
         guard let user = localRepository.getUser() else {
             return nil
         }
         return logIn(email: user.email, password: user.password, encodedPassword: true)
     }
     
-    func register(name: String, password: String, email: String) -> AnyPublisher<Bool, RiderBookError> {
+    func register(name: String, password: String, email: String) -> AnyPublisher<Bool, APIProviderError> {
         return userRepository
             .createUser(name: name, password: password, email: email)
             .map { [weak self] (user) -> Bool in
@@ -56,7 +56,7 @@ extension LoginService: LoginServiceProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func logIn(email: String, password: String, encodedPassword: Bool = false) -> AnyPublisher<Bool, RiderBookError> {
+    func logIn(email: String, password: String, encodedPassword: Bool = false) -> AnyPublisher<Bool, APIProviderError> {
         return userRepository
             .login(email: email, password: password, encodedPassword: encodedPassword)
             .map { [weak self] (user) -> Bool in
