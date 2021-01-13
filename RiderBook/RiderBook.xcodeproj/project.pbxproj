@@ -94,6 +94,7 @@
 		5B936845258D0A3300EE6CAD /* RiderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936844258D0A3300EE6CAD /* RiderBookTests.swift */; };
 		5B936865258D213100EE6CAD /* LoginView+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B936864258D213100EE6CAD /* LoginView+Instantiate.swift */; };
 		5BCF070C25AEF9F00066DF36 /* APIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF070B25AEF9F00066DF36 /* APIRequestBuilder.swift */; };
+		5BCF071025AEFA6C0066DF36 /* APIErrorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF070F25AEFA6C0066DF36 /* APIErrorBuilder.swift */; };
 		5BCF61ED258CDA8000082F5A /* production.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF61EC258CDA8000082F5A /* production.plist */; };
 		5BCF61F5258CF05300082F5A /* EnvironmentBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */; };
 		5BCF61FB258CF87300082F5A /* PlistFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF61FA258CF87200082F5A /* PlistFileReader.swift */; };
@@ -207,6 +208,7 @@
 		5B936844258D0A3300EE6CAD /* RiderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderBookTests.swift; sourceTree = "<group>"; };
 		5B936864258D213100EE6CAD /* LoginView+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Instantiate.swift"; sourceTree = "<group>"; };
 		5BCF070B25AEF9F00066DF36 /* APIRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilder.swift; sourceTree = "<group>"; };
+		5BCF070F25AEFA6C0066DF36 /* APIErrorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorBuilder.swift; sourceTree = "<group>"; };
 		5BCF61EC258CDA8000082F5A /* production.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = production.plist; sourceTree = "<group>"; };
 		5BCF61F4258CF05300082F5A /* EnvironmentBaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentBaseUrl.swift; sourceTree = "<group>"; };
 		5BCF61FA258CF87200082F5A /* PlistFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFileReader.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				1954D00724432B9600401EB2 /* APIProviderError.swift */,
 				1954D003244323B200401EB2 /* APIProvider.swift */,
 				5BCF070B25AEF9F00066DF36 /* APIRequestBuilder.swift */,
+				5BCF070F25AEFA6C0066DF36 /* APIErrorBuilder.swift */,
 			);
 			path = APIProvider;
 			sourceTree = "<group>";
@@ -850,6 +853,7 @@
 				196B8AE3244CC5630013D16C /* CircuitRepository.swift in Sources */,
 				19DB402C245ED8CC00C52CA8 /* LapTarget.swift in Sources */,
 				193BF2C4244C9F770017E644 /* RidesViewModel.swift in Sources */,
+				5BCF071025AEFA6C0066DF36 /* APIErrorBuilder.swift in Sources */,
 				1954D00624432B6600401EB2 /* ApiTargetProtocol.swift in Sources */,
 				19FDE8362448D55D0037F246 /* LocalRepository.swift in Sources */,
 				5BCF61FB258CF87300082F5A /* PlistFileReader.swift in Sources */,

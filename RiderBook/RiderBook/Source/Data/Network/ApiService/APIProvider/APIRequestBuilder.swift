@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Combine
 
 final class APIRequestBuilder {
 
@@ -47,14 +46,5 @@ final class APIRequestBuilder {
             return nil
         }
         return finalUrl
-    }
-
-    static func getbadUrlError<ResponseModel: Decodable>(responseModel: ResponseModel.Type)
-    -> AnyPublisher<ResponseModel?, APIProviderError> {
-
-        let badUrlError = APIProviderError.badRequest(URLError(.badURL))
-        return Result<ResponseModel?, APIProviderError>.Publisher(badUrlError)
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
     }
 }

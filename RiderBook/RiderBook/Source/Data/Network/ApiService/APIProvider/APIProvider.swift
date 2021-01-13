@@ -22,7 +22,7 @@ final class APIProvider: APIProviderProtocol {
     -> AnyPublisher<ResponseModel?, APIProviderError> {
 
         guard let request = APIRequestBuilder.makeRequestFrom(target: target) else {
-            return APIRequestBuilder.getbadUrlError(responseModel: responseModel)
+            return APIErrorBuilder.makeBadUrlError(responseModel: responseModel)
         }
 
         return URLSession.shared.dataTaskPublisher(for: request)
